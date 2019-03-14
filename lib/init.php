@@ -24,8 +24,8 @@
 // fixes some CSS issues
 ob_start();
 
-$ampache_path = dirname(__FILE__);
-$prefix       = realpath($ampache_path . "/../");
+$amuzak_path  = dirname(__FILE__);
+$prefix       = realpath($amuzak_path . "/../");
 require_once $prefix . '/lib/init-tiny.php';
 
 // Explicitly load and enable the custom session handler.
