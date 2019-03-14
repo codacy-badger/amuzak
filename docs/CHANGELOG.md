@@ -5,6 +5,10 @@ CHANGELOG
 ----------
 - Fork Ampache to aMuzak
 - Remove allow_video
+- Minor text changes, remove allow_video preference from sql
+- Removed all video-related php files
+- Update php-cs-fixer to ~2.12.0 in composer.json
+- Update php-cs-fixer in root directory
 
 3.9.1
 ----------
