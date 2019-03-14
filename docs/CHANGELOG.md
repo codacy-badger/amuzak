@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+3.10.0
+----------
+- Fork Ampache to aMuzak
+- Remove allow_video
+
 3.9.1
 ----------
 - Fixed Beets catalog creation and updating.

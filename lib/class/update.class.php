@@ -2992,13 +2992,6 @@ class Update
             "PRIMARY KEY (`id`)) ENGINE = MYISAM";
         $retval &= Dba::write($sql);
 
-        $sql = "INSERT INTO `preference` (`name`,`value`,`description`,`level`,`type`,`catagory`) " .
-            "VALUES ('allow_video','1','Allow video features',75,'integer','options')";
-        $retval &= Dba::write($sql);
-        $id     = Dba::insert_id();
-        $sql    = "INSERT INTO `user_preference` VALUES (-1,?,'1')";
-        $retval &= Dba::write($sql, array($id));
-
         $sql    = "ALTER TABLE `image` ADD `kind` VARCHAR( 32 ) NULL DEFAULT 'default' AFTER `object_id`";
         $retval &= Dba::write($sql);
 
