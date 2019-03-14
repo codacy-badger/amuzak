@@ -105,6 +105,7 @@ Contact Us
 Hate it? Love it? Let us know! Dozens of people send ideas for amazing new features, report bugs and further develop aMuzak actively. Be a part of aMuzak with it's more than 10 years long history and get in touch with an awesome and friendly community!
 
 * For Live discussions, visit us on our IRC Channel at chat.freenode.net #ampache or alternative via a [web based chat client](https://webchat.freenode.net)
+
 * For harder cases or general discussion about aMuzak take a look at our [Google Groups Forum](https://groups.google.com/forum/#!forum/ampache)
 * Found a bug or aMuzak isn't working as expected? Please refer to the [Issues Template](https://github.com/ampache/ampache/wiki/Issues) and head over to our [Issue Tracker](https://github.com/ampache/ampache/issues)
 
