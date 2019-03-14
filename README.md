@@ -3,7 +3,7 @@
 [www.ampache.org](http://ampache.org/) |
 [ampache.github.io](http://ampache.github.io)
 
-**Notice:**  Only pull requests (PR) for bug fixes will be considered.
+**Notice:**  THIS IS A FORK OF AMPACHE THAT WILL FOCUS ON THE MUSIC
 
 Basics
 ------
