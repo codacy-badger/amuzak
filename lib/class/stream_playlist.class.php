@@ -204,15 +204,6 @@ class Stream_Playlist
                     $url['title']  = $object->title;
                     $url['author'] = $object->f_artist_full;
                 break;
-                case 'channel':
-                    $url['title'] = $object->name;
-                break;
-                case 'podcast_episode':
-                    $url['title']     = $object->f_title;
-                    $url['author']    = $object->f_podcast;
-                    $url['info_url']  = $object->f_link;
-                    $url['image_url'] = Art::url($object->podcast, 'podcast', $api_session, (AmpConfig::get('ajax_load') ? 3 : 4));
-                break;
                 case 'random':
                     $url['title'] = 'Random URL';
                 break;

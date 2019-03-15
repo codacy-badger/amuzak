@@ -3,7 +3,6 @@
 /config/amuzak.cfg.php
 /rest/.htaccess
 /play/.htaccess
-/channel/.htaccess
 *.phpproj
 *.sln
 *.v11.suo

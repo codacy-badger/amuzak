@@ -367,9 +367,6 @@ class Update
         $update_string = '- Add website field on users.<br />';
         $version[]     = array('version' => '360039','description' => $update_string);
 
-        $update_string = '- Add channels.<br />';
-        $version[]     = array('version' => '360041','description' => $update_string);
-
         $update_string = '- Add broadcasts and player control.<br />';
         $version[]     = array('version' => '360042','description' => $update_string);
 
@@ -2398,40 +2395,6 @@ class Update
      */
 
     /**
-     * update_360041
-     *
-     * Add channels
-     */
-    public static function update_360041()
-    {
-        $sql = "CREATE TABLE `channel` (" .
-            "`id` int(11) unsigned NOT NULL AUTO_INCREMENT," .
-            "`name` varchar(64) CHARACTER SET utf8 NULL," .
-            "`description` varchar(256) CHARACTER SET utf8 NULL," .
-            "`url` varchar(256) CHARACTER SET utf8 NULL," .
-            "`interface` varchar(64) CHARACTER SET utf8 NULL," .
-            "`port` int(11) unsigned NOT NULL DEFAULT '0'," .
-            "`fixed_endpoint` tinyint(1) unsigned NOT NULL DEFAULT '0'," .
-            "`object_type` varchar(32) NOT NULL," .
-            "`object_id` int(11) unsigned NOT NULL," .
-            "`is_private` tinyint(1) unsigned NOT NULL DEFAULT '0'," .
-            "`random` tinyint(1) unsigned NOT NULL DEFAULT '0'," .
-            "`loop` tinyint(1) unsigned NOT NULL DEFAULT '0'," .
-            "`admin_password` varchar(20) CHARACTER SET utf8 NULL," .
-            "`start_date` int(11) unsigned NOT NULL DEFAULT '0'," .
-            "`max_listeners` int(11) unsigned NOT NULL DEFAULT '0'," .
-            "`peak_listeners` int(11) unsigned NOT NULL DEFAULT '0'," .
-            "`listeners` int(11) unsigned NOT NULL DEFAULT '0'," .
-            "`connections` int(11) unsigned NOT NULL DEFAULT '0'," .
-            "`stream_type` varchar(8) CHARACTER SET utf8 NOT NULL DEFAULT 'mp3'," .
-            "`bitrate` int(11) unsigned NOT NULL DEFAULT '128'," .
-            "`pid` int(11) unsigned NOT NULL DEFAULT '0'," .
-            "PRIMARY KEY (`id`)) ENGINE = MYISAM";
-
-        return Dba::write($sql);
-    }
-
-    /**
      * update_360042
      *
      * Add broadcasts and player control
@@ -2646,7 +2609,6 @@ class Update
 
         $htaccess_play_file    = AmpConfig::get('prefix') . '/play/.htaccess';
         $htaccess_rest_file    = AmpConfig::get('prefix') . '/rest/.htaccess';
-        $htaccess_channel_file = AmpConfig::get('prefix') . '/channel/.htaccess';
 
         $ret = true;
         if (!is_readable($htaccess_play_file)) {
@@ -2677,22 +2639,6 @@ class Update
 
             if (!$created) {
                 AmpError::add('general', T_('Cannot copy default .htaccess file.') . ' Please copy <b>' . $htaccess_rest_file . '.dist</b> to <b>' . $htaccess_rest_file . '</b>.');
-                $ret = false;
-            }
-        }
-
-        if (!is_readable($htaccess_channel_file)) {
-            $created = false;
-            if (check_htaccess_channel_writable()) {
-                if (!install_rewrite_rules($htaccess_channel_file, AmpConfig::get('raw_web_path'), false)) {
-                    AmpError::add('general', T_('File copy error.'));
-                } else {
-                    $created = true;
-                }
-            }
-
-            if (!$created) {
-                AmpError::add('general', T_('Cannot copy default .htaccess file.') . ' Please copy <b>' . $htaccess_channel_file . '.dist</b> to <b>' . $htaccess_channel_file . '</b>.');
                 $ret = false;
             }
         }
@@ -3041,9 +2987,6 @@ class Update
         $retval &= Dba::write($sql);
 
         $sql    = "ALTER TABLE `song` ADD `composer` varchar(256) CHARACTER SET utf8 NULL, ADD `channels` MEDIUMINT NULL";
-        $retval &= Dba::write($sql);
-
-        $sql    = "ALTER TABLE `video` ADD `channels` MEDIUMINT NULL, ADD `bitrate` MEDIUMINT(8) NULL, ADD `video_bitrate` MEDIUMINT(8) NULL, ADD `display_x` MEDIUMINT(8) NULL, ADD `display_y` MEDIUMINT(8) NULL, ADD `frame_rate` FLOAT NULL, ADD `mode` ENUM( 'abr', 'vbr', 'cbr' ) NULL DEFAULT 'cbr'";
         $retval &= Dba::write($sql);
 
         $sql = "INSERT INTO `preference` (`name`,`value`,`description`,`level`,`type`,`catagory`) " .
