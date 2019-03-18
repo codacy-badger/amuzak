@@ -9,6 +9,7 @@ CHANGELOG
 - Removed all video-related php files
 - Update php-cs-fixer to ~2.12.0 in composer.json
 - Update php-cs-fixer in root directory
+- Drop superfluous tables
 
 3.9.1
 ----------

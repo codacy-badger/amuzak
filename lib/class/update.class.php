@@ -3948,4 +3948,46 @@ class Update
 
         return $retval;
     }
+
+    /**
+     * update_380013
+     *
+     * Drop channel
+     * Drop clip
+     * Drop movie
+     * Drop personal_video
+     * Drop tvshow*
+     * Drop video
+     *
+     */
+    public static function update_380013()
+    {
+        $retval = true;
+
+        $sql    = "DROP TABLE IF EXISTS `channel`";
+        $retval &= Dba::write($sql);
+
+        $sql    = "DROP TABLE IF EXISTS `clip`";
+        $retval &= Dba::write($sql);
+
+        $sql    = "DROP TABLE IF EXISTS `movie`";
+        $retval &= Dba::write($sql);
+
+        $sql    = "DROP TABLE IF EXISTS `personal_video`";
+        $retval &= Dba::write($sql);
+
+        $sql    = "DROP TABLE IF EXISTS `tvshow`";
+        $retval &= Dba::write($sql);
+
+        $sql    = "DROP TABLE IF EXISTS `tvshow_episode`";
+        $retval &= Dba::write($sql);
+
+        $sql    = "DROP TABLE IF EXISTS `tvshow_season`";
+        $retval &= Dba::write($sql);
+
+        $sql    = "DROP TABLE IF EXISTS `video`";
+        $retval &= Dba::write($sql);
+
+        return $retval;
+    }
 }
