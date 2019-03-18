@@ -3960,7 +3960,7 @@ class Update
      * Drop video
      *
      */
-    public static function update_380013()
+    public static function update_400000()
     {
         $retval = true;
 
