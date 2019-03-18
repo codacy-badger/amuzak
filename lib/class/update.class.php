@@ -367,6 +367,9 @@ class Update
         $update_string = '- Add website field on users.<br />';
         $version[]     = array('version' => '360039','description' => $update_string);
 
+        $update_string = '- Add channels.<br />';
+        $version[]     = array('version' => '360041','description' => $update_string);
+
         $update_string = '- Add broadcasts and player control.<br />';
         $version[]     = array('version' => '360042','description' => $update_string);
 
@@ -555,7 +558,10 @@ class Update
         
         $update_string = "- Fix change in <a href='https://github.com/ampache/ampache/commit/0c26c336269624d75985e46d324e2bc8108576ee'>this commit</a>, that left the userbase with an inconsistent database, if users updated or installed Ampache before 28 Apr 2015<br />";
         $version[]     = array('version' => '380012', 'description' => $update_string);
-        
+
+        $update_string = "Disable allow_video and drop the all the video tables.<br />";
+        $version[]     = array('version' => '400000', 'description' => $update_string);
+          
         return $version;
     }
 
@@ -2395,6 +2401,40 @@ class Update
      */
 
     /**
+     * update_360041
+     *
+     * Add channels
+     */
+    public static function update_360041()
+    {
+        $sql = "CREATE TABLE `channel` (" .
+            "`id` int(11) unsigned NOT NULL AUTO_INCREMENT," .
+            "`name` varchar(64) CHARACTER SET utf8 NULL," .
+            "`description` varchar(256) CHARACTER SET utf8 NULL," .
+            "`url` varchar(256) CHARACTER SET utf8 NULL," .
+            "`interface` varchar(64) CHARACTER SET utf8 NULL," .
+            "`port` int(11) unsigned NOT NULL DEFAULT '0'," .
+            "`fixed_endpoint` tinyint(1) unsigned NOT NULL DEFAULT '0'," .
+            "`object_type` varchar(32) NOT NULL," .
+            "`object_id` int(11) unsigned NOT NULL," .
+            "`is_private` tinyint(1) unsigned NOT NULL DEFAULT '0'," .
+            "`random` tinyint(1) unsigned NOT NULL DEFAULT '0'," .
+            "`loop` tinyint(1) unsigned NOT NULL DEFAULT '0'," .
+            "`admin_password` varchar(20) CHARACTER SET utf8 NULL," .
+            "`start_date` int(11) unsigned NOT NULL DEFAULT '0'," .
+            "`max_listeners` int(11) unsigned NOT NULL DEFAULT '0'," .
+            "`peak_listeners` int(11) unsigned NOT NULL DEFAULT '0'," .
+            "`listeners` int(11) unsigned NOT NULL DEFAULT '0'," .
+            "`connections` int(11) unsigned NOT NULL DEFAULT '0'," .
+            "`stream_type` varchar(8) CHARACTER SET utf8 NOT NULL DEFAULT 'mp3'," .
+            "`bitrate` int(11) unsigned NOT NULL DEFAULT '128'," .
+            "`pid` int(11) unsigned NOT NULL DEFAULT '0'," .
+            "PRIMARY KEY (`id`)) ENGINE = MYISAM";
+
+        return Dba::write($sql);
+    }
+
+    /**
      * update_360042
      *
      * Add broadcasts and player control
@@ -2938,6 +2978,13 @@ class Update
             "PRIMARY KEY (`id`)) ENGINE = MYISAM";
         $retval &= Dba::write($sql);
 
+        $sql = "INSERT INTO `preference` (`name`,`value`,`description`,`level`,`type`,`catagory`) " .
+            "VALUES ('allow_video','1','Allow video features',75,'integer','options')";
+        $retval &= Dba::write($sql);
+        $id     = Dba::insert_id();
+        $sql    = "INSERT INTO `user_preference` VALUES (-1,?,'1')";
+        $retval &= Dba::write($sql, array($id));
+
         $sql    = "ALTER TABLE `image` ADD `kind` VARCHAR( 32 ) NULL DEFAULT 'default' AFTER `object_id`";
         $retval &= Dba::write($sql);
 
@@ -2987,6 +3034,9 @@ class Update
         $retval &= Dba::write($sql);
 
         $sql    = "ALTER TABLE `song` ADD `composer` varchar(256) CHARACTER SET utf8 NULL, ADD `channels` MEDIUMINT NULL";
+        $retval &= Dba::write($sql);
+
+        $sql    = "ALTER TABLE `video` ADD `channels` MEDIUMINT NULL, ADD `bitrate` MEDIUMINT(8) NULL, ADD `video_bitrate` MEDIUMINT(8) NULL, ADD `display_x` MEDIUMINT(8) NULL, ADD `display_y` MEDIUMINT(8) NULL, ADD `frame_rate` FLOAT NULL, ADD `mode` ENUM( 'abr', 'vbr', 'cbr' ) NULL DEFAULT 'cbr'";
         $retval &= Dba::write($sql);
 
         $sql = "INSERT INTO `preference` (`name`,`value`,`description`,`level`,`type`,`catagory`) " .
@@ -3950,41 +4000,53 @@ class Update
     }
 
     /**
-     * update_380013
+     * update_400000
      *
+     * Disable allow_video
      * Drop channel
      * Drop clip
      * Drop movie
      * Drop personal_video
      * Drop tvshow*
      * Drop video
-     *
      */
     public static function update_400000()
     {
         $retval = true;
 
+        // disable video
+        $sql = "UPDATE `preference` SET `value`=0 WHERE `preference`.`name`='allow_video'";
+        $retval &= Dba::write($sql);
+
+        // drop channel table
         $sql    = "DROP TABLE IF EXISTS `channel`";
         $retval &= Dba::write($sql);
 
+        // drop clip table
         $sql    = "DROP TABLE IF EXISTS `clip`";
         $retval &= Dba::write($sql);
 
+        // drop movie table
         $sql    = "DROP TABLE IF EXISTS `movie`";
         $retval &= Dba::write($sql);
 
+        // drop personal_video table
         $sql    = "DROP TABLE IF EXISTS `personal_video`";
         $retval &= Dba::write($sql);
 
+        // drop tvshow table
         $sql    = "DROP TABLE IF EXISTS `tvshow`";
         $retval &= Dba::write($sql);
 
+        // drop tvshow_episode table
         $sql    = "DROP TABLE IF EXISTS `tvshow_episode`";
         $retval &= Dba::write($sql);
 
+        // drop tvshow_season table
         $sql    = "DROP TABLE IF EXISTS `tvshow_season`";
         $retval &= Dba::write($sql);
 
+        // drop video table
         $sql    = "DROP TABLE IF EXISTS `video`";
         $retval &= Dba::write($sql);
 
