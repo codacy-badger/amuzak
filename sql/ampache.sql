@@ -1293,28 +1293,6 @@ INSERT INTO `user_preference` (`user`, `preference`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_shout`
---
-
-DROP TABLE IF EXISTS `user_shout`;
-CREATE TABLE IF NOT EXISTS `user_shout` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `user` int(11) NOT NULL,
-  `text` text COLLATE utf8_unicode_ci NOT NULL,
-  `date` int(11) unsigned NOT NULL,
-  `sticky` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `object_id` int(11) unsigned NOT NULL,
-  `object_type` varchar(32) CHARACTER SET utf8 DEFAULT NULL,
-  `data` varchar(256) CHARACTER SET utf8 DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `sticky` (`sticky`),
-  KEY `date` (`date`),
-  KEY `user` (`user`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user_vote`
 --
 

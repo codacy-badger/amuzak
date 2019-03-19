@@ -71,18 +71,6 @@
         <?php echo Ajax::button('?action=basket&type=podcast_episode&id=' . $episode->id, 'add', T_('Add to temporary playlist'), 'add_podcast_episode_' . $episode->id); ?>
         <?php
     } ?>
-        <?php if (!AmpConfig::get('use_auth') || Access::check('interface', '25')) {
-        ?>
-            <?php if (AmpConfig::get('sociable')) {
-            ?>
-                <a href="<?php echo AmpConfig::get('web_path'); ?>/shout.php?action=show_add_shout&type=podcast_episode&id=<?php echo $episode->id; ?>">
-                <?php echo UI::get_icon('comment', T_('Post Shout')); ?>
-                </a>
-            <?php
-        } ?>
-        <?php
-    }
-    ?>
         <?php if (Access::check('interface', '25')) {
         ?>
             <?php if (AmpConfig::get('share')) {

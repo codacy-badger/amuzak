@@ -2098,7 +2098,6 @@ class Song extends database_object implements media, library_item
                 Art::gc('song', $this->id);
                 Userflag::gc('song', $this->id);
                 Rating::gc('song', $this->id);
-                Shoutbox::gc('song', $this->id);
                 Useractivity::gc('song', $this->id);
             }
         } else {

@@ -93,13 +93,6 @@ if ($libitem->enabled || Access::check('interface', '50')) {
     } ?>
 <td class="cel_action">
     <a href="<?php echo $libitem->link ?>"><?php echo UI::get_icon('preferences', T_('Song Information')) ?></a>
-    <?php if (!AmpConfig::get('use_auth') || Access::check('interface', '25')) {
-        if (AmpConfig::get('sociable')) {
-            ?>
-            <a href="<?php echo AmpConfig::get('web_path') ?>/shout.php?action=show_add_shout&type=song&id=<?php echo $libitem->id ?>"><?php echo UI::get_icon('comment', T_('Post Shout')) ?></a>
-        <?php
-        }
-    }
     if (Access::check('interface', '25')) {
         if (AmpConfig::get('share')) {
             Share::display_ui('song', $libitem->id, false);
@@ -140,6 +133,4 @@ if ($libitem->enabled || Access::check('interface', '50')) {
     <?php echo UI::get_icon('drag', T_('Reorder')); ?>
 </td>
 <?php
-    }
-}
-?>
+    } ?>

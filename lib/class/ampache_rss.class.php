@@ -92,8 +92,7 @@ class Ampache_RSS
         $titles = array('now_playing' => T_('Now Playing'),
             'recently_played' => T_('Recently Played'),
             'latest_album' => T_('Newest Albums'),
-            'latest_artist' => T_('Newest Artists'),
-            'latest_shout' => T_('Newest Shouts')
+            'latest_artist' => T_('Newest Artists')
         );
 
         return scrub_out(AmpConfig::get('site_title')) . ' - ' . $titles[$this->type];
@@ -118,7 +117,7 @@ class Ampache_RSS
      */
     public static function validate_type($type)
     {
-        $valid_types = array('now_playing','recently_played','latest_album','latest_artist','latest_shout','podcast');
+        $valid_types = array('now_playing','recently_played','latest_album','latest_artist','podcast');
 
         if (!in_array($type, $valid_types)) {
             return 'now_playing';
@@ -330,40 +329,6 @@ class Ampache_RSS
 
         return $results;
     } // load_latest_artist
-
-    /**
-     * load_latest_shout
-     * This loads in the latest added shouts
-     * @return array
-     */
-    public static function load_latest_shout()
-    {
-        $ids = Shoutbox::get_top(10);
-
-        $results = array();
-
-        foreach ($ids as $id) {
-            $shout = new Shoutbox($id);
-            $shout->format();
-            $object = Shoutbox::get_object($shout->object_type, $shout->object_id);
-            if ($object !== null) {
-                $object->format();
-                $user = new User($shout->user);
-                $user->format();
-
-                $xml_array = array('title' => $user->username . ' ' . T_('on') . ' ' . $object->get_fullname(),
-                        'link' => $object->link,
-                        'description' => $shout->text,
-                        'image' => Art::url($shout->object_id, $shout->object_type, null, 2),
-                        'comments' => '',
-                        'pubDate' => date("c", $shout->date)
-                );
-                $results[] = $xml_array;
-            }
-        } // end foreach
-
-        return $results;
-    } // load_latest_shout
 
     /**
      * pubdate_recently_played

@@ -206,9 +206,6 @@ class Useractivity extends database_object
                       
         $descr = $user->f_link . ' ';
         switch ($this->action) {
-            case 'shout':
-                $descr .= T_('commented on');
-                break;
             case 'upload':
                 $descr .= T_('uploaded');
                 break;

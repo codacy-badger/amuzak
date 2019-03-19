@@ -24,7 +24,7 @@ use Seafile\Client\Http\Client;
 use Seafile\Client\Resource\Library;
 use Seafile\Client\Resource\Directory;
 use Seafile\Client\Resource\File;
-use GuzzleHttp\Exception\ClientException;
+use Guzzle\Exception\ClientException;
 
 class SeafileAdapter
 {

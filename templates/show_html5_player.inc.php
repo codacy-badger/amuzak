@@ -145,23 +145,14 @@ if ($isVideo) {
 <?php
 if (!$isVideo && !$isRadio && !$is_share) {
         if ($iframed) {
-            if (AmpConfig::get('sociable')) {
-                echo "ajaxPut(jsAjaxUrl + '?page=song&action=shouts&object_type=song&object_id=' + currenti.attr('data-media_id'),'shouts_data');";
-            }
             echo "ajaxPut(jsAjaxUrl + '?action=action_buttons&object_type=song&object_id=' + currenti.attr('data-media_id'));";
             echo "var titleobj = (currenti.attr('data-album_id') !== 'undefined') ? '<a href=\"javascript:NavigateTo(\'" . AmpConfig::get('web_path') . "/albums.php?action=show&album=' + currenti.attr('data-album_id') + '\');\" title=\"' + obj.title + '\">' + obj.title + '</a>' : obj.title;";
             echo "var artistobj = (currenti.attr('data-artist_id') !== 'undefined') ?'<a href=\"javascript:NavigateTo(\'" . AmpConfig::get('web_path') . "/artists.php?action=show&artist=' + currenti.attr('data-artist_id') + '\');\" title=\"' + obj.artist + '\">' + obj.artist + '</a>' : obj.artist;";
             echo "var lyricsobj = '<a href=\"javascript:NavigateTo(\'" . AmpConfig::get('web_path') . "/song.php?action=show_lyrics&song_id=' + currenti.attr('data-media_id') + '\');\">" . T_('Show Lyrics') . "</a>';";
             echo "var actionsobj = '|';";
-            if (AmpConfig::get('sociable') && (!AmpConfig::get('use_auth') || Access::check('interface', '25'))) {
-                echo "actionsobj += ' <a href=\"javascript:NavigateTo(\'" . AmpConfig::get('web_path') . "/shout.php?action=show_add_shout&type=song&id=' + currenti.attr('data-media_id') + '\');\">" . UI::get_icon('comment', T_('Post Shout')) . "</a> |';";
-            }
             echo "actionsobj += '<div id=\'action_buttons\'></div>';";
             if (AmpConfig::get('waveform') && !$is_share) {
                 echo "var waveformobj = '';";
-                if (AmpConfig::get('sociable') && Access::check('interface', '25')) {
-                    echo "waveformobj += '<a href=\"#\" title=\"" . T_('Double click to post a new shout') . "\" onClick=\"javascript:WaveformClick(' + currenti.attr('data-media_id') + ', ClickTimeOffset(event));\">';";
-                }
                 echo "waveformobj += '<div class=\"waveform-shouts\"></div>';";
                 echo "waveformobj += '<div class=\"waveform-time\"></div><img src=\"" . AmpConfig::get('web_path') . "/waveform.php?song_id=' + currenti.attr('data-media_id') + '\" onLoad=\"ShowWaveform();\">';";
                 if (AmpConfig::get('waveform')) {
@@ -221,15 +212,6 @@ if (AmpConfig::get('song_page_title') && !$is_share) {
         var int_position = Math.floor(event.jPlayer.status.currentTime);
         if (int_position != last_int_position && event.jPlayer.status.currentTime > 0) {
             last_int_position = int_position;
-            if (shouts[int_position] != undefined) {
-                shouts[int_position].forEach(function(e) {
-                    noty({text: e,
-                            type: 'alert', layout: 'topRight',
-                            template: '<div class="noty_message noty_ampache"><span class="noty_text noty_ampache"></span><div class="noty_close noty_ampache"></div></div>',
-                            timeout: 2500,
-                        });
-                });
-            }
         }
         if (event.jPlayer.status.duration > 0) {
             var leftpos = 400 * (event.jPlayer.status.currentTime / event.jPlayer.status.duration);

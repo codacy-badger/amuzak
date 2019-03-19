@@ -995,7 +995,6 @@ class Album extends database_object implements library_item
                 Art::gc('album', $this->id);
                 Userflag::gc('album', $this->id);
                 Rating::gc('album', $this->id);
-                Shoutbox::gc('album', $this->id);
                 Useractivity::gc('album', $this->id);
             }
         }

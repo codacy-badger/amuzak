@@ -34,13 +34,6 @@ if (Art::is_enabled()) {
 <td class="cel_artists"><?php echo $libitem->artists; ?></td>
 <td class="cel_action">
 <?php if (!AmpConfig::get('use_auth') || Access::check('interface', '25')) {
-    if (AmpConfig::get('sociable')) {
-        ?>
-    <a href="<?php echo AmpConfig::get('web_path') ?>/shout.php?action=show_add_shout&type=label&amp;id=<?php echo $libitem->id ?>">
-        <?php echo UI::get_icon('comment', T_('Post Shout')) ?>
-    </a>
-    <?php
-    }
     if (Catalog::can_remove($libitem)) {
         ?>
         <a id="<?php echo 'delete_label_' . $libitem->id ?>" href="<?php echo AmpConfig::get('web_path') ?>/labels.php?action=delete&label_id=<?php echo $libitem->id ?>">

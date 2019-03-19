@@ -1036,32 +1036,6 @@ class Api
     } // toggle_follow
 
     /**
-     * last_shouts
-     * This get the latest posted shouts
-     * @param array $input
-     */
-    public static function last_shouts($input)
-    {
-        $limit = intval($input['limit']);
-        if ($limit < 1) {
-            $limit = AmpConfig::get('popular_threshold');
-        }
-        if (AmpConfig::get('sociable')) {
-            $username = $input['username'];
-            if (!empty($username)) {
-                $shouts = Shoutbox::get_top($limit, $username);
-            } else {
-                $shouts = Shoutbox::get_top($limit);
-            }
-
-            ob_end_clean();
-            echo XML_Data::shouts($shouts);
-        } else {
-            debug_event('api', 'Sociable feature is not enabled.', 3);
-        }
-    } // last_shouts
-
-    /**
      * rate
      * This rate a library item
      * @param array $input

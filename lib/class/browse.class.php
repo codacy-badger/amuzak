@@ -253,10 +253,6 @@ class Browse extends Query
                 $box_title = T_('Catalogs');
                 $box_req   = AmpConfig::get('prefix') . UI::find_template('show_catalogs.inc.php');
             break;
-            case 'shoutbox':
-                $box_title = T_('Shoutbox Records');
-                $box_req   = AmpConfig::get('prefix') . UI::find_template('show_manage_shoutbox.inc.php');
-            break;
             case 'tag':
                 Tag::build_cache($object_ids);
                 $box_title = T_('Tag Cloud');

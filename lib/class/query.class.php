@@ -287,11 +287,6 @@ class Query
                 'name',
                 'user'
             ),
-            'shoutbox' => array(
-                'date',
-                'user',
-                'sticky'
-            ),
             'live_stream' => array(
                 'name',
                 'call_sign',
@@ -708,7 +703,6 @@ class Query
             case 'artist':
             case 'tag':
             case 'playlist_localplay':
-            case 'shoutbox':
             case 'live_stream':
             case 'democratic':
             case 'wanted':
@@ -1004,10 +998,6 @@ class Query
                 case 'smartplaylist':
                     self::set_select('`search`.`id`');
                     $sql = "SELECT %%SELECT%% FROM `search` ";
-                break;
-                case 'shoutbox':
-                    $this->set_select("`user_shout`.`id`");
-                    $sql = "SELECT %%SELECT%% FROM `user_shout` ";
                 break;
                 case 'video':
                     $this->set_select("`video`.`id`");

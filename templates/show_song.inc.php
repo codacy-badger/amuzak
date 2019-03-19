@@ -84,13 +84,6 @@ $button_flip_state_id = 'button_flip_state_' . $song->id;
         <?php echo Ajax::button('?action=basket&type=song&id=' . $song->id, 'add', T_('Add to temporary playlist'), 'add_song_' . $song->id); ?>
         <?php if (!AmpConfig::get('use_auth') || Access::check('interface', '25')) {
         ?>
-            <?php if (AmpConfig::get('sociable')) {
-            ?>
-                <a href="<?php echo AmpConfig::get('web_path'); ?>/shout.php?action=show_add_shout&type=song&id=<?php echo $song->id; ?>">
-                <?php echo UI::get_icon('comment', T_('Post Shout')); ?>
-                </a>
-            <?php
-        } ?>
         <?php
     }
     ?>

@@ -1894,7 +1894,6 @@ abstract class Catalog extends database_object
         Useractivity::gc();
         Playlist::gc();
         Tmp_Playlist::gc();
-        Shoutbox::gc();
         Tag::gc();
 
         // TODO: use InnoDB with foreign keys and on delete cascade to get rid of garbage collection

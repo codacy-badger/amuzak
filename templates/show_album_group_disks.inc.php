@@ -130,11 +130,6 @@ if ($directplay_limit > 0) {
         } ?>
         <?php if (Access::check('interface', '25')) {
             ?>
-            <?php if (AmpConfig::get('sociable')) {
-                ?>
-                <a href="<?php echo AmpConfig::get('web_path') ?>/shout.php?action=show_add_shout&type=album&id=<?php echo $c_album->id ?>"><?php echo UI::get_icon('comment', T_('Post Shout')) ?></a>
-            <?php
-            } ?>
             <?php if (AmpConfig::get('share')) {
                 ?>
                 <?php Share::display_ui('album', $c_album->id, false); ?>

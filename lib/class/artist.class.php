@@ -914,7 +914,6 @@ class Artist extends database_object implements library_item
                 Art::gc('artist', $this->id);
                 Userflag::gc('artist', $this->id);
                 Rating::gc('artist', $this->id);
-                Shoutbox::gc('artist', $this->id);
                 Useractivity::gc('artist', $this->id);
             }
         }

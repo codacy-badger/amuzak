@@ -149,16 +149,6 @@ if (AmpConfig::get('sociable') && $owner_id > 0) {
         </li>
         <?php
     } ?>
-        <?php if (!AmpConfig::get('use_auth') || Access::check('interface', '25')) {
-        ?>
-            <?php if (AmpConfig::get('sociable')) {
-            ?>
-                <a href="<?php echo AmpConfig::get('web_path'); ?>/shout.php?action=show_add_shout&type=artist&id=<?php echo $artist->id; ?>"><?php echo UI::get_icon('comment', T_('Post Shout')); ?></a>
-                <a href="<?php echo AmpConfig::get('web_path'); ?>/shout.php?action=show_add_shout&type=artist&id=<?php echo $artist->id; ?>"><?php echo T_('Post Shout'); ?></a>
-            <?php
-        } ?>
-        <?php
-    } ?>
         <?php if (Access::check_function('batch_download') && check_can_zip('artist')) {
         ?>
         <li>
