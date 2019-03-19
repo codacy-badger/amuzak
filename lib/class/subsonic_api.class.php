@@ -169,20 +169,21 @@ class Subsonic_Api
         header("Access-Control-Allow-Origin: *");
     }
 
-    public static function apiOutput($input, $xml)
+    public static function apiOutput($input, $xml, $alwaysArray=array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'))
     {
         $f        = $input['f'];
         $callback = $input['callback'];
-        self::apiOutput2(strtolower($f), $xml, $callback);
+        self::apiOutput2(strtolower($f), $xml, $callback, $alwaysArray);
     }
 
-    public static function apiOutput2($f, $xml, $callback='')
+    public static function apiOutput2($f, $xml, $callback='', $alwaysArray=array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'))
     {
+        $conf = array('alwaysArray' => $alwaysArray);
         if ($f == "json") {
-            $output = json_encode(self::xml2json($xml), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
+            $output = json_encode(self::xml2json($xml, $conf), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
         } else {
             if ($f == "jsonp") {
-                $output = $callback . '(' . json_encode(self::xml2json($xml), JSON_PRETTY_PRINT) . ')';
+                $output = $callback . '(' . json_encode(self::xml2json($xml, $conf), JSON_PRETTY_PRINT) . ')';
             } else {
                 $xmlstr = $xml->asXml();
                 //clean illegal XML characters.
@@ -484,7 +485,7 @@ class Subsonic_Api
             $r = Subsonic_XML_Data::createSuccessResponse();
             Subsonic_XML_Data::addArtist($r, $artist, true, true);
         }
-        self::apiOutput($input, $r);
+        self::apiOutput($input, $r, array('musicFolder', 'child', 'playlist', 'song', 'album'));
     }
 
     /**
@@ -508,24 +509,8 @@ class Subsonic_Api
             Subsonic_XML_Data::addAlbum($r, $album, true, $addAmpacheInfo);
         }
 
-        self::apiOutput($input, $r);
+        self::apiOutput($input, $r, array('musicFolder', 'artist', 'child', 'playlist', 'song'));
     }
-
-    /**
-     * getVideos
-     * Get all videos.
-     * Takes no parameter.
-     */
-    public static function getvideos($input)
-    {
-        self::check_version($input, "1.7.0");
-
-        $r      = Subsonic_XML_Data::createSuccessResponse();
-        $videos = Catalog::get_videos();
-        Subsonic_XML_Data::addVideos($r, $videos);
-        self::apiOutput($input, $r);
-    }
-    
 
     /**
      * getAlbumList
@@ -728,9 +713,9 @@ class Subsonic_Api
 
         $songid = self::check_parameter($input, 'id');
         $r      = Subsonic_XML_Data::createSuccessResponse();
-        $song   = new Song(Subsonic_XML_Data::getAmpacheId($songid));
+        $song   = Subsonic_XML_Data::getAmpacheId($songid);
         Subsonic_XML_Data::addSong($r, $song);
-        self::apiOutput($input, $r);
+        self::apiOutput($input, $r, array('musicFolder', 'artist', 'child', 'playlist', 'album'));
     }
 
     /**
@@ -1047,13 +1032,6 @@ class Subsonic_Api
         }
 
         $url = '';
-        if (Subsonic_XML_Data::isVideo($fileid)) {
-            $url = Video::play_url(Subsonic_XML_Data::getAmpacheId($fileid), $params, 'api', function_exists('curl_version'));
-        } elseif (Subsonic_XML_Data::isSong($fileid)) {
-            $url = Song::play_url(Subsonic_XML_Data::getAmpacheId($fileid), $params, 'api', function_exists('curl_version'));
-        } elseif (Subsonic_XML_Data::isPodcastEp($fileid)) {
-            $url = Podcast_Episode::play_url(Subsonic_XML_Data::getAmpacheId($fileid), $params, 'api', function_exists('curl_version'));
-        }
 
         if (!empty($url)) {
             self::follow_stream($url);
@@ -1701,8 +1679,6 @@ class Subsonic_Api
                             $url = null;
                             if (Subsonic_XML_Data::isSong($i)) {
                                 $url = Song::generic_play_url('song', Subsonic_XML_Data::getAmpacheId($i), '', 'api');
-                            } elseif (Subsonic_XML_Data::isVideo($i)) {
-                                $url = Song::generic_play_url('video', Subsonic_XML_Data::getAmpacheId($i), '', 'api');
                             }
 
                             if ($url) {
@@ -1770,11 +1746,7 @@ class Subsonic_Api
 
             foreach ($id as $i) {
                 $aid = Subsonic_XML_Data::getAmpacheId($i);
-                if (Subsonic_XML_Data::isVideo($i)) {
-                    $type = 'video';
-                } else {
-                    $type = 'song';
-                }
+                $type = 'song';
 
                 $media = new $type($aid);
                 $media->format();
@@ -1925,6 +1897,186 @@ class Subsonic_Api
         self::getsimilarsongs($input);
     }
 
+    /**
+     * getPodcasts
+     * Get all podcast channels.
+     * Takes the optional includeEpisodes and channel id in parameters
+     */
+    public static function getpodcasts($input)
+    {
+        self::check_version($input, "1.6.0");
+        $id              = $input['id'];
+        $includeEpisodes = isset($input['includeEpisodes']) ? $input['includeEpisodes'] : true;
+
+        if (AmpConfig::get('podcast')) {
+            if ($id) {
+                $podcast = new Podcast(Subsonic_XML_Data::getAmpacheId($id));
+                if ($podcast->id) {
+                    $r = Subsonic_XML_Data::createSuccessResponse();
+                    Subsonic_XML_Data::addPodcasts($r, array($podcast), $includeEpisodes);
+                } else {
+                    $r = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_DATA_NOTFOUND);
+                }
+            } else {
+                $podcasts = Catalog::get_podcasts();
+                $r        = Subsonic_XML_Data::createSuccessResponse();
+                Subsonic_XML_Data::addPodcasts($r, $podcasts, $includeEpisodes);
+            }
+        } else {
+            $r = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_UNAUTHORIZED);
+        }
+        self::apiOutput($input, $r);
+    }
+    
+    /**
+     * getNewestPodcasts
+     * Get the most recently published podcast episodes.
+     * Takes the optional count in parameters
+     */
+    public static function getnewestpodcasts($input)
+    {
+        self::check_version($input, "1.13.0");
+        $count = $input['count'] ?: 20;
+
+        if (AmpConfig::get('podcast')) {
+            $r        = Subsonic_XML_Data::createSuccessResponse();
+            $episodes = Catalog::get_newest_podcasts($count);
+            Subsonic_XML_Data::addNewestPodcastEpisodes($r, $episodes);
+        } else {
+            $r = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_UNAUTHORIZED);
+        }
+        self::apiOutput($input, $r);
+    }
+
+    /**
+     * refreshPodcasts
+     * Request the server to check for new podcast episodes.
+     * Takes no parameters.
+     */
+    public static function refreshpodcasts($input)
+    {
+        self::check_version($input, "1.9.0");
+
+        if (AmpConfig::get('podcast') && Access::check('interface', 75)) {
+            $podcasts = Catalog::get_podcasts();
+            foreach ($podcasts as $podcast) {
+                $podcast->sync_episodes(true);
+            }
+            $r = Subsonic_XML_Data::createSuccessResponse();
+        } else {
+            $r = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_UNAUTHORIZED);
+        }
+        self::apiOutput($input, $r);
+    }
+
+    /**
+     * createPodcastChannel
+     * Add a new podcast channel.
+     * Takes the podcast url in parameter.
+     */
+    public static function createpodcastchannel($input)
+    {
+        self::check_version($input, "1.9.0");
+        $url = self::check_parameter($input, 'url');
+        
+        if (AmpConfig::get('podcast') && Access::check('interface', 75)) {
+            $catalogs = Catalog::get_catalogs('podcast');
+            if (count($catalogs) > 0) {
+                $data            = array();
+                $data['feed']    = $url;
+                $data['catalog'] = $catalogs[0];
+                if (Podcast::create($data)) {
+                    $r = Subsonic_XML_Data::createSuccessResponse();
+                } else {
+                    $r = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_GENERIC);
+                }
+            } else {
+                $r = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_UNAUTHORIZED);
+            }
+        } else {
+            $r = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_UNAUTHORIZED);
+        }
+        self::apiOutput($input, $r);
+    }
+
+    /**
+     * deletePodcastChannel
+     * Delete an existing podcast channel
+     * Takes the podcast id in parameter.
+     */
+    public static function deletepodcastchannel($input)
+    {
+        self::check_version($input, "1.9.0");
+        $id = self::check_parameter($input, 'id');
+        
+        if (AmpConfig::get('podcast') && Access::check('interface', 75)) {
+            $podcast = new Podcast(Subsonic_XML_Data::getAmpacheId($id));
+            if ($podcast->id) {
+                if ($podcast->remove()) {
+                    $r = Subsonic_XML_Data::createSuccessResponse();
+                } else {
+                    $r = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_GENERIC);
+                }
+            } else {
+                $r = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_DATA_NOTFOUND);
+            }
+        } else {
+            $r = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_UNAUTHORIZED);
+        }
+        self::apiOutput($input, $r);
+    }
+
+    /**
+     * deletePodcastEpisode
+     * Delete a podcast episode
+     * Takes the podcast episode id in parameter.
+     */
+    public static function deletepodcastepisode($input)
+    {
+        self::check_version($input, "1.9.0");
+        $id = self::check_parameter($input, 'id');
+        
+        if (AmpConfig::get('podcast') && Access::check('interface', 75)) {
+            $episode = new Podcast_Episode(Subsonic_XML_Data::getAmpacheId($id));
+            if ($episode->id) {
+                if ($episode->remove()) {
+                    $r = Subsonic_XML_Data::createSuccessResponse();
+                } else {
+                    $r = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_GENERIC);
+                }
+            } else {
+                $r = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_DATA_NOTFOUND);
+            }
+        } else {
+            $r = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_UNAUTHORIZED);
+        }
+        self::apiOutput($input, $r);
+    }
+
+    /**
+     * downloadPodcastEpisode
+     * Request the server to download a podcast episode
+     * Takes the podcast episode id in parameter.
+     */
+    public static function downloadpodcastepisode($input)
+    {
+        self::check_version($input, "1.9.0");
+        $id = self::check_parameter($input, 'id');
+        
+        if (AmpConfig::get('podcast') && Access::check('interface', 75)) {
+            $episode = new Podcast_Episode(Subsonic_XML_Data::getAmpacheId($id));
+            if ($episode->id) {
+                $episode->gather();
+                $r = Subsonic_XML_Data::createSuccessResponse();
+            } else {
+                $r = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_DATA_NOTFOUND);
+            }
+        } else {
+            $r = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_UNAUTHORIZED);
+        }
+        self::apiOutput($input, $r);
+    }
+    
     /**
      * getBookmarks
      * Get all user bookmarks.
