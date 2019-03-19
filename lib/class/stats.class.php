@@ -398,11 +398,6 @@ class Stats
             case 'album':
             case 'genre':
             case 'song':
-            case 'video':
-            case 'tvshow':
-            case 'tvshow_season':
-            case 'tvshow_episode':
-            case 'movie':
             case 'playlist':
                 return $type;
             default:

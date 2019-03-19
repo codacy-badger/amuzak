@@ -23,7 +23,7 @@
 /**
  * Userflag class
  *
- * This user flag/unflag songs, albums, artists, videos, tvshows, movies ... as favorite.
+ * This user flag/unflag songs, albums, artists ... as favorite.
  *
  */
 class Useractivity extends database_object
@@ -84,7 +84,7 @@ class Useractivity extends database_object
      */
     public static function gc($object_type = null, $object_id = null)
     {
-        $types = array('song', 'album', 'artist', 'video', 'tvshow', 'tvshow_season');
+        $types = array('song', 'album', 'artist');
 
         if ($object_type != null) {
             if (in_array($object_type, $types)) {

@@ -45,15 +45,8 @@ switch ($_REQUEST['action']) {
     case 'playlist':
     case 'smartplaylist':
     case 'live_stream':
-    case 'video':
     case 'song':
     case 'broadcast':
-    case 'tvshow':
-    case 'tvshow_season':
-    case 'tvshow_episode':
-    case 'movie':
-    case 'clip':
-    case 'personal_video':
     case 'label':
     case 'pvmsg':
     case 'podcast':
@@ -146,34 +139,6 @@ switch ($_REQUEST['action']) {
         $browse->update_browse_from_session();
         $browse->show_objects();
     break;
-    case 'video':
-        if (AmpConfig::get('catalog_disable')) {
-            $browse->set_filter('catalog_enabled', '1');
-        }
-        $browse->set_sort('title', 'ASC');
-        $browse->update_browse_from_session();
-        $browse->show_objects();
-    break;
-    case 'tvshow':
-        if (AmpConfig::get('catalog_disable')) {
-            $browse->set_filter('catalog_enabled', '1');
-        }
-        $browse->set_sort('name', 'ASC');
-        $browse->update_browse_from_session();
-        $browse->show_objects();
-    break;
-    case 'tvshow_season':
-        if (AmpConfig::get('catalog_disable')) {
-            $browse->set_filter('catalog_enabled', '1');
-        }
-        $browse->set_sort('season_number', 'ASC');
-        $browse->update_browse_from_session();
-        $browse->show_objects();
-    break;
-    case 'tvshow_episode':
-    case 'movie':
-    case 'clip':
-    case 'personal_video':
         if (AmpConfig::get('catalog_disable')) {
             $browse->set_filter('catalog_enabled', '1');
         }

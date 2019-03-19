@@ -91,9 +91,6 @@ if (Core::is_playable_item($_REQUEST['action'])) {
                     case 'song':
                         $media_ids[] = $media_id;
                     break;
-                    case 'video':
-                        $media_ids[] = array('object_type' => 'Video', 'object_id' => $media_id);
-                    break;
                 } // switch on type
             } // foreach media_id
             $name = 'Batch-' . date("dmY", time());

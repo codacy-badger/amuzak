@@ -407,16 +407,9 @@ class vainfo
             $info['video_codec']   = $info['video_codec'] ?: trim($tags['video_codec']);
             $info['description']   = $info['description'] ?: trim($tags['description']);
 
-            $info['tvshow']         = $info['tvshow'] ?: trim($tags['tvshow']);
-            $info['tvshow_year']    = $info['tvshow_year'] ?: trim($tags['tvshow_year']);
-            $info['tvshow_season']  = $info['tvshow_season'] ?: trim($tags['tvshow_season']);
-            $info['tvshow_episode'] = $info['tvshow_episode'] ?: trim($tags['tvshow_episode']);
             $info['release_date']   = $info['release_date'] ?: trim($tags['release_date']);
             $info['summary']        = $info['summary'] ?: trim($tags['summary']);
-            $info['tvshow_summary'] = $info['tvshow_summary'] ?: trim($tags['tvshow_summary']);
-            
-            $info['tvshow_art']        = $info['tvshow_art'] ?: trim($tags['tvshow_art']);
-            $info['tvshow_season_art'] = $info['tvshow_season_art'] ?: trim($tags['tvshow_season_art']);
+
             $info['art']               = $info['art'] ?: trim($tags['art']);
             
             if (AmpConfig::get('enable_custom_metadata') && is_array($tags)) {
@@ -617,13 +610,8 @@ class vainfo
     private function _parse_general($tags)
     {
         $parsed = array();
-        
-        if ((in_array('movie', $this->gather_types)) || (in_array('tvshow', $this->gather_types))) {
-            $parsed['title'] = $this->formatVideoName(urldecode($this->_pathinfo['filename']));
-        } else {
-            $parsed['title'] = urldecode($this->_pathinfo['filename']);
-        }
 
+        $parsed['title'] = urldecode($this->_pathinfo['filename']);
         $parsed['mode']  = $tags['audio']['bitrate_mode'];
         if ($parsed['mode'] == 'con') {
             $parsed['mode'] = 'cbr';
@@ -1017,15 +1005,6 @@ class vainfo
                 case 'album_artist':
                     $parsed['albumartist'] = $data[0];
                 break;
-                case 'tv_episode':
-                    $parsed['tvshow_episode'] = $data[0];
-                    break;
-                case 'tv_season':
-                    $parsed['tvshow_season'] = $data[0];
-                    break;
-                case 'tv_show_name':
-                    $parsed['tvshow'] = $data[0];
-                    break;
                 default:
                     $parsed[$tag] = $data[0];
                 break;
@@ -1053,86 +1032,7 @@ class vainfo
         $origin  = $filepath;
         $results = array();
         $file    = pathinfo($filepath, PATHINFO_FILENAME);
-        
-        if (in_array('tvshow', $this->gather_types)) {
-            $season  = array();
-            $episode = array();
-            $tvyear  = array();
-            $temp    = array();
-            preg_match("~(?<=\(\[\<\{)[1|2][0-9]{3}|[1|2][0-9]{3}~", $filepath, $tvyear);
-            $results['year'] = !empty($tvyear) ? intval($tvyear[0]) : null;
-        
-            if (preg_match("~[Ss](\d+)[Ee](\d+)~", $file, $seasonEpisode)) {
-                $temp = preg_split("~(((\.|_|\s)[Ss]\d+(\.|_)*[Ee]\d+))~", $file, 2);
-                preg_match("~(?<=[Ss])\d+~", $file, $season);
-                preg_match("~(?<=[Ee])\d+~", $file, $episode);
-            } else {
-                if (preg_match("~[\_\-\.\s](\d{1,2})[xX](\d{1,2})~", $file, $seasonEpisode)) {
-                    $temp = preg_split("~[\.\_\s\-\_]\d+[xX]\d{2}[\.\s\-\_]*|$~", $file);
-                    preg_match("~\d+(?=[Xx])~", $file, $season);
-                    preg_match("~(?<=[Xx])\d+~", $file, $episode);
-                } else {
-                    if (preg_match("~[S|s]eason[\_\-\.\s](\d+)[\.\-\s\_]?\s?[e|E]pisode[\s\-\.\_]?(\d+)[\.\s\-\_]?~", $file, $seasonEpisode)) {
-                        $temp = preg_split("~[\.\s\-\_][S|s]eason[\s\-\.\_](\d+)[\.\s\-\_]?\s?[e|E]pisode[\s\-\.\_](\d+)([\s\-\.\_])*~", $file, 3);
-                        preg_match("~(?<=[Ss]eason[\.\s\-\_])\d+~", $file, $season);
-                        preg_match("~(?<=[Ee]pisode[\.\s\-\_])\d+~", $file, $episode);
-                    } else {
-                        if (preg_match("~[\_\-\.\s](\d)(\d\d)[\_\-\.\s]*~", $file, $seasonEpisode)) {
-                            $temp       = preg_split("~[\.\s\-\_](\d)(\d\d)[\.\s\-\_]~", $file);
-                            $season[0]  = $seasonEpisode[1];
-                            if (preg_match("~[\_\-\.\s](\d)(\d\d)[\_\-\.\s]~", $file, $seasonEpisode)) {
-                                $temp       = preg_split("~[\.\s\-\_](\d)(\d\d)[\.\s\-\_]~", $file);
-                                $season[0]  = $seasonEpisode[1];
-                                $episode[0] = $seasonEpisode[2];
-                            }
-                        }
-                    }
-                }
-            }
-    
-            $results['tvshow_season']  = $season[0];
-            $results['tvshow_episode'] = $episode[0];
-            $results['tvshow']         = $this->formatVideoName($temp[0]);
-            $results['original_name']  = $this->formatVideoName($temp[1]);
-
-            // Try to identify the show information from parent folder
-            if (!$results['tvshow']) {
-                $folders = preg_split("~" . DIRECTORY_SEPARATOR . "~", $filepath, -1, PREG_SPLIT_NO_EMPTY);
-                if ($results['tvshow_season'] && $results['tvshow_episode']) {
-                    // We have season and episode, we assume parent folder is the tvshow name
-                    $filetitle         = end($folders);
-                    $results['tvshow'] = $this->formatVideoName($filetitle);
-                } else {
-                    // Or we assume each parent folder contains one missing information
-                    if (preg_match('/[\/\\\\]([^\/\\\\]*)[\/\\\\]Season (\d{1,2})[\/\\\\]((E|Ep|Episode)\s?(\d{1,2})[\/\\\\])?/i', $filepath, $matches)) {
-                        if ($matches != null) {
-                            $results['tvshow']        = $this->formatVideoName($matches[1]);
-                            $results['tvshow_season'] = $matches[2];
-                            if (isset($matches[5])) {
-                                $results['tvshow_episode'] = $matches[5];
-                            } else {
-                                //match pattern like 10.episode name.mp4
-                                if (preg_match("~^(\d\d)[\_\-\.\s]?(.*)~", $file, $matches)) {
-                                    $results['tvshow_episode'] = $matches[1];
-                                    $results['original_name']  = $this->formatVideoName($matches[2]);
-                                } else {
-                                    //Fallback to match any 3-digit Season/Episode that fails the standard pattern above.
-                                    preg_match("~(\d)(\d\d)[\_\-\.\s]?~", $file, $matches);
-                                    $results['tvshow_episode'] = $matches[2];
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            $results['title'] = $results['tvshow'];
-        }
-    
-        if (in_array('movie', $this->gather_types)) {
-            $results['original_name'] = $results['title'] = $this->formatVideoName($file);
-        }
-        
+   
         if (in_array('music', $this->gather_types) || in_array('clip', $this->gather_types)) {
             $patres  = vainfo::parse_pattern($filepath, $this->_dir_pattern, $this->_file_pattern);
             $results = array_merge($results, $patres);

@@ -347,18 +347,6 @@ class Tag extends database_object implements library_item
             "WHERE `tag_map`.`object_type`='artist' AND `artist`.`id` IS NULL";
         Dba::write($sql);
 
-        $sql = "DELETE FROM `tag_map` USING `tag_map` LEFT JOIN `video` ON `video`.`id`=`tag_map`.`object_id` " .
-            "WHERE `tag_map`.`object_type`='video' AND `video`.`id` IS NULL";
-        Dba::write($sql);
-
-        $sql = "DELETE FROM `tag_map` USING `tag_map` LEFT JOIN `tvshow` ON `tvshow`.`id`=`tag_map`.`object_id` " .
-            "WHERE `tag_map`.`object_type`='tvshow' AND `tvshow`.`id` IS NULL";
-        Dba::write($sql);
-
-        $sql = "DELETE FROM `tag_map` USING `tag_map` LEFT JOIN `tvshow_season` ON `tvshow_season`.`id`=`tag_map`.`object_id` " .
-            "WHERE `tag_map`.`object_type`='tvshow_season' AND `tvshow_season`.`id` IS NULL";
-        Dba::write($sql);
-
         // Now nuke the tags themselves
         $sql = "DELETE FROM `tag` USING `tag` LEFT JOIN `tag_map` ON `tag`.`id`=`tag_map`.`tag_id` " .
             "WHERE `tag_map`.`id` IS NULL " .

@@ -626,7 +626,7 @@ abstract class Catalog extends database_object
         $gather_types   = $data['gather_media'];
 
         // Should it be an array? Not now.
-        if (!in_array($gather_types, array('music', 'clip', 'tvshow', 'movie', 'personal_video', 'podcast'))) {
+        if (!in_array($gather_types, array('music', 'podcast'))) {
             return 0;
         }
 
@@ -850,77 +850,6 @@ abstract class Catalog extends database_object
             $video_ids = $catalog->get_video_ids($type);
             foreach ($video_ids as $video_id) {
                 $results[] = Video::create_from_id($video_id);
-            }
-        }
-
-        return $results;
-    }
-
-    /**
-     *
-     * @param int|null $catalog_id
-     * @param string $type
-     * @return int
-     */
-    public static function get_videos_count($catalog_id = null, $type = '')
-    {
-        $sql = "SELECT COUNT(`video`.`id`) AS `video_cnt` FROM `video` ";
-        if (!empty($type)) {
-            $sql .= "JOIN `" . $type . "` ON `" . $type . "`.`id` = `video`.`id` ";
-        }
-        if ($catalog_id) {
-            $sql .= "WHERE `video`.`catalog` = `" . intval($catalog_id) . "`";
-        }
-        $db_results = Dba::read($sql);
-        $video_cnt  = 0;
-        if ($row = Dba::fetch_row($db_results)) {
-            $video_cnt = $row[0];
-        }
-
-        return $video_cnt;
-    }
-
-    /**
-     * get_tvshow_ids
-     *
-     * This returns an array of ids of tvshows in this catalog
-     * @return int[]
-     */
-    public function get_tvshow_ids()
-    {
-        $results = array();
-
-        $sql = 'SELECT DISTINCT(`tvshow`.`id`) FROM `tvshow` ';
-        $sql .= 'JOIN `tvshow_season` ON `tvshow_season`.`tvshow` = `tvshow`.`id` ';
-        $sql .= 'JOIN `tvshow_episode` ON `tvshow_episode`.`season` = `tvshow_season`.`id` ';
-        $sql .= 'JOIN `video` ON `video`.`id` = `tvshow_episode`.`id` ';
-        $sql .= 'WHERE `video`.`catalog` = ?';
-
-        $db_results = Dba::read($sql, array($this->id));
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = $r['id'];
-        }
-
-        return $results;
-    }
-
-    /**
-     *
-     * @param int[]|null $catalogs
-     * @return \TVShow[]
-     */
-    public static function get_tvshows($catalogs = null)
-    {
-        if (!$catalogs) {
-            $catalogs = self::get_catalogs();
-        }
-
-        $results = array();
-        foreach ($catalogs as $catalog_id) {
-            $catalog    = Catalog::create_from_id($catalog_id);
-            $tvshow_ids = $catalog->get_tvshow_ids();
-            foreach ($tvshow_ids as $tvshow_id) {
-                $results[] = new TVShow($tvshow_id);
             }
         }
 
