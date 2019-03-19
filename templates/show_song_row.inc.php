@@ -93,7 +93,7 @@ if ($libitem->enabled || Access::check('interface', '50')) {
     } ?>
 <td class="cel_action">
     <a href="<?php echo $libitem->link ?>"><?php echo UI::get_icon('preferences', T_('Song Information')) ?></a>
-    if (Access::check('interface', '25')) {
+    <?php if (Access::check('interface', '25')) {
         if (AmpConfig::get('share')) {
             Share::display_ui('song', $libitem->id, false);
         }
@@ -133,4 +133,6 @@ if ($libitem->enabled || Access::check('interface', '50')) {
     <?php echo UI::get_icon('drag', T_('Reorder')); ?>
 </td>
 <?php
-    } ?>
+    }
+}
+?>
