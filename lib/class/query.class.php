@@ -283,13 +283,6 @@ class Query
                 'last_seen',
                 'create_date'
             ),
-            'wanted' => array(
-                'user',
-                'accepted',
-                'artist',
-                'name',
-                'year'
-            ),
             'share' => array(
                 'object',
                 'object_type',
@@ -644,7 +637,6 @@ class Query
             case 'playlist_localplay':
             case 'live_stream':
             case 'democratic':
-            case 'wanted':
             case 'share':
             case 'song_preview':
             case 'broadcast':
@@ -940,10 +932,6 @@ class Query
                     $this->set_select("`tag`.`id`");
                     $this->set_join('left', 'tag_map', '`tag_map`.`tag_id`', '`tag`.`id`', 1);
                     $sql = "SELECT %%SELECT%% FROM `tag` ";
-                break;
-                case 'wanted':
-                    $this->set_select("`wanted`.`id`");
-                    $sql = "SELECT %%SELECT%% FROM `wanted` ";
                 break;
                 case 'share':
                     $this->set_select("`share`.`id`");
@@ -1869,25 +1857,6 @@ class Query
             break;
             case 'video':
                 $sql = $this->sql_sort_video($field, 'video');
-            break;
-            case 'wanted':
-                switch ($field) {
-                    case 'name':
-                        $sql = "`wanted`.`name`";
-                    break;
-                    case 'artist':
-                        $sql = "`wanted`.`artist`";
-                    break;
-                    case 'year':
-                        $sql = "`wanted`.`year`";
-                    break;
-                    case 'user':
-                        $sql = "`wanted`.`user`";
-                    break;
-                    case 'accepted':
-                        $sql = "`wanted`.`accepted`";
-                    break;
-                } // end switch on field
             break;
             case 'share':
                 switch ($field) {

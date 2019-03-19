@@ -521,7 +521,7 @@ lastfm_api_secret = ""
 ; Set this to true to enable display missing albums and the
 ; possibility for users to mark it as wanted.
 ; DEFAULT: false
-wanted = "true"
+wanted = "false"
 
 ; Wanted types
 ; Set the allowed types of wanted releases (album,compilation,single,ep,live,remix,promotion,official)
@@ -558,7 +558,7 @@ live_stream = "true"
 ; Set this to true to enable podcasts and the
 ; possibility for admins to subscribe to new podcasts.
 ; DEFAULT: false
-;podcast = "false"
+podcast = "true"
 
 ; Web Socket address
 ; Declare the web socket server address

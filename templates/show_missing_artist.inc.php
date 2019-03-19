@@ -34,10 +34,3 @@ if (AmpConfig::get('lastfm_api_key')) {
 <?php
 } ?>
 <?php UI::show_box_bottom(); ?>
-
-<?php
-if (AmpConfig::get('wanted')) {
-        echo Ajax::observe('window', 'load', Ajax::action('?page=index&action=wanted_missing_albums&artist_mbid=' . $wartist['mbid'], 'missing_albums')); ?>
-    <div id="missing_albums"></div>
-<?php
-    } ?>

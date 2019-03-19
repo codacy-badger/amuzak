@@ -196,11 +196,6 @@ if (AmpConfig::get('show_played_times')) {
     <div id="tabs_container">
         <ul id="tabs">
             <li class="tab_active"><a href="#albums"><?php echo T_('Albums'); ?></a></li>
-<?php if (AmpConfig::get('wanted')) {
-        ?>
-            <li><a id="missing_albums_link" href="#missing_albums"><?php echo T_('Missing Albums'); ?></a></li>
-<?php
-    } ?>
 <?php if (AmpConfig::get('show_similar')) {
         ?>
             <li><a id="similar_artist_link" href="#similar_artist"><?php echo T_('Similar Artists'); ?></a></li>
@@ -240,16 +235,6 @@ if (AmpConfig::get('show_played_times')) {
     }
 ?>
         </div>
-<?php
-if (AmpConfig::get('wanted')) {
-    echo Ajax::observe('missing_albums_link', 'click', Ajax::action('?page=index&action=wanted_missing_albums&artist=' . $artist->id, 'missing_albums')); ?>
-        <div id="missing_albums" class="tab_content">
-        <?php UI::show_box_top(T_('Missing Albums'), 'info-box');
-    echo T_('Loading...');
-    UI::show_box_bottom(); ?>
-        </div>
-<?php
-} ?>
 <?php
 if (AmpConfig::get('show_similar')) {
         echo Ajax::observe('similar_artist_link', 'click', Ajax::action('?page=index&action=similar_artist&artist=' . $artist->id, 'similar_artist')); ?>

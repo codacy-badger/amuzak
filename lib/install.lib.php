@@ -438,18 +438,16 @@ function install_config_use_case($case)
         'use_auth' => 'true',
         'ratings' => 'true',
         'userflags' => 'true',
-        'sociable' => 'false',
         'licensing' => 'false',
-        'wanted' => 'true',
         'live_stream' => 'true',
         'allow_public_registration' => 'false',
         'cookie_disclaimer' => 'false',
-        'share' => 'false'
+        'share' => 'true'
     );
 
     $dbconfig = array(
         'download' => '1',
-        'share' => '0',
+        'share' => '1',
         'home_now_playing' => '1',
         'home_recently_played' => '1'
     );
@@ -458,8 +456,6 @@ function install_config_use_case($case)
         case 'minimalist':
             $trconfig['ratings']     = 'false';
             $trconfig['userflags']   = 'false';
-            $trconfig['sociable']    = 'false';
-            $trconfig['wanted']      = 'false';
             $trconfig['live_stream'] = 'false';
 
             $dbconfig['download']    = '0';
@@ -472,7 +468,6 @@ function install_config_use_case($case)
         case 'community':
             $trconfig['use_auth']                  = 'false';
             $trconfig['licensing']                 = 'true';
-            $trconfig['wanted']                    = 'false';
             $trconfig['live_stream']               = 'false';
             $trconfig['allow_public_registration'] = 'true';
             $trconfig['cookie_disclaimer']         = 'true';

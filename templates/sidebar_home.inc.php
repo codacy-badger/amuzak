@@ -124,11 +124,6 @@
                 <li id="sb_home_info_userFlag"><a href="<?php echo $web_path?>/stats.php?action=userflag"><?php echo T_('Favorites') ?></a></li>
                 <?php
         } ?>
-                <?php if (AmpConfig::get('wanted')) {
-            ?>
-                <li id="sb_home_info_wanted"><a href="<?php echo $web_path ?>/stats.php?action=wanted"><?php echo T_('Wanted List') ?></a></li>
-                <?php
-        } ?>
                 <?php if (AmpConfig::get('share')) {
             ?>
                 <li id="sb_home_info_share"><a href="<?php echo $web_path ?>/stats.php?action=share"><?php echo T_('Shared Objects') ?></a></li>

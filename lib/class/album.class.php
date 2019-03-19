@@ -451,15 +451,6 @@ class Album extends database_object implements library_item
 
         $id = Dba::insert_id();
 
-        // Remove from wanted album list if any request on it
-        if (!empty($mbid) && AmpConfig::get('wanted')) {
-            try {
-                Wanted::delete_wanted_release($mbid);
-            } catch (Exception $e) {
-                debug_event('wanted', 'Cannot process wanted releases auto-removal check: ' . $e->getMessage(), '1');
-            }
-        }
-
         self::$_mapcache[$name][$disk][$mbid][$album_artist] = $id;
 
         return $id;

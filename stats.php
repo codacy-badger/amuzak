@@ -52,9 +52,6 @@ switch ($_REQUEST['action']) {
         $user_id = $_REQUEST['user_id'];
         require_once AmpConfig::get('prefix') . UI::find_template('show_recent.inc.php');
     break;
-    case 'wanted':
-        require_once AmpConfig::get('prefix') . UI::find_template('show_wanted.inc.php');
-    break;
     case 'share':
         require_once AmpConfig::get('prefix') . UI::find_template('show_shares.inc.php');
     break;

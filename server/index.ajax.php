@@ -76,7 +76,7 @@ switch ($_REQUEST['action']) {
             $artist->format();
             $object_ids      = array();
             $missing_objects = array();
-            if ($similars = Recommendation::get_artists_like($artist->id, 10, !AmpConfig::get('wanted'))) {
+            if ($similars = Recommendation::get_artists_like($artist->id, 10, true)) {
                 foreach ($similars as $similar) {
                     if ($similar['id']) {
                         $object_ids[] = $similar['id'];
@@ -146,74 +146,6 @@ switch ($_REQUEST['action']) {
             ob_start();
             require_once AmpConfig::get('prefix') . UI::find_template('show_labels.inc.php');
             $results['labels'] = ob_get_clean();
-        }
-    break;
-    case 'wanted_missing_albums':
-        if (AmpConfig::get('wanted') && (isset($_REQUEST['artist']) || isset($_REQUEST['artist_mbid']))) {
-            if (isset($_REQUEST['artist'])) {
-                $artist = new Artist($_REQUEST['artist']);
-                $artist->format();
-                if ($artist->mbid) {
-                    $walbums = Wanted::get_missing_albums($artist);
-                } else {
-                    debug_event('wanted', 'Cannot get missing albums: MusicBrainz ID required.', '5');
-                }
-            } else {
-                $walbums = Wanted::get_missing_albums(null, $_REQUEST['artist_mbid']);
-            }
-
-            ob_start();
-            require_once AmpConfig::get('prefix') . UI::find_template('show_missing_albums.inc.php');
-            $results['missing_albums'] = ob_get_clean();
-        }
-    break;
-    case 'add_wanted':
-        if (AmpConfig::get('wanted') && isset($_REQUEST['mbid'])) {
-            $mbid = $_REQUEST['mbid'];
-            if (empty($_REQUEST['artist'])) {
-                $artist_mbid = $_REQUEST['artist_mbid'];
-                $artist      = null;
-            } else {
-                $artist      = $_REQUEST['artist'];
-                $aobj        = new Artist($artist);
-                $artist_mbid = $aobj->mbid;
-            }
-            $name = $_REQUEST['name'];
-            $year = $_REQUEST['year'];
-
-            if (!Wanted::has_wanted($mbid)) {
-                Wanted::add_wanted($mbid, $artist, $artist_mbid, $name, $year);
-                ob_start();
-                $walbum = new Wanted(Wanted::get_wanted($mbid));
-                $walbum->show_action_buttons();
-                $results['wanted_action_' . $mbid] = ob_get_clean();
-            } else {
-                debug_event('wanted', 'Already wanted, skipped.', '5');
-            }
-        }
-    break;
-    case 'remove_wanted':
-        if (AmpConfig::get('wanted') && isset($_REQUEST['mbid'])) {
-            $mbid = $_REQUEST['mbid'];
-
-            $walbum = new Wanted(Wanted::get_wanted($mbid));
-            Wanted::delete_wanted($mbid);
-            ob_start();
-            $walbum->accepted = false;
-            $walbum->id       = 0;
-            $walbum->show_action_buttons();
-            $results['wanted_action_' . $mbid] = ob_get_clean();
-        }
-    break;
-    case 'accept_wanted':
-        if (AmpConfig::get('wanted') && isset($_REQUEST['mbid'])) {
-            $mbid = $_REQUEST['mbid'];
-
-            $walbum = new Wanted(Wanted::get_wanted($mbid));
-            $walbum->accept();
-            ob_start();
-            $walbum->show_action_buttons();
-            $results['wanted_action_' . $mbid] = ob_get_clean();
         }
     break;
     case 'reloadnp':

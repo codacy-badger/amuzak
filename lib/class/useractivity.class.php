@@ -110,10 +110,6 @@ class Useractivity extends database_object
     public static function post_activity($user_id, $action, $object_type, $object_id)
     {
         // This is probably a good feature to keep by default
-        //if (!AmpConfig::get('sociable')) {
-        //    return false;
-        //}
-        
         $sql = "INSERT INTO `user_activity` (`user`, `action`, `object_type`, `object_id`, `activity_date`) VALUES (?, ?, ?, ?, ?)";
 
         return Dba::write($sql, array($user_id, $action, $object_type, $object_id, time()));
