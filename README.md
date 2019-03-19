@@ -5,6 +5,9 @@
 
 **Notice:**  THIS IS A FORK OF AMPACHE THAT WILL FOCUS ON THE MUSIC
 
+- I have installed from scratch as well as updated a copy of my existing database.
+- Video features will not be used in amuzak
+
 Basics
 ------
 
