@@ -357,6 +357,7 @@ class Label extends database_object implements library_item
             Art::gc('label', $this->id);
             Userflag::gc('label', $this->id);
             Rating::gc('label', $this->id);
+            Shoutbox::gc('label', $this->id);
             Useractivity::gc('label', $this->id);
         }
 

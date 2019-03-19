@@ -61,7 +61,7 @@ if(isset($dir_pattern) || isset($file_pattern)) {
 $info->get_info();
 $results = $info->tags;
 $keys = vainfo::get_tag_type($results);
-$tag_results = vainfo::clean_tag_info($results, $keys, $filename);
+$ampache_results = vainfo::clean_tag_info($results, $keys, $filename);
 
 echo "\n";
 echo T_('Raw results:');
@@ -70,7 +70,7 @@ print_r($info);
 echo "\n------------------------------------------------------------------\n";
 printf(T_('Final results seen by Ampache using %s:'), implode(' + ', $keys));
 echo "\n\n";
-print_r($tag_results);
+print_r($ampache_results);
 
 function usage() {
     global $version;

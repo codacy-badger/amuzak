@@ -207,6 +207,38 @@ CREATE TABLE IF NOT EXISTS `catalog_remote` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `channel`
+--
+
+DROP TABLE IF EXISTS `channel`;
+CREATE TABLE IF NOT EXISTS `channel` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) CHARACTER SET utf8 DEFAULT NULL,
+  `description` varchar(256) CHARACTER SET utf8 DEFAULT NULL,
+  `url` varchar(256) CHARACTER SET utf8 DEFAULT NULL,
+  `interface` varchar(64) CHARACTER SET utf8 DEFAULT NULL,
+  `port` int(11) unsigned NOT NULL DEFAULT '0',
+  `fixed_endpoint` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `object_type` varchar(32) CHARACTER SET utf8 DEFAULT NULL,
+  `object_id` int(11) unsigned NOT NULL,
+  `is_private` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `random` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `loop` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `admin_password` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `start_date` int(11) unsigned NOT NULL DEFAULT '0',
+  `max_listeners` int(11) unsigned NOT NULL DEFAULT '0',
+  `peak_listeners` int(11) unsigned NOT NULL DEFAULT '0',
+  `listeners` int(11) unsigned NOT NULL DEFAULT '0',
+  `connections` int(11) unsigned NOT NULL DEFAULT '0',
+  `stream_type` varchar(8) CHARACTER SET utf8 DEFAULT NULL,
+  `bitrate` int(11) unsigned NOT NULL DEFAULT '128',
+  `pid` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `clip`
 --
 
@@ -1289,6 +1321,28 @@ INSERT INTO `user_preference` (`user`, `preference`, `value`) VALUES
 (-1, 98, ''),
 (-1, 144, '10'),
 (-1, 145, '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_shout`
+--
+
+DROP TABLE IF EXISTS `user_shout`;
+CREATE TABLE IF NOT EXISTS `user_shout` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user` int(11) NOT NULL,
+  `text` text COLLATE utf8_unicode_ci NOT NULL,
+  `date` int(11) unsigned NOT NULL,
+  `sticky` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `object_id` int(11) unsigned NOT NULL,
+  `object_type` varchar(32) CHARACTER SET utf8 DEFAULT NULL,
+  `data` varchar(256) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `sticky` (`sticky`),
+  KEY `date` (`date`),
+  KEY `user` (`user`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 

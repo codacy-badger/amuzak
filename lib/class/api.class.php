@@ -256,6 +256,11 @@ class Api
                 $db_results = Dba::read($sql);
                 $artist     = Dba::fetch_assoc($db_results);
 
+                // Next the video counts
+                $sql        = "SELECT COUNT(`id`) AS `video` FROM `video`";
+                $db_results = Dba::read($sql);
+                $vcounts    = Dba::fetch_assoc($db_results);
+
                 $sql        = "SELECT COUNT(`id`) AS `playlist` FROM `playlist`";
                 $db_results = Dba::read($sql);
                 $playlist   = Dba::fetch_assoc($db_results);
@@ -274,6 +279,7 @@ class Api
                     'albums' => $album['album'],
                     'artists' => $artist['artist'],
                     'playlists' => $playlist['playlist'],
+                    'videos' => $vcounts['video'],
                     'catalogs' => $catalog['catalog']));
 
                 return true;
@@ -759,6 +765,40 @@ class Api
     } // advanced_search
 
     /**
+     * videos
+     * This returns video objects!
+     * @param array $input
+     */
+    public static function videos($input)
+    {
+        self::$browse->reset_filters();
+        self::$browse->set_type('video');
+        self::$browse->set_sort('title', 'ASC');
+
+        $method = $input['exact'] ? 'exact_match' : 'alpha_match';
+        Api::set_filter($method, $input['filter']);
+
+        $video_ids = self::$browse->get_objects();
+
+        XML_Data::set_offset($input['offset']);
+        XML_Data::set_limit($input['limit']);
+
+        echo XML_Data::videos($video_ids);
+    } // videos
+
+    /**
+     * video
+     * This returns a single video
+     * @param array $input
+     */
+    public static function video($input)
+    {
+        $video_id = scrub_in($input['filter']);
+
+        echo XML_Data::videos(array($video_id));
+    } // video
+
+    /**
      * localplay
      * This is for controling localplay
      * @param array $input
@@ -994,6 +1034,32 @@ class Api
             debug_event('api', 'Sociable feature is not enabled.', 3);
         }
     } // toggle_follow
+
+    /**
+     * last_shouts
+     * This get the latest posted shouts
+     * @param array $input
+     */
+    public static function last_shouts($input)
+    {
+        $limit = intval($input['limit']);
+        if ($limit < 1) {
+            $limit = AmpConfig::get('popular_threshold');
+        }
+        if (AmpConfig::get('sociable')) {
+            $username = $input['username'];
+            if (!empty($username)) {
+                $shouts = Shoutbox::get_top($limit, $username);
+            } else {
+                $shouts = Shoutbox::get_top($limit);
+            }
+
+            ob_end_clean();
+            echo XML_Data::shouts($shouts);
+        } else {
+            debug_event('api', 'Sociable feature is not enabled.', 3);
+        }
+    } // last_shouts
 
     /**
      * rate
