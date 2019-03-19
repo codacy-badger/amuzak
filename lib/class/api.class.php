@@ -966,23 +966,7 @@ class Api
      */
     public static function followers($input)
     {
-        if (AmpConfig::get('sociable')) {
-            $username = $input['username'];
-            if (!empty($username)) {
-                $user = User::get_from_username($username);
-                if ($user !== null) {
-                    $users = $user->get_followers();
-                    ob_end_clean();
-                    echo XML_Data::users($user);
-                } else {
-                    debug_event('api', 'User `' . $username . '` cannot be found.', 1);
-                }
-            } else {
-                debug_event('api', 'Username required on followers function call.', 1);
-            }
-        } else {
-            debug_event('api', 'Sociable feature is not enabled.', 3);
-        }
+        debug_event('api', 'Sociable feature is not enabled.', 3);
     } // followers
 
     /**
@@ -992,23 +976,7 @@ class Api
      */
     public static function following($input)
     {
-        if (AmpConfig::get('sociable')) {
-            $username = $input['username'];
-            if (!empty($username)) {
-                $user = User::get_from_username($username);
-                if ($user !== null) {
-                    $users = $user->get_following();
-                    ob_end_clean();
-                    echo XML_Data::users($user);
-                } else {
-                    debug_event('api', 'User `' . $username . '` cannot be found.', 1);
-                }
-            } else {
-                debug_event('api', 'Username required on following function call.', 1);
-            }
-        } else {
-            debug_event('api', 'Sociable feature is not enabled.', 3);
-        }
+        debug_event('api', 'Sociable feature is not enabled.', 3);
     } // following
 
     /**
@@ -1018,21 +986,7 @@ class Api
      */
     public static function toggle_follow($input)
     {
-        if (AmpConfig::get('sociable')) {
-            $username = $input['username'];
-            if (!empty($username)) {
-                $user = User::get_from_username($username);
-                if ($user !== null) {
-                    $GLOBALS['user']->toggle_follow($user->id);
-                    ob_end_clean();
-                    echo XML_Data::single_string('success');
-                }
-            } else {
-                debug_event('api', 'Username to toggle required on follow function call.', 1);
-            }
-        } else {
-            debug_event('api', 'Sociable feature is not enabled.', 3);
-        }
+        debug_event('api', 'Sociable feature is not enabled.', 3);
     } // toggle_follow
 
     /**
@@ -1042,23 +996,7 @@ class Api
      */
     public static function last_shouts($input)
     {
-        $limit = intval($input['limit']);
-        if ($limit < 1) {
-            $limit = AmpConfig::get('popular_threshold');
-        }
-        if (AmpConfig::get('sociable')) {
-            $username = $input['username'];
-            if (!empty($username)) {
-                $shouts = Shoutbox::get_top($limit, $username);
-            } else {
-                $shouts = Shoutbox::get_top($limit);
-            }
-
-            ob_end_clean();
-            echo XML_Data::shouts($shouts);
-        } else {
-            debug_event('api', 'Sociable feature is not enabled.', 3);
-        }
+        debug_event('api', 'Sociable feature is not enabled.', 3);
     } // last_shouts
 
     /**
@@ -1094,26 +1032,7 @@ class Api
      */
     public static function timeline($input)
     {
-        if (AmpConfig::get('sociable')) {
-            $username = $input['username'];
-            $limit    = intval($input['limit']);
-            $since    = intval($input['since']);
-
-            if (!empty($username)) {
-                $user = User::get_from_username($username);
-                if ($user !== null) {
-                    if (Preference::get_by_user($user->id, 'allow_personal_info_recent')) {
-                        $activities = Useractivity::get_activities($user->id, $limit, $since);
-                        ob_end_clean();
-                        echo XML_Data::timeline($activities);
-                    }
-                }
-            } else {
-                debug_event('api', 'Username required on timeline function call.', 1);
-            }
-        } else {
-            debug_event('api', 'Sociable feature is not enabled.', 3);
-        }
+        debug_event('api', 'Sociable feature is not enabled.', 3);
     } // timeline
 
     /**
@@ -1123,17 +1042,6 @@ class Api
      */
     public static function friends_timeline($input)
     {
-        if (AmpConfig::get('sociable')) {
-            $limit = intval($input['limit']);
-            $since = intval($input['since']);
-
-            if ($GLOBALS['user']->id > 0) {
-                $activities = Useractivity::get_friends_activities($GLOBALS['user']->id, $limit, $since);
-                ob_end_clean();
-                echo XML_Data::timeline($activities);
-            }
-        } else {
-            debug_event('api', 'Sociable feature is not enabled.', 3);
-        }
+        debug_event('api', 'Sociable feature is not enabled.', 3);
     } // friends_timeline
 } // API class

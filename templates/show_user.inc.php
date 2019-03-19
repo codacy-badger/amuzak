@@ -31,36 +31,12 @@ if ($client->f_avatar) {
     echo $client->f_avatar . "<br /><br />";
 }
 ?>
-<?php if (AmpConfig::get('sociable')) {
-    echo $client->get_display_follow();
-
-    $plugins = Plugin::get_plugins('display_user_field'); ?>
-    <ul id="plugins_user_field">
-<?php
-    foreach ($plugins as $plugin_name) {
-        $plugin = new Plugin($plugin_name);
-        if ($plugin->load($client)) {
-            ?>
-        <li><?php $plugin->_plugin->display_user_field(); ?> </li>
-<?php
-        }
-    } ?>
-    </ul>
-<?php
-} ?>
 </div>
 <dl class="media_details">
     <?php $rowparity = UI::flip_class(); ?>
     <dt class="<?php echo $rowparity; ?>"><?php echo T_('Display Name'); ?></dt>
     <dd class="<?php echo $rowparity; ?>">
         <?php echo $client->f_name; ?>
-        <?php if (Access::check('interface', '25') && AmpConfig::get('sociable')) {
-        ?>
-            <a id="<?php echo 'reply_pvmsg_' . $client->id ?>" href="<?php echo AmpConfig::get('web_path'); ?>/pvmsg.php?action=show_add_message&to_user=<?php echo $client->username; ?>">
-                <?php echo UI::get_icon('mail', T_('Send private message')); ?>
-            </a>
-        <?php
-    } ?>
         <?php if (Access::check('interface', '100')) {
         ?>
             <a href="<?php echo AmpConfig::get('web_path'); ?>/admin/users.php?action=show_edit&user_id=<?php echo $client->id; ?>"><?php echo UI::get_icon('edit', T_('Edit')); ?></a>
@@ -118,13 +94,6 @@ if ($client->f_avatar) {
             <?php
     } ?>
             <li><a href="#playlists"><?php echo T_('Playlists'); ?></a></li>
-            <?php if (AmpConfig::get('sociable')) {
-        ?>
-            <li><a href="#following"><?php echo T_('Following'); ?></a></li>
-            <li><a href="#followers"><?php echo T_('Followers'); ?></a></li>
-            <li><a href="#timeline"><?php echo T_('Timeline'); ?></a></li>
-            <?php
-    } ?>
         </ul>
     </div>
     <div id="tabs_content">
@@ -182,38 +151,5 @@ if ($client->f_avatar) {
             $browse->store();
         ?>
         </div>
-        <?php if (AmpConfig::get('sociable')) {
-            ?>
-        <div id="following" class="tab_content">
-        <?php
-            $following_ids         = $client->get_following();
-            $browse                = new Browse();
-            $browse->set_type('user');
-            $browse->set_simple_browse(false);
-            $browse->show_objects($following_ids);
-            $browse->store(); ?>
-        </div>
-        <div id="followers" class="tab_content">
-        <?php
-            $follower_ids         = $client->get_followers();
-            $browse               = new Browse();
-            $browse->set_type('user');
-            $browse->set_simple_browse(false);
-            $browse->show_objects($follower_ids);
-            $browse->store(); ?>
-        </div>
-            <div id="timeline" class="tab_content">
-                <?php
-                if (Preference::get_by_user($client->id, 'allow_personal_info_recent')) {
-                    $activities = Useractivity::get_activities($client->id);
-                    Useractivity::build_cache($activities);
-                    foreach ($activities as $aid) {
-                        $activity = new Useractivity($aid);
-                        $activity->show();
-                    }
-                } ?>
-            </div>
-        <?php
-        } ?>
     </div>
 </div>

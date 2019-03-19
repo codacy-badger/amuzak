@@ -390,7 +390,7 @@ directplay = "true"
 ; default is on, but if you don't care and just want music
 ; turn this off to disable all social features.
 ; DEFAULT: true
-sociable = "true"
+sociable = "false"
 
 ; License
 ; This turns on / off all licensing features on Ampache

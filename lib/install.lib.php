@@ -438,7 +438,7 @@ function install_config_use_case($case)
         'use_auth' => 'true',
         'ratings' => 'true',
         'userflags' => 'true',
-        'sociable' => 'true',
+        'sociable' => 'false',
         'licensing' => 'false',
         'wanted' => 'true',
         'live_stream' => 'true',

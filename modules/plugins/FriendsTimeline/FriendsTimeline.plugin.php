@@ -87,23 +87,7 @@ class AmpacheFriendsTimeline
      */
     public function display_home()
     {
-        if (AmpConfig::get('sociable')) {
-            $user_id = $GLOBALS['user']->id;
-            if ($user_id) {
-                echo '<div class="home_plugin">';
-                $activities = Useractivity::get_friends_activities($user_id, $this->maxitems);
-                if (count($activities) > 0) {
-                    UI::show_box_top(T_('Friends Timeline'));
-                    Useractivity::build_cache($activities);
-                    foreach ($activities as $aid) {
-                        $activity = new Useractivity($aid);
-                        $activity->show();
-                    }
-                    UI::show_box_bottom();
-                }
-                echo '</div>';
-            }
-        }
+        return;
     }
 
     /**

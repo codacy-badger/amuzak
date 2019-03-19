@@ -87,14 +87,7 @@ class AmpacheShoutHome
      */
     public function display_home()
     {
-        if (AmpConfig::get('sociable')) {
-            echo "<div id='shout_objects'>\n";
-            $shouts = Shoutbox::get_top($this->maxitems);
-            if (count($shouts)) {
-                require_once AmpConfig::get('prefix') . UI::find_template('show_shoutbox.inc.php');
-            }
-            echo "</div>\n";
-        }
+        return;
     }
 
     /**

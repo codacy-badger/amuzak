@@ -178,13 +178,6 @@ $button_flip_state_id = 'button_flip_state_' . $song->id;
       $songprops[gettext_noop('Licensing')] = $song->f_license;
   }
 
-  $owner_id = $song->get_user_owner();
-  if (AmpConfig::get('sociable') && $owner_id > 0) {
-      $owner = new User($owner_id);
-      $owner->format();
-      $songprops[gettext_noop('Uploaded by')]  = $owner->f_link;
-  }
-
 
     foreach ($songprops as $key => $value) {
         if (trim($value)) {

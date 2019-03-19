@@ -109,10 +109,10 @@ class Useractivity extends database_object
      */
     public static function post_activity($user_id, $action, $object_type, $object_id)
     {
-        // Only save the activity if sociable
-        if (!AmpConfig::get('sociable')) {
-            return false;
-        }
+        // This is probably a good feature to keep by default
+        //if (!AmpConfig::get('sociable')) {
+        //    return false;
+        //}
         
         $sql = "INSERT INTO `user_activity` (`user`, `action`, `object_type`, `object_id`, `activity_date`) VALUES (?, ?, ?, ?, ?)";
 

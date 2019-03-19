@@ -59,11 +59,6 @@ $web_path = AmpConfig::get('web_path');
         } ?>
       <?php
     } ?>
-      <?php if (Access::check('interface', 25) && AmpConfig::get('sociable')) {
-        ?>
-      <th class="cel_follow essential"><?php echo T_('Following'); ?></th>
-      <?php
-    } ?>
       <th class="cel_action essential"><?php echo T_('Action'); ?></th>
       <th class="cel_online"><?php echo T_('On-line'); ?></th>
     </tr>
@@ -94,11 +89,6 @@ foreach ($object_ids as $user_id) {
       <th class="cel_lastip"><?php echo T_('Last Ip'); ?></th>
       <?php
         } ?>
-      <?php
-    } ?>
-      <?php if (Access::check('interface', 25) && AmpConfig::get('sociable')) {
-        ?>
-      <th class="cel_follow"><?php echo T_('Following'); ?></th>
       <?php
     } ?>
       <th class="cel_action"><?php echo T_('Action'); ?></th>
