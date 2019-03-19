@@ -169,18 +169,17 @@ class Subsonic_Api
         header("Access-Control-Allow-Origin: *");
     }
 
-    public static function apiOutput($input, $xml, $alwaysArray=array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'))
+    public static function apiOutput($input, $xml)
     {
         $f        = $input['f'];
         $callback = $input['callback'];
-        self::apiOutput2(strtolower($f), $xml, $callback, $alwaysArray);
+        self::apiOutput2(strtolower($f), $xml, $callback);
     }
 
-    public static function apiOutput2($f, $xml, $callback='', $alwaysArray=array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'))
+    public static function apiOutput2($f, $xml, $callback='')
     {
-        $conf = array('alwaysArray' => $alwaysArray);
         if ($f == "json") {
-            $output = json_encode(self::xml2json($xml, $conf), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
+            $output = json_encode(self::xml2json($xml), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
         } else {
             if ($f == "jsonp") {
                 $output = $callback . '(' . json_encode(self::xml2json($xml), JSON_PRETTY_PRINT) . ')';
@@ -485,7 +484,7 @@ class Subsonic_Api
             $r = Subsonic_XML_Data::createSuccessResponse();
             Subsonic_XML_Data::addArtist($r, $artist, true, true);
         }
-        self::apiOutput($input, $r, array('musicFolder', 'child', 'playlist', 'song', 'album'));
+        self::apiOutput($input, $r);
     }
 
     /**
@@ -509,7 +508,7 @@ class Subsonic_Api
             Subsonic_XML_Data::addAlbum($r, $album, true, $addAmpacheInfo);
         }
 
-        self::apiOutput($input, $r, array('musicFolder', 'artist', 'child', 'playlist', 'song'));
+        self::apiOutput($input, $r);
     }
 
     /**
