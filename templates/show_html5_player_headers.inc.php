@@ -41,8 +41,8 @@ function update_action()
 <script src="<?php echo AmpConfig::get('web_path'); ?>/lib/vendor/happyworm/jplayer/dist/jplayer/jquery.jplayer.min.js" language="javascript" type="text/javascript"></script>
 <script src="<?php echo AmpConfig::get('web_path'); ?>/lib/vendor/happyworm/jplayer/dist/add-on/jplayer.playlist.min.js" language="javascript" type="text/javascript"></script>
 <script src="<?php echo AmpConfig::get('web_path'); ?>/lib/javascript/jplayer.playlist.ext.js" language="javascript" type="text/javascript"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/jquery-migrate-1.4.1.js"></script>
+<script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.4.1.js"></script>
 <script language="javascript" type="text/javascript">
 var jplaylist = new Array();
 var jtypes = new Array();

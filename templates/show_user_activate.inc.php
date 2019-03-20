@@ -40,8 +40,8 @@ $web_path = AmpConfig::get('web_path');
             <script src="<?php echo $web_path; ?>/lib/components/jquery/jquery.min.js" language="javascript" type="text/javascript"></script>
             <script src="<?php echo $web_path; ?>/lib/javascript/base.js" language="javascript" type="text/javascript"></script>
             <script src="<?php echo $web_path; ?>/lib/javascript/ajax.js" language="javascript" type="text/javascript"></script>
-            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-            <script src="https://code.jquery.com/jquery-migrate-1.4.1.js"></script>
+            <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="http://code.jquery.com/jquery-migrate-1.4.1.js"></script>
             <div>
 <?php
     if ($validation == User::get_validation($username) and strlen($validation)) {

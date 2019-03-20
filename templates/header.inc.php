@@ -79,8 +79,8 @@ $_SESSION['login'] = false;
         <script src="<?php echo $web_path; ?>/lib/javascript/base.js" language="javascript" type="text/javascript"></script>
         <script src="<?php echo $web_path; ?>/lib/javascript/ajax.js" language="javascript" type="text/javascript"></script>
         <script src="<?php echo $web_path; ?>/lib/javascript/tools.js" language="javascript" type="text/javascript"></script>
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/jquery-migrate-1.4.1.js"></script>
+        <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.4.1.js"></script>
         <script type="text/javascript" charset="utf-8">
             $(document).ready(function(){
                 $("a[rel^='prettyPhoto']").prettyPhoto({social_tools:false});
