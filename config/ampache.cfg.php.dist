@@ -7,17 +7,11 @@
 ; if this config file is up to date
 ; this is compared against a value hard-coded
 ; into the init script
-config_version = 35
+config_version = 40
 
 ;#########################################################
 ; Path Vars                                              #
 ;#########################################################
-
-; The public http host of your server.
-; If not set, retrieved automatically from client request.
-; This setting is required for WebSocket server
-; DEFAULT: ""
-;http_host = "localhost"
 
 ; The public http port of your server.
 ; If not set, retrieved automatically from client request.
@@ -197,13 +191,6 @@ getid3_tag_order = "id3v2,id3v1,vorbiscomment,quicktime,matroska,ape,asf,avi,mpe
 ; DEFAULT: getID3 filename
 metadata_order = "getID3,filename"
 
-; This determines the order in which metadata sources are used (and in the
-; case of plugins, checked) for video files
-; POSSIBLE VALUES (builtins): filename and getID3
-; POSSIBLE VALUES (plugins): Tvdb,Tmdb,Omdb, plus any others you've installed.
-; DEFAULT: filename getID3
-metadata_order_video = "filename,getID3"
-
 ; This determines if extended metadata grabbed from external services should be deferred.
 ; If enabled, extended metadata is retrieved when browsing the library item.
 ; If disabled, extended metadata is retrieved at catalog update.
@@ -234,13 +221,6 @@ additional_genre_delimiters = "[/]{2}|[/|\\\\|\|,|;]"
 ; with a |
 ; DEFAULT: mp3|mpc|m4p|m4a|aac|ogg|oga|wav|aif|aiff|rm|wma|asf|flac|opus|spx|ra|ape|shn|wv
 catalog_file_pattern = "mp3|mpc|m4p|m4a|aac|ogg|oga|wav|aif|aiff|rm|wma|asf|flac|opus|spx|ra|ape|shn|wv"
-
-; Video Pattern
-; This defines which video file types Ampache will attempt to catalog
-; You can specify any file extension you want in here separating them with
-; a | but ampache may not be able to parse them
-; DEAFULT: avi|mpg|mpeg|flv|m4v|mp4|webm|mkv|wmv|ogv|mov|divx|m2ts
-catalog_video_pattern = "avi|mpg|mpeg|flv|m4v|mp4|webm|mkv|wmv|ogv|mov|divx|m2ts"
 
 ; Playlist Pattern
 ; This defines which playlist types Ampache will attempt to catalog
@@ -340,11 +320,6 @@ catalog_prefix_pattern = "The|An|A|Die|Das|Ein|Eine|Les|Le|La"
 ; DEFAULT: off
 ; VALUES: any whole number (in bytes per second)
 ;throttle_download = 10
-
-; This determines if a preview image should be retrieved from video files
-; It requires encode_get_image transcode settings.
-; DEFAULT: false
-;generate_video_preview = "true"
 
 ; Un comment if don't want ampache to follow symlinks
 ; DEFAULT: false
@@ -446,7 +421,7 @@ sociable = "false"
 ; Album Art Minimum Width
 ; Specify the minimum width for arts (in pixel).
 ; DEFAULT: none
-;album_art_min_width = 100
+album_art_min_width = 200
 
 ; Album Art Maximum Width
 ; Specify the maximum width for arts (in pixel).
@@ -456,7 +431,7 @@ sociable = "false"
 ; Album Art Minimum Height
 ; Specify the minimum height for arts (in pixel).
 ; DEFAULT: none
-;album_art_min_height = 100
+album_art_min_height = 200
 
 ; Album Art Maximum Height
 ; Specify the maximum height for arts (in pixel).
@@ -517,22 +492,6 @@ lastfm_api_key = "d5df942424c71b754e54ce1832505ae2"
 ; scrobbling.
 lastfm_api_secret = ""
 
-; Wanted
-; Set this to true to enable display missing albums and the
-; possibility for users to mark it as wanted.
-; DEFAULT: false
-wanted = "false"
-
-; Wanted types
-; Set the allowed types of wanted releases (album,compilation,single,ep,live,remix,promotion,official)
-; DEFAULT: album,official
-wanted_types = "album,official"
-
-; Wanted Auto Accept
-; Mark wanted requests as accepted by default (no content manager agreement required)
-; DEFAULT: false
-wanted_auto_accept = "false"
-
 ; EchoNest API key
 ; EchoNest provides several music services. Currently used for missing song 30 seconds preview.
 ;echonest_api_key = ""
@@ -541,12 +500,6 @@ wanted_auto_accept = "false"
 ; Use labels to browse artists per label membership.
 ; DEFAULT: false
 ;label = "false"
-
-; Broadcasts
-; Allow users to broadcast music.
-; This feature requires advanced server configuration, please take a look on the wiki for more information.
-; DEFAULT: false
-;broadcast = "false"
 
 ; Live Streams
 ; Set this to true to enable live streams (radio) and the
@@ -559,11 +512,6 @@ live_stream = "true"
 ; possibility for admins to subscribe to new podcasts.
 ; DEFAULT: false
 podcast = "true"
-
-; Web Socket address
-; Declare the web socket server address
-; DEFAULT: determined automatically
-;websocket_address = "ws://localhost:8100"
 
 ; Refresh Limit
 ; This defines the default refresh limit in seconds for
@@ -880,27 +828,10 @@ registration_mandatory_fields = "fullname"
 ;transcode_ape     = required
 ;transcode_shn     = required
 ;transcode_mp3      = allowed
-;;; Video
-;transcode_avi      = allowed
-;transcode_mkv      = allowed
-;transcode_mpg      = allowed
-;transcode_mpeg     = allowed
-;transcode_m4v      = allowed
-;transcode_mp4      = allowed
-;transcode_mov      = allowed
-;transcode_wmv      = allowed
-;transcode_ogv      = allowed
-;transcode_divx     = allowed
-;transcode_m2ts     = allowed
-;transcode_webm     = allowed
 
 ; Default audio output format
 ; DEFAULT: none
-;encode_target = mp3
-
-; Default video output format
-; DEFAULT: none
-;encode_video_target = webm
+encode_target = mp3
 
 ; Override the default output format on a per-type basis, for example,
 ; to stream lossless encoded files in lossy formats.

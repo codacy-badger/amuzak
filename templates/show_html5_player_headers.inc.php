@@ -382,51 +382,6 @@ function HideWaveform()
 
 var brkey = '';
 var brconn = null;
-
-function startBroadcast(key)
-{
-    brkey = key;
-
-    listenBroadcast();
-    brconn.onopen = function(e) {
-        sendBroadcastMessage('AUTH_SID', '<?php echo session_id(); ?>');
-        sendBroadcastMessage('REGISTER_BROADCAST', brkey);
-        sendBroadcastMessage('SONG', currentjpitem.attr("data-media_id"));
-    };
-}
-
-function startBroadcastListening(broadcast_id)
-{
-    listenBroadcast();
-
-    // Hide few UI information on listening mode
-    $('.jp-previous').css('visibility', 'hidden');
-    $('.jp-play').css('visibility', 'hidden');
-    $('.jp-pause').css('visibility', 'hidden');
-    $('.jp-next').css('visibility', 'hidden');
-    $('.jp-stop').css('visibility', 'hidden');
-    $('.jp-toggles').css('visibility', 'hidden');
-    $('.jp-playlist').css('visibility', 'hidden');
-    $('#broadcast').css('visibility', 'hidden');
-
-    $('.jp-seek-bar').css('pointer-events', 'none');
-
-    brconn.onopen = function(e) {
-        sendBroadcastMessage('AUTH_SID', '<?php echo Stream::get_session(); ?>');
-        sendBroadcastMessage('REGISTER_LISTENER', broadcast_id);
-    };
-}
-
-function listenBroadcast()
-{
-    if (brconn != null) {
-        stopBroadcast();
-    }
-
-    brconn = new WebSocket('<?php echo Broadcast_Server::get_address(); ?>');
-    brconn.onmessage = receiveBroadcastMessage;
-}
-
 var brLoadingSong = false;
 var brBufferingSongPos = -1;
 

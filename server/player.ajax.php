@@ -30,36 +30,6 @@ if (!defined('AJAX_INCLUDE')) {
 
 $results = array();
 switch ($_REQUEST['action']) {
-    case 'show_broadcasts':
-        ob_start();
-        require AmpConfig::get('prefix') . UI::find_template('show_broadcasts_dialog.inc.php');
-        $results = ob_get_contents();
-        ob_end_clean();
-        echo $results;
-        exit;
-    case 'broadcast':
-        $broadcast_id = $_GET['broadcast_id'];
-        if (empty($broadcast_id)) {
-            $broadcast_id = Broadcast::create(T_('My Broadcast'));
-        }
-
-        $broadcast = new Broadcast($broadcast_id);
-        if ($broadcast->id) {
-            $key  = Broadcast::generate_key();
-            $broadcast->update_state(true, $key);
-            $results['broadcast'] = Broadcast::get_unbroadcast_link($broadcast_id) . '' .
-                '<script type="text/javascript">startBroadcast(\'' . $key . '\');</script>';
-        }
-    break;
-    case 'unbroadcast':
-        $broadcast_id = $_GET['broadcast_id'];
-        $broadcast    = new Broadcast($broadcast_id);
-        if ($broadcast->id) {
-            $broadcast->update_state(false);
-            $results['broadcast'] = Broadcast::get_broadcast_link() . '' .
-                '<script type="text/javascript">stopBroadcast();</script>';
-        }
-    break;
     default:
         $results['rfc3514'] = '0x1';
     break;

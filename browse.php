@@ -46,7 +46,6 @@ switch ($_REQUEST['action']) {
     case 'smartplaylist':
     case 'live_stream':
     case 'song':
-    case 'broadcast':
     case 'label':
     case 'pvmsg':
     case 'podcast':
@@ -131,11 +130,6 @@ switch ($_REQUEST['action']) {
     case 'smartplaylist':
         $browse->set_sort('type', 'ASC');
         $browse->set_filter('playlist_type', '1');
-        $browse->update_browse_from_session();
-        $browse->show_objects();
-    break;
-    case 'broadcast':
-        $browse->set_sort('id', 'ASC');
         $browse->update_browse_from_session();
         $browse->show_objects();
     break;

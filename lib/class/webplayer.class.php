@@ -173,9 +173,6 @@ class WebPlayer
         $jptypes = array();
         foreach ($playlist->urls as $item) {
             $force_type = '';
-            if ($item->type == 'broadcast') {
-                $force_type = 'mp3';
-            }
             $types = self::get_types($item, $force_type);
             if (!in_array($types['player'], $jptypes)) {
                 $jptypes[] = $types['player'];
@@ -195,12 +192,7 @@ class WebPlayer
     {
         $addjs = "";
         foreach ($playlist->urls as $item) {
-            if ($item->type == 'broadcast') {
-                $addjs .= $callback_container . "startBroadcastListening('" . $item->url . "');";
-                break;
-            } else {
-                $addjs .= $callback_container . "addMedia(" . self::get_media_js_param($item) . ");";
-            }
+            $addjs .= $callback_container . "addMedia(" . self::get_media_js_param($item) . ");";
         }
 
         return $addjs;
@@ -216,12 +208,7 @@ class WebPlayer
     {
         $addjs = "";
         foreach ($playlist->urls as $item) {
-            if ($item->type == 'broadcast') {
-                $addjs .= $callback_container . "startBroadcastListening('" . $item->url . "');";
-                break;
-            } else {
-                $addjs .= $callback_container . "playNext(" . self::get_media_js_param($item) . ");";
-            }
+            $addjs .= $callback_container . "playNext(" . self::get_media_js_param($item) . ");";
         }
 
         return $addjs;

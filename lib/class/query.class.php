@@ -295,12 +295,6 @@ class Query
                 'allow_download',
                 'expire'
             ),
-            'broadcast' => array(
-                'name',
-                'user',
-                'started',
-                'listeners'
-            ),
             'license' => array(
                 'name'
             ),
@@ -639,7 +633,6 @@ class Query
             case 'democratic':
             case 'share':
             case 'song_preview':
-            case 'broadcast':
             case 'license':
             case 'label':
             case 'pvmsg':
@@ -936,10 +929,6 @@ class Query
                 case 'share':
                     $this->set_select("`share`.`id`");
                     $sql = "SELECT %%SELECT%% FROM `share` ";
-                break;
-                case 'broadcast':
-                    $this->set_select("`broadcast`.`id`");
-                    $sql = "SELECT %%SELECT%% FROM `broadcast` ";
                 break;
                 case 'license':
                     $this->set_select("`license`.`id`");
@@ -1889,22 +1878,6 @@ class Query
                     break;
                     case 'expire':
                         $sql = "`share`.`expire`";
-                    break;
-                } // end switch on field
-            break;
-            case 'broadcast':
-                switch ($field) {
-                    case 'name':
-                        $sql = "`broadcast`.`name`";
-                    break;
-                    case 'user':
-                        $sql = "`broadcast`.`user`";
-                    break;
-                    case 'started':
-                        $sql = "`broadcast`.`started`";
-                    break;
-                    case 'listeners':
-                        $sql = "`broadcast`.`listeners`";
                     break;
                 } // end switch on field
             break;
