@@ -722,8 +722,8 @@ INSERT INTO `preference` (`id`, `name`, `value`, `description`, `level`, `type`,
 (141, 'theme_color', 'dark', 'Theme color', 0, 'special', 'interface', 'theme'),
 (142, 'disabled_custom_metadata_fields', '', 'Disable custom metadata fields (ctrl / shift click to select multiple)', 100, 'string', 'system', 'metadata'),
 (143, 'disabled_custom_metadata_fields_input', '', 'Disable custom metadata fields. Insert them in a comma separated list. They will add to the fields selected above.', 100, 'string', 'system', 'metadata'),
-(144, 'podcast_keep', '10', 'Podcast: # latest episodes to keep', 100, 'integer', 'system', 'podcast'),
-(145, 'podcast_new_download', '1', 'Podcast: # episodes to download when new episodes are available', 100, 'integer', 'system', 'podcast');
+(144, 'podcast_keep', '0', 'Podcast: # latest episodes to keep', 100, 'integer', 'system', 'podcast'),
+(145, 'podcast_new_download', '0', 'Podcast: # episodes to download when new episodes are available', 100, 'integer', 'system', 'podcast');
 
 -- --------------------------------------------------------
 
