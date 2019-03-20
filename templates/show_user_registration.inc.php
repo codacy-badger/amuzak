@@ -41,7 +41,8 @@ $_SESSION['login'] = true;
         <script src="<?php echo $web_path; ?>/lib/components/jquery/jquery.min.js" language="javascript" type="text/javascript"></script>
         <script src="<?php echo $web_path; ?>/lib/javascript/base.js" language="javascript" type="text/javascript"></script>
         <script src="<?php echo $web_path; ?>/lib/javascript/ajax.js" language="javascript" type="text/javascript"></script>
-
+        <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.4.1.js"></script>
         <div id="maincontainer">
             <div id="header">
                 <a href="<?php echo $web_path ?>"><h1 id="headerlogo"></h1></a>

@@ -43,6 +43,8 @@
     <link rel="stylesheet" href="templates/install-doped.css" type="text/css" media="screen" />
     <script src="lib/components/jquery/jquery.min.js" language="javascript" type="text/javascript"></script>
     <script src="lib/components/bootstrap/js/bootstrap.min.js" language="javascript" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.4.1.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
