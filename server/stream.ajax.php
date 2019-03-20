@@ -41,7 +41,6 @@ switch ($_REQUEST['action']) {
 
         switch ($_POST['type']) {
             case 'stream':
-            case 'localplay':
             case 'democratic':
                 $key = 'allow_' . $_POST['type'] . '_playback';
                 if (!AmpConfig::get($key)) {
@@ -65,10 +64,6 @@ switch ($_REQUEST['action']) {
         // Go ahead and update their preference
         if (Preference::update('play_type', $GLOBALS['user']->id, $new)) {
             AmpConfig::set('play_type', $new, true);
-        }
-
-        if (($new == 'localplay' and $current != 'localplay') or ($current == 'localplay' and $new != 'localplay')) {
-            $results['rightbar'] = UI::ajax_include('rightbar.inc.php');
         }
 
         $results['rfc3514'] = '0x0';

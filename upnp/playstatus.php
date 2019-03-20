@@ -8,8 +8,6 @@ set_time_limit(0);
 $path   = dirname(__FILE__);
 $prefix = realpath($path . '/../');
 require_once $prefix . '/lib/init.php';
-require_once $prefix . '/modules/localplay/upnp/upnp.controller.php';
-require_once $prefix . '/modules/localplay/upnp/upnpplayer.class.php';
 
 if (!AmpConfig::get('upnp_backend')) {
     die("UPnP backend disabled..");

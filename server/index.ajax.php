@@ -162,7 +162,6 @@ switch ($_REQUEST['action']) {
         switch ($_REQUEST['button']) {
             case 'home':
             case 'modules':
-            case 'localplay':
             case 'player':
             case 'preferences':
                 $button = $_REQUEST['button'];

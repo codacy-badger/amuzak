@@ -125,9 +125,6 @@ function get_location()
         case 'upload.php':
             $location['title']     = T_('Upload');
             break;
-        case 'localplay.php':
-            $location['title']     = T_('Local Play');
-            break;
         case 'randomplay.php':
             $location['title']     = T_('Random Play');
             break;

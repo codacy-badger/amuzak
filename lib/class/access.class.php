@@ -402,10 +402,6 @@ class Access
 
         // Switch on the type
         switch ($type) {
-            case 'localplay':
-                // Check their localplay_level
-                return (AmpConfig::get('localplay_level') >= $level
-                    || $user->access >= 100);
             case 'interface':
                 // Check their standard user level
                 return ($user->access >= $level);

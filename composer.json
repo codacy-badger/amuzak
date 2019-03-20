@@ -365,7 +365,6 @@
         "merge-plugin": {
             "include": [
 				"modules/catalog/*/composer.module.json",
-				"modules/localplay/*/composer.module.json",
                 "modules/plugins/*/composer.module.json"
             ],
             "recurse": false,

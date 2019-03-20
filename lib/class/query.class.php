@@ -271,12 +271,6 @@ class Query
                 'call_sign',
                 'frequency'
             ),
-            'video' => array(
-                'title',
-                'resolution',
-                'length',
-                'codec'
-            ),
             'user' => array(
                 'fullname',
                 'username',
@@ -619,7 +613,6 @@ class Query
     {
         switch ($type) {
             case 'user':
-            case 'video':
             case 'playlist':
             case 'playlist_media':
             case 'smartplaylist':
@@ -628,7 +621,6 @@ class Query
             case 'album':
             case 'artist':
             case 'tag':
-            case 'playlist_localplay':
             case 'live_stream':
             case 'democratic':
             case 'share':
@@ -917,10 +909,6 @@ class Query
                     self::set_select('`search`.`id`');
                     $sql = "SELECT %%SELECT%% FROM `search` ";
                 break;
-                case 'video':
-                    $this->set_select("`video`.`id`");
-                    $sql = "SELECT %%SELECT%% FROM `video` ";
-                break;
                 case 'tag':
                     $this->set_select("`tag`.`id`");
                     $this->set_join('left', 'tag_map', '`tag_map`.`tag_id`', '`tag`.`id`', 1);
@@ -1014,7 +1002,6 @@ class Query
         if (AmpConfig::get('catalog_disable')) {
             // Add catalog enabled filter
             switch ($this->get_type()) {
-                case "video":
                 case "song":
                     $dis = Catalog::get_enable_filter($this->get_type(), '`' . $this->get_type() . '`.`id`');
                     break;
@@ -1499,38 +1486,6 @@ class Query
                 break;
             } // end filter
         break;
-        case 'video':
-            switch ($filter) {
-                case 'tag':
-                    $this->set_join('left', '`tag_map`', '`tag_map`.`object_id`', '`video`.`id`', 100);
-                    $filter_sql = " `tag_map`.`object_type`='" . $this->get_type() . "' AND (";
-
-                    foreach ($value as $tag_id) {
-                        $filter_sql .= "  `tag_map`.`tag_id`='" . Dba::escape($tag_id) . "' AND";
-                    }
-                    $filter_sql = rtrim($filter_sql, 'AND') . ') AND ';
-                break;
-                case 'alpha_match':
-                    $filter_sql = " `video`.`title` LIKE '%" . Dba::escape($value) . "%' AND ";
-                break;
-                case 'regex_match':
-                    if (!empty($value)) {
-                        $filter_sql = " `video`.`title` REGEXP '" . Dba::escape($value) . "' AND ";
-                    }
-                break;
-                case 'regex_not_match':
-                    if (!empty($value)) {
-                        $filter_sql = " `video`.`title` NOT REGEXP '" . Dba::escape($value) . "' AND ";
-                    }
-                break;
-                case 'starts_with':
-                    $filter_sql = " `video`.`title` LIKE '" . Dba::escape($value) . "%' AND ";
-                break;
-                default:
-                    // Rien a faire
-                break;
-            } // end filter
-        break;
         case 'license':
             switch ($filter) {
                 case 'alpha_match':
@@ -1844,9 +1799,6 @@ class Query
                     break;
                 } // end switch
             break;
-            case 'video':
-                $sql = $this->sql_sort_video($field, 'video');
-            break;
             case 'share':
                 switch ($field) {
                     case 'object':
@@ -1967,42 +1919,6 @@ class Query
 
         return "";
     } // sql_sort
-
-    /**
-     *
-     * @param string $field
-     * @param string $table
-     * @return string
-     */
-    private function sql_sort_video($field, $table = 'video')
-    {
-        $sql = "";
-        switch ($field) {
-            case 'title':
-                $sql = "`video`.`title`";
-            break;
-            case 'resolution':
-                $sql = "`video`.`resolution_x`";
-            break;
-            case 'length':
-                $sql = "`video`.`time`";
-            break;
-            case 'codec':
-                $sql = "`video`.`video_codec`";
-            break;
-            case 'release_date':
-                $sql = "`video`.`release_date`";
-            break;
-        }
-
-        if (!empty($sql)) {
-            if ($table != 'video') {
-                $this->set_join('left', '`video`', '`' . $table . '`.`id`', '`video`.`id`', 100);
-            }
-        }
-
-        return $sql;
-    }
 
     /**
      * resort_objects

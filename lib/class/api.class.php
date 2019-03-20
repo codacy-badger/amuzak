@@ -799,33 +799,6 @@ class Api
     } // video
 
     /**
-     * localplay
-     * This is for controling localplay
-     * @param array $input
-     */
-    public static function localplay($input)
-    {
-        // Load their localplay instance
-        $localplay = new Localplay(AmpConfig::get('localplay_controller'));
-        $localplay->connect();
-
-        switch ($input['command']) {
-            case 'next':
-            case 'prev':
-            case 'play':
-            case 'stop':
-                $result_status = $localplay->$input['command']();
-                $xml_array     = array('localplay' => array('command' => array($input['command'] => make_bool($result_status))));
-                echo XML_Data::keyed_array($xml_array);
-            break;
-            default:
-                // They are doing it wrong
-                echo XML_Data::error('405', T_('Invalid Request'));
-            break;
-        } // end switch on command
-    } // localplay
-
-    /**
      * democratic
      * This is for controlling democratic play
      * @param array $input

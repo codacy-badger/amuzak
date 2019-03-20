@@ -32,28 +32,6 @@ if (!$GLOBALS['user']->has_access(100)) {
 UI::show_header();
 
 switch ($_REQUEST['action']) {
-    case 'install_localplay':
-        $localplay = new Localplay($_REQUEST['type']);
-        if (!$localplay->player_loaded()) {
-            AmpError::add('general', T_('Failed to enable the module, Controller Error'));
-            AmpError::display('general');
-            break;
-        }
-        // Install it!
-        $localplay->install();
-
-        // Go ahead and enable Localplay (Admin->System) as we assume they want to do that
-        // if they are enabling this
-        Preference::update('allow_localplay_playback', '-1', '1');
-        Preference::update('localplay_level', $GLOBALS['user']->id, '100');
-        Preference::update('localplay_controller', $GLOBALS['user']->id, $localplay->type);
-
-        /* Show Confirmation */
-        $url    = AmpConfig::get('web_path') . '/admin/modules.php?action=show_localplay';
-        $title  = T_('localplay enabled');
-        $body   = '';
-        show_confirmation($title, $body, $url);
-    break;
     case 'install_catalog_type':
         $type    = (string) scrub_in($_REQUEST['type']);
         $catalog = Catalog::create_catalog_type($type);
@@ -71,31 +49,12 @@ switch ($_REQUEST['action']) {
         $body   = '';
         show_confirmation($title, $body, $url);
     break;
-    case 'confirm_uninstall_localplay':
-        $type  = (string) scrub_in($_REQUEST['type']);
-        $url   = AmpConfig::get('web_path') . '/admin/modules.php?action=uninstall_localplay&amp;type=' . $type;
-        $title = T_('Are you sure you want to disable this module?');
-        $body  = '';
-        show_confirmation($title, $body, $url, 1);
-    break;
     case 'confirm_uninstall_catalog_type':
         $type  = (string) scrub_in($_REQUEST['type']);
         $url   = AmpConfig::get('web_path') . '/admin/modules.php?action=uninstall_catalog_type&amp;type=' . $type;
         $title = T_('Are you sure you want to disable this module?');
         $body  = '';
         show_confirmation($title, $body, $url, 1);
-    break;
-    case 'uninstall_localplay':
-        $type = (string) scrub_in($_REQUEST['type']);
-
-        $localplay = new Localplay($type);
-        $localplay->uninstall();
-
-        /* Show Confirmation */
-        $url    = AmpConfig::get('web_path') . '/admin/modules.php?action=show_localplay';
-        $title  = T_('Module disabled');
-        $body   = '';
-        show_confirmation($title, $body, $url);
     break;
     case 'uninstall_catalog_type':
         $type = (string) scrub_in($_REQUEST['type']);
@@ -180,18 +139,6 @@ switch ($_REQUEST['action']) {
         $title  = T_('Plugin Upgraded');
         $body   = '';
         show_confirmation($title, $body, $url);
-    break;
-    case 'show_plugins':
-        $plugins = Plugin::get_plugins();
-        UI::show_box_top(T_('Plugins'), 'box box_localplay_plugins');
-        require_once AmpConfig::get('prefix') . UI::find_template('show_plugins.inc.php');
-        UI::show_box_bottom();
-    break;
-    case 'show_localplay':
-        $controllers = Localplay::get_controllers();
-        UI::show_box_top(T_('Localplay Controllers'), 'box box_localplay_controllers');
-        require_once AmpConfig::get('prefix') . UI::find_template('show_localplay_controllers.inc.php');
-        UI::show_box_bottom();
     break;
     case 'show_catalog_types':
         $catalogs = Catalog::get_catalog_types();
