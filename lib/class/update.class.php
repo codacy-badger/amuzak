@@ -4008,7 +4008,7 @@ class Update
      * Drop movie
      * Drop personal_video
      * Drop tvshow*
-     * Drop video
+     * Drop video (video needed by api)
      */
     public static function update_400000()
     {
@@ -4047,8 +4047,8 @@ class Update
         $retval &= Dba::write($sql);
 
         // drop video table
-        $sql    = "DROP TABLE IF EXISTS `video`";
-        $retval &= Dba::write($sql);
+        //$sql    = "DROP TABLE IF EXISTS `video`";
+        //$retval &= Dba::write($sql);
 
         return $retval;
     }
