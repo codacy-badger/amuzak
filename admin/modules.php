@@ -140,6 +140,12 @@ switch ($_REQUEST['action']) {
         $body   = '';
         show_confirmation($title, $body, $url);
     break;
+    case 'show_plugins':
+        $plugins = Plugin::get_plugins();
+        UI::show_box_top(T_('Plugins'), 'box box_localplay_plugins');
+        require_once AmpConfig::get('prefix') . UI::find_template('show_plugins.inc.php');
+        UI::show_box_bottom();
+    break;
     case 'show_catalog_types':
         $catalogs = Catalog::get_catalog_types();
         UI::show_box_top(T_('Catalog Types'), 'box box_catalog_types');
