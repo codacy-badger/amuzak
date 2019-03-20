@@ -7,7 +7,7 @@
 ; if this config file is up to date
 ; this is compared against a value hard-coded
 ; into the init script
-config_version = 34
+config_version = 35
 
 ;#########################################################
 ; Path Vars                                              #
@@ -531,7 +531,7 @@ wanted_types = "album,official"
 ; Wanted Auto Accept
 ; Mark wanted requests as accepted by default (no content manager agreement required)
 ; DEFAULT: false
-;wanted_auto_accept = "false"
+wanted_auto_accept = "false"
 
 ; EchoNest API key
 ; EchoNest provides several music services. Currently used for missing song 30 seconds preview.

@@ -111,13 +111,6 @@ switch ($_REQUEST['action']) {
             }
         }
     break;
-    case 'show_missing':
-        set_time_limit(600);
-        $mbid    = $_REQUEST['mbid'];
-        $wartist = Wanted::get_missing_artist($mbid);
-
-        require AmpConfig::get('prefix') . UI::find_template('show_missing_artist.inc.php');
-    break;
 } // end switch
 
 UI::show_footer();

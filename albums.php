@@ -95,25 +95,6 @@ switch ($_REQUEST['action']) {
             }
         }
     break;
-    case 'show_missing':
-        set_time_limit(600);
-        $mbid   = $_REQUEST['mbid'];
-        $walbum = new Wanted(Wanted::get_wanted($mbid));
-
-        if (!$walbum->id) {
-            $walbum->mbid = $mbid;
-            if (isset($_REQUEST['artist'])) {
-                $artist              = new Artist($_REQUEST['artist']);
-                $walbum->artist      = $artist->id;
-                $walbum->artist_mbid = $artist->mbid;
-            } elseif (isset($_REQUEST['artist_mbid'])) {
-                $walbum->artist_mbid = $_REQUEST['artist_mbid'];
-            }
-        }
-        $walbum->load_all();
-        $walbum->format();
-        require AmpConfig::get('prefix') . UI::find_template('show_missing_album.inc.php');
-    break;
     // Browse by Album
     case 'show':
     default:

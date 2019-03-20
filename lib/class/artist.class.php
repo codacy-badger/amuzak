@@ -187,9 +187,7 @@ class Artist extends database_object implements library_item
     {
         Dba::write('DELETE FROM `artist` USING `artist` LEFT JOIN `song` ON `song`.`artist` = `artist`.`id` ' .
             'LEFT JOIN `album` ON `album`.`album_artist` = `artist`.`id` ' .
-            'LEFT JOIN `wanted` ON `wanted`.`artist` = `artist`.`id` ' .
-            'LEFT JOIN `clip` ON `clip`.`artist` = `artist`.`id` ' .
-            'WHERE `song`.`id` IS NULL AND `album`.`id` IS NULL AND `wanted`.`id` IS NULL AND `clip`.`id` IS NULL');
+            'WHERE `song`.`id` IS NULL AND `album`.`id` IS NULL');
     }
 
     /**

@@ -38,12 +38,10 @@ class Song_Preview extends database_object implements media, playable_item
     public $f_file;
     public $f_artist;
     public $f_artist_full;
-    public $f_artist_link;
     public $f_title;
     public $f_title_full;
     public $link;
     public $f_link;
-    public $f_album_link;
     public $f_album;
     public $f_track;
 
@@ -198,7 +196,7 @@ class Song_Preview extends database_object implements media, playable_item
     /**
      * format
      * This takes the current song object
-     * and does a ton of formating on it creating f_??? variables on the current
+     * and does a ton of formatting on it creating f_??? variables on the current
      * object
      */
     public function format($details = true)
@@ -207,10 +205,6 @@ class Song_Preview extends database_object implements media, playable_item
         if ($this->artist) {
             $this->f_artist_full = $this->get_artist_name();
             $this->f_artist_link = "<a href=\"" . AmpConfig::get('web_path') . "/artists.php?action=show&amp;artist=" . $this->artist . "\" title=\"" . scrub_out($this->f_artist_full) . "\"> " . scrub_out($this->f_artist) . "</a>";
-        } else {
-            $wartist             = Wanted::get_missing_artist($this->artist_mbid);
-            $this->f_artist_link = $wartist['link'];
-            $this->f_artist_full = $wartist['name'];
         }
         $this->f_artist = $this->f_artist_full;
 
@@ -220,7 +214,6 @@ class Song_Preview extends database_object implements media, playable_item
 
         $this->link         = "#";
         $this->f_link       = "<a href=\"" . scrub_out($this->link) . "\" title=\"" . scrub_out($this->f_artist) . " - " . scrub_out($this->title) . "\"> " . scrub_out($this->f_title) . "</a>";
-        $this->f_album_link = "<a href=\"" . AmpConfig::get('web_path') . "/albums.php?action=show_missing&amp;mbid=" . $this->album_mbid . "&amp;artist=" . $this->artist . "\" title=\"" . $this->f_album . "\">" . $this->f_album . "</a>";
 
         // Format the track (there isn't really anything to do here)
         $this->f_track = $this->track;

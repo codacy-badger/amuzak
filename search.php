@@ -37,10 +37,6 @@ switch ($_REQUEST['action']) {
             $browse->set_type($_REQUEST['type']);
             $browse->show_objects($results);
             $browse->store();
-        } else {
-            $wartists = Wanted::search_missing_artists($_REQUEST['rule_1_input']);
-            require_once AmpConfig::get('prefix') . UI::find_template('show_missing_artists.inc.php');
-            echo '<a href="http://musicbrainz.org/search?query=' . rawurlencode($_REQUEST['rule_1_input']) . '&type=artist&method=indexed" target="_blank">' . T_('View on MusicBrainz') . '</a><br />';
         }
     break;
     case 'save_as_smartplaylist':
