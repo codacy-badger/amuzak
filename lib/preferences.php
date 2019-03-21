@@ -181,7 +181,6 @@ function create_preference_input($name, $value)
         case 'album_group':
         case 'topmenu':
         case 'demo_clear_sessions':
-        case 'show_donate':
         case 'allow_upload':
         case 'upload_subdir':
         case 'upload_user_artist':

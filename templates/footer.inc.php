@@ -35,17 +35,12 @@
             }
         ?>
         <div id="footer" class="<?php echo(($count_temp_playlist) ? '' : 'footer-wild'); ?>">
-        <?php if (AmpConfig::get('show_donate')) {
-            ?>
-            <a id="donate" href="//ampache.github.io/donate.html" title="Donate" target="_blank"><?php echo ".:: " . T_('Donate') . " ::."; ?></a> |
-        <?php
-        } ?>
         <?php
         if (AmpConfig::get('custom_text_footer')) {
             echo AmpConfig::get('custom_text_footer');
         } else {
             ?>
-            <a id="ampache_link" href="https://github.com/ampache/ampache#readme" target="_blank" title="Copyright © 2001 - 2017 Ampache.org">Ampache <?php echo AmpConfig::get('version'); ?></a>
+            <a id="ampache_link" href="https://github.com/ampache/ampache#readme" target="_blank" title="Copyright © 2001 - 2017 Ampache.org">aMuzak <?php echo AmpConfig::get('version'); ?></a>
         <?php
         } ?>
         <?php if (AmpConfig::get('show_footer_statistics')) {
