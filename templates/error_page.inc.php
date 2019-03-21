@@ -40,7 +40,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="themes/reborn/images/amuzak.png" title="Ampache" alt="Ampache">
+                <img src="<?php echo AmpConfig::get('theme_path') . '/images/amuzak' . AmpConfig::get('theme_color') . '.png' ; ?>" title="Ampache" alt="Ampache">
                 <?php echo T_('aMuzak'); ?> - For the love of Music
             </a>
         </div>
