@@ -117,7 +117,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
            Login
 ***********************************************/
 #loginPage #maincontainer, #registerPage #maincontainer {
-    background-color: rgba(0,0,0,0.15);
+    background-color: rgba(0,0,0,0.9);
     border: 2px solid rgba(0,0,0,0.15);
     -webkit-box-shadow: 0 0 5px rgba(255,255,255,0.05);
     -moz-box-shadow: 0 0 5px rgba(255,255,255,0.05);
