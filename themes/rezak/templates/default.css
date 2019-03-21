@@ -283,7 +283,6 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
            Login
 ***********************************************/
 #loginPage #maincontainer, #registerPage #maincontainer {
-    padding: 20px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
@@ -292,12 +291,13 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
-    width: 450px;
     margin: 50px auto 0 auto;
+    max-width: 450px;
+    padding: 20px;
 }
 
 #loginPage #maincontainer {
-    height: 450px;
+    height: 580px;
 }
 
 #registerPage #maincontainer {
@@ -306,14 +306,14 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 
 #loginPage #header, #registerPage #header {
     background-color: transparent;
-    width: 128px;
+    width: 254px;
     margin: auto;
     border: none;
     box-shadow: none;
 }
 
 #loginPage #header {
-    height: 128px;
+    height: 254px;
 }
 
 #registerPage #header {
@@ -321,8 +321,8 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 #loginPage #headerlogo, #registerPage #headerlogo {
-    width: 128px;
-    height: 128px;
+    width: 256px;
+    height: 256px;
     background-repeat: no-repeat;
     background-position: center; 
     background-size: contain;
@@ -334,7 +334,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 #loginPage #loginbox, #registerPage #registerbox {
-    width: 390px;
+    max-width: 390px;
     margin: auto auto 20px auto;
 }
 
@@ -421,8 +421,9 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 #loginPage #footer {
-    width: 450px;
-    margin: 10px auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
 }
 
 /***********************************************
