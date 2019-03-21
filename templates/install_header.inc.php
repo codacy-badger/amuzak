@@ -48,8 +48,8 @@
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="themes/reborn/images/ampache.png" title="Ampache" alt="Ampache">
-                <?php echo T_('Ampache Installation'); ?> - For the love of Music
+                <img src="themes/reborn/images/amuzak.png" title="Ampache" alt="Ampache">
+                <?php echo T_('aMuzak Installation'); ?> - For the love of Music
             </a>
         </div>
     </div>
