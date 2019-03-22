@@ -262,14 +262,14 @@ class Stats
             " WHERE `last_update` >= '" . $date . "' ";
             $sql .= " GROUP BY `id` ORDER BY `last_update` DESC ";
         } else {
-        /* Select Top objects counting by # of rows */
-        $sql = "SELECT object_id as `id`, COUNT(*) AS `count` FROM object_count" .
-            " WHERE `object_type` = '" . $type . "' AND `date` >= '" . $date . "' ";
-        if (AmpConfig::get('catalog_disable')) {
-            $sql .= "AND " . Catalog::get_enable_filter($type, '`object_id`');
-        }
-        $sql .= " AND `count_type` = '" . $count_type . "'";
-        $sql .= " GROUP BY object_id ORDER BY `count` DESC ";
+            /* Select Top objects counting by # of rows */
+            $sql = "SELECT object_id as `id`, COUNT(*) AS `count` FROM object_count" .
+                " WHERE `object_type` = '" . $type . "' AND `date` >= '" . $date . "' ";
+            if (AmpConfig::get('catalog_disable')) {
+                $sql .= "AND " . Catalog::get_enable_filter($type, '`object_id`');
+            }
+            $sql .= " AND `count_type` = '" . $count_type . "'";
+            $sql .= " GROUP BY object_id ORDER BY `count` DESC ";
         }
 
         return $sql;
