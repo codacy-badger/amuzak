@@ -21,7 +21,28 @@
  */
 ?>
 <ul class="sb2" id="sb_home">
-    <li><h4 class="header"><span class="sidebar-header-title" title="<?php echo T_('Browse Music'); ?>"><?php echo T_('Music'); ?></span><img src="<?php echo AmpConfig::get('web_path') . AmpConfig::get('theme_path'); ?>/images/icons/icon_all.png" class="header-img <?php echo ($_COOKIE['sb_browse_music'] == 'collapsed') ? 'collapsed' : 'expanded'; ?>" id="browse_music" lt="<?php echo T_('Expand/Collapse'); ?>" title="<?php echo T_('Expand/Collapse'); ?>" /></h4>
+    <li>
+    <form name="search" method="post" action="<?php echo $web_path; ?>/search.php?type=song" enctype="multipart/form-data" style="Display:inline">
+        <input type="text" name="rule_1_input" id="searchString" size="18px" placeholder="<?php echo T_('Search...'); ?>" />
+        <input type="hidden" name="action" value="search" />
+        <input type="hidden" name="rule_1_operator" value="0" />
+        <input type="hidden" name="object_type" value="song" />
+        <select name="rule_1" id="searchStringRule">
+            <option value="anywhere"><?php echo T_('Anywhere')?></option>
+            <option value="title"><?php echo T_('Title')?></option>
+            <option value="album"><?php echo T_('Album')?></option>
+            <option value="artist"><?php echo T_('Artist')?></option>
+            <option value="playlist_name"><?php echo T_('Playlist')?></option>
+            <option value="tag"><?php echo T_('Tag')?></option>
+            <?php if (AmpConfig::get('label')) {
+    ?>
+                <option value="label"><?php echo T_('Label')?></option>
+            <?php
+} ?>
+        </select>
+    </form>
+    </li>
+        <h4 class="header"><span class="sidebar-header-title" title="<?php echo T_('Browse Music'); ?>"><?php echo T_('Music'); ?></span><img src="<?php echo AmpConfig::get('web_path') . AmpConfig::get('theme_path'); ?>/images/icons/icon_all.png" class="header-img <?php echo ($_COOKIE['sb_browse_music'] == 'collapsed') ? 'collapsed' : 'expanded'; ?>" id="browse_music" lt="<?php echo T_('Expand/Collapse'); ?>" title="<?php echo T_('Expand/Collapse'); ?>" /></h4>
         <?php
         if (isset($_REQUEST['action'])) {
             $text    = scrub_in($_REQUEST['action']) . '_ac';
