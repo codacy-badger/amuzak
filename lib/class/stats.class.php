@@ -414,18 +414,22 @@ class Stats
         $type = self::validate_type($type);
 
         $base_type = 'song';
-        if ($type == 'video') {
+        if ($type == 'video' || $type == 'playlist') {
             $base_type = $type;
             $type      = $type . '`.`id';
         }
-
-        $sql = "SELECT DISTINCT(`$type`) as `id`, MIN(`addition_time`) AS `real_atime` FROM `" . $base_type . "` ";
-        $sql .= "LEFT JOIN `catalog` ON `catalog`.`id` = `" . $base_type . "`.`catalog` ";
-        if (AmpConfig::get('catalog_disable')) {
-            $sql .= "WHERE `catalog`.`enabled` = '1' ";
-        }
-        if ($catalog > 0) {
-            $sql .= "AND `catalog` = '" . scrub_in($catalog) . "' ";
+        // add playlists to mashup browsing
+        if ($type == 'playlist') {
+            $sql = "SELECT DISTINCT(`$type`) as `id`, MIN(`addition_time`) AS `real_atime` FROM `" . $base_type . "` ";
+        } else {
+            $sql = "SELECT DISTINCT(`$type`) as `id`, MIN(`addition_time`) AS `real_atime` FROM `" . $base_type . "` ";
+            $sql .= "LEFT JOIN `catalog` ON `catalog`.`id` = `" . $base_type . "`.`catalog` ";
+            if (AmpConfig::get('catalog_disable')) {
+                $sql .= "WHERE `catalog`.`enabled` = '1' ";
+            }
+            if ($catalog > 0) {
+                $sql .= "AND `catalog` = '" . scrub_in($catalog) . "' ";
+            }
         }
         $sql .= "GROUP BY `$type` ORDER BY `real_atime` DESC ";
 
