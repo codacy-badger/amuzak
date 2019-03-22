@@ -1053,7 +1053,7 @@ class User extends database_object
 
         $avatar = $this->get_avatar();
         if (!empty($avatar['url'])) {
-            $this->f_avatar = '<img src="' . $avatar['url'] . '" title="' . $avatar['title'] . '" />';
+            $this->f_avatar = '<img src="' . $avatar['url'] . '" title="' . $avatar['title'] . '"' . ' width="256px" height="auto" />';
         }
         if (!empty($avatar['url_mini'])) {
             $this->f_avatar_mini = '<img src="' . $avatar['url_mini'] . '" title="' . $avatar['title'] . '" style="width: 32px; height: 32px;" />';
