@@ -272,6 +272,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     font-size: 16px;
     font-weight: normal;
     line-height: normal;
+    overflow: hidden;
 }
 
 #sb_Subsearch a {
