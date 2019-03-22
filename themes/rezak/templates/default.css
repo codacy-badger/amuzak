@@ -194,7 +194,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 #header {
     z-index: 5;
     height: 64px;
-    padding: 0 32px;
+    padding: 0 5px;
     font-size: 15px;
 }
 
@@ -783,7 +783,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 .content-fixed {
-    margin: 86px 250px 0px 205px;
+    margin: 86px 250px 0px 165px;
 }
 
 .content-fixed-topmenu {
