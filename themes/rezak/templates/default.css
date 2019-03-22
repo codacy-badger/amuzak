@@ -101,9 +101,8 @@ input, button, textarea {
 }
 
 input[type=password], input[type=text] {
-    height: 23px;
     line-height: normal;
-    min-width: 145px;
+    height: 23px;
 }
 
 input[type=password], input[type=text], textarea {
