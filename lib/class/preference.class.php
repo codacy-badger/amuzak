@@ -479,7 +479,7 @@ class Preference extends database_object
         // preferences because we're going to want at least something otherwise
         // the page is going to be really ugly
         if (!isset($results['theme_name'])) {
-            $results['theme_name'] = 'reborn';
+            $results['theme_name'] = 'rezak';
         }
         $results['theme_path'] = '/themes/' . $results['theme_name'];
 
