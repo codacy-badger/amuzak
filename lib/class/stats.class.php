@@ -420,15 +420,15 @@ class Stats
         $type = self::validate_type($type);
 
         $base_type = 'song';
-        if ($type == 'video' || $type == 'playlist') {
+        if ($type == 'video' || $type == 'playlist' || $type == 'song') {
             $base_type = $type;
             $type      = $type . '`.`id';
         }
         // add playlists to mashup browsing
         if ($type == 'playlist') {
-            $sql = "SELECT DISTINCT(`$type`) as `id`, MAX(`last_update`) AS `real_atime` FROM `" . $base_type . "` ";
+            $sql = "SELECT DISTINCT(`$type`) as `id`, `last_update` AS `real_atime` FROM `" . $base_type . "` ";
         } else {
-            $sql = "SELECT DISTINCT(`$type`) as `id`, MIN(`addition_time`) AS `real_atime` FROM `" . $base_type . "` ";
+            $sql = "SELECT DISTINCT(`$type`) as `id`, `addition_time` AS `real_atime` FROM `" . $base_type . "` ";
             $sql .= "LEFT JOIN `catalog` ON `catalog`.`id` = `" . $base_type . "`.`catalog` ";
             if (AmpConfig::get('catalog_disable')) {
                 $sql .= "WHERE `catalog`.`enabled` = '1' ";
