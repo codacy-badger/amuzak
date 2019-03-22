@@ -257,6 +257,11 @@ class Stats
         }
         $date = time() - (86400 * $threshold);
 
+        if ($type == 'playlist') {
+            $sql = "SELECT `id` as `id`, `last_update` FROM playlist" .
+            " WHERE `last_update` >= '" . $date . "' ";
+            $sql .= " GROUP BY `id` ORDER BY `last_update` DESC ";
+        } else {
         /* Select Top objects counting by # of rows */
         $sql = "SELECT object_id as `id`, COUNT(*) AS `count` FROM object_count" .
             " WHERE `object_type` = '" . $type . "' AND `date` >= '" . $date . "' ";
@@ -265,6 +270,7 @@ class Stats
         }
         $sql .= " AND `count_type` = '" . $count_type . "'";
         $sql .= " GROUP BY object_id ORDER BY `count` DESC ";
+        }
 
         return $sql;
     }
@@ -420,7 +426,7 @@ class Stats
         }
         // add playlists to mashup browsing
         if ($type == 'playlist') {
-            $sql = "SELECT DISTINCT(`$type`) as `id`, MIN(`addition_time`) AS `real_atime` FROM `" . $base_type . "` ";
+            $sql = "SELECT DISTINCT(`$type`) as `id`, MAX(`last_update`) AS `real_atime` FROM `" . $base_type . "` ";
         } else {
             $sql = "SELECT DISTINCT(`$type`) as `id`, MIN(`addition_time`) AS `real_atime` FROM `" . $base_type . "` ";
             $sql .= "LEFT JOIN `catalog` ON `catalog`.`id` = `" . $base_type . "`.`catalog` ";
