@@ -28,6 +28,5 @@
         <input type="hidden" name="object_type" value="song" />
         <input type="hidden" name="rule_1" id="searchStringRule" value="anywhere">
         <input class="button" type="submit" value="<?php echo T_('Search'); ?>" id="searchBtn" />
-        <a href="<?php echo $web_path; ?>/search.php?type=song" class="button" id="advSearchBtn"><?php echo T_('Advanced Search'); ?></a>
     </form>
 </div>

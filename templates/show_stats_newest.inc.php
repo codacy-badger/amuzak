@@ -33,3 +33,10 @@ $browse->set_type('artist', $sql);
 $browse->set_simple_browse(true);
 $browse->show_objects();
 $browse->store();
+
+$sql    = Stats::get_newest_sql('playlist');
+$browse = new Browse();
+$browse->set_type('playlist', $sql);
+$browse->set_simple_browse(true);
+$browse->show_objects();
+$browse->store();

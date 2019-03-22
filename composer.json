@@ -1,8 +1,8 @@
 {
-	"name": "ampache/ampache",
+	"name": "ampcore/amuzak",
 	"description": "A web based audio/video streaming application and file manager allowing you to access your music & videos from anywhere, using almost any internet enabled device.",
-	"homepage": "http://ampache.org",
-	"keywords": ["php", "music", "video", "player", "stream"],
+	"homepage": "https://github.com/ampcore/amuzak",
+	"keywords": ["php", "music", "player", "stream"],
 	"type": "project",
 	"license": "AGPL-3.0",
 	"config":

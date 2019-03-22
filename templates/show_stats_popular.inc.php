@@ -48,4 +48,12 @@ $browse->set_simple_browse(true);
 $browse->show_objects();
 $browse->store();
 
+$sql    = Stats::get_top_sql('playlist', $thresh_value);
+$browse = new Browse();
+$browse->set_threshold($thresh_value);
+$browse->set_type('playlist', $sql);
+$browse->set_simple_browse(true);
+$browse->show_objects();
+$browse->store();
+
 UI::show_box_bottom();
