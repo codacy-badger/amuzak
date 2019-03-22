@@ -1,4 +1,4 @@
- ![Logo](http://ampache.org/img/logo/ampache-logo_x64.png) aMuzak
+ ![Logo](https://github.com/ampcore/amuzak/raw/master/themes/rezak/images/amuzak-light.png) aMuzak
 =======
 [www.ampache.org](http://ampache.org/) |
 [ampache.github.io](http://ampache.github.io)

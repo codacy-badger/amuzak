@@ -531,8 +531,8 @@ show_footer_statistics = "true"
 ; Set this to true to enable rss feeds.
 ; (latest albums, shouts, albums of artist, ...)
 ; use_rss = false (values true | false)
-;DEFAULT: use_rss = false
-;use_rss = "false"
+;DEFAULT: use_rss = true
+use_rss = "true"
 
 ; This setting allows themes to overwrite PHP template files. This can be really
 ; dangerous. Do this only if you trust every theme in your themes/ directory.
