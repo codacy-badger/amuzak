@@ -845,13 +845,6 @@ abstract class Catalog extends database_object
         }
 
         $results = array();
-        foreach ($catalogs as $catalog_id) {
-            $catalog   = Catalog::create_from_id($catalog_id);
-            $video_ids = $catalog->get_video_ids($type);
-            foreach ($video_ids as $video_id) {
-                $results[] = Video::create_from_id($video_id);
-            }
-        }
 
         return $results;
     }
@@ -1122,11 +1115,7 @@ abstract class Catalog extends database_object
         debug_event('gather_art', 'Gathering art for ' . $type . '/' . $id . '...', 5);
 
         // Should be more generic !
-        if ($type == 'video') {
-            $libitem = Video::create_from_id($id);
-        } else {
-            $libitem = new $type($id);
-        }
+        $libitem = new $type($id);
         $options = array();
         $libitem->format();
         if ($libitem->id) {
@@ -1179,10 +1168,6 @@ abstract class Catalog extends database_object
             } else {
                 debug_event('gather_art', 'Image less than 5 chars, not inserting', 3);
             }
-        }
-
-        if ($type == 'video' && AmpConfig::get('generate_video_preview')) {
-            Video::generate_preview($id);
         }
 
         if (UI::check_ticker()) {
@@ -1640,7 +1625,7 @@ abstract class Catalog extends database_object
         }
         $new_video->tags        = $results['genre'];
 
-        $info = Video::compare_video_information($video, $new_video);
+        $info = ''
         if ($info['change']) {
             debug_event('update', $video->file . " : differences found, updating database", 5);
 
@@ -1815,7 +1800,6 @@ abstract class Catalog extends database_object
         Song::gc();
         Album::gc();
         Artist::gc();
-        Video::gc();
         Art::gc();
         Stats::gc();
         Rating::gc();
