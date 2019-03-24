@@ -6,8 +6,9 @@
 var AudioHandler = function() {
 
 	//PUBLIC/////////////
-	var Display = ( 'SCENERY/display/Display' ); // FIXME TAKEN FROM https://github.com/phetsims/vibe/commit/3bf8488a8801605887d34506255cfb862cc07f77
-	var platform = ( 'PHET_CORE/platform' );
+	var Display = require( 'SCENERY/display/Display' ); // FIXME TAKEN FROM https://github.com/phetsims/vibe/commit/3bf8488a8801605887d34506255cfb862cc07f77
+	var platform = require( 'PHET_CORE/platform' );
+	var scenery = require( 'SCENERY/scenery' );
 	var waveData = []; //waveform - from 0 - 1 . no sound is 0.5. Array [binCount]
 	var levelsData = []; //levels of each frequecy - from 0 - 1 . no sound is 0. Array [levelsCount]
 	var volume = 0; // averaged normalized level from 0 - 1
@@ -518,7 +519,7 @@ var AudioHandler = function() {
 	// }
 
     if ( audioContext ) {
-
+	scenery.register( 'AccessibleInstance', AccessibleInstance );
         if ( !platform.mobileSafari ) {
 
             // In some browsers the audio context is not allowed to run before the user interacts with the simulation.  The
@@ -528,14 +529,14 @@ var AudioHandler = function() {
             // https://github.com/phetsims/vibe/issues/32 for more information.
             if ( audioContext.state !== 'running' ) {
 
-                Display.userGestureEmitter.addListener( function resumeAudioContext() {
+                scenery.Display.userGestureEmitter.addListener( function resumeAudioContext() {
                     if ( audioContext.state !== 'running' ) {
                         // the audio context isn't running, so tell it to resume
                         audioContext.resume().catch( function( err ) {
                             assert && assert( false, 'error when trying to resume audio context, err = ' + err );
                         } );
                     }
-                    Display.userGestureEmitter.removeListener( resumeAudioContext ); // only do this once
+                    scenery.Display.userGestureEmitter.removeListener( resumeAudioContext ); // only do this once
                 } );
             }
         }
