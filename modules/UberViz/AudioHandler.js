@@ -6,7 +6,8 @@
 var AudioHandler = function() {
 
 	//PUBLIC/////////////
-    var Display = ( 'SCENERY/display/Display' ); // FIXME TAKEN FROM https://github.com/phetsims/vibe/commit/3bf8488a8801605887d34506255cfb862cc07f77
+	var Display = ( 'SCENERY/display/Display' ); // FIXME TAKEN FROM https://github.com/phetsims/vibe/commit/3bf8488a8801605887d34506255cfb862cc07f77
+	var platform = ( 'PHET_CORE/platform' );
 	var waveData = []; //waveform - from 0 - 1 . no sound is 0.5. Array [binCount]
 	var levelsData = []; //levels of each frequecy - from 0 - 1 . no sound is 0. Array [levelsCount]
 	var volume = 0; // averaged normalized level from 0 - 1
