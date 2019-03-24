@@ -89,21 +89,21 @@ if (AmpConfig::get('show_played_times')) {
     <h3><?php echo T_('Actions'); ?>:</h3>
     <ul>
         <?php if ($show_direct_play) {
-        ?>
+    ?>
         <li>
             <?php echo Ajax::button('?page=stream&action=directplay&object_type=album&' . $album->get_http_album_query_ids('object_id'), 'play', T_('Play'), 'directplay_full_' . $album->id); ?>
             <?php echo Ajax::text('?page=stream&action=directplay&object_type=album&' . $album->get_http_album_query_ids('object_id'), T_('Play'), 'directplay_full_text_' . $album->id); ?>
         </li>
             <?php if (Stream_Playlist::check_autoplay_append()) {
-            ?>
+        ?>
         <li>
             <?php echo Ajax::button('?page=stream&action=directplay&object_type=album&' . $album->get_http_album_query_ids('object_id') . '&append=true', 'play_add', T_('Play last'), 'addplay_album_' . $album->id); ?>
             <?php echo Ajax::text('?page=stream&action=directplay&object_type=album&' . $album->get_http_album_query_ids('object_id') . '&append=true', T_('Play last'), 'addplay_album_text_' . $album->id); ?>
         </li>
             <?php
-        } ?>
-        <?php
     } ?>
+        <?php
+} ?>
 
         <?php if ($show_playlist_add) {
         ?>

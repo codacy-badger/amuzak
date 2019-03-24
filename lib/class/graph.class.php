@@ -116,9 +116,9 @@ class Graph
         } else {
             $type = $object_type;
         }
-        $song_values = $this->$fct($id, $type, $object_id, $start_date, $end_date, $zoom);
+        $song_values  = $this->$fct($id, $type, $object_id, $start_date, $end_date, $zoom);
         $video_values = array();
-        $values = $song_values;
+        $values       = $song_values;
         foreach ($video_values as $date => $value) {
             if (array_key_exists($date, $values)) {
                 $values[$date] += $value;

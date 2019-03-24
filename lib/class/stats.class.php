@@ -427,7 +427,7 @@ class Stats
         // add playlists to mashup browsing
         if ($type == 'playlist') {
             $type      = $type . '`.`id';
-            $sql = "SELECT `$type` as `id`, `playlist`.`last_update` AS `real_atime` FROM `playlist` ";
+            $sql       = "SELECT `$type` as `id`, `playlist`.`last_update` AS `real_atime` FROM `playlist` ";
         } else {
             $sql = "SELECT DISTINCT(`$type`) as `id`, `addition_time` AS `real_atime` FROM `" . $base_type . "` ";
             $sql .= "LEFT JOIN `catalog` ON `catalog`.`id` = `" . $base_type . "`.`catalog` ";

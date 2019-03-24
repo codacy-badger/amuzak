@@ -48,10 +48,10 @@
       <li id="sb_admin_ot_ClearNowPlaying"><a href="<?php echo $web_path; ?>/admin/catalog.php?action=clear_now_playing"><?php echo T_('Clear Now Playing'); ?></a></li>
       <li id="sb_admin_ot_ExportCatalog"><a href="<?php echo $web_path; ?>/admin/export.php"><?php echo T_('Export Catalog'); ?></a></li>
       <?php if (AmpConfig::get('licensing')) {
-        ?>
+    ?>
       <li id="sb_admin_ot_ManageLicense"><a href="<?php echo $web_path; ?>/admin/license.php"><?php echo T_('Manage Licenses'); ?></a></li>
       <?php
-    } ?>
+} ?>
     </ul>
   </li>
 <?php if (Access::check('interface', '100')) {

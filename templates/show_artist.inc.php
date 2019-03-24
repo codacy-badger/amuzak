@@ -85,14 +85,14 @@ if (AmpConfig::get('show_played_times')) {
     <ul>
         <li>
             <?php if ($object_type == 'album') {
-        ?>
+    ?>
             <a href="<?php echo $web_path; ?>/artists.php?action=show_all_songs&amp;artist=<?php echo $artist->id; ?>">
             <?php echo UI::get_icon('view', T_("Show all")); ?></a>
             <a href="<?php echo $web_path; ?>/artists.php?action=show_all_songs&amp;artist=<?php echo $artist->id; ?>">
                 <?php echo T_("Show all"); ?>
             </a>
             <?php
-    } else {
+} else {
         ?>
             <a href="<?php echo $web_path; ?>/artists.php?action=show&amp;artist=<?php echo $artist->id; ?>">
             <?php echo UI::get_icon('view', T_("Show albums")); ?></a>
@@ -237,14 +237,14 @@ if (AmpConfig::get('show_played_times')) {
         </div>
 <?php
 if (AmpConfig::get('show_similar')) {
-        echo Ajax::observe('similar_artist_link', 'click', Ajax::action('?page=index&action=similar_artist&artist=' . $artist->id, 'similar_artist')); ?>
+    echo Ajax::observe('similar_artist_link', 'click', Ajax::action('?page=index&action=similar_artist&artist=' . $artist->id, 'similar_artist')); ?>
         <div id="similar_artist" class="tab_content">
         <?php UI::show_box_top(T_('Similar Artists'), 'info-box');
-        echo T_('Loading...');
-        UI::show_box_bottom(); ?>
+    echo T_('Loading...');
+    UI::show_box_bottom(); ?>
         </div>
 <?php
-    } ?>
+} ?>
 <?php
 if (AmpConfig::get('show_concerts')) {
         echo Ajax::observe('concerts_link', 'click', Ajax::action('?page=index&action=concerts&artist=' . $artist->id, 'concerts')); ?>

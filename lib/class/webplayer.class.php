@@ -173,7 +173,7 @@ class WebPlayer
         $jptypes = array();
         foreach ($playlist->urls as $item) {
             $force_type = '';
-            $types = self::get_types($item, $force_type);
+            $types      = self::get_types($item, $force_type);
             if (!in_array($types['player'], $jptypes)) {
                 $jptypes[] = $types['player'];
             }

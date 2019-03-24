@@ -38,11 +38,11 @@ if ($client->f_avatar) {
     <dd class="<?php echo $rowparity; ?>">
         <?php echo $client->f_name; ?>
         <?php if (Access::check('interface', '100')) {
-        ?>
+    ?>
             <a href="<?php echo AmpConfig::get('web_path'); ?>/admin/users.php?action=show_edit&user_id=<?php echo $client->id; ?>"><?php echo UI::get_icon('edit', T_('Edit')); ?></a>
             <a href="<?php echo AmpConfig::get('web_path'); ?>/admin/users.php?action=show_preferences&user_id=<?php echo $client->id; ?>"><?php echo UI::get_icon('preferences', T_('Preferences')); ?></a>
         <?php
-    } elseif ($client->id == $GLOBALS['user']->id) {
+} elseif ($client->id == $GLOBALS['user']->id) {
         ?>
             <a href="<?php echo AmpConfig::get('web_path'); ?>/preferences.php?tab=account"><?php echo UI::get_icon('edit', T_('Edit')); ?></a>
         <?php

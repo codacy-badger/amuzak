@@ -54,13 +54,13 @@ if ($label->website) {
     <h3><?php echo T_('Actions'); ?>:</h3>
     <ul>
         <?php if ($label->email) {
-        ?>
+    ?>
         <li>
             <a href="mailto:<?php echo scrub_out($label->email); ?>"><?php echo UI::get_icon('mail', T_('Send e-mail')); ?></a>
             <a href="mailto:<?php echo scrub_out($label->email); ?>"><?php echo T_('Send e-mail'); ?></a>
         </li>
         <?php
-    } ?>
+} ?>
         <?php if ($label->can_edit()) {
         ?>
         <li>

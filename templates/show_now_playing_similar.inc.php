@@ -31,8 +31,8 @@
             <div class="np_cell cel_similar_artist">
             <?php
                 $artist = new Artist($a['id']);
-                $artist->format();
-                echo $artist->f_link; ?>
+        $artist->format();
+        echo $artist->f_link; ?>
             </div>
         <?php
     } ?>
