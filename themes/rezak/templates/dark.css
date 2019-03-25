@@ -250,6 +250,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 
 #rightbar #rb_current_playlist li {
     color: #fff;
+    font-size: 80%;
 }
 
 #rightbar #rb_current_playlist li a {
