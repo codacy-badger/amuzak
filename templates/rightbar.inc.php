@@ -90,7 +90,6 @@
     <script type="text/javascript">
             $("#content").addClass("content-right-wild", 500);
             $("#footer").addClass("footer-wild", 500);
-            $("#rightbar").hide("slow");
     </script>
 <?php
     // Limit the number of objects we show here
