@@ -3,7 +3,7 @@
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
- * Copyright 2001 - 2017 Ampache.org
+ * Copyright 2019 ampcore
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -206,7 +206,7 @@ if (!defined('INSTALL')) {
     <?php echo debug_result(is_readable($configfile)); ?>
     </td>
     <td width="350px">
-    <?php echo T_('This test attempts to read config/ampache.cfg.php. If this fails the file either is not in the correct location or is not currently readable.'); ?>
+    <?php echo T_('This test attempts to read config/amuzak.cfg.php. If this fails the file either is not in the correct location or is not currently readable.'); ?>
     </td>
 </tr>
 <tr>

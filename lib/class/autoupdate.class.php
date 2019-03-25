@@ -3,7 +3,7 @@
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
- * Copyright 2001 - 2017 Ampache.org
+ * Copyright 2019 ampcore
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -234,12 +234,12 @@ class AutoUpdate
         echo '<font color="#ff0000">' . T_('Update available') . '</font>';
         echo ' (' . self::get_latest_version() . ').<br />';
 
-        echo T_('See') . ' <a href="https://github.com/ampache/ampache/' . (self::is_develop() ? 'compare/' . self::get_current_version() . '...' . self::get_latest_version() : 'blob/master/docs/CHANGELOG.md') . '" target="_blank">' . T_('changes') . '</a> ';
+        echo T_('See') . ' <a href="https://github.com/ampcore/amuzak/' . (self::is_develop() ? 'compare/' . self::get_current_version() . '...' . self::get_latest_version() : 'blob/master/docs/CHANGELOG.md') . '" target="_blank">' . T_('changes') . '</a> ';
         if (self::is_develop()) {
-            echo T_('or') . ' <a href="https://github.com/ampache/ampache/archive/' .
+            echo T_('or') . ' <a href="https://github.com/ampcore/amuzak/archive/' .
              (self::is_develop() ? 'develop.zip' : self::get_latest_version() . '.zip') . '" target="_blank"><b>' . T_('download') . '</b></a>.';
         } else {
-            echo T_('or') . ' <a href="https://github.com/ampache/ampache/releases/download/' . self::get_latest_version() .
+            echo T_('or') . ' <a href="https://github.com/ampcore/amuzak/releases/download/' . self::get_latest_version() .
               '/ampache-' . self::get_latest_version() . '_all.zip"' . ' target="_blank"><b>' . T_('download') . '</b></a>.';
         }
         if (self::is_git_repository()) {
@@ -253,7 +253,7 @@ class AutoUpdate
      */
     public static function update_files()
     {
-        $cmd = 'git pull https://github.com/ampache/ampache.git';
+        $cmd = 'git pull https://github.com/ampcore/amuzak.git';
         echo T_('Updating Ampache sources with `' . $cmd . '` ...') . '<br />';
         ob_flush();
         chdir(AmpConfig::get('prefix'));

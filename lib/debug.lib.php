@@ -3,7 +3,7 @@
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
- * Copyright 2001 - 2017 Ampache.org
+ * Copyright 2019 ampcore
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -279,8 +279,8 @@ function check_dependencies_folder()
 function check_config_writable()
 {
     // file eixsts && is writable, or dir is writable
-    return ((file_exists(AmpConfig::get('prefix') . '/config/ampache.cfg.php') && is_writable(AmpConfig::get('prefix') . '/config/ampache.cfg.php'))
-        || (!file_exists(AmpConfig::get('prefix') . '/config/ampache.cfg.php') && is_writeable(AmpConfig::get('prefix') . '/config/')));
+    return ((file_exists(AmpConfig::get('prefix') . '/config/amuzak.cfg.php') && is_writable(AmpConfig::get('prefix') . '/config/amuzak.cfg.php'))
+        || (!file_exists(AmpConfig::get('prefix') . '/config/amuzak.cfg.php') && is_writeable(AmpConfig::get('prefix') . '/config/')));
 }
 
 function check_htaccess_channel_writable()

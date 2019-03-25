@@ -3,7 +3,7 @@
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
- * Copyright 2001 - 2017 Ampache.org
+ * Copyright 2019 ampcore
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -508,7 +508,7 @@ class Update
         $update_string = " - Add track number field to stream_playlist table.<br />";
         $version[]     = array('version' => '370036','description' => $update_string);
         
-        $update_string = " - Delete http_port preference (use ampache.cfg.php configuration instead).<br />";
+        $update_string = " - Delete http_port preference (use amuzak.cfg.php configuration instead).<br />";
         $version[]     = array('version' => '370037','description' => $update_string);
 
         $update_string = " - Add theme color option.<br />";
@@ -556,7 +556,7 @@ class Update
         $update_string = "- Fix username max size to be the same one across all tables.<br />";
         $version[]     = array('version' => '380011', 'description' => $update_string);
         
-        $update_string = "- Fix change in <a href='https://github.com/ampache/ampache/commit/0c26c336269624d75985e46d324e2bc8108576ee'>this commit</a>, that left the userbase with an inconsistent database, if users updated or installed Ampache before 28 Apr 2015<br />";
+        $update_string = "- Fix change in <a href='https://github.com/ampcore/amuzak/commit/0c26c336269624d75985e46d324e2bc8108576ee'>this commit</a>, that left the userbase with an inconsistent database, if users updated or installed Ampache before 28 Apr 2015<br />";
         $version[]     = array('version' => '380012', 'description' => $update_string);
 
         $update_string = "Disable allow_video and drop clip, movie, personal_video and tvshow tables. (video table still needed)<br />";
@@ -2272,7 +2272,7 @@ class Update
      * update_360035
      *
      * Add beautiful stream url setting
-     * Reverted https://github.com/ampache/ampache/commit/0c26c336269624d75985e46d324e2bc8108576ee
+     * Reverted https://github.com/ampcore/amuzak/commit/0c26c336269624d75985e46d324e2bc8108576ee
      * with adding update_380012.
      * Because it was changed after many systems have already performed this update.
      * Fix for this is update_380012 that actually readds the preference string.
@@ -3597,7 +3597,7 @@ class Update
     /**
      * update_370037
      *
-     * Delete http_port preference (use ampache.cfg.php configuration instead)
+     * Delete http_port preference (use amuzak.cfg.php configuration instead)
      */
     public static function update_370037()
     {
@@ -3988,7 +3988,7 @@ class Update
     /**
      * update_380012
      *
-     * Fix change in https://github.com/ampache/ampache/commit/0c26c336269624d75985e46d324e2bc8108576ee
+     * Fix change in https://github.com/ampcore/amuzak/commit/0c26c336269624d75985e46d324e2bc8108576ee
      * That left the userbase with an inconsistent database.
      * For more information, please look at update_360035.
      */

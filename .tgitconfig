@@ -1,5 +1,5 @@
 [bugtraq]
-	url = "https://github.com/ampache/ampache/issues/#BUGID#"
+	url = "https://github.com/ampcore/amuzak/issues/#BUGID#"
 	label = GitHub Issue Number
 	warnifnoissue = false
 	number = true
