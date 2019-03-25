@@ -808,31 +808,6 @@ abstract class Catalog extends database_object
     }
 
     /**
-     * get_video_ids
-     *
-     * This returns an array of ids of videos in this catalog
-     * @param string $type
-     * @return int[]
-     */
-    public function get_video_ids($type = '')
-    {
-        $results = array();
-
-        $sql = 'SELECT DISTINCT(`video`.`id`) FROM `video` ';
-        if (!empty($type)) {
-            $sql .= 'JOIN `' . $type . '` ON `' . $type . '`.`id` = `video`.`id`';
-        }
-        $sql .= 'WHERE `video`.`catalog` = ?';
-        $db_results = Dba::read($sql, array($this->id));
-
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = $r['id'];
-        }
-
-        return $results;
-    }
-
-    /**
      *
      * @param int[]|null $catalogs
      * @param string $type
@@ -840,13 +815,9 @@ abstract class Catalog extends database_object
      */
     public static function get_videos($catalogs = null, $type = '')
     {
-        if (!$catalogs) {
-            $catalogs = self::get_catalogs();
-        }
-
         $results = array();
 
-        return $results;
+        return $results; //return an empty array of videos to plex/upnp
     }
 
     /**
@@ -1216,11 +1187,6 @@ abstract class Catalog extends database_object
                     }
                 }
             }
-        }
-        if ($videos == null) {
-            $searches['video'] = $this->get_video_ids();
-        } else {
-            $searches['video'] = $videos;
         }
 
         // Run through items and get the art!
@@ -1596,11 +1562,6 @@ abstract class Catalog extends database_object
 
         return $info;
     } // update_song_from_tags
-
-    public static function update_video_from_tags($results, Video $video)
-    {
-        return;
-    }
 
     /**
      * Get rid of all tags found in the libraryItem

@@ -426,7 +426,7 @@ function install_config_transcode_mode($mode)
         $trconfig['transcode_cmd']          = $mode;
         $trconfig['transcode_input']        = '-i %FILE%';
         $trconfig['waveform']               = 'true';
-        $trconfig['generate_video_preview'] = 'true';
+        $trconfig['generate_video_preview'] = 'false';
 
         AmpConfig::set_by_array($trconfig, true);
     }

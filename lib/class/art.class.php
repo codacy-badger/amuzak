@@ -1393,9 +1393,7 @@ class Art extends database_object
             $limit = 5;
         }
 
-        if ($this->type == "video") {
-            $data = $this->gather_video_tags();
-        } elseif ($this->type == 'album') {
+        if ($this->type == 'album') {
             $data = $this->gather_song_tags($limit);
         } else {
             $data = array();
@@ -1410,9 +1408,7 @@ class Art extends database_object
      */
     public function gather_video_tags()
     {
-        $video = new Video($this->uid);
-
-        return $this->gather_media_tags($video);
+        return array(); // return empty array
     }
 
     /**
