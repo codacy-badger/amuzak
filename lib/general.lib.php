@@ -3,7 +3,7 @@
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
- * Copyright 2001 - 2017 Ampache.org
+ * Copyright 2019 ampcore
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -270,7 +270,7 @@ function translate_pattern_code($code)
 function generate_config($current)
 {
     // Start building the new config file
-    $distfile = AmpConfig::get('prefix') . '/config/ampache.cfg.php.dist';
+    $distfile = AmpConfig::get('prefix') . '/config/amuzak.cfg.php.dist';
     $handle   = fopen($distfile, 'r');
     $dist     = fread($handle, filesize($distfile));
     fclose($handle);

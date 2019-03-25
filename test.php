@@ -3,7 +3,7 @@
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
- * Copyright 2001 - 2017 Ampache.org
+ * Copyright 2019 ampcore
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -31,7 +31,7 @@ switch ($action) {
     case 'config':
         // Check to see if the config file is working now, if so fall
         // through to the default, else show the appropriate template
-        $configfile = "$prefix/config/ampache.cfg.php";
+        $configfile = "$prefix/config/amuzak.cfg.php";
 
         if (!count(parse_ini_file($configfile))) {
             require_once $prefix . '/templates/show_test_config.inc.php';

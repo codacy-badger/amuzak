@@ -1,14 +1,24 @@
 CHANGELOG
 =========
 
-3.10.0
+4.0.0
 ----------
 - Fork Ampache to aMuzak
+- Merge multiple open pull requests from Ampache
 - Remove allow_video
 - Minor text changes, remove allow_video preference from sql
 - Removed all video-related php files
+- Remove Channels
+- Remove Localplay
+- Remove Wanted / headphones plugin
+- Disable social features, keep user_activity table
+- Added an updated theme "reZak" (currently just an edit of reborn)
+- Added Matomo Plugin (Piwik still available separately)
+- Added playlists to statistics and popularity
 - Update php-cs-fixer to ~2.12.0 in composer.json
 - Update php-cs-fixer in root directory
+- Lots of CSS and ui updates to make things a bit cleaner
+- Use mashup for artist and album display
 - Drop superfluous tables
 
 3.9.1
@@ -211,7 +221,7 @@ CHANGELOG
 - Improved Subsonic API getAlbumList error handling
 - Fixed user login with browser used during the installation
 - Fixed iTunes 12 browsing when using DAAP (thanks Chattaway83)
-- Moved http_port user preference to ampache.cfg.php
+- Moved http_port user preference to amuzak.cfg.php
 - Upgraded last.fm and libre.fm scrobbling to latest API version (thanks nioc)
 - Added missing space between track and album in localplay playlist (thanks arnaudbey)
 - Added check fo mbstring.func_overload support before using id3 write functionality (thanks anonymous2ch)
@@ -293,7 +303,7 @@ CHANGELOG
 - Added new option to disable deferred extended metadata, e.g. artist details
 - Added Subsonic API getAvatar function
 - Fixed unsynced lyrics tags
-- Fixed ldap_filter setting deactivation on ampache.cfg.php update (thanks Rouzax)
+- Fixed ldap_filter setting deactivation on amuzak.cfg.php update (thanks Rouzax)
 - Added Subsonic API similar artists & songs functions
 - Added Subsonic API getLyrics function
 - Fixed disk number and album artist metadata on quicktime files (thanks JoeDat)
@@ -686,7 +696,7 @@ CHANGELOG
 - Updated PHPMailer to 5.2.0
 - Fixed bug in MPD module which affected toggling random or repeat
   (patch from jherold)
-- Properly escape config values when writing ampache.cfg.php
+- Properly escape config values when writing amuzak.cfg.php
 - Fixed session persistence with auth disabled (reported by Nathanael
   Anderson)
 - Fixed item count retention for Advanced Random (reported by USAF_Pride)
@@ -806,7 +816,7 @@ CHANGELOG
 - Updated Man Page to fix litian problems for Debian packaging
 - Fixed bug where video was registering as songs for now playing
   and stats
-- Add phpmailer and change ampache.cfg.php.dist
+- Add phpmailer and change amuzak.cfg.php.dist
 - Fixed manpage (Thx Porthose)
 
 3.5 *2009-05-05*

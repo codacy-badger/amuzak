@@ -2,7 +2,7 @@
 #
 # vim:set softtabstop=4 shiftwidth=4 expandtab:
 #
-# Copyright 2001 - 2017 Ampache.org
+# Copyright 2019 ampcore
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License v2
@@ -29,7 +29,7 @@ fi
 [[ $OLANG ]] || OLANG=$(echo $LANG | sed 's/\..*//;')
 potfile='messages.pot'
 tdstxt='translatable-database-strings.txt'
-ampconf='../../config/ampache.cfg.php'
+ampconf='../../config/amuzak.cfg.php'
 
 ##############################################################
 
@@ -51,7 +51,7 @@ usage() {
     echo -e "[-h|--help]\t\t Shows this help screen."
     echo ""
     echo -e "\033[32m If you encounter any bugs, please report them on Transifex (https://www.transifex.com/projects/p/ampache/)\033[0m"
-    echo -e "\033[32m See also: https://github.com/ampache/ampache/blob/master/locale/base/TRANSLATIONS\033[0m"
+    echo -e "\033[32m See also: https://github.com/ampcore/amuzak/blob/master/locale/base/TRANSLATIONS\033[0m"
     echo ""
     exit 1
 }
@@ -91,7 +91,7 @@ generate_pot_utds() {
                 $(find ../../ -type f -name \*.php -o -name \*.inc | sort)
     if [[ $? -eq 0 ]]; then
 
-        ampconf='../../config/ampache.cfg.php'
+        ampconf='../../config/amuzak.cfg.php'
 
         echo -e "\033[32m Pot creation/update successful\033[0m\n"
         echo -e "Reading database login information from Amapche config file\n"

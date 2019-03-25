@@ -3,7 +3,7 @@
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
- * Copyright 2001 - 2017 Ampache.org
+ * Copyright 2019 ampcore
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -66,7 +66,7 @@ if (!empty($link)) {
 }
 
 $results['load_time_begin'] = $load_time_begin;
-/** This is the version.... fluf nothing more... **/
+/** This is the version.... fluff nothing more... **/
 $results['version']            = '4.0.0';
 $results['int_config_version'] = '34';
 

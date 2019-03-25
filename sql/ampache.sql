@@ -1,4 +1,4 @@
--- Copyright 2001 - 2017 Ampache.org
+-- Copyright 2019 ampcore
 -- All rights reserved.
 --
 -- This program is free software; you can redistribute it and/or

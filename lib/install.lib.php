@@ -3,7 +3,7 @@
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
- * Copyright 2001 - 2017 Ampache.org
+ * Copyright 2019 ampcore
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -268,7 +268,7 @@ function install_insert_db($db_user = null, $db_pass = null, $create_db = true, 
  */
 function install_create_config($download = false)
 {
-    $config_file = AmpConfig::get('prefix') . '/config/ampache.cfg.php';
+    $config_file = AmpConfig::get('prefix') . '/config/amuzak.cfg.php';
 
     /* Attempt to make DB connection */
     Dba::dbh();
@@ -305,7 +305,7 @@ function install_create_config($download = false)
         }
     } else {
         $browser = new Horde_Browser();
-        $browser->downloadHeaders('ampache.cfg.php', 'text/plain', false, strlen($final));
+        $browser->downloadHeaders('amuzak.cfg.php', 'text/plain', false, strlen($final));
         echo $final;
         exit();
     }

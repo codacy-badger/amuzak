@@ -3,7 +3,7 @@
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
- * Copyright 2001 - 2017 Ampache.org
+ * Copyright 2019 ampcore
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -36,7 +36,7 @@ require $prefix . '/templates/install_header.inc.php';
     </div>
     <ul class="list-unstyled">
         <li><?php echo T_('Step 1 - Create the Ampache database'); ?></li>
-        <li><?php echo T_('Step 2 - Create configuration files (ampache.cfg.php ...)'); ?></li>
+        <li><?php echo T_('Step 2 - Create configuration files (amuzak.cfg.php ...)'); ?></li>
     </ul>
     <p><strong><?php echo T_('Step 3 - Set up the initial account'); ?></strong></p>
     <dl>

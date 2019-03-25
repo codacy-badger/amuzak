@@ -3,7 +3,7 @@
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
- * Copyright 2001 - 2017 Ampache.org
+ * Copyright 2019 ampcore
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -36,14 +36,14 @@ switch ($_REQUEST['action']) {
      */
     case 'generate_config':
         ob_end_clean();
-        $current = parse_ini_file(AmpConfig::get('prefix') . '/config/ampache.cfg.php');
+        $current = parse_ini_file(AmpConfig::get('prefix') . '/config/amuzak.cfg.php');
         $final   = generate_config($current);
         $browser = new Horde_Browser();
-        $browser->downloadHeaders('ampache.cfg.php', 'text/plain', false, filesize(AmpConfig::get('prefix') . '/config/ampache.cfg.php.dist'));
+        $browser->downloadHeaders('amuzak.cfg.php', 'text/plain', false, filesize(AmpConfig::get('prefix') . '/config/amuzak.cfg.php.dist'));
         echo $final;
         exit;
     case 'write_config':
-        write_config(AmpConfig::get('prefix') . '/config/ampache.cfg.php');
+        write_config(AmpConfig::get('prefix') . '/config/amuzak.cfg.php');
         header('Location: ' . AmpConfig::get('web_path') . '/index.php');
         exit;
     case 'reset_db_charset':

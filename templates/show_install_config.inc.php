@@ -3,7 +3,7 @@
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
- * Copyright 2001 - 2017 Ampache.org
+ * Copyright 2019 ampcore
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -50,7 +50,7 @@ require $prefix . '/templates/install_header.inc.php';
                 </div>
             </div>
             <p><?php echo T_('Step 1 - Create the Ampache database'); ?></p>
-                <p><strong><?php echo T_('Step 2 - Create configuration files (ampache.cfg.php ...)'); ?></strong></p>
+                <p><strong><?php echo T_('Step 2 - Create configuration files (amuzak.cfg.php ...)'); ?></strong></p>
                 <dl>
                     <dd><?php printf(T_('This step takes the basic config values and generates the config file. If your config/ directory is writable, you can select "write" to have Ampache write the config file directly to the correct location. If you select "download" it will prompt you to download the config file, and you can then manually place the config file in %s'), $prefix); ?></dd>
                 </dl>
@@ -264,7 +264,7 @@ require $prefix . '/templates/install_header.inc.php';
 
                 <div class="col-sm-4">&nbsp;</div><div class="col-sm-8">&nbsp;</div>
                 <div class="col-sm-4">
-                    <?php echo T_('config/ampache.cfg.php action'); ?>
+                    <?php echo T_('config/amuzak.cfg.php action'); ?>
                 </div>
                 <div class="col-sm-8">
                     <button type="submit" class="btn btn-warning" name="download"><?php echo T_('Download'); ?></button>
@@ -274,9 +274,9 @@ require $prefix . '/templates/install_header.inc.php';
                         <?php echo T_('Write'); ?>
                     </button>
                 </div>
-                <div class="col-sm-4 control-label"><?php echo T_('config/ampache.cfg.php exists?'); ?></div>
+                <div class="col-sm-4 control-label"><?php echo T_('config/amuzak.cfg.php exists?'); ?></div>
                 <div class="col-sm-8"><?php echo debug_result(is_readable($configfile)); ?></div>
-                <div class="col-sm-4 control-label"><?php echo T_('config/ampache.cfg.php configured?'); ?></div>
+                <div class="col-sm-4 control-label"><?php echo T_('config/amuzak.cfg.php configured?'); ?></div>
                 <div class="col-sm-8"><?php $results = @parse_ini_file($configfile); echo debug_result(check_config_values($results)); ?></div>
                 <div class="col-sm-4">&nbsp;</div><div class="col-sm-8">&nbsp;</div>
 

@@ -3,7 +3,7 @@
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
- * Copyright 2001 - 2017 Ampache.org
+ * Copyright 2019 ampcore
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -51,7 +51,7 @@ function log_event($username, $event_name, $event_description, $log_name)
     $log_write = error_log($log_line, 3, $log_filename);
 
     if (!$log_write) {
-        echo "Warning: Unable to write to log ($log_filename) Please check your log_path variable in ampache.cfg.php";
+        echo "Warning: Unable to write to log ($log_filename) Please check your log_path variable in amuzak.cfg.php";
     }
 } // log_event
 

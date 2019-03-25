@@ -3,7 +3,7 @@
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
- * Copyright 2001 - 2017 Ampache.org
+ * Copyright 2019 ampcore
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -40,7 +40,7 @@
             echo AmpConfig::get('custom_text_footer');
         } else {
             ?>
-            <a id="ampache_link" href="https://github.com/ampache/ampache#readme" target="_blank" title="Copyright © 2001 - 2017 Ampache.org">aMuzak <?php echo AmpConfig::get('version'); ?></a>
+            <a id="ampache_link" href="https://github.com/ampcore/amuzak#readme" target="_blank" title="Copyright © 2001 - 2017 Ampache.org">aMuzak <?php echo AmpConfig::get('version'); ?></a>
         <?php
         } ?>
         <?php if (AmpConfig::get('show_footer_statistics')) {
