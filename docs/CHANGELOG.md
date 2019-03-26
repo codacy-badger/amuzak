@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+4.0.1
+----------
+- Rename ampache.cfg.php.dist to amuzak.cfg.php.dist
+- Fix always show temp playlist (rightbar)
+- Fix stop browsers blocking audio playback without user interaction.
+- Merge ampache/pull1849
+
 4.0.0
 ----------
 - Fork Ampache to aMuzak
