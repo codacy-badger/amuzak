@@ -35,15 +35,15 @@ The recommended and most stable version is [git HEAD](https://github.com/ampcore
 [![Build Status](https://api.travis-ci.org/ampache/ampache.png?branch=master)](https://travis-ci.org/ampache/ampache)
 
 You get the latest version with recent changes and fixes but maybe in an unstable state from our [develop branch](https://github.com/ampcore/amuzak/archive/develop.tar.gz).
-[![Build Status](https://api.travis-ci.org/ampache/ampache.png?branch=develop)](https://travis-ci.org/ampache/ampache)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ampache/ampache/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/ampache/ampache/?branch=develop)
-[![Codacy Badge](https://api.codacy.com/project/badge/b28cdb9e9ee2431c7cb9c23d5438cb80)](https://www.codacy.com/app/afterster_2222/ampache)
-[![Code Climate](https://codeclimate.com/github/ampache/ampache/badges/gpa.svg)](https://codeclimate.com/github/ampache/ampache)
+[![Build Status](https://travis-ci.org/ampcore/amuzak.png?branch=develop)](https://travis-ci.org/ampcore/amuzak)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ampcore/amuzak/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/ampcore/amuzak/?branch=develop)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2a10f9b966a5457da6c44853be600c52)](https://app.codacy.com/app/lachlan-00/amuzak)
+[![Code Climate](https://api.codeclimate.com/v1/badges/7f56af9bd0c8302348c7/maintainability.svg)](https://codeclimate.com/github/ampcore/amuzak)
 
 Installation
 ------------
 
-Please see [the wiki](https://github.com/ampache/ampache/wiki/Installation)
+Please see [the wiki](https://github.com/ampcore/amuzak/wiki/Installation)
 
 Requirements
 ------------
@@ -94,7 +94,7 @@ Translations
 
 aMuzak is currently translated (at least partially) into the
 following languages. If you are interested in updating an existing
-translation, simply visit us on [Transifex](https://www.transifex.com/ampache/ampache).
+translation, simply visit us on [Transifex](https://www.transifex.com/ampachecore/amuzak).
 If you prefer it old school or want to work offline, take a look at [/locale/base/TRANSLATIONS](https://github.com/ampcore/amuzak/blob/develop/locale/base/TRANSLATIONS.md)
 for more instructions.
 
