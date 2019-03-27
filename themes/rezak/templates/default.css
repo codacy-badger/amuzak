@@ -444,7 +444,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 125px;
+    max-width: 125px;
     display: inline-block;
 }
 
