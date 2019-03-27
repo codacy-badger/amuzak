@@ -3,7 +3,6 @@
 
 aMuzak
 =======
-[www.ampache.org](http://ampache.org/) |
 [amuzak@github.com](https://github.com/ampcore/amuzak/)
 
 **Notice:**  THIS IS A FORK OF AMPACHE THAT WILL FOCUS ON THE MUSIC
@@ -32,10 +31,10 @@ Recommended Version
 -------------------
 
 The recommended and most stable version is [git HEAD](https://github.com/ampcore/amuzak/archive/master.tar.gz).
-[![Build Status](https://api.travis-ci.org/ampache/ampache.png?branch=master)](https://travis-ci.org/ampache/ampache)
+[![Build Status](https://api.travis-ci.org/ampcore/amuzak.svg?branch=develop)](https://travis-ci.org/ampcore/amuzak)
 
 You get the latest version with recent changes and fixes but maybe in an unstable state from our [develop branch](https://github.com/ampcore/amuzak/archive/develop.tar.gz).
-[![Build Status](https://travis-ci.org/ampcore/amuzak.png?branch=develop)](https://travis-ci.org/ampcore/amuzak)
+[![Build Status](https://api.travis-ci.org/ampcore/amuzak.svg?branch=develop)](https://travis-ci.org/ampcore/amuzak)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ampcore/amuzak/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/ampcore/amuzak/?branch=develop)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/2a10f9b966a5457da6c44853be600c52)](https://app.codacy.com/app/lachlan-00/amuzak)
 [![Code Climate](https://api.codeclimate.com/v1/badges/7f56af9bd0c8302348c7/maintainability.svg)](https://codeclimate.com/github/ampcore/amuzak)
@@ -121,8 +120,8 @@ Hate it? Love it? Let us know! Dozens of people send ideas for amazing new featu
 Further Information and basic Help
 ----------------------------------
 
-* Everything related to the aMuzak Project can be found on our [Public Repository](https://github.com/ampache)
-* Want to know, how to get Apache to work or learn more about the functions? See our [Documentation](https://github.com/ampache/ampache/wiki)
+* Everything related to the aMuzak Project can be found on our [Public Repository](https://github.com/ampcore)
+* Want to know, how to get Apache to work or learn more about the functions? See our [Documentation](https://github.com/ampcore/amuzak/wiki)
 
 We hope to see you soon and that you have fun with this Project!
 
