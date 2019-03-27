@@ -180,6 +180,7 @@ class Rating extends database_object
     /**
      * get_highest_sql
      * Get highest sql
+     * @param string $type
      */
     public static function get_highest_sql($type)
     {

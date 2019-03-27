@@ -1054,6 +1054,7 @@ class vainfo
     /**
      * @param string $dir_pattern
      * @param string $file_pattern
+     * @param string $filepath
      */
     public static function parse_pattern($filepath, $dir_pattern, $file_pattern)
     {

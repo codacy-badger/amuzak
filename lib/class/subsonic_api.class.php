@@ -187,6 +187,7 @@ class Subsonic_Api
 
     /**
      * @param string $f
+     * @param SimpleXMLElement $xml
      */
     public static function apiOutput2($f, $xml, $callback='', $alwaysArray=array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'))
     {

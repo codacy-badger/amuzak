@@ -57,6 +57,9 @@ class Plex_XML_Data
     {
     }
 
+    /**
+     * @param integer $id
+     */
     public static function getArtistId($id)
     {
         return $id + Plex_XML_Data::AMPACHEID_ARTIST;
@@ -359,6 +362,9 @@ class Plex_XML_Data
         return $key;
     }
 
+    /**
+     * @param integer $key
+     */
     public static function getSectionUri($key)
     {
         return '/library/sections/' . $key;
@@ -532,6 +538,9 @@ class Plex_XML_Data
         }
     }
 
+    /**
+     * @param integer[] $catalogs
+     */
     public static function setSections(SimpleXMLElement $xml, $catalogs)
     {
         foreach ($catalogs as $id) {
@@ -1576,6 +1585,7 @@ class Plex_XML_Data
     /**
      * @param false|string $hasPrefs
      * @param string $identifier
+     * @param string $name
      */
     protected static function addAgent(SimpleXMLElement $xml, $name, $hasPrefs, $identifier, $enabled = false, $langs='')
     {

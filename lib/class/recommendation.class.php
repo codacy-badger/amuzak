@@ -105,6 +105,9 @@ class Recommendation
         return $cache;
     }
 
+    /**
+     * @param string $type
+     */
     protected static function delete_recommendation_cache($type, $id)
     {
         $cache = self::get_recommendation_cache($type, $id);
@@ -116,6 +119,7 @@ class Recommendation
 
     /**
      * @param string $type
+     * @param integer $id
      */
     protected static function update_recommendation_cache($type, $id, $recommendations)
     {

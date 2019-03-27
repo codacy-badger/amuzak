@@ -134,6 +134,8 @@ class Stats
     /**
       * is_already_inserted
      * Check if the same stat has not already been inserted within a graceful delay
+     * @param string $type
+     * @param integer $user
      */
     public static function is_already_inserted($type, $oid, $user, $count_type = 'stream')
     {
@@ -250,6 +252,7 @@ class Stats
     /**
      * get_top_sql
      * This returns the get_top sql
+     * @param string $type
      */
     public static function get_top_sql($type, $threshold = '', $count_type = 'stream')
     {
@@ -420,6 +423,7 @@ class Stats
     /**
      * get_newest_sql
      * This returns the get_newest sql
+     * @param string $type
      */
     public static function get_newest_sql($type, $catalog=0)
     {

@@ -77,6 +77,7 @@ class Stream
     /**
      *
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     * @param Song $song
      */
     public static function get_allowed_bitrate($song)
     {
@@ -251,6 +252,9 @@ class Stream
         return $image;
     }
 
+    /**
+     * @param string $command
+     */
     private static function start_process($command, $settings = array())
     {
         debug_event('stream', "Transcode command: " . $command, 3);

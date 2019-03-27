@@ -133,6 +133,7 @@ class Tag extends database_object implements library_item
      * add
      * This is a wrapper function, it figures out what we need to add, be it a tag
      * and map, or just the mapping
+     * @param string $type
      */
     public static function add($type, $id, $value, $user=true)
     {
@@ -425,6 +426,7 @@ class Tag extends database_object implements library_item
     /**
      * get_top_tags
      * This gets the top tags for the specified object using limit
+     * @param string $type
      */
     public static function get_top_tags($type, $object_id, $limit = 10)
     {
@@ -702,6 +704,8 @@ class Tag extends database_object implements library_item
     /**
      * remove_map
      * This will only remove tag maps for the current user
+     * @param string $type
+     * @param integer $object_id
      */
     public function remove_map($type, $object_id, $user=true)
     {

@@ -271,6 +271,10 @@ class Core
      * Replacement function because PHP's is_readable is buggy:
      * https://bugs.php.net/bug.php?id=49620
      */
+
+    /**
+     * @param string|false $path
+     */
     public static function is_readable($path)
     {
         if (is_dir($path)) {

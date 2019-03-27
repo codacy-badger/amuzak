@@ -146,6 +146,7 @@ class Userflag extends database_object
      * set_flag
      * This function sets the user flag for the current object.
      * If no userid is passed in, we use the currently logged in user.
+     * @param boolean $flagged
      */
     public function set_flag($flagged, $user_id = null)
     {
@@ -199,6 +200,7 @@ class Userflag extends database_object
     /**
      * get_latest_sql
      * Get the latest sql
+     * @param string|null $type
      */
     public static function get_latest_sql($type, $user_id=null)
     {
