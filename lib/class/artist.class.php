@@ -590,7 +590,7 @@ class Artist extends database_object implements library_item
      * get_catalogs
      *
      * Get all catalog ids related to this item.
-     * @return int[]
+     * @return integer[]
      */
     public function get_catalogs()
     {
@@ -843,6 +843,7 @@ class Artist extends database_object implements library_item
      * @param string $tags_comma
      * @param boolean $override_childs
      * @param int|null $current_id
+     * @param boolean $add_to_childs
      */
     public function update_tags($tags_comma, $override_childs, $add_to_childs, $current_id = null, $force_update = false)
     {

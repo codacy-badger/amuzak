@@ -49,6 +49,9 @@ class Subsonic_Api
         }*/
     }
 
+    /**
+     * @param string $parameter
+     */
     public static function check_parameter($input, $parameter, $addheader = false)
     {
         if (empty($input[$parameter])) {
@@ -105,6 +108,9 @@ class Subsonic_Api
         return strlen($header);
     }
 
+    /**
+     * @param string $url
+     */
     public static function follow_stream($url)
     {
         set_time_limit(0);
@@ -169,6 +175,9 @@ class Subsonic_Api
         header("Access-Control-Allow-Origin: *");
     }
 
+    /**
+     * @param SimpleXMLElement $xml
+     */
     public static function apiOutput($input, $xml, $alwaysArray=array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'))
     {
         $f        = $input['f'];
@@ -176,6 +185,10 @@ class Subsonic_Api
         self::apiOutput2(strtolower($f), $xml, $callback, $alwaysArray);
     }
 
+    /**
+     * @param string $f
+     * @param SimpleXMLElement $xml
+     */
     public static function apiOutput2($f, $xml, $callback='', $alwaysArray=array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'))
     {
         $conf = array('alwaysArray' => $alwaysArray);
@@ -201,6 +214,7 @@ class Subsonic_Api
     /**
      * xml2json based from http://outlandish.com/blog/xml-to-json/
      * Because we cannot use only json_encode to respect JSON Subsonic API
+     * @param SimpleXMLElement $xml
      */
     private static function xml2json($xml, $options = array())
     {
@@ -1223,6 +1237,9 @@ class Subsonic_Api
         self::_setStar($input, false);
     }
 
+    /**
+     * @param boolean $star
+     */
     private static function _setStar($input, $star)
     {
         $id       = $input['id'];

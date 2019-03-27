@@ -517,6 +517,7 @@ class Query
     /**
      * get_filter
      * returns the specified filter value
+     * @param string $key
      * @return string|boolean
      */
     public function get_filter($key)

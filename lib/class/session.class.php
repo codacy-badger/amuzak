@@ -132,6 +132,7 @@ class Session
      * read
      *
      * This takes a key and returns the data from the database.
+     * @return string
      */
     public static function read($key)
     {
@@ -142,6 +143,7 @@ class Session
      * _read
      *
      * This returns the specified column from the session row.
+     * @param string $column
      */
     private static function _read($key, $column)
     {
@@ -298,6 +300,7 @@ class Session
      * This checks to see if the specified session of the specified type
      * exists
      * based on the type.
+     * @param string $type
      */
     public static function exists($type, $key)
     {
@@ -509,6 +512,9 @@ class Session
         return md5(uniqid(mt_rand(), true));
     }
 
+    /**
+     * @param string $token
+     */
     public static function storeTokenForUser($username, $token, $remember_length)
     {
         $sql = "INSERT INTO session_remember (`username`, `token`, `expire`) VALUES (?, ?, ?)";

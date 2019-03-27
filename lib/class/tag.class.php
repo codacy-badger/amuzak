@@ -88,6 +88,7 @@ class Tag extends database_object implements library_item
     /**
      * build_map_cache
      * This builds a cache of the mappings for the specified object, no limit is given
+     * @param string $type
      */
     public static function build_map_cache($type, $ids)
     {
@@ -132,6 +133,7 @@ class Tag extends database_object implements library_item
      * add
      * This is a wrapper function, it figures out what we need to add, be it a tag
      * and map, or just the mapping
+     * @param string $type
      */
     public static function add($type, $id, $value, $user=true)
     {
@@ -237,6 +239,7 @@ class Tag extends database_object implements library_item
     /**
      * merge
      * merges this tag to another one.
+     * @param boolean $is_persistent
      */
     public function merge($merge_to, $is_persistent)
     {
@@ -286,6 +289,7 @@ class Tag extends database_object implements library_item
     /**
      * add_tag_map
      * This adds a specific tag to the map for specified object
+     * @param string $type
      */
     public static function add_tag_map($type, $object_id, $tag_id, $user=true)
     {
@@ -401,6 +405,8 @@ class Tag extends database_object implements library_item
      * tag_map_exists
      * This looks to see if the current mapping of the current object of the current tag of the current
      * user exists, lots of currents... taste good in scones.
+     * @param integer $user
+     * @param string $type
      */
     public static function tag_map_exists($type, $object_id, $tag_id, $user)
     {
@@ -422,6 +428,7 @@ class Tag extends database_object implements library_item
     /**
      * get_top_tags
      * This gets the top tags for the specified object using limit
+     * @param string $type
      */
     public static function get_top_tags($type, $object_id, $limit = 10)
     {
@@ -452,6 +459,7 @@ class Tag extends database_object implements library_item
      * get_object_tags
      * Display all tags that apply to maching target type of the specified id
      *
+     * @param string $type
      */
     public static function get_object_tags($type, $id)
     {
@@ -590,6 +598,9 @@ class Tag extends database_object implements library_item
     /**
      * update_tag_list
      * Update the tags list based on commated list (ex. tag1,tag2,tag3,..)
+     * @param string $type
+     * @param integer $object_id
+     * @param boolean $overwrite
      */
     public static function update_tag_list($tags_comma, $type, $object_id, $overwrite)
     {
@@ -695,6 +706,8 @@ class Tag extends database_object implements library_item
     /**
      * remove_map
      * This will only remove tag maps for the current user
+     * @param string $type
+     * @param integer $object_id
      */
     public function remove_map($type, $object_id, $user=true)
     {
@@ -730,6 +743,9 @@ class Tag extends database_object implements library_item
         return $keywords;
     }
 
+    /**
+     * @return string
+     */
     public function get_fullname()
     {
         return $this->name;

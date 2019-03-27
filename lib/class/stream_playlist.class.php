@@ -39,6 +39,7 @@ class Stream_Playlist
     /**
      * Stream_Playlist constructor
      * If an ID is passed, it should be a stream session ID.
+     * @param integer $id
      */
     public function __construct($id = null)
     {
@@ -239,6 +240,9 @@ class Stream_Playlist
         return (AmpConfig::get('ajax_load') && AmpConfig::get('play_type') == 'web_player');
     }
 
+    /**
+     * @param string $type
+     */
     public function generate_playlist($type, $redirect = false)
     {
         if (!count($this->urls)) {

@@ -94,6 +94,8 @@ class Stats
       * insert
      * This inserts a new record for the specified object
      * with the specified information, amazing!
+     * @param string $type
+     * @param integer $user
      */
     public static function insert($type, $oid, $user, $agent='', $location, $count_type = 'stream')
     {
@@ -132,6 +134,8 @@ class Stats
     /**
       * is_already_inserted
      * Check if the same stat has not already been inserted within a graceful delay
+     * @param string $type
+     * @param integer $user
      */
     public static function is_already_inserted($type, $oid, $user, $count_type = 'stream')
     {
@@ -154,6 +158,7 @@ class Stats
     /**
       * get_object_count
      * Get count for an object
+     * @param string $object_type
      */
     public static function get_object_count($object_type, $object_id, $threshold = '', $count_type = 'stream')
     {
@@ -247,6 +252,7 @@ class Stats
     /**
      * get_top_sql
      * This returns the get_top sql
+     * @param string $type
      */
     public static function get_top_sql($type, $threshold = '', $count_type = 'stream')
     {
@@ -279,6 +285,7 @@ class Stats
       * get_top
      * This returns the top X for type Y from the
      * last stats_threshold days
+     * @param string $type
      */
     public static function get_top($type, $count='', $threshold = '', $offset='')
     {
@@ -332,6 +339,7 @@ class Stats
     /**
      * get_recent
      * This returns the recent X for type Y
+    * @param string $type
     */
     public static function get_recent($type, $count='', $offset='')
     {
@@ -363,6 +371,7 @@ class Stats
       * get_user
      * This gets all stats for atype based on user with thresholds and all
      * If full is passed, doesn't limit based on date
+     * @param integer $user
      */
     public static function get_user($count, $type, $user, $full='')
     {
@@ -414,6 +423,7 @@ class Stats
     /**
      * get_newest_sql
      * This returns the get_newest sql
+     * @param string $type
      */
     public static function get_newest_sql($type, $catalog=0)
     {
@@ -447,6 +457,7 @@ class Stats
      * get_newest
      * This returns an array of the newest artists/albums/whatever
      * in this ampache instance
+     * @param string $type
      */
     public static function get_newest($type, $count='', $offset='', $catalog=0)
     {

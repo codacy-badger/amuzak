@@ -192,10 +192,12 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
            Header
 ***********************************************/
 #header {
-    z-index: 5;
-    height: 64px;
-    padding: 0 5px;
     font-size: 15px;
+    height: 64px;
+    overflow-x: visible;
+    overflow-y: hidden;
+    padding: 0 5px;
+    z-index: 5;
 }
 
 .header-float {
@@ -527,7 +529,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 .sidebar-fixed {
     margin: 0px auto auto 5px;
     float: left;
-    width: 150px;
+    width: 148px;
 }
 
 /* For sidebar tabs */
@@ -559,7 +561,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     margin: 3px auto 5px 5px;
-    width: 150px;
+    width: 148px;
 }
 
 .sidebar-page-float {
@@ -568,7 +570,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 #sidebar-tabs .sb2 li h4 {
-    height: 23px;
+    height: 14px;
     margin: 10px 0 5px 0;
     padding: 0 10px 0 20px;
     border-bottom: 1px solid;
@@ -785,7 +787,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 .content-fixed {
-    margin: 86px 250px 0px 165px;
+    margin: 86px 250px 0px 158px;
 }
 
 .content-fixed-topmenu {

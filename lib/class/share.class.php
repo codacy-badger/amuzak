@@ -101,6 +101,9 @@ class Share extends database_object
         return $secret;
     }
 
+    /**
+     * @param string $type
+     */
     public static function format_type($type)
     {
         switch ($type) {
@@ -114,6 +117,10 @@ class Share extends database_object
         }
     }
 
+    /**
+     * @param string $object_type
+     * @param integer $object_id
+     */
     public static function create_share($object_type, $object_id, $allow_stream=true, $allow_download=true, $expire=0, $secret='', $max_counter=0, $description='')
     {
         $object_type = self::format_type($object_type);
@@ -153,6 +160,9 @@ class Share extends database_object
         return $id;
     }
 
+    /**
+     * @param string $secret
+     */
     public static function get_url($id, $secret)
     {
         $url = AmpConfig::get('web_path') . '/share.php?id=' . $id;

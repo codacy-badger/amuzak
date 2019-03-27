@@ -553,6 +553,7 @@ class User extends database_object
      * has_access
      * this function checkes to see if this user has access
      * to the passed action (pass a level requirement)
+     * @param integer $needed_level
      */
     public function has_access($needed_level)
     {
@@ -733,6 +734,7 @@ class User extends database_object
     /**
      * update_apikey
      * Updates their api key
+     * @param string $new_apikey
      */
     public function update_apikey($new_apikey)
     {
@@ -930,6 +932,7 @@ class User extends database_object
     /**
      * create
      * inserts a new user into ampache
+     * @param null|string $website
      */
     public static function create($username, $fullname, $email, $website, $password, $access, $state = '', $city = '', $disabled = false)
     {
@@ -1358,6 +1361,9 @@ class User extends database_object
         return $avatar;
     } // get_avatar
 
+    /**
+     * @param string $data
+     */
     public function update_avatar($data, $mime = '')
     {
         $art = new Art($this->id, 'user');
@@ -1520,7 +1526,6 @@ class User extends database_object
     /**
      * get_display_follow
      * Get html code to display the follow/unfollow link
-     * @param int|null $display_user_id
      * @return string
      */
     public function get_display_follow($user_id = null)

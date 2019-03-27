@@ -294,7 +294,7 @@ class Podcast_Episode extends database_object implements media, library_item
      * against $GLOBALS['user'] to make sure they are allowed to update this record
      * it then updates it and sets $this->{$field} to the new value
      * @param string $field
-     * @param mixed $value
+     * @param integer $value
      * @param int $song_id
      * @param int $level
      * @return boolean
@@ -345,6 +345,7 @@ class Podcast_Episode extends database_object implements media, library_item
      * @param int $oid
      * @param string $additional_params
      * @param boolean $local
+     * @param string $player
      * @return string
      */
     public static function play_url($oid, $additional_params='', $player=null, $local=false)
@@ -376,6 +377,9 @@ class Podcast_Episode extends database_object implements media, library_item
         return Dba::write($sql, array($this->id));
     }
     
+    /**
+     * @param string $state
+     */
     public function change_state($state)
     {
         $sql = "UPDATE `podcast_episode` SET `state` = ? WHERE `id` = ?";

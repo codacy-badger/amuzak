@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+4.0.2
+----------
+- Update header and theme slightly
+- Added CI tools from ampache into amuzak
+- Merge ampache/pull/1498
+- Update travis yml for CI builds
+
 4.0.1
 ----------
 - Rename ampache.cfg.php.dist to amuzak.cfg.php.dist

@@ -34,6 +34,8 @@ class Recommendation
     /**
      * get_lastfm_results
      * Runs a last.fm query and returns the parsed results
+     * @param string $method
+     * @param string $query
      */
     public static function get_lastfm_results($method, $query)
     {
@@ -46,6 +48,9 @@ class Recommendation
         return self::query_lastfm($url);
     }
 
+    /**
+     * @param string $url
+     */
     public static function query_lastfm($url)
     {
         debug_event('Recommendation', 'search url : ' . $url, 5);
@@ -74,6 +79,9 @@ class Recommendation
         Dba::write('DELETE FROM `recommendation` WHERE `last_update` < ?', array((time() - 604800)));
     }
 
+    /**
+     * @param string $type
+     */
     protected static function get_recommendation_cache($type, $id, $get_items = false)
     {
         self::gc();
@@ -100,6 +108,10 @@ class Recommendation
         return $cache;
     }
 
+    /**
+     * @param string $type
+     * @param integer $id
+     */
     protected static function delete_recommendation_cache($type, $id)
     {
         $cache = self::get_recommendation_cache($type, $id);
@@ -109,6 +121,10 @@ class Recommendation
         }
     }
 
+    /**
+     * @param string $type
+     * @param integer $id
+     */
     protected static function update_recommendation_cache($type, $id, $recommendations)
     {
         self::delete_recommendation_cache($type, $id);
@@ -124,6 +140,7 @@ class Recommendation
     /**
      * get_songs_like
      * Returns a list of similar songs
+     * @param integer $song_id
      */
     public static function get_songs_like($song_id, $limit = 5, $local_only = true)
     {
@@ -219,6 +236,7 @@ class Recommendation
     /**
      * get_artists_like
      * Returns a list of similar artists
+     * @param integer $artist_id
      */
     public static function get_artists_like($artist_id, $limit = 10, $local_only = true)
     {
@@ -315,6 +333,7 @@ class Recommendation
     /**
      * get_artist_info
      * Returns artist information
+     * @param integer $artist_id
      */
     public static function get_artist_info($artist_id, $fullname='')
     {

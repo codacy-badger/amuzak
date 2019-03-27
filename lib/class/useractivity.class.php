@@ -40,6 +40,7 @@ class Useractivity extends database_object
      * Constructor
      * This is run every time a new object is created, and requires
      * the id and type of object that we need to pull the flag for
+     * @param integer $id
      */
     public function __construct($id)
     {
@@ -60,7 +61,7 @@ class Useractivity extends database_object
     /**
      * this attempts to build a cache of the data from the passed activities all in one query
      * @param int[] $ids
-     * @return boolean
+     * @return false|null
      */
     public static function build_cache($ids)
     {
@@ -81,6 +82,8 @@ class Useractivity extends database_object
      * gc
      *
      * Remove activities for items that no longer exist.
+     * @param string $object_type
+     * @param integer $object_id
      */
     public static function gc($object_type = null, $object_id = null)
     {
@@ -103,9 +106,9 @@ class Useractivity extends database_object
     /**
      * post_activity
      * @param int $user_id
-     * @param string $activity
      * @param string $object_type
      * @param int $object_id
+     * @param string $action
      */
     public static function post_activity($user_id, $action, $object_type, $object_id)
     {

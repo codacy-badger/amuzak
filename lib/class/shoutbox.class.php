@@ -70,6 +70,8 @@ class Shoutbox
      * gc
      *
      * Cleans out orphaned shoutbox items
+     * @param string $object_type
+     * @param integer $object_id
      */
     public static function gc($object_type = null, $object_id = null)
     {
@@ -93,6 +95,7 @@ class Shoutbox
      * get_top
      * This returns the top user_shouts, shoutbox objects are always shown regardless and count against the total
      * number of objects shown
+     * @param integer $limit
      */
     public static function get_top($limit, $username = null)
     {

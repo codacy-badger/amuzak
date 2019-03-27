@@ -226,6 +226,7 @@ class Playlist extends playlist_object
      * get_media_count
      * This simply returns a int of how many media elements exist in this playlist
      * For now let's consider a dyn_media a single entry
+     * @return string|null
      */
     public function get_media_count($type = '')
     {
@@ -245,6 +246,7 @@ class Playlist extends playlist_object
     /**
     * get_total_duration
     * Get the total duration of all songs.
+    * @return string|null
     */
     public function get_total_duration()
     {
@@ -331,6 +333,8 @@ class Playlist extends playlist_object
     /**
      * _update_item
      * This is the generic update function, it does the escaping and error checking
+     * @param string $field
+     * @param integer $level
      */
     private function _update_item($field, $value, $level)
     {
@@ -347,6 +351,7 @@ class Playlist extends playlist_object
     /**
      * update_track_number
      * This takes a playlist_data.id and a track (int) and updates the track value
+     * @param integer $index
      */
     public function update_track_number($track_id, $index)
     {

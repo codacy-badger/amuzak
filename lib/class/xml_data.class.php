@@ -64,7 +64,7 @@ class XML_Data
      * This sets the limit for any ampache transactions
      *
      * @param    integer    $limit    (description here...)
-     * @return    void
+     * @return    false|null
      */
     public static function set_limit($limit)
     {
@@ -85,7 +85,7 @@ class XML_Data
      * This sets the type of XML_Data we are working on
      *
      * @param    string    $type    XML_Data type
-     * @return    void
+     * @return    false|null
      */
     public static function set_type($type)
     {
@@ -198,6 +198,8 @@ class XML_Data
      *
      * This returns the formatted 'playlistTrack' string for an xml document
      *
+     * @param Song $song
+     * @param string $playlist_data
      */
     private static function playlist_song_tracks_string($song, $playlist_data)
     {
@@ -220,7 +222,7 @@ class XML_Data
      * This will build an xml document from a key'd array,
      *
      * @param    array    $array    (description here...)
-     * @param    boolean    $callback    (description here...)
+     * @param    string|boolean    $callback    (description here...)
      * @return    string    return xml
      */
     public static function keyed_array($array, $callback='')
