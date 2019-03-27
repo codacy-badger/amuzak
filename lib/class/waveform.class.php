@@ -77,7 +77,7 @@ class Waveform
         if ($song->id) {
             $song->format();
             $waveform = $song->waveform;
-            if (!$waveform) {
+            if ($waveform === null) {
                 $catalog = Catalog::create_from_id($song->catalog);
                 if ($catalog->get_type() == 'local') {
                     $transcode_to  = 'wav';

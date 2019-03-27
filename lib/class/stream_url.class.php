@@ -36,10 +36,11 @@ class Stream_URL extends memory_object
         if (AmpConfig::get('stream_beautiful_url')) {
             $posargs = strpos($url, '/play/');
             if ($posargs !== false) {
-                $argsstr = substr($url, $posargs + 6);
-                $url     = substr($url, 0, $posargs + 6) . 'index.php?';
-                $args    = explode('/', $argsstr);
-                for ($i = 0; $i < count($args); $i += 2) {
+                $argsstr    = substr($url, $posargs + 6);
+                $url        = substr($url, 0, $posargs + 6) . 'index.php?';
+                $args       = explode('/', $argsstr);
+                $args_count = count($args);
+                for ($i = 0; $i < $args_count; $i += 2) {
                     if ($i > 0) {
                         $url .= '&';
                     }

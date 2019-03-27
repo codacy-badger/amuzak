@@ -206,7 +206,6 @@ class XML_Data
         if (empty($playlist_data)) {
             return "";
         }
-        $playlist_track = "";
         foreach ($playlist_data as $playlist) {
             if ($playlist["object_id"] == $song->id) {
                 return "\t<playlisttrack>" . $playlist["track"] . "</playlisttrack>\n";
@@ -780,9 +779,9 @@ class XML_Data
      *
      * (description here...)
      *
-     * @param    array    $data    (descriptiong here...)
+     * @param    array    $data    (description here...)
      * @param    string    $title    RSS feed title
-     * @param    string    $description    (not use yet?)
+     * @param    string    $description    (The parameter is not used)
      * @param    string    $date    publish date
      * @return    string    RSS feed xml
      *
@@ -791,7 +790,7 @@ class XML_Data
     public static function rss_feed($data, $title, $description, $date = null)
     {
         $string = "\t<title>$title</title>\n\t<link>" . AmpConfig::get('web_path') . "</link>\n\t";
-        if ($date != null) {
+        if ($date !== null) {
             $string .= "<pubDate>" . date("r", $date) . "</pubDate>\n";
         }
 
@@ -890,7 +889,7 @@ class XML_Data
         $xml->addAttribute("version", "2.0");
         $xchannel = $xml->addChild("channel");
         $xchannel->addChild("title", $libitem->get_fullname() . " Podcast");
-        $xlink = $xchannel->addChild("atom:link", htmlentities($libitem->link));
+        //$xlink = $xchannel->addChild("atom:link", htmlentities($libitem->link));
         if (Art::has_db($libitem->id, get_class($libitem))) {
             $ximg = $xchannel->addChild("xmlns:itunes:image");
             $ximg->addAttribute("href", Art::url($libitem->id, get_class($libitem)));
@@ -920,7 +919,7 @@ class XML_Data
             if ($media->f_artist) {
                 $xitem->addChild("xmlns:itunes:author", $media->f_artist);
             }
-            $xmlink = $xitem->addChild("link", htmlentities($media->link));
+            //$xmlink = $xitem->addChild("link", htmlentities($media->link));
             $xitem->addChild("guid", htmlentities($media->link));
             if ($media->addition_time) {
                 $xitem->addChild("pubDate", date("r", $media->addition_time));

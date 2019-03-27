@@ -940,10 +940,11 @@ class Subsonic_Api
 
         if ($songsIdToAdd) {
             if (!is_array($songsIdToAdd)) {
-                $songsIdToAdd = array($songsIdToAdd);
+                $songsIdToAdd       = array($songsIdToAdd);
+                $songsIdToAdd_count = count($songsIdToAdd);
             }
-            if (count($songsIdToAdd) > 0) {
-                for ($i = 0; $i < count($songsIdToAdd); ++$i) {
+            if ($songsIdToAdd_count > 0) {
+                for ($i = 0; $i < $songsIdToAdd_count; ++$i) {
                     $songsIdToAdd[$i] = Subsonic_XML_Data::getAmpacheId($songsIdToAdd[$i]);
                 }
                 $playlist->add_songs($songsIdToAdd);

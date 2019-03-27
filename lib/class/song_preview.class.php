@@ -52,7 +52,7 @@ class Song_Preview extends database_object implements media, playable_item
      */
     public function __construct($id = null)
     {
-        if (!$id) {
+        if ($id === null) {
             return false;
         }
 

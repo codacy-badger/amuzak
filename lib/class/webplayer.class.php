@@ -24,7 +24,7 @@ class WebPlayer
 {
     /**
      * Check if the playlist is a radio playlist.
-     * @param \Playlist $playlist
+     * @param \Stream_Playlist $playlist
      * @return boolean
      */
     public static function is_playlist_radio($playlist)
@@ -72,7 +72,7 @@ class WebPlayer
                     $democratic = new Democratic($urlinfo['demo_id']);
                     if ($democratic->id) {
                         $song_id = $democratic->get_next_object();
-                        if ($song_id) {
+                        if ($song_id !== null) {
                             $media = new Song($song_id);
                         }
                     }
@@ -165,7 +165,7 @@ class WebPlayer
 
     /**
      * Get all supplied types for a playlist.
-     * @param \Playlist $playlist
+     * @param \Stream_Playlist $playlist
      * @return array
      */
     public static function get_supplied_types($playlist)
@@ -200,7 +200,7 @@ class WebPlayer
 
     /**
      * Get play_next javascript.
-     * @param \Playlist $playlist
+     * @param \Strem_Playlist $playlist
      * @param string $callback_container
      * @return string
      */
@@ -250,7 +250,7 @@ class WebPlayer
                     $democratic = new Democratic($urlinfo['demo_id']);
                     if ($democratic->id) {
                         $song_id = $democratic->get_next_object();
-                        if ($song_id) {
+                        if ($song_id !== null) {
                             $media = new Song($song_id);
                         }
                     }

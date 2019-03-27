@@ -93,7 +93,7 @@ class PrivateMsg extends database_object
      */
     public function __construct($id=null)
     {
-        if (!$id) {
+        if ($id === null) {
             return false;
         }
 

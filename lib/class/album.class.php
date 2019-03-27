@@ -186,7 +186,7 @@ class Album extends database_object implements library_item
      */
     public function __construct($id=null)
     {
-        if (!$id) {
+        if ($id === null) {
             return false;
         }
 
@@ -714,6 +714,7 @@ class Album extends database_object implements library_item
      */
     public function search_childrens($name)
     {
+        $search                    = array();
         $search['type']            = "song";
         $search['rule_0_input']    = $name;
         $search['rule_0_operator'] = 4;

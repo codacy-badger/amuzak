@@ -123,10 +123,11 @@ function install_check_rewrite_rules($file, $web_path, $fix = false)
     $new_lines = array();
     $lines     = explode("\n", $htaccess);
     foreach ($lines as $line) {
-        $parts = explode(' ', $line);
-        for ($i = 0; $i < count($parts); $i++) {
+        $parts       = explode(' ', $line);
+        $parts_count = count($parts);
+        for ($i = 0; $i < $parts_count; $i++) {
             // Matching url rewriting rule syntax
-            if ($parts[$i] == 'RewriteRule' && $i < (count($parts) - 2)) {
+            if ($parts[$i] == 'RewriteRule' && $i < ($parts_count - 2)) {
                 $reprule = $parts[$i + 2];
                 if (!empty($web_path) && strpos($reprule, $web_path) !== 0) {
                     $reprule = $web_path . $reprule;
@@ -238,11 +239,12 @@ function install_insert_db($db_user = null, $db_pass = null, $create_db = true, 
     } // end if we are creating a user
 
     if ($create_tables) {
-        $sql_file = AmpConfig::get('prefix') . '/sql/ampache.sql';
-        $query    = fread(fopen($sql_file, 'r'), filesize($sql_file));
-        $pieces   = split_sql($query);
-        $errors   = array();
-        for ($i=0; $i < count($pieces); $i++) {
+        $sql_file     = AmpConfig::get('prefix') . '/sql/ampache.sql';
+        $query        = fread(fopen($sql_file, 'r'), filesize($sql_file));
+        $pieces       = split_sql($query);
+        $pieces_count = count($pieces);
+        $errors       = array();
+        for ($i=0; $i < $pieces_count; $i++) {
             $pieces[$i] = trim($pieces[$i]);
             if (!empty($pieces[$i]) && $pieces[$i] != '#') {
                 if (!$result = Dba::write($pieces[$i])) {

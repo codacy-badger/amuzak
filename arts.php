@@ -62,7 +62,7 @@ switch ($_REQUEST['action']) {
         $image_data = Art::get_from_source($data, $object_type);
 
         // If we got something back insert it
-        if ($image_data) {
+        if ($image_data !== null) {
             $art = new Art($object_id, $object_type);
             $art->insert($image_data, $_FILES['file']['type']);
             show_confirmation(T_('Art Inserted'), '', $burl);
@@ -89,7 +89,7 @@ switch ($_REQUEST['action']) {
             $upload['mime'] = 'image/' . $path_info['extension'];
             $image_data     = Art::get_from_source($upload, $object_type);
 
-            if ($image_data) {
+            if ($image_data !== null) {
                 $art->insert($image_data, $upload['0']['mime']);
                 show_confirmation(T_('Art Inserted'), '', $burl);
                 break;
