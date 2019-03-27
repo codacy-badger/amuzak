@@ -565,6 +565,9 @@ class Update
         $update_string = "Set podcast_keep and podcast_new_download to 0. the limits are the opposite of a good default<br />";
         $version[]     = array('version' => '400001', 'description' => $update_string);
 
+        $update_string = "Increase copyright column size to fix issue #1861.<br />";
+        $version[]     = array('version' => '400002', 'description' => $update_string);
+
         return $version;
     }
 
@@ -4066,6 +4069,21 @@ class Update
         $sql = "UPDATE `preference` SET `value`=0 WHERE `preference`.`name`='podcast_new_download'";
         $retval &= Dba::write($sql);
 
+
+        return $retval;
+    }
+
+    /**
+     * update_400002
+     *
+     * Increase copyright column size to fix issue #1861
+     */
+    public static function update_400002()
+    {
+        $retval = true;
+
+        $sql = "ALTER TABLE `podcast` MODIFY `copyright` VARCHAR(255)";
+        $retval &= Dba::write($sql);
 
         return $retval;
     }
