@@ -62,16 +62,25 @@ class Plex_XML_Data
         return $id + Plex_XML_Data::AMPACHEID_ARTIST;
     }
 
+    /**
+     * @param integer $id
+     */
     public static function getAlbumId($id)
     {
         return $id + Plex_XML_Data::AMPACHEID_ALBUM;
     }
 
+    /**
+     * @param integer $id
+     */
     public static function getTrackId($id)
     {
         return $id + Plex_XML_Data::AMPACHEID_TRACK;
     }
 
+    /**
+     * @param integer $id
+     */
     public static function getSongId($id)
     {
         return $id + Plex_XML_Data::AMPACHEID_SONG;
@@ -193,6 +202,9 @@ class Plex_XML_Data
         return $_SERVER['SERVER_ADDR'];
     }
 
+    /**
+     * @return string|null
+     */
     public static function getServerPort()
     {
         $port = $_SERVER['SERVER_PORT'];
@@ -200,6 +212,9 @@ class Plex_XML_Data
         return $port?:'32400';
     }
 
+    /**
+     * @return string|null
+     */
     public static function getServerPublicAddress()
     {
         $address = AmpConfig::get('plex_public_address');
@@ -235,6 +250,9 @@ class Plex_XML_Data
         return AmpConfig::get('myplex_username');
     }
 
+    /**
+     * @return string|null
+     */
     public static function getMyPlexAuthToken()
     {
         return AmpConfig::get('myplex_authtoken');
@@ -288,16 +306,26 @@ class Plex_XML_Data
         return $response;
     }
 
+    /**
+     * @param SimpleXMLElement $container
+     */
     public static function setContainerSize($container)
     {
         $container->addAttribute('size', $container->count());
     }
 
+    /**
+     * @param SimpleXMLElement $container
+     * @param string $title
+     */
     public static function setContainerTitle($container, $title)
     {
         $container->addAttribute('title1', $title);
     }
 
+    /**
+     * @param string $resource
+     */
     public static function getResourceUri($resource)
     {
         return '/resources/' . $resource;
@@ -384,6 +412,9 @@ class Plex_XML_Data
         }
     }
 
+    /**
+     * @param integer[] $catalogs
+     */
     public static function setRootContent(SimpleXMLElement $xml, $catalogs)
     {
         $xml->addAttribute('friendlyName', self::getServerName());
@@ -470,6 +501,9 @@ class Plex_XML_Data
         $dir->addAttribute('title', 'video');*/
     }
 
+    /**
+     * @param integer[] $catalogs
+     */
     public static function setSysSections(SimpleXMLElement $xml, $catalogs)
     {
         foreach ($catalogs as $id) {
@@ -644,6 +678,10 @@ class Plex_XML_Data
         $dir->addAttribute('name', 'Plug-ins');
     }
 
+    /**
+     * @param string $title2
+     * @param string $viewGroup
+     */
     protected static function setSectionAllAttributes(SimpleXMLElement $xml, Catalog $catalog, $title2, $viewGroup)
     {
         $xml->addAttribute('allowSync', '1');
@@ -793,6 +831,9 @@ class Plex_XML_Data
         }
     }
 
+    /**
+     * @param integer[] $catalogs
+     */
     public static function setServerInfo(SimpleXMLElement $xml, $catalogs)
     {
         $server = $xml->addChild('Server');
@@ -854,6 +895,9 @@ class Plex_XML_Data
         self::addArtistThumb($xml, $artist->id);
     }
 
+    /**
+     * @param integer $artist_id
+     */
     protected static function addArtistThumb(SimpleXMLElement $xml, $artist_id, $attrthumb = 'thumb')
     {
         $id    = self::getArtistId($artist_id);
@@ -958,6 +1002,9 @@ class Plex_XML_Data
         $xml->addAttribute('summary', $tvshow->summary);
     }
 
+    /**
+     * @param string $object_type
+     */
     private static function addTags(SimpleXMLElement $xml, $object_type, $object_id)
     {
         $tags = Tag::get_top_tags($object_type, $object_id);
@@ -969,6 +1016,9 @@ class Plex_XML_Data
         }
     }
 
+    /**
+     * @param string $object_type
+     */
     public static function setSectionTags(SimpleXMLElement $xml, $catalog, $object_type)
     {
         self::setSectionAllAttributes($xml, $catalog, 'All Genres', 'secondary');
@@ -1315,6 +1365,9 @@ class Plex_XML_Data
         }
     }
 
+    /**
+     * @param Playlist $playlist
+     */
     public static function addPlaylist(SimpleXMLElement $xml, $playlist)
     {
         $id  = self::getPlaylistId($playlist->id);
@@ -1333,6 +1386,9 @@ class Plex_XML_Data
         $xpl->addAttribute('updatedAt', '');
     }
 
+    /**
+     * @param Playlist $playlist
+     */
     public static function setPlaylistItems(SimpleXMLElement $xml, $playlist)
     {
         $xml->addAttribute('duration', $playlist->get_total_duration() * 1000);
@@ -1486,6 +1542,9 @@ class Plex_XML_Data
         self::addNoneAgentMediaType($agent, 'Personal Media Albums', Plex_XML_Data::PLEX_ALBUM);
     }
 
+    /**
+     * @param string $name
+     */
     protected static function addNoneAgentMediaType(SimpleXMLElement $xml, $name, $type)
     {
         $media = $xml->addChild('MediaType');
@@ -1494,6 +1553,9 @@ class Plex_XML_Data
         self::addLanguages($media, 'xn');
     }
 
+    /**
+     * @param string $languages
+     */
     protected static function addLanguages(SimpleXMLElement $xml, $languages)
     {
         $langs = explode(',', $languages);
@@ -1503,11 +1565,18 @@ class Plex_XML_Data
         }
     }
 
+    /**
+     * @param string $name
+     */
     protected static function addNoneAgent(SimpleXMLElement $xml, $name)
     {
         self::addAgent($xml, $name, false, 'com.plexapp.agents.none', true, 'xn');
     }
 
+    /**
+     * @param false|string $hasPrefs
+     * @param string $identifier
+     */
     protected static function addAgent(SimpleXMLElement $xml, $name, $hasPrefs, $identifier, $enabled = false, $langs='')
     {
         $agent = $xml->addChild('Agent');
@@ -1539,6 +1608,9 @@ class Plex_XML_Data
         self::addNoneAgent($xml, 'Photos');
     }
 
+    /**
+     * @param SimpleXMLElement $xml
+     */
     public static function setSysMusicAgents($xml, $category = 'Artists')
     {
         self::addNoneAgent($xml, 'Ampache Media ' . $category);
@@ -1683,6 +1755,16 @@ class Plex_XML_Data
         self::addSettings($xml, 'logDebug', 'Plex Media Server debug logging', 'false', 'Enable Plex Media Server debug logging', 'bool', AmpConfig::get('debug'), '0', '1', 'general');
     }
 
+    /**
+     * @param string $id
+     * @param string $label
+     * @param string $default
+     * @param string $summary
+     * @param string $type
+     * @param string $hidden
+     * @param string $advanced
+     * @param string $group
+     */
     protected static function addSettings(SimpleXMLElement $xml, $id, $label, $default, $summary, $type, $value, $hidden, $advanced, $group)
     {
         $setting = $xml->addChild('Setting');
@@ -1793,6 +1875,9 @@ class Plex_XML_Data
         }
     }
 
+    /**
+     * @param string $path
+     */
     public static function addDirPath(SimpleXMLElement $xml, $path, $title='', $isHome=false)
     {
         $delim = self::getPathDelimiter();
@@ -1838,6 +1923,9 @@ class Plex_XML_Data
         }
     }
 
+    /**
+     * @param string $type
+     */
     public static function getPhotoPlexKind($type)
     {
         switch ($type) {

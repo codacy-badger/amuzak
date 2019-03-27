@@ -88,6 +88,7 @@ class Tag extends database_object implements library_item
     /**
      * build_map_cache
      * This builds a cache of the mappings for the specified object, no limit is given
+     * @param string $type
      */
     public static function build_map_cache($type, $ids)
     {
@@ -237,6 +238,7 @@ class Tag extends database_object implements library_item
     /**
      * merge
      * merges this tag to another one.
+     * @param boolean $is_persistent
      */
     public function merge($merge_to, $is_persistent)
     {
@@ -401,6 +403,7 @@ class Tag extends database_object implements library_item
      * tag_map_exists
      * This looks to see if the current mapping of the current object of the current tag of the current
      * user exists, lots of currents... taste good in scones.
+     * @param integer $user
      */
     public static function tag_map_exists($type, $object_id, $tag_id, $user)
     {
@@ -452,6 +455,7 @@ class Tag extends database_object implements library_item
      * get_object_tags
      * Display all tags that apply to maching target type of the specified id
      *
+     * @param string $type
      */
     public static function get_object_tags($type, $id)
     {
@@ -590,6 +594,9 @@ class Tag extends database_object implements library_item
     /**
      * update_tag_list
      * Update the tags list based on commated list (ex. tag1,tag2,tag3,..)
+     * @param string $type
+     * @param integer $object_id
+     * @param boolean $overwrite
      */
     public static function update_tag_list($tags_comma, $type, $object_id, $overwrite)
     {
@@ -730,6 +737,9 @@ class Tag extends database_object implements library_item
         return $keywords;
     }
 
+    /**
+     * @return string
+     */
     public function get_fullname()
     {
         return $this->name;

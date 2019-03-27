@@ -34,6 +34,8 @@ class Recommendation
     /**
      * get_lastfm_results
      * Runs a last.fm query and returns the parsed results
+     * @param string $method
+     * @param string $query
      */
     public static function get_lastfm_results($method, $query)
     {
@@ -46,6 +48,9 @@ class Recommendation
         return self::query_lastfm($url);
     }
 
+    /**
+     * @param string $url
+     */
     public static function query_lastfm($url)
     {
         debug_event('Recommendation', 'search url : ' . $url, 5);
@@ -109,6 +114,9 @@ class Recommendation
         }
     }
 
+    /**
+     * @param string $type
+     */
     protected static function update_recommendation_cache($type, $id, $recommendations)
     {
         self::delete_recommendation_cache($type, $id);
@@ -124,6 +132,7 @@ class Recommendation
     /**
      * get_songs_like
      * Returns a list of similar songs
+     * @param integer $song_id
      */
     public static function get_songs_like($song_id, $limit = 5, $local_only = true)
     {
@@ -219,6 +228,7 @@ class Recommendation
     /**
      * get_artists_like
      * Returns a list of similar artists
+     * @param integer $artist_id
      */
     public static function get_artists_like($artist_id, $limit = 10, $local_only = true)
     {
@@ -315,6 +325,7 @@ class Recommendation
     /**
      * get_artist_info
      * Returns artist information
+     * @param integer $artist_id
      */
     public static function get_artist_info($artist_id, $fullname='')
     {

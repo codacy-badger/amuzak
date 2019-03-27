@@ -331,6 +331,8 @@ class Playlist extends playlist_object
     /**
      * _update_item
      * This is the generic update function, it does the escaping and error checking
+     * @param string $field
+     * @param integer $level
      */
     private function _update_item($field, $value, $level)
     {
@@ -347,6 +349,7 @@ class Playlist extends playlist_object
     /**
      * update_track_number
      * This takes a playlist_data.id and a track (int) and updates the track value
+     * @param integer $index
      */
     public function update_track_number($track_id, $index)
     {

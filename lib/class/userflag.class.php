@@ -49,6 +49,7 @@ class Userflag extends database_object
       * build_cache
      * This attempts to get everything we'll need for this page load in a
      * single query, saving on connection overhead
+     * @param string $type
      */
     public static function build_cache($type, $ids, $user_id = null)
     {
@@ -88,6 +89,8 @@ class Userflag extends database_object
      * gc
      *
      * Remove userflag for items that no longer exist.
+     * @param string $object_type
+     * @param integer $object_id
      */
     public static function gc($object_type = null, $object_id = null)
     {
@@ -107,6 +110,9 @@ class Userflag extends database_object
         }
     }
 
+    /**
+     * @param boolean $get_date
+     */
     public function get_flag($user_id = null, $get_date = null)
     {
         if ($user_id === null) {
@@ -229,6 +235,7 @@ class Userflag extends database_object
     /**
      * get_latest
      * Get the latest user flagged objects
+     * @param string $type
      */
     public static function get_latest($type=null, $user_id=null, $count='', $offset='')
     {

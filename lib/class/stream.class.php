@@ -136,6 +136,8 @@ class Stream
      *
      * This is a rather complex function that starts the transcoding or
      * resampling of a media and returns the opened file handle.
+     * @param Song $media
+     * @param string $type
      */
     public static function start_transcode($media, $type = null, $player = null, $options = array())
     {

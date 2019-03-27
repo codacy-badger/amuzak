@@ -72,6 +72,7 @@ class Rating extends database_object
       * build_cache
      * This attempts to get everything we'll need for this page load in a
      * single query, saving on connection overhead
+     * @param string $type
      */
     public static function build_cache($type, $ids)
     {
@@ -126,6 +127,7 @@ class Rating extends database_object
      * get_user_rating
      * Get a user's rating.  If no userid is passed in, we use the currently
      * logged in user.
+     * @return double
      */
     public function get_user_rating($user_id = null)
     {
@@ -195,6 +197,7 @@ class Rating extends database_object
     /**
      * get_highest
      * Get objects with the highest average rating.
+     * @param string $type
      */
     public static function get_highest($type, $count='', $offset='')
     {

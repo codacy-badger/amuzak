@@ -197,6 +197,9 @@ class Plex_Api
         }
     }
 
+    /**
+     * @param integer $level
+     */
     protected static function check_access($level)
     {
         if (self::is_local()) {
@@ -259,6 +262,9 @@ class Plex_Api
         }
     }
 
+    /**
+     * @param string|false $xml
+     */
     public static function apiOutputXml($xml)
     {
         // Format xml output
@@ -268,6 +274,9 @@ class Plex_Api
         self::apiOutput($dom->saveXML());
     }
 
+    /**
+     * @param string|false $string
+     */
     public static function apiOutput($string)
     {
         if ($_SERVER['REQUEST_METHOD'] != 'OPTIONS') {
@@ -466,6 +475,9 @@ class Plex_Api
         return strlen($data);
     }
 
+    /**
+     * @param string $action
+     */
     protected static function myPlexRequest($action, $curlopts = array(), $headers = array(), $proxy = false)
     {
         $server     = Plex_XML_Data::getServerUri();

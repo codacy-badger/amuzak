@@ -195,6 +195,7 @@ END;
      * unformat_bytes
      *
      * Parses a human-readable size
+     * @return string
      */
     public static function unformat_bytes($value)
     {
@@ -225,6 +226,7 @@ END;
      * get_icon
      *
      * Returns an <img> tag for the specified icon
+     * @param string $name
      */
     public static function get_icon($name, $title = null, $id = null)
     {
@@ -360,6 +362,7 @@ END;
      *
      * Convenience function that, if the output is going to a browser,
      * blarfs JS to do a fancy update.  Otherwise it just outputs the text.
+     * @param string $field
      */
     public static function update_text($field, $value)
     {

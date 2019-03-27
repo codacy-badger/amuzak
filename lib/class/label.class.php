@@ -422,6 +422,8 @@ class Label extends database_object implements library_item
     /**
      * update_label_list
      * Update the labels list based on commated list (ex. label1,label2,label3,..)
+     * @param integer $artist_id
+     * @param boolean $overwrite
      */
     public static function update_label_list($labels_comma, $artist_id, $overwrite)
     {

@@ -373,7 +373,7 @@ abstract class Catalog extends database_object
     /**
      * Check if a file is a playlist.
      * @param string $file
-     * @return boolean
+     * @return integer
      */
     public static function is_playlist_file($file)
     {
@@ -478,7 +478,7 @@ abstract class Catalog extends database_object
      * against $GLOBALS['user'] to make sure they are allowed to update this record
      * it then updates it and sets $this->{$field} to the new value
      * @param string $field
-     * @param mixed $value
+     * @param boolean $value
      * @param int $catalog_id
      * @param int $level
      * @return boolean
@@ -883,6 +883,9 @@ abstract class Catalog extends database_object
         return $results;
     }
 
+    /**
+     * @param string $name
+     */
     public static function search_childrens($name, $catalog_id = 0)
     {
         $search                    = array();
@@ -1596,6 +1599,11 @@ abstract class Catalog extends database_object
     }
 
 
+    /**
+     * @param media $media
+     * @param string $sort_pattern
+     * @param string $rename_pattern
+     */
     public function get_media_tags($media, $gather_types, $sort_pattern, $rename_pattern)
     {
         // Check for patterns

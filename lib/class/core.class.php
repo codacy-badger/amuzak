@@ -93,7 +93,7 @@ class Core
     /**
      * Get possible filepaths of namespaced classes
      * @param string $class
-     * @return string
+     * @return string[]
      */
     private static function getNamespacedPaths($class)
     {
@@ -111,7 +111,7 @@ class Core
     /**
      * Get possible filepaths of non namespaced classes
      * @param string $class
-     * @return string
+     * @return string[]
      */
     private static function getNonNamespacedPaths($class)
     {
@@ -209,6 +209,7 @@ class Core
      * This generates a cryptographically secure token.
      * Returns a token of the required bytes length, as a string. Returns false
      * if it could not generate a cryptographically secure token.
+     * @param integer $length
      */
     public static function gen_secure_token($length)
     {
@@ -234,6 +235,7 @@ class Core
     * This returns the dimensions of the passed song of the passed type
     * returns an empty array if PHP-GD is not currently installed, returns
     * false on error
+    * @param string $image_data
     */
     public static function image_dimensions($image_data)
     {
@@ -356,6 +358,9 @@ class Core
         return false;
     }
 
+    /**
+     * @param string $typeofname
+     */
     private static function is_class_typeof($classname, $typeofname)
     {
         if (class_exists($classname)) {
@@ -407,6 +412,9 @@ class Core
         return $options;
     }
     
+    /**
+     * @return string
+     */
     public static function get_tmp_dir()
     {
         $tmp_dir = AmpConfig::get('tmp_dir_path');

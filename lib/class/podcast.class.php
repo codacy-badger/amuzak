@@ -434,6 +434,9 @@ class Podcast extends database_object implements library_item
         }
     }
     
+    /**
+     * @param integer $time
+     */
     private function update_lastsync($time)
     {
         $sql = "UPDATE `podcast` SET `lastsync` = ? WHERE `id` = ?";

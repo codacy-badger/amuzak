@@ -382,7 +382,7 @@ class Access
      * always used.
      * @param string $type
      * @param int $level
-     * @param int|null $user
+     * @param int|null $user_id
      * @return boolean
      */
     public static function check($type, $level, $user_id=null)
