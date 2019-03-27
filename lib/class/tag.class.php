@@ -289,6 +289,7 @@ class Tag extends database_object implements library_item
     /**
      * add_tag_map
      * This adds a specific tag to the map for specified object
+     * @param string $type
      */
     public static function add_tag_map($type, $object_id, $tag_id, $user=true)
     {
@@ -405,6 +406,7 @@ class Tag extends database_object implements library_item
      * This looks to see if the current mapping of the current object of the current tag of the current
      * user exists, lots of currents... taste good in scones.
      * @param integer $user
+     * @param string $type
      */
     public static function tag_map_exists($type, $object_id, $tag_id, $user)
     {

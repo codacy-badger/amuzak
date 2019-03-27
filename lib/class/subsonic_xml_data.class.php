@@ -103,6 +103,9 @@ class Subsonic_XML_Data
         return $id + Subsonic_XML_Data::AMPACHEID_PODCAST;
     }
     
+    /**
+     * @param integer|null $id
+     */
     public static function getPodcastEpId($id)
     {
         return $id + Subsonic_XML_Data::AMPACHEID_PODCASTEP;
@@ -379,6 +382,9 @@ class Subsonic_XML_Data
         }
     }
 
+    /**
+     * @param SimpleXMLElement $xml
+     */
     public static function addArtist($xml, $artist, $extra=false, $albums=false, $albumsSet = false)
     {
         $artist->format();
@@ -1158,6 +1164,7 @@ class Subsonic_XML_Data
     
     /**
      * @param Podcast_Episode $episode
+     * @param SimpleXMLElement $xml
      */
     private static function addPodcastEpisode($xml, $episode, $elementName = 'episode')
     {

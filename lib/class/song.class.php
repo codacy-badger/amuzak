@@ -1923,7 +1923,7 @@ class Song extends database_object implements media, library_item
      * Get transcode settings.
      * @param string $target
      * @param array $options
-     * @return array|boolean
+     * @return string
      */
     public function get_transcode_settings($target = null, $player = null, $options=array())
     {

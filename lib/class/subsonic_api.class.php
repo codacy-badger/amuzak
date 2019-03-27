@@ -214,6 +214,7 @@ class Subsonic_Api
     /**
      * xml2json based from http://outlandish.com/blog/xml-to-json/
      * Because we cannot use only json_encode to respect JSON Subsonic API
+     * @param SimpleXMLElement $xml
      */
     private static function xml2json($xml, $options = array())
     {

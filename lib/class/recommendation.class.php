@@ -79,6 +79,9 @@ class Recommendation
         Dba::write('DELETE FROM `recommendation` WHERE `last_update` < ?', array((time() - 604800)));
     }
 
+    /**
+     * @param string $type
+     */
     protected static function get_recommendation_cache($type, $id, $get_items = false)
     {
         self::gc();
@@ -107,6 +110,7 @@ class Recommendation
 
     /**
      * @param string $type
+     * @param integer $id
      */
     protected static function delete_recommendation_cache($type, $id)
     {

@@ -246,6 +246,7 @@ class Playlist extends playlist_object
     /**
     * get_total_duration
     * Get the total duration of all songs.
+    * @return string|null
     */
     public function get_total_duration()
     {

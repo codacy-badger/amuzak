@@ -380,6 +380,9 @@ class Plex_XML_Data
         return hash('sha1', $key);
     }
 
+    /**
+     * @param integer $key
+     */
     public static function uuidFromSubKey($key)
     {
         return self::uuidFromKey(self::getMachineIdentifier() . '-' . $key);
