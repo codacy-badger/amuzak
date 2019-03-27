@@ -1,0 +1,13 @@
+phraseapp:
+  access_token: 235cdee50da0cb17f05209b43de2bcf3ba2bdcc465153f703d0848e9bb5ade31
+  project_id: 2472b8801ee8df6269bb8c354f2ef3d0
+  push:
+    sources:
+    - file: ./locale/<locale_name>/LC_MESSAGES/messages.po
+      params:
+        file_format: gettext
+  pull:
+    targets:
+    - file: ./locale/<locale_name>/LC_MESSAGES/messages.po
+      params:
+        file_format: gettext
