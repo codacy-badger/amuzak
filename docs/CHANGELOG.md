@@ -1,6 +1,18 @@
 CHANGELOG
 =========
 
+4.0.3
+----------
+- Moved translations and CI integrations.
+- Used Google Translate Cloud API to translate files (PLEASE HELP VERIFY!)
+- Added en_AU (Yes, it's different to en_GB)
+- Fixed a bug in subsonic I managed to put in
+- Always load player and show the minimise button
+- Fix CSS to stop a lot of overflow in text
+- Lots of CI patches from scrutinizer-ci.com
+- Increase copyright column size to fix Ampache issue #1861
+- Increase post_max_size to 128M
+
 4.0.2
 ----------
 - Update header and theme slightly
