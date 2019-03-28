@@ -1,19 +1,29 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# lachlan 00 <lachlan.00@gmail.com>, 2019
+# 
+#, fuzzy
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/projects/p/ampache/\n"
 "POT-Creation-Date: 2019-03-28 10:08+1000\n"
-"Language: ru_RU\n"
+"PO-Revision-Date: 2019-03-28 00:51+0000\n"
+"Last-Translator: lachlan 00 <lachlan.00@gmail.com>, 2019\n"
+"Language-Team: Russian (Russia) (https://www.transifex.com/ampachecore/teams/97573/ru_RU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100 != 11) ? 0 : ((n%10 >= 2 "
-"&& n%10 <= 4 && (n%100 < 12 || n%100 > 14)) ? 1 : (n%10 == 0 || (n%10 >= 5 "
-"&& n%10 <=9) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3);\n"
-"X-Generator: PhraseApp (phraseapp.com)\n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: ../../admin/access.php:40
 msgid "Deleted"
-msgstr "Удален"
+msgstr "удаленный"
 
 #: ../../admin/access.php:40
 msgid "Your Access List Entry has been removed"
@@ -30,7 +40,7 @@ msgstr "Вы действительно хотите удалить навсег
 #: ../../admin/access.php:74 ../../lib/class/search.class.php:396
 #: ../../templates/show_song.inc.php:168
 msgid "Added"
-msgstr "Добавлен"
+msgstr "добавленной"
 
 #: ../../admin/access.php:74
 msgid "Your new Access Control List(s) have been created"
@@ -40,7 +50,7 @@ msgstr "Создан новый список доступа"
 #: ../../lib/class/search.class.php:403 ../../preferences.php:144
 #: ../../preferences.php:162
 msgid "Updated"
-msgstr "Обновлено"
+msgstr "обновленный"
 
 #: ../../admin/access.php:88
 msgid "Access List Entry updated"
@@ -50,32 +60,32 @@ msgstr "Запись списка доступа обновлена"
 #: ../../admin/catalog.php:66 ../../admin/catalog.php:74
 #: ../../admin/catalog.php:83
 msgid "Catalog Update started..."
-msgstr "Обновление каталога началось"
+msgstr "Обновление каталога началось ..."
 
 #: ../../admin/catalog.php:105
 msgid "Catalog Deleted"
-msgstr "Каталог Удален"
+msgstr "Каталог удален"
 
 #: ../../admin/catalog.php:105
 msgid "The Catalog and all associated records have been deleted"
-msgstr "Каталог и все связанные записи удалены"
+msgstr "Каталог и все связанные записи были удалены"
 
 #: ../../admin/catalog.php:107 ../../admin/users.php:192
 #: ../../preferences.php:166 ../../templates/error_page.inc.php:50
 msgid "Error"
-msgstr "Ошибка"
+msgstr "ошибка"
 
 #: ../../admin/catalog.php:107
 msgid "Cannot delete the catalog"
-msgstr "Невозможно удалить этот каталог"
+msgstr "Невозможно удалить каталог"
 
 #: ../../admin/catalog.php:112
 msgid "Catalog Delete"
-msgstr "Удаление каталога"
+msgstr "Каталог Удалить"
 
 #: ../../admin/catalog.php:112 ../../admin/users.php:230 ../../share.php:94
 msgid "Confirm Deletion Request"
-msgstr "Запрос на удаление"
+msgstr "Подтвердите запрос на удаление"
 
 #: ../../admin/catalog.php:125
 msgid " Song Enabled"
@@ -99,7 +109,7 @@ msgstr[3] "Отключенные песни обработаны"
 
 #: ../../admin/catalog.php:135 ../../admin/catalog.php:139
 msgid "Catalog Clean started..."
-msgstr "Очистка каталога началась..."
+msgstr "Каталог Clean начал ..."
 
 #: ../../admin/catalog.php:151
 msgid "Catalog Updated"
@@ -107,11 +117,11 @@ msgstr "Каталог обновлен"
 
 #: ../../admin/catalog.php:161
 msgid "Subdirectory update started..."
-msgstr "Началось обновление подкаталога ..."
+msgstr "Обновление подкаталога началось ..."
 
 #: ../../admin/catalog.php:172
 msgid "Error: Please select a catalog type"
-msgstr "Ошибка: выберите тип каталога"
+msgstr "Ошибка: пожалуйста, выберите тип каталога"
 
 #: ../../admin/catalog.php:176
 msgid "Error: Name not specified"
@@ -119,23 +129,23 @@ msgstr "Ошибка: имя не указано"
 
 #: ../../admin/catalog.php:195
 msgid "Catalog Creation started..."
-msgstr "Создание каталога началось..."
+msgstr "Создание каталога началось ..."
 
 #: ../../admin/catalog.php:207
 msgid "Catalog statistics cleared"
-msgstr "Статистика каталога удалена"
+msgstr "Статистика каталога очищена"
 
 #: ../../admin/catalog.php:220
 msgid "Now Playing Cleared"
-msgstr "Текущее воспроизведение очищено"
+msgstr "Сейчас игра очищена"
 
 #: ../../admin/catalog.php:220
 msgid "All now playing data has been cleared"
-msgstr "Данные по воспроизводимым трекам удалены"
+msgstr "Все воспроизводимые данные были очищены"
 
 #: ../../admin/catalog.php:232
 msgid "No Disabled songs found"
-msgstr "Отключенных песен не найдено"
+msgstr "Песни для инвалидов не найдены"
 
 #: ../../admin/catalog.php:244
 msgid "Delete Catalog"
@@ -147,35 +157,35 @@ msgstr "Вы действительно хотите удалить этот к�
 
 #: ../../admin/catalog.php:253
 msgid "Media Art Search started..."
-msgstr "Поиск Медиа Арта начался..."
+msgstr "Начался поиск медиа-арта ..."
 
 #: ../../admin/license.php:39
 msgid "License Updated"
-msgstr "Лицензия Обновлена"
+msgstr "Лицензия обновлена"
 
 #: ../../admin/license.php:42
 msgid "License Created"
-msgstr "Лицензия Создана"
+msgstr "Лицензия создана"
 
 #: ../../admin/license.php:53
 msgid "License Deleted"
-msgstr "Лицензия Удалена"
+msgstr "Лицензия удалена"
 
 #: ../../admin/mail.php:63
 msgid "E-mail Sent"
-msgstr "Е-мэйл отправлен"
+msgstr "Письмо отправлено"
 
 #: ../../admin/mail.php:64
 msgid "Your E-mail was successfully sent."
-msgstr "Ваше е-мэйл сообщение успешно отправлено"
+msgstr "Ваше письмо было успешно отправлено."
 
 #: ../../admin/mail.php:66
 msgid "E-mail Not Sent"
-msgstr "E-mail не отправлен"
+msgstr "Электронная почта не отправлена"
 
 #: ../../admin/mail.php:67
 msgid "Your E-mail was not sent."
-msgstr "Ваше E-mail не отправлен."
+msgstr "Ваш E-mail не был отправлен."
 
 #: ../../admin/modules.php:39
 msgid "Failed to enable the module, Catalog Error"
@@ -199,7 +209,7 @@ msgstr "Модуль отключен"
 
 #: ../../admin/modules.php:87
 msgid "Unable to Install Plugin"
-msgstr "Невозможно установить расширение"
+msgstr "Невозможно установить плагин"
 
 #: ../../admin/modules.php:98
 msgid "Plugin enabled"
@@ -215,57 +225,57 @@ msgstr "Плагин отключен"
 
 #: ../../admin/modules.php:139
 msgid "Plugin Upgraded"
-msgstr "Плагин обновлен"
+msgstr "Обновлен плагин"
 
 #: ../../admin/modules.php:145
 msgid "Plugins"
-msgstr "Расширения"
+msgstr "Плагины"
 
 #: ../../admin/modules.php:151
 msgid "Catalog Types"
-msgstr "Тип каталога"
+msgstr "Типы каталогов"
 
 #: ../../admin/shout.php:39
 msgid "Shoutbox Post Updated"
-msgstr "Сообщение онлайн-чата обновлено"
+msgstr "Обновлен пост"
 
 #: ../../admin/shout.php:51
 msgid "Shoutbox Post Deleted"
-msgstr "Сообщение онлайн-чата удалено"
+msgstr "Сообщение удалено"
 
 #: ../../admin/system.php:51
 msgid "Database Charset Updated"
-msgstr "Кодировка базы данных обновлена"
+msgstr "База данных Charset обновлена"
 
 #: ../../admin/system.php:51
 msgid ""
 "Your Database and associated tables have been updated to match your "
 "currently configured charset"
 msgstr ""
-"База данных и сопряженные таблицы были обновлены в соответствии с текущей "
-"настройкой кодировки символов"
+"Ваша база данных и связанные с ней таблицы были обновлены в соответствии с "
+"настроенной вами кодировкой"
 
 #: ../../admin/system.php:66
 msgid "Cache cleared"
-msgstr "Кэш очищен"
+msgstr "Кеш очищен"
 
 #: ../../admin/system.php:66
 msgid "Your cache has been cleared successfully."
-msgstr "Ваш кеш был успешно удален."
+msgstr "Ваш кеш был успешно очищен."
 
 #: ../../admin/users.php:62 ../../admin/users.php:141
 #: ../../lib/class/user.class.php:598
 msgid "Error Username Required"
-msgstr "Ошибка: требуется имя пользователя"
+msgstr "Требуется ошибка Имя пользователя"
 
 #: ../../admin/users.php:66 ../../admin/users.php:146 ../../register.php:121
 msgid "Error Username already exists"
-msgstr "Ошибка: Пользователь с таким именем уже существует"
+msgstr "Ошибка Имя пользователя уже существует"
 
 #: ../../admin/users.php:71 ../../admin/users.php:137
 #: ../../lib/class/user.class.php:602
 msgid "Error Passwords don't match"
-msgstr "Ошибка: Пароль не подходит"
+msgstr "Пароли ошибок не совпадают"
 
 #: ../../admin/users.php:76 ../../admin/users.php:151 ../../register.php:95
 msgid "Invalid email address"
@@ -273,15 +283,15 @@ msgstr "Неверный адрес электронной почты"
 
 #: ../../admin/users.php:114
 msgid "User Updated"
-msgstr "Пользователь Обновлен"
+msgstr "Пользователь обновлен"
 
 #: ../../admin/users.php:114
 msgid "updated"
-msgstr "обновлен"
+msgstr "обновленный"
 
 #: ../../admin/users.php:163 ../../register.php:150
 msgid "Error: Insert Failed"
-msgstr "Ошибка:  Добавление закончилось неудачей"
+msgstr "Ошибка: вставка не удалась"
 
 #: ../../admin/users.php:169 ../../lib/class/democratic.class.php:158
 #: ../../lib/class/shoutbox.class.php:333
@@ -290,7 +300,7 @@ msgstr "Ошибка:  Добавление закончилось неудач�
 #: ../../templates/show_preference_admin.inc.php:43
 #: ../../templates/show_preference_box.inc.php:79
 msgid "Guest"
-msgstr "Гость"
+msgstr "гость"
 
 #: ../../admin/users.php:171 ../../lib/class/democratic.class.php:161
 #: ../../modules/plugins/Flattr/Flattr.plugin.php:91
@@ -308,7 +318,7 @@ msgstr "Гость"
 #: ../../templates/show_preference_box.inc.php:80
 #: ../../templates/show_shared_objects.inc.php:28
 msgid "User"
-msgstr "Пользователь"
+msgstr "пользователь"
 
 #: ../../admin/users.php:173 ../../lib/class/democratic.class.php:170
 #: ../../templates/show_add_user.inc.php:89
@@ -326,7 +336,7 @@ msgstr "Администратор"
 #. HINT: %1 Username, %2 Access num
 #: ../../admin/users.php:177
 msgid "New User Added"
-msgstr "Пользователь добавлен"
+msgstr "Добавлен новый пользователь"
 
 #: ../../admin/users.php:177
 #, php-format
@@ -343,7 +353,7 @@ msgstr "Пользователь отключен"
 
 #: ../../admin/users.php:192
 msgid "Unable to Disabled last Administrator"
-msgstr "Нельзя отключить последнего администратора"
+msgstr "Невозможно отключить последний администратор"
 
 #: ../../admin/users.php:212
 msgid "User Deleted"
@@ -356,11 +366,11 @@ msgstr "%s был Удален"
 
 #: ../../admin/users.php:214
 msgid "Delete Error"
-msgstr "Ошибка удаления"
+msgstr "Удалить ошибку"
 
 #: ../../admin/users.php:214
 msgid "Unable to delete last Admin User"
-msgstr "Нельзя удалить последнего пользователя - администратора"
+msgstr "Невозможно удалить последнего администратора"
 
 #: ../../admin/users.php:223
 #, php-format
@@ -369,7 +379,7 @@ msgstr "Вы действительно хотите удалить навсег
 
 #: ../../admin/users.php:230
 msgid "User Avatar Delete"
-msgstr "Аватар пользователя Удалить"
+msgstr "Аватара пользователя Удалить"
 
 #: ../../admin/users.php:246
 msgid "User Avatar Deleted"
@@ -377,7 +387,7 @@ msgstr "Аватар пользователя Удален"
 
 #: ../../admin/users.php:246
 msgid "User Avatar has been deleted"
-msgstr "Пользователь Аватар был удален"
+msgstr "Аватара пользователя была удалена"
 
 #: ../../admin/users.php:252 ../../templates/show_account.inc.php:102
 #: ../../templates/show_edit_user.inc.php:133
@@ -402,15 +412,15 @@ msgstr "Удаление альбома"
 
 #: ../../albums.php:37
 msgid "Are you sure you want to permanently delete this album?"
-msgstr "Вы действительно хотите удалить этот альбом навсегда?"
+msgstr "Вы уверены, что хотите удалить этот альбом навсегда?"
 
 #: ../../albums.php:56
 msgid "Album has been deleted."
-msgstr "Альбом удален"
+msgstr "Альбом был удален."
 
 #: ../../albums.php:58
 msgid "Cannot delete this album."
-msgstr "Не удается удалить этот альбом."
+msgstr "Невозможно удалить этот альбом."
 
 #: ../../artists.php:38 ../../artists.php:58 ../../artists.php:60
 msgid "Artist Deletion"
@@ -418,15 +428,15 @@ msgstr "Удаление исполнителя"
 
 #: ../../artists.php:39
 msgid "Are you sure you want to permanently delete this artist?"
-msgstr "Вы действительно хотите удалить этого исполнителя навсегда?"
+msgstr "Вы уверены, что хотите удалить этого исполнителя навсегда?"
 
 #: ../../artists.php:58
 msgid "Artist has been deleted."
-msgstr "Исполнитель удален."
+msgstr "Исполнитель был удален."
 
 #: ../../artists.php:60
 msgid "Cannot delete this artist."
-msgstr "Не удается удалить этого исполнителя."
+msgstr "Невозможно удалить этого исполнителя."
 
 #: ../../artists.php:98
 msgid "Show Artists starting with"
@@ -434,15 +444,15 @@ msgstr "Показать исполнителей начинающихся с "
 
 #: ../../arts.php:50
 msgid "Art Cleared"
-msgstr "Art очищен"
+msgstr "Искусство очищено"
 
 #: ../../arts.php:50
 msgid "Art information has been removed from the database"
-msgstr "Из базы данных удалена информация об Артах"
+msgstr "Информация об искусстве была удалена из базы данных"
 
 #: ../../arts.php:56 ../../arts.php:72 ../../arts.php:139
 msgid "Art Not Located"
-msgstr "Арт Не найден"
+msgstr "Искусство не находится"
 
 #: ../../arts.php:56 ../../arts.php:72 ../../arts.php:139
 msgid ""
@@ -454,45 +464,43 @@ msgstr ""
 
 #: ../../arts.php:68 ../../arts.php:94
 msgid "Art Inserted"
-msgstr "Арт вставленн"
+msgstr "Искусство вставлено"
 
 #: ../../bin/catalog_update.inc:44
 msgid "Doing all catalog operations"
-msgstr "Выполнение всех операций с каталогом"
+msgstr "Выполнение всех операций каталога"
 
 #: ../../bin/catalog_update.inc:52
 msgid "Temporary deactivate PHP memory limit"
 msgstr "Временно деактивировать ограничение памяти PHP"
 
 #: ../../bin/catalog_update.inc:56
-#, fuzzy
 msgid "Setting catalog name"
-msgstr "Запуск каталога: %s"
+msgstr "Настройка имени каталога"
 
 #: ../../bin/catalog_update.inc:60
-#, fuzzy
 msgid "Setting catalog type"
-msgstr "Запуск каталога: %s"
+msgstr "Настройка типа каталога"
 
 #: ../../bin/catalog_update.inc:64
 msgid "Cleaning catalog/s"
-msgstr "Очистить каталог/и"
+msgstr "Каталог очистки / с"
 
 #: ../../bin/catalog_update.inc:68
 msgid "Verifying catalog/s"
-msgstr "Проверить каталог/и"
+msgstr "Проверка каталога / ов"
 
 #: ../../bin/catalog_update.inc:72
 msgid "Adding new media to catalog/s"
-msgstr "Добавить новое медиа в каталог/и"
+msgstr "Добавление новых медиа в каталог / ы"
 
 #: ../../bin/catalog_update.inc:76
 msgid "Gathering new media art"
-msgstr "Сбор нового медиа Арта"
+msgstr "Сбор нового медиа-арта"
 
 #: ../../bin/catalog_update.inc:80
 msgid "Importing playlist/s"
-msgstr "Импортировать плейлист/ы"
+msgstr "Импорт плейлиста / ов"
 
 #: ../../bin/catalog_update.inc:84
 msgid "Database table optimization"
@@ -529,11 +537,11 @@ msgstr "Начать проверку материалов, связанных �
 
 #: ../../bin/catalog_update.inc:161
 msgid "Start adding new media"
-msgstr "Начать добавлять новые медиа"
+msgstr "Начните добавлять новые медиа"
 
 #: ../../bin/catalog_update.inc:168
 msgid "Start searching new media art"
-msgstr "Начать поиск нового медиа Арта"
+msgstr "Начните поиск нового медиа-арта"
 
 #: ../../bin/catalog_update.inc:176
 msgid "Optimizing database tables"
@@ -545,9 +553,11 @@ msgstr "- Справка по обновлению каталога -"
 
 #: ../../bin/catalog_update.inc:203
 msgid ""
-"Usage: catalog_update.inc [-n CATALOG NAME] [-t CATALOG TYPE] [-h|-m|-c|-v|-"
-"a|-g|-i|-o]"
+"Usage: catalog_update.inc [-n CATALOG NAME] [-t CATALOG TYPE] "
+"[-h|-m|-c|-v|-a|-g|-i|-o]"
 msgstr ""
+"Использование: catalog_update.inc [-n ИМЯ КАТАЛОГА] [-t ТИП КАТАЛОГА] [-h | "
+"-m | -c | -v | -a | -g | -i | -o]"
 
 #: ../../bin/catalog_update.inc:207
 msgid ""
@@ -558,17 +568,16 @@ msgstr ""
 "отключает предел памяти php"
 
 #: ../../bin/catalog_update.inc:211
-#, fuzzy
 msgid "This help message"
-msgstr "Новые сообщения"
+msgstr "Это справочное сообщение"
 
 #: ../../bin/catalog_update.inc:213
 msgid "Name of Catalog (Optional)"
-msgstr ""
+msgstr "Название каталога (необязательно)"
 
 #: ../../bin/catalog_update.inc:215
 msgid "Type of Catalog (Optional)"
-msgstr ""
+msgstr "Тип каталога (необязательно)"
 
 #: ../../bin/catalog_update.inc:217
 msgid "Temporarily deactivates PHP memory limit."
@@ -576,15 +585,15 @@ msgstr "Временно деактивирует ограничение пам�
 
 #: ../../bin/catalog_update.inc:219
 msgid "Cleans catalogs from orphaned entries."
-msgstr "Очищает каталоги от сиротских записей."
+msgstr "Очищает каталоги от осиротевших записей."
 
 #: ../../bin/catalog_update.inc:221
 msgid ""
 "Verifies catalog entries and updates them if related files have new "
 "information."
 msgstr ""
-"Проверяет записи в каталоге и обновляет их, если связанные файлы имеют новую "
-"информацию."
+"Проверяет записи в каталоге и обновляет их, если связанные файлы имеют новую"
+" информацию."
 
 #: ../../bin/catalog_update.inc:223
 msgid "Adds new media to catalogs."
@@ -612,8 +621,8 @@ msgstr ""
 
 #: ../../bin/catalog_update.inc:233
 msgid ""
-"Depending on your systems performance, this option could need a long time to "
-"finish and extremely slow down other database processes if you have big "
+"Depending on your systems performance, this option could need a long time to"
+" finish and extremely slow down other database processes if you have big "
 "catalogs!"
 msgstr ""
 "В зависимости от производительности вашей системы этот параметр может "
@@ -622,8 +631,8 @@ msgstr ""
 
 #: ../../bin/catalog_update.inc:234
 msgid ""
-"The switches [-m|-i|-o] can only be used, if one of the other switches [-c|-"
-"v|-a|-g] is used."
+"The switches [-m|-i|-o] can only be used, if one of the other switches "
+"[-c|-v|-a|-g] is used."
 msgstr ""
 "Переключатели [-m|-i|-o] могут использоваться только в том случае, если "
 "используется один из других переключателей [-c|-v|-a|-g]."
@@ -649,7 +658,7 @@ msgstr "ОШИБКА: Iconv требуется для этой функции, �
 #: ../../bin/fix_filenames.inc:51
 #, php-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: ../../bin/fix_filenames.inc:52
 msgid "Testing Basic Translation, the two strings below should look the same"
@@ -970,25 +979,26 @@ msgstr "Дубликат ACL определен"
 msgid "All"
 msgstr "Все"
 
-#: ../../lib/class/access.class.php:465 ../../templates/list_header.inc.php:131
+#: ../../lib/class/access.class.php:465
+#: ../../templates/list_header.inc.php:131
 #: ../../templates/show_add_access.inc.php:37
 #: ../../templates/show_edit_access.inc.php:69
 #: ../../templates/show_graphs.inc.php:83
 #: ../../templates/show_tagcloud.inc.php:33
 msgid "View"
-msgstr "Просмотр"
+msgstr "Посмотреть"
 
 #: ../../lib/class/access.class.php:468
 #: ../../templates/show_add_access.inc.php:38
 #: ../../templates/show_edit_access.inc.php:70
 msgid "Read"
-msgstr "Чтение"
+msgstr "Читать"
 
 #: ../../lib/class/access.class.php:471
 #: ../../templates/show_add_access.inc.php:39
 #: ../../templates/show_edit_access.inc.php:71
 msgid "Read/Write"
-msgstr "Чтение/Запись"
+msgstr "Читай пиши"
 
 #: ../../lib/class/access.class.php:502
 #: ../../templates/show_add_access.inc.php:56
@@ -1006,13 +1016,13 @@ msgstr "API/RPC"
 #: ../../templates/show_add_access.inc.php:74
 #: ../../templates/show_edit_access.inc.php:37
 msgid "Local Network Definition"
-msgstr "Определение локальный сети"
+msgstr "Определение локальной сети"
 
 #: ../../lib/class/access.class.php:506
 #: ../../templates/show_add_access.inc.php:73
 #: ../../templates/show_edit_access.inc.php:36
 msgid "Web Interface"
-msgstr "Вэб интерфейс"
+msgstr "Веб интерфейс"
 
 #: ../../lib/class/access.class.php:509
 #: ../../templates/show_add_access.inc.php:57
@@ -1020,7 +1030,7 @@ msgstr "Вэб интерфейс"
 #: ../../templates/show_add_access.inc.php:72
 #: ../../templates/show_edit_access.inc.php:35
 msgid "Stream Access"
-msgstr "Потоковый доступ"
+msgstr "Доступ к потоку"
 
 #: ../../lib/class/album.class.php:404 ../../lib/class/artist.class.php:680
 #: ../../templates/show_album_group_disks.inc.php:51
@@ -1041,7 +1051,8 @@ msgstr "Диск"
 #: ../../lib/class/album.class.php:644 ../../lib/class/browse.class.php:226
 #: ../../lib/class/upnp_api.class.php:337 ../../lib/ui.lib.php:180
 #: ../../server/search.ajax.php:57 ../../templates/header.inc.php:403
-#: ../../templates/show_label.inc.php:91 ../../templates/show_labels.inc.php:47
+#: ../../templates/show_label.inc.php:91
+#: ../../templates/show_labels.inc.php:47
 #: ../../templates/show_labels.inc.php:79
 #: ../../templates/show_random.inc.php:38
 #: ../../templates/show_random.inc.php:40
@@ -1052,7 +1063,7 @@ msgstr "Диск"
 #: ../../templates/sidebar_home.inc.php:150
 #: ../../templates/sidebar.light.inc.php:27
 msgid "Artists"
-msgstr "Исполнители"
+msgstr "Художники"
 
 #: ../../lib/class/album.class.php:644 ../../lib/class/album.class.php:645
 #: ../../templates/show_edit_album_row.inc.php:38
@@ -1097,7 +1108,7 @@ msgstr "Выпущено Группой MusicBrainzID"
 #: ../../templates/show_tagcloud.inc.php:24
 #: ../../templates/sidebar_home.inc.php:138
 msgid "Artist"
-msgstr "Исполнитель"
+msgstr "художник"
 
 #: ../../lib/class/album.class.php:673 ../../lib/class/search.class.php:232
 #: ../../templates/show_add_upload.inc.php:188
@@ -1256,7 +1267,7 @@ msgstr "Ошибка: не удалось открыть "
 #: ../../templates/show_song_preview_row.inc.php:28
 #: ../../templates/show_song_row.inc.php:36
 msgid "Play"
-msgstr "Воспроизвести"
+msgstr "Играть"
 
 #: ../../lib/class/art.class.php:1840
 msgid "Edit/Find Art"
@@ -1315,7 +1326,8 @@ msgstr "Обновление зависимостей с помощью `"
 #: ../../templates/show_albums.inc.php:115
 #: ../../templates/show_artists.inc.php:42
 #: ../../templates/show_artists.inc.php:116
-#: ../../templates/show_label.inc.php:92 ../../templates/show_label.inc.php:107
+#: ../../templates/show_label.inc.php:92
+#: ../../templates/show_label.inc.php:107
 #: ../../templates/show_manage_democratic.inc.php:31
 #: ../../templates/show_random.inc.php:28
 #: ../../templates/show_random.inc.php:30
@@ -1326,7 +1338,7 @@ msgstr "Обновление зависимостей с помощью `"
 #: ../../templates/show_stats.inc.php:35 ../../templates/show_stats.inc.php:73
 #: ../../templates/sidebar_home.inc.php:148
 msgid "Songs"
-msgstr "Композиции"
+msgstr "песни"
 
 #: ../../lib/class/browse.class.php:210 ../../lib/class/upnp_api.class.php:361
 #: ../../lib/ui.lib.php:176 ../../server/search.ajax.php:90
@@ -1359,11 +1371,12 @@ msgstr "Радиостанции"
 
 #: ../../lib/class/browse.class.php:236 ../../lib/class/upnp_api.class.php:409
 #: ../../server/search.ajax.php:148 ../../templates/header.inc.php:409
-#: ../../templates/show_user.inc.php:96 ../../templates/sidebar_home.inc.php:41
+#: ../../templates/show_user.inc.php:96
+#: ../../templates/sidebar_home.inc.php:41
 #: ../../templates/sidebar_home.inc.php:151
 #: ../../templates/sidebar.light.inc.php:29
 msgid "Playlists"
-msgstr "Списки композиций"
+msgstr "Плейлисты"
 
 #: ../../lib/class/browse.class.php:240
 msgid "Playlist Medias"
@@ -1499,7 +1512,7 @@ msgstr "Основной"
 #: ../../templates/show_edit_user.inc.php:111
 #: ../../templates/show_preference_box.inc.php:81
 msgid "Content Manager"
-msgstr "Менеджер содержания"
+msgstr "Контент менеджер"
 
 #: ../../lib/class/democratic.class.php:167
 #: ../../templates/show_add_user.inc.php:88
@@ -1507,12 +1520,13 @@ msgstr "Менеджер содержания"
 #: ../../templates/show_edit_user.inc.php:112
 #: ../../templates/show_preference_box.inc.php:82
 msgid "Catalog Manager"
-msgstr "Менеджер каталогов"
+msgstr "Менеджер по каталогу"
 
 #: ../../lib/class/label.class.php:153 ../../lib/class/search.class.php:260
 #: ../../templates/show_edit_song_row.inc.php:81
 #: ../../templates/show_labels.inc.php:45
-#: ../../templates/show_labels.inc.php:77 ../../templates/show_song.inc.php:151
+#: ../../templates/show_labels.inc.php:77
+#: ../../templates/show_song.inc.php:151
 msgid "Label"
 msgstr "Метка"
 
@@ -1540,11 +1554,11 @@ msgid "Invalid Catalog"
 msgstr "Недействительный Каталог"
 
 #: ../../lib/class/playlist.class.php:138
-#: ../../lib/class/playlist.class.php:139 ../../lib/class/podcast.class.php:291
-#: ../../lib/class/user.class.php:1024 ../../templates/show_user.inc.php:24
-#: ../../templates/show_users.inc.php:72
+#: ../../lib/class/playlist.class.php:139
+#: ../../lib/class/podcast.class.php:291 ../../lib/class/user.class.php:1024
+#: ../../templates/show_user.inc.php:24 ../../templates/show_users.inc.php:72
 msgid "Unknown"
-msgstr "Неизвестно"
+msgstr "неизвестный"
 
 #: ../../lib/class/playlist_object.abstract.php:70
 #: ../../templates/show_edit_playlist_row.inc.php:37
@@ -1603,7 +1617,7 @@ msgstr "Не удается прочитать фид."
 #: ../../templates/show_podcasts.inc.php:99
 #: ../../templates/show_song.inc.php:137
 msgid "Title"
-msgstr "Композиция"
+msgstr "заглавие"
 
 #: ../../lib/class/privatemsg.class.php:143
 msgid "Error: Subject Required"
@@ -1654,14 +1668,12 @@ msgid ""
 "Thank you for registering\n"
 "\n"
 "\n"
-"Please keep this e-mail for your records. Your account information is as "
-"follows:\n"
+"Please keep this e-mail for your records. Your account information is as follows:\n"
 "----------------------\n"
 "Username: %s\n"
 "----------------------\n"
 "\n"
-"Your account is currently inactive. You cannot use it until you've visited "
-"the following link:\n"
+"Your account is currently inactive. You cannot use it until you've visited the following link:\n"
 "\n"
 "%s\n"
 "\n"
@@ -1670,14 +1682,12 @@ msgstr ""
 "Спасибо, что зарегистрировались\n"
 "\n"
 "\n"
-"Сохраните это электронное письмо для своих записей. Информация о вашей "
-"учетной записи выглядит следующим образом:\n"
+"Сохраните это электронное письмо для своих записей. Информация о вашей учетной записи выглядит следующим образом:\n"
 " ---------------------- \n"
 "Имя пользователя: %s\n"
 "---------------------- \n"
 "\n"
-"Ваша учетная запись в настоящее время неактивна. Вы не можете использовать "
-"его, пока не посетили следующую ссылку:\n"
+"Ваша учетная запись в настоящее время неактивна. Вы не можете использовать его, пока не посетили следующую ссылку:\n"
 "\n"
 " %s\n"
 "\n"
@@ -1831,14 +1841,15 @@ msgstr "Тэг Альбома"
 #: ../../templates/show_import_playlist.inc.php:28
 #: ../../templates/show_song.inc.php:163
 msgid "Filename"
-msgstr "Файл"
+msgstr "Имя файла"
 
 #: ../../lib/class/search.class.php:289 ../../lib/class/search.class.php:499
 #: ../../lib/class/search.class.php:599 ../../templates/show_albums.inc.php:42
 #: ../../templates/show_albums.inc.php:116
 #: ../../templates/show_edit_album_row.inc.php:63
 #: ../../templates/show_edit_song_row.inc.php:85
-#: ../../templates/show_graphs.inc.php:65 ../../templates/show_song.inc.php:145
+#: ../../templates/show_graphs.inc.php:65
+#: ../../templates/show_song.inc.php:145
 msgid "Year"
 msgstr "Год"
 
@@ -1880,9 +1891,8 @@ msgstr "Битрейд"
 
 #: ../../lib/class/search.class.php:382 ../../lib/class/search.class.php:556
 #: ../../lib/class/search.class.php:635
-#, fuzzy
 msgid "My Last Play"
-msgstr "Последнее воспроизведение"
+msgstr "Моя последняя игра"
 
 #: ../../lib/class/search.class.php:389 ../../templates/show_album.inc.php:83
 #: ../../templates/show_artist.inc.php:78
@@ -1902,7 +1912,7 @@ msgstr "Каталог"
 #: ../../templates/sidebar_home.inc.php:69
 #: ../../templates/sidebar_home.inc.php:139
 msgid "Playlist"
-msgstr "Список композиций"
+msgstr "Playlist"
 
 #: ../../lib/class/search.class.php:436
 #: ../../templates/show_playlists.inc.php:35
@@ -1910,7 +1920,7 @@ msgstr "Список композиций"
 #: ../../templates/show_searches.inc.php:42
 #: ../../templates/show_searches.inc.php:72
 msgid "Playlist Name"
-msgstr "Список композиций"
+msgstr "Название плейлиста"
 
 #: ../../lib/class/search.class.php:449
 msgid "Smart Playlist"
@@ -1964,7 +1974,7 @@ msgstr "Высота изображения"
 #: ../../templates/show_plugins.inc.php:71
 #: ../../templates/show_stats.inc.php:68
 msgid "Name"
-msgstr "Имя"
+msgstr "название"
 
 #: ../../lib/class/search.class.php:605
 #: ../../templates/show_concerts.inc.php:28
@@ -1995,7 +2005,7 @@ msgstr "Категория"
 #: ../../templates/show_user_registration.inc.php:81
 #: ../../templates/show_users.inc.php:49 ../../templates/show_users.inc.php:81
 msgid "Username"
-msgstr "Пользователь"
+msgstr "имя пользователя"
 
 #: ../../lib/class/share.class.php:216
 msgid "Share edit"
@@ -2025,7 +2035,7 @@ msgstr "Настроить Общий доступ"
 #: ../../templates/show_user.inc.php:42 ../../templates/show_user.inc.php:47
 #: ../../templates/show_user_row.inc.php:58
 msgid "Edit"
-msgstr "Изменить"
+msgstr "редактировать"
 
 #: ../../lib/class/share.class.php:217 ../../templates/rightbar.inc.php:112
 #: ../../templates/show_access_list.inc.php:71
@@ -2059,7 +2069,7 @@ msgstr "Изменить"
 #: ../../templates/show_tagcloud.inc.php:65
 #: ../../templates/show_user_row.inc.php:71
 msgid "Delete"
-msgstr "Удалить"
+msgstr "удалять"
 
 #: ../../lib/class/share.class.php:369 ../../lib/class/share.class.php:371
 #: ../../templates/show_shares.inc.php:23
@@ -2109,11 +2119,11 @@ msgstr ""
 #: ../../templates/show_podcasts.inc.php:29
 #: ../../templates/show_searches.inc.php:29
 msgid "Add"
-msgstr "Добавить"
+msgstr "добавлять"
 
 #: ../../lib/class/shoutbox.class.php:318
 msgid "Post Shout"
-msgstr "Добавить комментарий"
+msgstr "Пост крик"
 
 #: ../../lib/class/shoutbox.class.php:322
 msgid "by"
@@ -2195,7 +2205,8 @@ msgstr "начал следовать"
 msgid "did something on"
 msgstr "сделал что-то"
 
-#: ../../lib/class/user.class.php:1053 ../../templates/show_tagcloud.inc.php:88
+#: ../../lib/class/user.class.php:1053
+#: ../../templates/show_tagcloud.inc.php:88
 msgid "Not Enough Data"
 msgstr "Недостаточно данных"
 
@@ -2230,7 +2241,7 @@ msgstr "Неизвестный %s"
 
 #: ../../lib/install.lib.php:85
 msgid "Unable to connect to database, check your ampache config"
-msgstr "Не удалось подключиться к базе данных, проверьте файл настройки"
+msgstr "Невозможно подключиться к базе данных, проверьте настройку ampache"
 
 #: ../../lib/install.lib.php:94
 msgid "Unable to query database, check your ampache config"
@@ -2239,7 +2250,7 @@ msgstr ""
 
 #: ../../lib/install.lib.php:102
 msgid "Existing Database detected, unable to continue installation"
-msgstr "База данных уже существует, продолжение установки невозможно"
+msgstr "Обнаружена существующая база данных, невозможно продолжить установку"
 
 #: ../../lib/install.lib.php:166 ../../lib/install.lib.php:311
 msgid "Error writing config file"
@@ -2277,8 +2288,8 @@ msgstr "Неверные настройки конфигурации"
 #: ../../lib/install.lib.php:295
 msgid "Database Connection Failed Check Hostname, Username and Password"
 msgstr ""
-"Не удалось подключиться к базе данных. Проверьте имя хоста, имя пользователя "
-"и пароль."
+"Не удалось подключиться к базе данных. Проверьте имя хоста, имя пользователя"
+" и пароль."
 
 #: ../../lib/install.lib.php:305
 msgid "Config file is not writable"
@@ -2286,11 +2297,11 @@ msgstr "Файл Config не доступен для записи"
 
 #: ../../lib/install.lib.php:333
 msgid "No Username/Password specified"
-msgstr "Не указаны пользователь или пароль"
+msgstr "Имя пользователя / пароль не указаны"
 
 #: ../../lib/install.lib.php:339
 msgid "Passwords do not match"
-msgstr "Пароль не совпадает"
+msgstr "Пароли не совпадают"
 
 #: ../../lib/install.lib.php:345
 #, php-format
@@ -2331,7 +2342,7 @@ msgstr "Не удалось создать локальную учетную з�
 #: ../../templates/show_disabled_songs.inc.php:68
 #: ../../templates/show_user_row.inc.php:66
 msgid "Enable"
-msgstr "Включить"
+msgstr "включить"
 
 #: ../../lib/preferences.php:215 ../../lib/preferences.php:318
 #: ../../templates/show_catalog_types.inc.php:45
@@ -2339,7 +2350,7 @@ msgstr "Включить"
 #: ../../templates/show_duplicates.inc.php:65
 #: ../../templates/show_user_row.inc.php:68
 msgid "Disable"
-msgstr "Отключить"
+msgstr "запрещать"
 
 #: ../../lib/preferences.php:233 ../../lib/ui.lib.php:333
 #: ../../lib/ui.lib.php:424 ../../templates/show_adds_catalog.inc.php:27
@@ -2347,20 +2358,20 @@ msgstr "Отключить"
 #: ../../templates/show_install_config.inc.php:141
 #: ../../templates/show_search_row.inc.php:47
 msgid "None"
-msgstr "Нет"
+msgstr "Никто"
 
 #: ../../lib/preferences.php:235 ../../templates/show_edit_user.inc.php:146
 #: ../../templates/show_live_stream.inc.php:51
 #: ../../templates/show_playtype_switch.inc.php:36
 msgid "Stream"
-msgstr "Потоковое вещание"
+msgstr "Поток"
 
 #: ../../lib/preferences.php:238 ../../templates/show_edit_user.inc.php:144
 #: ../../templates/show_playtype_switch.inc.php:43
 #: ../../templates/sidebar_home.inc.php:80
 #: ../../templates/sidebar_modules.inc.php:39
 msgid "Democratic"
-msgstr "Публичное вещание"
+msgstr "демократичный"
 
 #: ../../lib/preferences.php:240
 #: ../../templates/show_playtype_switch.inc.php:48
@@ -2607,7 +2618,7 @@ msgstr "Ошибка: Beets выбраны, но путь не является 
 #: ../../modules/catalog/local/local.catalog.php:104
 #: ../../templates/show_stats.inc.php:69
 msgid "Path"
-msgstr "Путь"
+msgstr "Дорожка"
 
 #: ../../modules/catalog/local/local.catalog.php:175
 msgid "Error: Path not specified"
@@ -2661,8 +2672,8 @@ msgid ""
 "Catalog Update Finished.  Total Time: [%s] Total Media: [%s] Media Per "
 "Second: [%s]"
 msgstr ""
-"Обновление каталога завершено. Общее время: [%s] Всего носителей: [%s] Медиа "
-"в секунду: [%s]"
+"Обновление каталога завершено. Общее время: [%s] Всего носителей: [%s] Медиа"
+" в секунду: [%s]"
 
 #: ../../modules/catalog/local/local.catalog.php:575
 #, php-format
@@ -2694,7 +2705,7 @@ msgstr "Uri"
 #: ../../templates/show_login_form.inc.php:62
 #: ../../templates/show_user_registration.inc.php:138
 msgid "Password"
-msgstr "Пароль"
+msgstr "пароль"
 
 #: ../../modules/catalog/remote/remote.catalog.php:144
 msgid "Error: Remote selected, but path is not a URL"
@@ -3061,8 +3072,8 @@ msgstr "Ваш поиск сохранен как смарт-плейлист с
 #: ../../server/index.ajax.php:44
 #, php-format
 msgid ""
-"No catalog configured yet. To start streaming your media, you now need to %s "
-"add a catalog %s"
+"No catalog configured yet. To start streaming your media, you now need to %s"
+" add a catalog %s"
 msgstr ""
 "Пока еще не настроен каталог. Чтобы начать потоковое воспроизведение "
 "медиафайлов, вам нужно добавить %s каталог %s"
@@ -3141,11 +3152,11 @@ msgstr "Не удается удалить эту песню."
 
 #: ../../templates/browse_filters.inc.php:30
 msgid "Filters"
-msgstr "Фильтр"
+msgstr "фильтры"
 
 #: ../../templates/browse_filters.inc.php:35
 msgid "Starts With"
-msgstr "Начинающиеся с"
+msgstr "Начинается с"
 
 #: ../../templates/browse_filters.inc.php:44
 msgid "Minimum Count"
@@ -3153,21 +3164,21 @@ msgstr "Минимальное количество"
 
 #: ../../templates/browse_filters.inc.php:51
 msgid "Rated"
-msgstr "Оцененный"
+msgstr "Номинальный"
 
 #: ../../templates/browse_filters.inc.php:58
 msgid "Unplayed"
-msgstr "Не проигранный"
+msgstr "Unplayed"
 
 #: ../../templates/browse_filters.inc.php:64
 msgid "All Playlists"
-msgstr "Все списки композиций"
+msgstr "Все плейлисты"
 
 #: ../../templates/browse_filters.inc.php:73
 #: ../../templates/show_song_previews.inc.php:31
 #: ../../templates/show_songs.inc.php:33 ../../templates/show_songs.inc.php:96
 msgid "Song Title"
-msgstr "Композиция"
+msgstr "Название песни"
 
 #: ../../templates/browse_filters.inc.php:112
 msgid "Toggle Artwork"
@@ -3180,8 +3191,8 @@ msgstr "Использование файлов cookie с помощью Ampache
 #: ../../templates/cookie_disclaimer.inc.php:4
 msgid ""
 "Cookies are small text files that are placed on your computer by websites "
-"that you visit. They are widely used in order to make websites work, or work "
-"more efficiently, as well as to provide information to the owners of the "
+"that you visit. They are widely used in order to make websites work, or work"
+" more efficiently, as well as to provide information to the owners of the "
 "site."
 msgstr ""
 "Cookie-файлы - это небольшие текстовые файлы, которые размещаются на вашем "
@@ -3254,12 +3265,12 @@ msgstr "Ampache Страница с ошибкой"
 #: ../../templates/show_mail_users.inc.php:43
 #: ../../templates/show_test.inc.php:38 ../../update.php:72
 msgid "aMuzak"
-msgstr ""
+msgstr "aMuzak"
 
 #: ../../templates/error_page.inc.php:51
 msgid ""
-"The following error has occured, you will automaticly be redirected after 10 "
-"seconds."
+"The following error has occured, you will automaticly be redirected after 10"
+" seconds."
 msgstr ""
 "Произошла следующая ошибка: вы автоматически будете перенаправлены через 10 "
 "секунд."
@@ -3276,7 +3287,7 @@ msgstr "Запросы:"
 #: ../../templates/footer.inc.php:49
 #: ../../templates/show_lostpassword_form.inc.php:67
 msgid "Cache Hits:"
-msgstr "Кэш-попаданий:"
+msgstr "Хиты кеша:"
 
 #: ../../templates/footer.inc.php:53
 msgid "Load time:"
@@ -3290,20 +3301,18 @@ msgstr "Сохранить"
 #: ../../templates/show_confirmation.inc.php:35
 #: ../../templates/show_get_art.inc.php:64
 msgid "Cancel"
-msgstr "Отменить"
+msgstr "отменить"
 
 #. HINT: Translator, "%s" is replaced by "cookie settings"
 #: ../../templates/header.inc.php:301
 #, php-format
 msgid ""
-"We have placed cookies on your computer to help make this website better. "
-"You can change your %s at any time.\n"
+"We have placed cookies on your computer to help make this website better. You can change your %s at any time.\n"
 "Otherwise, we will assume you are OK to continue.\n"
 "\n"
 "Click on this message to not display it again."
 msgstr ""
-"Мы разместили файлы cookie на вашем компьютере, чтобы помочь сделать этот "
-"сайт лучше. Вы можете изменить свой %s в любое время.\n"
+"Мы разместили файлы cookie на вашем компьютере, чтобы помочь сделать этот сайт лучше. Вы можете изменить свой %s в любое время.\n"
 "В противном случае мы предположим, что вы в порядке, чтобы продолжить.\n"
 "\n"
 "Нажмите на это сообщение, чтобы не отображать его снова."
@@ -3312,7 +3321,8 @@ msgstr ""
 msgid "cookie settings"
 msgstr "настройки cookie"
 
-#: ../../templates/header.inc.php:338 ../../templates/show_album_row.inc.php:32
+#: ../../templates/header.inc.php:338
+#: ../../templates/show_album_row.inc.php:32
 #: ../../templates/show_artist_row.inc.php:32
 #: ../../templates/show_playlist_row.inc.php:30
 #: ../../templates/show_podcast_episode.inc.php:66
@@ -3361,9 +3371,8 @@ msgid "Write new config file to disk"
 msgstr "Запись нового файла конфигурации на диск"
 
 #: ../../templates/install_header.inc.php:52
-#, fuzzy
 msgid "aMuzak Installation"
-msgstr "Веб-установка"
+msgstr "Установка Музака"
 
 #: ../../templates/list_header.inc.php:116
 msgid "Prev"
@@ -3379,7 +3388,7 @@ msgstr "из"
 
 #: ../../templates/list_header.inc.php:122
 msgid "Next"
-msgstr "След."
+msgstr "следующий"
 
 #: ../../templates/list_header.inc.php:133
 msgid "Pages"
@@ -3472,7 +3481,7 @@ msgstr "Добавить API / RPC хост"
 
 #: ../../templates/show_access_list.inc.php:33
 msgid "Add Local Network Definition"
-msgstr "Добавить определение локальный сети"
+msgstr "Добавить определение локальной сети"
 
 #: ../../templates/show_access_list.inc.php:35
 msgid "Advanced Add"
@@ -3498,7 +3507,7 @@ msgstr "Конечный адрес"
 #: ../../templates/show_preference_admin.inc.php:33
 #: ../../templates/show_preference_admin.inc.php:53
 msgid "Level"
-msgstr "Уровень"
+msgstr "уровень"
 
 #: ../../templates/show_access_list.inc.php:52
 #: ../../templates/show_add_playlist.inc.php:31
@@ -3542,21 +3551,21 @@ msgstr "Тип"
 #: ../../templates/show_song.inc.php:66 ../../templates/show_songs.inc.php:66
 #: ../../templates/show_users.inc.php:62 ../../templates/show_users.inc.php:94
 msgid "Action"
-msgstr "Действие"
+msgstr "действие"
 
 #: ../../templates/show_account.inc.php:33
 #: ../../templates/show_add_user.inc.php:37
 #: ../../templates/show_edit_user.inc.php:40
 #: ../../templates/show_user_registration.inc.php:91
 msgid "Full Name"
-msgstr "Ф.И.О."
+msgstr "ФИО"
 
 #: ../../templates/show_account.inc.php:41
 #: ../../templates/show_add_user.inc.php:45
 #: ../../templates/show_edit_user.inc.php:51
 #: ../../templates/show_user_registration.inc.php:99
 msgid "E-mail"
-msgstr "Е-мэйл"
+msgstr "Эл. почта"
 
 #: ../../templates/show_account.inc.php:49
 #: ../../templates/show_add_label.inc.php:71
@@ -3596,7 +3605,7 @@ msgstr "Новый пароль"
 #: ../../templates/show_install_account.inc.php:63
 #: ../../templates/show_user_registration.inc.php:144
 msgid "Confirm Password"
-msgstr "Подтверждение пароля"
+msgstr "Подтвердите Пароль"
 
 #: ../../templates/show_account.inc.php:91
 #: ../../templates/show_add_user.inc.php:95
@@ -3644,7 +3653,7 @@ msgstr "IPv4 или IPv6 адреса"
 #: ../../templates/show_add_access.inc.php:92
 #: ../../templates/show_edit_access.inc.php:48
 msgid "Start"
-msgstr "Старт"
+msgstr "Начните"
 
 #: ../../templates/show_add_access.inc.php:102
 #: ../../templates/show_edit_access.inc.php:53
@@ -3653,7 +3662,7 @@ msgstr "Конец"
 
 #: ../../templates/show_add_access.inc.php:115
 msgid "Create ACL"
-msgstr "Создать список доступа"
+msgstr "Создать ACL"
 
 #: ../../templates/show_add_catalog.inc.php:26
 #: ../../templates/sidebar_admin.inc.php:26
@@ -3662,8 +3671,8 @@ msgstr "Добавить"
 
 #: ../../templates/show_add_catalog.inc.php:27
 msgid ""
-"In the form below enter either a local path (i.e. /data/music) or the URL to "
-"a remote Ampache installation (i.e http://theotherampache.com)"
+"In the form below enter either a local path (i.e. /data/music) or the URL to"
+" a remote Ampache installation (i.e http://theotherampache.com)"
 msgstr ""
 "Введите в следующую форму локальный путь (напр. /data/music), или URL "
 "удаленной инсталляции Apache (напр.http://theotherampache.com)"
@@ -3675,32 +3684,32 @@ msgstr "Имя каталога"
 #: ../../templates/show_add_catalog.inc.php:37
 #: ../../templates/show_edit_catalog.inc.php:31
 msgid "Auto-inserted Fields"
-msgstr "Автоматически заполненные поля"
+msgstr "Автоматически вставленные поля"
 
 #: ../../templates/show_add_catalog.inc.php:38
 #: ../../templates/show_edit_catalog.inc.php:32
 msgid "album name"
-msgstr "альбом"
+msgstr "название альбома"
 
 #: ../../templates/show_add_catalog.inc.php:39
 #: ../../templates/show_edit_catalog.inc.php:33
 msgid "artist name"
-msgstr "исполнитель"
+msgstr "имя художника"
 
 #: ../../templates/show_add_catalog.inc.php:40
 #: ../../templates/show_edit_catalog.inc.php:34
 msgid "id3 comment"
-msgstr "id3 комментарий"
+msgstr "комментарий id3"
 
 #: ../../templates/show_add_catalog.inc.php:41
 #: ../../templates/show_edit_catalog.inc.php:35
 msgid "track number (padded with leading 0)"
-msgstr "номер трека (заполненный начальным 0)"
+msgstr "номер дорожки (дополненный начальным 0)"
 
 #: ../../templates/show_add_catalog.inc.php:42
 #: ../../templates/show_edit_catalog.inc.php:36
 msgid "song title"
-msgstr "композиция"
+msgstr "название песни"
 
 #: ../../templates/show_add_catalog.inc.php:43
 #: ../../templates/show_edit_catalog.inc.php:37
@@ -3710,7 +3719,7 @@ msgstr "год"
 #: ../../templates/show_add_catalog.inc.php:44
 #: ../../templates/show_edit_catalog.inc.php:38
 msgid "other"
-msgstr "другое"
+msgstr "Другой"
 
 #: ../../templates/show_add_catalog.inc.php:48
 #: ../../templates/show_edit_catalog.inc.php:42
@@ -3729,7 +3738,7 @@ msgstr "Шаблон папки"
 #: ../../templates/show_add_catalog.inc.php:56
 #: ../../templates/show_edit_catalog.inc.php:53
 msgid "(no leading or ending '/')"
-msgstr "(без начального или завершающего '/')"
+msgstr "(без начала или конца '/')"
 
 #: ../../templates/show_add_catalog.inc.php:60
 #: ../../templates/show_catalog_row.inc.php:47
@@ -3792,14 +3801,14 @@ msgstr "Добавить радиостанцию"
 #: ../../templates/show_add_live_stream.inc.php:34
 #: ../../templates/show_edit_live_stream_row.inc.php:35
 msgid "Homepage"
-msgstr "Домашняя страница"
+msgstr "домашняя страница"
 
 #: ../../templates/show_add_live_stream.inc.php:41
 #: ../../templates/show_edit_live_stream_row.inc.php:31
 #: ../../templates/show_live_streams.inc.php:45
 #: ../../templates/show_live_streams.inc.php:73
 msgid "Stream URL"
-msgstr "Потоковый URL"
+msgstr "URL потока"
 
 #: ../../templates/show_add_live_stream.inc.php:48
 #: ../../templates/show_edit_live_stream_row.inc.php:39
@@ -3951,7 +3960,7 @@ msgstr "Удалить файл здесь"
 
 #: ../../templates/show_add_upload.inc.php:224
 msgid "Browse"
-msgstr "Обзор"
+msgstr "Просматривать"
 
 #: ../../templates/show_add_user.inc.php:23
 msgid "Adding a New User"
@@ -3968,31 +3977,36 @@ msgid "Add User"
 msgstr "Добавить"
 
 #: ../../templates/show_album_group_disks.inc.php:45
-#: ../../templates/show_album.inc.php:50 ../../templates/show_artist.inc.php:43
+#: ../../templates/show_album.inc.php:50
+#: ../../templates/show_artist.inc.php:43
 #: ../../templates/show_label.inc.php:35 ../../templates/show_song.inc.php:146
 msgid "Search on Google ..."
 msgstr "Поиск в Google ..."
 
 #: ../../templates/show_album_group_disks.inc.php:46
-#: ../../templates/show_album.inc.php:51 ../../templates/show_artist.inc.php:44
+#: ../../templates/show_album.inc.php:51
+#: ../../templates/show_artist.inc.php:44
 #: ../../templates/show_label.inc.php:36 ../../templates/show_song.inc.php:147
 msgid "Search on DuckDuckGo ..."
 msgstr "Поиск в DuckDuckGo ..."
 
 #: ../../templates/show_album_group_disks.inc.php:47
-#: ../../templates/show_album.inc.php:52 ../../templates/show_artist.inc.php:45
+#: ../../templates/show_album.inc.php:52
+#: ../../templates/show_artist.inc.php:45
 #: ../../templates/show_label.inc.php:37
 msgid "Search on Wikipedia ..."
 msgstr "Поиск в Wikipedia ..."
 
 #: ../../templates/show_album_group_disks.inc.php:48
-#: ../../templates/show_album.inc.php:53 ../../templates/show_artist.inc.php:46
+#: ../../templates/show_album.inc.php:53
+#: ../../templates/show_artist.inc.php:46
 #: ../../templates/show_label.inc.php:38 ../../templates/show_song.inc.php:148
 msgid "Search on Last.fm ..."
 msgstr "Поиск в Last.fm ..."
 
 #: ../../templates/show_album_group_disks.inc.php:59
-#: ../../templates/show_album.inc.php:89 ../../templates/show_albums.inc.php:63
+#: ../../templates/show_album.inc.php:89
+#: ../../templates/show_albums.inc.php:63
 #: ../../templates/show_albums.inc.php:137
 #: ../../templates/show_artist.inc.php:84
 #: ../../templates/show_catalogs.inc.php:34
@@ -4010,7 +4024,7 @@ msgstr "Поиск в Last.fm ..."
 #: ../../templates/show_searches.inc.php:78
 #: ../../templates/show_shared_objects.inc.php:37
 msgid "Actions"
-msgstr "Действия"
+msgstr "действия"
 
 #: ../../templates/show_album_group_disks.inc.php:84
 #: ../../templates/show_album_group_disks.inc.php:85
@@ -4068,7 +4082,8 @@ msgstr "Обновить из тегов"
 msgid "Album edit"
 msgstr "Редактирование альбома"
 
-#: ../../templates/show_album.inc.php:83 ../../templates/show_artist.inc.php:78
+#: ../../templates/show_album.inc.php:83
+#: ../../templates/show_artist.inc.php:78
 msgid "times"
 msgstr "время"
 
@@ -4117,10 +4132,11 @@ msgstr "Художество"
 #: ../../templates/show_now_playing_row.inc.php:54
 #: ../../templates/show_recommended_artists.inc.php:41
 #: ../../templates/show_recommended_artists.inc.php:98
-#: ../../templates/show_songs.inc.php:37 ../../templates/show_songs.inc.php:100
+#: ../../templates/show_songs.inc.php:37
+#: ../../templates/show_songs.inc.php:100
 #: ../../templates/show_stats.inc.php:36
 msgid "Tags"
-msgstr "Жанр"
+msgstr "Теги"
 
 #: ../../templates/show_albums.inc.php:53
 #: ../../templates/show_albums.inc.php:127
@@ -4171,7 +4187,8 @@ msgstr "Не найдено ни одного альбома"
 #: ../../templates/show_artist.inc.php:243
 #: ../../templates/show_artist.inc.php:253
 #: ../../templates/show_artist.inc.php:263
-#: ../../templates/show_index.inc.php:51 ../../templates/show_label.inc.php:107
+#: ../../templates/show_index.inc.php:51
+#: ../../templates/show_label.inc.php:107
 #: ../../templates/show_now_playing_row.inc.php:83
 #: ../../templates/show_now_playing_row.inc.php:89
 msgid "Loading..."
@@ -4254,9 +4271,10 @@ msgstr "Событие"
 #: ../../templates/show_podcast_episodes.inc.php:90
 #: ../../templates/show_recommended_artists.inc.php:40
 #: ../../templates/show_recommended_artists.inc.php:97
-#: ../../templates/show_songs.inc.php:38 ../../templates/show_songs.inc.php:101
+#: ../../templates/show_songs.inc.php:38
+#: ../../templates/show_songs.inc.php:101
 msgid "Time"
-msgstr "Длина"
+msgstr "Время"
 
 #: ../../templates/show_artists.inc.php:101
 msgid "No artist found"
@@ -4279,11 +4297,11 @@ msgstr "Выбрать"
 
 #: ../../templates/show_big_art.inc.php:31
 msgid "Album Art"
-msgstr "Обложка альбома"
+msgstr "Альбом Арт"
 
 #: ../../templates/show_big_art.inc.php:35
 msgid "Click to close window"
-msgstr "Щелкните для закрытия окна"
+msgstr "Нажмите, чтобы закрыть окно"
 
 #: ../../templates/show_catalog_row.inc.php:36
 msgid "Make it ready ..."
@@ -4320,19 +4338,19 @@ msgstr "Информация"
 #: ../../templates/show_catalogs.inc.php:61
 #: ../../templates/show_stats.inc.php:70
 msgid "Last Verify"
-msgstr "Проверка"
+msgstr "Последнее подтверждение"
 
 #: ../../templates/show_catalogs.inc.php:32
 #: ../../templates/show_catalogs.inc.php:62
 #: ../../templates/show_stats.inc.php:71
 msgid "Last Add"
-msgstr "Добавление"
+msgstr "Последнее добавление"
 
 #: ../../templates/show_catalogs.inc.php:33
 #: ../../templates/show_catalogs.inc.php:63
 #: ../../templates/show_stats.inc.php:72
 msgid "Last Clean"
-msgstr "Очистка"
+msgstr "Последняя чистка"
 
 #: ../../templates/show_catalogs.inc.php:51
 msgid "No catalog found"
@@ -4360,7 +4378,7 @@ msgstr "Версия"
 #: ../../templates/show_catalog_types.inc.php:48
 #: ../../templates/show_plugins.inc.php:43
 msgid "Activate"
-msgstr "Активировать"
+msgstr "активировать"
 
 #: ../../templates/show_catalog_types.inc.php:60
 #: ../../templates/show_disabled_songs.inc.php:51
@@ -4428,7 +4446,7 @@ msgstr "Настроить публичный список"
 #: ../../templates/show_create_democratic.inc.php:31
 #: ../../templates/show_manage_democratic.inc.php:27
 msgid "Base Playlist"
-msgstr "Основной список композиций"
+msgstr "Базовый плейлист"
 
 #: ../../templates/show_create_democratic.inc.php:35
 msgid "Cooldown Time"
@@ -4472,7 +4490,7 @@ msgstr "Очистить Кеш Альбомов"
 
 #: ../../templates/show_debug.inc.php:47 ../../update.php:78
 msgid "Ampache Update"
-msgstr "Обновление Ampache"
+msgstr "Ampache Update"
 
 #: ../../templates/show_debug.inc.php:48
 msgid "Installed Ampache version"
@@ -4494,7 +4512,8 @@ msgstr "Параметры PHP"
 msgid "Setting"
 msgstr "Настройка"
 
-#: ../../templates/show_debug.inc.php:68 ../../templates/show_debug.inc.php:121
+#: ../../templates/show_debug.inc.php:68
+#: ../../templates/show_debug.inc.php:121
 #: ../../templates/show_dynamic.inc.php:28
 #: ../../templates/show_preference_box.inc.php:45
 #: ../../templates/show_preference_box.inc.php:96
@@ -4553,7 +4572,7 @@ msgstr "Текущая конфигурация"
 #: ../../templates/show_preference_box.inc.php:95
 #: ../../templates/show_user_preferences.inc.php:37
 msgid "Preference"
-msgstr "Предпочтение"
+msgstr "предпочтение"
 
 #: ../../templates/show_democratic.inc.php:23
 #, php-format
@@ -4563,7 +4582,7 @@ msgstr "%s Список композиций"
 #: ../../templates/show_democratic.inc.php:31
 #: ../../templates/show_manage_democratic.inc.php:28
 msgid "Cooldown"
-msgstr "Повторное воспроизведение"
+msgstr "Остыть"
 
 #: ../../templates/show_democratic.inc.php:46
 msgid "Play Democratic Playlist"
@@ -4592,7 +4611,7 @@ msgstr "Добавить голос"
 
 #: ../../templates/show_denied.inc.php:52
 msgid "Access Denied"
-msgstr "Доступ запрещен"
+msgstr "Доступ закрыт"
 
 #: ../../templates/show_denied.inc.php:53
 #: ../../templates/show_denied.inc.php:60
@@ -4601,8 +4620,8 @@ msgstr "Это событие зарегистрировано."
 
 #: ../../templates/show_denied.inc.php:58
 msgid ""
-"You have been redirected to this page because you do not have access to this "
-"function."
+"You have been redirected to this page because you do not have access to this"
+" function."
 msgstr ""
 "Вы перенаправлены на эту страницу, потому что у вас нет доступа к этой "
 "функции."
@@ -4663,7 +4682,8 @@ msgstr "Композиция"
 #: ../../templates/show_duplicates.inc.php:31
 #: ../../templates/show_duplicates.inc.php:69
 #: ../../templates/show_podcast_episode.inc.php:118
-#: ../../templates/show_random.inc.php:65 ../../templates/show_song.inc.php:149
+#: ../../templates/show_random.inc.php:65
+#: ../../templates/show_song.inc.php:149
 msgid "Length"
 msgstr "Продолжительность"
 
@@ -4763,7 +4783,7 @@ msgstr "Добавить теги в суб-альбомы и суб-песни"
 #: ../../templates/show_edit_catalog.inc.php:23
 #, php-format
 msgid "Settings for %s"
-msgstr "Настройка для %s"
+msgstr "Настройки для %s"
 
 #: ../../templates/show_edit_catalog.inc.php:46
 msgid "Filename pattern"
@@ -4771,7 +4791,7 @@ msgstr "Шаблон имени файла"
 
 #: ../../templates/show_edit_catalog.inc.php:63
 msgid "Save Catalog Settings"
-msgstr "Сохранить настройку каталога"
+msgstr "Сохранить настройки каталога"
 
 #: ../../templates/show_edit_license.inc.php:23
 msgid "Configure License"
@@ -4821,7 +4841,7 @@ msgstr "Авторские права"
 #: ../../templates/show_searches.inc.php:75
 #: ../../templates/sidebar_home.inc.php:132
 msgid "Random"
-msgstr "Случайный"
+msgstr "случайный"
 
 #: ../../templates/show_edit_search_row.inc.php:48
 msgid "Item Limit (0 = unlimited)"
@@ -4860,11 +4880,11 @@ msgstr "Сохранить Имеющееся"
 
 #: ../../templates/show_edit_user.inc.php:23
 msgid "Editing existing User"
-msgstr "Редактирование пользователя"
+msgstr "Редактирование существующего пользователя"
 
 #: ../../templates/show_edit_user.inc.php:28
 msgid "User Properties"
-msgstr "Пользовательские предпочтения"
+msgstr "Свойства пользователя"
 
 #: ../../templates/show_edit_user.inc.php:128
 msgid "Other Options"
@@ -4872,19 +4892,19 @@ msgstr "Другие опции"
 
 #: ../../templates/show_edit_user.inc.php:140
 msgid "Config Preset"
-msgstr "Редактировать предустановку"
+msgstr "Пресет конфигурации"
 
 #: ../../templates/show_edit_user.inc.php:145
 msgid "Flash"
-msgstr "Флэш"
+msgstr "вспышка"
 
 #: ../../templates/show_edit_user.inc.php:151
 msgid "Prevent Preset Override"
-msgstr "Запретить изменение предустановки"
+msgstr "Предотвратить предустановленное переопределение"
 
 #: ../../templates/show_edit_user.inc.php:153
 msgid "This Affects all non-Admin accounts"
-msgstr "Затрагивает все аккаунты, кроме администраторов"
+msgstr "Это влияет на все учетные записи без прав администратора"
 
 #: ../../templates/show_edit_user.inc.php:165
 msgid "Update User"
@@ -4977,7 +4997,8 @@ msgstr "Ваш браузер не поддерживает эту функци�
 
 #: ../../templates/show_html5_player_headers.inc.php:474
 msgid "Media is currently playing. Are you sure you want to close"
-msgstr "В данный момент воспроизводится медиа. Вы действительно хотите закрыть"
+msgstr ""
+"В данный момент воспроизводится медиа. Вы действительно хотите закрыть"
 
 #: ../../templates/show_html5_player.inc.php:465
 msgid "My Broadcast"
@@ -5009,11 +5030,11 @@ msgstr "Эквалайзер"
 
 #: ../../templates/show_import_playlist.inc.php:23
 msgid "Importing a Playlist from a File"
-msgstr "Импортировать список композиций из файла"
+msgstr "Импорт списка воспроизведения из файла"
 
 #: ../../templates/show_import_playlist.inc.php:35
 msgid "Import Playlist"
-msgstr "Импортировать список композиций"
+msgstr "Импортировать плейлист"
 
 #: ../../templates/show_index.inc.php:50
 #: ../../templates/show_random_albums.inc.php:26
@@ -5035,9 +5056,8 @@ msgstr "Шаг 1. Создание базы данных Ampache."
 #: ../../templates/show_install_account.inc.php:39
 #: ../../templates/show_install_config.inc.php:53
 #: ../../templates/show_install.inc.php:42
-#, fuzzy
 msgid "Step 2 - Create configuration files (amuzak.cfg.php ...)"
-msgstr "Шаг 2 - Создайте файлы конфигурации (ampache.cfg.php ...)"
+msgstr "Шаг 2 - Создание файлов конфигурации (amuzak.cfg.php ...)"
 
 #: ../../templates/show_install_account.inc.php:41
 #: ../../templates/show_install_config.inc.php:58
@@ -5050,32 +5070,31 @@ msgid ""
 "This step creates your initial Ampache admin account. Once your admin "
 "account has been created you will be redirected to the login page."
 msgstr ""
-"Этот шаг создает начальную учетную запись администратора Ampache. Когда ваша "
-"учетная запись администратора будет создана, вы будете перенаправлены на "
+"Этот шаг создает начальную учетную запись администратора Ampache. Когда ваша"
+" учетная запись администратора будет создана, вы будете перенаправлены на "
 "страницу входа."
 
 #: ../../templates/show_install_account.inc.php:47
 msgid "Create Admin Account"
-msgstr "Создание аккаунта администратора"
+msgstr "Создать учетную запись администратора"
 
 #: ../../templates/show_install_account.inc.php:69
 msgid "Create Account"
-msgstr "Создать аккаунт"
+msgstr "Создать учетную запись"
 
 #: ../../templates/show_install_check.inc.php:28
 msgid "Requirements"
 msgstr "Требования"
 
 #: ../../templates/show_install_check.inc.php:32
-#, fuzzy
 msgid ""
 "This page handles the installation of the Ampache database and the creation "
 "of the amuzak.cfg.php file. Before you continue please make sure that you "
 "have the following prerequisites:"
 msgstr ""
-"Эта страница обрабатывает установку базы данных Ampache и создание файла "
-"ampache.cfg.php. Прежде чем продолжить, убедитесь, что у вас есть следующие "
-"предпосылки:"
+"На этой странице рассматривается установка базы данных Ampache и создание "
+"файла amuzak.cfg.php. Прежде чем продолжить, убедитесь, что у вас есть "
+"следующие предпосылки:"
 
 #: ../../templates/show_install_check.inc.php:35
 msgid ""
@@ -5094,8 +5113,8 @@ msgstr "Ваш веб-сервер имеет доступ для чтения �
 msgid ""
 "Once you have ensured that the above requirements are met please fill out "
 "the information below. You will only be asked for the required config "
-"values. If you would like to make changes to your Ampache install at a later "
-"date simply edit %s"
+"values. If you would like to make changes to your Ampache install at a later"
+" date simply edit %s"
 msgstr ""
 "После того, как вы убедитесь, что вышеуказанные требования соблюдены, "
 "пожалуйста, заполните приведенную ниже информацию. Вам будут предложены "
@@ -5105,7 +5124,7 @@ msgstr ""
 #: ../../templates/show_install_check.inc.php:44
 #: ../../templates/show_test.inc.php:59
 msgid "CHECK"
-msgstr "ПРОВЕРКА"
+msgstr "ПРОВЕРЯТЬ"
 
 #: ../../templates/show_install_check.inc.php:45
 #: ../../templates/show_test.inc.php:60
@@ -5136,14 +5155,13 @@ msgstr ""
 "структуры базы данных."
 
 #: ../../templates/show_install_check.inc.php:60
-#, fuzzy
 msgid "amuzak.cfg.php is writable"
-msgstr "ampache.cfg.php доступен для записи"
+msgstr "amuzak.cfg.php доступен для записи"
 
 #: ../../templates/show_install_check.inc.php:62
 msgid ""
-"This tests whether PHP can write to config/. This is not strictly necessary, "
-"but will help streamline the installation process."
+"This tests whether PHP can write to config/. This is not strictly necessary,"
+" but will help streamline the installation process."
 msgstr ""
 "Это тест проверяет, может ли PHP писать в config /. Это не является "
 "абсолютно необходимым, но поможет упростить процесс установки."
@@ -5152,8 +5170,8 @@ msgstr ""
 #, php-format
 msgid ""
 "This step takes the basic config values and generates the config file. If "
-"your config/ directory is writable, you can select \"write\" to have Ampache "
-"write the config file directly to the correct location. If you select "
+"your config/ directory is writable, you can select \"write\" to have Ampache"
+" write the config file directly to the correct location. If you select "
 "\"download\" it will prompt you to download the config file, and you can "
 "then manually place the config file in %s"
 msgstr ""
@@ -5165,11 +5183,11 @@ msgstr ""
 
 #: ../../templates/show_install_config.inc.php:63
 msgid "Generate Config File"
-msgstr "Создать новый файл конфигурации"
+msgstr "Создать файл конфигурации"
 
 #: ../../templates/show_install_config.inc.php:66
 msgid "Web Path"
-msgstr "Веб путь"
+msgstr "Веб-путь"
 
 #: ../../templates/show_install_config.inc.php:71
 #: ../../templates/show_test_table.inc.php:227
@@ -5183,7 +5201,7 @@ msgstr "Название базы данных"
 #: ../../templates/show_install_config.inc.php:80
 #: ../../templates/show_install.inc.php:56
 msgid "MySQL Hostname"
-msgstr "MySQL Хост"
+msgstr "MySQL Hostname"
 
 #: ../../templates/show_install_config.inc.php:86
 msgid "MySQL Port (optional)"
@@ -5191,11 +5209,11 @@ msgstr "MySQL Port (необязательный)"
 
 #: ../../templates/show_install_config.inc.php:92
 msgid "MySQL Username"
-msgstr "MySQL пользователь"
+msgstr "Имя пользователя MySQL"
 
 #: ../../templates/show_install_config.inc.php:98
 msgid "MySQL Password"
-msgstr "MySQL пароль"
+msgstr "Пароль MySQL"
 
 #: ../../templates/show_install_config.inc.php:108
 msgid "Installation type"
@@ -5211,7 +5229,8 @@ msgstr ""
 
 #: ../../templates/show_install_config.inc.php:115
 msgid "Ampache is configured for personal use with most greatest features."
-msgstr "Ampache настроен для личного использования с самыми лучшими функциями."
+msgstr ""
+"Ampache настроен для личного использования с самыми лучшими функциями."
 
 #: ../../templates/show_install_config.inc.php:120
 msgid "Minimalist"
@@ -5252,8 +5271,8 @@ msgstr ""
 "Транскодирование позволяет конвертировать один тип файла в другой. Ampache "
 "поддерживает перекодирование всех типов файлов на основе пользователя, "
 "игрока, IP-адреса или доступной полосы пропускания. Чтобы перекодировать, "
-"Ampache использует существующие бинарные приложения, такие как ffmpeg. Чтобы "
-"транскодирование работало, вы должны сначала установить поддерживающие "
+"Ampache использует существующие бинарные приложения, такие как ffmpeg. Чтобы"
+" транскодирование работало, вы должны сначала установить поддерживающие "
 "приложения и убедиться, что они исполняются веб-сервером."
 
 #: ../../templates/show_install_config.inc.php:134
@@ -5294,8 +5313,8 @@ msgid ""
 "Ampache is more than only a web interface. Several backends are implemented "
 "to ensure you can stream your media from anywhere."
 msgstr ""
-"Ampache - это не только веб-интерфейс. Несколько бэкэндов реализованы, чтобы "
-"обеспечить возможность передачи мультимедиа из любого места."
+"Ampache - это не только веб-интерфейс. Несколько бэкэндов реализованы, чтобы"
+" обеспечить возможность передачи мультимедиа из любого места."
 
 #: ../../templates/show_install_config.inc.php:164
 msgid ""
@@ -5353,19 +5372,16 @@ msgid "play/.htaccess configured?"
 msgstr "play/.htaccess сконфигурировано?"
 
 #: ../../templates/show_install_config.inc.php:267
-#, fuzzy
 msgid "config/amuzak.cfg.php action"
-msgstr "config/ampache.cfg.php действие"
+msgstr "действие config / amuzak.cfg.php"
 
 #: ../../templates/show_install_config.inc.php:277
-#, fuzzy
 msgid "config/amuzak.cfg.php exists?"
-msgstr "config/ampache.cfg.php существует?"
+msgstr "config / amuzak.cfg.php существует?"
 
 #: ../../templates/show_install_config.inc.php:279
-#, fuzzy
 msgid "config/amuzak.cfg.php configured?"
-msgstr "config/ampache.cfg.php сконфигурировано?"
+msgstr "config / amuzak.cfg.php настроен?"
 
 #: ../../templates/show_install_config.inc.php:286
 msgid "Recheck Config"
@@ -5383,8 +5399,8 @@ msgstr "Создать конфигурацию"
 #: ../../templates/show_install.inc.php:39
 msgid ""
 "This step creates and inserts the Ampache database, so please provide a "
-"MySQL account with database creation rights. This step may take some time on "
-"slower computers."
+"MySQL account with database creation rights. This step may take some time on"
+" slower computers."
 msgstr ""
 "Этот шаг создает и вставляет базу данных Ampache, поэтому, пожалуйста, "
 "предоставьте учетную запись MySQL с правами на создание базы данных. Этот "
@@ -5392,7 +5408,7 @@ msgstr ""
 
 #: ../../templates/show_install.inc.php:47
 msgid "Insert Ampache Database"
-msgstr "Добавить базу"
+msgstr "Вставить базу данных Ampache"
 
 #: ../../templates/show_install.inc.php:50
 msgid "Desired Database Name"
@@ -5404,11 +5420,11 @@ msgstr "MySQL port (необязательный)"
 
 #: ../../templates/show_install.inc.php:68
 msgid "MySQL Administrative Username"
-msgstr "MySQL пользователь-администратор"
+msgstr "MySQL административное имя пользователя"
 
 #: ../../templates/show_install.inc.php:74
 msgid "MySQL Administrative Password"
-msgstr "MySQL пароль администратора"
+msgstr "Административный пароль MySQL"
 
 #: ../../templates/show_install.inc.php:80
 msgid "Create Database"
@@ -5428,15 +5444,15 @@ msgstr "Создать пользователя базы данных"
 
 #: ../../templates/show_install.inc.php:118
 msgid "Ampache Database Username"
-msgstr "Ampache имя пользователя базы данных"
+msgstr "Имя пользователя базы данных Ampache"
 
 #: ../../templates/show_install.inc.php:124
 msgid "Ampache Database User Password"
-msgstr "Ampache пароль пользователя базы данных"
+msgstr "Пароль пользователя базы данных Ampache"
 
 #: ../../templates/show_install.inc.php:133
 msgid "Insert Database"
-msgstr "Добавить базу"
+msgstr "Вставить базу данных"
 
 #: ../../templates/show_install_lang.inc.php:27
 msgid "Ampache Installation"
@@ -5448,7 +5464,7 @@ msgstr "Выберите язык установки"
 
 #: ../../templates/show_install_lang.inc.php:50
 msgid "Start configuration"
-msgstr "Начать конфигурирование"
+msgstr "Начать настройку"
 
 #. HINT: Username
 #: ../../templates/show_ip_history.inc.php:23
@@ -5601,7 +5617,7 @@ msgstr "Обновить из [%s]"
 
 #: ../../templates/show_manage_democratic.inc.php:23
 msgid "Manage Democratic Playlists"
-msgstr "Управление публичными списками"
+msgstr "Управление демократическими плейлистами"
 
 #: ../../templates/show_manage_democratic.inc.php:56
 msgid "No democratic found"
@@ -5609,7 +5625,7 @@ msgstr "Демократической не найдено"
 
 #: ../../templates/show_manage_democratic.inc.php:63
 msgid "Create New Playlist"
-msgstr "Создать список воспроизведения"
+msgstr "Создать новый плейлист"
 
 #: ../../templates/show_manage_license.inc.php:28
 msgid "Create new license"
@@ -5646,12 +5662,12 @@ msgstr "Тенденции"
 #: ../../templates/show_mashup.inc.php:41
 #: ../../templates/sidebar_home.inc.php:98
 msgid "Newest"
-msgstr "Новые"
+msgstr "новейший"
 
 #: ../../templates/show_mashup.inc.php:51
 #: ../../templates/sidebar_home.inc.php:99
 msgid "Popular"
-msgstr "Популярные"
+msgstr "Популярный"
 
 #: ../../templates/show_now_playing_row.inc.php:88
 #: ../../templates/show_now_playing_similar.inc.php:48
@@ -5714,7 +5730,7 @@ msgstr "# Медиа"
 #: ../../templates/show_searches.inc.php:47
 #: ../../templates/show_searches.inc.php:77
 msgid "Owner"
-msgstr "Владелец"
+msgstr "владелец"
 
 #: ../../templates/show_playlists.inc.php:76
 msgid "No playlist found"
@@ -5799,7 +5815,7 @@ msgstr "Управление предпочтениями"
 #: ../../templates/show_preference_box.inc.php:48
 #: ../../templates/show_preference_box.inc.php:99
 msgid "Apply to All"
-msgstr "Применить ко всем"
+msgstr "Применить ко всему"
 
 #: ../../templates/show_preference_box.inc.php:49
 #: ../../templates/show_preference_box.inc.php:100
@@ -5812,7 +5828,7 @@ msgstr "Уровень доступа"
 #: ../../templates/show_user_preferences.inc.php:29
 #, php-format
 msgid "Editing %s preferences"
-msgstr "Редактирование предпочтений %s"
+msgstr "Редактирование настроек %s"
 
 #: ../../templates/show_preferences.inc.php:36
 #: ../../templates/show_user_preferences.inc.php:53
@@ -6173,13 +6189,14 @@ msgstr "Лицензирование"
 
 #: ../../templates/show_song_row.inc.php:95
 msgid "Song Information"
-msgstr "Информация"
+msgstr "Информация о песне"
 
 #: ../../templates/show_song_row.inc.php:108
 msgid "Song edit"
 msgstr "Редактирование песни"
 
-#: ../../templates/show_songs.inc.php:41 ../../templates/show_songs.inc.php:104
+#: ../../templates/show_songs.inc.php:41
+#: ../../templates/show_songs.inc.php:104
 msgid "License"
 msgstr "Лицензия"
 
@@ -6215,7 +6232,7 @@ msgstr "Вы действительно хотите удалить тег?"
 #: ../../templates/show_test.inc.php:44
 #: ../../templates/sidebar_admin.inc.php:47
 msgid "Ampache Debug"
-msgstr "Отладка Ampache"
+msgstr "Ampache Debug"
 
 #: ../../templates/show_test.inc.php:48
 msgid ""
@@ -6238,8 +6255,8 @@ msgid ""
 "This tests whether you are running at least the minimum version of PHP "
 "required by Ampache."
 msgstr ""
-"Это тест проверяет, выполняется ли хотя бы минимальная версия PHP, требуемая "
-"Ampache."
+"Это тест проверяет, выполняется ли хотя бы минимальная версия PHP, требуемая"
+" Ampache."
 
 #: ../../templates/show_test_table.inc.php:33
 msgid "Dependencies"
@@ -6251,8 +6268,8 @@ msgstr "Это тест проверяет, установлены ли зави
 
 #: ../../templates/show_test_table.inc.php:42
 msgid ""
-"Please download and install Composer from http://getcomposer.org and install "
-"it (e.g: mv composer.phar /usr/local/bin/composer) then run `composer "
+"Please download and install Composer from http://getcomposer.org and install"
+" it (e.g: mv composer.phar /usr/local/bin/composer) then run `composer "
 "install --prefer-source --no-interaction` on Ampache directory."
 msgstr ""
 "Загрузите и установите Composer с http://getcomposer.org и установите его "
@@ -6304,8 +6321,8 @@ msgid ""
 "This tests whether the MySQL driver for PDO is enabled. This driver is "
 "required by Ampache."
 msgstr ""
-"Это тест проверяет, включен ли драйвер MySQL для PDO. Этот драйвер требуется "
-"Ampache."
+"Это тест проверяет, включен ли драйвер MySQL для PDO. Этот драйвер требуется"
+" Ampache."
 
 #: ../../templates/show_test_table.inc.php:84
 msgid "PHP session extension"
@@ -6313,8 +6330,8 @@ msgstr "Расширение сеанса PHP"
 
 #: ../../templates/show_test_table.inc.php:89
 msgid ""
-"This tests whether you have the session extension enabled. This extension is "
-"required by Ampache."
+"This tests whether you have the session extension enabled. This extension is"
+" required by Ampache."
 msgstr ""
 "Это тест проверяет, включено ли расширение сеанса. Это расширение требуется "
 "Ampache."
@@ -6349,8 +6366,8 @@ msgstr "Расширение curl PHP"
 
 #: ../../templates/show_test_table.inc.php:116
 msgid ""
-"This tests whether you have the curl extension enabled. This is not strictly "
-"necessary, but may result in a better experience."
+"This tests whether you have the curl extension enabled. This is not strictly"
+" necessary, but may result in a better experience."
 msgstr ""
 "Это тест проверяет, включено ли расширение curl. Это не является строго "
 "необходимым, но может привести к лучшему опыту."
@@ -6361,8 +6378,8 @@ msgstr "Расширение PHP zlib"
 
 #: ../../templates/show_test_table.inc.php:125
 msgid ""
-"This tests whether you have the zlib extension enabled. This is not strictly "
-"necessary, but may result in a better experience (zip download)."
+"This tests whether you have the zlib extension enabled. This is not strictly"
+" necessary, but may result in a better experience (zip download)."
 msgstr ""
 "Это тест проверяет, включено ли расширение zlib. Это не является абсолютно "
 "необходимым, но может привести к лучшему опыту (загрузка zip)."
@@ -6421,8 +6438,8 @@ msgstr "Время выполнения PHP-времени"
 
 #: ../../templates/show_test_table.inc.php:170
 msgid ""
-"This tests whether Ampache can override the limit on maximum execution time. "
-"This is not strictly necessary, but may result in a better experience."
+"This tests whether Ampache can override the limit on maximum execution time."
+" This is not strictly necessary, but may result in a better experience."
 msgstr ""
 "Это проверяет, может ли Ampache переопределить лимит на максимальное время "
 "выполнения. Это не является строго необходимым, но может привести к лучшему "
@@ -6476,13 +6493,13 @@ msgid "Configuration file readability"
 msgstr "Конфигурация файла читается"
 
 #: ../../templates/show_test_table.inc.php:209
-#, fuzzy
 msgid ""
 "This test attempts to read config/amuzak.cfg.php. If this fails the file "
 "either is not in the correct location or is not currently readable."
 msgstr ""
-"Этот тест пытается прочитать config / ampache.cfg.php. Если это не удается, "
-"файл находится не в правильном месте или в настоящее время не читается."
+"Этот тест пытается прочитать config / amuzak.cfg.php. Если это не удается, "
+"файл либо не находится в правильном расположении, либо не читается в данный "
+"момент."
 
 #: ../../templates/show_test_table.inc.php:214
 msgid "Configuration file validity"
@@ -6502,8 +6519,8 @@ msgid ""
 "This attempts to connect to your database using the values read from your "
 "configuration file."
 msgstr ""
-"Это пытается подключиться к вашей базе данных, используя значения, считанные "
-"из вашего файла конфигурации."
+"Это пытается подключиться к вашей базе данных, используя значения, считанные"
+" из вашего файла конфигурации."
 
 #: ../../templates/show_test_table.inc.php:236
 msgid "Database tables"
@@ -6527,8 +6544,9 @@ msgid ""
 "we are able to get to the index page. If you do not see a check mark here "
 "then your web_path is not set correctly."
 msgstr ""
-"Проверка корректной установки переменой web_path и доступности главной "
-"страницы. Если здесь нет отметки, значит web_patch установлена неверно."
+"Этот тест проверяет, что ваша переменная web_path установлена правильно и "
+"что мы можем попасть на страницу индекса. Если вы не видите галочку здесь, "
+"значит ваш web_path установлен неправильно."
 
 #: ../../templates/show_update_items.inc.php:23
 msgid "Starting Update from Tags"
@@ -6580,12 +6598,12 @@ msgstr "Запомнить меня"
 #: ../../templates/show_user.inc.php:55 ../../templates/show_users.inc.php:50
 #: ../../templates/show_users.inc.php:82
 msgid "Last Seen"
-msgstr "Последнее появление"
+msgstr "Последнее посещение"
 
 #: ../../templates/show_user.inc.php:60 ../../templates/show_users.inc.php:54
 #: ../../templates/show_users.inc.php:86
 msgid "Activity"
-msgstr "Активность"
+msgstr "Деятельность"
 
 #: ../../templates/show_user.inc.php:72
 msgid "Status"
@@ -6597,7 +6615,7 @@ msgstr "Пользователь сейчас на сайте"
 
 #: ../../templates/show_user.inc.php:80
 msgid "User is Offline Now"
-msgstr "Пользователь сейчас не на сайте"
+msgstr "Пользователь сейчас не в сети"
 
 #: ../../templates/show_user.inc.php:105
 msgid "Active Playlist"
@@ -6625,7 +6643,7 @@ msgstr "Регистрация пользователя"
 
 #: ../../templates/show_users.inc.php:49 ../../templates/show_users.inc.php:81
 msgid "Fullname"
-msgstr "Полное имя"
+msgstr "ФИО"
 
 #: ../../templates/show_users.inc.php:51 ../../templates/show_users.inc.php:83
 msgid "Registration Date"
@@ -6633,7 +6651,7 @@ msgstr "Дата регистрации"
 
 #: ../../templates/show_users.inc.php:57 ../../templates/show_users.inc.php:89
 msgid "Last Ip"
-msgstr "Последний IP"
+msgstr "Последний Ip"
 
 #: ../../templates/show_users.inc.php:63 ../../templates/show_users.inc.php:95
 msgid "On-line"
@@ -6704,15 +6722,15 @@ msgstr "Настройки сервера"
 
 #: ../../templates/sidebar_home.inc.php:32
 msgid "Song Titles"
-msgstr "Композиции"
+msgstr "Названия песен"
 
 #: ../../templates/sidebar_home.inc.php:75
 msgid "Currently Playing"
-msgstr "Сейчас играет"
+msgstr "В настоящее время играет"
 
 #: ../../templates/sidebar_home.inc.php:85
 msgid "Import"
-msgstr "Импорт"
+msgstr "Импортировать"
 
 #: ../../templates/sidebar_home.inc.php:97
 msgid "Recent"
@@ -6724,7 +6742,7 @@ msgstr "Самые популярные"
 
 #: ../../templates/sidebar_home.inc.php:140
 msgid "Advanced"
-msgstr "Расширенный поиск"
+msgstr "продвинутый"
 
 #: ../../templates/sidebar.inc.php:35
 #: ../../templates/sidebar_modules.inc.php:24
@@ -6777,1417 +6795,3 @@ msgstr "Обновить!"
 #: ../../upnp/control-reply.php:46
 msgid "root"
 msgstr "root"
-
-#~ msgid "#"
-#~ msgstr "#"
-
-#~ msgid "- Channel "
-#~ msgstr "- Канал"
-
-#~ msgid "- Channel Listening -"
-#~ msgstr "- Прослушивание каналов -"
-
-#~ msgid "- Port "
-#~ msgstr "- Порт"
-
-#~ msgid "- Verbose"
-#~ msgstr "- Подробный"
-
-#~ msgid "- WebSocket server -"
-#~ msgstr "- WebSocket server -"
-
-#~ msgid "Abkhazian"
-#~ msgstr "Abkhazian"
-
-#~ msgid "Accept"
-#~ msgstr "Принимать"
-
-#~ msgid "Access Token"
-#~ msgstr "Токен доступа"
-
-#~ msgid "Active Instance"
-#~ msgstr "Активный элемент"
-
-#~ msgid "Add Instance"
-#~ msgstr "Добавить элемент"
-
-#~ msgid "Add Localplay Instance"
-#~ msgstr "Добавить элемент локального вещания"
-
-#~ msgid "Add tags to sub episodes"
-#~ msgstr "Добавить теги к суб-эпизодам"
-
-#~ msgid "Add to wanted list"
-#~ msgstr "Добавить в список желаний"
-
-#~ msgid "Advanced Search"
-#~ msgstr "Расширенный поиск"
-
-#~ msgid "Afar"
-#~ msgstr "Издалека"
-
-#~ msgid "Afrikaans"
-#~ msgstr "Afrikaans"
-
-#~ msgid "Agent"
-#~ msgstr "Агент"
-
-#~ msgid "Ajax page load"
-#~ msgstr "Загрузка страницы Ajax"
-
-#~ msgid "Akan"
-#~ msgstr "Akan"
-
-#~ msgid "Albanian"
-#~ msgstr "Albanian"
-
-#~ msgid "Album - Group multiple disks"
-#~ msgstr "Альбом - Группировка нескольких дисков"
-
-#~ msgid "Album - Group per release type"
-#~ msgstr "Альбом - группировать по типу выпуска"
-
-#~ msgid "Album - Group per release type Sort"
-#~ msgstr "Альбом - Сортировка Групп по типу выпуска "
-
-#~ msgid "Album Default Sort"
-#~ msgstr "Альбом по умолчанию Сортировка"
-
-#~ msgid "Allow Democratic Play"
-#~ msgstr "Разрешить публичное воспроизведение"
-
-# This file lists all description strings from your Ampache-database ->
-# preference-table.
-# Please do not delete or modify the content by yourself. It will be
-# automatically (re)generated
-# if you run './gather-messages.sh [-gu|--getutds].
-# Last Update: 26.10.2018 18:02:37 CEST
-#
-#~ msgid "Allow Downloads"
-#~ msgstr "Разрешить скачивание"
-
-#~ msgid "Allow geolocation"
-#~ msgstr "Разрешить геолокацию"
-
-#~ msgid "Allow Localplay Play"
-#~ msgstr "Разрешить Локальное вещание"
-
-#~ msgid "Allow Localplay set to False"
-#~ msgstr "Опция \"Разрешить локальное вещание\" не включена"
-
-#~ msgid "Allow Share"
-#~ msgstr "Разрешить общий доступ"
-
-#~ msgid "Allow Streaming"
-#~ msgstr "Разрешить вещание"
-
-#~ msgid "Allow users to upload media"
-#~ msgstr "Разрешить пользователям загружать медиафайлы"
-
-#~ msgid "Allow video features"
-#~ msgstr "Разрешить функции видео"
-
-#~ msgid ""
-#~ "Alphabet browsing by default for following library items (album,"
-#~ "artist,...)"
-#~ msgstr ""
-#~ "Просмотр по алфавиту по умолчанию для следующих элементов библиотеки "
-#~ "(альбом, артист, ...)"
-
-#~ msgid "Amazon Access Key ID"
-#~ msgstr "Идентификатор ключа доступа Amazon"
-
-#~ msgid "Amazon associate tag"
-#~ msgstr "Связанный тег Amazon"
-
-#~ msgid "Amazon base url"
-#~ msgstr "URL-адрес базы данных Amazon"
-
-#~ msgid "Amazon max results pages"
-#~ msgstr "Максимально страниц результатов Amazon"
-
-#~ msgid "Amazon Secret Access Key"
-#~ msgstr "Секретный ключ доступа Amazon"
-
-#~ msgid "Amharic"
-#~ msgstr "Amharic"
-
-#~ msgid "Ampache"
-#~ msgstr "Ampache"
-
-#~ msgid "Anywhere"
-#~ msgstr "В любом месте"
-
-#~ msgid "API Error: cannot connect to Dropbox."
-#~ msgstr "Ошибка API: невозможно подключиться к Dropbox."
-
-#~ msgid "Arabic"
-#~ msgstr "Arabic"
-
-#~ msgid "Aragonese"
-#~ msgstr "Aragonese"
-
-#~ msgid "Are you sure you want to permanently delete this tvshow season?"
-#~ msgstr "Вы действительно хотите удалить этот сезон?"
-
-#~ msgid "Are you sure you want to permanently delete this tvshow?"
-#~ msgstr "Вы действительно хотите удалить это ТВ-шоу навсегда?"
-
-#~ msgid "Are you sure you want to permanently delete this video?"
-#~ msgstr "Вы действительно хотите удалить это видео навсегда?"
-
-#~ msgid "Armenian"
-#~ msgstr "Armenian"
-
-#~ msgid "Artist slideshow inactivity time"
-#~ msgstr "Время простоя слайд-шоу исполнителя"
-
-#~ msgid "Assamese"
-#~ msgstr "Assamese"
-
-#~ msgid "Audio Bitrate"
-#~ msgstr "Аудио битрейт"
-
-#~ msgid "Authentication Required"
-#~ msgstr "Необходима аутентификация"
-
-#~ msgid "Authorize Flash Web Player(s)"
-#~ msgstr "Авторизовать Flash Player(s)"
-
-#~ msgid "Authorize HTML5 Web Player(s)"
-#~ msgstr "Авторизовать HTML5 Web Player(s)"
-
-#~ msgid "Authorize JavaScript decoder (Aurora.js) in Web Player(s)"
-#~ msgstr "Авторизовать декодер JavaScript (Aurora.js) в Web Player (s)"
-
-#~ msgid "Auto-pause betweens tabs"
-#~ msgstr "Автоматическая пауза между вкладками"
-
-#~ msgid "AutoUpdate last check time"
-#~ msgstr "Автоматическое обновление последней версии от последней проверки"
-
-#~ msgid "AutoUpdate last version from last check"
-#~ msgstr "Автообновление последней версии последней проверки"
-
-#~ msgid "AutoUpdate last version from last check is newer"
-#~ msgstr ""
-#~ "Автообновление последней версии последней проверки является более новой."
-
-#~ msgid "Avaric"
-#~ msgstr "Avaric"
-
-#~ msgid "Avestan"
-#~ msgstr "Avestan"
-
-#~ msgid "Aymara"
-#~ msgstr "Aymara"
-
-#~ msgid "Azerbaijani"
-#~ msgstr "Azerbaijani"
-
-#~ msgid "Bambara"
-#~ msgstr "Bambara"
-
-#~ msgid "Bashkir"
-#~ msgstr "Bashkir"
-
-#~ msgid "Basque"
-#~ msgstr "Basque"
-
-#~ msgid "Belarusian"
-#~ msgstr "Belarusian"
-
-#~ msgid "Bengali"
-#~ msgstr "Bengali"
-
-#~ msgid "Bihari"
-#~ msgstr "Bihari"
-
-#~ msgid "Bislama"
-#~ msgstr "Bislama"
-
-#~ msgid "Bosnian"
-#~ msgstr "Bosnian"
-
-#~ msgid "Breton"
-#~ msgstr "Breton"
-
-#~ msgid "Broadcast"
-#~ msgstr "Трансляция"
-
-#~ msgid "Broadcast Delete"
-#~ msgstr "Трансляция удаление"
-
-#~ msgid "Broadcast Deleted"
-#~ msgstr "Трансляция удалена"
-
-#~ msgid "Broadcast edit"
-#~ msgstr "Редактировать Трансляцию"
-
-#~ msgid "Broadcast web player by default"
-#~ msgstr "Широковещательный веб-проигрыватель по умолчанию"
-
-#~ msgid "Broadcasts"
-#~ msgstr "Трансляции"
-
-#~ msgid "Bulgarian"
-#~ msgstr "Bulgarian"
-
-#~ msgid "Burmese"
-#~ msgstr "Burmese"
-
-#~ msgid "Cannot delete this tvshow season."
-#~ msgstr "Не удается удалить этот сезон."
-
-#~ msgid "Cannot delete this tvshow."
-#~ msgstr "Не удается удалить это ТВ-шоу."
-
-#~ msgid "Cannot delete this video."
-#~ msgstr "Не удается удалить это видео."
-
-#~ msgid "Catalan"
-#~ msgstr "Catalan"
-
-#~ msgid "Catalog Update Finished.  Total Media: [%s]"
-#~ msgstr "Обновление каталога завершено. Всего медиа: [ %s ]"
-
-#~ msgid "Chamorro"
-#~ msgstr "Chamorro"
-
-#~ msgid "Channel Created"
-#~ msgstr "Канал Создан"
-
-#~ msgid "Channel Delete"
-#~ msgstr "Канал Удален"
-
-#~ msgid "Channel Deleted"
-#~ msgstr "Вычеркнутый Канал"
-
-#~ msgid "Channel edit"
-#~ msgstr "Редактирование Канала"
-
-#~ msgid "Channel id to start"
-#~ msgstr "Идентификатор канала для запуска"
-
-#~ msgid "Chechen"
-#~ msgstr "Chechen"
-
-#~ msgid "Check for Ampache updates automatically"
-#~ msgstr "Проверять обновление Ampache автоматически"
-
-#~ msgid "Check library item at import time and don't import duplicates"
-#~ msgstr ""
-#~ "Проверять элемент библиотеки во время импорта и не импортировать дубликаты"
-
-#~ msgid "Chichewa"
-#~ msgstr "Chichewa"
-
-#~ msgid "Chinese"
-#~ msgstr "Chinese"
-
-#~ msgid "Church Slavic"
-#~ msgstr "Church Slavic"
-
-#~ msgid "Chuvash"
-#~ msgstr "Chuvash"
-
-#~ msgid "Clear democratic votes of expired user sessions"
-#~ msgstr "Четкие демократические голоса просроченных сессий пользователя"
-
-#~ msgid "Click the 'Generate' button to create an Access Token"
-#~ msgstr "Нажмите 'Сгенерировать', чтобы создать токен доступа"
-
-#~ msgid "commented on"
-#~ msgstr "прокомментировал"
-
-#~ msgid "Confirmation when closing current playing window"
-#~ msgstr "Подтверждение при закрытии текущего окна воспроизведения"
-
-#~ msgid ""
-#~ "Copy your App key and App secret and Access Token into the following "
-#~ "fields."
-#~ msgstr ""
-#~ "Скопируйте ключ и секрет приложения, а также токен доступа, в следующие "
-#~ "поля."
-
-#~ msgid "Cornish"
-#~ msgstr "Cornish"
-
-#~ msgid "Corsican"
-#~ msgstr "Corsican"
-
-#~ msgid "Create Channel"
-#~ msgstr "Создать канал"
-
-#~ msgid "Create channel"
-#~ msgstr "Создать канал"
-
-#~ msgid "Cree"
-#~ msgstr "Cree"
-
-#~ msgid "Croatian"
-#~ msgstr "Croatian"
-
-#~ msgid "Current Playlist"
-#~ msgstr "Текущий список композиций"
-
-#~ msgid "Custom blank album default image"
-#~ msgstr "Пользовательское пустое изображение по умолчанию для альбома"
-
-#~ msgid "Custom blank video default image"
-#~ msgstr "Пользовательское пустое изображение по умолчанию для видео"
-
-#~ msgid "Custom favicon url"
-#~ msgstr "Пользовательский URL-адрес favicon"
-
-#~ msgid "Custom login page logo url"
-#~ msgstr "Пользовательский логин страницы входа в систему"
-
-#~ msgid "Custom logo url"
-#~ msgstr "Пользовательский логотип url"
-
-#~ msgid "Custom text footer"
-#~ msgstr "Пользовательский текст в нижнем колонтитуле"
-
-#~ msgid "Czech"
-#~ msgstr "Czech"
-
-#~ msgid "DAAP backend password"
-#~ msgstr "Почтовый пароль DAAP"
-
-#~ msgid "Danish"
-#~ msgstr "Danish"
-
-#~ msgid "Decrease Volume"
-#~ msgstr "Уменьшить громкость"
-
-#~ msgid ""
-#~ "Disable custom metadata fields (ctrl / shift click to select multiple)"
-#~ msgstr ""
-#~ "Отключите настраиваемые поля метаданных (используйте ctrl/shift, чтобы "
-#~ "выбрать несколько)"
-
-#~ msgid ""
-#~ "Disable custom metadata fields. Insert them in a comma separated list. "
-#~ "They will add to the fields selected above."
-#~ msgstr ""
-#~ "Отключите настраиваемые поля метаданных. Вставьте их в список, "
-#~ "разделенный запятыми. Они добавят поля, выбранные выше."
-
-#~ msgid "Disabled"
-#~ msgstr "Отключено"
-
-#~ msgid "Display"
-#~ msgstr "Дисплей"
-
-#~ msgid "Divehi"
-#~ msgstr "Divehi"
-
-#~ msgid "Donate"
-#~ msgstr "Donate"
-
-#~ msgid "Done."
-#~ msgstr "Готово."
-
-#~ msgid "Double click to post a new shout"
-#~ msgstr "Дважды щелкните, чтобы опубликовать новый крик"
-
-#~ msgid "Dutch"
-#~ msgstr "Dutch"
-
-#~ msgid "Dzongkha"
-#~ msgstr "Dzongkha"
-
-#~ msgid "Edit Instance"
-#~ msgstr "Редактировать элемент"
-
-#~ msgid "Edit Localplay Instance"
-#~ msgstr "Редактировать запись локального воспроизведения"
-
-#~ msgid "Edit Season"
-#~ msgstr "Изменить сезон"
-
-#~ msgid "Edit TV Show"
-#~ msgstr "Изменить ТВ-шоу"
-
-#~ msgid "English"
-#~ msgstr "English"
-
-#~ msgid "Episode"
-#~ msgstr "Эпизод"
-
-#~ msgid "Episode Number"
-#~ msgstr "Номер эпизода"
-
-#~ msgid "Error while authenticating against Seafile API: %s"
-#~ msgstr "Ошибка во время аутентификации в Seafile API:%s"
-
-#~ msgid ""
-#~ "Error: API Key, Secret and Access Token Required for Dropbox Catalogs"
-#~ msgstr ""
-#~ "Ошибка: для каталогов Dropbox необходимы ключ API, секрет и токен доступа"
-
-#~ msgid "Esperanto"
-#~ msgstr "Esperanto"
-
-#~ msgid "Estonian"
-#~ msgstr "Estonian"
-
-#~ msgid "Ewe"
-#~ msgstr "Ewe"
-
-#~ msgid "Failed to enable the module, Controller Error"
-#~ msgstr "Не удалось включить модуль, Ошибка контроллера"
-
-#~ msgid "Faroese"
-#~ msgstr "Faroese"
-
-#~ msgid "Fijian"
-#~ msgstr "Fijian"
-
-#~ msgid "Finnish"
-#~ msgstr "Finnish"
-
-#~ msgid "Fix header position on compatible themes"
-#~ msgstr "Исправить положение заголовка на совместимые темы"
-
-#~ msgid "Followers"
-#~ msgstr "Фоловеры"
-
-#~ msgid "Following"
-#~ msgstr "Следующий"
-
-#~ msgid "Forces Http play regardless of port"
-#~ msgstr "Использовать Http воспроизведение, независимо от порта"
-
-#~ msgid "Found available port "
-#~ msgstr "Найден доступный порт"
-
-#~ msgid "Frame Rate"
-#~ msgstr "Частота кадров"
-
-#~ msgid "French"
-#~ msgstr "French"
-
-#~ msgid "Friends Timeline"
-#~ msgstr "Временная шкала друзей"
-
-#~ msgid "Fulah"
-#~ msgstr "Fulah"
-
-#~ msgid "Galician"
-#~ msgstr "Galician"
-
-#~ msgid "Ganda"
-#~ msgstr "Ganda"
-
-#~ msgid "Georgian"
-#~ msgstr "Georgian"
-
-#~ msgid "German"
-#~ msgstr "German"
-
-#~ msgid "Get chunked files on analyze"
-#~ msgstr "Получить фрагментированные файлы при анализе"
-
-#~ msgid "Give a name to your application and create it"
-#~ msgstr "Дайте имя вашему приложению и создайте его"
-
-#~ msgid "Go to https://www.dropbox.com/developers/apps/create"
-#~ msgstr "Идите на https://www.dropbox.com/developers/apps/create"
-
-#~ msgid "Greek"
-#~ msgstr "Greek"
-
-#~ msgid "Guarani"
-#~ msgstr "Guarani"
-
-#~ msgid "Gujarati"
-#~ msgstr "Gujarati"
-
-#~ msgid "Haitian"
-#~ msgstr "Haitian"
-
-#~ msgid "Hausa"
-#~ msgstr "Hausa"
-
-#~ msgid "Hebrew"
-#~ msgstr "Hebrew"
-
-#~ msgid "Herero"
-#~ msgstr "Herero"
-
-#~ msgid "Hindi"
-#~ msgstr "Hindi"
-
-#~ msgid "Hiri Motu"
-#~ msgstr "Hiri Motu"
-
-#~ msgid "Hostname"
-#~ msgstr "Имя узла"
-
-#~ msgid "Hungarian"
-#~ msgstr "Hungarian"
-
-#~ msgid "Icelandic"
-#~ msgstr "Icelandic"
-
-#~ msgid "Ido"
-#~ msgstr "Ido"
-
-#~ msgid "Igbo"
-#~ msgstr "Igbo"
-
-#~ msgid "Increase Volume"
-#~ msgstr "Увеличить громкость"
-
-#~ msgid "Indonesian"
-#~ msgstr "Indonesian"
-
-#~ msgid "Instance Name"
-#~ msgstr "Элемент"
-
-#~ msgid "Interface"
-#~ msgstr "Интерфейс"
-
-#~ msgid "Interlingua (International Auxiliary Language Association)"
-#~ msgstr "Interlingua (International Auxiliary Language Association)"
-
-#~ msgid "Interlingue"
-#~ msgstr "Interlingue"
-
-#~ msgid "Inuktitut"
-#~ msgstr "Inuktitut"
-
-#~ msgid "Inupiaq"
-#~ msgstr "Inupiaq"
-
-#~ msgid "Invalid \"API key\", \"secret\", or \"access token\": "
-#~ msgstr "Неверный \"ключ API\", \"секрет\" или \"токен доступа\":"
-
-#~ msgid "Irish"
-#~ msgstr "Irish"
-
-#~ msgid "Italian"
-#~ msgstr "Italian"
-
-#~ msgid "Japanese"
-#~ msgstr "Japanese"
-
-#~ msgid "Javanese"
-#~ msgstr "Javanese"
-
-#~ msgid "Kalaallisut"
-#~ msgstr "Kalaallisut"
-
-#~ msgid "Kannada"
-#~ msgstr "Kannada"
-
-#~ msgid "Kanuri"
-#~ msgstr "Kanuri"
-
-#~ msgid "Kashmiri"
-#~ msgstr "Kashmiri"
-
-#~ msgid "Kazakh"
-#~ msgstr "Kazakh"
-
-#~ msgid "Khmer"
-#~ msgstr "Khmer"
-
-#~ msgid "Kikuyu"
-#~ msgstr "Kikuyu"
-
-#~ msgid "Kinyarwanda"
-#~ msgstr "Kinyarwanda"
-
-#~ msgid "Kirghiz"
-#~ msgstr "Kirghiz"
-
-#~ msgid "Kirundi"
-#~ msgstr "Kirundi"
-
-#~ msgid "Komi"
-#~ msgstr "Komi"
-
-#~ msgid "Kongo"
-#~ msgstr "Kongo"
-
-#~ msgid "Korean"
-#~ msgstr "Korean"
-
-#~ msgid "Kurdish"
-#~ msgstr "Kurdish"
-
-#~ msgid "Kwanyama"
-#~ msgstr "Kwanyama"
-
-#~ msgid "Lao"
-#~ msgstr "Lao"
-
-#~ msgid "Last.FM Password"
-#~ msgstr "Пароль Last.FM"
-
-#~ msgid "Last.FM Submit Challenge"
-#~ msgstr "Last.FM Отправить вызов"
-
-#~ msgid "Last.FM Submit Host"
-#~ msgstr "Last.FM Отправить хостинг"
-
-#~ msgid "Last.FM Submit Port"
-#~ msgstr "Last.FM Отправить порт"
-
-#~ msgid "Last.FM Submit URL"
-#~ msgstr "Last.FM Отправить URL"
-
-#~ msgid "Last.FM Username"
-#~ msgstr "Имя пользователя Last.FM"
-
-#~ msgid "Latin"
-#~ msgstr "Latin"
-
-#~ msgid "Latvian"
-#~ msgstr "Latvian"
-
-#~ msgid "Library item context menu"
-#~ msgstr "Контекстное меню элемента библиотеки"
-
-#~ msgid "Light sidebar by default"
-#~ msgstr "Световая боковая панель по умолчанию"
-
-#~ msgid "Limburgish"
-#~ msgstr "Limburgish"
-
-#~ msgid "Limit direct play to maximum media count"
-#~ msgstr "Ограничить прямую игру до максимального количества медиаданных"
-
-#~ msgid "Limit number of future events"
-#~ msgstr "Ограничить количество будущих событий"
-
-#~ msgid "Limit number of past events"
-#~ msgstr "Ограничить количество прошлых событий"
-
-#~ msgid "Lingala"
-#~ msgstr "Lingala"
-
-#~ msgid "Listeners"
-#~ msgstr "Слушатели"
-
-#~ msgid "Listening on "
-#~ msgstr "Прослушивание"
-
-#~ msgid "Listening port, default 8100"
-#~ msgstr "Прослушиваемый порт, по умолчанию 8100"
-
-#~ msgid "Listening port, default get an available port automatically"
-#~ msgstr ""
-#~ "Прослушиваемый порт, по умолчанию автоматически получает доступный порт"
-
-#~ msgid "Lithuanian"
-#~ msgstr "Lithuanian"
-
-#~ msgid "Local Play"
-#~ msgstr "Локальное воспроизведение"
-
-#~ msgid "Localplay"
-#~ msgstr "Локальное вещание"
-
-#~ msgid "Localplay Access"
-#~ msgstr "Доступ к локальному вещанию"
-
-#~ msgid "Localplay Control"
-#~ msgstr "Управление локальным воспроизведением"
-
-#~ msgid "Localplay Controller Not Defined"
-#~ msgstr "Контроллер локального вещания не указан"
-
-#~ msgid "Localplay Controllers"
-#~ msgstr "Управление локальным проигрыванием"
-
-#~ msgid "Localplay Disabled"
-#~ msgstr "Локальное вещание отключено"
-
-#~ msgid "localplay enabled"
-#~ msgstr "Локальное воспроизведение включено"
-
-#~ msgid "Localplay Modules"
-#~ msgstr "Модули локального вещания"
-
-#~ msgid "Localplay Type"
-#~ msgstr "Тип локального вещания"
-
-#~ msgid "Lock Songs"
-#~ msgstr "Блокировать песни"
-
-#~ msgid "Log out"
-#~ msgstr "Выйти"
-
-#~ msgid "Loop"
-#~ msgstr "петля"
-
-#~ msgid "Luba-Katanga"
-#~ msgstr "Luba-Katanga"
-
-#~ msgid "Luxembourgish"
-#~ msgstr "Luxembourgish"
-
-#~ msgid "Macedonian"
-#~ msgstr "Macedonian"
-
-#~ msgid "Malagasy"
-#~ msgstr "Malagasy"
-
-#~ msgid "Malay"
-#~ msgstr "Malay"
-
-#~ msgid "Malayalam"
-#~ msgstr "Malayalam"
-
-#~ msgid "Maltese"
-#~ msgstr "Maltese"
-
-#~ msgid "Manage Shoutbox"
-#~ msgstr "Управление онлайн-чатом"
-
-#~ msgid "Manager"
-#~ msgstr "Менеджер"
-
-#~ msgid "Manx"
-#~ msgstr "Manx"
-
-#~ msgid "Maori"
-#~ msgstr "Maori"
-
-#~ msgid "Marathi"
-#~ msgstr "Marathi"
-
-#~ msgid "Marshallese"
-#~ msgstr "Marshallese"
-
-#~ msgid "Max Listeners"
-#~ msgstr "Максимум Слушателей"
-
-#~ msgid "Missing Albums"
-#~ msgstr "Отсутствующие альбомы"
-
-#~ msgid "Missing Artist"
-#~ msgstr "Отсутствует Артист"
-
-#~ msgid "Missing Artists"
-#~ msgstr "Отсутствующие Артисты"
-
-#~ msgid "Mongolian"
-#~ msgstr "Mongolian"
-
-#~ msgid "Movie"
-#~ msgstr "Кино"
-
-#~ msgid "Music Clip"
-#~ msgstr "Музыкальный клип"
-
-#~ msgid "Music Clips"
-#~ msgstr "Музыкальные клипы"
-
-#~ msgid "Mute"
-#~ msgstr "Заглушить"
-
-#~ msgid "Nauru"
-#~ msgstr "Nauru"
-
-#~ msgid "Navajo"
-#~ msgstr "Navajo"
-
-#~ msgid "Ndonga"
-#~ msgstr "Ndonga"
-
-#~ msgid "Nepali"
-#~ msgstr "Nepali"
-
-#~ msgid "New broadcast"
-#~ msgstr "Новая трансляция"
-
-#~ msgid "No broadcast found"
-#~ msgstr "Трансляции не найдены"
-
-#~ msgid "No channel found"
-#~ msgstr "Канал не найден"
-
-#~ msgid "No media updated, do you respect the patterns?"
-#~ msgstr "Нет медиа, вы уважаете шаблоны?"
-
-#~ msgid "No missing albums found"
-#~ msgstr "Не найдено ни одного альбома"
-
-#~ msgid "No missing artists found"
-#~ msgstr "Не найдено ни одного исполнителя"
-
-#~ msgid "No season found"
-#~ msgstr "Сезон не найден"
-
-#~ msgid "No tv show found"
-#~ msgstr "ТВ-шоу не найдено"
-
-#~ msgid "No video found"
-#~ msgstr "Видео не найдено"
-
-#~ msgid "North Ndebele"
-#~ msgstr "North Ndebele"
-
-#~ msgid "Northern Sami"
-#~ msgstr "Northern Sami"
-
-#~ msgid "Norwegian"
-#~ msgstr "Norwegian"
-
-#~ msgid "Norwegian Bokmal"
-#~ msgstr "Norwegian Bokmal"
-
-#~ msgid "Norwegian Nynorsk"
-#~ msgstr "Norwegian Nynorsk"
-
-#~ msgid "Now playing filtered per user"
-#~ msgstr "Текущее воспроизведение фильтруется для каждого пользователя"
-
-#~ msgid "Occitan"
-#~ msgstr "Occitan"
-
-#~ msgid "Offset Limit"
-#~ msgstr "Максимальное смещение"
-
-#~ msgid "Ojibwa"
-#~ msgstr "Ojibwa"
-
-#~ msgid "Original Name"
-#~ msgstr "Оригинальное название"
-
-#~ msgid "Oriya"
-#~ msgstr "Oriya"
-
-#~ msgid "Oromo"
-#~ msgstr "Oromo"
-
-#~ msgid "Ossetian"
-#~ msgstr "Ossetian"
-
-#~ msgid "Overwrite tags of sub episodes"
-#~ msgstr "Перезаписать теги суб-эпизодов"
-
-#~ msgid "Pali"
-#~ msgstr "Pali"
-
-#~ msgid "Panjabi"
-#~ msgstr "Panjabi"
-
-#~ msgid "Pashto"
-#~ msgstr "Pashto"
-
-#~ msgid "Pause"
-#~ msgstr "Пауза"
-
-#~ msgid "Paused"
-#~ msgstr "Остановлен"
-
-#~ msgid "Persian"
-#~ msgstr "Persian"
-
-#~ msgid "Personal information visibility - Now playing"
-#~ msgstr "Видимость личной информации - Сейчас играет"
-
-#~ msgid "Personal information visibility - Recently played"
-#~ msgstr "Видимость личной информации - Недавно сыграно"
-
-#~ msgid ""
-#~ "Personal information visibility - Recently played - Allow to show "
-#~ "streaming agent"
-#~ msgstr ""
-#~ "Видимость личной информации - Недавно воспроизведенный - Разрешить показ "
-#~ "потокового агента"
-
-#~ msgid ""
-#~ "Personal information visibility - Recently played - Allow to show "
-#~ "streaming date/time"
-#~ msgstr ""
-#~ "Видимость личной информации - Недавно воспроизведенный - Разрешить "
-#~ "показывать дату / время"
-
-#~ msgid "Personal Video"
-#~ msgstr "Личное видео"
-
-#~ msgid "Playlist Method"
-#~ msgstr "Метод обновления плейлиста"
-
-#~ msgid "Playlist Type"
-#~ msgstr "Тип списка композиций"
-
-#~ msgid "Podcast: # episodes to download when new episodes are available"
-#~ msgstr "Подкаст: # эпизоды для загрузки, когда доступны новые эпизоды"
-
-#~ msgid "Podcast: # latest episodes to keep"
-#~ msgstr "Подкаст: # последних эпизодов, чтобы сохранить"
-
-#~ msgid "Polish"
-#~ msgstr "Polish"
-
-#~ msgid "Popular Threshold"
-#~ msgstr "Порог популярности"
-
-#~ msgid "Port"
-#~ msgstr "Порт"
-
-#~ msgid "Portuguese"
-#~ msgstr "Portuguese"
-
-#~ msgid "Previous"
-#~ msgstr "Пред."
-
-#~ msgid "Quechua"
-#~ msgstr "Quechua"
-
-#~ msgid "Raeto-Romance"
-#~ msgstr "Raeto-Romance"
-
-#~ msgid "Rate Limit"
-#~ msgstr "Ограничение скорости"
-
-#~ msgid "Receive notifications by email (shouts, private messages, ...)"
-#~ msgstr ""
-#~ "Получать уведомления по электронной почте (крики, личные сообщения, ...)"
-
-#~ msgid "Release Date"
-#~ msgstr "Дата выпуска"
-
-#~ msgid "Rename uploaded file according to catalog pattern"
-#~ msgstr "Переименовать загруженный файл в соответствии с шаблоном каталога"
-
-#~ msgid "Repeat"
-#~ msgstr "Повторять"
-
-#~ msgid "Resolution"
-#~ msgstr "Разрешение"
-
-#~ msgid "Romanian"
-#~ msgstr "Romanian"
-
-#~ msgid "Running"
-#~ msgstr "Запущено"
-
-#~ msgid "Running Dropbox Remote Update"
-#~ msgstr "Запуск удаленного обновления Dropbox"
-
-#~ msgid "Russian"
-#~ msgstr "Русский"
-
-#~ msgid "Samoan"
-#~ msgstr "Samoan"
-
-#~ msgid "Sango"
-#~ msgstr "Sango"
-
-#~ msgid "Sanskrit"
-#~ msgstr "Sanskrit"
-
-#~ msgid "Sardinian"
-#~ msgstr "Sardinian"
-
-#~ msgid "Scottish Gaelic"
-#~ msgstr "Scottish Gaelic"
-
-#~ msgid "Season"
-#~ msgstr "Сезон"
-
-#~ msgid "Season edit"
-#~ msgstr "Редактирование сезона"
-
-#~ msgid "Seasons"
-#~ msgstr "Сезоны"
-
-#~ msgid "Select 'Dropbox API app'"
-#~ msgstr "Выберите 'Dropbox API app'"
-
-#~ msgid "Send private message"
-#~ msgstr "Отправить личное сообщение"
-
-#~ msgid "Serbian"
-#~ msgstr "Serbian"
-
-#~ msgid "Server URI"
-#~ msgstr "URI сервера"
-
-#~ msgid "Share links default expiration days (0=never)"
-#~ msgstr ""
-#~ "Отправить ссылку по умолчанию дни истечения срока действия (0=никогда)"
-
-#~ msgid "Shona"
-#~ msgstr "Shona"
-
-#~ msgid "Shoutcast Active Instance"
-#~ msgstr "Активный экземпляр Shoutcast"
-
-#~ msgid "Show # played"
-#~ msgstr "Показать # играл"
-
-#~ msgid "Show Albums of the moment at home page"
-#~ msgstr "Показывать текущие альбомы на главной странице"
-
-#~ msgid "Show current song in Web player page title"
-#~ msgstr "Показать текущую песню в заголовке страницы веб-плеера"
-
-#~ msgid "Show donate button in footer"
-#~ msgstr "Показать кнопку Доната (нижний колонтитул)"
-
-#~ msgid "Show filter box on browse"
-#~ msgstr "Показать окно фильтра в режиме просмотра"
-
-#~ msgid "Show instances"
-#~ msgstr "Показать элементы"
-
-#~ msgid "Show Localplay Instances"
-#~ msgstr "Показать элементы локального воспроизведения"
-
-#~ msgid "Show Now Playing at home page"
-#~ msgstr "Показать что сейчас играет на главной странице"
-
-#~ msgid "Show Playlist"
-#~ msgstr "Показать список композиций"
-
-#~ msgid "Show Recently Played at home page"
-#~ msgstr "Показать Недавно воспроизведенные на главной странице"
-
-#~ msgid "Show TV Shows starting with"
-#~ msgstr "Показать ТВ-шоу, начиная с"
-
-#~ msgid "Show Videos of the moment at home page"
-#~ msgstr "Показать текущие видео на главной странице"
-
-#~ msgid "Sichuan Yi"
-#~ msgstr "Sichuan Yi"
-
-#~ msgid "Sindhi"
-#~ msgstr "Sindhi"
-
-#~ msgid "Sinhala"
-#~ msgstr "Sinhala"
-
-#~ msgid "Slovak"
-#~ msgstr "Slovak"
-
-#~ msgid "Slovenian"
-#~ msgstr "Slovenian"
-
-#~ msgid "Somali"
-#~ msgstr "Somali"
-
-#~ msgid "South Ndebele"
-#~ msgstr "South Ndebele"
-
-#~ msgid "Southern Sotho"
-#~ msgstr "Southern Sotho"
-
-#~ msgid "Spanish"
-#~ msgstr "Spanish"
-
-#~ msgid "Start Channel"
-#~ msgstr "Запустить Канал"
-
-#~ msgid "Started"
-#~ msgstr "Запущено"
-
-#~ msgid "Starting broadcasts..."
-#~ msgstr "Запуск трансляций..."
-
-#~ msgid "Starting Channel..."
-#~ msgstr "Запуск канала ..."
-
-#~ msgid "Statistics Day Threshold"
-#~ msgstr "Порог дневной статистики"
-
-#~ msgid "Stop"
-#~ msgstr "Стоп"
-
-#~ msgid "Stop Channel"
-#~ msgstr "Остановить Канал"
-
-#~ msgid "Stopped"
-#~ msgstr "Остановлено"
-
-#~ msgid "Stream Source"
-#~ msgstr "Источник потока"
-
-#~ msgid "Stream Type"
-#~ msgstr "Тип потока"
-
-#~ msgid "Stream Url"
-#~ msgstr "Потоковый URL"
-
-#~ msgid "Subtitle"
-#~ msgstr "Подзаголовок"
-
-#~ msgid "summary"
-#~ msgstr "резюме"
-
-#~ msgid "Sundanese"
-#~ msgstr "Sundanese"
-
-#~ msgid "Swahili"
-#~ msgstr "Swahili"
-
-#~ msgid "Swati"
-#~ msgstr "Swati"
-
-#~ msgid "Swedish"
-#~ msgstr "Swedish"
-
-#~ msgid "Tagalog"
-#~ msgstr "Tagalog"
-
-#~ msgid "Tahitian"
-#~ msgstr "Tahitian"
-
-#~ msgid "Tajik"
-#~ msgstr "Tajik"
-
-#~ msgid "Tamil"
-#~ msgstr "Tamil"
-
-#~ msgid "Tatar"
-#~ msgstr "Tatar"
-
-#~ msgid "Telugu"
-#~ msgstr "Telugu"
-
-#~ msgid "Thai"
-#~ msgstr "Thai"
-
-#~ msgid "The Broadcast has been deleted"
-#~ msgstr "Трансляция была удалена"
-
-#~ msgid "The Channel has been deleted"
-#~ msgstr "Канал удален"
-
-#~ msgid "Theme"
-#~ msgstr "Тема"
-
-#~ msgid "Theme color"
-#~ msgstr "Цвет темы"
-
-#~ msgid "Tibetan"
-#~ msgstr "Tibetan"
-
-#~ msgid "Tigrinya"
-#~ msgstr "Tigrinya"
-
-#~ msgid "Timeline"
-#~ msgstr "Временная шкала"
-
-#~ msgid "Tonga"
-#~ msgstr "Tonga"
-
-#~ msgid "Top menu"
-#~ msgstr "Верхнее меню"
-
-#~ msgid "Transcode Bitrate"
-#~ msgstr "Битрейд перекодирования"
-
-#~ msgid "Tsonga"
-#~ msgstr "Tsonga"
-
-#~ msgid "Tswana"
-#~ msgstr "Tswana"
-
-#~ msgid "Turkish"
-#~ msgstr "Turkish"
-
-#~ msgid "Turkmen"
-#~ msgstr "Turkmen"
-
-#~ msgid "TV Show"
-#~ msgstr "ТВ-шоу"
-
-#~ msgid "TV Show edit"
-#~ msgstr "Редактирование ТВ-шоу"
-
-#~ msgid "TV Show Season"
-#~ msgstr "Сезон телешоу"
-
-#~ msgid "TVShow Deletion"
-#~ msgstr "Удаление ТВ-шоу"
-
-#~ msgid "TVShow has been deleted."
-#~ msgstr "ТВ-шоу было удалено."
-
-#~ msgid "TVShow Season Deletion"
-#~ msgstr "Сезонное удаление ТВ-шоу"
-
-#~ msgid "TVShow Season has been deleted."
-#~ msgstr "Сезон ТВ-шоу был удален."
-
-#~ msgid "Twi"
-#~ msgstr "Twi"
-
-#~ msgid "Type of Playback"
-#~ msgstr "Тип вещания"
-
-#~ msgid "Uighur"
-#~ msgstr "Uighur"
-
-#~ msgid "Ukrainian"
-#~ msgstr "Ukrainian"
-
-#~ msgid "Unbroadcast"
-#~ msgstr "не шероковещательный"
-
-#~ msgid "Unknown Artist"
-#~ msgstr "Неизвестный Артист"
-
-#~ msgid "Unknown channel."
-#~ msgstr "Неизвестный канал."
-
-#~ msgid "Update Instance"
-#~ msgstr "Обновить запись"
-
-#~ msgid "Upload: allow users to edit uploaded songs"
-#~ msgstr "Загрузить: разрешить пользователям редактировать загруженные песни"
-
-#~ msgid "Upload: allow users to remove uploaded songs"
-#~ msgstr "Загрузить: разрешить пользователям удалять загруженные песни"
-
-#~ msgid "Upload: consider the user sender as the track's artist"
-#~ msgstr ""
-#~ "Загрузить: считать отправителя пользователя в качестве исполнителя трека"
-
-#~ msgid "Upload: create a subdirectory per user (recommended)"
-#~ msgstr ""
-#~ "Загрузить: создать подкаталог для каждого пользователя (рекомендуется)"
-
-#~ msgid ""
-#~ "Upload: run the following script after upload (current directory = upload "
-#~ "target directory)"
-#~ msgstr ""
-#~ "Загрузка: запустите следующий сценарий после загрузки (текущий каталог = "
-#~ "загрузить целевой каталог)"
-
-#~ msgid "Uploaded by"
-#~ msgstr "Загружено пользователем"
-
-#~ msgid "Uploads catalog destination"
-#~ msgstr "Загружает каталог"
-
-#~ msgid "UPnP backend disabled. Broadcast skipped."
-#~ msgstr "Блокировка UPnP отключена. Трансляция пропущена."
-
-#~ msgid "UPnP broadcast... "
-#~ msgstr "UPnP трансляция..."
-
-#~ msgid "Urdu"
-#~ msgstr "Urdu"
-
-#~ msgid "URL"
-#~ msgstr "URL"
-
-#~ msgid "Usage: channel_run.inc [-c {CHANNEL ID}|-p {PORT}|-v]"
-#~ msgstr "Применение: channel_run.inc [-c {CHANNEL ID}|-p {PORT}|-v]"
-
-#~ msgid "Usage: websocket_run.inc [-p {PORT}|-v]"
-#~ msgstr "Применение: websocket_run.inc [-p {PORT}|-v]"
-
-#~ msgid "Use DAAP backend"
-#~ msgstr "Использовать базу данных DAAP"
-
-#~ msgid "Use Plex backend"
-#~ msgstr "Использовать бэкэнд Plex"
-
-#~ msgid "Use SubSonic backend"
-#~ msgstr "Использовать бэкэнд SubSonic"
-
-#~ msgid "Use UPnP backend"
-#~ msgstr "Использовать UPnP-сервер"
-
-#~ msgid "Use WebDAV backend"
-#~ msgstr "Использовать бэкэнд WebDAV"
-
-#~ msgid "Uzbek"
-#~ msgstr "Uzbek"
-
-#~ msgid "Venda"
-#~ msgstr "Venda"
-
-#~ msgid "Verbose"
-#~ msgstr "Подробный"
-
-#~ msgid "Video Bitrate"
-#~ msgstr "Битрейт видео"
-
-#~ msgid "Video Deletion"
-#~ msgstr "Удаление видео"
-
-#~ msgid "Video edit"
-#~ msgstr "Редактирование видео"
-
-#~ msgid "Video has been deleted."
-#~ msgstr "Видео было удалено."
-
-#~ msgid "Video Information"
-#~ msgstr "Информация о видео"
-
-#~ msgid "Videos"
-#~ msgstr "Видеоклипы"
-
-#~ msgid "Videos of the Moment"
-#~ msgstr "Видео Момента"
-
-#~ msgid "Vietnamese"
-#~ msgstr "Vietnamese"
-
-#~ msgid "View on MusicBrainz"
-#~ msgstr "Просмотр на MusicBrainz"
-
-#~ msgid "Volapuk"
-#~ msgstr "Volapuk"
-
-#~ msgid "Volume"
-#~ msgstr "Громкость"
-
-#~ msgid "Walloon"
-#~ msgstr "Walloon"
-
-#~ msgid "Wanted actions"
-#~ msgstr "Требуемые действия"
-
-#~ msgid "Wanted Albums"
-#~ msgstr "Поиск Альбомов"
-
-#~ msgid "Wanted List"
-#~ msgstr "Список желаемого"
-
-#~ msgid "WebPlayer browser notifications"
-#~ msgstr "Уведомления обозревателя WebPlayer"
-
-#~ msgid "WebPlayer browser notifications timeout (seconds)"
-#~ msgstr "Тайм-аут уведомлений браузера WebPlayer (в секундах)"
-
-#~ msgid "Website Title"
-#~ msgstr "Название сайта"
-
-#~ msgid "Welsh"
-#~ msgstr "Welsh"
-
-#~ msgid "Western Frisian"
-#~ msgstr "Western Frisian"
-
-#~ msgid "Wolof"
-#~ msgstr "Wolof"
-
-#~ msgid "Xhosa"
-#~ msgstr "Xhosa"
-
-#~ msgid "Yiddish"
-#~ msgstr "Yiddish"
-
-#~ msgid "Yoruba"
-#~ msgstr "Yoruba"
-
-#~ msgid "Zhuang"
-#~ msgstr "Zhuang"
-
-#~ msgid "Zulu"
-#~ msgstr "Zulu"

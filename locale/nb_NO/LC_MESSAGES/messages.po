@@ -1,17 +1,29 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# lachlan 00 <lachlan.00@gmail.com>, 2019
+# 
+#, fuzzy
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/projects/p/ampache/\n"
 "POT-Creation-Date: 2019-03-28 10:08+1000\n"
-"Language: nb_NO\n"
+"PO-Revision-Date: 2019-03-28 00:51+0000\n"
+"Last-Translator: lachlan 00 <lachlan.00@gmail.com>, 2019\n"
+"Language-Team: Norwegian Bokmål (Norway) (https://www.transifex.com/ampachecore/teams/97573/nb_NO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nb_NO\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: PhraseApp (phraseapp.com)\n"
 
 #: ../../admin/access.php:40
 msgid "Deleted"
-msgstr "Slettet"
+msgstr "slettet"
 
 #: ../../admin/access.php:40
 msgid "Your Access List Entry has been removed"
@@ -28,7 +40,7 @@ msgstr "Er du sikker på at du ønsker permanent sletting"
 #: ../../admin/access.php:74 ../../lib/class/search.class.php:396
 #: ../../templates/show_song.inc.php:168
 msgid "Added"
-msgstr "Lagt til"
+msgstr "La til"
 
 #: ../../admin/access.php:74
 msgid "Your new Access Control List(s) have been created"
@@ -38,7 +50,7 @@ msgstr "Din nye oppføring i tilgangslistene har blitt lagret"
 #: ../../lib/class/search.class.php:403 ../../preferences.php:144
 #: ../../preferences.php:162
 msgid "Updated"
-msgstr "Oppdatert"
+msgstr "oppdatert"
 
 #: ../../admin/access.php:88
 msgid "Access List Entry updated"
@@ -48,7 +60,7 @@ msgstr "Oppføring i tilgangslistene har blitt oppdatert"
 #: ../../admin/catalog.php:66 ../../admin/catalog.php:74
 #: ../../admin/catalog.php:83
 msgid "Catalog Update started..."
-msgstr "Katalogoppdatering startet..."
+msgstr "Katalogoppdatering startet ..."
 
 #: ../../admin/catalog.php:105
 msgid "Catalog Deleted"
@@ -56,7 +68,7 @@ msgstr "Katalog slettet"
 
 #: ../../admin/catalog.php:105
 msgid "The Catalog and all associated records have been deleted"
-msgstr "Katalogen og tilhørende oppføringer har blitt slettet"
+msgstr "Kataloget og alle tilknyttede poster er slettet"
 
 #: ../../admin/catalog.php:107 ../../admin/users.php:192
 #: ../../preferences.php:166 ../../templates/error_page.inc.php:50
@@ -65,15 +77,15 @@ msgstr "Feil"
 
 #: ../../admin/catalog.php:107
 msgid "Cannot delete the catalog"
-msgstr "Kan ikke slette katalog"
+msgstr "Kan ikke slette katalogen"
 
 #: ../../admin/catalog.php:112
 msgid "Catalog Delete"
-msgstr "Slett Katalog"
+msgstr "Katalog Slett"
 
 #: ../../admin/catalog.php:112 ../../admin/users.php:230 ../../share.php:94
 msgid "Confirm Deletion Request"
-msgstr "Bekreft Sletting"
+msgstr "Bekreft slettingsforespørsel"
 
 #: ../../admin/catalog.php:125
 msgid " Song Enabled"
@@ -83,58 +95,53 @@ msgstr[1] "Spor aktivert"
 
 #: ../../admin/catalog.php:127
 msgid "No Disabled Songs selected"
-msgstr "Ingen deaktiverte spor funnet"
+msgstr "Ingen funksjonshemmede sanger valgt"
 
 #: ../../admin/catalog.php:130
-#, fuzzy
 msgid " Disabled Song Processed"
 msgid_plural " Disabled Songs Processed"
-msgstr[0] "Ingen deaktiverte spor funnet"
-msgstr[1] "Ingen deaktiverte spor funnet"
+msgstr[0] " Deaktivert Song behandlet"
+msgstr[1] " Deaktiverte sanger behandlet"
 
 #: ../../admin/catalog.php:135 ../../admin/catalog.php:139
-#, fuzzy
 msgid "Catalog Clean started..."
-msgstr "Katalogoppdatering startet..."
+msgstr "Katalog Clean startet ..."
 
 #: ../../admin/catalog.php:151
 msgid "Catalog Updated"
 msgstr "Katalog oppdatert"
 
 #: ../../admin/catalog.php:161
-#, fuzzy
 msgid "Subdirectory update started..."
-msgstr "Katalogoppdatering startet..."
+msgstr "Oppdatering av underkataloger startet ..."
 
 #: ../../admin/catalog.php:172
 msgid "Error: Please select a catalog type"
-msgstr ""
+msgstr "Feil: Vennligst velg en katalogtype"
 
 #: ../../admin/catalog.php:176
-#, fuzzy
 msgid "Error: Name not specified"
-msgstr "Feil: Kan ikke åpne"
+msgstr "Feil: Navn ikke spesifisert"
 
 #: ../../admin/catalog.php:195
-#, fuzzy
 msgid "Catalog Creation started..."
-msgstr "Katalogoppdatering startet..."
+msgstr "Katalogoppretting startet ..."
 
 #: ../../admin/catalog.php:207
 msgid "Catalog statistics cleared"
-msgstr "Katalogstatistikk rensket"
+msgstr "Katalogstatistikk ryddet"
 
 #: ../../admin/catalog.php:220
 msgid "Now Playing Cleared"
-msgstr "Spilles nå rensket"
+msgstr "Nå spiller Cleared"
 
 #: ../../admin/catalog.php:220
 msgid "All now playing data has been cleared"
-msgstr "Alle Spilles Nå data har blitt rensket"
+msgstr "Alle nå spiller data har blitt ryddet"
 
 #: ../../admin/catalog.php:232
 msgid "No Disabled songs found"
-msgstr "Ingen deaktiverte spor funnet"
+msgstr "Ingen funksjonshemmede sanger funnet"
 
 #: ../../admin/catalog.php:244
 msgid "Delete Catalog"
@@ -146,22 +153,19 @@ msgstr "Vil du virkelig slette denne katalogen?"
 
 #: ../../admin/catalog.php:253
 msgid "Media Art Search started..."
-msgstr ""
+msgstr "Media Art Search startet ..."
 
 #: ../../admin/license.php:39
-#, fuzzy
 msgid "License Updated"
-msgstr "Bruker oppdatert"
+msgstr "Lisens oppdatert"
 
 #: ../../admin/license.php:42
-#, fuzzy
 msgid "License Created"
-msgstr "Spilleliste opprettet"
+msgstr "Lisens er opprettet"
 
 #: ../../admin/license.php:53
-#, fuzzy
 msgid "License Deleted"
-msgstr "Bruker slettet"
+msgstr "Lisensen slettet"
 
 #: ../../admin/mail.php:63
 msgid "E-mail Sent"
@@ -169,119 +173,109 @@ msgstr "Epost sendt"
 
 #: ../../admin/mail.php:64
 msgid "Your E-mail was successfully sent."
-msgstr "Vellykket epostsending"
+msgstr "Sendingen av mailen din var vellykket."
 
 #: ../../admin/mail.php:66
-#, fuzzy
 msgid "E-mail Not Sent"
-msgstr "Epost sendt"
+msgstr "E-post ikke sendt"
 
 #: ../../admin/mail.php:67
-#, fuzzy
 msgid "Your E-mail was not sent."
-msgstr "Vellykket epostsending"
+msgstr "E-posten din ble ikke sendt."
 
 #: ../../admin/modules.php:39
 msgid "Failed to enable the module, Catalog Error"
-msgstr ""
+msgstr "Kunne ikke aktivere modulen, katalogfeil"
 
 #: ../../admin/modules.php:48
-#, fuzzy
 msgid "Module enabled"
-msgstr "Bruker aktivert"
+msgstr "Modulen er aktivert"
 
 #: ../../admin/modules.php:55
-#, fuzzy
 msgid "Are you sure you want to disable this module?"
-msgstr "Er du sikker på at du ønsker permanent sletting"
+msgstr "Er du sikker på at du vil deaktivere denne modulen?"
 
 #: ../../admin/modules.php:64
 msgid "Failed to disable module, Catalog Error"
-msgstr ""
+msgstr "Kunne ikke deaktivere modulen, katalogfeil"
 
 #: ../../admin/modules.php:72
-#, fuzzy
 msgid "Module disabled"
-msgstr "Bruker deaktivert"
+msgstr "Modul deaktivert"
 
 #: ../../admin/modules.php:87
 msgid "Unable to Install Plugin"
-msgstr "Kunne ikke installere utvidelse"
+msgstr "Kan ikke installere plugin"
 
 #: ../../admin/modules.php:98
 msgid "Plugin enabled"
-msgstr ""
+msgstr "Plugin aktivert"
 
 #: ../../admin/modules.php:105
-#, fuzzy
 msgid "Are you sure you want to disable this plugin?"
-msgstr "Er du sikker på at du ønsker permanent sletting"
+msgstr "Er du sikker på at du vil deaktivere dette plugin?"
 
 #: ../../admin/modules.php:124
-#, fuzzy
 msgid "Plugin disabled"
-msgstr "Utvidelser"
+msgstr "Plugin deaktivert"
 
 #: ../../admin/modules.php:139
 msgid "Plugin Upgraded"
-msgstr ""
+msgstr "Plugin oppgradert"
 
 #: ../../admin/modules.php:145
 msgid "Plugins"
-msgstr "Utvidelser"
+msgstr "plugins"
 
 #: ../../admin/modules.php:151
-#, fuzzy
 msgid "Catalog Types"
-msgstr "Katalog type"
+msgstr "Katalogtyper"
 
 #: ../../admin/shout.php:39
 msgid "Shoutbox Post Updated"
-msgstr "Shoutbox oppføring oppdatert"
+msgstr "Shoutbox Post Oppdatert"
 
 #: ../../admin/shout.php:51
 msgid "Shoutbox Post Deleted"
-msgstr "Shoutbox oppføring slettet"
+msgstr "Shoutbox-post slettet"
 
 #: ../../admin/system.php:51
 msgid "Database Charset Updated"
-msgstr "Databasens tegnsett er oppdatert"
+msgstr "Database Charset Oppdatert"
 
 #: ../../admin/system.php:51
 msgid ""
 "Your Database and associated tables have been updated to match your "
 "currently configured charset"
 msgstr ""
-"Databasen og tilhørende tabeller har blitt oppdatert for å tilpasses ditt "
-"tegnsett"
+"Databasen din og tilhørende tabeller har blitt oppdatert for å matche din "
+"gjeldende konfigurasjon"
 
 #: ../../admin/system.php:66
 msgid "Cache cleared"
-msgstr ""
+msgstr "Cache ryddet"
 
 #: ../../admin/system.php:66
-#, fuzzy
 msgid "Your cache has been cleared successfully."
-msgstr "Vellykket epostsending"
+msgstr "Cachen din er blitt slettet."
 
 #: ../../admin/users.php:62 ../../admin/users.php:141
 #: ../../lib/class/user.class.php:598
 msgid "Error Username Required"
-msgstr "Feil: Brukernavn nødvendig"
+msgstr "Feil brukernavn påkrevd"
 
 #: ../../admin/users.php:66 ../../admin/users.php:146 ../../register.php:121
 msgid "Error Username already exists"
-msgstr "Feil: Brukernavn eksisterer"
+msgstr "Feil Brukernavn eksisterer allerede"
 
 #: ../../admin/users.php:71 ../../admin/users.php:137
 #: ../../lib/class/user.class.php:602
 msgid "Error Passwords don't match"
-msgstr "Feil: Passord stemmer ikke overens"
+msgstr "Feil passord stemmer ikke overens"
 
 #: ../../admin/users.php:76 ../../admin/users.php:151 ../../register.php:95
-#, fuzzy
 msgid "Invalid email address"
-msgstr "Ugyldig forespørsel"
+msgstr "Ugyldig epostadresse"
 
 #: ../../admin/users.php:114
 msgid "User Updated"
@@ -293,7 +287,7 @@ msgstr "oppdatert"
 
 #: ../../admin/users.php:163 ../../register.php:150
 msgid "Error: Insert Failed"
-msgstr "Feil: Insert feilet"
+msgstr "Feil: Innlegg mislyktes"
 
 #: ../../admin/users.php:169 ../../lib/class/democratic.class.php:158
 #: ../../lib/class/shoutbox.class.php:333
@@ -333,7 +327,7 @@ msgstr "Bruker"
 #: ../../templates/show_preference_box.inc.php:83
 #: ../../templates/sidebar.inc.php:36
 msgid "Admin"
-msgstr "Administrator"
+msgstr "admin"
 
 #. HINT: %1 Username, %2 Access num
 #: ../../admin/users.php:177
@@ -343,7 +337,7 @@ msgstr "Ny bruker lagt til"
 #: ../../admin/users.php:177
 #, php-format
 msgid "%1$s has been created with an access level of %2$s"
-msgstr ""
+msgstr "%1$s er opprettet med et aksessnivå på %2$s"
 
 #: ../../admin/users.php:185
 msgid "User Enabled"
@@ -351,106 +345,94 @@ msgstr "Bruker aktivert"
 
 #: ../../admin/users.php:190
 msgid "User Disabled"
-msgstr "Bruker deaktivert"
+msgstr "Brukeraktivert"
 
 #: ../../admin/users.php:192
 msgid "Unable to Disabled last Administrator"
-msgstr "Kan ikke deaktivere den siste administratoren"
+msgstr "Kan ikke deaktiveres sist administrator"
 
 #: ../../admin/users.php:212
 msgid "User Deleted"
 msgstr "Bruker slettet"
 
 #: ../../admin/users.php:212
-#, fuzzy, php-format
+#, php-format
 msgid "%s has been Deleted"
-msgstr "Bruker slettet"
+msgstr "%s har blitt slettet"
 
 #: ../../admin/users.php:214
 msgid "Delete Error"
-msgstr "Feil ved sletting"
+msgstr "Slett feil"
 
 #: ../../admin/users.php:214
 msgid "Unable to delete last Admin User"
-msgstr "Kan ikke slette den siste administratoren"
+msgstr "Kan ikke slette siste admin bruker"
 
 #: ../../admin/users.php:223
-#, fuzzy, php-format
+#, php-format
 msgid "Are you sure you want to permanently delete %s?"
-msgstr "Er du sikker på at du ønsker permanent sletting"
+msgstr "Er du sikker på at du vil slette %s permanent?"
 
 #: ../../admin/users.php:230
-#, fuzzy
 msgid "User Avatar Delete"
-msgstr "Bruker slettet"
+msgstr "Bruker Avatar Slett"
 
 #: ../../admin/users.php:246
-#, fuzzy
 msgid "User Avatar Deleted"
-msgstr "Bruker slettet"
+msgstr "Bruker Avatar slettet"
 
 #: ../../admin/users.php:246
-#, fuzzy
 msgid "User Avatar has been deleted"
-msgstr "Den valgte spillelisten har blitt slettet"
+msgstr "Bruker Avatar er slettet"
 
 #: ../../admin/users.php:252 ../../templates/show_account.inc.php:102
 #: ../../templates/show_edit_user.inc.php:133
-#, fuzzy
 msgid "Generate new API Key"
-msgstr "Generer konfigurasjonsfil"
+msgstr "Generer ny API-nøkkel"
 
 #: ../../admin/users.php:252
 msgid "Confirm API Key Generation"
-msgstr ""
+msgstr "Bekreft API-nøkkelgenerering"
 
 #: ../../admin/users.php:268
 msgid "API Key Generated"
-msgstr ""
+msgstr "API nøkkel generert"
 
 #: ../../admin/users.php:268
-#, fuzzy
 msgid "New user API Key has been generated."
-msgstr "Den valgte spillelisten har blitt slettet"
+msgstr "Ny bruker-API-nøkkel er generert."
 
 #: ../../albums.php:36 ../../albums.php:56 ../../albums.php:58
-#, fuzzy
 msgid "Album Deletion"
-msgstr "Albumbilde"
+msgstr "Album sletting"
 
 #: ../../albums.php:37
-#, fuzzy
 msgid "Are you sure you want to permanently delete this album?"
-msgstr "Er du sikker på at du ønsker permanent sletting"
+msgstr "Er du sikker på at du vil slette dette albumet permanent?"
 
 #: ../../albums.php:56
-#, fuzzy
 msgid "Album has been deleted."
-msgstr "Din brukerkonto har blitt oppdatert"
+msgstr "Albumet er slettet."
 
 #: ../../albums.php:58
-#, fuzzy
 msgid "Cannot delete this album."
-msgstr "Kan ikke slette katalog"
+msgstr "Kan ikke slette dette albumet."
 
 #: ../../artists.php:38 ../../artists.php:58 ../../artists.php:60
 msgid "Artist Deletion"
-msgstr ""
+msgstr "Artist Sletting"
 
 #: ../../artists.php:39
-#, fuzzy
 msgid "Are you sure you want to permanently delete this artist?"
-msgstr "Er du sikker på at du ønsker permanent sletting"
+msgstr "Er du sikker på at du vil slette denne artisten permanent?"
 
 #: ../../artists.php:58
-#, fuzzy
 msgid "Artist has been deleted."
-msgstr "Den valgte spillelisten har blitt slettet"
+msgstr "Artist har blitt slettet."
 
 #: ../../artists.php:60
-#, fuzzy
 msgid "Cannot delete this artist."
-msgstr "Kan ikke slette katalog"
+msgstr "Kan ikke slette denne artisten."
 
 #: ../../artists.php:98
 msgid "Show Artists starting with"
@@ -458,523 +440,513 @@ msgstr "Vis artister som starter med"
 
 #: ../../arts.php:50
 msgid "Art Cleared"
-msgstr ""
+msgstr "Art Cleared"
 
 #: ../../arts.php:50
 msgid "Art information has been removed from the database"
-msgstr ""
+msgstr "Kunstinformasjon er fjernet fra databasen"
 
 #: ../../arts.php:56 ../../arts.php:72 ../../arts.php:139
 msgid "Art Not Located"
-msgstr ""
+msgstr "Kunst ikke plassert"
 
 #: ../../arts.php:56 ../../arts.php:72 ../../arts.php:139
 msgid ""
 "Art could not be located at this time. This may be due to write access "
 "error, or the file is not received correctly."
 msgstr ""
+"Kunst kunne ikke ligge på dette tidspunktet. Dette kan skyldes skrive "
+"tilgangsfeil, eller filen er ikke mottatt riktig."
 
 #: ../../arts.php:68 ../../arts.php:94
-#, fuzzy
 msgid "Art Inserted"
-msgstr "Feil: Insert feilet"
+msgstr "Kunst innstilt"
 
 #: ../../bin/catalog_update.inc:44
 msgid "Doing all catalog operations"
-msgstr ""
+msgstr "Gjør alle katalogoperasjoner"
 
 #: ../../bin/catalog_update.inc:52
 msgid "Temporary deactivate PHP memory limit"
-msgstr ""
+msgstr "Midlertidig deaktiver PHP-minnegrense"
 
 #: ../../bin/catalog_update.inc:56
-#, fuzzy
 msgid "Setting catalog name"
-msgstr "Katalognavn"
+msgstr "Angir katalognavn"
 
 #: ../../bin/catalog_update.inc:60
-#, fuzzy
 msgid "Setting catalog type"
-msgstr "Katalog type"
+msgstr "Innstilling av katalogtype"
 
 #: ../../bin/catalog_update.inc:64
-#, fuzzy
 msgid "Cleaning catalog/s"
-msgstr "Rensker katalogen %s"
+msgstr "Rengjøringskatalog / s"
 
 #: ../../bin/catalog_update.inc:68
 msgid "Verifying catalog/s"
-msgstr ""
+msgstr "Verifiserer katalog / s"
 
 #: ../../bin/catalog_update.inc:72
 msgid "Adding new media to catalog/s"
-msgstr ""
+msgstr "Legge til nye medier i katalogen / s"
 
 #: ../../bin/catalog_update.inc:76
 msgid "Gathering new media art"
-msgstr ""
+msgstr "Samle ny mediekunst"
 
 #: ../../bin/catalog_update.inc:80
-#, fuzzy
 msgid "Importing playlist/s"
-msgstr "Importer spilleliste"
+msgstr "Importerer spilleliste / s"
 
 #: ../../bin/catalog_update.inc:84
 msgid "Database table optimization"
-msgstr ""
+msgstr "Database tabell optimalisering"
 
 #: ../../bin/catalog_update.inc:101
-#, fuzzy
 msgid "Starting catalog operations..."
-msgstr "Start konfigurasjonen"
+msgstr "Start katalogoperasjoner ..."
 
 #: ../../bin/catalog_update.inc:107
 msgid "Deactivated PHP memory limit"
-msgstr ""
+msgstr "Deaktivert PHP-minnegrense"
 
 #: ../../bin/catalog_update.inc:114
-#, fuzzy
 msgid "Gathering art"
-msgstr "Hent albumbilder"
+msgstr "Samler kunst"
 
 #: ../../bin/catalog_update.inc:120
-#, fuzzy
 msgid "Parsing playlists"
-msgstr "Spillelister"
+msgstr "Parsing spillelister"
 
 #: ../../bin/catalog_update.inc:141
 #, php-format
 msgid "Reading catalog: %s"
-msgstr ""
+msgstr "Lese katalog: %s"
 
 #: ../../bin/catalog_update.inc:147
 msgid "Start cleaning orphaned media entries"
-msgstr ""
+msgstr "Begynn å rengjøre forældreløse medieoppføringer"
 
 #: ../../bin/catalog_update.inc:154
 msgid "Start verifying media related to catalog entries"
-msgstr ""
+msgstr "Begynn å verifisere media relatert til katalogoppføringer"
 
 #: ../../bin/catalog_update.inc:161
 msgid "Start adding new media"
-msgstr ""
+msgstr "Begynn å legge til nye medier"
 
 #: ../../bin/catalog_update.inc:168
 msgid "Start searching new media art"
-msgstr ""
+msgstr "Begynn å søke på ny mediekunst"
 
 #: ../../bin/catalog_update.inc:176
 msgid "Optimizing database tables"
-msgstr ""
+msgstr "Optimalisering av databasetabeller"
 
 #: ../../bin/catalog_update.inc:201
-#, fuzzy
 msgid "- Catalog Update Help -"
-msgstr "Katalog oppdatert"
+msgstr "- Katalogoppdatering Hjelp -"
 
 #: ../../bin/catalog_update.inc:203
 msgid ""
-"Usage: catalog_update.inc [-n CATALOG NAME] [-t CATALOG TYPE] [-h|-m|-c|-v|-"
-"a|-g|-i|-o]"
+"Usage: catalog_update.inc [-n CATALOG NAME] [-t CATALOG TYPE] "
+"[-h|-m|-c|-v|-a|-g|-i|-o]"
 msgstr ""
+"Bruk: catalog_update.inc [-n CATALOG NAME] [-t CATALOG TYPE] [-h | -m | -c |"
+" -v | -a | -g | -i | -o]"
 
 #: ../../bin/catalog_update.inc:207
 msgid ""
 "Default behavior is to do all except temporarily deactivate the php memory "
 "limit"
 msgstr ""
+"Standard oppførsel er å gjøre alt bortsett fra midlertidig deaktivere php "
+"minne grense"
 
 #: ../../bin/catalog_update.inc:211
 msgid "This help message"
-msgstr ""
+msgstr "Denne hjelpemeldingen"
 
 #: ../../bin/catalog_update.inc:213
 msgid "Name of Catalog (Optional)"
-msgstr ""
+msgstr "Katalognavn (Valgfritt)"
 
 #: ../../bin/catalog_update.inc:215
 msgid "Type of Catalog (Optional)"
-msgstr ""
+msgstr "Katalogtype (Valgfritt)"
 
 #: ../../bin/catalog_update.inc:217
 msgid "Temporarily deactivates PHP memory limit."
-msgstr ""
+msgstr "Deaktiverer midlertidig PHP-minnegrense midlertidig."
 
 #: ../../bin/catalog_update.inc:219
 msgid "Cleans catalogs from orphaned entries."
-msgstr ""
+msgstr "Renser kataloger fra foreldreløse oppføringer."
 
 #: ../../bin/catalog_update.inc:221
 msgid ""
 "Verifies catalog entries and updates them if related files have new "
 "information."
 msgstr ""
+"Verifiserer katalogoppføringer og oppdaterer dem hvis relaterte filer har ny"
+" informasjon."
 
 #: ../../bin/catalog_update.inc:223
-#, fuzzy
 msgid "Adds new media to catalogs."
-msgstr "Legg til katalog"
+msgstr "Legger til nye medier i kataloger."
 
 #: ../../bin/catalog_update.inc:225
-#, fuzzy
 msgid "Gathers media Art."
-msgstr "Hent albumbilder"
+msgstr "Samler medie Art."
 
 #: ../../bin/catalog_update.inc:227
-#, fuzzy
 msgid "Imports playlists."
-msgstr "Importer spilleliste"
+msgstr "Importerer spillelister."
 
 #: ../../bin/catalog_update.inc:229
 msgid "Optimizes Database Tables."
-msgstr ""
+msgstr "Optimaliserer databasetabeller."
 
 #: ../../bin/catalog_update.inc:232
 msgid ""
 "Use this option at your own risk! Your system could crash or become "
 "unresponsive due to huge memory consumption!"
 msgstr ""
+"Bruk dette alternativet på egen risiko! Systemet ditt kan krasje eller bli "
+"uforsvarlig på grunn av stort minneforbruk!"
 
 #: ../../bin/catalog_update.inc:233
 msgid ""
-"Depending on your systems performance, this option could need a long time to "
-"finish and extremely slow down other database processes if you have big "
+"Depending on your systems performance, this option could need a long time to"
+" finish and extremely slow down other database processes if you have big "
 "catalogs!"
 msgstr ""
+"Avhengig av systemets ytelse, kan dette alternativet ha lang tid å fullføre "
+"og ekstremt bremse andre databaseprosesser hvis du har store kataloger!"
 
 #: ../../bin/catalog_update.inc:234
 msgid ""
-"The switches [-m|-i|-o] can only be used, if one of the other switches [-c|-"
-"v|-a|-g] is used."
+"The switches [-m|-i|-o] can only be used, if one of the other switches "
+"[-c|-v|-a|-g] is used."
 msgstr ""
+"Bryterne [-m | -i | -o] kan bare brukes, hvis en av de andre bryterne [-c | "
+"-v | -a | -g] brukes."
 
 #: ../../bin/delete_disabled.inc:37
 msgid "DEBUG ENABLED WILL NOT DELETE FILES!"
-msgstr ""
+msgstr "DEBUG AKTIVERT SKAL IKKE SLETT FILER!"
 
 #: ../../bin/delete_disabled.inc:45
 #, php-format
 msgid "Would Delete: %s"
-msgstr ""
+msgstr "Vil slette: %s"
 
 #: ../../bin/delete_disabled.inc:49
-#, fuzzy, php-format
+#, php-format
 msgid "Deleting: %s"
-msgstr "Slettingsforespørsel"
+msgstr "Sletter: %s"
 
 #: ../../bin/fix_filenames.inc:42
 msgid "ERROR: Iconv required for this functionality, quitting"
-msgstr ""
+msgstr "FEIL: Iconv kreves for denne funksjonaliteten, avslutter"
 
 #: ../../bin/fix_filenames.inc:51
 #, php-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: ../../bin/fix_filenames.inc:52
 msgid "Testing Basic Translation, the two strings below should look the same"
-msgstr ""
+msgstr "Testing Basic Translation, de to strengene under skal se ut like"
 
 #: ../../bin/fix_filenames.inc:54
 msgid "Original: For the Love of Music"
-msgstr ""
+msgstr "Original: For Love of Music"
 
 #: ../../bin/fix_filenames.inc:56
 #, php-format
 msgid "Translated: %s"
-msgstr ""
+msgstr "Oversatt: %s"
 
 #: ../../bin/fix_filenames.inc:59
 #, php-format
 msgid "Input Charset (%s):"
-msgstr ""
+msgstr "Input Charset (%s):"
 
 #: ../../bin/fix_filenames.inc:63
 #, php-format
 msgid "Using %s as source character set"
-msgstr ""
+msgstr "Bruk %s som kilde tegn sett"
 
 #: ../../bin/fix_filenames.inc:72
-#, fuzzy, php-format
+#, php-format
 msgid "Checking %s (%s)"
-msgstr "Sjekker"
+msgstr "Kontrollerer %s (%s)"
 
 #: ../../bin/fix_filenames.inc:78
 msgid "Finished checking file names for valid characters"
-msgstr ""
+msgstr "Ferdigkontroll av filnavn for gyldige tegn"
 
 #: ../../bin/fix_filenames.inc:104
-#, fuzzy, php-format
+#, php-format
 msgid "ERROR: Unable to open %s"
-msgstr "Feil: Kan ikke åpne"
+msgstr "FEIL: Kan ikke åpne %s"
 
 #: ../../bin/fix_filenames.inc:110
 #, php-format
 msgid "ERROR: Unable to chdir to %s"
-msgstr ""
+msgstr "FEIL: Kan ikke chdir til %s"
 
 #: ../../bin/fix_filenames.inc:133
 msgid "Translation failure, stripping non-valid characters"
-msgstr ""
+msgstr "Oversettelsesfeil, stripping av ikke-gyldige tegn"
 
 #: ../../bin/fix_filenames.inc:138
 #, php-format
 msgid "Attempting to Transcode to %s"
-msgstr ""
+msgstr "Forsøker å overføre til %s"
 
 #: ../../bin/fix_filenames.inc:141
 #, php-format
 msgid "OLD: %s has invalid chars"
-msgstr ""
+msgstr "OLD: %s har ugyldige tegn"
 
 #: ../../bin/fix_filenames.inc:143
 #, php-format
 msgid "NEW: %s"
-msgstr ""
+msgstr "NYTT: %s"
 
 #: ../../bin/fix_filenames.inc:147
 msgid "Rename File (Y/N):"
-msgstr ""
+msgstr "Gi nytt navn til fil (Y / N):"
 
 #: ../../bin/fix_filenames.inc:150
-#, fuzzy
 msgid "Not Renaming..."
-msgstr "Laster..."
+msgstr "Ikke omdøpe ..."
 
 #: ../../bin/fix_filenames.inc:184
-#, fuzzy, php-format
+#, php-format
 msgid "Error: Unable to create %s move failed, stopping"
-msgstr "Feil: Kan ikke hente filstørrelse for %s"
+msgstr "Feil: Kan ikke opprette %s flytting mislyktes, stopper"
 
 #: ../../bin/fix_filenames.inc:196
 msgid "Error: Copy Failed, not deleting old file"
-msgstr ""
+msgstr "Feil: Kopier mislyktes, ikke slette gammel fil"
 
 #: ../../bin/fix_filenames.inc:205 ../../bin/sort_files.inc:289
 #, php-format
 msgid "Error: Size Inconsistency, not deleting %s"
-msgstr ""
+msgstr "Feil: Størrelsesammenheng, ikke å slette %s"
 
 #: ../../bin/fix_filenames.inc:212 ../../bin/sort_files.inc:296
-#, fuzzy, php-format
+#, php-format
 msgid "Error: Unable to delete %s"
-msgstr "Feil: Kan ikke hente filstørrelse for %s"
+msgstr "Feil: Kan ikke slette %s"
 
 #: ../../bin/fix_filenames.inc:214
 msgid "File Moved..."
-msgstr ""
+msgstr "Fil flyttet ..."
 
 #: ../../bin/install/add_user.inc:50
-#, fuzzy, php-format
+#, php-format
 msgid "Created %s user %s with password %s"
-msgstr "Laget av: %s for %s"
+msgstr "Opprettet %s bruker %s med passord %s"
 
 #: ../../bin/install/add_user.inc:54
-#, fuzzy
 msgid "User creation failed"
-msgstr "Bruker aktivert"
+msgstr "Brukeropprettelsen mislyktes"
 
 #: ../../bin/install/install_db.inc:68
-#, fuzzy
 msgid "Existing Ampache installation found."
-msgstr "Installasjon av Ampache"
+msgstr "Eksisterende Ampache-installasjon funnet."
 
 #: ../../bin/install/install_db.inc:70
 msgid "Force specified, proceeding anyway."
-msgstr ""
+msgstr "Force oppgitt, fortsetter likevel."
 
 #: ../../bin/install/install_db.inc:73
 msgid "Exiting."
-msgstr ""
+msgstr "Avslutter."
 
 #: ../../bin/install/install_db.inc:89
-#, fuzzy
 msgid "Database creation failed"
-msgstr "Databasens tegnsett er oppdatert"
+msgstr "Databaseopprettelse mislyktes"
 
 #: ../../bin/install/install_db.inc:101
 msgid "Config file creation failed"
-msgstr ""
+msgstr "Konfigureringsfilopprettelsen mislyktes"
 
 #: ../../bin/install/update_db.inc:44 ../../update.php:82
 msgid "The following updates need to be performed:"
-msgstr ""
+msgstr "Følgende oppdateringer må utføres:"
 
 #: ../../bin/migrate_config.inc:50
 msgid "Parsing old config file..."
-msgstr ""
+msgstr "Parsering av gammel config-fil ..."
 
 #: ../../bin/migrate_config.inc:80
 msgid "Parse complete, writing"
-msgstr ""
+msgstr "Parse komplett, skrive"
 
 #: ../../bin/migrate_config.inc:88
 msgid "Write success, config migrated"
-msgstr ""
+msgstr "Skriv suksess, config migrert"
 
 #: ../../bin/migrate_config.inc:92
 msgid "Access Denied, config migration failed"
-msgstr ""
+msgstr "Tilgang nektet, config migrering mislyktes"
 
 #: ../../bin/print_tags.inc:37
 msgid "File not found."
-msgstr ""
+msgstr "Fil ikke funnet."
 
 #: ../../bin/print_tags.inc:43
-#, fuzzy, php-format
+#, php-format
 msgid "Reading: %s"
-msgstr "Leser"
+msgstr "Leser: %s"
 
 #: ../../bin/print_tags.inc:58
 #, php-format
 msgid "Using: %s AND %s for file pattern matching"
-msgstr ""
+msgstr "Bruke: %s OG %s for filmønster matching"
 
 #: ../../bin/print_tags.inc:67
 msgid "Raw results:"
-msgstr ""
+msgstr "Rå resultater:"
 
 #: ../../bin/print_tags.inc:71
 #, php-format
 msgid "Final results seen by Ampache using %s:"
-msgstr ""
+msgstr "Endelige resultater sett av Ampache ved hjelp av %s:"
 
 #: ../../bin/print_tags.inc:78
-#, fuzzy, php-format
+#, php-format
 msgid "%s Version %s"
-msgstr "Versjon"
+msgstr "%s Versjon %s"
 
 #: ../../bin/print_tags.inc:80
-#, fuzzy
 msgid "Usage:"
-msgstr "Melding"
+msgstr "bruk:"
 
 #: ../../bin/print_tags.inc:82
 msgid "php print_tags.inc <Filename>"
-msgstr ""
+msgstr "php print_tags.inc <Filename>"
 
 #: ../../bin/sort_files.inc:61
-#, fuzzy, php-format
+#, php-format
 msgid "Starting Catalog: %s"
-msgstr "Innstillinger for %s"
+msgstr "Startkatalog: %s"
 
 #: ../../bin/sort_files.inc:75
 msgid "Moving File..."
-msgstr ""
+msgstr "Flytter fil ..."
 
 #: ../../bin/sort_files.inc:77
 #, php-format
 msgid "Source: %s"
-msgstr ""
+msgstr "Kilde: %s"
 
 #: ../../bin/sort_files.inc:79
 #, php-format
 msgid "Dest: %s"
-msgstr ""
+msgstr "Dest: %s"
 
 #: ../../bin/sort_files.inc:230
 #, php-format
 msgid "Making %s Directory"
-msgstr ""
+msgstr "Lag %s Directory"
 
 #: ../../bin/sort_files.inc:237
-#, fuzzy, php-format
+#, php-format
 msgid "Error: Unable to create %s move failed"
-msgstr "Feil: Kan ikke hente filstørrelse for %s"
+msgstr "Feil: Kan ikke opprette %s flytting mislyktes"
 
 #. HINT: %1$s: file, %2$s: directory
 #: ../../bin/sort_files.inc:250
 #, php-format
 msgid "Copying %1$s to %2$s"
-msgstr ""
+msgstr "Kopierer %1$s til %2$s"
 
 #: ../../bin/sort_files.inc:261
-#, fuzzy, php-format
+#, php-format
 msgid "Error: %s already exists"
-msgstr "Feil: Brukernavn eksisterer"
+msgstr "Feil: %s eksisterer allerede"
 
 #: ../../bin/sort_files.inc:282
-#, fuzzy, php-format
+#, php-format
 msgid "Error: Unable to copy file to %s"
-msgstr "Feil: Kan ikke hente filstørrelse for %s"
+msgstr "Feil: Kan ikke kopiere filen til %s"
 
 #: ../../bin/write_playlists.inc:43
 #, php-format
 msgid "Error: Directory %s is not writable"
-msgstr ""
+msgstr "Feil: Katalog %s er ikke skrivbar"
 
 #: ../../bin/write_playlists.inc:96
 msgid "This will dump a collection of playlists files based on type"
-msgstr ""
+msgstr "Dette vil dumpe en samling spillelister filer basert på type"
 
 #: ../../bin/write_playlists.inc:97
-#, fuzzy
 msgid "Types:"
-msgstr "Type"
+msgstr "typer:"
 
 #: ../../bin/write_playlists.inc:98
-#, fuzzy
 msgid "Dumps all of your Playlists"
-msgstr "Importer spilleliste"
+msgstr "Dumper alle spillelistene dine"
 
 #: ../../bin/write_playlists.inc:99
 msgid "Dumps all Albums as individual playlists"
-msgstr ""
+msgstr "Dumper alle albumene som individuelle spillelister"
 
 #: ../../bin/write_playlists.inc:100
 msgid "Dumps all Artists as individual playlists"
-msgstr ""
+msgstr "Dumper alle artister som individuelle spillelister"
 
 #: ../../bin/write_playlists.inc:101
 msgid "Extensions: m3u (default), xspf, pls"
-msgstr ""
+msgstr "Utvidelser: m3u (standard), xspf, pls"
 
 #: ../../browse.php:85 ../../lib/class/browse.class.php:257
 #: ../../templates/header.inc.php:415 ../../templates/sidebar_home.inc.php:40
 #: ../../templates/sidebar.light.inc.php:30
 msgid "Tag Cloud"
-msgstr "Tag 'Sky'"
+msgstr "Tag Cloud"
 
 #: ../../democratic.php:57
 msgid "The Requested Playlist has been deleted."
 msgstr "Den valgte spillelisten har blitt slettet"
 
 #: ../../install.php:121
-#, fuzzy
 msgid "Error: Ampache SQL Username or Password missing"
-msgstr "Feil: Brukernavn eller passord stemmer ikke, prøv igjen"
+msgstr "Feil: Ampache SQL Brukernavn eller Passord mangler"
 
 #: ../../install.php:170
 msgid "Error: Config files not found or unreadable"
-msgstr ""
+msgstr "Feil: Konfigurer filer som ikke ble funnet eller ulæselige"
 
 #: ../../labels.php:36 ../../labels.php:56 ../../labels.php:58
 msgid "Label Deletion"
-msgstr ""
+msgstr "Etikett sletting"
 
 #: ../../labels.php:37
-#, fuzzy
 msgid "Are you sure you want to permanently delete this label?"
-msgstr "Er du sikker på at du ønsker permanent sletting"
+msgstr "Er du sikker på at du vil slette denne etiketten permanent?"
 
 #: ../../labels.php:56
-#, fuzzy
 msgid "Label has been deleted."
-msgstr "Den valgte spillelisten har blitt slettet"
+msgstr "Etiketten er slettet."
 
 #: ../../labels.php:58
-#, fuzzy
 msgid "Cannot delete this label."
-msgstr "Kan ikke slette katalog"
+msgstr "Kan ikke slette denne etiketten."
 
 #: ../../labels.php:85
-#, fuzzy
 msgid "Label Added"
-msgstr "Lagt til dato"
+msgstr "Etikett lagt til"
 
 #: ../../labels.php:110
 msgid "Label cannot be found."
-msgstr ""
+msgstr "Etikett kan ikke bli funnet."
 
 #: ../../lib/class/access.class.php:157 ../../lib/class/access.class.php:162
 msgid "Invalid IPv4 / IPv6 Address Entered"
@@ -985,9 +957,8 @@ msgid "IP Address Version Mismatch"
 msgstr "IP adressene har forskjellig versjon"
 
 #: ../../lib/class/access.class.php:222
-#, fuzzy
 msgid "Duplicate ACL defined"
-msgstr "Duplikatspor"
+msgstr "Dupliserte ACL-definerte"
 
 #: ../../lib/class/access.class.php:462 ../../lib/class/access.class.php:484
 #: ../../lib/ui.lib.php:398 ../../templates/browse_filters.inc.php:89
@@ -1002,25 +973,26 @@ msgstr "Duplikatspor"
 msgid "All"
 msgstr "Alle"
 
-#: ../../lib/class/access.class.php:465 ../../templates/list_header.inc.php:131
+#: ../../lib/class/access.class.php:465
+#: ../../templates/list_header.inc.php:131
 #: ../../templates/show_add_access.inc.php:37
 #: ../../templates/show_edit_access.inc.php:69
 #: ../../templates/show_graphs.inc.php:83
 #: ../../templates/show_tagcloud.inc.php:33
 msgid "View"
-msgstr "Vis"
+msgstr "Utsikt"
 
 #: ../../lib/class/access.class.php:468
 #: ../../templates/show_add_access.inc.php:38
 #: ../../templates/show_edit_access.inc.php:70
 msgid "Read"
-msgstr "Les"
+msgstr "Lese"
 
 #: ../../lib/class/access.class.php:471
 #: ../../templates/show_add_access.inc.php:39
 #: ../../templates/show_edit_access.inc.php:71
 msgid "Read/Write"
-msgstr "Les/Skriv"
+msgstr "Les Skriv"
 
 #: ../../lib/class/access.class.php:502
 #: ../../templates/show_add_access.inc.php:56
@@ -1038,13 +1010,13 @@ msgstr "API/RPC"
 #: ../../templates/show_add_access.inc.php:74
 #: ../../templates/show_edit_access.inc.php:37
 msgid "Local Network Definition"
-msgstr "Lokal Nettverksdefinisjon"
+msgstr "Lokalt nettverksdefinisjon"
 
 #: ../../lib/class/access.class.php:506
 #: ../../templates/show_add_access.inc.php:73
 #: ../../templates/show_edit_access.inc.php:36
 msgid "Web Interface"
-msgstr "Web Grensesnitt"
+msgstr "Webgrensesnitt"
 
 #: ../../lib/class/access.class.php:509
 #: ../../templates/show_add_access.inc.php:57
@@ -1052,7 +1024,7 @@ msgstr "Web Grensesnitt"
 #: ../../templates/show_add_access.inc.php:72
 #: ../../templates/show_edit_access.inc.php:35
 msgid "Stream Access"
-msgstr "Stream Tilgang"
+msgstr "Stream tilgang"
 
 #: ../../lib/class/album.class.php:404 ../../lib/class/artist.class.php:680
 #: ../../templates/show_album_group_disks.inc.php:51
@@ -1073,7 +1045,8 @@ msgstr "Disk"
 #: ../../lib/class/album.class.php:644 ../../lib/class/browse.class.php:226
 #: ../../lib/class/upnp_api.class.php:337 ../../lib/ui.lib.php:180
 #: ../../server/search.ajax.php:57 ../../templates/header.inc.php:403
-#: ../../templates/show_label.inc.php:91 ../../templates/show_labels.inc.php:47
+#: ../../templates/show_label.inc.php:91
+#: ../../templates/show_labels.inc.php:47
 #: ../../templates/show_labels.inc.php:79
 #: ../../templates/show_random.inc.php:38
 #: ../../templates/show_random.inc.php:40
@@ -1094,11 +1067,11 @@ msgstr "Variert"
 
 #: ../../lib/class/album.class.php:664
 msgid "Album MusicBrainzID"
-msgstr ""
+msgstr "Album MusicBrainzID"
 
 #: ../../lib/class/album.class.php:667
 msgid "Release Group MusicBrainzID"
-msgstr ""
+msgstr "Slett Group MusicBrainzID"
 
 #: ../../lib/class/album.class.php:670 ../../lib/class/artist.class.php:499
 #: ../../lib/class/search.class.php:239 ../../lib/class/search.class.php:492
@@ -1129,7 +1102,7 @@ msgstr ""
 #: ../../templates/show_tagcloud.inc.php:24
 #: ../../templates/sidebar_home.inc.php:138
 msgid "Artist"
-msgstr "Artist"
+msgstr "kunstner"
 
 #: ../../lib/class/album.class.php:673 ../../lib/class/search.class.php:232
 #: ../../templates/show_add_upload.inc.php:188
@@ -1170,14 +1143,12 @@ msgid "Newest Albums"
 msgstr "Nyeste Album"
 
 #: ../../lib/class/ampache_rss.class.php:95 ../../templates/header.inc.php:44
-#, fuzzy
 msgid "Newest Artists"
-msgstr "Nyeste Album"
+msgstr "Nyeste artister"
 
 #: ../../lib/class/ampache_rss.class.php:96
-#, fuzzy
 msgid "Newest Shouts"
-msgstr "Lagre beskjed"
+msgstr "Nyeste Shouts"
 
 #: ../../lib/class/ampache_rss.class.php:150
 msgid "RSS Feed"
@@ -1214,22 +1185,21 @@ msgstr "år siden"
 #: ../../lib/class/ampache_rss.class.php:354
 #: ../../modules/plugins/Flattr/Flattr.plugin.php:91
 #: ../../modules/plugins/Paypal/Paypal.plugin.php:94
-#, fuzzy
 msgid "on"
-msgstr "Ingen"
+msgstr "på"
 
 #: ../../lib/class/ampconfig.class.php:85
 #, php-format
 msgid "Trying to clobber '%s' without setting clobber"
-msgstr ""
+msgstr "Prøver å clobber '%s' uten å sette clobber"
 
 #: ../../lib/class/api.class.php:152
 msgid "Login Failed: version too old"
-msgstr ""
+msgstr "Innlogging mislyktes: versjonen er for gammel"
 
 #: ../../lib/class/api.class.php:181 ../../lib/class/api.class.php:182
 msgid "Login Failed: timestamp out of range"
-msgstr ""
+msgstr "Innlogging mislyktes: tidsstempel utenfor rekkevidde"
 
 #: ../../lib/class/api.class.php:182 ../../lib/class/api.class.php:195
 #: ../../lib/class/api.class.php:290
@@ -1238,15 +1208,13 @@ msgstr "Feil: Ugyldig handshake - "
 
 #: ../../lib/class/api.class.php:194 ../../lib/class/api.class.php:195
 #: ../../lib/class/api.class.php:290
-#, fuzzy
 msgid "Invalid Username/Password"
-msgstr "Brukernavn/Passord Uspesifisert"
+msgstr "Ugyldig brukernavn / passord"
 
 #: ../../lib/class/api.class.php:669 ../../lib/class/api.class.php:687
 #: ../../lib/class/api.class.php:705
-#, fuzzy
 msgid "Access denied to this playlist."
-msgstr "Legg til i spilleliste"
+msgstr "Tilgang nektet denne spillelisten."
 
 #: ../../lib/class/api.class.php:817 ../../lib/class/api.class.php:835
 msgid "Media Object Invalid or Not Specified"
@@ -1258,11 +1226,11 @@ msgstr "Ugyldig forespørsel"
 
 #: ../../lib/class/api.class.php:988
 msgid "Wrong library item type."
-msgstr ""
+msgstr "Feil bibliotekstype."
 
 #: ../../lib/class/api.class.php:992
 msgid "Library item not found."
-msgstr ""
+msgstr "Bibliotekspost ikke funnet."
 
 #: ../../lib/class/art.class.php:1330
 msgid "Error: Unable to open"
@@ -1293,66 +1261,58 @@ msgstr "Feil: Kan ikke åpne"
 #: ../../templates/show_song_preview_row.inc.php:28
 #: ../../templates/show_song_row.inc.php:36
 msgid "Play"
-msgstr "Spill"
+msgstr "Spille"
 
 #: ../../lib/class/art.class.php:1840
-#, fuzzy
 msgid "Edit/Find Art"
-msgstr "Rediger Artist"
+msgstr "Rediger / Finn Art"
 
 #: ../../lib/class/art.class.php:1843
-#, fuzzy
 msgid "Do you really want to reset art?"
-msgstr "Vil du virkelig slette denne katalogen?"
+msgstr "Ønsker du å tilbakestille kunst?"
 
 #: ../../lib/class/art.class.php:1844
-#, fuzzy
 msgid "Reset Art"
-msgstr "Hent albumbilde"
+msgstr "Tilbakestill Art"
 
 #: ../../lib/class/artist.class.php:496
 msgid "Artist MusicBrainzID"
-msgstr ""
+msgstr "Artist MusicBrainzID"
 
 #: ../../lib/class/autoupdate.class.php:234
-#, fuzzy
 msgid "Update available"
-msgstr "Oppdater alle"
+msgstr "Oppdatering tilgjengelig"
 
 #: ../../lib/class/autoupdate.class.php:237
-#, fuzzy
 msgid "See"
-msgstr "Velg"
+msgstr "Se"
 
 #: ../../lib/class/autoupdate.class.php:237
-#, fuzzy
 msgid "changes"
-msgstr "Lagre Endringer"
+msgstr "Endringer"
 
 #: ../../lib/class/autoupdate.class.php:239
 #: ../../lib/class/autoupdate.class.php:242
-#, fuzzy
 msgid "or"
-msgstr "Mer"
+msgstr "eller"
 
 #: ../../lib/class/autoupdate.class.php:240
 #: ../../lib/class/autoupdate.class.php:243
-#, fuzzy
 msgid "download"
-msgstr "Last ned"
+msgstr "nedlasting"
 
 #: ../../lib/class/autoupdate.class.php:257
 msgid "Updating Ampache sources with `"
-msgstr ""
+msgstr "Oppdaterer Ampache kilder med `"
 
 #: ../../lib/class/autoupdate.class.php:261
 #: ../../lib/class/autoupdate.class.php:276
 msgid "Done"
-msgstr ""
+msgstr "Ferdig"
 
 #: ../../lib/class/autoupdate.class.php:272
 msgid "Updating dependencies with `"
-msgstr ""
+msgstr "Oppdaterer avhengigheter med `"
 
 #: ../../lib/class/browse.class.php:204 ../../lib/class/browse.class.php:269
 #: ../../lib/class/upnp_api.class.php:385 ../../server/index.ajax.php:218
@@ -1360,7 +1320,8 @@ msgstr ""
 #: ../../templates/show_albums.inc.php:115
 #: ../../templates/show_artists.inc.php:42
 #: ../../templates/show_artists.inc.php:116
-#: ../../templates/show_label.inc.php:92 ../../templates/show_label.inc.php:107
+#: ../../templates/show_label.inc.php:92
+#: ../../templates/show_label.inc.php:107
 #: ../../templates/show_manage_democratic.inc.php:31
 #: ../../templates/show_random.inc.php:28
 #: ../../templates/show_random.inc.php:30
@@ -1371,7 +1332,7 @@ msgstr ""
 #: ../../templates/show_stats.inc.php:35 ../../templates/show_stats.inc.php:73
 #: ../../templates/sidebar_home.inc.php:148
 msgid "Songs"
-msgstr "Spor"
+msgstr "sanger"
 
 #: ../../lib/class/browse.class.php:210 ../../lib/class/upnp_api.class.php:361
 #: ../../lib/ui.lib.php:176 ../../server/search.ajax.php:90
@@ -1390,12 +1351,11 @@ msgstr "Spor"
 #: ../../templates/sidebar_home.inc.php:149
 #: ../../templates/sidebar.light.inc.php:28
 msgid "Albums"
-msgstr "Album"
+msgstr "album"
 
 #: ../../lib/class/browse.class.php:222
-#, fuzzy
 msgid "Users"
-msgstr "Bruker"
+msgstr "brukere"
 
 #: ../../lib/class/browse.class.php:231 ../../lib/class/upnp_api.class.php:457
 #: ../../templates/sidebar_home.inc.php:45
@@ -1405,22 +1365,21 @@ msgstr "Radiostasjoner"
 
 #: ../../lib/class/browse.class.php:236 ../../lib/class/upnp_api.class.php:409
 #: ../../server/search.ajax.php:148 ../../templates/header.inc.php:409
-#: ../../templates/show_user.inc.php:96 ../../templates/sidebar_home.inc.php:41
+#: ../../templates/show_user.inc.php:96
+#: ../../templates/sidebar_home.inc.php:41
 #: ../../templates/sidebar_home.inc.php:151
 #: ../../templates/sidebar.light.inc.php:29
 msgid "Playlists"
 msgstr "Spillelister"
 
 #: ../../lib/class/browse.class.php:240
-#, fuzzy
 msgid "Playlist Medias"
-msgstr "Metode for spilleliste"
+msgstr "Spillelistemedier"
 
 #: ../../lib/class/browse.class.php:244 ../../lib/class/upnp_api.class.php:433
 #: ../../templates/sidebar_home.inc.php:42
-#, fuzzy
 msgid "Smart Playlists"
-msgstr "Importer spilleliste"
+msgstr "Smarte spillelister"
 
 #: ../../lib/class/browse.class.php:248 ../../templates/show_stats.inc.php:27
 #: ../../templates/sidebar_admin.inc.php:24
@@ -1433,19 +1392,17 @@ msgstr "Shoutbox Oppføringer"
 
 #: ../../lib/class/browse.class.php:261
 #: ../../templates/show_democratic.inc.php:23
-#, fuzzy
 msgid "Democratic Playlist"
-msgstr "Behandle demokratiske spillelister"
+msgstr "Demokratisk spilleliste"
 
 #: ../../lib/class/browse.class.php:265
 #: ../../templates/sidebar_home.inc.php:114
-#, fuzzy
 msgid "Shared Objects"
-msgstr "Objekt"
+msgstr "Delte objekter"
 
 #: ../../lib/class/browse.class.php:273
 msgid "Media Licenses"
-msgstr ""
+msgstr "Medietillatelser"
 
 #: ../../lib/class/browse.class.php:277 ../../server/search.ajax.php:178
 #: ../../templates/show_artist.inc.php:211
@@ -1453,21 +1410,20 @@ msgstr ""
 #: ../../templates/show_edit_artist_row.inc.php:61
 #: ../../templates/sidebar_home.inc.php:37
 msgid "Labels"
-msgstr ""
+msgstr "etiketter"
 
 #: ../../lib/class/browse.class.php:281
-#, fuzzy
 msgid "Private Messages"
-msgstr "Melding"
+msgstr "Private meldinger"
 
 #: ../../lib/class/browse.class.php:285 ../../lib/class/upnp_api.class.php:481
 #: ../../templates/sidebar_home.inc.php:50
 msgid "Podcasts"
-msgstr ""
+msgstr "Podcasts"
 
 #: ../../lib/class/browse.class.php:289
 msgid "Podcast Episodes"
-msgstr ""
+msgstr "Podcast episoder"
 
 #: ../../lib/class/browse.class.php:330 ../../templates/rightbar.inc.php:123
 #: ../../templates/show_recently_played.inc.php:156
@@ -1484,19 +1440,18 @@ msgstr "Aldri"
 #: ../../lib/class/catalog.class.php:604
 msgid "day"
 msgid_plural "days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "dag"
+msgstr[1] "dager"
 
 #: ../../lib/class/catalog.class.php:606
-#, fuzzy
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] "timer siden"
-msgstr[1] "timer siden"
+msgstr[0] "time"
+msgstr[1] "timer"
 
 #: ../../lib/class/catalog.class.php:651
 msgid "Catalog Insert Failed check debug logs"
-msgstr ""
+msgstr "Kataloginnsetting Feilet sjekket feilsøkingslogger"
 
 #: ../../lib/class/catalog.class.php:1407
 msgid "No Update Needed"
@@ -1506,28 +1461,29 @@ msgstr "Ingen oppdatering nødvendig"
 #, php-format
 msgid "Catalog Clean Done. %d file removed."
 msgid_plural "Catalog Clean Done. %d files removed."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Katalog Clean Done. %d fil fjernet."
+msgstr[1] "Katalog Clean Done. %d filer fjernet."
 
 #: ../../lib/class/catalog.class.php:1713
 #, php-format
 msgid "Catalog Verify Done. %d of %d files updated."
-msgstr ""
+msgstr "Katalog Bekreft Ferdig. %d av %d filer oppdatert."
 
 #: ../../lib/class/catalog.class.php:1925
-#, fuzzy
 msgid "Failed to create playlist."
-msgstr "Legg til i ny spilleliste"
+msgstr "Kunne ikke opprette spilleliste."
 
 #: ../../lib/class/catalog.class.php:1942
 msgid "No valid songs found in playlist file."
-msgstr ""
+msgstr "Ingen gyldige sanger funnet i spillelistefilen."
 
 #: ../../lib/class/catalog.class.php:2298
 msgid ""
 "This subdirectory is not part of an existing catalog. Update cannot be "
 "processed."
 msgstr ""
+"Denne underkatalogen er ikke en del av en eksisterende katalog. "
+"Oppdateringen kan ikke behandles."
 
 #: ../../lib/class/democratic.class.php:153
 #: ../../templates/show_create_democratic.inc.php:36
@@ -1544,7 +1500,7 @@ msgstr "Primær"
 #: ../../templates/show_edit_user.inc.php:111
 #: ../../templates/show_preference_box.inc.php:81
 msgid "Content Manager"
-msgstr "Innholdsoperatør"
+msgstr "Innholdsbehandling"
 
 #: ../../lib/class/democratic.class.php:167
 #: ../../templates/show_add_user.inc.php:88
@@ -1552,44 +1508,43 @@ msgstr "Innholdsoperatør"
 #: ../../templates/show_edit_user.inc.php:112
 #: ../../templates/show_preference_box.inc.php:82
 msgid "Catalog Manager"
-msgstr "Katalogoperatør"
+msgstr "Katalog Manager"
 
 #: ../../lib/class/label.class.php:153 ../../lib/class/search.class.php:260
 #: ../../templates/show_edit_song_row.inc.php:81
 #: ../../templates/show_labels.inc.php:45
-#: ../../templates/show_labels.inc.php:77 ../../templates/show_song.inc.php:151
+#: ../../templates/show_labels.inc.php:77
+#: ../../templates/show_song.inc.php:151
 msgid "Label"
-msgstr ""
+msgstr "Merkelapp"
 
 #: ../../lib/class/live_stream.class.php:192
 #: ../../lib/class/live_stream.class.php:229
-#, fuzzy
 msgid "Name Required"
-msgstr "Feil: Brukernavn nødvendig"
+msgstr "Navn (nødvendig"
 
 #: ../../lib/class/live_stream.class.php:200
 msgid "Invalid URL must be mms:// , https:// or http://"
-msgstr ""
+msgstr "Ugyldig nettadresse må være mms: //, https: // eller http: //"
 
 #: ../../lib/class/live_stream.class.php:206
 #: ../../lib/class/live_stream.class.php:240
 #: ../../lib/class/live_stream.class.php:246
 msgid "Invalid URL must be http:// or https://"
-msgstr ""
+msgstr "Ugyldig nettadresse må være http: // eller https: //"
 
 #: ../../lib/class/live_stream.class.php:232
 msgid "Codec (eg. MP3, OGG...) Required"
-msgstr ""
+msgstr "Codec (f.eks. MP3, OGG ...) Påkrevd"
 
 #: ../../lib/class/live_stream.class.php:253
-#, fuzzy
 msgid "Invalid Catalog"
-msgstr "Legg til katalog"
+msgstr "Ugyldig katalog"
 
 #: ../../lib/class/playlist.class.php:138
-#: ../../lib/class/playlist.class.php:139 ../../lib/class/podcast.class.php:291
-#: ../../lib/class/user.class.php:1024 ../../templates/show_user.inc.php:24
-#: ../../templates/show_users.inc.php:72
+#: ../../lib/class/playlist.class.php:139
+#: ../../lib/class/podcast.class.php:291 ../../lib/class/user.class.php:1024
+#: ../../templates/show_user.inc.php:24 ../../templates/show_users.inc.php:72
 msgid "Unknown"
 msgstr "Ukjent"
 
@@ -1608,27 +1563,27 @@ msgstr "Privat"
 #: ../../templates/show_podcast_episodes.inc.php:89
 #: ../../templates/show_podcast.inc.php:92
 msgid "Podcast"
-msgstr ""
+msgstr "podcast"
 
 #: ../../lib/class/podcast.class.php:274
 msgid "Wrong feed url"
-msgstr ""
+msgstr "Feil feed-URL"
 
 #: ../../lib/class/podcast.class.php:279
 msgid "Target catalog required"
-msgstr ""
+msgstr "Målkatalog kreves"
 
 #: ../../lib/class/podcast.class.php:283
 msgid "Wrong target catalog type"
-msgstr ""
+msgstr "Feil målkatalogtype"
 
 #: ../../lib/class/podcast.class.php:303
 msgid "Cannot access the feed."
-msgstr ""
+msgstr "Kan ikke få tilgang til feedet."
 
 #: ../../lib/class/podcast.class.php:307
 msgid "Cannot read the feed."
-msgstr ""
+msgstr "Kan ikke lese feedet."
 
 #: ../../lib/class/podcast_episode.class.php:157
 #: ../../lib/class/search.class.php:225 ../../lib/class/search.class.php:485
@@ -1653,19 +1608,16 @@ msgid "Title"
 msgstr "Tittel"
 
 #: ../../lib/class/privatemsg.class.php:143
-#, fuzzy
 msgid "Error: Subject Required"
-msgstr "Feil: CAPTCHA påkrevd"
+msgstr "Feil: Emne påkrevd"
 
 #: ../../lib/class/privatemsg.class.php:148
-#, fuzzy
 msgid "Error: Unknown user"
-msgstr "Feil: Kan ikke åpne"
+msgstr "Feil: Ukjent bruker"
 
 #: ../../lib/class/privatemsg.class.php:168
-#, fuzzy
 msgid "Private Message"
-msgstr "Melding"
+msgstr "Privat melding"
 
 #: ../../lib/class/privatemsg.class.php:169
 #, php-format
@@ -1680,10 +1632,19 @@ msgid ""
 "        %s\n"
 "        "
 msgstr ""
+"Du har nettopp fått en ny privat melding fra %s.\n"
+"\n"
+"\n"
+"        ----------------------\n"
+"        %s\n"
+"        ----------------------\n"
+"\n"
+"        %s\n"
+"        "
 
 #: ../../lib/class/query.class.php:100
 msgid "Browse not found or expired, try reloading the page"
-msgstr ""
+msgstr "Bla ikke funnet eller utløpt, prøv å laste siden på nytt"
 
 #: ../../lib/class/registration.class.php:53
 #, php-format
@@ -1696,19 +1657,30 @@ msgid ""
 "Thank you for registering\n"
 "\n"
 "\n"
-"Please keep this e-mail for your records. Your account information is as "
-"follows:\n"
+"Please keep this e-mail for your records. Your account information is as follows:\n"
 "----------------------\n"
 "Username: %s\n"
 "----------------------\n"
 "\n"
-"Your account is currently inactive. You cannot use it until you've visited "
-"the following link:\n"
+"Your account is currently inactive. You cannot use it until you've visited the following link:\n"
 "\n"
 "%s\n"
 "\n"
 "Thank you for registering\n"
 msgstr ""
+"takk for din registrering\n"
+"\n"
+"\n"
+"Vennligst hold denne e-posten for postene dine. Kontoinformasjonen din er som følger:\n"
+"----------------------\n"
+"Brukernavn: %s\n"
+"----------------------\n"
+"\n"
+"Kontoen din er for øyeblikket inaktiv. Du kan ikke bruke det før du har besøkt følgende link:\n"
+"\n"
+"%s\n"
+"\n"
+"takk for din registrering\n"
 
 #: ../../lib/class/registration.class.php:77
 #, php-format
@@ -1722,11 +1694,19 @@ msgid ""
 "Website: %s\n"
 "\n"
 msgstr ""
+"En ny bruker har registrert seg\n"
+"Følgende verdier ble oppgitt.\n"
+"\n"
+"Brukernavn: %s\n"
+"Fullnavn: %s\n"
+"E-post: %s\n"
+"Nettsted: %s\n"
+"\n"
 
 #: ../../lib/class/registration.class.php:104
 #, php-format
 msgid "Account enabled at %s"
-msgstr ""
+msgstr "Konto aktivert på %s"
 
 #: ../../lib/class/registration.class.php:105
 #, php-format
@@ -1736,93 +1716,94 @@ msgid ""
 "\n"
 "            Please logon using %s"
 msgstr ""
+"Din konto %s har blitt aktivert\n"
+"\n"
+"\n"
+"            Vennligst logg inn med %s"
 
 #: ../../lib/class/search.class.php:62
 msgid "is greater than or equal to"
-msgstr ""
+msgstr "er større enn eller lik"
 
 #: ../../lib/class/search.class.php:68
 msgid "is less than or equal to"
-msgstr ""
+msgstr "er mindre enn eller lik"
 
 #: ../../lib/class/search.class.php:74 ../../lib/class/search.class.php:144
 #: ../../lib/class/search.class.php:163 ../../lib/class/search.class.php:176
-#, fuzzy
 msgid "is"
-msgstr "Disk"
+msgstr "er"
 
 #: ../../lib/class/search.class.php:80 ../../lib/class/search.class.php:169
 #: ../../lib/class/search.class.php:182
 msgid "is not"
-msgstr ""
+msgstr "er ikke"
 
 #: ../../lib/class/search.class.php:86
 msgid "is greater than"
-msgstr ""
+msgstr "er større enn"
 
 #: ../../lib/class/search.class.php:92
 msgid "is less than"
-msgstr ""
+msgstr "er mindre enn"
 
 #: ../../lib/class/search.class.php:99
 msgid "is true"
-msgstr ""
+msgstr "er sant"
 
 #: ../../lib/class/search.class.php:105
 msgid "is false"
-msgstr ""
+msgstr "er falsk"
 
 #: ../../lib/class/search.class.php:112
 msgid "contains"
-msgstr ""
+msgstr "inneholder"
 
 #: ../../lib/class/search.class.php:120
 msgid "does not contain"
-msgstr ""
+msgstr "inneholder ikke"
 
 #: ../../lib/class/search.class.php:128
-#, fuzzy
 msgid "starts with"
-msgstr "Begynner med"
+msgstr "begynner med"
 
 #: ../../lib/class/search.class.php:136
 msgid "ends with"
-msgstr ""
+msgstr "slutter med"
 
 #: ../../lib/class/search.class.php:150
 msgid "sounds like"
-msgstr ""
+msgstr "høres ut som"
 
 #: ../../lib/class/search.class.php:156
 msgid "does not sound like"
-msgstr ""
+msgstr "høres ikke ut som"
 
 #: ../../lib/class/search.class.php:189
 msgid "before"
-msgstr ""
+msgstr "før"
 
 #: ../../lib/class/search.class.php:195
 msgid "after"
-msgstr ""
+msgstr "etter"
 
 #: ../../lib/class/search.class.php:202
 msgid "before (x) days ago"
-msgstr ""
+msgstr "før (x) dager siden"
 
 #: ../../lib/class/search.class.php:208
-#, fuzzy
 msgid "after (x) days ago"
-msgstr "dager siden"
+msgstr "etter (x) dager siden"
 
 #: ../../lib/class/search.class.php:218
 msgid "Any searchable text"
-msgstr ""
+msgstr "En hvilken som helst søkbar tekst"
 
 #: ../../lib/class/search.class.php:246
 #: ../../templates/show_edit_song_row.inc.php:73
 #: ../../templates/show_song.inc.php:143
 msgid "Composer"
-msgstr ""
+msgstr "komponist"
 
 #: ../../lib/class/search.class.php:253
 #: ../../templates/show_edit_song_row.inc.php:77
@@ -1835,12 +1816,11 @@ msgstr "Kommentar"
 #: ../../lib/class/search.class.php:268 ../../lib/class/search.class.php:577
 #: ../../lib/class/search.class.php:611 ../../lib/class/tag.class.php:740
 msgid "Tag"
-msgstr "Tag"
+msgstr "stikkord"
 
 #: ../../lib/class/search.class.php:275
-#, fuzzy
 msgid "Album tag"
-msgstr "Albumbilde"
+msgstr "Album-tagg"
 
 #: ../../lib/class/search.class.php:282 ../../lib/class/search.class.php:585
 #: ../../templates/show_disabled_songs.inc.php:32
@@ -1857,30 +1837,30 @@ msgstr "Filnavn"
 #: ../../templates/show_albums.inc.php:116
 #: ../../templates/show_edit_album_row.inc.php:63
 #: ../../templates/show_edit_song_row.inc.php:85
-#: ../../templates/show_graphs.inc.php:65 ../../templates/show_song.inc.php:145
+#: ../../templates/show_graphs.inc.php:65
+#: ../../templates/show_song.inc.php:145
 msgid "Year"
 msgstr "År"
 
 #: ../../lib/class/search.class.php:296
 msgid "Length (in minutes)"
-msgstr ""
+msgstr "Lengde (i minutter)"
 
 #: ../../lib/class/search.class.php:304 ../../lib/class/search.class.php:521
 #: ../../lib/class/search.class.php:618
 msgid "Rating (Average)"
-msgstr ""
+msgstr "Vurdering (Gjennomsnitt)"
 
 #: ../../lib/class/search.class.php:322 ../../templates/header.inc.php:426
 #: ../../templates/sidebar_home.inc.php:109
 #: ../../templates/sidebar.light.inc.php:38
 msgid "Favorites"
-msgstr ""
+msgstr "Favoritter"
 
 #: ../../lib/class/search.class.php:331 ../../lib/class/search.class.php:539
 #: ../../lib/class/search.class.php:643
-#, fuzzy
 msgid "Rating (Mine)"
-msgstr "Kvalitet"
+msgstr "Vurdering (Mine)"
 
 #: ../../lib/class/search.class.php:349 ../../templates/show_albums.inc.php:45
 #: ../../templates/show_albums.inc.php:119
@@ -1888,9 +1868,8 @@ msgstr "Kvalitet"
 #: ../../templates/show_artists.inc.php:121
 #: ../../templates/show_song.inc.php:170 ../../templates/show_songs.inc.php:46
 #: ../../templates/show_songs.inc.php:109
-#, fuzzy
 msgid "# Played"
-msgstr "Spilt"
+msgstr "# Spilt"
 
 #: ../../lib/class/search.class.php:357
 #: ../../templates/show_duplicates.inc.php:32
@@ -1901,9 +1880,8 @@ msgstr "Bitrate"
 
 #: ../../lib/class/search.class.php:382 ../../lib/class/search.class.php:556
 #: ../../lib/class/search.class.php:635
-#, fuzzy
 msgid "My Last Play"
-msgstr "Sist spilt"
+msgstr "Min siste spill"
 
 #: ../../lib/class/search.class.php:389 ../../templates/show_album.inc.php:83
 #: ../../templates/show_artist.inc.php:78
@@ -1923,7 +1901,7 @@ msgstr "Katalog"
 #: ../../templates/sidebar_home.inc.php:69
 #: ../../templates/sidebar_home.inc.php:139
 msgid "Playlist"
-msgstr "Spilleliste"
+msgstr "spilleliste"
 
 #: ../../lib/class/search.class.php:436
 #: ../../templates/show_playlists.inc.php:35
@@ -1931,30 +1909,29 @@ msgstr "Spilleliste"
 #: ../../templates/show_searches.inc.php:42
 #: ../../templates/show_searches.inc.php:72
 msgid "Playlist Name"
-msgstr "Navn på spilleliste"
+msgstr "Spilleliste navn"
 
 #: ../../lib/class/search.class.php:449
-#, fuzzy
 msgid "Smart Playlist"
-msgstr "Importer spilleliste"
+msgstr "Smart spilleliste"
 
 #: ../../lib/class/search.class.php:461
 msgid "Metadata"
-msgstr ""
+msgstr "metadata"
 
 #: ../../lib/class/search.class.php:475
 #: ../../templates/show_add_upload.inc.php:199
 #: ../../templates/show_edit_song_row.inc.php:98
 msgid "Music License"
-msgstr ""
+msgstr "Musikklisens"
 
 #: ../../lib/class/search.class.php:506
 msgid "Image Width"
-msgstr ""
+msgstr "Bildebredde"
 
 #: ../../lib/class/search.class.php:513
 msgid "Image Height"
-msgstr ""
+msgstr "Bildehøyde"
 
 #: ../../lib/class/search.class.php:593 ../../lib/class/search.class.php:661
 #: ../../lib/class/search.class.php:669
@@ -1992,7 +1969,7 @@ msgstr "Navn"
 #: ../../templates/show_concerts.inc.php:28
 #: ../../templates/show_concerts.inc.php:56
 msgid "Place"
-msgstr ""
+msgstr "Sted"
 
 #: ../../lib/class/search.class.php:675
 #: ../../templates/show_add_label.inc.php:34
@@ -2002,7 +1979,7 @@ msgstr ""
 #: ../../templates/show_labels.inc.php:78
 #: ../../templates/show_podcast_episode.inc.php:112
 msgid "Category"
-msgstr ""
+msgstr "Kategori"
 
 #: ../../lib/class/search.class.php:683
 #: ../../modules/catalog/remote/remote.catalog.php:103
@@ -2021,7 +1998,7 @@ msgstr "Brukernavn"
 
 #: ../../lib/class/share.class.php:216
 msgid "Share edit"
-msgstr ""
+msgstr "Del rediger"
 
 #: ../../lib/class/share.class.php:216
 #: ../../templates/show_access_list.inc.php:70
@@ -2047,7 +2024,7 @@ msgstr ""
 #: ../../templates/show_user.inc.php:42 ../../templates/show_user.inc.php:47
 #: ../../templates/show_user_row.inc.php:58
 msgid "Edit"
-msgstr "Rediger"
+msgstr "Redigere"
 
 #: ../../lib/class/share.class.php:217 ../../templates/rightbar.inc.php:112
 #: ../../templates/show_access_list.inc.php:71
@@ -2086,20 +2063,19 @@ msgstr "Slett"
 #: ../../lib/class/share.class.php:369 ../../lib/class/share.class.php:371
 #: ../../templates/show_shares.inc.php:23
 msgid "Share"
-msgstr ""
+msgstr "Dele"
 
 #: ../../lib/class/share.class.php:379
-#, fuzzy
 msgid "Advanced Share"
-msgstr "Avansert Søk"
+msgstr "Avansert deling"
 
 #: ../../lib/class/share.class.php:394
 msgid "Temporary direct link"
-msgstr ""
+msgstr "Midlertidig direktekobling"
 
 #: ../../lib/class/shoutbox.class.php:236
 msgid "New shout on your content"
-msgstr ""
+msgstr "Ny rop på innholdet ditt"
 
 #: ../../lib/class/shoutbox.class.php:237
 #, php-format
@@ -2114,6 +2090,15 @@ msgid ""
 "    %s\n"
 "    "
 msgstr ""
+"Du har nettopp fått en ny rop fra %s på innholdet '%s`.\n"
+"\n"
+"\n"
+"    ----------------------\n"
+"    %s\n"
+"    ----------------------\n"
+"\n"
+"    %s\n"
+"    "
 
 #: ../../lib/class/shoutbox.class.php:315
 #: ../../templates/show_add_label.inc.php:80
@@ -2128,66 +2113,62 @@ msgstr "Legg til"
 
 #: ../../lib/class/shoutbox.class.php:318
 msgid "Post Shout"
-msgstr "Lagre beskjed"
+msgstr "Post Shout"
 
 #: ../../lib/class/shoutbox.class.php:322
 msgid "by"
-msgstr ""
+msgstr "av"
 
 #: ../../lib/class/song.class.php:1467
 #: ../../templates/show_html5_player.inc.php:151
-#, fuzzy
 msgid "Show Lyrics"
-msgstr "Vis spilelliste"
+msgstr "Vis Lyrics"
 
 #: ../../lib/class/song.class.php:1493
 msgid "Track MusicBrainzID"
-msgstr ""
+msgstr "Spor MusicBrainzID"
 
 #: ../../lib/class/stream_playlist.class.php:614
-#, fuzzy
 msgid "Vote added"
-msgstr "Lagt til dato"
+msgstr "Stemme lagt til"
 
 #: ../../lib/class/update.class.php:615
-#, fuzzy
 msgid "No updates needed."
-msgstr "Ingen oppdatering nødvendig"
+msgstr "Ingen oppdateringer nødvendig."
 
 #: ../../lib/class/update.class.php:617
-#, fuzzy
 msgid "Return to main page"
-msgstr "Gå tilbake til innloggingssiden"
+msgstr "Tilbake til hovedsiden"
 
 #: ../../lib/class/update.class.php:2665 ../../lib/class/update.class.php:2681
 msgid "File copy error."
-msgstr ""
+msgstr "Filkopieringsfeil."
 
 #: ../../lib/class/update.class.php:2672 ../../lib/class/update.class.php:2688
 msgid "Cannot copy default .htaccess file."
-msgstr ""
+msgstr "Kan ikke kopiere standard .htaccess-fil."
 
 #: ../../lib/class/upnp_api.class.php:510
 #: ../../templates/show_add_catalog.inc.php:72
 #: ../../templates/sidebar_home.inc.php:24
 msgid "Music"
-msgstr ""
+msgstr "Musikk"
 
 #: ../../lib/class/upnp_api.class.php:752
 msgid "TV Shows"
-msgstr ""
+msgstr "TV-programmer"
 
 #: ../../lib/class/upnp_api.class.php:792
 msgid "Clips"
-msgstr ""
+msgstr "klipp"
 
 #: ../../lib/class/upnp_api.class.php:816
 msgid "Movies"
-msgstr ""
+msgstr "Filmer"
 
 #: ../../lib/class/upnp_api.class.php:840
 msgid "Personal Videos"
-msgstr ""
+msgstr "Personlige videoer"
 
 #: ../../lib/class/upnp_api.class.php:861
 #: ../../templates/show_tagcloud.inc.php:27
@@ -2195,138 +2176,136 @@ msgid "Video"
 msgstr "Video"
 
 #: ../../lib/class/useractivity.class.php:209
-#, fuzzy
 msgid "uploaded"
-msgstr "Last opp"
+msgstr "lastet opp"
 
 #: ../../lib/class/useractivity.class.php:212
-#, fuzzy
 msgid "played"
-msgstr "Uspilt"
+msgstr "spilt"
 
 #: ../../lib/class/useractivity.class.php:215
 msgid "favorited"
-msgstr ""
+msgstr "SykoticWolf"
 
 #: ../../lib/class/useractivity.class.php:218
 msgid "started to follow"
-msgstr ""
+msgstr "begynte å følge"
 
 #: ../../lib/class/useractivity.class.php:221
 msgid "did something on"
-msgstr ""
+msgstr "gjorde noe på"
 
-#: ../../lib/class/user.class.php:1053 ../../templates/show_tagcloud.inc.php:88
+#: ../../lib/class/user.class.php:1053
+#: ../../templates/show_tagcloud.inc.php:88
 msgid "Not Enough Data"
 msgstr "Ikke nok data"
 
 #: ../../lib/class/user.class.php:1337
-#, fuzzy
 msgid "User avatar"
-msgstr "Bruker aktivert"
+msgstr "Brukerens avatar"
 
 #: ../../lib/class/user.class.php:1544
 msgid "Unfollow"
-msgstr ""
+msgstr "Slutt å følge"
 
 #: ../../lib/class/user.class.php:1544
 msgid "Follow"
-msgstr ""
+msgstr "Følg"
 
 #: ../../lib/debug.lib.php:317 ../../lib/debug.lib.php:334
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: ../../lib/debug.lib.php:317
 msgid "ERROR"
-msgstr ""
+msgstr "FEIL"
 
 #: ../../lib/debug.lib.php:334
 msgid "WARNING"
-msgstr ""
+msgstr "ADVARSEL"
 
 #: ../../lib/general.lib.php:214
-#, fuzzy, php-format
+#, php-format
 msgid "Unknown %s"
-msgstr "Ukjent"
+msgstr "Ukjent %s"
 
 #: ../../lib/install.lib.php:85
 msgid "Unable to connect to database, check your ampache config"
-msgstr "Kan ikke koble til databasen, sjekk konfigurasjon av ampache"
+msgstr "Kan ikke koble til database, sjekk ampache config"
 
 #: ../../lib/install.lib.php:94
-#, fuzzy
 msgid "Unable to query database, check your ampache config"
-msgstr "Kan ikke koble til databasen, sjekk konfigurasjon av ampache"
+msgstr "Kan ikke spørre databasen, sjekk ampache config"
 
 #: ../../lib/install.lib.php:102
 msgid "Existing Database detected, unable to continue installation"
-msgstr "Eksisterende database valgt, kan ikke fortsette installajonen"
+msgstr ""
+"Eksisterende database oppdaget, ikke i stand til å fortsette installasjonen"
 
 #: ../../lib/install.lib.php:166 ../../lib/install.lib.php:311
 msgid "Error writing config file"
-msgstr ""
+msgstr "Feil ved å skrive konfigurasjonsfilen"
 
 #: ../../lib/install.lib.php:192
-#, fuzzy
 msgid "Error: Invalid database name."
-msgstr "Feil: Ugyldig handshake - "
+msgstr "Feil: Ugyldig database navn."
 
 #: ../../lib/install.lib.php:198
-#, fuzzy, php-format
+#, php-format
 msgid "Error: Unable to make database connection: %s"
-msgstr "Feil: Kan ikke hente filstørrelse for %s"
+msgstr "Feil: Kan ikke opprette databaseforbindelse: %s"
 
 #: ../../lib/install.lib.php:209
 msgid "Error: Database already exists and overwrite not checked"
-msgstr ""
+msgstr "Feil: Database eksisterer allerede og overskriv ikke merket"
 
 #: ../../lib/install.lib.php:217
-#, fuzzy, php-format
+#, php-format
 msgid "Error: Unable to create database: %s"
-msgstr "Feil: Kan ikke hente filstørrelse for %s"
+msgstr "Feil: Kan ikke opprette database: %s"
 
 #: ../../lib/install.lib.php:235
 #, php-format
 msgid ""
 "Error: Unable to create user %1$s with permissions to %2$s on %3$s: %4$s"
 msgstr ""
+"Feil: Kan ikke opprette bruker %1$s med tillatelser til %2$s på %3$s: %4$s"
 
 #: ../../lib/install.lib.php:288
-#, fuzzy
 msgid "Invalid configuration settings"
-msgstr "Start konfigurasjonen"
+msgstr "Ugyldige konfigurasjonsinnstillinger"
 
 #: ../../lib/install.lib.php:295
 msgid "Database Connection Failed Check Hostname, Username and Password"
 msgstr ""
+"Databaseforbindelse feilet Kontroller vertsnavn, brukernavn og passord"
 
 #: ../../lib/install.lib.php:305
 msgid "Config file is not writable"
-msgstr ""
+msgstr "Config-filen kan ikke skrives"
 
 #: ../../lib/install.lib.php:333
 msgid "No Username/Password specified"
-msgstr "Brukernavn/Passord Uspesifisert"
+msgstr "Ingen brukernavn / passord er oppgitt"
 
 #: ../../lib/install.lib.php:339
 msgid "Passwords do not match"
-msgstr "Passordene er forskjellige"
+msgstr "passordene er ikke like"
 
 #: ../../lib/install.lib.php:345
 #, php-format
 msgid "Database connection failed: %s"
-msgstr ""
+msgstr "Databaseforbindelse mislyktes: %s"
 
 #: ../../lib/install.lib.php:351
-#, fuzzy, php-format
+#, php-format
 msgid "Database select failed: %s"
-msgstr "Databasens tegnsett er oppdatert"
+msgstr "Databasevalg mislyktes: %s"
 
 #: ../../lib/install.lib.php:362
-#, fuzzy, php-format
+#, php-format
 msgid "Administrative user creation failed: %s"
-msgstr "MySQL Adminbruker"
+msgstr "Administrativ brukeropprettelse mislyktes: %s"
 
 #: ../../lib/javascript/search-data.php:52
 msgid "Remove"
@@ -2346,7 +2325,7 @@ msgstr "Bruker allerede innlogget"
 
 #: ../../lib/login.php:131
 msgid "Unable to create local account"
-msgstr ""
+msgstr "Kunne ikke opprette en lokal konto"
 
 #: ../../lib/preferences.php:214 ../../lib/preferences.php:317
 #: ../../templates/show_disabled_songs.inc.php:68
@@ -2374,7 +2353,7 @@ msgstr "Ingen"
 #: ../../templates/show_live_stream.inc.php:51
 #: ../../templates/show_playtype_switch.inc.php:36
 msgid "Stream"
-msgstr "Stream"
+msgstr "Strøm"
 
 #: ../../lib/preferences.php:238 ../../templates/show_edit_user.inc.php:144
 #: ../../templates/show_playtype_switch.inc.php:43
@@ -2385,9 +2364,8 @@ msgstr "Demokratisk"
 
 #: ../../lib/preferences.php:240
 #: ../../templates/show_playtype_switch.inc.php:48
-#, fuzzy
 msgid "Web Player"
-msgstr "Web bane"
+msgstr "Web Player"
 
 #: ../../lib/preferences.php:247
 msgid "M3U"
@@ -2430,33 +2408,32 @@ msgstr "Rensk ved Send"
 #: ../../templates/show_install_config.inc.php:115
 #: ../../templates/show_manage_democratic.inc.php:30
 msgid "Default"
-msgstr "Standard"
+msgstr "Misligholde"
 
 #: ../../lib/preferences.php:305
 msgid "Always"
 msgstr "Alltid"
 
 #: ../../lib/preferences.php:341
-#, fuzzy
 msgid "Year ascending"
-msgstr "Transkoding"
+msgstr "År oppover"
 
 #: ../../lib/preferences.php:342
 msgid "Year descending"
-msgstr ""
+msgstr "År nedstigende"
 
 #: ../../lib/preferences.php:343
 msgid "Name ascending"
-msgstr ""
+msgstr "Navn stigende"
 
 #: ../../lib/preferences.php:344
 msgid "Name descending"
-msgstr ""
+msgstr "Navn synkende"
 
 #: ../../lib/preferences.php:365
 #, php-format
 msgid "Click to grant %s access to Ampache"
-msgstr ""
+msgstr "Klikk for å gi %s tilgang til Ampache"
 
 #: ../../lib/rating.lib.php:42
 msgid "Don't Play"
@@ -2557,7 +2534,7 @@ msgstr "Legg til ny"
 
 #: ../../lib/ui.lib.php:387
 msgid "View License"
-msgstr ""
+msgstr "Se lisens"
 
 #: ../../lib/ui.lib.php:654
 msgid "On"
@@ -2569,49 +2546,45 @@ msgstr "Av"
 
 #: ../../lostpassword.php:39
 msgid "Password has been sent"
-msgstr ""
+msgstr "Passordet er sendt"
 
 #: ../../lostpassword.php:41
-#, fuzzy
 msgid "Password has not been sent"
-msgstr "Passordene er forskjellige"
+msgstr "Passordet er ikke sendt"
 
 #: ../../lostpassword.php:60
-#, fuzzy
 msgid "Lost Password"
-msgstr "Passord"
+msgstr "Mistet Passord"
 
 #: ../../lostpassword.php:64
 #, php-format
 msgid "A user from %s has requested a password reset for '%s'."
-msgstr ""
+msgstr "En bruker fra %s har bedt om tilbakestilling av passord for '%s'."
 
 #: ../../lostpassword.php:66
 #, php-format
 msgid "The password has been set to: %s"
-msgstr ""
+msgstr "Passordet er satt til: %s"
 
 #: ../../modules/Beets/Catalog.php:126
-#, fuzzy
 msgid "Running Beets Update"
-msgstr "Kjører fjernoppdatering"
+msgstr "Running Beets Update"
 
 #: ../../modules/Beets/Catalog.php:205
 #: ../../modules/catalog/remote/remote.catalog.php:273
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:300
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:254
-#, fuzzy, php-format
+#, php-format
 msgid "Unable to Insert Song - %s"
-msgstr "Kunne ikke installere utvidelse"
+msgstr "Kan ikke sette inn sang - %s"
 
 #: ../../modules/catalog/beets/beets.catalog.php:86
-#, fuzzy
 msgid "Beets Database File"
-msgstr "Endre databasens tegnsett"
+msgstr "Beets Database File"
 
 #: ../../modules/catalog/beets/beets.catalog.php:103
 msgid "Error: Beets selected, but no Beets DB File provided"
-msgstr ""
+msgstr "Feil: Beets valgt, men ingen Beets DB File oppgitt"
 
 #: ../../modules/catalog/beets/beets.catalog.php:114
 #: ../../modules/catalog/beetsremote/beetsremote.catalog.php:115
@@ -2619,26 +2592,26 @@ msgstr ""
 #: ../../modules/catalog/remote/remote.catalog.php:162
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:183
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:163
-#, fuzzy, php-format
+#, php-format
 msgid "Error: Catalog with %s already exists"
-msgstr "Feil: Brukernavn eksisterer"
+msgstr "Feil: Katalog med %s eksisterer allerede"
 
 #: ../../modules/catalog/beetsremote/beetsremote.catalog.php:87
 msgid "Beets Server URI"
-msgstr ""
+msgstr "Beets Server URI"
 
 #: ../../modules/catalog/beetsremote/beetsremote.catalog.php:104
 msgid "Error: Beets selected, but path is not a URL"
-msgstr ""
+msgstr "Feil: Beets valgt, men banen er ikke en nettadresse"
 
 #: ../../modules/catalog/local/local.catalog.php:104
 #: ../../templates/show_stats.inc.php:69
 msgid "Path"
-msgstr "Bane"
+msgstr "Sti"
 
 #: ../../modules/catalog/local/local.catalog.php:175
 msgid "Error: Path not specified"
-msgstr ""
+msgstr "Feil: Sti ikke angitt"
 
 #: ../../modules/catalog/local/local.catalog.php:182
 msgid "Error: Defined Path is inside an existing catalog"
@@ -2647,18 +2620,18 @@ msgstr "Feil: Mappebanen er i en eksisterende katalog"
 #: ../../modules/catalog/local/local.catalog.php:190
 #, php-format
 msgid "Error: %s is not readable or does not exist"
-msgstr ""
+msgstr "Feil: %s er ikke lesbar eller eksisterer ikke"
 
 #: ../../modules/catalog/local/local.catalog.php:242
-#, fuzzy, php-format
+#, php-format
 msgid "Error: Unable to open %s"
-msgstr "Feil: Kan ikke åpne"
+msgstr "Feil: Kan ikke åpne %s"
 
 #: ../../modules/catalog/local/local.catalog.php:250
 #: ../../modules/catalog/local/local.catalog.php:314
-#, fuzzy, php-format
+#, php-format
 msgid "Error: Unable to change to directory %s"
-msgstr "Feil: Kan ikke hente filstørrelse for %s"
+msgstr "Feil: Kan ikke endres til katalogen %s"
 
 #. HINT: FullFile
 #: ../../modules/catalog/local/local.catalog.php:338
@@ -2680,7 +2653,7 @@ msgstr "%s passer ikke med denne serverens tegnsett"
 
 #: ../../modules/catalog/local/local.catalog.php:491
 msgid "N/A"
-msgstr ""
+msgstr "N / A"
 
 #: ../../modules/catalog/local/local.catalog.php:497
 #, php-format
@@ -2688,11 +2661,13 @@ msgid ""
 "Catalog Update Finished.  Total Time: [%s] Total Media: [%s] Media Per "
 "Second: [%s]"
 msgstr ""
+"Katalogoppdatering Fullført. Total tid: [%s] Totalt antall medier: [%s] "
+"Medier per sekund: [%s]"
 
 #: ../../modules/catalog/local/local.catalog.php:575
 #, php-format
 msgid "%s does not exist or is not readable"
-msgstr ""
+msgstr "%s finnes ikke eller kan ikke leses"
 
 #: ../../modules/catalog/local/local.catalog.php:604
 msgid "Catalog Root unreadable, stopping clean"
@@ -2700,16 +2675,16 @@ msgstr "Katalogrot ikke lesbar, avbryter rensking"
 
 #: ../../modules/catalog/local/local.catalog.php:630
 msgid "All files would be removed. Doing nothing"
-msgstr ""
+msgstr "Alle filer vil bli fjernet. Gjør ingenting"
 
 #: ../../modules/catalog/local/local.catalog.php:674
 #, php-format
 msgid "Error File Not Found or 0 Bytes: %s"
-msgstr ""
+msgstr "Feilfilen ble ikke funnet eller 0 Bytes: %s"
 
 #: ../../modules/catalog/remote/remote.catalog.php:102
 msgid "Uri"
-msgstr ""
+msgstr "Uri"
 
 #: ../../modules/catalog/remote/remote.catalog.php:104
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:104
@@ -2723,12 +2698,11 @@ msgstr "Passord"
 
 #: ../../modules/catalog/remote/remote.catalog.php:144
 msgid "Error: Remote selected, but path is not a URL"
-msgstr ""
+msgstr "Feil: Fjern valgt, men banen er ikke en nettadresse"
 
 #: ../../modules/catalog/remote/remote.catalog.php:150
-#, fuzzy
 msgid "Error: Username and Password Required for Remote Catalogs"
-msgstr "Feil: Brukernavn eller passord stemmer ikke, prøv igjen"
+msgstr "Feil: Brukernavn og passord kreves for eksterne kataloger"
 
 #: ../../modules/catalog/remote/remote.catalog.php:181
 msgid "Running Remote Update"
@@ -2736,88 +2710,82 @@ msgstr "Kjører fjernoppdatering"
 
 #: ../../modules/catalog/remote/remote.catalog.php:217
 msgid "Error connecting to remote server"
-msgstr ""
+msgstr "Feil ved tilkobling til ekstern server"
 
 #: ../../modules/catalog/remote/remote.catalog.php:245
 #, php-format
 msgid "%u remote catalog(s) found (%u songs)"
-msgstr ""
+msgstr "%u fjernkatalog (er) funnet (%u sanger)"
 
 #: ../../modules/catalog/remote/remote.catalog.php:281
-#, fuzzy
 msgid "Completed updating remote catalog(s)."
-msgstr "Oppdaterer katalogen %s"
+msgstr "Fullført oppdatering av fjernkatalog (er)."
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:107
-#, fuzzy
 msgid "User ID"
-msgstr "Bruker"
+msgstr "bruker-ID"
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:108
 #: ../../templates/show_add_share.inc.php:35
 msgid "Secret"
-msgstr ""
+msgstr "Hemmelig"
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:172
 msgid "Error: UserID and Secret Required for SoundCloud Catalogs"
-msgstr ""
+msgstr "Feil: BrukerID og hemmelig påkrevd for SoundCloud-kataloger"
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:238
-#, fuzzy
 msgid "Running SoundCloud Remote Update"
-msgstr "Kjører fjernoppdatering"
+msgstr "Kjører SoundCloud Remote Update"
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:308
 msgid "Completed updating SoundCloud catalog(s)."
-msgstr ""
+msgstr "Fullført oppdatering av SoundCloud katalog (er)."
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:308
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:271
-#, fuzzy
 msgid "Songs added."
-msgstr "Spor aktivert"
+msgstr "Sanger lagt til."
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:313
 msgid "API Error: cannot get song list."
-msgstr ""
+msgstr "API Feil: kan ikke få sangliste."
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:317
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:375
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:450
 msgid "API Error: cannot connect to SoundCloud."
-msgstr ""
+msgstr "API Feil: kan ikke koble til SoundCloud."
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:321
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:379
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:455
 msgid "SoundCloud exception: "
-msgstr ""
+msgstr "SoundCloud unntak:"
 
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:102
 msgid "URI"
-msgstr ""
+msgstr "URI"
 
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:146
 msgid "Error: Subsonic selected, but path is not a URL"
-msgstr ""
+msgstr "Feil: Subsonic valgt, men banen er ikke en nettadresse"
 
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:152
-#, fuzzy
 msgid "Error: Username and Password Required for Subsonic Catalogs"
-msgstr "Feil: Brukernavn eller passord stemmer ikke, prøv igjen"
+msgstr "Feil: Brukernavn og passord kreves for Subsonic-kataloger"
 
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:185
-#, fuzzy
 msgid "Running Subsonic Remote Update"
-msgstr "Kjører fjernoppdatering"
+msgstr "Kjører Subsonic Remote Update"
 
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:271
 msgid "Completed updating Subsonic catalog(s)."
-msgstr ""
+msgstr "Fullført oppdatering av Subsonic katalog (er)."
 
 #: ../../modules/plugins/CatalogFavorites/CatalogFavorites.plugin.php:102
 msgid "Highlight"
-msgstr ""
+msgstr "Fremheve"
 
 #: ../../modules/plugins/CatalogFavorites/CatalogFavorites.plugin.php:123
 #: ../../templates/header.inc.php:339
@@ -2840,9 +2808,8 @@ msgstr ""
 #: ../../templates/show_song.inc.php:73
 #: ../../templates/show_song_preview_row.inc.php:30
 #: ../../templates/show_song_row.inc.php:40
-#, fuzzy
 msgid "Play last"
-msgstr "Spilleliste"
+msgstr "Spill sist"
 
 #: ../../modules/plugins/CatalogFavorites/CatalogFavorites.plugin.php:126
 #: ../../templates/header.inc.php:340
@@ -2864,23 +2831,20 @@ msgstr "Spilleliste"
 #: ../../templates/show_song.inc.php:84
 #: ../../templates/show_song_preview_row.inc.php:43
 #: ../../templates/show_song_row.inc.php:50
-#, fuzzy
 msgid "Add to temporary playlist"
-msgstr "Legg til i ny spilleliste"
+msgstr "Legg til i midlertidig spilleliste"
 
 #: ../../modules/plugins/CatalogFavorites/CatalogFavorites.plugin.php:144
 msgid "recommended by"
-msgstr ""
+msgstr "anbefalt av"
 
 #: ../../modules/plugins/GoogleMaps/GoogleMaps.plugin.php:121
-#, fuzzy
 msgid "Hits:"
-msgstr "Mellomlager treff:"
+msgstr "treff:"
 
 #: ../../modules/plugins/GoogleMaps/GoogleMaps.plugin.php:122
-#, fuzzy
 msgid "Last activity:"
-msgstr "Aktivitet"
+msgstr "Siste aktivitet:"
 
 #: ../../playlist.php:54
 msgid "Playlist Created"
@@ -2889,7 +2853,7 @@ msgstr "Spilleliste opprettet"
 #: ../../playlist.php:54
 #, php-format
 msgid "%1$s (%2$s) has been created"
-msgstr ""
+msgstr "%1$s (%2$s) er opprettet"
 
 #: ../../playlist.php:80
 msgid "Playlist Imported"
@@ -2899,13 +2863,12 @@ msgstr "Spilleliste importert"
 #, php-format
 msgid "Successfully imported playlist with %d song."
 msgid_plural "Successfully imported playlist with %d songs."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Vellykket importert spilleliste med %d sang."
+msgstr[1] "Vellykket importert spilleliste med %d sanger."
 
 #: ../../playlist.php:86
-#, fuzzy
 msgid "Playlist Not Imported"
-msgstr "Spilleliste importert"
+msgstr "Spilleliste ikke importert"
 
 #: ../../playlist.php:135
 msgid "Empty Playlists Deleted"
@@ -2915,74 +2878,68 @@ msgstr "Tomme spillelister slettet"
 msgid ""
 "Changing the server UUID could break clients connectivity. Do you confirm?"
 msgstr ""
+"Endring av serveren UUID kan ødelegge klientens tilkobling. Bekrefter du?"
 
 #: ../../plex/web/index.php:84
 msgid "myPlex authentication completed."
-msgstr ""
+msgstr "myPlex-godkjenning fullført."
 
 #: ../../plex/web/index.php:98
-#, fuzzy
 msgid "Server registration completed."
-msgstr "Registrering ferdig"
+msgstr "Serverregistrering er fullført."
 
 #: ../../plex/web/index.php:101
 msgid "Cannot register the server on myPlex."
-msgstr ""
+msgstr "Kan ikke registrere serveren på myPlex."
 
 #: ../../plex/web/index.php:107
 msgid "Cannot authenticate on myPlex."
-msgstr ""
+msgstr "Kan ikke godkjenne på myPlex."
 
 #: ../../plex/web/index.php:135
 msgid "Server UUID changed."
-msgstr ""
+msgstr "Server UUID endret."
 
 #: ../../plex/web/init.php:38
 msgid "Unauthorized."
-msgstr ""
+msgstr "Uautorisert."
 
 #: ../../podcast_episode.php:35 ../../podcast_episode.php:55
 #: ../../podcast_episode.php:57
 msgid "Podcast Episode Deletion"
-msgstr ""
+msgstr "Podcast-episode sletting"
 
 #: ../../podcast_episode.php:36
-#, fuzzy
 msgid "Are you sure you want to permanently delete this episode?"
-msgstr "Er du sikker på at du ønsker permanent sletting"
+msgstr "Er du sikker på at du vil slette denne episoden permanent?"
 
 #: ../../podcast_episode.php:55
-#, fuzzy
 msgid "Episode has been deleted."
-msgstr "Den valgte spillelisten har blitt slettet"
+msgstr "Episode er slettet."
 
 #: ../../podcast_episode.php:57
-#, fuzzy
 msgid "Cannot delete this episode."
-msgstr "Kan ikke slette katalog"
+msgstr "Kan ikke slette denne episoden."
 
 #: ../../podcast.php:60
 msgid "Subscribed to Podcast"
-msgstr ""
+msgstr "Abonnert på Podcast"
 
 #: ../../podcast.php:73 ../../podcast.php:88 ../../podcast.php:90
 msgid "Podcast Deletion"
-msgstr ""
+msgstr "Podcast-sletting"
 
 #: ../../podcast.php:74
-#, fuzzy
 msgid "Are you sure you want to delete this podcast?"
-msgstr "Vil du virkelig slette denne katalogen?"
+msgstr "Er du sikker på at du vil slette denne podcasten?"
 
 #: ../../podcast.php:88
-#, fuzzy
 msgid "Podcast has been deleted."
-msgstr "Den valgte spillelisten har blitt slettet"
+msgstr "Podcast er slettet."
 
 #: ../../podcast.php:90
-#, fuzzy
 msgid "Cannot delete this podcast."
-msgstr "Kan ikke slette katalog"
+msgstr "Kan ikke slette denne podcasten."
 
 #: ../../preferences.php:48 ../../preferences.php:93
 msgid "Server"
@@ -2990,29 +2947,27 @@ msgstr "Tjener"
 
 #: ../../preferences.php:66
 msgid "Server preferences updated successfully"
-msgstr ""
+msgstr "Serverpreferanser oppdateres vellykket"
 
 #: ../../preferences.php:68
 msgid "User preferences updated successfully"
-msgstr ""
+msgstr "Brukerinnstillinger oppdatert vellykket"
 
 #: ../../preferences.php:126 ../../register.php:100
 msgid "Please fill in your full name (Firstname Lastname)"
 msgstr "Vennligst skriv inn ditt fulle navn (Fornavn Etternavn)"
 
 #: ../../preferences.php:129 ../../register.php:103
-#, fuzzy
 msgid "Please fill in your website"
-msgstr "Vennligst skriv inn ditt fulle navn (Fornavn Etternavn)"
+msgstr "Vennligst fyll inn ditt nettsted"
 
 #: ../../preferences.php:132 ../../register.php:106
-#, fuzzy
 msgid "Please fill in your state"
-msgstr "Vennligst skriv inn ditt fulle navn (Fornavn Etternavn)"
+msgstr "Vennligst fyll inn staten din"
 
 #: ../../preferences.php:135 ../../register.php:109
 msgid "Please fill in your city"
-msgstr ""
+msgstr "Vennligst fyll inn byen din"
 
 #: ../../preferences.php:139
 msgid "Error Update Failed"
@@ -3024,45 +2979,39 @@ msgstr "Din brukerkonto har blitt oppdatert"
 
 #: ../../preferences.php:149
 msgid "User updated successfully"
-msgstr ""
+msgstr "Brukeren er oppdatert vellykket"
 
 #: ../../preferences.php:167
-#, fuzzy
 msgid "Your Account has not been updated"
-msgstr "Din brukerkonto har blitt oppdatert"
+msgstr "Kontoen din er ikke oppdatert"
 
 #: ../../pvmsg.php:67
-#, fuzzy
 msgid "Message Sent"
-msgstr "Melding"
+msgstr "Melding sendt"
 
 #: ../../pvmsg.php:90
-#, fuzzy
 msgid "Messages State Changed"
-msgstr "Dagens beskjed"
+msgstr "Meldinger State Changed"
 
 #: ../../pvmsg.php:90
 msgid "Messages state have been changed."
-msgstr ""
+msgstr "Meldingene har blitt endret."
 
 #: ../../pvmsg.php:99
-#, fuzzy
 msgid "Message Deletion"
-msgstr "Melding"
+msgstr "Melding Sletting"
 
 #: ../../pvmsg.php:100
-#, fuzzy
 msgid "Are you sure you want to permanently delete the selected messages?"
-msgstr "Er du sikker på at du ønsker permanent sletting"
+msgstr "Er du sikker på at du vil slette de valgte meldingene permanent?"
 
 #: ../../pvmsg.php:124
 msgid "Messages Deletion"
-msgstr ""
+msgstr "Meldinger Slett"
 
 #: ../../pvmsg.php:124
-#, fuzzy
 msgid "Messages have been deleted."
-msgstr "Den valgte spillelisten har blitt slettet"
+msgstr "Meldinger er slettet."
 
 #: ../../radio.php:60
 msgid "Radio Station Added"
@@ -3093,110 +3042,102 @@ msgid "Your passwords do not match"
 msgstr "Passord stemmer ikke overens"
 
 #: ../../rest/index.php:47 ../../server/xml.server.php:43
-#, fuzzy
 msgid "Access Control not Enabled"
-msgstr "Tilgangskontroll oppføringer"
+msgstr "Tilgangskontroll ikke aktivert"
 
 #: ../../search.php:50
-#, fuzzy
 msgid "Search Saved"
-msgstr "Ferdig med søk"
+msgstr "Søk lagret"
 
 #: ../../search.php:50
 #, php-format
 msgid "Your Search has been saved as a Smart Playlist with name %s"
-msgstr ""
+msgstr "Søket ditt er lagret som en smart spilleliste med navn %s"
 
 #: ../../server/index.ajax.php:44
 #, php-format
 msgid ""
-"No catalog configured yet. To start streaming your media, you now need to %s "
-"add a catalog %s"
+"No catalog configured yet. To start streaming your media, you now need to %s"
+" add a catalog %s"
 msgstr ""
+"Ingen katalog konfigurert ennå. For å starte streaming av media, må du nå %s"
+" legge til en katalog %s"
 
 #: ../../server/playlist.ajax.php:103
-#, fuzzy
 msgid "Added to playlist"
-msgstr "Legg til i spilleliste"
+msgstr "Lagt til spilleliste"
 
 #: ../../server/xml.server.php:54
 msgid "Session Expired"
-msgstr ""
+msgstr "Sesjon utløpt"
 
 #: ../../server/xml.server.php:71
 msgid "Unauthorized access attempt to API - ACL Error"
-msgstr ""
+msgstr "Uautorisert tilgangsforsøk til API - ACL-feil"
 
 #: ../../share.php:75
 msgid "Share created."
-msgstr ""
+msgstr "Del opprettet."
 
 #: ../../share.php:76
 msgid "You can now start sharing the following url:"
-msgstr ""
+msgstr "Du kan nå begynne å dele følgende nettadresse:"
 
 #: ../../share.php:81
 msgid ""
 "You can also embed this share as a web player into your website, with the "
 "following html code:"
 msgstr ""
+"Du kan også integrere denne delen som en nettleser på nettstedet ditt, med "
+"følgende html-kode:"
 
 #: ../../share.php:84
-#, fuzzy
 msgid "Object Shared"
-msgstr "Objekt"
+msgstr "Objekt delt"
 
 #: ../../share.php:94
-#, fuzzy
 msgid "Share Delete"
-msgstr "Bruker slettet"
+msgstr "Del Slett"
 
 #: ../../share.php:107
-#, fuzzy
 msgid "Share Deleted"
-msgstr "Bruker slettet"
+msgstr "Del slettet"
 
 #: ../../share.php:107
-#, fuzzy
 msgid "The Share has been deleted"
-msgstr "Den valgte spillelisten har blitt slettet"
+msgstr "Delen er slettet"
 
 #: ../../share.php:120
-#, fuzzy
 msgid "Shared Objects cleaned"
-msgstr "Ugyldig objekt valgt"
+msgstr "Delte objekter rengjort"
 
 #: ../../share.php:120
 msgid "Expired shared objects have been cleaned."
-msgstr ""
+msgstr "Utgåtte delte objekter har blitt renset."
 
 #: ../../shout.php:63
 msgid "Invalid Object Selected"
 msgstr "Ugyldig objekt valgt"
 
 #: ../../song.php:36 ../../song.php:56 ../../song.php:58
-#, fuzzy
 msgid "Song Deletion"
-msgstr "Spor informasjon"
+msgstr "Sang sletting"
 
 #: ../../song.php:37
-#, fuzzy
 msgid "Are you sure you want to permanently delete this song?"
-msgstr "Er du sikker på at du ønsker permanent sletting"
+msgstr "Er du sikker på at du vil slette denne sangen permanent?"
 
 #: ../../song.php:56
-#, fuzzy
 msgid "Song has been deleted."
-msgstr "Din brukerkonto har blitt oppdatert"
+msgstr "Sangen er slettet."
 
 #: ../../song.php:58
-#, fuzzy
 msgid "Cannot delete this song."
-msgstr "Kan ikke slette katalog"
+msgstr "Kan ikke slette denne sangen."
 
 #: ../../templates/browse_filters.inc.php:30
 msgid "Filters"
-msgstr "Filter"
+msgstr "filtre"
 
 #: ../../templates/browse_filters.inc.php:35
 msgid "Starts With"
@@ -3204,15 +3145,15 @@ msgstr "Begynner med"
 
 #: ../../templates/browse_filters.inc.php:44
 msgid "Minimum Count"
-msgstr "Minimumsantall"
+msgstr "Minimumtall"
 
 #: ../../templates/browse_filters.inc.php:51
 msgid "Rated"
-msgstr "Kvalitet"
+msgstr "Vurdert"
 
 #: ../../templates/browse_filters.inc.php:58
 msgid "Unplayed"
-msgstr "Uspilt"
+msgstr "uspilte"
 
 #: ../../templates/browse_filters.inc.php:64
 msgid "All Playlists"
@@ -3222,115 +3163,118 @@ msgstr "Alle spillelister"
 #: ../../templates/show_song_previews.inc.php:31
 #: ../../templates/show_songs.inc.php:33 ../../templates/show_songs.inc.php:96
 msgid "Song Title"
-msgstr "Spor tittel"
+msgstr "Sang tittel"
 
 #: ../../templates/browse_filters.inc.php:112
 msgid "Toggle Artwork"
-msgstr ""
+msgstr "Bytt kunstverk"
 
 #: ../../templates/cookie_disclaimer.inc.php:1
 msgid "Use of cookies by Ampache"
-msgstr ""
+msgstr "Bruk av cookies av Ampache"
 
 #: ../../templates/cookie_disclaimer.inc.php:4
 msgid ""
 "Cookies are small text files that are placed on your computer by websites "
-"that you visit. They are widely used in order to make websites work, or work "
-"more efficiently, as well as to provide information to the owners of the "
+"that you visit. They are widely used in order to make websites work, or work"
+" more efficiently, as well as to provide information to the owners of the "
 "site."
 msgstr ""
+"Informasjonskapsler er små tekstfiler som er plassert på datamaskinen din av"
+" nettsteder du besøker. De er mye brukt for å få nettsteder til å fungere, "
+"eller jobbe mer effektivt, samt å gi informasjon til eiere av nettstedet."
 
 #: ../../templates/cookie_disclaimer.inc.php:5
 msgid "The table below explains the cookies we use and why."
-msgstr ""
+msgstr "Tabellen nedenfor forklarer informasjonskapsler vi bruker og hvorfor."
 
 #: ../../templates/cookie_disclaimer.inc.php:13
 msgid "Cookie"
-msgstr ""
+msgstr "cookie"
 
 #: ../../templates/cookie_disclaimer.inc.php:19
 msgid "Purpose"
-msgstr ""
+msgstr "Hensikt"
 
 #: ../../templates/cookie_disclaimer.inc.php:27
 msgid "Hide the cookie disclaimer message."
-msgstr ""
+msgstr "Skjul informasjonen om informasjonskapsler om informasjonskapsler."
 
 #: ../../templates/cookie_disclaimer.inc.php:32
-#, fuzzy
 msgid "Ampache session."
-msgstr "Installasjon av Ampache"
+msgstr "Ampache økt."
 
 #: ../../templates/cookie_disclaimer.inc.php:37
 msgid "Ampache session username (if authenticated, information only)."
-msgstr ""
+msgstr "Ampache økt brukernavn (hvis godkjent, kun informasjon)."
 
 #: ../../templates/cookie_disclaimer.inc.php:42
 msgid "Automatically authenticate users."
-msgstr ""
+msgstr "Autentiserer brukere automatisk."
 
 #: ../../templates/cookie_disclaimer.inc.php:47
 msgid "Keep latest web player volume."
-msgstr ""
+msgstr "Hold det siste nettleservolumet."
 
 #: ../../templates/cookie_disclaimer.inc.php:52
 msgid "Show/Hide column [column_index] when browsing [object_type] objects."
 msgstr ""
+"Vis / skjul kolonne [column_index] når du surfer på [object_type] objekter."
 
 #: ../../templates/cookie_disclaimer.inc.php:57
 msgid "Use alphabet when browsing [object_type] objects."
-msgstr ""
+msgstr "Bruk alfabet når du surfer på [object_type] objekter."
 
 #: ../../templates/cookie_disclaimer.inc.php:62
 msgid "Use pages when browsing [object_type] objects."
-msgstr ""
+msgstr "Bruk sider når du surfer på [object_type] objekter."
 
 #: ../../templates/cookie_disclaimer.inc.php:67
 msgid "Collapse/Expand Sidebar [menu_section]."
-msgstr ""
+msgstr "Skjul / Utvid sidefelt [menu_section]."
 
 #: ../../templates/cookie_disclaimer.inc.php:72
 msgid "Collapse/Expand Sidebar."
-msgstr ""
+msgstr "Skjul / Utvid sidebjelke."
 
 #: ../../templates/error_page.inc.php:32
-#, fuzzy
 msgid "Ampache error page"
-msgstr "Ampache Oppdatering"
+msgstr "Ampache feil side"
 
 #: ../../templates/error_page.inc.php:44
 #: ../../templates/show_mail_users.inc.php:43
 #: ../../templates/show_test.inc.php:38 ../../update.php:72
 msgid "aMuzak"
-msgstr ""
+msgstr "aMuzak"
 
 #: ../../templates/error_page.inc.php:51
 msgid ""
-"The following error has occured, you will automaticly be redirected after 10 "
-"seconds."
+"The following error has occured, you will automaticly be redirected after 10"
+" seconds."
 msgstr ""
+"Følgende feil har oppstått, du blir automatisk omdirigert etter 10 sekunder."
 
 #: ../../templates/error_page.inc.php:53
 msgid "Error messages"
-msgstr ""
+msgstr "Feilmeldinger"
 
 #: ../../templates/footer.inc.php:49
 #: ../../templates/show_lostpassword_form.inc.php:66
 msgid "Queries:"
-msgstr "Spørringer:"
+msgstr "spørsmål:"
 
 #: ../../templates/footer.inc.php:49
 #: ../../templates/show_lostpassword_form.inc.php:67
 msgid "Cache Hits:"
-msgstr "Mellomlager treff:"
+msgstr "Cache Hits:"
 
 #: ../../templates/footer.inc.php:53
 msgid "Load time:"
-msgstr ""
+msgstr "Lastetid:"
 
 #: ../../templates/header.inc.php:98
 msgid "Save"
-msgstr ""
+msgstr "Lagre"
 
 #: ../../templates/header.inc.php:99
 #: ../../templates/show_confirmation.inc.php:35
@@ -3342,18 +3286,22 @@ msgstr "Avbryt"
 #: ../../templates/header.inc.php:301
 #, php-format
 msgid ""
-"We have placed cookies on your computer to help make this website better. "
-"You can change your %s at any time.\n"
+"We have placed cookies on your computer to help make this website better. You can change your %s at any time.\n"
 "Otherwise, we will assume you are OK to continue.\n"
 "\n"
 "Click on this message to not display it again."
 msgstr ""
+"Vi har lagt inn informasjonskapsler på datamaskinen din for å gjøre dette nettstedet bedre. Du kan når som helst endre %s.\n"
+"Ellers vil vi anta at du er OK for å fortsette.\n"
+"\n"
+"Klikk på denne meldingen for å ikke vise den igjen."
 
 #: ../../templates/header.inc.php:302
 msgid "cookie settings"
-msgstr ""
+msgstr "informasjonskapselinnstillinger"
 
-#: ../../templates/header.inc.php:338 ../../templates/show_album_row.inc.php:32
+#: ../../templates/header.inc.php:338
+#: ../../templates/show_album_row.inc.php:32
 #: ../../templates/show_artist_row.inc.php:32
 #: ../../templates/show_playlist_row.inc.php:30
 #: ../../templates/show_podcast_episode.inc.php:66
@@ -3361,9 +3309,8 @@ msgstr ""
 #: ../../templates/show_recently_played.inc.php:99
 #: ../../templates/show_song.inc.php:78
 #: ../../templates/show_song_row.inc.php:38
-#, fuzzy
 msgid "Play next"
-msgstr "Spilt"
+msgstr "Spill neste"
 
 #: ../../templates/header.inc.php:341 ../../templates/show_album.inc.php:120
 #: ../../templates/show_album.inc.php:123
@@ -3377,9 +3324,8 @@ msgstr "Spilt"
 #: ../../templates/show_search_row.inc.php:41
 #: ../../templates/show_song_preview_row.inc.php:47
 #: ../../templates/show_song_row.inc.php:54
-#, fuzzy
 msgid "Add to existing playlist"
-msgstr "Legg til i ny spilleliste"
+msgstr "Legg til i eksisterende spilleliste"
 
 #: ../../templates/header.inc.php:373
 #: ../../templates/show_login_form.inc.php:73
@@ -3393,21 +3339,19 @@ msgstr "Registrer"
 
 #: ../../templates/header.inc.php:517
 msgid "Error: Your config file is out of date!"
-msgstr ""
+msgstr "Feil: Din config-fil er utdatert!"
 
 #: ../../templates/header.inc.php:519
-#, fuzzy
 msgid "Generate and download new config file"
-msgstr "Generer konfigurasjonsfil"
+msgstr "Generer og last ned ny config-fil"
 
 #: ../../templates/header.inc.php:520
 msgid "Write new config file to disk"
-msgstr ""
+msgstr "Skriv ny config-fil til disk"
 
 #: ../../templates/install_header.inc.php:52
-#, fuzzy
 msgid "aMuzak Installation"
-msgstr "Installasjon av Ampache"
+msgstr "aMuzak Installasjon"
 
 #: ../../templates/list_header.inc.php:116
 msgid "Prev"
@@ -3415,42 +3359,39 @@ msgstr "Forrige"
 
 #: ../../templates/list_header.inc.php:118
 msgid "Page"
-msgstr ""
+msgstr "Side"
 
 #: ../../templates/list_header.inc.php:120
 msgid "of"
-msgstr ""
+msgstr "av"
 
 #: ../../templates/list_header.inc.php:122
 msgid "Next"
-msgstr "Neste"
+msgstr "neste"
 
 #: ../../templates/list_header.inc.php:133
 msgid "Pages"
-msgstr ""
+msgstr "sider"
 
 #: ../../templates/list_header.inc.php:134
 msgid "Infinite Scroll"
-msgstr ""
+msgstr "Uendelig rulling"
 
 #: ../../templates/list_header.inc.php:135
-#, fuzzy
 msgid "Grid View"
-msgstr "Vis"
+msgstr "Rutenett visning"
 
 #: ../../templates/list_header.inc.php:138
 msgid "Alphabet"
-msgstr ""
+msgstr "Alfabet"
 
 #: ../../templates/list_header.inc.php:146
-#, fuzzy
 msgid "Limit"
-msgstr "Bitrate grense"
+msgstr "Grense"
 
 #: ../../templates/list_header.inc.php:155
-#, fuzzy
 msgid "Item Count"
-msgstr "Antall objekt"
+msgstr "Vare Count"
 
 #: ../../templates/rightbar.inc.php:30
 msgid "Add to Playlist"
@@ -3472,7 +3413,7 @@ msgstr "Legg til i ny spilleliste"
 #: ../../templates/show_search_options.inc.php:34
 #: ../../templates/show_search_row.inc.php:54
 msgid "Batch Download"
-msgstr "Samlet nedlasting"
+msgstr "Batch nedlasting"
 
 #: ../../templates/rightbar.inc.php:60
 #: ../../templates/show_democratic.inc.php:49
@@ -3485,28 +3426,24 @@ msgid "Add Dynamic Items"
 msgstr "Legg til dynamiske objekter"
 
 #: ../../templates/rightbar.inc.php:66
-#, fuzzy
 msgid "Random Song"
-msgstr "Tilfeldig"
+msgstr "Tilfeldig sang"
 
 #: ../../templates/rightbar.inc.php:69
-#, fuzzy
 msgid "Random Artist"
-msgstr "Rediger Artist"
+msgstr "Tilfeldig kunstner"
 
 #: ../../templates/rightbar.inc.php:72
-#, fuzzy
 msgid "Random Album"
-msgstr "Tilfeldig avspilling"
+msgstr "Tilfeldig album"
 
 #: ../../templates/rightbar.inc.php:75
-#, fuzzy
 msgid "Random Playlist"
-msgstr "Tilfeldig avspilling"
+msgstr "Tilfeldig spilleliste"
 
 #: ../../templates/rightbar.inc.php:117
 msgid "No items"
-msgstr ""
+msgstr "Ingen ting"
 
 #: ../../templates/show_access_list.inc.php:23
 #: ../../templates/sidebar_admin.inc.php:37
@@ -3523,7 +3460,7 @@ msgstr "Legg til API / RPC Vert"
 
 #: ../../templates/show_access_list.inc.php:33
 msgid "Add Local Network Definition"
-msgstr "Legg til lokal nettverksdefinisjon"
+msgstr "Legg til lokalt nettverksdefinisjon"
 
 #: ../../templates/show_access_list.inc.php:35
 msgid "Advanced Add"
@@ -3620,7 +3557,7 @@ msgstr "E-post"
 #: ../../templates/show_podcast_episode.inc.php:116
 #: ../../templates/show_user_registration.inc.php:108
 msgid "Website"
-msgstr ""
+msgstr "nettsted"
 
 #: ../../templates/show_account.inc.php:59
 #: ../../templates/show_edit_user.inc.php:69
@@ -3628,15 +3565,14 @@ msgstr ""
 #: ../../templates/show_podcast_episodes.inc.php:36
 #: ../../templates/show_podcast_episodes.inc.php:92
 #: ../../templates/show_user_registration.inc.php:119
-#, fuzzy
 msgid "State"
-msgstr "Status"
+msgstr "Stat"
 
 #: ../../templates/show_account.inc.php:69
 #: ../../templates/show_edit_user.inc.php:78
 #: ../../templates/show_user_registration.inc.php:130
 msgid "City"
-msgstr ""
+msgstr "By"
 
 #: ../../templates/show_account.inc.php:77
 msgid "New Password"
@@ -3648,33 +3584,32 @@ msgstr "Nytt passord"
 #: ../../templates/show_install_account.inc.php:63
 #: ../../templates/show_user_registration.inc.php:144
 msgid "Confirm Password"
-msgstr "Bekreft passord"
+msgstr "bekreft passord"
 
 #: ../../templates/show_account.inc.php:91
 #: ../../templates/show_add_user.inc.php:95
 #: ../../templates/show_edit_user.inc.php:119
 msgid "Avatar"
-msgstr ""
+msgstr "Avatar"
 
 #: ../../templates/show_account.inc.php:101
 #: ../../templates/show_edit_user.inc.php:132
 msgid "API Key"
-msgstr ""
+msgstr "API-nøkkel"
 
 #: ../../templates/show_account.inc.php:129
 #: ../../templates/show_edit_user.inc.php:157
 #: ../../templates/show_manage_catalogs.inc.php:45
 msgid "Clear Stats"
-msgstr "Rensk Statistikk"
+msgstr "Klare statistikk"
 
 #: ../../templates/show_account.inc.php:139
 msgid "Update Account"
 msgstr "Oppdater konto"
 
 #: ../../templates/show_add_access.inc.php:24
-#, fuzzy
 msgid "Add Access Control List"
-msgstr "Rediger lister for tilgangskontroll"
+msgstr "Legg til tilgangskontrollliste"
 
 #: ../../templates/show_add_access.inc.php:50
 #: ../../templates/show_edit_access.inc.php:31
@@ -3687,12 +3622,12 @@ msgstr "ACL type"
 #: ../../templates/show_add_access.inc.php:67
 #, php-format
 msgid "%s + %s"
-msgstr ""
+msgstr "%s + %s"
 
 #: ../../templates/show_add_access.inc.php:86
 #: ../../templates/show_edit_access.inc.php:43
 msgid "IPv4 or IPv6 Addresses"
-msgstr "IPv4 eller IPv6 adresser"
+msgstr "IPv4- eller IPv6-adresser"
 
 #: ../../templates/show_add_access.inc.php:92
 #: ../../templates/show_edit_access.inc.php:48
@@ -3715,11 +3650,11 @@ msgstr "Legg til katalog"
 
 #: ../../templates/show_add_catalog.inc.php:27
 msgid ""
-"In the form below enter either a local path (i.e. /data/music) or the URL to "
-"a remote Ampache installation (i.e http://theotherampache.com)"
+"In the form below enter either a local path (i.e. /data/music) or the URL to"
+" a remote Ampache installation (i.e http://theotherampache.com)"
 msgstr ""
-"I skjemaet under legger du inn enten en lokal mappebane (f.eks. /srv/musikk) "
-"eller en URL til en Ampache-tjener (f,eks, http://denandreampachen.com)"
+"I skjemaet under legger du inn enten en lokal mappebane (f.eks. /srv/musikk)"
+" eller en URL til en Ampache-tjener (f,eks, http://denandreampachen.com)"
 
 #: ../../templates/show_add_catalog.inc.php:34
 msgid "Catalog Name"
@@ -3728,17 +3663,17 @@ msgstr "Katalognavn"
 #: ../../templates/show_add_catalog.inc.php:37
 #: ../../templates/show_edit_catalog.inc.php:31
 msgid "Auto-inserted Fields"
-msgstr "Automatiske felt"
+msgstr "Automatisk innsatte felt"
 
 #: ../../templates/show_add_catalog.inc.php:38
 #: ../../templates/show_edit_catalog.inc.php:32
 msgid "album name"
-msgstr "album navn"
+msgstr "albumnavn"
 
 #: ../../templates/show_add_catalog.inc.php:39
 #: ../../templates/show_edit_catalog.inc.php:33
 msgid "artist name"
-msgstr "artist navn"
+msgstr "artistnavn"
 
 #: ../../templates/show_add_catalog.inc.php:40
 #: ../../templates/show_edit_catalog.inc.php:34
@@ -3748,12 +3683,12 @@ msgstr "id3 kommentar"
 #: ../../templates/show_add_catalog.inc.php:41
 #: ../../templates/show_edit_catalog.inc.php:35
 msgid "track number (padded with leading 0)"
-msgstr "spor nummer (0 lagt til i starten)"
+msgstr "spor nummer (polstret med ledende 0)"
 
 #: ../../templates/show_add_catalog.inc.php:42
 #: ../../templates/show_edit_catalog.inc.php:36
 msgid "song title"
-msgstr "spor tittel"
+msgstr "sang tittel"
 
 #: ../../templates/show_add_catalog.inc.php:43
 #: ../../templates/show_edit_catalog.inc.php:37
@@ -3768,7 +3703,7 @@ msgstr "annen"
 #: ../../templates/show_add_catalog.inc.php:48
 #: ../../templates/show_edit_catalog.inc.php:42
 msgid "Catalog Type"
-msgstr "Katalog type"
+msgstr "Katalogtype"
 
 #: ../../templates/show_add_catalog.inc.php:52
 msgid "Filename Pattern"
@@ -3777,12 +3712,12 @@ msgstr "Filnavn mønster"
 #: ../../templates/show_add_catalog.inc.php:56
 #: ../../templates/show_edit_catalog.inc.php:53
 msgid "Folder Pattern"
-msgstr "Mappenavn mønster"
+msgstr "Mappe mønster"
 
 #: ../../templates/show_add_catalog.inc.php:56
 #: ../../templates/show_edit_catalog.inc.php:53
 msgid "(no leading or ending '/')"
-msgstr "(ingen '/' i begynnelse eller slutt)"
+msgstr "(ingen ledende eller sluttende '/')"
 
 #: ../../templates/show_add_catalog.inc.php:60
 #: ../../templates/show_catalog_row.inc.php:47
@@ -3790,57 +3725,52 @@ msgid "Gather Art"
 msgstr "Hent albumbilder"
 
 #: ../../templates/show_add_catalog.inc.php:64
-#, fuzzy
 msgid "Build Playlists from playlist Files"
-msgstr "Importerer spilleliste fra fil"
+msgstr "Bygg spillelister fra spillelistefiler"
 
 #: ../../templates/show_add_catalog.inc.php:68
 msgid "Gather media types"
-msgstr ""
+msgstr "Samle medietyper"
 
 #: ../../templates/show_add_catalog.inc.php:89
 msgid "Add Catalog"
 msgstr "Legg til katalog"
 
 #: ../../templates/show_add_label.inc.php:23
-#, fuzzy
 msgid "Add Label"
-msgstr "Legg til tilgangskontroll"
+msgstr "Legg til etikett"
 
 #: ../../templates/show_add_label.inc.php:39
 #: ../../templates/show_edit_label_row.inc.php:36
 msgid "Personal"
-msgstr ""
+msgstr "Personlig"
 
 #: ../../templates/show_add_label.inc.php:42
 #: ../../templates/show_edit_label_row.inc.php:39
-#, fuzzy
 msgid "Association"
-msgstr "Handling"
+msgstr "assosiasjon"
 
 #: ../../templates/show_add_label.inc.php:45
 #: ../../templates/show_edit_label_row.inc.php:42
 msgid "Company"
-msgstr ""
+msgstr "Selskap"
 
 #: ../../templates/show_add_label.inc.php:50
 #: ../../templates/show_edit_artist_row.inc.php:43
 #: ../../templates/show_edit_label_row.inc.php:47
 msgid "Summary"
-msgstr ""
+msgstr "Sammendrag"
 
 #: ../../templates/show_add_label.inc.php:57
 #: ../../templates/show_edit_label_row.inc.php:51
-#, fuzzy
 msgid "Address"
-msgstr "IP Adresse"
+msgstr "Adresse"
 
 #: ../../templates/show_add_label.inc.php:64
 #: ../../templates/show_edit_label_row.inc.php:55
 #: ../../templates/show_lostpassword_form.inc.php:56
-#, fuzzy
 msgid "Email"
-msgstr "E-post"
+msgstr "e-post"
 
 #: ../../templates/show_add_live_stream.inc.php:23
 #: ../../templates/show_live_streams.inc.php:29
@@ -3850,7 +3780,7 @@ msgstr "Legg til nettradio"
 #: ../../templates/show_add_live_stream.inc.php:34
 #: ../../templates/show_edit_live_stream_row.inc.php:35
 msgid "Homepage"
-msgstr "Hjemmeside"
+msgstr "hjemmeside"
 
 #: ../../templates/show_add_live_stream.inc.php:41
 #: ../../templates/show_edit_live_stream_row.inc.php:31
@@ -3879,26 +3809,25 @@ msgstr "Lag"
 
 #: ../../templates/show_add_podcast.inc.php:23
 msgid "Subscribe to Podcast"
-msgstr ""
+msgstr "Abonner på Podcast"
 
 #: ../../templates/show_add_podcast.inc.php:27
 msgid "Podcast feed url"
-msgstr ""
+msgstr "Podcast-feedsadressen"
 
 #: ../../templates/show_add_podcast.inc.php:43
 msgid "Subscribe"
-msgstr ""
+msgstr "Abonnere"
 
 #: ../../templates/show_add_pvmsg.inc.php:24
-#, fuzzy
 msgid "Compose Message"
-msgstr "Melding"
+msgstr "Skriv melding"
 
 #: ../../templates/show_add_pvmsg.inc.php:28
 #: ../../templates/show_pvmsgs.inc.php:52
 #: ../../templates/show_pvmsgs.inc.php:81
 msgid "Recipient"
-msgstr ""
+msgstr "Mottaker"
 
 #: ../../templates/show_add_pvmsg.inc.php:35
 #: ../../templates/show_mail_users.inc.php:48
@@ -3913,19 +3842,18 @@ msgid "Message"
 msgstr "Melding"
 
 #: ../../templates/show_add_pvmsg.inc.php:51
-#, fuzzy
 msgid "Send"
-msgstr "Send epost"
+msgstr "Sende"
 
 #: ../../templates/show_adds_catalog.inc.php:23
 msgid "Starting New Media Search"
-msgstr ""
+msgstr "Starte nytt mediesøk"
 
 #. HINT: Catalog Name
 #: ../../templates/show_adds_catalog.inc.php:25
 #, php-format
 msgid "Starting New Media Search on %s catalog"
-msgstr ""
+msgstr "Starte nytt mediesøk på %s katalog"
 
 #: ../../templates/show_adds_catalog.inc.php:27
 #: ../../templates/show_run_add_catalog.inc.php:25
@@ -3941,46 +3869,35 @@ msgid "Reading"
 msgstr "Leser"
 
 #: ../../templates/show_add_share.inc.php:23
-#, fuzzy
 msgid "Create Share"
-msgstr "Lag"
+msgstr "Opprett Share"
 
 #: ../../templates/show_add_share.inc.php:29
 #: ../../templates/show_edit_share_row.inc.php:27
-#, fuzzy
 msgid "Shared Object"
-msgstr "Objekt"
+msgstr "Delt objekt"
 
 #: ../../templates/show_add_share.inc.php:42
 #: ../../templates/show_edit_share_row.inc.php:31
 #: ../../templates/show_shared_objects.inc.php:32
 msgid "Max Counter"
-msgstr ""
+msgstr "Max Counter"
 
 #: ../../templates/show_add_share.inc.php:49
 #: ../../templates/show_edit_share_row.inc.php:35
 #: ../../templates/show_shared_objects.inc.php:35
 msgid "Expiry Days"
-msgstr ""
+msgstr "Utløpsdager"
 
 #: ../../templates/show_add_share.inc.php:55
 #: ../../templates/show_edit_share_row.inc.php:40
 #: ../../templates/show_shared_objects.inc.php:33
-#, fuzzy
 msgid "Allow Stream"
-msgstr "Tillat streaming"
+msgstr "Tillat strøm"
 
-# This file lists all description strings from your Ampache-database ->
-# preference-table.
-# Please do not delete or modify the content by yourself. It will be
-# automatically (re)generated
-# if you run './gather-messages.sh [-gu|--getutds].
-# Last Update: 26.10.2018 18:02:37 CEST
-#
 #: ../../templates/show_add_share.inc.php:63
 #: ../../templates/show_edit_share_row.inc.php:47
 #: ../../templates/show_shared_objects.inc.php:34
-#, fuzzy
 msgid "Allow Download"
 msgstr "Tillat nedlasting"
 
@@ -3995,9 +3912,8 @@ msgstr "Kommentar:"
 
 #: ../../templates/show_add_shout.inc.php:46
 #: ../../templates/show_edit_shout.inc.php:39
-#, fuzzy
 msgid "Stick this comment"
-msgstr "id3 kommentar"
+msgstr "Hold denne kommentaren"
 
 #: ../../templates/show_add_shout.inc.php:67
 #: ../../templates/show_shoutbox.inc.php:23
@@ -4007,24 +3923,23 @@ msgstr "Shoutbox"
 #: ../../templates/show_add_upload.inc.php:38
 #: ../../templates/show_add_upload.inc.php:156
 msgid "Target folder"
-msgstr ""
+msgstr "Målmappe"
 
 #: ../../templates/show_add_upload.inc.php:211
-#, fuzzy
 msgid "Files"
-msgstr "Filnavn"
+msgstr "filer"
 
 #: ../../templates/show_add_upload.inc.php:218
 msgid "Allowed file type"
-msgstr ""
+msgstr "Tillatt filtype"
 
 #: ../../templates/show_add_upload.inc.php:223
 msgid "Drop File Here"
-msgstr ""
+msgstr "Slett fil her"
 
 #: ../../templates/show_add_upload.inc.php:224
 msgid "Browse"
-msgstr "Bla"
+msgstr "Søk"
 
 #: ../../templates/show_add_user.inc.php:23
 msgid "Adding a New User"
@@ -4033,7 +3948,7 @@ msgstr "Legger til ny bruker"
 #: ../../templates/show_add_user.inc.php:80
 #: ../../templates/show_edit_user.inc.php:104
 msgid "User Access Level"
-msgstr "Tilgangsnivå for bruker"
+msgstr "Brukertilgangsnivå"
 
 #: ../../templates/show_add_user.inc.php:105
 #: ../../templates/sidebar_admin.inc.php:33
@@ -4041,33 +3956,36 @@ msgid "Add User"
 msgstr "Legg til bruker"
 
 #: ../../templates/show_album_group_disks.inc.php:45
-#: ../../templates/show_album.inc.php:50 ../../templates/show_artist.inc.php:43
+#: ../../templates/show_album.inc.php:50
+#: ../../templates/show_artist.inc.php:43
 #: ../../templates/show_label.inc.php:35 ../../templates/show_song.inc.php:146
-#, fuzzy
 msgid "Search on Google ..."
-msgstr "Søk..."
+msgstr "Søk på Google ..."
 
 #: ../../templates/show_album_group_disks.inc.php:46
-#: ../../templates/show_album.inc.php:51 ../../templates/show_artist.inc.php:44
+#: ../../templates/show_album.inc.php:51
+#: ../../templates/show_artist.inc.php:44
 #: ../../templates/show_label.inc.php:36 ../../templates/show_song.inc.php:147
 msgid "Search on DuckDuckGo ..."
-msgstr ""
+msgstr "Søk på DuckDuckGo ..."
 
 #: ../../templates/show_album_group_disks.inc.php:47
-#: ../../templates/show_album.inc.php:52 ../../templates/show_artist.inc.php:45
+#: ../../templates/show_album.inc.php:52
+#: ../../templates/show_artist.inc.php:45
 #: ../../templates/show_label.inc.php:37
 msgid "Search on Wikipedia ..."
-msgstr ""
+msgstr "Søk på Wikipedia ..."
 
 #: ../../templates/show_album_group_disks.inc.php:48
-#: ../../templates/show_album.inc.php:53 ../../templates/show_artist.inc.php:46
+#: ../../templates/show_album.inc.php:53
+#: ../../templates/show_artist.inc.php:46
 #: ../../templates/show_label.inc.php:38 ../../templates/show_song.inc.php:148
-#, fuzzy
 msgid "Search on Last.fm ..."
-msgstr "Søk..."
+msgstr "Søk på Last.fm ..."
 
 #: ../../templates/show_album_group_disks.inc.php:59
-#: ../../templates/show_album.inc.php:89 ../../templates/show_albums.inc.php:63
+#: ../../templates/show_album.inc.php:89
+#: ../../templates/show_albums.inc.php:63
 #: ../../templates/show_albums.inc.php:137
 #: ../../templates/show_artist.inc.php:84
 #: ../../templates/show_catalogs.inc.php:34
@@ -4085,7 +4003,7 @@ msgstr "Søk..."
 #: ../../templates/show_searches.inc.php:78
 #: ../../templates/show_shared_objects.inc.php:37
 msgid "Actions"
-msgstr "Handlinger"
+msgstr "handlinger"
 
 #: ../../templates/show_album_group_disks.inc.php:84
 #: ../../templates/show_album_group_disks.inc.php:85
@@ -4096,7 +4014,7 @@ msgstr "Handlinger"
 #: ../../templates/show_artist_row.inc.php:55
 #: ../../templates/show_playlist_row.inc.php:53
 msgid "Random to temporary playlist"
-msgstr ""
+msgstr "Tilfeldig til midlertidig spilleliste"
 
 #: ../../templates/show_album_group_disks.inc.php:92
 #: ../../templates/show_album_group_disks.inc.php:93
@@ -4116,7 +4034,7 @@ msgstr ""
 #: ../../templates/show_song.inc.php:102
 #: ../../templates/show_song_row.inc.php:103
 msgid "Download"
-msgstr "Last ned"
+msgstr "nedlasting"
 
 #: ../../templates/show_album_group_disks.inc.php:149
 #: ../../templates/show_album.inc.php:159
@@ -4124,13 +4042,12 @@ msgstr "Last ned"
 #: ../../templates/show_playlist.inc.php:61
 #: ../../templates/show_playlist.inc.php:62
 msgid "Save Tracks Order"
-msgstr ""
+msgstr "Lagre sporbestilling"
 
 #: ../../templates/show_album_group_disks.inc.php:151
 #: ../../templates/show_album.inc.php:164
-#, fuzzy
 msgid "Do you really want to update from tags?"
-msgstr "Vil du virkelig slette denne katalogen?"
+msgstr "Vil du virkelig oppdatere fra tagger?"
 
 #: ../../templates/show_album_group_disks.inc.php:152
 #: ../../templates/show_album.inc.php:164
@@ -4141,13 +4058,13 @@ msgstr "Oppdater fra tag-informasjon"
 #: ../../templates/show_album.inc.php:181
 #: ../../templates/show_album.inc.php:184
 #: ../../templates/show_album_row.inc.php:110
-#, fuzzy
 msgid "Album edit"
-msgstr "Albumbilde"
+msgstr "Album redigere"
 
-#: ../../templates/show_album.inc.php:83 ../../templates/show_artist.inc.php:78
+#: ../../templates/show_album.inc.php:83
+#: ../../templates/show_artist.inc.php:78
 msgid "times"
-msgstr ""
+msgstr "ganger"
 
 #: ../../templates/show_album.inc.php:151
 #: ../../templates/show_album.inc.php:152
@@ -4158,7 +4075,7 @@ msgstr ""
 #: ../../templates/show_podcast.inc.php:85
 #: ../../templates/show_song.inc.php:109 ../../templates/show_user.inc.php:65
 msgid "Graphs"
-msgstr ""
+msgstr "grafer"
 
 #: ../../templates/show_album.inc.php:185
 msgid "Edit Album"
@@ -4181,9 +4098,8 @@ msgstr "Rediger album"
 #: ../../templates/show_podcasts.inc.php:96
 #: ../../templates/show_recommended_artists.inc.php:32
 #: ../../templates/show_recommended_artists.inc.php:90
-#, fuzzy
 msgid "Art"
-msgstr "Artist"
+msgstr "Kunst"
 
 #: ../../templates/show_albums.inc.php:48
 #: ../../templates/show_albums.inc.php:122
@@ -4195,7 +4111,8 @@ msgstr "Artist"
 #: ../../templates/show_now_playing_row.inc.php:54
 #: ../../templates/show_recommended_artists.inc.php:41
 #: ../../templates/show_recommended_artists.inc.php:98
-#: ../../templates/show_songs.inc.php:37 ../../templates/show_songs.inc.php:100
+#: ../../templates/show_songs.inc.php:37
+#: ../../templates/show_songs.inc.php:100
 #: ../../templates/show_stats.inc.php:36
 msgid "Tags"
 msgstr "Tags"
@@ -4219,7 +4136,7 @@ msgstr "Tags"
 #: ../../templates/show_song.inc.php:34 ../../templates/show_songs.inc.php:54
 #: ../../templates/show_songs.inc.php:116
 msgid "Rating"
-msgstr "Kvalitet"
+msgstr "Vurdering"
 
 #: ../../templates/show_albums.inc.php:58
 #: ../../templates/show_albums.inc.php:132
@@ -4239,17 +4156,18 @@ msgstr "Kvalitet"
 #: ../../templates/show_recommended_artists.inc.php:106
 #: ../../templates/show_song.inc.php:45 ../../templates/show_songs.inc.php:60
 msgid "Fav."
-msgstr ""
+msgstr "Fav."
 
 #: ../../templates/show_albums.inc.php:99
 msgid "No album found"
-msgstr ""
+msgstr "Ingen album funnet"
 
 #: ../../templates/show_artist.inc.php:49
 #: ../../templates/show_artist.inc.php:243
 #: ../../templates/show_artist.inc.php:253
 #: ../../templates/show_artist.inc.php:263
-#: ../../templates/show_index.inc.php:51 ../../templates/show_label.inc.php:107
+#: ../../templates/show_index.inc.php:51
+#: ../../templates/show_label.inc.php:107
 #: ../../templates/show_now_playing_row.inc.php:83
 #: ../../templates/show_now_playing_row.inc.php:89
 msgid "Loading..."
@@ -4257,15 +4175,13 @@ msgstr "Laster..."
 
 #: ../../templates/show_artist.inc.php:90
 #: ../../templates/show_artist.inc.php:92
-#, fuzzy
 msgid "Show all"
-msgstr "Vis alle"
+msgstr "Vis alt"
 
 #: ../../templates/show_artist.inc.php:98
 #: ../../templates/show_artist.inc.php:100
-#, fuzzy
 msgid "Show albums"
-msgstr "Vis kataloger"
+msgstr "Vis albumene"
 
 #: ../../templates/show_artist.inc.php:107
 #: ../../templates/show_artist.inc.php:108
@@ -4273,9 +4189,8 @@ msgstr "Vis kataloger"
 #: ../../templates/show_playlist.inc.php:89
 #: ../../templates/show_podcast.inc.php:66
 #: ../../templates/show_podcast.inc.php:67
-#, fuzzy
 msgid "Play all"
-msgstr "Spill"
+msgstr "Spill alt"
 
 #: ../../templates/show_artist.inc.php:113
 #: ../../templates/show_artist.inc.php:114
@@ -4283,18 +4198,16 @@ msgstr "Spill"
 #: ../../templates/show_playlist.inc.php:97
 #: ../../templates/show_podcast.inc.php:74
 #: ../../templates/show_podcast.inc.php:75
-#, fuzzy
 msgid "Play all last"
-msgstr "Spilleliste"
+msgstr "Spill alle sist"
 
 #. HINT: Artist Fullname
 #: ../../templates/show_artist.inc.php:124
 #: ../../templates/show_artist.inc.php:125
 #: ../../templates/show_playlist.inc.php:102
 #: ../../templates/show_playlist.inc.php:103
-#, fuzzy
 msgid "Add all to temporary playlist"
-msgstr "Legg til i ny spilleliste"
+msgstr "Legg alt til midlertidig spilleliste"
 
 #. HINT: Artist Fullname
 #: ../../templates/show_artist.inc.php:129
@@ -4302,14 +4215,13 @@ msgstr "Legg til i ny spilleliste"
 #: ../../templates/show_playlist.inc.php:106
 #: ../../templates/show_playlist.inc.php:107
 msgid "Random all to temporary playlist"
-msgstr ""
+msgstr "Tilfeldig alt til midlertidig spilleliste"
 
 #: ../../templates/show_artist.inc.php:174
 #: ../../templates/show_artist.inc.php:177
 #: ../../templates/show_artist_row.inc.php:90
-#, fuzzy
 msgid "Artist edit"
-msgstr "Artist og Tittel"
+msgstr "Artist redigere"
 
 #: ../../templates/show_artist.inc.php:178
 msgid "Edit Artist"
@@ -4326,7 +4238,7 @@ msgstr "Lignende artister"
 #: ../../templates/show_artist.inc.php:206
 #: ../../templates/show_artist.inc.php:252
 msgid "Events"
-msgstr ""
+msgstr "arrangementer"
 
 #: ../../templates/show_artists.inc.php:44
 #: ../../templates/show_artists.inc.php:118
@@ -4338,24 +4250,22 @@ msgstr ""
 #: ../../templates/show_podcast_episodes.inc.php:90
 #: ../../templates/show_recommended_artists.inc.php:40
 #: ../../templates/show_recommended_artists.inc.php:97
-#: ../../templates/show_songs.inc.php:38 ../../templates/show_songs.inc.php:101
+#: ../../templates/show_songs.inc.php:38
+#: ../../templates/show_songs.inc.php:101
 msgid "Time"
 msgstr "Tid"
 
 #: ../../templates/show_artists.inc.php:101
-#, fuzzy
 msgid "No artist found"
-msgstr "Ingen oppføringer funnet"
+msgstr "Ingen artist funnet"
 
 #: ../../templates/show_arts.inc.php:28
-#, fuzzy
 msgid "Select New Art"
-msgstr "Velg"
+msgstr "Velg Ny kunst"
 
 #: ../../templates/show_arts.inc.php:52
-#, fuzzy
 msgid "Invalid"
-msgstr "Ugyldig forespørsel"
+msgstr "Ugyldig"
 
 #: ../../templates/show_arts.inc.php:55
 #: ../../templates/show_disabled_songs.inc.php:28
@@ -4366,7 +4276,7 @@ msgstr "Velg"
 
 #: ../../templates/show_big_art.inc.php:31
 msgid "Album Art"
-msgstr "Albumbilde"
+msgstr "Album Art"
 
 #: ../../templates/show_big_art.inc.php:35
 msgid "Click to close window"
@@ -4374,7 +4284,7 @@ msgstr "Klikk for å lukke vinduet"
 
 #: ../../templates/show_catalog_row.inc.php:36
 msgid "Make it ready ..."
-msgstr ""
+msgstr "Gjør det klart ..."
 
 #: ../../templates/show_catalog_row.inc.php:44
 msgid "Verify"
@@ -4396,18 +4306,18 @@ msgstr "Oppdater"
 
 #: ../../templates/show_catalog_row.inc.php:52
 msgid "Go"
-msgstr ""
+msgstr "Gå"
 
 #: ../../templates/show_catalogs.inc.php:30
 #: ../../templates/show_catalogs.inc.php:60
 msgid "Info"
-msgstr ""
+msgstr "info"
 
 #: ../../templates/show_catalogs.inc.php:31
 #: ../../templates/show_catalogs.inc.php:61
 #: ../../templates/show_stats.inc.php:70
 msgid "Last Verify"
-msgstr "Siste verifikasjon"
+msgstr "Sist bekreft"
 
 #: ../../templates/show_catalogs.inc.php:32
 #: ../../templates/show_catalogs.inc.php:62
@@ -4418,14 +4328,12 @@ msgstr "Siste legg til"
 #: ../../templates/show_catalogs.inc.php:33
 #: ../../templates/show_catalogs.inc.php:63
 #: ../../templates/show_stats.inc.php:72
-#, fuzzy
 msgid "Last Clean"
-msgstr "Sist sett"
+msgstr "Siste ren"
 
 #: ../../templates/show_catalogs.inc.php:51
-#, fuzzy
 msgid "No catalog found"
-msgstr "Ingen deaktiverte spor funnet"
+msgstr "Ingen katalog funnet"
 
 #: ../../templates/show_catalog_types.inc.php:30
 #: ../../templates/show_catalog_types.inc.php:68
@@ -4456,12 +4364,11 @@ msgstr "Aktiver"
 #: ../../templates/show_manage_shoutbox.inc.php:52
 #: ../../templates/show_plugins.inc.php:64
 msgid "No Records Found"
-msgstr "Ingen oppføringer funnet"
+msgstr "Ingen opptak funnet"
 
 #: ../../templates/show_clean_catalog.inc.php:23
-#, fuzzy
 msgid "Clean Catalog"
-msgstr "Slett katalog"
+msgstr "Rengjør katalog"
 
 #. HINT: Catalog Name
 #: ../../templates/show_clean_catalog.inc.php:25
@@ -4475,7 +4382,7 @@ msgstr "Sjekker"
 
 #: ../../templates/show_concerts.inc.php:23
 msgid "Coming Events"
-msgstr ""
+msgstr "Kommende hendelser"
 
 #: ../../templates/show_concerts.inc.php:27
 #: ../../templates/show_concerts.inc.php:55
@@ -4488,41 +4395,37 @@ msgstr "Dato"
 
 #: ../../templates/show_concerts.inc.php:29
 #: ../../templates/show_concerts.inc.php:57
-#, fuzzy
 msgid "Location"
-msgstr "Handling"
+msgstr "plassering"
 
 #: ../../templates/show_concerts.inc.php:44
 msgid "No coming events found"
-msgstr ""
+msgstr "Ingen kommende hendelser funnet"
 
 #: ../../templates/show_concerts.inc.php:51
-#, fuzzy
 msgid "Past Events"
-msgstr "Sist sett"
+msgstr "Tidligere hendelser"
 
 #: ../../templates/show_concerts.inc.php:72
-#, fuzzy
 msgid "No past events found"
-msgstr "Ingen deaktiverte spor funnet"
+msgstr "Ingen tidligere hendelser funnet"
 
 #: ../../templates/show_confirmation.inc.php:29
 #: ../../templates/show_install_check.inc.php:67
 #: ../../templates/show_update_items.inc.php:28
 msgid "Continue"
-msgstr "Fortsett"
+msgstr "Fortsette"
 
 #: ../../templates/show_create_democratic.inc.php:23
 #: ../../templates/show_democratic.inc.php:38
 #: ../../templates/show_democratic.inc.php:40
-#, fuzzy
 msgid "Configure Democratic Playlist"
-msgstr "Behandle demokratiske spillelister"
+msgstr "Konfigurer demokratisk spilleliste"
 
 #: ../../templates/show_create_democratic.inc.php:31
 #: ../../templates/show_manage_democratic.inc.php:27
 msgid "Base Playlist"
-msgstr "Base for spilleliste"
+msgstr "Base spilleliste"
 
 #: ../../templates/show_create_democratic.inc.php:35
 msgid "Cooldown Time"
@@ -4533,9 +4436,8 @@ msgid "Make Default"
 msgstr "Sett som standard"
 
 #: ../../templates/show_create_democratic.inc.php:64
-#, fuzzy
 msgid "Force Democratic Play"
-msgstr "Tillat demokratisk avspilling"
+msgstr "Force Democratic Play"
 
 #: ../../templates/show_debug.inc.php:23
 msgid "Debug Tools"
@@ -4546,44 +4448,40 @@ msgid "Generate Configuration"
 msgstr "Generer konfigurasjon"
 
 #: ../../templates/show_debug.inc.php:30
-#, fuzzy
 msgid "Write New Config"
-msgstr "Serverkonfigurasjon"
+msgstr "Skriv Ny Konfig"
 
 #: ../../templates/show_debug.inc.php:33
 msgid "Set Database Charset"
 msgstr "Endre databasens tegnsett"
 
 #: ../../templates/show_debug.inc.php:36
-#, fuzzy
 msgid "Clear Songs Cache"
-msgstr "Rensk ved Send"
+msgstr "Fjern Sang Cache"
 
 #: ../../templates/show_debug.inc.php:39
-#, fuzzy
 msgid "Clear Artists Cache"
-msgstr "Lignende artister"
+msgstr "Klar artister Cache"
 
 #: ../../templates/show_debug.inc.php:42
-#, fuzzy
 msgid "Clear Albums Cache"
-msgstr "Søk i Ampache"
+msgstr "Slett Album Cache"
 
 #: ../../templates/show_debug.inc.php:47 ../../update.php:78
 msgid "Ampache Update"
-msgstr "Ampache Oppdatering"
+msgstr "Ampache Update"
 
 #: ../../templates/show_debug.inc.php:48
 msgid "Installed Ampache version"
-msgstr ""
+msgstr "Installert Ampache versjon"
 
 #: ../../templates/show_debug.inc.php:49
 msgid "Latest Ampache version"
-msgstr ""
+msgstr "Siste Ampache-versjonen"
 
 #: ../../templates/show_debug.inc.php:50
 msgid "Force check"
-msgstr ""
+msgstr "Force sjekk"
 
 #: ../../templates/show_debug.inc.php:59
 msgid "PHP Settings"
@@ -4593,7 +4491,8 @@ msgstr "PHP Innstillinger"
 msgid "Setting"
 msgstr "Innstillinger"
 
-#: ../../templates/show_debug.inc.php:68 ../../templates/show_debug.inc.php:121
+#: ../../templates/show_debug.inc.php:68
+#: ../../templates/show_debug.inc.php:121
 #: ../../templates/show_dynamic.inc.php:28
 #: ../../templates/show_preference_box.inc.php:45
 #: ../../templates/show_preference_box.inc.php:96
@@ -4639,7 +4538,7 @@ msgstr "Støtte for Iconv"
 
 #: ../../templates/show_debug.inc.php:105
 msgid "Gettext Support"
-msgstr "Støtte for Gettext"
+msgstr "Gettext Support"
 
 #: ../../templates/show_debug.inc.php:112
 msgid "Current Configuration"
@@ -4652,7 +4551,7 @@ msgstr "Nåværende konfigurasjon"
 #: ../../templates/show_preference_box.inc.php:95
 #: ../../templates/show_user_preferences.inc.php:37
 msgid "Preference"
-msgstr "Innstilling"
+msgstr "Preference"
 
 #: ../../templates/show_democratic.inc.php:23
 #, php-format
@@ -4662,16 +4561,15 @@ msgstr "%s Playlist"
 #: ../../templates/show_democratic.inc.php:31
 #: ../../templates/show_manage_democratic.inc.php:28
 msgid "Cooldown"
-msgstr "Nedkjøling"
+msgstr "Ro deg ned"
 
 #: ../../templates/show_democratic.inc.php:46
-#, fuzzy
 msgid "Play Democratic Playlist"
-msgstr "Behandle demokratiske spillelister"
+msgstr "Spill demokratisk spilleliste"
 
 #: ../../templates/show_democratic.inc.php:82
 msgid "Reload this page automatically"
-msgstr ""
+msgstr "Oppdater siden automatisk"
 
 #: ../../templates/show_democratic_playlist.inc.php:47
 msgid "Playing from base Playlist"
@@ -4692,18 +4590,20 @@ msgstr "Legg til stemme"
 
 #: ../../templates/show_denied.inc.php:52
 msgid "Access Denied"
-msgstr "Tilgang nektes"
+msgstr "Ingen tilgang"
 
 #: ../../templates/show_denied.inc.php:53
 #: ../../templates/show_denied.inc.php:60
 msgid "This event has been logged."
-msgstr ""
+msgstr "Denne hendelsen er logget."
 
 #: ../../templates/show_denied.inc.php:58
 msgid ""
-"You have been redirected to this page because you do not have access to this "
-"function."
+"You have been redirected to this page because you do not have access to this"
+" function."
 msgstr ""
+"Du har blitt omdirigert til denne siden fordi du ikke har tilgang til denne "
+"funksjonen."
 
 #: ../../templates/show_denied.inc.php:59
 msgid ""
@@ -4715,6 +4615,8 @@ msgid ""
 "You have been redirected to this page because you attempted to access a "
 "function that is disabled in the demo."
 msgstr ""
+"Du har blitt omdirigert til denne siden fordi du forsøkte å få tilgang til "
+"en funksjon som er deaktivert i demoen."
 
 #: ../../templates/show_disabled_songs.inc.php:33
 #: ../../templates/show_disabled_songs.inc.php:63
@@ -4729,11 +4631,11 @@ msgstr "Finn duplikater"
 
 #: ../../templates/show_duplicate.inc.php:27
 msgid "Search Type"
-msgstr "Type søk"
+msgstr "Søketype"
 
 #: ../../templates/show_duplicate.inc.php:30
 msgid "Artist and Title"
-msgstr "Artist og Tittel"
+msgstr "Artist og tittel"
 
 #: ../../templates/show_duplicate.inc.php:31
 msgid "Artist, Album and Title"
@@ -4757,7 +4659,8 @@ msgstr "Spor"
 #: ../../templates/show_duplicates.inc.php:31
 #: ../../templates/show_duplicates.inc.php:69
 #: ../../templates/show_podcast_episode.inc.php:118
-#: ../../templates/show_random.inc.php:65 ../../templates/show_song.inc.php:149
+#: ../../templates/show_random.inc.php:65
+#: ../../templates/show_song.inc.php:149
 msgid "Length"
 msgstr "Lengde"
 
@@ -4768,13 +4671,12 @@ msgid "Size"
 msgstr "Størrelse"
 
 #: ../../templates/show_dynamic.inc.php:23
-#, fuzzy
 msgid "Advanced Random Rules"
-msgstr "Legg til - Avansert"
+msgstr "Avanserte tilfeldige regler"
 
 #: ../../templates/show_dynamic.inc.php:26
 msgid "Field"
-msgstr ""
+msgstr "Felt"
 
 #: ../../templates/show_dynamic.inc.php:27
 msgid "Operator"
@@ -4797,9 +4699,8 @@ msgid "AND"
 msgstr "AND"
 
 #: ../../templates/show_dynamic.inc.php:66
-#, fuzzy
 msgid "Add Rule"
-msgstr "Legg til alle"
+msgstr "Legg til regel"
 
 #: ../../templates/show_dynamic.inc.php:69
 msgid "Save Rules As"
@@ -4815,48 +4716,46 @@ msgstr "Rediger lister for tilgangskontroll"
 
 #: ../../templates/show_edit_album_row.inc.php:47
 #: ../../templates/show_song.inc.php:140
-#, fuzzy
 msgid "Album Artist"
-msgstr "Albumbilde"
+msgstr "Album Artist"
 
 #: ../../templates/show_edit_album_row.inc.php:71
 #: ../../templates/show_edit_artist_row.inc.php:31
 #: ../../templates/show_edit_song_row.inc.php:59
 msgid "MusicBrainz ID"
-msgstr ""
+msgstr "MusicBrainz ID"
 
 #: ../../templates/show_edit_album_row.inc.php:84
 msgid "MusicBrainz Release Group ID"
-msgstr ""
+msgstr "MusicBrainz Release Group ID"
 
 #: ../../templates/show_edit_album_row.inc.php:96
-#, fuzzy
 msgid "Release Type"
-msgstr "Spilleliste type"
+msgstr "Utgivelsestype"
 
 #: ../../templates/show_edit_album_row.inc.php:107
 msgid "Overwrite tags of sub songs"
-msgstr ""
+msgstr "Overskrive tagger av under sanger"
 
 #: ../../templates/show_edit_album_row.inc.php:111
 msgid "Add tags to sub songs"
-msgstr ""
+msgstr "Legg til koder i under sanger"
 
 #: ../../templates/show_edit_artist_row.inc.php:47
 msgid "Place Formed"
-msgstr ""
+msgstr "Plasser formet"
 
 #: ../../templates/show_edit_artist_row.inc.php:51
 msgid "Year Formed"
-msgstr ""
+msgstr "År dannet"
 
 #: ../../templates/show_edit_artist_row.inc.php:68
 msgid "Overwrite tags of sub albums and sub songs"
-msgstr ""
+msgstr "Overskrive tagger av underalbum og under sanger"
 
 #: ../../templates/show_edit_artist_row.inc.php:72
 msgid "Add tags to sub albums and sub songs"
-msgstr ""
+msgstr "Legg til koder i underalbum og under sanger"
 
 #: ../../templates/show_edit_catalog.inc.php:23
 #, php-format
@@ -4869,26 +4768,23 @@ msgstr "Filnavn mønster"
 
 #: ../../templates/show_edit_catalog.inc.php:63
 msgid "Save Catalog Settings"
-msgstr "Lagre katalogoppsett"
+msgstr "Lagre kataloginnstillinger"
 
 #: ../../templates/show_edit_license.inc.php:23
-#, fuzzy
 msgid "Configure License"
-msgstr "Konfigurasjonsforvalg"
+msgstr "Konfigurer lisens"
 
 #: ../../templates/show_edit_license.inc.php:38
-#, fuzzy
 msgid "Description:"
-msgstr "Beskrivelse"
+msgstr "Beskrivelse:"
 
 #: ../../templates/show_edit_license.inc.php:44
 msgid "External Link"
-msgstr ""
+msgstr "Ekstern lenke"
 
 #: ../../templates/show_edit_license.inc.php:51
-#, fuzzy
 msgid "Confirm"
-msgstr "Bekreft passord"
+msgstr "Bekrefte"
 
 #: ../../templates/show_edit_playlist_row.inc.php:36
 #: ../../templates/show_edit_search_row.inc.php:36
@@ -4898,17 +4794,16 @@ msgstr "Offentlig"
 
 #: ../../templates/show_edit_podcast_episode_row.inc.php:35
 msgid "GUID"
-msgstr ""
+msgstr "GUID"
 
 #: ../../templates/show_edit_podcast_episode_row.inc.php:39
 #: ../../templates/show_podcast_episode.inc.php:113
 msgid "Author"
-msgstr ""
+msgstr "Forfatter"
 
 #: ../../templates/show_edit_podcast_row.inc.php:27
-#, fuzzy
 msgid "Feed"
-msgstr "Levende bokmerke"
+msgstr "Mate"
 
 #: ../../templates/show_edit_podcast_row.inc.php:39
 msgid "Language"
@@ -4916,7 +4811,7 @@ msgstr "Språk"
 
 #: ../../templates/show_edit_podcast_row.inc.php:43
 msgid "Copyright"
-msgstr ""
+msgstr "opphavsrett"
 
 #: ../../templates/show_edit_search_row.inc.php:42
 #: ../../templates/show_searches.inc.php:45
@@ -4927,7 +4822,7 @@ msgstr "Tilfeldig"
 
 #: ../../templates/show_edit_search_row.inc.php:48
 msgid "Item Limit (0 = unlimited)"
-msgstr ""
+msgstr "Elementbegrensning (0 = ubegrenset)"
 
 #: ../../templates/show_edit_shout.inc.php:23
 msgid "Edit existing Shoutbox Post"
@@ -4946,19 +4841,19 @@ msgstr "Spor"
 
 #: ../../templates/show_edit_song_row.inc.php:111
 msgid "More Metadata"
-msgstr ""
+msgstr "Mer metadata"
 
 #: ../../templates/show_edit_tag_row.inc.php:32
 msgid "Re-tag"
-msgstr ""
+msgstr "Re-tag"
 
 #: ../../templates/show_edit_tag_row.inc.php:38
 msgid "Persistent"
-msgstr ""
+msgstr "vedvarende"
 
 #: ../../templates/show_edit_tag_row.inc.php:42
 msgid "Keep Existing"
-msgstr ""
+msgstr "Hold eksisterende"
 
 #: ../../templates/show_edit_user.inc.php:23
 msgid "Editing existing User"
@@ -4969,25 +4864,24 @@ msgid "User Properties"
 msgstr "Brukeregenskaper"
 
 #: ../../templates/show_edit_user.inc.php:128
-#, fuzzy
 msgid "Other Options"
-msgstr "Valg"
+msgstr "Andre muligheter"
 
 #: ../../templates/show_edit_user.inc.php:140
 msgid "Config Preset"
-msgstr "Konfigurasjonsforvalg"
+msgstr "Config Preset"
 
 #: ../../templates/show_edit_user.inc.php:145
 msgid "Flash"
-msgstr ""
+msgstr "Blits"
 
 #: ../../templates/show_edit_user.inc.php:151
 msgid "Prevent Preset Override"
-msgstr "Forhindre endring av forvalg"
+msgstr "Forhindre forhåndsinnstilling"
 
 #: ../../templates/show_edit_user.inc.php:153
 msgid "This Affects all non-Admin accounts"
-msgstr "Dette påvirker alle ikke-admin kontoer"
+msgstr "Dette påvirker alle ikke-administrerte kontoer"
 
 #: ../../templates/show_edit_user.inc.php:165
 msgid "Update User"
@@ -5007,13 +4901,12 @@ msgid "Export"
 msgstr "Eksporter"
 
 #: ../../templates/show_gather_art.inc.php:23
-#, fuzzy
 msgid "Art Search"
-msgstr "Søk"
+msgstr "Kunstsøk"
 
 #: ../../templates/show_gather_art.inc.php:24
 msgid "Starting Art Search"
-msgstr ""
+msgstr "Start Art Search"
 
 #: ../../templates/show_gather_art.inc.php:25
 msgid "Searched"
@@ -5036,40 +4929,36 @@ msgid "Get Art"
 msgstr "Hent albumbilde"
 
 #: ../../templates/show_graphs.inc.php:23
-#, fuzzy
 msgid "Statistical Graphs"
-msgstr "Statistikk"
+msgstr "Statistiske grafer"
 
 #: ../../templates/show_graphs.inc.php:33
-#, fuzzy
 msgid "Show large"
-msgstr "Vis alle"
+msgstr "Vis stort"
 
 #: ../../templates/show_graphs.inc.php:54
-#, fuzzy
 msgid "Start Date"
-msgstr "Start"
+msgstr "Startdato"
 
 #: ../../templates/show_graphs.inc.php:57
-#, fuzzy
 msgid "End Date"
-msgstr "Dato"
+msgstr "Sluttdato"
 
 #: ../../templates/show_graphs.inc.php:60
 msgid "Zoom"
-msgstr ""
+msgstr "Zoom"
 
 #: ../../templates/show_graphs.inc.php:66
 msgid "Month"
-msgstr ""
+msgstr "Måned"
 
 #: ../../templates/show_graphs.inc.php:67
 msgid "Day"
-msgstr ""
+msgstr "Dag"
 
 #: ../../templates/show_graphs.inc.php:68
 msgid "Hour"
-msgstr ""
+msgstr "Time"
 
 #: ../../templates/show_highest.inc.php:23
 #: ../../templates/show_newest.inc.php:23
@@ -5081,44 +4970,43 @@ msgstr "Informasjon"
 
 #: ../../templates/show_html5_player_headers.inc.php:222
 msgid "Your browser doesn't support this feature."
-msgstr ""
+msgstr "Nettleseren din støtter ikke denne funksjonen."
 
 #: ../../templates/show_html5_player_headers.inc.php:474
 msgid "Media is currently playing. Are you sure you want to close"
-msgstr ""
+msgstr "Media spiller for øyeblikket. Er du sikker på at du vil lukke"
 
 #: ../../templates/show_html5_player.inc.php:465
 msgid "My Broadcast"
-msgstr ""
+msgstr "Mitt Broadcast"
 
 #: ../../templates/show_html5_player.inc.php:493
 msgid "Slideshow"
-msgstr ""
+msgstr "lysbilde~~POS=TRUNC"
 
 #: ../../templates/show_html5_player.inc.php:496
-#, fuzzy
 msgid "Expand/Collapse Playlist"
-msgstr "Behandle spilleliste"
+msgstr "Utvid / skjul spilleliste"
 
 #: ../../templates/show_html5_player.inc.php:501
 msgid "Visualizer"
-msgstr ""
+msgstr "Visualizer"
 
 #: ../../templates/show_html5_player.inc.php:504
 msgid "Visualizer Full-Screen"
-msgstr ""
+msgstr "Visualizer Full Screen"
 
 #: ../../templates/show_html5_player.inc.php:507
 msgid "ReplayGain"
-msgstr ""
+msgstr "Replaygain"
 
 #: ../../templates/show_html5_player.inc.php:510
 msgid "Equalizer"
-msgstr ""
+msgstr "Equalizer"
 
 #: ../../templates/show_import_playlist.inc.php:23
 msgid "Importing a Playlist from a File"
-msgstr "Importerer spilleliste fra fil"
+msgstr "Importerer en spilleliste fra en fil"
 
 #: ../../templates/show_import_playlist.inc.php:35
 msgid "Import Playlist"
@@ -5133,36 +5021,37 @@ msgstr "Aktuelle album"
 #: ../../templates/show_install_config.inc.php:41
 #: ../../templates/show_install.inc.php:26
 msgid "Install progress"
-msgstr ""
+msgstr "Installer fremgang"
 
 #: ../../templates/show_install_account.inc.php:38
 #: ../../templates/show_install_config.inc.php:52
 #: ../../templates/show_install.inc.php:37
-#, fuzzy
 msgid "Step 1 - Create the Ampache database"
-msgstr "Sett inn Ampache databasen"
+msgstr "Trinn 1 - Opprett Ampache-databasen"
 
 #: ../../templates/show_install_account.inc.php:39
 #: ../../templates/show_install_config.inc.php:53
 #: ../../templates/show_install.inc.php:42
 msgid "Step 2 - Create configuration files (amuzak.cfg.php ...)"
-msgstr ""
+msgstr "Trinn 2 - Opprett konfigurasjonsfiler (amuzak.cfg.php ...)"
 
 #: ../../templates/show_install_account.inc.php:41
 #: ../../templates/show_install_config.inc.php:58
 #: ../../templates/show_install.inc.php:43
 msgid "Step 3 - Set up the initial account"
-msgstr ""
+msgstr "Trinn 3 - Konfigurer den opprinnelige kontoen"
 
 #: ../../templates/show_install_account.inc.php:43
 msgid ""
 "This step creates your initial Ampache admin account. Once your admin "
 "account has been created you will be redirected to the login page."
 msgstr ""
+"Dette trinnet oppretter din første Ampache admin-konto. Når adminkontoen din"
+" er opprettet, blir du omdirigert til påloggingssiden."
 
 #: ../../templates/show_install_account.inc.php:47
 msgid "Create Admin Account"
-msgstr "Opprett administratorkonto"
+msgstr "Opprett adminkonto"
 
 #: ../../templates/show_install_account.inc.php:69
 msgid "Create Account"
@@ -5178,30 +5067,39 @@ msgid ""
 "of the amuzak.cfg.php file. Before you continue please make sure that you "
 "have the following prerequisites:"
 msgstr ""
+"Denne siden håndterer installasjonen av Ampache-databasen og opprettelsen av"
+" filen amuzak.cfg.php. Før du fortsetter, vær så snill og sørg for at du har"
+" følgende forutsetninger:"
 
 #: ../../templates/show_install_check.inc.php:35
 msgid ""
 "A MySQL server with a username and password that can create/modify databases"
 msgstr ""
+"En MySQL-server med et brukernavn og passord som kan opprette / modifisere "
+"databaser"
 
 #: ../../templates/show_install_check.inc.php:36
 #, php-format
 msgid "Your webserver has read access to the files %s and %s"
-msgstr ""
+msgstr "Din webserver har leseadgang til filene %s og %s"
 
 #: ../../templates/show_install_check.inc.php:39
 #, php-format
 msgid ""
 "Once you have ensured that the above requirements are met please fill out "
 "the information below. You will only be asked for the required config "
-"values. If you would like to make changes to your Ampache install at a later "
-"date simply edit %s"
+"values. If you would like to make changes to your Ampache install at a later"
+" date simply edit %s"
 msgstr ""
+"Når du har forsikret deg om at ovennevnte krav er oppfylt, fyll ut "
+"informasjonen nedenfor. Du vil bare bli bedt om de nødvendige "
+"konfigurasjonsverdiene. Hvis du vil gjøre endringer i Ampache-installasjonen"
+" din på et senere tidspunkt, kan du bare redigere %s"
 
 #: ../../templates/show_install_check.inc.php:44
 #: ../../templates/show_test.inc.php:59
 msgid "CHECK"
-msgstr "SJEKK"
+msgstr "KRYSS AV"
 
 #: ../../templates/show_install_check.inc.php:45
 #: ../../templates/show_test.inc.php:60
@@ -5215,110 +5113,123 @@ msgstr "BESKRIVELSE"
 
 #: ../../templates/show_install_check.inc.php:50
 #: ../../templates/show_install_check.inc.php:55
-#, fuzzy, php-format
+#, php-format
 msgid "%s is readable"
-msgstr "%s er ikke lesbar for ampache"
+msgstr "%s er lesbar"
 
 #: ../../templates/show_install_check.inc.php:52
 msgid "This tests whether the configuration template can be read."
-msgstr ""
+msgstr "Dette tester om konfigurasjonsmalen kan leses."
 
 #: ../../templates/show_install_check.inc.php:57
 msgid ""
 "This tests whether the file needed to initialise the database structure is "
 "available."
 msgstr ""
+"Dette tester om filen som trengs for å initialisere databasestrukturen, er "
+"tilgjengelig."
 
 #: ../../templates/show_install_check.inc.php:60
 msgid "amuzak.cfg.php is writable"
-msgstr ""
+msgstr "amuzak.cfg.php er skrivbar"
 
 #: ../../templates/show_install_check.inc.php:62
 msgid ""
-"This tests whether PHP can write to config/. This is not strictly necessary, "
-"but will help streamline the installation process."
+"This tests whether PHP can write to config/. This is not strictly necessary,"
+" but will help streamline the installation process."
 msgstr ""
+"Dette tester om PHP kan skrive til config /. Dette er ikke strengt "
+"nødvendig, men vil bidra til å strømline installasjonsprosessen."
 
 #: ../../templates/show_install_config.inc.php:55
 #, php-format
 msgid ""
 "This step takes the basic config values and generates the config file. If "
-"your config/ directory is writable, you can select \"write\" to have Ampache "
-"write the config file directly to the correct location. If you select "
+"your config/ directory is writable, you can select \"write\" to have Ampache"
+" write the config file directly to the correct location. If you select "
 "\"download\" it will prompt you to download the config file, and you can "
 "then manually place the config file in %s"
 msgstr ""
+"Dette trinnet tar de grunnleggende config-verdiene og genererer config-"
+"filen. Hvis din config / katalog er skrivbar, kan du velge \"skriv\" for å "
+"få Ampache skrive config filen direkte til riktig sted. Hvis du velger "
+"\"nedlasting\", vil det be deg om å laste ned config-filen, og du kan "
+"deretter manuelt plassere config-filen i %s"
 
 #: ../../templates/show_install_config.inc.php:63
 msgid "Generate Config File"
-msgstr "Generer konfigurasjonsfil"
+msgstr "Generer Config-fil"
 
 #: ../../templates/show_install_config.inc.php:66
 msgid "Web Path"
-msgstr "Web bane"
+msgstr "Nettvei"
 
 #: ../../templates/show_install_config.inc.php:71
 #: ../../templates/show_test_table.inc.php:227
 msgid "Database connection"
-msgstr ""
+msgstr "Database-tilkobling"
 
 #: ../../templates/show_install_config.inc.php:74
-#, fuzzy
 msgid "Database Name"
-msgstr "Ønsket databasenavn"
+msgstr "Databasenavn"
 
 #: ../../templates/show_install_config.inc.php:80
 #: ../../templates/show_install.inc.php:56
 msgid "MySQL Hostname"
-msgstr "Vertsnavn for MySQL"
+msgstr "MySQL Hostname"
 
 #: ../../templates/show_install_config.inc.php:86
 msgid "MySQL Port (optional)"
-msgstr ""
+msgstr "MySQL-port (valgfritt)"
 
 #: ../../templates/show_install_config.inc.php:92
 msgid "MySQL Username"
-msgstr "Brukernavn for MySQL"
+msgstr "MySQL Brukernavn"
 
 #: ../../templates/show_install_config.inc.php:98
 msgid "MySQL Password"
-msgstr "Passord for MySQL"
+msgstr "MySQL Passord"
 
 #: ../../templates/show_install_config.inc.php:108
-#, fuzzy
 msgid "Installation type"
-msgstr "Installasjon av Ampache"
+msgstr "Installasjonstype"
 
 #: ../../templates/show_install_config.inc.php:109
 msgid ""
 "Configure Ampache at best for your use case, enabling / disabling features "
 "automatically."
 msgstr ""
+"Konfigurer Ampache i beste fall for brukssaken din, og aktiver / deaktivere "
+"funksjonene automatisk."
 
 #: ../../templates/show_install_config.inc.php:115
 msgid "Ampache is configured for personal use with most greatest features."
 msgstr ""
+"Ampache er konfigurert for personlig bruk med de aller største funksjonene."
 
 #: ../../templates/show_install_config.inc.php:120
 msgid "Minimalist"
-msgstr ""
+msgstr "Minimalistisk"
 
 #: ../../templates/show_install_config.inc.php:120
 msgid ""
 "only essential features are enabled to stream simply your music from a web "
 "interface."
 msgstr ""
+"Bare viktige funksjoner er aktivert for å streame bare musikken din fra et "
+"webgrensesnitt."
 
 #: ../../templates/show_install_config.inc.php:125
-#, fuzzy
 msgid "Community"
-msgstr "Kommentar"
+msgstr "Samfunnet"
 
 #: ../../templates/show_install_config.inc.php:125
 msgid ""
 "use recommended settings when using Ampache as a frontend for a music "
 "community."
 msgstr ""
+"Bruk anbefalte innstillinger når du bruker Ampache som en frontend for et "
+"musikkfellesskap."
 
 #: ../../templates/show_install_config.inc.php:130
 msgid "Transcoding"
@@ -5333,6 +5244,12 @@ msgid ""
 "transcoding to work you must first install the supporting applications and "
 "ensure that they are executable by the web server."
 msgstr ""
+"Transcoding lar deg konvertere en type fil til en annen. Ampache støtter på "
+"flytranskoding av alle filtyper basert på bruker, spiller, IP-adresse eller "
+"tilgjengelig båndbredde. For å kryptere, utnytter Ampache eksisterende "
+"eksisterende applikasjoner som ffmpeg. For å kunne transkode til arbeid må "
+"du først installere støtteprogrammene og sikre at de kan kjøres av "
+"webserveren."
 
 #: ../../templates/show_install_config.inc.php:134
 msgid ""
@@ -5340,16 +5257,18 @@ msgid ""
 "application you want to use. You may need to customize settings once this "
 "setup ended"
 msgstr ""
+"Denne delen gjelder standard transkodingskonfigurasjon i henhold til "
+"programmet du vil bruke. Du må kanskje tilpasse innstillingene når dette "
+"oppsettet er avsluttet"
 
 #: ../../templates/show_install_config.inc.php:134
 #: ../../templates/show_install_config.inc.php:164
 msgid "See wiki page"
-msgstr ""
+msgstr "Se wiki-siden"
 
 #: ../../templates/show_install_config.inc.php:138
-#, fuzzy
 msgid "Template Configuration"
-msgstr "Generer konfigurasjon"
+msgstr "Malkonfigurasjon"
 
 #: ../../templates/show_install_config.inc.php:155
 msgid ""
@@ -5357,109 +5276,115 @@ msgid ""
 "application (ffmpeg, avconv ...) or customize transcoding settings manually "
 "after installation."
 msgstr ""
+"Ingen standard transkodingsprogram funnet. Du må kanskje installere et "
+"populært program (ffmpeg, avconv ...) eller tilpasse "
+"transkodningsinnstillinger manuelt etter installasjonen."
 
 #: ../../templates/show_install_config.inc.php:162
-#, fuzzy
 msgid "Players"
-msgstr "Spilt"
+msgstr "spillere"
 
 #: ../../templates/show_install_config.inc.php:163
 msgid ""
 "Ampache is more than only a web interface. Several backends are implemented "
 "to ensure you can stream your media from anywhere."
 msgstr ""
+"Ampache er mer enn bare et webgrensesnitt. Flere backends er implementert "
+"for å sikre at du kan streame mediene dine hvor som helst."
 
 #: ../../templates/show_install_config.inc.php:164
 msgid ""
 "Select backends to enable. Depending the backend, you may need to perform "
 "additional configuration."
 msgstr ""
+"Velg bakover for å aktivere. Avhengig av backend, kan det hende du må utføre"
+" tilleggskonfigurasjon."
 
 #: ../../templates/show_install_config.inc.php:204
 msgid "File Insight"
-msgstr ""
+msgstr "Fil Insight"
 
 #: ../../templates/show_install_config.inc.php:214
 msgid "channel/.htaccess action"
-msgstr ""
+msgstr "kanal / .htaccess-handling"
 
 #: ../../templates/show_install_config.inc.php:221
 #: ../../templates/show_install_config.inc.php:238
 #: ../../templates/show_install_config.inc.php:255
 #: ../../templates/show_install_config.inc.php:274
-#, fuzzy
 msgid "Write"
-msgstr "Les/Skriv"
+msgstr "Skrive"
 
 #: ../../templates/show_install_config.inc.php:224
 msgid "channel/.htaccess exists?"
-msgstr ""
+msgstr "Kanal / .htaccess eksisterer?"
 
 #: ../../templates/show_install_config.inc.php:226
 msgid "channel/.htaccess configured?"
-msgstr ""
+msgstr "kanal / .htaccess konfigurert?"
 
 #: ../../templates/show_install_config.inc.php:231
 msgid "rest/.htaccess action"
-msgstr ""
+msgstr "hvile / .htaccess-handling"
 
 #: ../../templates/show_install_config.inc.php:241
 msgid "rest/.htaccess exists?"
-msgstr ""
+msgstr "hvile / .htaccess eksisterer?"
 
 #: ../../templates/show_install_config.inc.php:243
 msgid "rest/.htaccess configured?"
-msgstr ""
+msgstr "hvile / .htaccess konfigurert?"
 
 #: ../../templates/show_install_config.inc.php:248
 msgid "play/.htaccess action"
-msgstr ""
+msgstr "spill / .htaccess-handling"
 
 #: ../../templates/show_install_config.inc.php:258
 msgid "play/.htaccess exists?"
-msgstr ""
+msgstr "spill / .htaccess eksisterer?"
 
 #: ../../templates/show_install_config.inc.php:260
 msgid "play/.htaccess configured?"
-msgstr ""
+msgstr "spill / .htaccess konfigurert?"
 
 #: ../../templates/show_install_config.inc.php:267
 msgid "config/amuzak.cfg.php action"
-msgstr ""
+msgstr "config / amuzak.cfg.php handling"
 
 #: ../../templates/show_install_config.inc.php:277
 msgid "config/amuzak.cfg.php exists?"
-msgstr ""
+msgstr "config / amuzak.cfg.php eksisterer?"
 
 #: ../../templates/show_install_config.inc.php:279
 msgid "config/amuzak.cfg.php configured?"
-msgstr ""
+msgstr "config / amuzak.cfg.php konfigurert?"
 
 #: ../../templates/show_install_config.inc.php:286
-#, fuzzy
 msgid "Recheck Config"
-msgstr "Serverkonfigurasjon"
+msgstr "Kontroller konfig"
 
 #: ../../templates/show_install_config.inc.php:294
 #: ../../templates/show_install.inc.php:130
 msgid "Skip"
-msgstr ""
+msgstr "Hopp"
 
 #: ../../templates/show_install_config.inc.php:297
-#, fuzzy
 msgid "Create config"
-msgstr "Opprett konto"
+msgstr "Opprett konfigurasjon"
 
 #: ../../templates/show_install.inc.php:39
 msgid ""
 "This step creates and inserts the Ampache database, so please provide a "
-"MySQL account with database creation rights. This step may take some time on "
-"slower computers."
+"MySQL account with database creation rights. This step may take some time on"
+" slower computers."
 msgstr ""
+"Dette trinnet oppretter og legger inn Ampache-databasen, så vær så snill å "
+"gi en MySQL-konto med databasenes etableringsrettigheter. Dette trinnet kan "
+"ta litt tid på tregere datamaskiner."
 
 #: ../../templates/show_install.inc.php:47
 msgid "Insert Ampache Database"
-msgstr "Sett inn Ampache databasen"
+msgstr "Sett inn Ampache Database"
 
 #: ../../templates/show_install.inc.php:50
 msgid "Desired Database Name"
@@ -5467,56 +5392,51 @@ msgstr "Ønsket databasenavn"
 
 #: ../../templates/show_install.inc.php:62
 msgid "MySQL port (optional)"
-msgstr ""
+msgstr "MySQL-port (valgfritt)"
 
 #: ../../templates/show_install.inc.php:68
 msgid "MySQL Administrative Username"
-msgstr "MySQL Adminbruker"
+msgstr "MySQL Administrativt brukernavn"
 
 #: ../../templates/show_install.inc.php:74
 msgid "MySQL Administrative Password"
-msgstr "MySQL Adminpassord"
+msgstr "MySQL Administrative Password"
 
 #: ../../templates/show_install.inc.php:80
-#, fuzzy
 msgid "Create Database"
-msgstr "Sett inn databasen"
+msgstr "Opprett database"
 
 #: ../../templates/show_install.inc.php:90
-#, fuzzy
 msgid "Overwrite if database already exists"
-msgstr "Feil: Brukernavn eksisterer"
+msgstr "Overskriv hvis databasen allerede eksisterer"
 
 #: ../../templates/show_install.inc.php:99
-#, fuzzy
 msgid "Create Tables"
-msgstr "Lag"
+msgstr "Opprett tabeller"
 
 #: ../../templates/show_install.inc.php:108
-#, fuzzy
 msgid "Create Database User"
-msgstr "Ampache database brukernavn"
+msgstr "Opprett database bruker"
 
 #: ../../templates/show_install.inc.php:118
 msgid "Ampache Database Username"
-msgstr "Ampache database brukernavn"
+msgstr "Ampache Database Brukernavn"
 
 #: ../../templates/show_install.inc.php:124
 msgid "Ampache Database User Password"
-msgstr "Ampache database brukerpassord"
+msgstr "Ampache Database User Password"
 
 #: ../../templates/show_install.inc.php:133
 msgid "Insert Database"
-msgstr "Sett inn databasen"
+msgstr "Sett inn database"
 
 #: ../../templates/show_install_lang.inc.php:27
 msgid "Ampache Installation"
-msgstr "Installasjon av Ampache"
+msgstr "Ampache Installasjon"
 
 #: ../../templates/show_install_lang.inc.php:30
-#, fuzzy
 msgid "Choose Installation Language"
-msgstr "Installasjon av Ampache"
+msgstr "Velg Installasjonsspråk"
 
 #: ../../templates/show_install_lang.inc.php:50
 msgid "Start configuration"
@@ -5542,28 +5462,24 @@ msgid "IP Address"
 msgstr "IP Adresse"
 
 #: ../../templates/show_label.inc.php:59 ../../templates/show_label.inc.php:60
-#, fuzzy
 msgid "Send e-mail"
-msgstr "Send epost"
+msgstr "Send e-post"
 
 #: ../../templates/show_label.inc.php:67 ../../templates/show_label.inc.php:70
 msgid "Label edit"
-msgstr ""
+msgstr "Etikett redigering"
 
 #: ../../templates/show_label.inc.php:71
-#, fuzzy
 msgid "Edit Label"
-msgstr "Rediger instans"
+msgstr "Rediger etikett"
 
 #: ../../templates/show_labels.inc.php:29
-#, fuzzy
 msgid "Create a new label"
-msgstr "Lag ny spilleliste"
+msgstr "Lag en ny etikett"
 
 #: ../../templates/show_labels.inc.php:65
-#, fuzzy
 msgid "No label found"
-msgstr "Ingen deaktiverte spor funnet"
+msgstr "Ingen etikett funnet"
 
 #: ../../templates/show_live_stream.inc.php:25
 #: ../../templates/show_song.inc.php:26
@@ -5571,32 +5487,28 @@ msgid "Details"
 msgstr "Detaljer"
 
 #: ../../templates/show_live_stream_row.inc.php:28
-#, fuzzy
 msgid "Play live stream"
-msgstr "Navn på spilleliste"
+msgstr "Spill live stream"
 
 #: ../../templates/show_live_stream_row.inc.php:46
 msgid "Live Stream edit"
-msgstr ""
+msgstr "Live Stream edit"
 
 #: ../../templates/show_live_streams.inc.php:25
-#, fuzzy
 msgid "Manage Radio Stations"
-msgstr "Radiostasjoner"
+msgstr "Administrer radiostasjoner"
 
 #: ../../templates/show_live_streams.inc.php:63
-#, fuzzy
 msgid "No live stream found"
-msgstr "Ingen deaktiverte spor funnet"
+msgstr "Ingen live stream funnet"
 
 #: ../../templates/show_login_form.inc.php:66
 msgid "Remember Me"
 msgstr "Husk meg"
 
 #: ../../templates/show_login_form.inc.php:72
-#, fuzzy
 msgid "Lost password"
-msgstr "Passord for MySQL"
+msgstr "Mistet Passord"
 
 #: ../../templates/show_login_form.inc.php:90
 msgid "Message of the Day"
@@ -5604,17 +5516,15 @@ msgstr "Dagens beskjed"
 
 #: ../../templates/show_lostpassword_form.inc.php:60
 msgid "Submit"
-msgstr ""
+msgstr "Sende inn"
 
 #: ../../templates/show_lyrics.inc.php:61
-#, fuzzy
 msgid "No lyrics found."
-msgstr "Ingen oppføringer funnet"
+msgstr "Ingen tekst funnet."
 
 #: ../../templates/show_lyrics.inc.php:64
-#, fuzzy
 msgid "Show more"
-msgstr "Vis unike"
+msgstr "Vis mer"
 
 #: ../../templates/show_mail_users.inc.php:24
 msgid "Send E-mail to Users"
@@ -5630,11 +5540,11 @@ msgstr "Inaktive brukere"
 
 #: ../../templates/show_mail_users.inc.php:39
 msgid "From"
-msgstr ""
+msgstr "Fra"
 
 #: ../../templates/show_mail_users.inc.php:42
 msgid "Yourself"
-msgstr ""
+msgstr "Deg selv"
 
 #: ../../templates/show_mail_users.inc.php:61
 msgid "Send Mail"
@@ -5650,9 +5560,8 @@ msgid "Gather All Art"
 msgstr "Samle alle bilder"
 
 #: ../../templates/show_manage_catalogs.inc.php:30
-#, fuzzy
 msgid "Show disabled songs"
-msgstr "Ingen deaktiverte spor funnet"
+msgstr "Vis deaktiverte sanger"
 
 #: ../../templates/show_manage_catalogs.inc.php:33
 msgid "Add to All"
@@ -5674,36 +5583,33 @@ msgstr "Oppdater alle"
 #: ../../templates/show_manage_catalogs.inc.php:51
 #, php-format
 msgid "Add from [%s]"
-msgstr ""
+msgstr "Legg til fra [%s]"
 
 #. HINT: /data/myUpdatedMusic
 #: ../../templates/show_manage_catalogs.inc.php:55
-#, fuzzy, php-format
+#, php-format
 msgid "Update from [%s]"
-msgstr "Oppdater fra tag-informasjon"
+msgstr "Oppdatering fra [%s]"
 
 #: ../../templates/show_manage_democratic.inc.php:23
 msgid "Manage Democratic Playlists"
 msgstr "Behandle demokratiske spillelister"
 
 #: ../../templates/show_manage_democratic.inc.php:56
-#, fuzzy
 msgid "No democratic found"
-msgstr "Ingen oppføringer funnet"
+msgstr "Ingen demokratisk funnet"
 
 #: ../../templates/show_manage_democratic.inc.php:63
 msgid "Create New Playlist"
-msgstr "Lag ny spilleliste"
+msgstr "Opprett ny spilleliste"
 
 #: ../../templates/show_manage_license.inc.php:28
-#, fuzzy
 msgid "Create new license"
-msgstr "Lag ny spilleliste"
+msgstr "Opprett ny lisens"
 
 #: ../../templates/show_manage_license.inc.php:51
-#, fuzzy
 msgid "No Licenses Found"
-msgstr "Ingen oppføringer funnet"
+msgstr "Ingen lisenser funnet"
 
 #: ../../templates/show_manage_shoutbox.inc.php:28
 #: ../../templates/show_manage_shoutbox.inc.php:59
@@ -5722,20 +5628,17 @@ msgid "Date Added"
 msgstr "Lagt til dato"
 
 #: ../../templates/show_mashup.inc.php:27
-#, fuzzy
 msgid "Browse Library"
-msgstr "Bla i musikk"
+msgstr "Bla gjennom biblioteket"
 
 #: ../../templates/show_mashup.inc.php:31
-#, fuzzy
 msgid "Trending"
-msgstr "Transkoding"
+msgstr "Trender"
 
 #: ../../templates/show_mashup.inc.php:41
 #: ../../templates/sidebar_home.inc.php:98
-#, fuzzy
 msgid "Newest"
-msgstr "Nyeste Album"
+msgstr "Nyeste"
 
 #: ../../templates/show_mashup.inc.php:51
 #: ../../templates/sidebar_home.inc.php:99
@@ -5744,9 +5647,8 @@ msgstr "Populær"
 
 #: ../../templates/show_now_playing_row.inc.php:88
 #: ../../templates/show_now_playing_similar.inc.php:48
-#, fuzzy
 msgid "Similar Songs"
-msgstr "Lignende artister"
+msgstr "Lignende sanger"
 
 #: ../../templates/show_object_rating.inc.php:47
 msgid "Current rating: "
@@ -5764,67 +5666,61 @@ msgstr "%s av 5"
 #: ../../templates/show_playlist.inc.php:66
 #: ../../templates/show_playlist.inc.php:67
 msgid "Sort Tracks by Artist, Album, Song"
-msgstr ""
+msgstr "Sorter spor etter artist, album, sang"
 
 #: ../../templates/show_playlist.inc.php:70
 #: ../../templates/show_playlist.inc.php:71
-#, fuzzy
 msgid "Remove duplicates"
-msgstr "Fjern Stemme"
+msgstr "Fjern duplikater"
 
 #: ../../templates/show_playlist.inc.php:112
 #: ../../templates/show_playlist_row.inc.php:99
-#, fuzzy
 msgid "Do you really want to delete the playlist?"
-msgstr "Vil du virkelig slette denne katalogen?"
+msgstr "Vil du virkelig slette spillelisten?"
 
 #: ../../templates/show_playlist_media_row.inc.php:93
 #: ../../templates/show_song_row.inc.php:133
 msgid "Reorder"
-msgstr ""
+msgstr "Endre rekkefølge"
 
 #: ../../templates/show_playlist_row.inc.php:96
-#, fuzzy
 msgid "Playlist edit"
-msgstr "Metode for spilleliste"
+msgstr "Spilleliste redigere"
 
 #: ../../templates/show_playlists_dialog.inc.php:26
-#, fuzzy
 msgid "Playlist name"
-msgstr "Navn på spilleliste"
+msgstr "Spillelistenavn"
 
 #: ../../templates/show_playlists.inc.php:37
 #: ../../templates/show_playlists.inc.php:91
-#, fuzzy
 msgid "Last Update"
-msgstr "Oppdater"
+msgstr "Siste oppdatering"
 
 #: ../../templates/show_playlists.inc.php:39
 #: ../../templates/show_playlists.inc.php:93
 msgid "# Medias"
-msgstr ""
+msgstr "# Medias"
 
 #: ../../templates/show_playlists.inc.php:40
 #: ../../templates/show_playlists.inc.php:94
 #: ../../templates/show_searches.inc.php:47
 #: ../../templates/show_searches.inc.php:77
 msgid "Owner"
-msgstr "Eier"
+msgstr "Eieren"
 
 #: ../../templates/show_playlists.inc.php:76
-#, fuzzy
 msgid "No playlist found"
-msgstr "Metode for spilleliste"
+msgstr "Ingen spilleliste funnet"
 
 #: ../../templates/show_playlist_title.inc.php:23
-#, fuzzy, php-format
+#, php-format
 msgid "%s %s (Playlist)"
-msgstr "%s Playlist"
+msgstr "%s %s (spilleliste)"
 
 #: ../../templates/show_plugins.inc.php:32
 #: ../../templates/show_plugins.inc.php:74
 msgid "Installed Version"
-msgstr ""
+msgstr "Installert versjon"
 
 #: ../../templates/show_plugins.inc.php:46
 msgid "Deactivate"
@@ -5832,65 +5728,61 @@ msgstr "Deaktiver"
 
 #: ../../templates/show_plugins.inc.php:50
 msgid "Upgrade"
-msgstr ""
+msgstr "Oppgradering"
 
 #: ../../templates/show_podcast_episode.inc.php:85
 #: ../../templates/show_song.inc.php:101
 msgid "Link"
-msgstr ""
+msgstr "link"
 
 #: ../../templates/show_podcast_episode.inc.php:114
 #: ../../templates/show_podcast_episodes.inc.php:35
 #: ../../templates/show_podcast_episodes.inc.php:91
-#, fuzzy
 msgid "Publication Date"
-msgstr "Registreringsdato"
+msgstr "Publiseringsdato"
 
 #: ../../templates/show_podcast_episode.inc.php:122
-#, fuzzy
 msgid "File"
-msgstr "Filnavn"
+msgstr "Fil"
 
 #: ../../templates/show_podcast_episode_row.inc.php:86
 #: ../../templates/show_podcast.inc.php:105
 #: ../../templates/show_podcast.inc.php:106
 #: ../../templates/show_podcast_row.inc.php:71
 msgid "Sync"
-msgstr ""
+msgstr "Sync"
 
 #: ../../templates/show_podcast_episode_row.inc.php:88
 msgid "Podcast Episode edit"
-msgstr ""
+msgstr "Podcast Episode edit"
 
 #: ../../templates/show_podcast_episodes.inc.php:74
 msgid "No podcast episode found"
-msgstr ""
+msgstr "Ingen podcast-episode funnet"
 
 #: ../../templates/show_podcast.inc.php:97
 #: ../../templates/show_podcast.inc.php:100
 #: ../../templates/show_podcast_row.inc.php:67
 msgid "Podcast edit"
-msgstr ""
+msgstr "Podcast redigering"
 
 #: ../../templates/show_podcast.inc.php:101
-#, fuzzy
 msgid "Edit Podcast"
-msgstr "Rediger Artist"
+msgstr "Rediger podcast"
 
 #: ../../templates/show_podcast.inc.php:125
 #: ../../templates/show_podcasts.inc.php:48
 #: ../../templates/show_podcasts.inc.php:100
 msgid "Episodes"
-msgstr ""
+msgstr "episoder"
 
 #: ../../templates/show_podcasts.inc.php:29
 msgid "Subscribe Podcast"
-msgstr ""
+msgstr "Abonner Podcast"
 
 #: ../../templates/show_podcasts.inc.php:86
-#, fuzzy
 msgid "No podcast found"
-msgstr "Ingen oppføringer funnet"
+msgstr "Ingen podcast funnet"
 
 #: ../../templates/show_preference_admin.inc.php:23
 msgid "Preference Administration"
@@ -5899,7 +5791,7 @@ msgstr "Administrasjon av innstillinger"
 #: ../../templates/show_preference_box.inc.php:48
 #: ../../templates/show_preference_box.inc.php:99
 msgid "Apply to All"
-msgstr "Behandle alle"
+msgstr "Gjelder for alle"
 
 #: ../../templates/show_preference_box.inc.php:49
 #: ../../templates/show_preference_box.inc.php:100
@@ -5912,47 +5804,46 @@ msgstr "Tilgangsnivå"
 #: ../../templates/show_user_preferences.inc.php:29
 #, php-format
 msgid "Editing %s preferences"
-msgstr "Redigerer innstillinger for %s"
+msgstr "Redigerer %s preferanser"
 
 #: ../../templates/show_preferences.inc.php:36
 #: ../../templates/show_user_preferences.inc.php:53
 msgid "Update Preferences"
-msgstr "Oppdater Innstillinger"
+msgstr "Oppdateringsinnstillinger"
 
 #: ../../templates/show_pvmsg.inc.php:26
 msgid "Sent by"
-msgstr ""
+msgstr "Sent av"
 
 #: ../../templates/show_pvmsg.inc.php:34
 #: ../../templates/show_pvmsg_row.inc.php:31
 msgid "Reply"
-msgstr ""
+msgstr "Svare"
 
 #: ../../templates/show_pvmsgs.inc.php:37
 msgid "Compose"
-msgstr ""
+msgstr "komponer"
 
 #: ../../templates/show_pvmsgs.inc.php:37
 msgid "Compose a new message"
-msgstr ""
+msgstr "Skriv en ny melding"
 
 #: ../../templates/show_pvmsgs.inc.php:38
 msgid "Set as read"
-msgstr ""
+msgstr "Sett som lest"
 
 #: ../../templates/show_pvmsgs.inc.php:39
 msgid "Set as unread"
-msgstr ""
+msgstr "Sett som ulest"
 
 #: ../../templates/show_pvmsgs.inc.php:51
 #: ../../templates/show_pvmsgs.inc.php:80
 msgid "Sender"
-msgstr ""
+msgstr "avsender"
 
 #: ../../templates/show_pvmsgs.inc.php:71
-#, fuzzy
 msgid "No message found"
-msgstr "Ingen oppføringer funnet"
+msgstr "Ingen melding funnet"
 
 #: ../../templates/show_random_albums.inc.php:24
 msgid "Refresh"
@@ -5973,18 +5864,18 @@ msgid "Unlimited"
 msgstr "Ubegrenset"
 
 #: ../../templates/show_random.inc.php:79
-#, fuzzy, php-format
+#, php-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "minutter"
-msgstr[1] "minutter"
+msgstr[0] "%d minutt"
+msgstr[1] "%d minutter"
 
 #: ../../templates/show_random.inc.php:81
 #, php-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d time"
+msgstr[1] "%d timer"
 
 #: ../../templates/show_random.inc.php:90
 msgid "Size Limit"
@@ -6000,69 +5891,68 @@ msgid "Last Played"
 msgstr "Sist spilt"
 
 #: ../../templates/show_recently_played.inc.php:60
-#, fuzzy, php-format
+#, php-format
 msgid "%d second ago"
 msgid_plural "%d seconds ago"
-msgstr[0] "sekunder siden"
-msgstr[1] "sekunder siden"
+msgstr[0] "%d sekunder siden"
+msgstr[1] "%d sekunder siden"
 
 #: ../../templates/show_recently_played.inc.php:63
-#, fuzzy, php-format
+#, php-format
 msgid "%d minute ago"
 msgid_plural "%d minutes ago"
-msgstr[0] "minutter siden"
-msgstr[1] "minutter siden"
+msgstr[0] "%d minutt siden"
+msgstr[1] "%d minutter siden"
 
 #: ../../templates/show_recently_played.inc.php:66
-#, fuzzy, php-format
+#, php-format
 msgid "%d hour ago"
 msgid_plural "%d hours ago"
-msgstr[0] "timer siden"
-msgstr[1] "timer siden"
+msgstr[0] "%d time ago"
+msgstr[1] "%d timer siden"
 
 #: ../../templates/show_recently_played.inc.php:69
-#, fuzzy, php-format
+#, php-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
-msgstr[0] "dager siden"
-msgstr[1] "dager siden"
+msgstr[0] "%d dag siden"
+msgstr[1] "%d dager siden"
 
 #: ../../templates/show_recently_played.inc.php:72
-#, fuzzy, php-format
+#, php-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
-msgstr[0] "uker siden"
-msgstr[1] "uker siden"
+msgstr[0] "%d uke siden"
+msgstr[1] "%d uker siden"
 
 #: ../../templates/show_recently_played.inc.php:75
-#, fuzzy, php-format
+#, php-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
-msgstr[0] "måneder siden"
-msgstr[1] "måneder siden"
+msgstr[0] "%d måned siden"
+msgstr[1] "%d måneder siden"
 
 #: ../../templates/show_recently_played.inc.php:78
-#, fuzzy, php-format
+#, php-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
-msgstr[0] "år siden"
-msgstr[1] "år siden"
+msgstr[0] "%d år siden"
+msgstr[1] "%d år siden"
 
 #: ../../templates/show_recently_played.inc.php:81
 #, php-format
 msgid "%d decade ago"
 msgid_plural "%d decades ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d tiår siden"
+msgstr[1] "%d år siden"
 
 #: ../../templates/show_recently_played.inc.php:132
 msgid "No recently played items found"
-msgstr ""
+msgstr "Ingen nylig spilt gjenstander funnet"
 
 #: ../../templates/show_recommended_artists.inc.php:80
-#, fuzzy
 msgid "No similar artist found"
-msgstr "Lignende artister"
+msgstr "Ingen lignende artist funnet"
 
 #: ../../templates/show_registration_confirmation.inc.php:33
 #: ../../templates/show_user_activate.inc.php:31
@@ -6076,64 +5966,61 @@ msgid "Registration Complete"
 msgstr "Registrering ferdig"
 
 #: ../../templates/show_registration_confirmation.inc.php:46
-#, fuzzy
 msgid "Your account has been created."
-msgstr "Din brukerkonto har blitt oppdatert"
+msgstr "Din konto har blitt laget."
 
 #: ../../templates/show_registration_confirmation.inc.php:49
 msgid "Please wait for an administrator to activate your account."
-msgstr ""
+msgstr "Vennligst vent på at en administrator aktiverer kontoen din."
 
 #: ../../templates/show_registration_confirmation.inc.php:51
 msgid ""
 "An activation key has been sent to the e-mail address you provided. Please "
 "check your e-mail for further information."
 msgstr ""
+"En aktiveringsnøkkel er sendt til e-postadressen du oppgav. Vennligst sjekk "
+"e-posten din for ytterligere informasjon."
 
 #: ../../templates/show_registration_confirmation.inc.php:55
 msgid "Return to Login Page"
 msgstr "Gå tilbake til innloggingssiden"
 
 #: ../../templates/show_rules.inc.php:33
-#, fuzzy
 msgid "Rules"
-msgstr "Moduler"
+msgstr "regler"
 
 #: ../../templates/show_rules.inc.php:37
 msgid "Match"
-msgstr ""
+msgstr "Kamp"
 
 #: ../../templates/show_rules.inc.php:42
-#, fuzzy
 msgid "all rules"
-msgstr "Moduler for lokalavspilling"
+msgstr "alle regler"
 
 #: ../../templates/show_rules.inc.php:45
 msgid "any rule"
-msgstr ""
+msgstr "noen regel"
 
 #: ../../templates/show_rules.inc.php:53
 msgid "Add Another Rule"
-msgstr ""
+msgstr "Legg til en annen regel"
 
 #: ../../templates/show_search_bar.inc.php:25
 msgid "Search..."
-msgstr "Søk..."
+msgstr "Søke..."
 
 #: ../../templates/show_searches.inc.php:29
-#, fuzzy
 msgid "Add Smart Playlist"
-msgstr "Legg til i spilleliste"
+msgstr "Legg til smart spilleliste"
 
 #: ../../templates/show_searches.inc.php:46
 #: ../../templates/show_searches.inc.php:76
-#, fuzzy
 msgid "Item Limit"
-msgstr "Bitrate grense"
+msgstr "Elementbegrensning"
 
 #: ../../templates/show_searches.inc.php:64
 msgid "No smart playlist found"
-msgstr ""
+msgstr "Ingen smart spilleliste funnet"
 
 #: ../../templates/show_search_form.inc.php:23
 msgid "Search Ampache"
@@ -6144,9 +6031,8 @@ msgid "Maximum Results"
 msgstr "Maksimalt antall resultater"
 
 #: ../../templates/show_search_form.inc.php:74
-#, fuzzy
 msgid "Save as Smart Playlist"
-msgstr "Rensk spilleliste"
+msgstr "Lagre som smart spilleliste"
 
 #: ../../templates/show_search.inc.php:41
 #: ../../templates/show_search.inc.php:42
@@ -6155,7 +6041,7 @@ msgstr "Legg til alle"
 
 #: ../../templates/show_search.inc.php:60
 msgid "Save Changes"
-msgstr "Lagre Endringer"
+msgstr "Lagre endringer"
 
 #: ../../templates/show_search_options.inc.php:23
 msgid "Options"
@@ -6175,50 +6061,45 @@ msgid "No"
 msgstr "Nei"
 
 #: ../../templates/show_search_row.inc.php:60
-#, fuzzy
 msgid "Smart Playlist edit"
-msgstr "Importer spilleliste"
+msgstr "Smart spilleliste redigere"
 
 #: ../../templates/show_search_title.inc.php:24
-#, fuzzy, php-format
+#, php-format
 msgid "%s %s (Smart Playlist)"
-msgstr "%s Playlist"
+msgstr "%s %s (Smart Playlist)"
 
 #: ../../templates/show_shared_objects.inc.php:27
-#, fuzzy
 msgid "Object Type"
-msgstr "Objekt"
+msgstr "Objekttype"
 
 #: ../../templates/show_shared_objects.inc.php:29
-#, fuzzy
 msgid "Creation Date"
-msgstr "Registreringsdato"
+msgstr "Opprettelsesdato"
 
 #: ../../templates/show_shared_objects.inc.php:30
-#, fuzzy
 msgid "Last Visit"
-msgstr "Siste verifikasjon"
+msgstr "Siste besøk"
 
 #: ../../templates/show_shared_objects.inc.php:31
 msgid "Counter"
-msgstr ""
+msgstr "Disk"
 
 #: ../../templates/show_shared_objects.inc.php:36
-#, fuzzy
 msgid "Public Url"
-msgstr "Offentlig"
+msgstr "Offentlig URL"
 
 #: ../../templates/show_share.inc.php:31
 msgid "Shared by"
-msgstr ""
+msgstr "Delt av"
 
 #: ../../templates/show_shares.inc.php:27
 msgid "Clean expired shared objects"
-msgstr ""
+msgstr "Rengjør utgåtte delte objekter"
 
 #: ../../templates/show_song.inc.php:57
 msgid "Waveform"
-msgstr ""
+msgstr "Waveform"
 
 #: ../../templates/show_song.inc.php:144
 msgid "Genre"
@@ -6227,61 +6108,56 @@ msgstr "Sjanger"
 #: ../../templates/show_song.inc.php:146 ../../templates/show_song.inc.php:147
 #: ../../templates/show_song.inc.php:148
 msgid "Links"
-msgstr ""
+msgstr "lenker"
 
 #: ../../templates/show_song.inc.php:152
-#, fuzzy
 msgid "Song Language"
-msgstr "Språk"
+msgstr "Sang Språk"
 
 #: ../../templates/show_song.inc.php:153
-#, fuzzy
 msgid "Catalog Number"
-msgstr "Katalognavn"
+msgstr "Katalognummer"
 
 #: ../../templates/show_song.inc.php:155
-#, fuzzy
 msgid "Channels"
-msgstr "Lagre Endringer"
+msgstr "kanaler"
 
 #: ../../templates/show_song.inc.php:157
 msgid "ReplayGain Track Gain"
-msgstr ""
+msgstr "ReplayGain Track Gain"
 
 #: ../../templates/show_song.inc.php:160
 msgid "ReplayGain Album Gain"
-msgstr ""
+msgstr "ReplayGain Album Gain"
 
 #: ../../templates/show_song.inc.php:166
-#, fuzzy
 msgid "Last Updated"
-msgstr "Bruker oppdatert"
+msgstr "Sist oppdatert"
 
 #: ../../templates/show_song.inc.php:174
 msgid "Lyrics"
-msgstr ""
+msgstr "lyrics"
 
 #: ../../templates/show_song.inc.php:178
 msgid "Licensing"
-msgstr ""
+msgstr "Licensing"
 
 #: ../../templates/show_song_row.inc.php:95
 msgid "Song Information"
-msgstr "Spor informasjon"
+msgstr "Sanginformasjon"
 
 #: ../../templates/show_song_row.inc.php:108
-#, fuzzy
 msgid "Song edit"
-msgstr "Spor tittel"
+msgstr "Sang rediger"
 
-#: ../../templates/show_songs.inc.php:41 ../../templates/show_songs.inc.php:104
+#: ../../templates/show_songs.inc.php:41
+#: ../../templates/show_songs.inc.php:104
 msgid "License"
-msgstr ""
+msgstr "Tillatelse"
 
 #: ../../templates/show_songs.inc.php:88
-#, fuzzy
 msgid "No song found"
-msgstr "Ingen deaktiverte spor funnet"
+msgstr "Ingen sang funnet"
 
 #: ../../templates/show_stats.inc.php:31
 msgid "Connected Users"
@@ -6301,210 +6177,244 @@ msgstr "Katalogtid"
 
 #: ../../templates/show_tagcloud.inc.php:60
 msgid "Tag edit"
-msgstr ""
+msgstr "Tag redigering"
 
 #: ../../templates/show_tagcloud.inc.php:65
-#, fuzzy
 msgid "Do you really want to delete the tag?"
-msgstr "Vil du virkelig slette denne katalogen?"
+msgstr "Vil du virkelig slette taggen?"
 
 #: ../../templates/show_test_config.inc.php:41
 #: ../../templates/show_test.inc.php:44
 #: ../../templates/sidebar_admin.inc.php:47
 msgid "Ampache Debug"
-msgstr "Feilsøk"
+msgstr "Ampache Debug"
 
 #: ../../templates/show_test.inc.php:48
 msgid ""
 "You may have reached this page because a configuration error has occured. "
 "Debug information is below."
 msgstr ""
+"Du kan ha nådd denne siden fordi en konfigurasjonsfeil har oppstått. "
+"Feilsøkingsinformasjon er under."
 
 #: ../../templates/show_test.inc.php:51
-#, fuzzy
 msgid "Web Installation"
-msgstr "Installasjon av Ampache"
+msgstr "Webinstallasjon"
 
 #: ../../templates/show_test_table.inc.php:24
-#, fuzzy
 msgid "PHP version"
-msgstr "Versjon"
+msgstr "PHP-versjon"
 
 #: ../../templates/show_test_table.inc.php:29
 msgid ""
 "This tests whether you are running at least the minimum version of PHP "
 "required by Ampache."
 msgstr ""
+"Dette tester om du kjører minst den minste versjonen av PHP som kreves av "
+"Ampache."
 
 #: ../../templates/show_test_table.inc.php:33
 msgid "Dependencies"
-msgstr ""
+msgstr "avhengig"
 
 #: ../../templates/show_test_table.inc.php:38
 msgid "This tests whether Ampache dependencies are installed."
-msgstr ""
+msgstr "Dette tester om Ampache-avhengigheter er installert."
 
 #: ../../templates/show_test_table.inc.php:42
 msgid ""
-"Please download and install Composer from http://getcomposer.org and install "
-"it (e.g: mv composer.phar /usr/local/bin/composer) then run `composer "
+"Please download and install Composer from http://getcomposer.org and install"
+" it (e.g: mv composer.phar /usr/local/bin/composer) then run `composer "
 "install --prefer-source --no-interaction` on Ampache directory."
 msgstr ""
+"Vennligst last ned og installer Komponist fra http://getcomposer.org og "
+"installer den (f.eks: mv composer.phar / usr / local / bin / composer) og "
+"kjør `komponist installere --prefer-source -no-interaction` på Ampache "
+"katalogen."
 
 #: ../../templates/show_test_table.inc.php:48
 msgid "PHP hash extension"
-msgstr ""
+msgstr "PHP hashutvidelse"
 
 #: ../../templates/show_test_table.inc.php:53
 msgid ""
 "This tests whether you have the hash extension enabled. This extension is "
 "required by Ampache."
 msgstr ""
+"Dette tester om du har hash-utvidelsen aktivert. Denne utvidelsen kreves av "
+"Ampache."
 
 #: ../../templates/show_test_table.inc.php:57
 msgid "SHA256"
-msgstr ""
+msgstr "SHA256"
 
 #: ../../templates/show_test_table.inc.php:62
 msgid ""
 "This tests whether the hash extension supports SHA256. This algorithm is "
 "required by Ampache."
 msgstr ""
+"Dette tester om hashforlengelsen støtter SHA256. Denne algoritmen kreves av "
+"Ampache."
 
 #: ../../templates/show_test_table.inc.php:66
 msgid "PHP PDO extension"
-msgstr ""
+msgstr "PHP PDO forlengelse"
 
 #: ../../templates/show_test_table.inc.php:71
 msgid ""
 "This tests whether you have the PDO extension enabled. This extension is "
 "required by Ampache."
 msgstr ""
+"Dette tester om du har aktivert PDO-utvidelsen. Denne utvidelsen kreves av "
+"Ampache."
 
 #: ../../templates/show_test_table.inc.php:75
 msgid "MySQL"
-msgstr ""
+msgstr "MySQL"
 
 #: ../../templates/show_test_table.inc.php:80
 msgid ""
 "This tests whether the MySQL driver for PDO is enabled. This driver is "
 "required by Ampache."
 msgstr ""
+"Dette tester om MySQL-driveren for PDO er aktivert. Denne driveren kreves av"
+" Ampache."
 
 #: ../../templates/show_test_table.inc.php:84
 msgid "PHP session extension"
-msgstr ""
+msgstr "PHP øktutvidelse"
 
 #: ../../templates/show_test_table.inc.php:89
 msgid ""
-"This tests whether you have the session extension enabled. This extension is "
-"required by Ampache."
+"This tests whether you have the session extension enabled. This extension is"
+" required by Ampache."
 msgstr ""
+"Dette tester om du har økt forlengelse aktivert. Denne utvidelsen kreves av "
+"Ampache."
 
 #: ../../templates/show_test_table.inc.php:93
 msgid "PHP iconv extension"
-msgstr ""
+msgstr "PHP iconv utvidelse"
 
 #: ../../templates/show_test_table.inc.php:98
 msgid ""
 "This tests whether you have the iconv extension enabled. This extension is "
 "required by Ampache."
 msgstr ""
+"Dette tester om du har tilkoblet ikonv-utvidelsen. Denne utvidelsen kreves "
+"av Ampache."
 
 #: ../../templates/show_test_table.inc.php:102
-#, fuzzy
 msgid "PHP JSON extension"
-msgstr "PHP Innstillinger"
+msgstr "PHP JSON-utvidelse"
 
 #: ../../templates/show_test_table.inc.php:107
 msgid ""
 "This tests whether you have the JSON extension enabled. This extension is "
 "required by Ampache."
 msgstr ""
+"Dette tester om du har aktivert JSON-utvidelsen. Denne utvidelsen kreves av "
+"Ampache."
 
 #: ../../templates/show_test_table.inc.php:111
 msgid "PHP curl extension"
-msgstr ""
+msgstr "PHP curl forlengelse"
 
 #: ../../templates/show_test_table.inc.php:116
 msgid ""
-"This tests whether you have the curl extension enabled. This is not strictly "
-"necessary, but may result in a better experience."
+"This tests whether you have the curl extension enabled. This is not strictly"
+" necessary, but may result in a better experience."
 msgstr ""
+"Dette tester om du har aktivert curl forlengelsen. Dette er ikke strengt "
+"nødvendig, men kan resultere i en bedre opplevelse."
 
 #: ../../templates/show_test_table.inc.php:120
 msgid "PHP zlib extension"
-msgstr ""
+msgstr "PHP zlib-utvidelse"
 
 #: ../../templates/show_test_table.inc.php:125
 msgid ""
-"This tests whether you have the zlib extension enabled. This is not strictly "
-"necessary, but may result in a better experience (zip download)."
+"This tests whether you have the zlib extension enabled. This is not strictly"
+" necessary, but may result in a better experience (zip download)."
 msgstr ""
+"Dette tester om du har zlib-utvidelsen aktivert. Dette er ikke strengt "
+"nødvendig, men kan resultere i en bedre opplevelse (zip-nedlasting)."
 
 #: ../../templates/show_test_table.inc.php:129
 msgid "PHP simplexml extension"
-msgstr ""
+msgstr "PHP simplexml forlengelse"
 
 #: ../../templates/show_test_table.inc.php:134
 msgid ""
 "This tests whether you have the simplexml extension enabled. This is not "
 "strictly necessary, but may result in a better experience."
 msgstr ""
+"Dette tester om du har aktivert simplexml-utvidelsen. Dette er ikke strengt "
+"nødvendig, men kan resultere i en bedre opplevelse."
 
 #: ../../templates/show_test_table.inc.php:138
 msgid "PHP GD extension"
-msgstr ""
+msgstr "PHP GD-utvidelse"
 
 #: ../../templates/show_test_table.inc.php:143
 msgid ""
 "This tests whether you have the GD extension enabled. This is not strictly "
 "necessary, but may result in a better experience."
 msgstr ""
+"Dette tester om du har GD-utvidelsen aktivert. Dette er ikke strengt "
+"nødvendig, men kan resultere i en bedre opplevelse."
 
 #: ../../templates/show_test_table.inc.php:147
 msgid "PHP safe mode disabled"
-msgstr ""
+msgstr "PHP sikker modus deaktivert"
 
 #: ../../templates/show_test_table.inc.php:152
 msgid ""
 "This test makes sure that PHP is not running in safe mode. Some features of "
 "Ampache will not work correctly in safe mode."
 msgstr ""
+"Denne testen sikrer at PHP ikke kjører i sikker modus. Noen funksjoner i "
+"Ampache virker ikke riktig i sikker modus."
 
 #: ../../templates/show_test_table.inc.php:156
 msgid "PHP memory limit override"
-msgstr ""
+msgstr "PHP minne grense overstyring"
 
 #: ../../templates/show_test_table.inc.php:161
 msgid ""
 "This tests whether Ampache can override the memory limit. This is not "
 "strictly necessary, but may result in a better experience."
 msgstr ""
+"Dette tester om Ampache kan overstyre minnegrensen. Dette er ikke strengt "
+"nødvendig, men kan resultere i en bedre opplevelse."
 
 #: ../../templates/show_test_table.inc.php:165
 msgid "PHP execution time override"
-msgstr ""
+msgstr "PHP-kjøretiden overstyres"
 
 #: ../../templates/show_test_table.inc.php:170
 msgid ""
-"This tests whether Ampache can override the limit on maximum execution time. "
-"This is not strictly necessary, but may result in a better experience."
+"This tests whether Ampache can override the limit on maximum execution time."
+" This is not strictly necessary, but may result in a better experience."
 msgstr ""
+"Dette tester om Ampache kan overstyre grensen på maksimal kjøretid. Dette er"
+" ikke strengt nødvendig, men kan resultere i en bedre opplevelse."
 
 #: ../../templates/show_test_table.inc.php:174
 msgid "PHP max upload size"
-msgstr ""
+msgstr "PHP maksimal opplastingsstørrelse"
 
 #: ../../templates/show_test_table.inc.php:179
 msgid ""
 "This tests whether Ampache can upload medium files (>= 20M). This is not "
 "strictly necessary, but may result in a better experience."
 msgstr ""
+"Dette tester om Ampache kan laste opp mediefiler (> = 20M). Dette er ikke "
+"strengt nødvendig, men kan resultere i en bedre opplevelse."
 
 #: ../../templates/show_test_table.inc.php:183
 msgid "PHP Integer Size"
-msgstr ""
+msgstr "PHP Integer Size"
 
 #: ../../templates/show_test_table.inc.php:188
 msgid ""
@@ -6512,10 +6422,13 @@ msgid ""
 "strictly necessary, but may result in a better experience. This generally "
 "requires 64-bit operating system."
 msgstr ""
+"Dette tester om Ampache kan håndtere store filer (> 2 GB). Dette er ikke "
+"strengt nødvendig, men kan resultere i en bedre opplevelse. Dette krever "
+"vanligvis 64-biters operativsystem."
 
 #: ../../templates/show_test_table.inc.php:192
 msgid "PHP mbstring.func_overload"
-msgstr ""
+msgstr "PHP mbstring.func_overload"
 
 #: ../../templates/show_test_table.inc.php:197
 #, php-format
@@ -6525,48 +6438,59 @@ msgid ""
 "(disabled by default) along with mbstring.func_overload may result in "
 "irreversible corruption of your music files."
 msgstr ""
+"Dette tester om PHP %s er satt som det kan ødelegge ID3-tagstøtten. Dette er"
+" ikke strengt nødvendig, men det kan føre til irreversibel korrupsjon av "
+"musikkfilene dine, slik at du kan bruke Ampache ID3-tagstøtte (deaktivert "
+"som standard) sammen med mbstring.func_overload."
 
 #: ../../templates/show_test_table.inc.php:204
 msgid "Configuration file readability"
-msgstr ""
+msgstr "Konfigurasjonsfillesbarhet"
 
 #: ../../templates/show_test_table.inc.php:209
 msgid ""
 "This test attempts to read config/amuzak.cfg.php. If this fails the file "
 "either is not in the correct location or is not currently readable."
 msgstr ""
+"Denne testen prøver å lese config / amuzak.cfg.php. Hvis dette mislykkes, er"
+" enten ikke det riktige stedet eller er det for øyeblikket ikke lesbart."
 
 #: ../../templates/show_test_table.inc.php:214
 msgid "Configuration file validity"
-msgstr ""
+msgstr "Konfigurasjonsfilgyldighet"
 
 #: ../../templates/show_test_table.inc.php:223
 msgid ""
 "This test makes sure that you have set all of the required configuration "
 "variables and that we are able to completely parse your config file."
 msgstr ""
+"Denne testen sørger for at du har angitt alle nødvendige "
+"konfigurasjonsvariabler, og at vi kan fullstendig analysere "
+"konfigurasjonsfilen din."
 
 #: ../../templates/show_test_table.inc.php:232
 msgid ""
 "This attempts to connect to your database using the values read from your "
 "configuration file."
 msgstr ""
+"Dette forsøker å koble til databasen din ved hjelp av verdiene som leses fra"
+" konfigurasjonsfilen din."
 
 #: ../../templates/show_test_table.inc.php:236
-#, fuzzy
 msgid "Database tables"
-msgstr "Endre databasens tegnsett"
+msgstr "Database tabeller"
 
 #: ../../templates/show_test_table.inc.php:241
 msgid ""
 "This checks a few key tables to make sure that you have successfully "
 "inserted the Ampache database and that the user has access to the database"
 msgstr ""
+"Dette kontrollerer noen viktige tabeller for å sikre at du har satt inn "
+"Ampache-databasen, og at brukeren har tilgang til databasen"
 
 #: ../../templates/show_test_table.inc.php:246
-#, fuzzy
 msgid "Web path"
-msgstr "Web bane"
+msgstr "Nettvei"
 
 #: ../../templates/show_test_table.inc.php:256
 msgid ""
@@ -6574,6 +6498,9 @@ msgid ""
 "we are able to get to the index page. If you do not see a check mark here "
 "then your web_path is not set correctly."
 msgstr ""
+"Denne testen sikrer at web_path-variabelen er riktig og at vi kan komme til "
+"indekssiden. Hvis du ikke ser en markering her, er webbanen din ikke riktig "
+"angitt."
 
 #: ../../templates/show_update_items.inc.php:23
 msgid "Starting Update from Tags"
@@ -6585,14 +6512,12 @@ msgstr "Oppdatering fra tag informasjon ferdig"
 
 #: ../../templates/show_uploads.inc.php:23
 #: ../../templates/sidebar_home.inc.php:119
-#, fuzzy
 msgid "Uploads"
-msgstr "Last opp"
+msgstr "opplastinger"
 
 #: ../../templates/show_user_activate.inc.php:38
-#, fuzzy
 msgid "Registration Validation"
-msgstr "Registreringsdato"
+msgstr "Registreringsgodkjenning"
 
 #: ../../templates/show_user_activate.inc.php:47
 msgid "User Activated"
@@ -6613,19 +6538,16 @@ msgid "The validation key used isn't correct"
 msgstr "Valideringsnøkkelen som ble brukt er ikke korrekt"
 
 #: ../../templates/show_userflag.inc.php:23
-#, fuzzy
 msgid "User Favorites"
-msgstr "Brukeregenskaper"
+msgstr "Bruker Favoritter"
 
 #: ../../templates/show_user.inc.php:37
-#, fuzzy
 msgid "Display Name"
-msgstr "Navn på spilleliste"
+msgstr "Visningsnavn"
 
 #: ../../templates/show_user.inc.php:52
-#, fuzzy
 msgid "Member Since"
-msgstr "Husk meg"
+msgstr "Medlem siden"
 
 #: ../../templates/show_user.inc.php:55 ../../templates/show_users.inc.php:50
 #: ../../templates/show_users.inc.php:82
@@ -6643,11 +6565,11 @@ msgstr "Status"
 
 #: ../../templates/show_user.inc.php:76
 msgid "User is Online Now"
-msgstr "Bruker er pålogget nå"
+msgstr "Brukeren er pålogget nå"
 
 #: ../../templates/show_user.inc.php:80
 msgid "User is Offline Now"
-msgstr "Bruker er avlogget nå"
+msgstr "Brukeren er frakoblet nå"
 
 #: ../../templates/show_user.inc.php:105
 msgid "Active Playlist"
@@ -6666,9 +6588,8 @@ msgid "User Information"
 msgstr "Brukerinformasjon"
 
 #: ../../templates/show_user_registration.inc.php:150
-#, fuzzy
 msgid "* Required fields"
-msgstr "Krav"
+msgstr "* Obligatoriske felt"
 
 #: ../../templates/show_user_registration.inc.php:162
 msgid "Register User"
@@ -6688,12 +6609,11 @@ msgstr "Siste IP"
 
 #: ../../templates/show_users.inc.php:63 ../../templates/show_users.inc.php:95
 msgid "On-line"
-msgstr "Online"
+msgstr "På nett"
 
 #: ../../templates/show_verify_catalog.inc.php:23
-#, fuzzy
 msgid "Verify Catalog"
-msgstr "Katalog"
+msgstr "Bekreft katalog"
 
 #. HINT: Catalog Name
 #: ../../templates/show_verify_catalog.inc.php:25
@@ -6702,9 +6622,8 @@ msgid "Updating the %s catalog"
 msgstr "Oppdaterer katalogen %s"
 
 #: ../../templates/show_verify_catalog.inc.php:27
-#, fuzzy
 msgid "Verified"
-msgstr "Verifiser"
+msgstr "verifisert"
 
 #: ../../templates/sidebar_admin.inc.php:24
 #: ../../templates/sidebar_admin.inc.php:31
@@ -6720,7 +6639,7 @@ msgstr "Verifiser"
 #: ../../templates/sidebar_modules.inc.php:30
 #: ../../templates/sidebar_preferences.inc.php:30
 msgid "Expand/Collapse"
-msgstr ""
+msgstr "Utvid / trekk"
 
 #: ../../templates/sidebar_admin.inc.php:31
 msgid "User Tools"
@@ -6748,36 +6667,32 @@ msgid "Clear Now Playing"
 msgstr "Rensk spilles nå"
 
 #: ../../templates/sidebar_admin.inc.php:52
-#, fuzzy
 msgid "Manage Licenses"
-msgstr "Behandle spilleliste"
+msgstr "Administrer lisenser"
 
 #: ../../templates/sidebar_admin.inc.php:59
 msgid "Server Config"
 msgstr "Serverkonfigurasjon"
 
 #: ../../templates/sidebar_home.inc.php:32
-#, fuzzy
 msgid "Song Titles"
-msgstr "Spor tittel"
+msgstr "Sangtitler"
 
 #: ../../templates/sidebar_home.inc.php:75
 msgid "Currently Playing"
-msgstr "Spilles nå"
+msgstr "For øyeblikket spiller"
 
 #: ../../templates/sidebar_home.inc.php:85
-#, fuzzy
 msgid "Import"
-msgstr "Eksporter"
+msgstr "Importere"
 
 #: ../../templates/sidebar_home.inc.php:97
 msgid "Recent"
-msgstr ""
+msgstr "Nylig"
 
 #: ../../templates/sidebar_home.inc.php:104
-#, fuzzy
 msgid "Top Rated"
-msgstr "Kvalitet"
+msgstr "Topp rangert"
 
 #: ../../templates/sidebar_home.inc.php:140
 msgid "Advanced"
@@ -6786,7 +6701,7 @@ msgstr "Avansert"
 #: ../../templates/sidebar.inc.php:35
 #: ../../templates/sidebar_modules.inc.php:24
 msgid "Modules"
-msgstr "Moduler"
+msgstr "moduler"
 
 #: ../../templates/sidebar.inc.php:60
 msgid "Logout"
@@ -6794,12 +6709,11 @@ msgstr "Logg ut"
 
 #: ../../templates/sidebar.light.inc.php:33
 msgid "Radio"
-msgstr ""
+msgstr "Radio"
 
 #: ../../templates/sidebar_modules.inc.php:26
-#, fuzzy
 msgid "Catalog Modules"
-msgstr "Kataloger"
+msgstr "Katalogmoduler"
 
 #: ../../templates/sidebar_modules.inc.php:27
 msgid "Available Plugins"
@@ -6824,6 +6738,9 @@ msgid ""
 "<strong>3.3.3.5</strong>. Your current version is <strong>%s</strong> with "
 "database version <strong>%s</strong>."
 msgstr ""
+"Denne siden håndterer alle databaseoppdateringer til Ampache som starter med"
+" <strong> 3.3.3.5 </strong>. Din nåværende versjon er <strong> %s </strong> "
+"med databaseversjon <strong> %s </strong>."
 
 #: ../../update.php:91
 msgid "Update Now!"
@@ -6831,142 +6748,4 @@ msgstr "Oppdater nå!"
 
 #: ../../upnp/control-reply.php:46
 msgid "root"
-msgstr ""
-
-#~ msgid "Active Instance"
-#~ msgstr "Aktiv instans"
-
-#~ msgid "Add Instance"
-#~ msgstr "Legg til instans"
-
-#~ msgid "Add Localplay Instance"
-#~ msgstr "Legg til lokalavspillingsinstans"
-
-#~ msgid "Allow Localplay Play"
-#~ msgstr "Tillat lokalavspilling"
-
-#~ msgid "Allow Localplay set to False"
-#~ msgstr "Tillat lokalavspilling er satt til 0"
-
-#~ msgid "Current Playlist"
-#~ msgstr "Nåværende Spilleliste"
-
-#~ msgid "Decrease Volume"
-#~ msgstr "Senk volum"
-
-#~ msgid "Disabled"
-#~ msgstr "Deaktivert"
-
-#~ msgid "Edit Localplay Instance"
-#~ msgstr "Rediger lokalavspillingsinstans"
-
-#~ msgid "Forces Http play regardless of port"
-#~ msgstr "Tving til http-spilling uansett port"
-
-#~ msgid "Hostname"
-#~ msgstr "Vertsnavn"
-
-#~ msgid "Increase Volume"
-#~ msgstr "Øk Volum"
-
-#~ msgid "Instance Name"
-#~ msgstr "Navn på instans"
-
-#~ msgid "Interface"
-#~ msgstr "Grensesnitt"
-
-#~ msgid "Local Play"
-#~ msgstr "Lokalavspilling"
-
-#~ msgid "Localplay"
-#~ msgstr "Lokalavspilling"
-
-#~ msgid "Localplay Access"
-#~ msgstr "Lokalavspillingstilgang"
-
-#~ msgid "Localplay Control"
-#~ msgstr "Lokalavspillingskontroll"
-
-#~ msgid "Localplay Controller Not Defined"
-#~ msgstr "Kontroller for lokalavspilling er ikke definert"
-
-#~ msgid "Localplay Controllers"
-#~ msgstr "Lokalavspilling kontroll"
-
-#~ msgid "Localplay Disabled"
-#~ msgstr "Lokalavspilling deaktivert"
-
-#~ msgid "Localplay Type"
-#~ msgstr "Lokalavspillingstype"
-
-#~ msgid "Lock Songs"
-#~ msgstr "Lås spor"
-
-#~ msgid "Log out"
-#~ msgstr "Logg ut"
-
-#~ msgid "Manage Shoutbox"
-#~ msgstr "Behandle Shoutbox"
-
-#~ msgid "Manager"
-#~ msgstr "Operatør"
-
-#~ msgid "Mute"
-#~ msgstr "Stum"
-
-#~ msgid "Offset Limit"
-#~ msgstr "Offsetgrense"
-
-#~ msgid "Pause"
-#~ msgstr "Pause"
-
-#~ msgid "Paused"
-#~ msgstr "Pause"
-
-#~ msgid "Popular Threshold"
-#~ msgstr "Terskel for popularitet"
-
-#~ msgid "Port"
-#~ msgstr "Port"
-
-#~ msgid "Previous"
-#~ msgstr "Forrige"
-
-#~ msgid "Repeat"
-#~ msgstr "Gjenta"
-
-#~ msgid "Resolution"
-#~ msgstr "Oppløsning"
-
-#~ msgid "Show instances"
-#~ msgstr "Vis instanser"
-
-#~ msgid "Show Localplay Instances"
-#~ msgstr "Vis instanser for lokalavspilling"
-
-#~ msgid "Statistics Day Threshold"
-#~ msgstr "Statistikkterskel i dager"
-
-#~ msgid "Stop"
-#~ msgstr "Stop"
-
-#~ msgid "Stopped"
-#~ msgstr "Stoppet"
-
-#~ msgid "Theme"
-#~ msgstr "Tema"
-
-#~ msgid "Transcode Bitrate"
-#~ msgstr "Bitrate for transkoding"
-
-#~ msgid "Type of Playback"
-#~ msgstr "Avspillingsform"
-
-#~ msgid "Update Instance"
-#~ msgstr "Oppdater instans"
-
-#~ msgid "Videos"
-#~ msgstr "Videoer"
-
-#~ msgid "Volume"
-#~ msgstr "Volum"
+msgstr "rot"

@@ -1,24 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 # Translators:
-# Nachum Marcus <nachum37@gmail.com>, 2017
+# lachlan 00 <lachlan.00@gmail.com>, 2019
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ampache\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/projects/p/ampache/\n"
 "POT-Creation-Date: 2019-03-28 10:08+1000\n"
-"PO-Revision-Date: 2018-10-26 15:36+0000\n"
-"Last-Translator: Manuel <psyvirusx@gmail.com>\n"
-"Language-Team: Hebrew (Israel) (http://www.transifex.com/ampache/ampache/"
-"language/he_IL/)\n"
-"Language: he_IL\n"
+"PO-Revision-Date: 2019-03-28 00:51+0000\n"
+"Last-Translator: lachlan 00 <lachlan.00@gmail.com>, 2019\n"
+"Language-Team: Hebrew (Israel) (https://www.transifex.com/ampachecore/teams/97573/he_IL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % "
-"1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Language: he_IL\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
 #: ../../admin/access.php:40
 msgid "Deleted"
@@ -475,11 +476,11 @@ msgstr "בטל זמנית מגבלות זיכרון PHP"
 
 #: ../../bin/catalog_update.inc:56
 msgid "Setting catalog name"
-msgstr ""
+msgstr "הגדרת שם לקטלוג"
 
 #: ../../bin/catalog_update.inc:60
 msgid "Setting catalog type"
-msgstr ""
+msgstr "הגדרת סוג הקטלוג"
 
 #: ../../bin/catalog_update.inc:64
 msgid "Cleaning catalog/s"
@@ -552,9 +553,11 @@ msgstr "- עזרה לעדכון הקטלוג -"
 
 #: ../../bin/catalog_update.inc:203
 msgid ""
-"Usage: catalog_update.inc [-n CATALOG NAME] [-t CATALOG TYPE] [-h|-m|-c|-v|-"
-"a|-g|-i|-o]"
+"Usage: catalog_update.inc [-n CATALOG NAME] [-t CATALOG TYPE] "
+"[-h|-m|-c|-v|-a|-g|-i|-o]"
 msgstr ""
+"שימוש: catalog_update.inc [-n קטלוג NAME] [-t Catalog TYPE] [-h | -m | -c | "
+"-vv | -a | -g | -i | -o]"
 
 #: ../../bin/catalog_update.inc:207
 msgid ""
@@ -565,15 +568,15 @@ msgstr ""
 
 #: ../../bin/catalog_update.inc:211
 msgid "This help message"
-msgstr ""
+msgstr "הודעת עזרה זו"
 
 #: ../../bin/catalog_update.inc:213
 msgid "Name of Catalog (Optional)"
-msgstr ""
+msgstr "שם הקטלוג (אופציונלי)"
 
 #: ../../bin/catalog_update.inc:215
 msgid "Type of Catalog (Optional)"
-msgstr ""
+msgstr "סוג הקטלוג (אופציונלי)"
 
 #: ../../bin/catalog_update.inc:217
 msgid "Temporarily deactivates PHP memory limit."
@@ -615,20 +618,20 @@ msgstr ""
 
 #: ../../bin/catalog_update.inc:233
 msgid ""
-"Depending on your systems performance, this option could need a long time to "
-"finish and extremely slow down other database processes if you have big "
+"Depending on your systems performance, this option could need a long time to"
+" finish and extremely slow down other database processes if you have big "
 "catalogs!"
 msgstr ""
-"בהתאם לביצועי המערכת שלך, אפשרות זו עלולה להזדקק לזמן רב עד לסיום ולהאט מאוד "
-"תהליכי מסד נתונים אחרים אם יש לך קטלוגים גדולים!"
+"בהתאם לביצועי המערכת שלך, אפשרות זו עלולה להזדקק לזמן רב עד לסיום ולהאט מאוד"
+" תהליכי מסד נתונים אחרים אם יש לך קטלוגים גדולים!"
 
 #: ../../bin/catalog_update.inc:234
 msgid ""
-"The switches [-m|-i|-o] can only be used, if one of the other switches [-c|-"
-"v|-a|-g] is used."
+"The switches [-m|-i|-o] can only be used, if one of the other switches "
+"[-c|-v|-a|-g] is used."
 msgstr ""
-"המתגים [m|-i|-o-] יכולים להיות בשימוש, רק אם אחד מהמתגים האחרים [c|-v|-a|-"
-"g-] בשימוש. "
+"המתגים [m|-i|-o-] יכולים להיות בשימוש, רק אם אחד מהמתגים האחרים "
+"[c|-v|-a|-g-] בשימוש. "
 
 #: ../../bin/delete_disabled.inc:37
 msgid "DEBUG ENABLED WILL NOT DELETE FILES!"
@@ -651,7 +654,7 @@ msgstr "שגיאה: נדרש Iconv עבור הפונקציונליות הזו. �
 #: ../../bin/fix_filenames.inc:51
 #, php-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: ../../bin/fix_filenames.inc:52
 msgid "Testing Basic Translation, the two strings below should look the same"
@@ -916,47 +919,47 @@ msgstr "רשימת ההשמעה המבוקשת נמחקה"
 
 #: ../../install.php:121
 msgid "Error: Ampache SQL Username or Password missing"
-msgstr ""
+msgstr "שגיאה: שם משתמש או סיסמה חסרים"
 
 #: ../../install.php:170
 msgid "Error: Config files not found or unreadable"
-msgstr ""
+msgstr "שגיאה: קובצי תצורה לא נמצאו או בלתי קריאים"
 
 #: ../../labels.php:36 ../../labels.php:56 ../../labels.php:58
 msgid "Label Deletion"
-msgstr ""
+msgstr "מחיקת תווית"
 
 #: ../../labels.php:37
 msgid "Are you sure you want to permanently delete this label?"
-msgstr ""
+msgstr "האם אתה בטוח שברצונך למחוק את התווית הזו לצמיתות?"
 
 #: ../../labels.php:56
 msgid "Label has been deleted."
-msgstr ""
+msgstr "התווית נמחקה."
 
 #: ../../labels.php:58
 msgid "Cannot delete this label."
-msgstr ""
+msgstr "לא ניתן למחוק תווית זו."
 
 #: ../../labels.php:85
 msgid "Label Added"
-msgstr ""
+msgstr "התווית נוספה"
 
 #: ../../labels.php:110
 msgid "Label cannot be found."
-msgstr ""
+msgstr "לא ניתן למצוא את התווית."
 
 #: ../../lib/class/access.class.php:157 ../../lib/class/access.class.php:162
 msgid "Invalid IPv4 / IPv6 Address Entered"
-msgstr ""
+msgstr "כתובת IPv4 / IPv6 לא חוקית הוזנה"
 
 #: ../../lib/class/access.class.php:166 ../../lib/class/access.class.php:167
 msgid "IP Address Version Mismatch"
-msgstr ""
+msgstr "אי-התאמה של כתובת IP"
 
 #: ../../lib/class/access.class.php:222
 msgid "Duplicate ACL defined"
-msgstr ""
+msgstr "הגדרת ACL כפולה"
 
 #: ../../lib/class/access.class.php:462 ../../lib/class/access.class.php:484
 #: ../../lib/ui.lib.php:398 ../../templates/browse_filters.inc.php:89
@@ -969,27 +972,28 @@ msgstr ""
 #: ../../templates/show_mail_users.inc.php:31
 #: ../../templates/show_random.inc.php:59
 msgid "All"
-msgstr ""
+msgstr "את כל"
 
-#: ../../lib/class/access.class.php:465 ../../templates/list_header.inc.php:131
+#: ../../lib/class/access.class.php:465
+#: ../../templates/list_header.inc.php:131
 #: ../../templates/show_add_access.inc.php:37
 #: ../../templates/show_edit_access.inc.php:69
 #: ../../templates/show_graphs.inc.php:83
 #: ../../templates/show_tagcloud.inc.php:33
 msgid "View"
-msgstr ""
+msgstr "נוף"
 
 #: ../../lib/class/access.class.php:468
 #: ../../templates/show_add_access.inc.php:38
 #: ../../templates/show_edit_access.inc.php:70
 msgid "Read"
-msgstr ""
+msgstr "לקרוא"
 
 #: ../../lib/class/access.class.php:471
 #: ../../templates/show_add_access.inc.php:39
 #: ../../templates/show_edit_access.inc.php:71
 msgid "Read/Write"
-msgstr ""
+msgstr "קרוא וכתוב"
 
 #: ../../lib/class/access.class.php:502
 #: ../../templates/show_add_access.inc.php:56
@@ -998,7 +1002,7 @@ msgstr ""
 #: ../../templates/show_add_access.inc.php:75
 #: ../../templates/show_edit_access.inc.php:38
 msgid "API/RPC"
-msgstr ""
+msgstr "API / RPC"
 
 #: ../../lib/class/access.class.php:504
 #: ../../templates/show_add_access.inc.php:65
@@ -1007,13 +1011,13 @@ msgstr ""
 #: ../../templates/show_add_access.inc.php:74
 #: ../../templates/show_edit_access.inc.php:37
 msgid "Local Network Definition"
-msgstr ""
+msgstr "הגדרת רשת מקומית"
 
 #: ../../lib/class/access.class.php:506
 #: ../../templates/show_add_access.inc.php:73
 #: ../../templates/show_edit_access.inc.php:36
 msgid "Web Interface"
-msgstr ""
+msgstr "ממשק אינטרנט"
 
 #: ../../lib/class/access.class.php:509
 #: ../../templates/show_add_access.inc.php:57
@@ -1021,13 +1025,13 @@ msgstr ""
 #: ../../templates/show_add_access.inc.php:72
 #: ../../templates/show_edit_access.inc.php:35
 msgid "Stream Access"
-msgstr ""
+msgstr "גישה לזרימה"
 
 #: ../../lib/class/album.class.php:404 ../../lib/class/artist.class.php:680
 #: ../../templates/show_album_group_disks.inc.php:51
 #: ../../templates/show_lyrics.inc.php:32
 msgid "Unknown (Orphaned)"
-msgstr ""
+msgstr "לא ידוע (יתום)"
 
 #: ../../lib/class/album.class.php:632
 #: ../../lib/class/subsonic_xml_data.class.php:645
@@ -1037,12 +1041,13 @@ msgstr ""
 #: ../../templates/show_edit_album_row.inc.php:67
 #: ../../templates/show_song_previews.inc.php:40
 msgid "Disk"
-msgstr ""
+msgstr "דיסק"
 
 #: ../../lib/class/album.class.php:644 ../../lib/class/browse.class.php:226
 #: ../../lib/class/upnp_api.class.php:337 ../../lib/ui.lib.php:180
 #: ../../server/search.ajax.php:57 ../../templates/header.inc.php:403
-#: ../../templates/show_label.inc.php:91 ../../templates/show_labels.inc.php:47
+#: ../../templates/show_label.inc.php:91
+#: ../../templates/show_labels.inc.php:47
 #: ../../templates/show_labels.inc.php:79
 #: ../../templates/show_random.inc.php:38
 #: ../../templates/show_random.inc.php:40
@@ -1053,21 +1058,21 @@ msgstr ""
 #: ../../templates/sidebar_home.inc.php:150
 #: ../../templates/sidebar.light.inc.php:27
 msgid "Artists"
-msgstr ""
+msgstr "אמנים"
 
 #: ../../lib/class/album.class.php:644 ../../lib/class/album.class.php:645
 #: ../../templates/show_edit_album_row.inc.php:38
 #: ../../templates/show_install_config.inc.php:64
 msgid "Various"
-msgstr ""
+msgstr "שונות"
 
 #: ../../lib/class/album.class.php:664
 msgid "Album MusicBrainzID"
-msgstr ""
+msgstr "אלבום"
 
 #: ../../lib/class/album.class.php:667
 msgid "Release Group MusicBrainzID"
-msgstr ""
+msgstr "לשחרר קבוצה"
 
 #: ../../lib/class/album.class.php:670 ../../lib/class/artist.class.php:499
 #: ../../lib/class/search.class.php:239 ../../lib/class/search.class.php:492
@@ -1098,7 +1103,7 @@ msgstr ""
 #: ../../templates/show_tagcloud.inc.php:24
 #: ../../templates/sidebar_home.inc.php:138
 msgid "Artist"
-msgstr ""
+msgstr "אמן"
 
 #: ../../lib/class/album.class.php:673 ../../lib/class/search.class.php:232
 #: ../../templates/show_add_upload.inc.php:188
@@ -1121,116 +1126,116 @@ msgstr ""
 #: ../../templates/show_tagcloud.inc.php:25
 #: ../../templates/sidebar_home.inc.php:137
 msgid "Album"
-msgstr ""
+msgstr "אלבום"
 
 #: ../../lib/class/ampache_rss.class.php:92 ../../templates/header.inc.php:41
 #: ../../templates/show_now_playing.inc.php:32
 msgid "Now Playing"
-msgstr ""
+msgstr "עכשיו משחק"
 
 #: ../../lib/class/ampache_rss.class.php:93 ../../templates/header.inc.php:42
 #: ../../templates/show_recently_played.inc.php:24
 #: ../../templates/show_user.inc.php:90
 msgid "Recently Played"
-msgstr ""
+msgstr "שיחק לאחרונה"
 
 #: ../../lib/class/ampache_rss.class.php:94 ../../templates/header.inc.php:43
 msgid "Newest Albums"
-msgstr ""
+msgstr "האלבומים החדשים ביותר"
 
 #: ../../lib/class/ampache_rss.class.php:95 ../../templates/header.inc.php:44
 msgid "Newest Artists"
-msgstr ""
+msgstr "אמנים חדשים"
 
 #: ../../lib/class/ampache_rss.class.php:96
 msgid "Newest Shouts"
-msgstr ""
+msgstr "הצעקות הכי חדשות"
 
 #: ../../lib/class/ampache_rss.class.php:150
 msgid "RSS Feed"
-msgstr ""
+msgstr "עדכון RSS"
 
 #: ../../lib/class/ampache_rss.class.php:227
 msgid "seconds ago"
-msgstr ""
+msgstr "לפני שניות"
 
 #: ../../lib/class/ampache_rss.class.php:227
 msgid "minutes ago"
-msgstr ""
+msgstr "לפני דקות"
 
 #: ../../lib/class/ampache_rss.class.php:227
 msgid "hours ago"
-msgstr ""
+msgstr "לפני שעות"
 
 #: ../../lib/class/ampache_rss.class.php:227
 msgid "days ago"
-msgstr ""
+msgstr "לפני מספר ימים"
 
 #: ../../lib/class/ampache_rss.class.php:227
 msgid "weeks ago"
-msgstr ""
+msgstr "לפני שבועות"
 
 #: ../../lib/class/ampache_rss.class.php:227
 msgid "months ago"
-msgstr ""
+msgstr "לפני חודשים"
 
 #: ../../lib/class/ampache_rss.class.php:227
 msgid "years ago"
-msgstr ""
+msgstr "לפני שנים"
 
 #: ../../lib/class/ampache_rss.class.php:354
 #: ../../modules/plugins/Flattr/Flattr.plugin.php:91
 #: ../../modules/plugins/Paypal/Paypal.plugin.php:94
 msgid "on"
-msgstr ""
+msgstr "on"
 
 #: ../../lib/class/ampconfig.class.php:85
 #, php-format
 msgid "Trying to clobber '%s' without setting clobber"
-msgstr ""
+msgstr "מנסה clobber '%s' מבלי להגדיר clobber"
 
 #: ../../lib/class/api.class.php:152
 msgid "Login Failed: version too old"
-msgstr ""
+msgstr "הכניסה נכשלה: גרסה ישנה מדי"
 
 #: ../../lib/class/api.class.php:181 ../../lib/class/api.class.php:182
 msgid "Login Failed: timestamp out of range"
-msgstr ""
+msgstr "הכניסה נכשלה: חותמת זמן מחוץ לטווח"
 
 #: ../../lib/class/api.class.php:182 ../../lib/class/api.class.php:195
 #: ../../lib/class/api.class.php:290
 msgid "Error Invalid Handshake - "
-msgstr ""
+msgstr "שגיאה לחיצת יד לא חוקית -"
 
 #: ../../lib/class/api.class.php:194 ../../lib/class/api.class.php:195
 #: ../../lib/class/api.class.php:290
 msgid "Invalid Username/Password"
-msgstr ""
+msgstr "שם משתמש / סיסמא שגויים"
 
 #: ../../lib/class/api.class.php:669 ../../lib/class/api.class.php:687
 #: ../../lib/class/api.class.php:705
 msgid "Access denied to this playlist."
-msgstr ""
+msgstr "הגישה נדחתה לפלייליסט זה."
 
 #: ../../lib/class/api.class.php:817 ../../lib/class/api.class.php:835
 msgid "Media Object Invalid or Not Specified"
-msgstr ""
+msgstr "אובייקט המדיה לא חוקי או לא מוגדר"
 
 #: ../../lib/class/api.class.php:857 ../../server/xml.server.php:109
 msgid "Invalid Request"
-msgstr ""
+msgstr "בקשה שגויה"
 
 #: ../../lib/class/api.class.php:988
 msgid "Wrong library item type."
-msgstr ""
+msgstr "סוג פריט ספריה שגוי."
 
 #: ../../lib/class/api.class.php:992
 msgid "Library item not found."
-msgstr ""
+msgstr "פריט הספרייה לא נמצא."
 
 #: ../../lib/class/art.class.php:1330
 msgid "Error: Unable to open"
-msgstr ""
+msgstr "שגיאה: לא ניתן לפתוח"
 
 #: ../../lib/class/art.class.php:1831 ../../lib/class/shoutbox.class.php:314
 #: ../../modules/plugins/CatalogFavorites/CatalogFavorites.plugin.php:121
@@ -1257,58 +1262,58 @@ msgstr ""
 #: ../../templates/show_song_preview_row.inc.php:28
 #: ../../templates/show_song_row.inc.php:36
 msgid "Play"
-msgstr ""
+msgstr "שחק"
 
 #: ../../lib/class/art.class.php:1840
 msgid "Edit/Find Art"
-msgstr ""
+msgstr "ערוך / מצא אמנות"
 
 #: ../../lib/class/art.class.php:1843
 msgid "Do you really want to reset art?"
-msgstr ""
+msgstr "האם אתה באמת רוצה לאפס את האמנות?"
 
 #: ../../lib/class/art.class.php:1844
 msgid "Reset Art"
-msgstr ""
+msgstr "אפס את האמנות"
 
 #: ../../lib/class/artist.class.php:496
 msgid "Artist MusicBrainzID"
-msgstr ""
+msgstr "האמן MusicBrainzID"
 
 #: ../../lib/class/autoupdate.class.php:234
 msgid "Update available"
-msgstr ""
+msgstr "עדכון זמין"
 
 #: ../../lib/class/autoupdate.class.php:237
 msgid "See"
-msgstr ""
+msgstr "ראה"
 
 #: ../../lib/class/autoupdate.class.php:237
 msgid "changes"
-msgstr ""
+msgstr "שינויים"
 
 #: ../../lib/class/autoupdate.class.php:239
 #: ../../lib/class/autoupdate.class.php:242
 msgid "or"
-msgstr ""
+msgstr "או"
 
 #: ../../lib/class/autoupdate.class.php:240
 #: ../../lib/class/autoupdate.class.php:243
 msgid "download"
-msgstr ""
+msgstr "הורד"
 
 #: ../../lib/class/autoupdate.class.php:257
 msgid "Updating Ampache sources with `"
-msgstr ""
+msgstr "מעדכן מקורות Ampache עם"
 
 #: ../../lib/class/autoupdate.class.php:261
 #: ../../lib/class/autoupdate.class.php:276
 msgid "Done"
-msgstr ""
+msgstr "בוצע"
 
 #: ../../lib/class/autoupdate.class.php:272
 msgid "Updating dependencies with `"
-msgstr ""
+msgstr "מעדכן תלות ב- `"
 
 #: ../../lib/class/browse.class.php:204 ../../lib/class/browse.class.php:269
 #: ../../lib/class/upnp_api.class.php:385 ../../server/index.ajax.php:218
@@ -1316,7 +1321,8 @@ msgstr ""
 #: ../../templates/show_albums.inc.php:115
 #: ../../templates/show_artists.inc.php:42
 #: ../../templates/show_artists.inc.php:116
-#: ../../templates/show_label.inc.php:92 ../../templates/show_label.inc.php:107
+#: ../../templates/show_label.inc.php:92
+#: ../../templates/show_label.inc.php:107
 #: ../../templates/show_manage_democratic.inc.php:31
 #: ../../templates/show_random.inc.php:28
 #: ../../templates/show_random.inc.php:30
@@ -1327,7 +1333,7 @@ msgstr ""
 #: ../../templates/show_stats.inc.php:35 ../../templates/show_stats.inc.php:73
 #: ../../templates/sidebar_home.inc.php:148
 msgid "Songs"
-msgstr ""
+msgstr "שירים"
 
 #: ../../lib/class/browse.class.php:210 ../../lib/class/upnp_api.class.php:361
 #: ../../lib/ui.lib.php:176 ../../server/search.ajax.php:90
@@ -1346,57 +1352,58 @@ msgstr ""
 #: ../../templates/sidebar_home.inc.php:149
 #: ../../templates/sidebar.light.inc.php:28
 msgid "Albums"
-msgstr ""
+msgstr "אלבומים"
 
 #: ../../lib/class/browse.class.php:222
 msgid "Users"
-msgstr ""
+msgstr "משתמשים"
 
 #: ../../lib/class/browse.class.php:231 ../../lib/class/upnp_api.class.php:457
 #: ../../templates/sidebar_home.inc.php:45
 #: ../../templates/sidebar.light.inc.php:33
 msgid "Radio Stations"
-msgstr ""
+msgstr "תחנות רדיו"
 
 #: ../../lib/class/browse.class.php:236 ../../lib/class/upnp_api.class.php:409
 #: ../../server/search.ajax.php:148 ../../templates/header.inc.php:409
-#: ../../templates/show_user.inc.php:96 ../../templates/sidebar_home.inc.php:41
+#: ../../templates/show_user.inc.php:96
+#: ../../templates/sidebar_home.inc.php:41
 #: ../../templates/sidebar_home.inc.php:151
 #: ../../templates/sidebar.light.inc.php:29
 msgid "Playlists"
-msgstr ""
+msgstr "פלייליסטים"
 
 #: ../../lib/class/browse.class.php:240
 msgid "Playlist Medias"
-msgstr ""
+msgstr "מדידות של רשימת השמעה"
 
 #: ../../lib/class/browse.class.php:244 ../../lib/class/upnp_api.class.php:433
 #: ../../templates/sidebar_home.inc.php:42
 msgid "Smart Playlists"
-msgstr ""
+msgstr "פלייליסטים חכמים"
 
 #: ../../lib/class/browse.class.php:248 ../../templates/show_stats.inc.php:27
 #: ../../templates/sidebar_admin.inc.php:24
 msgid "Catalogs"
-msgstr ""
+msgstr "קטלוגים"
 
 #: ../../lib/class/browse.class.php:252
 msgid "Shoutbox Records"
-msgstr ""
+msgstr "רשומות Shoutbox"
 
 #: ../../lib/class/browse.class.php:261
 #: ../../templates/show_democratic.inc.php:23
 msgid "Democratic Playlist"
-msgstr ""
+msgstr "רשימת השמעה דמוקרטית"
 
 #: ../../lib/class/browse.class.php:265
 #: ../../templates/sidebar_home.inc.php:114
 msgid "Shared Objects"
-msgstr ""
+msgstr "אובייקטים משותפים"
 
 #: ../../lib/class/browse.class.php:273
 msgid "Media Licenses"
-msgstr ""
+msgstr "רישיונות מדיה"
 
 #: ../../lib/class/browse.class.php:277 ../../server/search.ajax.php:178
 #: ../../templates/show_artist.inc.php:211
@@ -1404,93 +1411,93 @@ msgstr ""
 #: ../../templates/show_edit_artist_row.inc.php:61
 #: ../../templates/sidebar_home.inc.php:37
 msgid "Labels"
-msgstr ""
+msgstr "תוויות"
 
 #: ../../lib/class/browse.class.php:281
 msgid "Private Messages"
-msgstr ""
+msgstr "הודעה פרטית"
 
 #: ../../lib/class/browse.class.php:285 ../../lib/class/upnp_api.class.php:481
 #: ../../templates/sidebar_home.inc.php:50
 msgid "Podcasts"
-msgstr ""
+msgstr "Podcasts"
 
 #: ../../lib/class/browse.class.php:289
 msgid "Podcast Episodes"
-msgstr ""
+msgstr "פודקאסט פרקים"
 
 #: ../../lib/class/browse.class.php:330 ../../templates/rightbar.inc.php:123
 #: ../../templates/show_recently_played.inc.php:156
 msgid "More"
-msgstr ""
+msgstr "יותר"
 
 #: ../../lib/class/catalog.class.php:518 ../../lib/class/catalog.class.php:521
 #: ../../lib/class/catalog.class.php:524 ../../lib/class/user.class.php:1017
 #: ../../lib/preferences.php:303 ../../templates/show_user.inc.php:23
 #: ../../templates/show_users.inc.php:71
 msgid "Never"
-msgstr ""
+msgstr "לעולם לא"
 
 #: ../../lib/class/catalog.class.php:604
 msgid "day"
 msgid_plural "days"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "יום"
+msgstr[1] "ימים"
+msgstr[2] "ימים"
+msgstr[3] "ימים"
 
 #: ../../lib/class/catalog.class.php:606
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "שעה"
+msgstr[1] "שעות"
+msgstr[2] "שעות"
+msgstr[3] "שעות"
 
 #: ../../lib/class/catalog.class.php:651
 msgid "Catalog Insert Failed check debug logs"
-msgstr ""
+msgstr "הוספת קטלוג נכשלה ביומני רישום באגים"
 
 #: ../../lib/class/catalog.class.php:1407
 msgid "No Update Needed"
-msgstr ""
+msgstr "אין צורך בעדכון"
 
 #: ../../lib/class/catalog.class.php:1688
 #, php-format
 msgid "Catalog Clean Done. %d file removed."
 msgid_plural "Catalog Clean Done. %d files removed."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "קטלוג ניקוי בוצע. קובץ %d הוסר."
+msgstr[1] "קטלוג ניקוי בוצע. %d קבצים הוסרו."
+msgstr[2] "קטלוג ניקוי בוצע. %d קבצים הוסרו."
+msgstr[3] "קטלוג ניקוי בוצע. %d קבצים הוסרו."
 
 #: ../../lib/class/catalog.class.php:1713
 #, php-format
 msgid "Catalog Verify Done. %d of %d files updated."
-msgstr ""
+msgstr "קטלוג אימות בוצע. %d מתוך %d קבצים עודכנו."
 
 #: ../../lib/class/catalog.class.php:1925
 msgid "Failed to create playlist."
-msgstr ""
+msgstr "יצירת הפלייליסט נכשלה."
 
 #: ../../lib/class/catalog.class.php:1942
 msgid "No valid songs found in playlist file."
-msgstr ""
+msgstr "לא נמצאו שירים חוקיים בקובץ הנגינה."
 
 #: ../../lib/class/catalog.class.php:2298
 msgid ""
 "This subdirectory is not part of an existing catalog. Update cannot be "
 "processed."
-msgstr ""
+msgstr "ספריית משנה זו אינה חלק מקטלוג קיים. לא ניתן לעבד את העדכון."
 
 #: ../../lib/class/democratic.class.php:153
 #: ../../templates/show_create_democratic.inc.php:36
 msgid "minutes"
-msgstr ""
+msgstr "דקות"
 
 #: ../../lib/class/democratic.class.php:154
 msgid "Primary"
-msgstr ""
+msgstr "ראשי"
 
 #: ../../lib/class/democratic.class.php:164
 #: ../../templates/show_add_user.inc.php:87
@@ -1498,7 +1505,7 @@ msgstr ""
 #: ../../templates/show_edit_user.inc.php:111
 #: ../../templates/show_preference_box.inc.php:81
 msgid "Content Manager"
-msgstr ""
+msgstr "מנהל תוכן"
 
 #: ../../lib/class/democratic.class.php:167
 #: ../../templates/show_add_user.inc.php:88
@@ -1506,50 +1513,51 @@ msgstr ""
 #: ../../templates/show_edit_user.inc.php:112
 #: ../../templates/show_preference_box.inc.php:82
 msgid "Catalog Manager"
-msgstr ""
+msgstr "מנהל קטלוג"
 
 #: ../../lib/class/label.class.php:153 ../../lib/class/search.class.php:260
 #: ../../templates/show_edit_song_row.inc.php:81
 #: ../../templates/show_labels.inc.php:45
-#: ../../templates/show_labels.inc.php:77 ../../templates/show_song.inc.php:151
+#: ../../templates/show_labels.inc.php:77
+#: ../../templates/show_song.inc.php:151
 msgid "Label"
-msgstr ""
+msgstr "תווית"
 
 #: ../../lib/class/live_stream.class.php:192
 #: ../../lib/class/live_stream.class.php:229
 msgid "Name Required"
-msgstr ""
+msgstr "שם (חובה"
 
 #: ../../lib/class/live_stream.class.php:200
 msgid "Invalid URL must be mms:// , https:// or http://"
-msgstr ""
+msgstr "כתובת אתר לא חוקית חייבת להיות mms: //, https: // או http: //"
 
 #: ../../lib/class/live_stream.class.php:206
 #: ../../lib/class/live_stream.class.php:240
 #: ../../lib/class/live_stream.class.php:246
 msgid "Invalid URL must be http:// or https://"
-msgstr ""
+msgstr "כתובת אתר לא חוקית חייבת להיות http: // או https: //"
 
 #: ../../lib/class/live_stream.class.php:232
 msgid "Codec (eg. MP3, OGG...) Required"
-msgstr ""
+msgstr "Codec (למשל MP3, OGG ...) חובה"
 
 #: ../../lib/class/live_stream.class.php:253
 msgid "Invalid Catalog"
-msgstr ""
+msgstr "קטלוג לא חוקי"
 
 #: ../../lib/class/playlist.class.php:138
-#: ../../lib/class/playlist.class.php:139 ../../lib/class/podcast.class.php:291
-#: ../../lib/class/user.class.php:1024 ../../templates/show_user.inc.php:24
-#: ../../templates/show_users.inc.php:72
+#: ../../lib/class/playlist.class.php:139
+#: ../../lib/class/podcast.class.php:291 ../../lib/class/user.class.php:1024
+#: ../../templates/show_user.inc.php:24 ../../templates/show_users.inc.php:72
 msgid "Unknown"
-msgstr ""
+msgstr "לא ידוע"
 
 #: ../../lib/class/playlist_object.abstract.php:70
 #: ../../templates/show_edit_playlist_row.inc.php:37
 #: ../../templates/show_edit_search_row.inc.php:37
 msgid "Private"
-msgstr ""
+msgstr "פרטי"
 
 #: ../../lib/class/podcast.class.php:173
 #: ../../lib/class/podcast_episode.class.php:154
@@ -1560,27 +1568,27 @@ msgstr ""
 #: ../../templates/show_podcast_episodes.inc.php:89
 #: ../../templates/show_podcast.inc.php:92
 msgid "Podcast"
-msgstr ""
+msgstr "Podcast"
 
 #: ../../lib/class/podcast.class.php:274
 msgid "Wrong feed url"
-msgstr ""
+msgstr "כתובת אתר של עדכון שגוי"
 
 #: ../../lib/class/podcast.class.php:279
 msgid "Target catalog required"
-msgstr ""
+msgstr "קטלוג היעד נדרש"
 
 #: ../../lib/class/podcast.class.php:283
 msgid "Wrong target catalog type"
-msgstr ""
+msgstr "סוג קטלוג יעד שגוי"
 
 #: ../../lib/class/podcast.class.php:303
 msgid "Cannot access the feed."
-msgstr ""
+msgstr "לא ניתן לגשת לעדכון."
 
 #: ../../lib/class/podcast.class.php:307
 msgid "Cannot read the feed."
-msgstr ""
+msgstr "לא ניתן לקרוא את העדכון."
 
 #: ../../lib/class/podcast_episode.class.php:157
 #: ../../lib/class/search.class.php:225 ../../lib/class/search.class.php:485
@@ -1602,19 +1610,19 @@ msgstr ""
 #: ../../templates/show_podcasts.inc.php:99
 #: ../../templates/show_song.inc.php:137
 msgid "Title"
-msgstr ""
+msgstr "כותרת"
 
 #: ../../lib/class/privatemsg.class.php:143
 msgid "Error: Subject Required"
-msgstr ""
+msgstr "שגיאה: נושא נדרש"
 
 #: ../../lib/class/privatemsg.class.php:148
 msgid "Error: Unknown user"
-msgstr ""
+msgstr "שגיאה: משתמש לא ידוע"
 
 #: ../../lib/class/privatemsg.class.php:168
 msgid "Private Message"
-msgstr ""
+msgstr "הודעה פרטית"
 
 #: ../../lib/class/privatemsg.class.php:169
 #, php-format
@@ -1629,15 +1637,24 @@ msgid ""
 "        %s\n"
 "        "
 msgstr ""
+"קיבלת הודעה פרטית חדשה מ- %s.\n"
+"\n"
+"\n"
+"        --------------\n"
+"        %s\n"
+"        --------------\n"
+"\n"
+"        %s\n"
+"        "
 
 #: ../../lib/class/query.class.php:100
 msgid "Browse not found or expired, try reloading the page"
-msgstr ""
+msgstr "עיון לא נמצא או פג, נסה לטעון מחדש את הדף"
 
 #: ../../lib/class/registration.class.php:53
 #, php-format
 msgid "New User Registration at %s"
-msgstr ""
+msgstr "רישום משתמש חדש ב %s"
 
 #: ../../lib/class/registration.class.php:55
 #, php-format
@@ -1645,19 +1662,30 @@ msgid ""
 "Thank you for registering\n"
 "\n"
 "\n"
-"Please keep this e-mail for your records. Your account information is as "
-"follows:\n"
+"Please keep this e-mail for your records. Your account information is as follows:\n"
 "----------------------\n"
 "Username: %s\n"
 "----------------------\n"
 "\n"
-"Your account is currently inactive. You cannot use it until you've visited "
-"the following link:\n"
+"Your account is currently inactive. You cannot use it until you've visited the following link:\n"
 "\n"
 "%s\n"
 "\n"
 "Thank you for registering\n"
 msgstr ""
+"תודה שנרשמתם\n"
+"\n"
+"\n"
+"נא לשמור את זה דוא\"ל עבור רשומות שלך. פרטי החשבון שלך הם כדלקמן:\n"
+"--------------\n"
+"שם משתמש: %s\n"
+"--------------\n"
+"\n"
+"החשבון שלך אינו פעיל כרגע. אינך יכול להשתמש בו עד שתגיע לקישור הבא:\n"
+"\n"
+"%s\n"
+"\n"
+"תודה שנרשמתם\n"
 
 #: ../../lib/class/registration.class.php:77
 #, php-format
@@ -1671,11 +1699,19 @@ msgid ""
 "Website: %s\n"
 "\n"
 msgstr ""
+"משתמש חדש נרשם\n"
+"הערכים הבאים הוכנסו.\n"
+"\n"
+"שם משתמש: %s\n"
+"Fullname: %s\n"
+"דואר אלקטרוני: %s\n"
+"אתר אינטרנט: %s\n"
+"\n"
 
 #: ../../lib/class/registration.class.php:104
 #, php-format
 msgid "Account enabled at %s"
-msgstr ""
+msgstr "החשבון מופעל ב- %s"
 
 #: ../../lib/class/registration.class.php:105
 #, php-format
@@ -1685,90 +1721,94 @@ msgid ""
 "\n"
 "            Please logon using %s"
 msgstr ""
+"החשבון שלך %s הופעל\n"
+"\n"
+"\n"
+"            היכנס באמצעות %s"
 
 #: ../../lib/class/search.class.php:62
 msgid "is greater than or equal to"
-msgstr ""
+msgstr "גדול או שווה ל"
 
 #: ../../lib/class/search.class.php:68
 msgid "is less than or equal to"
-msgstr ""
+msgstr "הוא פחות או שווה ל"
 
 #: ../../lib/class/search.class.php:74 ../../lib/class/search.class.php:144
 #: ../../lib/class/search.class.php:163 ../../lib/class/search.class.php:176
 msgid "is"
-msgstr ""
+msgstr "J"
 
 #: ../../lib/class/search.class.php:80 ../../lib/class/search.class.php:169
 #: ../../lib/class/search.class.php:182
 msgid "is not"
-msgstr ""
+msgstr "לא"
 
 #: ../../lib/class/search.class.php:86
 msgid "is greater than"
-msgstr ""
+msgstr "גדול מ"
 
 #: ../../lib/class/search.class.php:92
 msgid "is less than"
-msgstr ""
+msgstr "זה פחות מ"
 
 #: ../../lib/class/search.class.php:99
 msgid "is true"
-msgstr ""
+msgstr "נכון"
 
 #: ../../lib/class/search.class.php:105
 msgid "is false"
-msgstr ""
+msgstr "הוא שקר"
 
 #: ../../lib/class/search.class.php:112
 msgid "contains"
-msgstr ""
+msgstr "מכיל"
 
 #: ../../lib/class/search.class.php:120
 msgid "does not contain"
-msgstr ""
+msgstr "לא מכיל"
 
 #: ../../lib/class/search.class.php:128
 msgid "starts with"
-msgstr ""
+msgstr "מתחיל עם"
 
 #: ../../lib/class/search.class.php:136
 msgid "ends with"
-msgstr ""
+msgstr "מסתיים עם"
 
 #: ../../lib/class/search.class.php:150
 msgid "sounds like"
-msgstr ""
+msgstr "נשמע כמו"
 
 #: ../../lib/class/search.class.php:156
 msgid "does not sound like"
-msgstr ""
+msgstr "לא נשמע"
 
 #: ../../lib/class/search.class.php:189
 msgid "before"
-msgstr ""
+msgstr "לפני"
 
 #: ../../lib/class/search.class.php:195
 msgid "after"
-msgstr ""
+msgstr "לאחר"
 
 #: ../../lib/class/search.class.php:202
 msgid "before (x) days ago"
-msgstr ""
+msgstr "לפני (x) לפני ימים"
 
 #: ../../lib/class/search.class.php:208
 msgid "after (x) days ago"
-msgstr ""
+msgstr "לאחר (x) לפני ימים"
 
 #: ../../lib/class/search.class.php:218
 msgid "Any searchable text"
-msgstr ""
+msgstr "כל טקסט לחיפוש"
 
 #: ../../lib/class/search.class.php:246
 #: ../../templates/show_edit_song_row.inc.php:73
 #: ../../templates/show_song.inc.php:143
 msgid "Composer"
-msgstr ""
+msgstr "מלחין"
 
 #: ../../lib/class/search.class.php:253
 #: ../../templates/show_edit_song_row.inc.php:77
@@ -1776,16 +1816,16 @@ msgstr ""
 #: ../../templates/show_manage_shoutbox.inc.php:62
 #: ../../templates/show_song.inc.php:150
 msgid "Comment"
-msgstr ""
+msgstr "תגובה"
 
 #: ../../lib/class/search.class.php:268 ../../lib/class/search.class.php:577
 #: ../../lib/class/search.class.php:611 ../../lib/class/tag.class.php:740
 msgid "Tag"
-msgstr ""
+msgstr "תג"
 
 #: ../../lib/class/search.class.php:275
 msgid "Album tag"
-msgstr ""
+msgstr "תג אלבום"
 
 #: ../../lib/class/search.class.php:282 ../../lib/class/search.class.php:585
 #: ../../templates/show_disabled_songs.inc.php:32
@@ -1795,36 +1835,37 @@ msgstr ""
 #: ../../templates/show_import_playlist.inc.php:28
 #: ../../templates/show_song.inc.php:163
 msgid "Filename"
-msgstr ""
+msgstr "שם קובץ"
 
 #: ../../lib/class/search.class.php:289 ../../lib/class/search.class.php:499
 #: ../../lib/class/search.class.php:599 ../../templates/show_albums.inc.php:42
 #: ../../templates/show_albums.inc.php:116
 #: ../../templates/show_edit_album_row.inc.php:63
 #: ../../templates/show_edit_song_row.inc.php:85
-#: ../../templates/show_graphs.inc.php:65 ../../templates/show_song.inc.php:145
+#: ../../templates/show_graphs.inc.php:65
+#: ../../templates/show_song.inc.php:145
 msgid "Year"
-msgstr ""
+msgstr "שנה"
 
 #: ../../lib/class/search.class.php:296
 msgid "Length (in minutes)"
-msgstr ""
+msgstr "אורך (בדקות)"
 
 #: ../../lib/class/search.class.php:304 ../../lib/class/search.class.php:521
 #: ../../lib/class/search.class.php:618
 msgid "Rating (Average)"
-msgstr ""
+msgstr "דירוג (ממוצע)"
 
 #: ../../lib/class/search.class.php:322 ../../templates/header.inc.php:426
 #: ../../templates/sidebar_home.inc.php:109
 #: ../../templates/sidebar.light.inc.php:38
 msgid "Favorites"
-msgstr ""
+msgstr "מועדפים"
 
 #: ../../lib/class/search.class.php:331 ../../lib/class/search.class.php:539
 #: ../../lib/class/search.class.php:643
 msgid "Rating (Mine)"
-msgstr ""
+msgstr "דירוג (שלי)"
 
 #: ../../lib/class/search.class.php:349 ../../templates/show_albums.inc.php:45
 #: ../../templates/show_albums.inc.php:119
@@ -1833,24 +1874,24 @@ msgstr ""
 #: ../../templates/show_song.inc.php:170 ../../templates/show_songs.inc.php:46
 #: ../../templates/show_songs.inc.php:109
 msgid "# Played"
-msgstr ""
+msgstr "# שיחק"
 
 #: ../../lib/class/search.class.php:357
 #: ../../templates/show_duplicates.inc.php:32
 #: ../../templates/show_duplicates.inc.php:70
 #: ../../templates/show_song.inc.php:154
 msgid "Bitrate"
-msgstr ""
+msgstr "קצב סיביות"
 
 #: ../../lib/class/search.class.php:382 ../../lib/class/search.class.php:556
 #: ../../lib/class/search.class.php:635
 msgid "My Last Play"
-msgstr ""
+msgstr "המשחק האחרון שלי"
 
 #: ../../lib/class/search.class.php:389 ../../templates/show_album.inc.php:83
 #: ../../templates/show_artist.inc.php:78
 msgid "Played"
-msgstr ""
+msgstr "שיחק"
 
 #: ../../lib/class/search.class.php:416 ../../lib/class/search.class.php:569
 #: ../../templates/browse_filters.inc.php:87
@@ -1858,14 +1899,14 @@ msgstr ""
 #: ../../templates/show_add_podcast.inc.php:34
 #: ../../templates/show_export.inc.php:32
 msgid "Catalog"
-msgstr ""
+msgstr "קטלוג"
 
 #: ../../lib/class/search.class.php:429 ../../lib/ui.lib.php:135
 #: ../../templates/show_manage_democratic.inc.php:26
 #: ../../templates/sidebar_home.inc.php:69
 #: ../../templates/sidebar_home.inc.php:139
 msgid "Playlist"
-msgstr ""
+msgstr "פלייליסט"
 
 #: ../../lib/class/search.class.php:436
 #: ../../templates/show_playlists.inc.php:35
@@ -1873,29 +1914,29 @@ msgstr ""
 #: ../../templates/show_searches.inc.php:42
 #: ../../templates/show_searches.inc.php:72
 msgid "Playlist Name"
-msgstr ""
+msgstr "שם הפלייליסט"
 
 #: ../../lib/class/search.class.php:449
 msgid "Smart Playlist"
-msgstr ""
+msgstr "רשימת השמעה חכמה"
 
 #: ../../lib/class/search.class.php:461
 msgid "Metadata"
-msgstr ""
+msgstr "מטה-נתונים"
 
 #: ../../lib/class/search.class.php:475
 #: ../../templates/show_add_upload.inc.php:199
 #: ../../templates/show_edit_song_row.inc.php:98
 msgid "Music License"
-msgstr ""
+msgstr "רישיון מוזיקה"
 
 #: ../../lib/class/search.class.php:506
 msgid "Image Width"
-msgstr ""
+msgstr "רוחב תמונה"
 
 #: ../../lib/class/search.class.php:513
 msgid "Image Height"
-msgstr ""
+msgstr "גובה התמונה"
 
 #: ../../lib/class/search.class.php:593 ../../lib/class/search.class.php:661
 #: ../../lib/class/search.class.php:669
@@ -1927,13 +1968,13 @@ msgstr ""
 #: ../../templates/show_plugins.inc.php:71
 #: ../../templates/show_stats.inc.php:68
 msgid "Name"
-msgstr ""
+msgstr "שם"
 
 #: ../../lib/class/search.class.php:605
 #: ../../templates/show_concerts.inc.php:28
 #: ../../templates/show_concerts.inc.php:56
 msgid "Place"
-msgstr ""
+msgstr "מקום"
 
 #: ../../lib/class/search.class.php:675
 #: ../../templates/show_add_label.inc.php:34
@@ -1943,7 +1984,7 @@ msgstr ""
 #: ../../templates/show_labels.inc.php:78
 #: ../../templates/show_podcast_episode.inc.php:112
 msgid "Category"
-msgstr ""
+msgstr "קטגוריה"
 
 #: ../../lib/class/search.class.php:683
 #: ../../modules/catalog/remote/remote.catalog.php:103
@@ -1958,11 +1999,11 @@ msgstr ""
 #: ../../templates/show_user_registration.inc.php:81
 #: ../../templates/show_users.inc.php:49 ../../templates/show_users.inc.php:81
 msgid "Username"
-msgstr ""
+msgstr "שם משתמש"
 
 #: ../../lib/class/share.class.php:216
 msgid "Share edit"
-msgstr ""
+msgstr "שתף עריכה"
 
 #: ../../lib/class/share.class.php:216
 #: ../../templates/show_access_list.inc.php:70
@@ -1988,7 +2029,7 @@ msgstr ""
 #: ../../templates/show_user.inc.php:42 ../../templates/show_user.inc.php:47
 #: ../../templates/show_user_row.inc.php:58
 msgid "Edit"
-msgstr ""
+msgstr "ערוך"
 
 #: ../../lib/class/share.class.php:217 ../../templates/rightbar.inc.php:112
 #: ../../templates/show_access_list.inc.php:71
@@ -2022,24 +2063,24 @@ msgstr ""
 #: ../../templates/show_tagcloud.inc.php:65
 #: ../../templates/show_user_row.inc.php:71
 msgid "Delete"
-msgstr ""
+msgstr "מחק"
 
 #: ../../lib/class/share.class.php:369 ../../lib/class/share.class.php:371
 #: ../../templates/show_shares.inc.php:23
 msgid "Share"
-msgstr ""
+msgstr "שתף"
 
 #: ../../lib/class/share.class.php:379
 msgid "Advanced Share"
-msgstr ""
+msgstr "מתקדם שתף"
 
 #: ../../lib/class/share.class.php:394
 msgid "Temporary direct link"
-msgstr ""
+msgstr "קישור ישיר זמני"
 
 #: ../../lib/class/shoutbox.class.php:236
 msgid "New shout on your content"
-msgstr ""
+msgstr "צעקה חדשה על התוכן שלך"
 
 #: ../../lib/class/shoutbox.class.php:237
 #, php-format
@@ -2054,6 +2095,15 @@ msgid ""
 "    %s\n"
 "    "
 msgstr ""
+"קיבלת רק צעקה חדשה מ- %s על התוכן שלך '%s`.\n"
+"\n"
+"\n"
+"    --------------\n"
+"    %s\n"
+"    --------------\n"
+"\n"
+"    %s\n"
+"    "
 
 #: ../../lib/class/shoutbox.class.php:315
 #: ../../templates/show_add_label.inc.php:80
@@ -2064,225 +2114,226 @@ msgstr ""
 #: ../../templates/show_podcasts.inc.php:29
 #: ../../templates/show_searches.inc.php:29
 msgid "Add"
-msgstr ""
+msgstr "הוסף"
 
 #: ../../lib/class/shoutbox.class.php:318
 msgid "Post Shout"
-msgstr ""
+msgstr "פוסט לצעוק"
 
 #: ../../lib/class/shoutbox.class.php:322
 msgid "by"
-msgstr ""
+msgstr "על ידי"
 
 #: ../../lib/class/song.class.php:1467
 #: ../../templates/show_html5_player.inc.php:151
 msgid "Show Lyrics"
-msgstr ""
+msgstr "הצג מילים"
 
 #: ../../lib/class/song.class.php:1493
 msgid "Track MusicBrainzID"
-msgstr ""
+msgstr "עקוב אחר MusicBrainzID"
 
 #: ../../lib/class/stream_playlist.class.php:614
 msgid "Vote added"
-msgstr ""
+msgstr "ההצבעה נוספה"
 
 #: ../../lib/class/update.class.php:615
 msgid "No updates needed."
-msgstr ""
+msgstr "אין צורך בעדכונים."
 
 #: ../../lib/class/update.class.php:617
 msgid "Return to main page"
-msgstr ""
+msgstr "חזור לדף הראשי"
 
 #: ../../lib/class/update.class.php:2665 ../../lib/class/update.class.php:2681
 msgid "File copy error."
-msgstr ""
+msgstr "שגיאת העתק קובץ."
 
 #: ../../lib/class/update.class.php:2672 ../../lib/class/update.class.php:2688
 msgid "Cannot copy default .htaccess file."
-msgstr ""
+msgstr "לא ניתן להעתיק את קובץ ברירת המחדל. HTaccess."
 
 #: ../../lib/class/upnp_api.class.php:510
 #: ../../templates/show_add_catalog.inc.php:72
 #: ../../templates/sidebar_home.inc.php:24
 msgid "Music"
-msgstr ""
+msgstr "מוסיקה"
 
 #: ../../lib/class/upnp_api.class.php:752
 msgid "TV Shows"
-msgstr ""
+msgstr "תוכניות טלוויזיה"
 
 #: ../../lib/class/upnp_api.class.php:792
 msgid "Clips"
-msgstr ""
+msgstr "קליפים"
 
 #: ../../lib/class/upnp_api.class.php:816
 msgid "Movies"
-msgstr ""
+msgstr "סרטים"
 
 #: ../../lib/class/upnp_api.class.php:840
 msgid "Personal Videos"
-msgstr ""
+msgstr "סרטונים אישיים"
 
 #: ../../lib/class/upnp_api.class.php:861
 #: ../../templates/show_tagcloud.inc.php:27
 msgid "Video"
-msgstr ""
+msgstr "וידאו"
 
 #: ../../lib/class/useractivity.class.php:209
 msgid "uploaded"
-msgstr ""
+msgstr "הועלה"
 
 #: ../../lib/class/useractivity.class.php:212
 msgid "played"
-msgstr ""
+msgstr "שיחק"
 
 #: ../../lib/class/useractivity.class.php:215
 msgid "favorited"
-msgstr ""
+msgstr "מועדף"
 
 #: ../../lib/class/useractivity.class.php:218
 msgid "started to follow"
-msgstr ""
+msgstr "התחיל לעקוב"
 
 #: ../../lib/class/useractivity.class.php:221
 msgid "did something on"
-msgstr ""
+msgstr "עשינו משהו"
 
-#: ../../lib/class/user.class.php:1053 ../../templates/show_tagcloud.inc.php:88
+#: ../../lib/class/user.class.php:1053
+#: ../../templates/show_tagcloud.inc.php:88
 msgid "Not Enough Data"
-msgstr ""
+msgstr "לא מספיק נתונים"
 
 #: ../../lib/class/user.class.php:1337
 msgid "User avatar"
-msgstr ""
+msgstr "סמל אישי של משתמש"
 
 #: ../../lib/class/user.class.php:1544
 msgid "Unfollow"
-msgstr ""
+msgstr "לעקוב"
 
 #: ../../lib/class/user.class.php:1544
 msgid "Follow"
-msgstr ""
+msgstr "לעקוב אחר"
 
 #: ../../lib/debug.lib.php:317 ../../lib/debug.lib.php:334
 msgid "OK"
-msgstr ""
+msgstr "בסדר"
 
 #: ../../lib/debug.lib.php:317
 msgid "ERROR"
-msgstr ""
+msgstr "שגיאה"
 
 #: ../../lib/debug.lib.php:334
 msgid "WARNING"
-msgstr ""
+msgstr "אזהרה"
 
 #: ../../lib/general.lib.php:214
 #, php-format
 msgid "Unknown %s"
-msgstr ""
+msgstr "%s לא ידוע"
 
 #: ../../lib/install.lib.php:85
 msgid "Unable to connect to database, check your ampache config"
-msgstr ""
+msgstr "לא ניתן להתחבר למסד הנתונים, בדוק את תצורת ampache"
 
 #: ../../lib/install.lib.php:94
 msgid "Unable to query database, check your ampache config"
-msgstr ""
+msgstr "לא ניתן לבצע שאילתה במסד הנתונים, בדוק את תצורת ampache"
 
 #: ../../lib/install.lib.php:102
 msgid "Existing Database detected, unable to continue installation"
-msgstr ""
+msgstr "מסד הנתונים הקיים זוהה, לא מצליח להמשיך בהתקנה"
 
 #: ../../lib/install.lib.php:166 ../../lib/install.lib.php:311
 msgid "Error writing config file"
-msgstr ""
+msgstr "שגיאה בכתיבת קובץ הגדרות"
 
 #: ../../lib/install.lib.php:192
 msgid "Error: Invalid database name."
-msgstr ""
+msgstr "שגיאה: שם מסד נתונים לא חוקי."
 
 #: ../../lib/install.lib.php:198
 #, php-format
 msgid "Error: Unable to make database connection: %s"
-msgstr ""
+msgstr "שגיאה: לא ניתן ליצור חיבור למסד נתונים: %s"
 
 #: ../../lib/install.lib.php:209
 msgid "Error: Database already exists and overwrite not checked"
-msgstr ""
+msgstr "שגיאה: מסד הנתונים כבר קיים ולא מחליף את הקובץ"
 
 #: ../../lib/install.lib.php:217
 #, php-format
 msgid "Error: Unable to create database: %s"
-msgstr ""
+msgstr "שגיאה: אין אפשרות ליצור מסד נתונים: %s"
 
 #: ../../lib/install.lib.php:235
 #, php-format
 msgid ""
 "Error: Unable to create user %1$s with permissions to %2$s on %3$s: %4$s"
-msgstr ""
+msgstr "שגיאה: אין אפשרות ליצור משתמש %1$s עם הרשאות ל- %2$s ב -%3$s: %4$s"
 
 #: ../../lib/install.lib.php:288
 msgid "Invalid configuration settings"
-msgstr ""
+msgstr "הגדרות תצורה לא חוקיות"
 
 #: ../../lib/install.lib.php:295
 msgid "Database Connection Failed Check Hostname, Username and Password"
-msgstr ""
+msgstr "חיבור מסד הנתונים נכשל בדוק שם מארח, שם משתמש וסיסמה"
 
 #: ../../lib/install.lib.php:305
 msgid "Config file is not writable"
-msgstr ""
+msgstr "קובץ config אינו ניתן לכתיבה"
 
 #: ../../lib/install.lib.php:333
 msgid "No Username/Password specified"
-msgstr ""
+msgstr "לא צויין שם משתמש / סיסמה"
 
 #: ../../lib/install.lib.php:339
 msgid "Passwords do not match"
-msgstr ""
+msgstr "סיסמאות לא תואמות"
 
 #: ../../lib/install.lib.php:345
 #, php-format
 msgid "Database connection failed: %s"
-msgstr ""
+msgstr "חיבור מסד הנתונים נכשל: %s"
 
 #: ../../lib/install.lib.php:351
 #, php-format
 msgid "Database select failed: %s"
-msgstr ""
+msgstr "בחירת מסד הנתונים נכשלה: %s"
 
 #: ../../lib/install.lib.php:362
 #, php-format
 msgid "Administrative user creation failed: %s"
-msgstr ""
+msgstr "יצירת משתמש ניהולית נכשלה: %s"
 
 #: ../../lib/javascript/search-data.php:52
 msgid "Remove"
-msgstr ""
+msgstr "הסר"
 
 #: ../../lib/login.php:80
 msgid "Error Username or Password incorrect, please try again"
-msgstr ""
+msgstr "שגיאה שם משתמש או סיסמה שגויים, נסה שוב"
 
 #: ../../lib/login.php:100
 msgid "User Disabled please contact Admin"
-msgstr ""
+msgstr "המשתמש מושבת, פנה למנהל המערכת"
 
 #: ../../lib/login.php:108
 msgid "User Already Logged in"
-msgstr ""
+msgstr "המשתמש כבר מחובר"
 
 #: ../../lib/login.php:131
 msgid "Unable to create local account"
-msgstr ""
+msgstr "לא ניתן ליצור חשבון מקומי"
 
 #: ../../lib/preferences.php:214 ../../lib/preferences.php:317
 #: ../../templates/show_disabled_songs.inc.php:68
 #: ../../templates/show_user_row.inc.php:66
 msgid "Enable"
-msgstr ""
+msgstr "הפעל"
 
 #: ../../lib/preferences.php:215 ../../lib/preferences.php:318
 #: ../../templates/show_catalog_types.inc.php:45
@@ -2290,7 +2341,7 @@ msgstr ""
 #: ../../templates/show_duplicates.inc.php:65
 #: ../../templates/show_user_row.inc.php:68
 msgid "Disable"
-msgstr ""
+msgstr "השבת"
 
 #: ../../lib/preferences.php:233 ../../lib/ui.lib.php:333
 #: ../../lib/ui.lib.php:424 ../../templates/show_adds_catalog.inc.php:27
@@ -2298,126 +2349,126 @@ msgstr ""
 #: ../../templates/show_install_config.inc.php:141
 #: ../../templates/show_search_row.inc.php:47
 msgid "None"
-msgstr ""
+msgstr "אף אחד"
 
 #: ../../lib/preferences.php:235 ../../templates/show_edit_user.inc.php:146
 #: ../../templates/show_live_stream.inc.php:51
 #: ../../templates/show_playtype_switch.inc.php:36
 msgid "Stream"
-msgstr ""
+msgstr "זרם"
 
 #: ../../lib/preferences.php:238 ../../templates/show_edit_user.inc.php:144
 #: ../../templates/show_playtype_switch.inc.php:43
 #: ../../templates/sidebar_home.inc.php:80
 #: ../../templates/sidebar_modules.inc.php:39
 msgid "Democratic"
-msgstr ""
+msgstr "דמוקרטית"
 
 #: ../../lib/preferences.php:240
 #: ../../templates/show_playtype_switch.inc.php:48
 msgid "Web Player"
-msgstr ""
+msgstr "נגן אינטרנט"
 
 #: ../../lib/preferences.php:247
 msgid "M3U"
-msgstr ""
+msgstr "M3U"
 
 #: ../../lib/preferences.php:248
 msgid "Simple M3U"
-msgstr ""
+msgstr "פשוט M3U"
 
 #: ../../lib/preferences.php:249
 msgid "PLS"
-msgstr ""
+msgstr "PLS"
 
 #: ../../lib/preferences.php:250
 msgid "Asx"
-msgstr ""
+msgstr "Asx"
 
 #: ../../lib/preferences.php:251
 msgid "RAM"
-msgstr ""
+msgstr "RAM"
 
 #: ../../lib/preferences.php:252
 msgid "XSPF"
-msgstr ""
+msgstr "XSPF"
 
 #: ../../lib/preferences.php:294
 msgid "Send on Add"
-msgstr ""
+msgstr "שלח על הוסף"
 
 #: ../../lib/preferences.php:295
 msgid "Send and Clear on Add"
-msgstr ""
+msgstr "שלח ונקה ב הוסף"
 
 #: ../../lib/preferences.php:296
 msgid "Clear on Send"
-msgstr ""
+msgstr "נקה על שלח"
 
 #: ../../lib/preferences.php:297 ../../lib/preferences.php:304
 #: ../../lib/preferences.php:340
 #: ../../templates/show_install_config.inc.php:115
 #: ../../templates/show_manage_democratic.inc.php:30
 msgid "Default"
-msgstr ""
+msgstr "ברירת מחדל"
 
 #: ../../lib/preferences.php:305
 msgid "Always"
-msgstr ""
+msgstr "תמיד"
 
 #: ../../lib/preferences.php:341
 msgid "Year ascending"
-msgstr ""
+msgstr "שנה עולה"
 
 #: ../../lib/preferences.php:342
 msgid "Year descending"
-msgstr ""
+msgstr "שנה יורד"
 
 #: ../../lib/preferences.php:343
 msgid "Name ascending"
-msgstr ""
+msgstr "שם עולה"
 
 #: ../../lib/preferences.php:344
 msgid "Name descending"
-msgstr ""
+msgstr "שם יורד"
 
 #: ../../lib/preferences.php:365
 #, php-format
 msgid "Click to grant %s access to Ampache"
-msgstr ""
+msgstr "לחץ כדי להעניק גישה ל- %s ל- Ampache"
 
 #: ../../lib/rating.lib.php:42
 msgid "Don't Play"
-msgstr ""
+msgstr "אל תשחק"
 
 #: ../../lib/rating.lib.php:44
 msgid "It's Pretty Bad"
-msgstr ""
+msgstr "זה די רע"
 
 #: ../../lib/rating.lib.php:46
 msgid "It's Ok"
-msgstr ""
+msgstr "זה בסדר"
 
 #: ../../lib/rating.lib.php:48
 msgid "It's Pretty Good"
-msgstr ""
+msgstr "זה די טוב"
 
 #: ../../lib/rating.lib.php:50
 msgid "I Love It!"
-msgstr ""
+msgstr "אני אוהב את זה!"
 
 #: ../../lib/rating.lib.php:52
 msgid "It's Insane"
-msgstr ""
+msgstr "זה לא שפוי"
 
 #: ../../lib/rating.lib.php:55
 msgid "Off the Charts!"
-msgstr ""
+msgstr "הנחה על תרשימים!"
 
 #: ../../lib/ui.lib.php:126 ../../templates/header.inc.php:397
 #: ../../templates/sidebar.inc.php:33
 msgid "Home"
-msgstr ""
+msgstr "בית"
 
 #: ../../lib/ui.lib.php:129 ../../templates/header.inc.php:438
 #: ../../templates/show_add_upload.inc.php:26
@@ -2428,98 +2479,98 @@ msgstr ""
 #: ../../templates/sidebar_home.inc.php:55
 #: ../../templates/sidebar.light.inc.php:43
 msgid "Upload"
-msgstr ""
+msgstr "העלה"
 
 #: ../../lib/ui.lib.php:132
 msgid "Random Play"
-msgstr ""
+msgstr "משחק אקראי"
 
 #: ../../lib/ui.lib.php:138 ../../templates/show_search_bar.inc.php:30
 #: ../../templates/show_search_form.inc.php:71
 #: ../../templates/sidebar_home.inc.php:144
 msgid "Search"
-msgstr ""
+msgstr "לחפש"
 
 #: ../../lib/ui.lib.php:141 ../../templates/show_user.inc.php:43
 #: ../../templates/show_user_row.inc.php:61 ../../templates/sidebar.inc.php:34
 #: ../../templates/sidebar_preferences.inc.php:30
 msgid "Preferences"
-msgstr ""
+msgstr "העדפות"
 
 #: ../../lib/ui.lib.php:144 ../../lib/ui.lib.php:148
 msgid "Admin-Catalog"
-msgstr ""
+msgstr "Admin-Catalog"
 
 #: ../../lib/ui.lib.php:152
 msgid "Admin-User Management"
-msgstr ""
+msgstr "ניהול משתמש-מנהל"
 
 #: ../../lib/ui.lib.php:156
 msgid "Admin-Mail Users"
-msgstr ""
+msgstr "משתמשי Admin-Mail"
 
 #: ../../lib/ui.lib.php:160
 msgid "Admin-Manage Access Lists"
-msgstr ""
+msgstr "ניהול - נהל רשימות גישה"
 
 #: ../../lib/ui.lib.php:164
 msgid "Admin-Site Preferences"
-msgstr ""
+msgstr "העדפות מנהל אתר"
 
 #: ../../lib/ui.lib.php:168
 msgid "Admin-Manage Modules"
-msgstr ""
+msgstr "ניהול-מודולים"
 
 #: ../../lib/ui.lib.php:172 ../../templates/sidebar_home.inc.php:24
 msgid "Browse Music"
-msgstr ""
+msgstr "עיין במוזיקה"
 
 #: ../../lib/ui.lib.php:184 ../../templates/show_stats.inc.php:26
 #: ../../templates/sidebar_home.inc.php:124
 msgid "Statistics"
-msgstr ""
+msgstr "סטטיסטיקה"
 
 #: ../../lib/ui.lib.php:251 ../../lib/ui.lib.php:304
 msgid "Add New"
-msgstr ""
+msgstr "הוסף חדש"
 
 #: ../../lib/ui.lib.php:387
 msgid "View License"
-msgstr ""
+msgstr "הצג רישיון"
 
 #: ../../lib/ui.lib.php:654
 msgid "On"
-msgstr ""
+msgstr "מופעל"
 
 #: ../../lib/ui.lib.php:656
 msgid "Off"
-msgstr ""
+msgstr "כבוי"
 
 #: ../../lostpassword.php:39
 msgid "Password has been sent"
-msgstr ""
+msgstr "הסיסמה נשלחה"
 
 #: ../../lostpassword.php:41
 msgid "Password has not been sent"
-msgstr ""
+msgstr "הסיסמה לא נשלחה"
 
 #: ../../lostpassword.php:60
 msgid "Lost Password"
-msgstr ""
+msgstr "סיסמה אבודה"
 
 #: ../../lostpassword.php:64
 #, php-format
 msgid "A user from %s has requested a password reset for '%s'."
-msgstr ""
+msgstr "משתמש מ- %s ביקש איפוס סיסמה עבור '%s'."
 
 #: ../../lostpassword.php:66
 #, php-format
 msgid "The password has been set to: %s"
-msgstr ""
+msgstr "הסיסמה הוגדרה ל: %s"
 
 #: ../../modules/Beets/Catalog.php:126
 msgid "Running Beets Update"
-msgstr ""
+msgstr "עדכון סלק עדכון"
 
 #: ../../modules/Beets/Catalog.php:205
 #: ../../modules/catalog/remote/remote.catalog.php:273
@@ -2527,15 +2578,15 @@ msgstr ""
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:254
 #, php-format
 msgid "Unable to Insert Song - %s"
-msgstr ""
+msgstr "לא ניתן להוסיף שיר - %s"
 
 #: ../../modules/catalog/beets/beets.catalog.php:86
 msgid "Beets Database File"
-msgstr ""
+msgstr "קובץ מסד נתונים סלק"
 
 #: ../../modules/catalog/beets/beets.catalog.php:103
 msgid "Error: Beets selected, but no Beets DB File provided"
-msgstr ""
+msgstr "שגיאה: סלק נבחר, אך לא מסופק קובץ DB"
 
 #: ../../modules/catalog/beets/beets.catalog.php:114
 #: ../../modules/catalog/beetsremote/beetsremote.catalog.php:115
@@ -2545,66 +2596,66 @@ msgstr ""
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:163
 #, php-format
 msgid "Error: Catalog with %s already exists"
-msgstr ""
+msgstr "שגיאה: קטלוג עם %s כבר קיים"
 
 #: ../../modules/catalog/beetsremote/beetsremote.catalog.php:87
 msgid "Beets Server URI"
-msgstr ""
+msgstr "שרת Uets של סלק"
 
 #: ../../modules/catalog/beetsremote/beetsremote.catalog.php:104
 msgid "Error: Beets selected, but path is not a URL"
-msgstr ""
+msgstr "שגיאה: סלק נבחר, אך הנתיב אינו כתובת אתר"
 
 #: ../../modules/catalog/local/local.catalog.php:104
 #: ../../templates/show_stats.inc.php:69
 msgid "Path"
-msgstr ""
+msgstr "נתיב"
 
 #: ../../modules/catalog/local/local.catalog.php:175
 msgid "Error: Path not specified"
-msgstr ""
+msgstr "שגיאה: הנתיב לא צוין"
 
 #: ../../modules/catalog/local/local.catalog.php:182
 msgid "Error: Defined Path is inside an existing catalog"
-msgstr ""
+msgstr "שגיאה: נתיב מוגדר נמצא בתוך קטלוג קיים"
 
 #: ../../modules/catalog/local/local.catalog.php:190
 #, php-format
 msgid "Error: %s is not readable or does not exist"
-msgstr ""
+msgstr "שגיאה: %s אינו קריא או אינו קיים"
 
 #: ../../modules/catalog/local/local.catalog.php:242
 #, php-format
 msgid "Error: Unable to open %s"
-msgstr ""
+msgstr "שגיאה: לא ניתן לפתוח את %s"
 
 #: ../../modules/catalog/local/local.catalog.php:250
 #: ../../modules/catalog/local/local.catalog.php:314
 #, php-format
 msgid "Error: Unable to change to directory %s"
-msgstr ""
+msgstr "שגיאה: לא ניתן לשנות לספרייה %s"
 
 #. HINT: FullFile
 #: ../../modules/catalog/local/local.catalog.php:338
 #, php-format
 msgid "Error: Unable to get filesize for %s"
-msgstr ""
+msgstr "שגיאה: לא ניתן להשיג את הקובץ עבור %s"
 
 #. HINT: FullFile
 #: ../../modules/catalog/local/local.catalog.php:345
 #, php-format
 msgid "%s is not readable by ampache"
-msgstr ""
+msgstr "%s אינו קריא על ידי ampache"
 
 #. HINT: FullFile
 #: ../../modules/catalog/local/local.catalog.php:368
 #, php-format
 msgid "%s does not match site charset"
-msgstr ""
+msgstr "%s אינו תואם לקבוצת תווים"
 
 #: ../../modules/catalog/local/local.catalog.php:491
 msgid "N/A"
-msgstr ""
+msgstr "N / A"
 
 #: ../../modules/catalog/local/local.catalog.php:497
 #, php-format
@@ -2616,24 +2667,24 @@ msgstr ""
 #: ../../modules/catalog/local/local.catalog.php:575
 #, php-format
 msgid "%s does not exist or is not readable"
-msgstr ""
+msgstr "%s אינו קיים או שאינו קריא"
 
 #: ../../modules/catalog/local/local.catalog.php:604
 msgid "Catalog Root unreadable, stopping clean"
-msgstr ""
+msgstr "קטלוג שורש לא קריא, נעצר נקי"
 
 #: ../../modules/catalog/local/local.catalog.php:630
 msgid "All files would be removed. Doing nothing"
-msgstr ""
+msgstr "כל הקבצים יוסרו. לא עושה דבר"
 
 #: ../../modules/catalog/local/local.catalog.php:674
 #, php-format
 msgid "Error File Not Found or 0 Bytes: %s"
-msgstr ""
+msgstr "שגיאה קובץ לא נמצא או 0 בתים: %s"
 
 #: ../../modules/catalog/remote/remote.catalog.php:102
 msgid "Uri"
-msgstr ""
+msgstr "אורי"
 
 #: ../../modules/catalog/remote/remote.catalog.php:104
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:104
@@ -2643,98 +2694,98 @@ msgstr ""
 #: ../../templates/show_login_form.inc.php:62
 #: ../../templates/show_user_registration.inc.php:138
 msgid "Password"
-msgstr ""
+msgstr "סיסמה"
 
 #: ../../modules/catalog/remote/remote.catalog.php:144
 msgid "Error: Remote selected, but path is not a URL"
-msgstr ""
+msgstr "שגיאה: נבחרה מרחוק, אך הנתיב אינו כתובת אתר"
 
 #: ../../modules/catalog/remote/remote.catalog.php:150
 msgid "Error: Username and Password Required for Remote Catalogs"
-msgstr ""
+msgstr "שגיאה: שם משתמש וסיסמה דרושים לקטלוגים מרוחקים"
 
 #: ../../modules/catalog/remote/remote.catalog.php:181
 msgid "Running Remote Update"
-msgstr ""
+msgstr "הפעלת עדכון מרחוק"
 
 #: ../../modules/catalog/remote/remote.catalog.php:217
 msgid "Error connecting to remote server"
-msgstr ""
+msgstr "שגיאה בהתחברות לשרת מרוחק"
 
 #: ../../modules/catalog/remote/remote.catalog.php:245
 #, php-format
 msgid "%u remote catalog(s) found (%u songs)"
-msgstr ""
+msgstr "%u קטלוגים מרוחקים שנמצאו (%u שירים)"
 
 #: ../../modules/catalog/remote/remote.catalog.php:281
 msgid "Completed updating remote catalog(s)."
-msgstr ""
+msgstr "הושלם עדכון קטלוגים מרוחקים."
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:107
 msgid "User ID"
-msgstr ""
+msgstr "תעודת זהות של המשתמש"
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:108
 #: ../../templates/show_add_share.inc.php:35
 msgid "Secret"
-msgstr ""
+msgstr "סוד"
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:172
 msgid "Error: UserID and Secret Required for SoundCloud Catalogs"
-msgstr ""
+msgstr "שגיאה: UserID ו Secret נדרש עבור קטלוגים SoundCloud"
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:238
 msgid "Running SoundCloud Remote Update"
-msgstr ""
+msgstr "הפעלת SoundCloud מרחוק עדכון"
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:308
 msgid "Completed updating SoundCloud catalog(s)."
-msgstr ""
+msgstr "הושלם עדכון קטלוג SoundCloud (ים)."
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:308
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:271
 msgid "Songs added."
-msgstr ""
+msgstr "נוספו שירים."
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:313
 msgid "API Error: cannot get song list."
-msgstr ""
+msgstr "שגיאת API: לא ניתן לקבל רשימת שירים."
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:317
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:375
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:450
 msgid "API Error: cannot connect to SoundCloud."
-msgstr ""
+msgstr "שגיאת API: לא ניתן להתחבר ל- SoundCloud."
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:321
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:379
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:455
 msgid "SoundCloud exception: "
-msgstr ""
+msgstr "חריג SoundCloud:"
 
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:102
 msgid "URI"
-msgstr ""
+msgstr "URI"
 
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:146
 msgid "Error: Subsonic selected, but path is not a URL"
-msgstr ""
+msgstr "שגיאה: סובסוניק נבחר, אך הנתיב אינו כתובת אתר"
 
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:152
 msgid "Error: Username and Password Required for Subsonic Catalogs"
-msgstr ""
+msgstr "שגיאה: שם משתמש וסיסמה דרושים עבור קטלוגים Subsonic"
 
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:185
 msgid "Running Subsonic Remote Update"
-msgstr ""
+msgstr "הפעלת עדכון מרחוק Subsonic"
 
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:271
 msgid "Completed updating Subsonic catalog(s)."
-msgstr ""
+msgstr "עדכון מלא קטלוגים סובסוניים."
 
 #: ../../modules/plugins/CatalogFavorites/CatalogFavorites.plugin.php:102
 msgid "Highlight"
-msgstr ""
+msgstr "הדגש"
 
 #: ../../modules/plugins/CatalogFavorites/CatalogFavorites.plugin.php:123
 #: ../../templates/header.inc.php:339
@@ -2758,7 +2809,7 @@ msgstr ""
 #: ../../templates/show_song_preview_row.inc.php:30
 #: ../../templates/show_song_row.inc.php:40
 msgid "Play last"
-msgstr ""
+msgstr "לשחק האחרון"
 
 #: ../../modules/plugins/CatalogFavorites/CatalogFavorites.plugin.php:126
 #: ../../templates/header.inc.php:340
@@ -2781,74 +2832,74 @@ msgstr ""
 #: ../../templates/show_song_preview_row.inc.php:43
 #: ../../templates/show_song_row.inc.php:50
 msgid "Add to temporary playlist"
-msgstr ""
+msgstr "הוסף לפלייליסט זמני"
 
 #: ../../modules/plugins/CatalogFavorites/CatalogFavorites.plugin.php:144
 msgid "recommended by"
-msgstr ""
+msgstr "מומלץ על ידי"
 
 #: ../../modules/plugins/GoogleMaps/GoogleMaps.plugin.php:121
 msgid "Hits:"
-msgstr ""
+msgstr "כניסות:"
 
 #: ../../modules/plugins/GoogleMaps/GoogleMaps.plugin.php:122
 msgid "Last activity:"
-msgstr ""
+msgstr "פעילות אחרונה:"
 
 #: ../../playlist.php:54
 msgid "Playlist Created"
-msgstr ""
+msgstr "יצירת רשימת השמעה"
 
 #: ../../playlist.php:54
 #, php-format
 msgid "%1$s (%2$s) has been created"
-msgstr ""
+msgstr "%1$s (%2$s) נוצר"
 
 #: ../../playlist.php:80
 msgid "Playlist Imported"
-msgstr ""
+msgstr "פלייליסט מיובא"
 
 #: ../../playlist.php:83
 #, php-format
 msgid "Successfully imported playlist with %d song."
 msgid_plural "Successfully imported playlist with %d songs."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "הפלייליסט שיובא בהצלחה עם שיר של %d."
+msgstr[1] "הפלייליסט שיובא בהצלחה עם שירים של %d."
+msgstr[2] "הפלייליסט שיובא בהצלחה עם שירים של %d."
+msgstr[3] "הפלייליסט שיובא בהצלחה עם שירים של %d."
 
 #: ../../playlist.php:86
 msgid "Playlist Not Imported"
-msgstr ""
+msgstr "רשימת ההשמעה אינה מיובאת"
 
 #: ../../playlist.php:135
 msgid "Empty Playlists Deleted"
-msgstr ""
+msgstr "נמחקו פלייליסטים ריקים"
 
 #: ../../plex/web/index.php:32
 msgid ""
 "Changing the server UUID could break clients connectivity. Do you confirm?"
-msgstr ""
+msgstr "שינוי UUID של השרת עלול לשבור את קישוריות הלקוחות. האם אתה מאשר?"
 
 #: ../../plex/web/index.php:84
 msgid "myPlex authentication completed."
-msgstr ""
+msgstr "אימות myPlex הושלמה."
 
 #: ../../plex/web/index.php:98
 msgid "Server registration completed."
-msgstr ""
+msgstr "רישום השרת הושלם."
 
 #: ../../plex/web/index.php:101
 msgid "Cannot register the server on myPlex."
-msgstr ""
+msgstr "לא ניתן לרשום את השרת ב- myPlex שלי."
 
 #: ../../plex/web/index.php:107
 msgid "Cannot authenticate on myPlex."
-msgstr ""
+msgstr "לא ניתן לאמת ב- myPlex שלי."
 
 #: ../../plex/web/index.php:135
 msgid "Server UUID changed."
-msgstr ""
+msgstr "שרת ה- UUID השתנה."
 
 #: ../../plex/web/init.php:38
 msgid "Unauthorized."
@@ -2857,388 +2908,397 @@ msgstr "בלתי מורשה."
 #: ../../podcast_episode.php:35 ../../podcast_episode.php:55
 #: ../../podcast_episode.php:57
 msgid "Podcast Episode Deletion"
-msgstr ""
+msgstr "Podcast פרק מחיקת"
 
 #: ../../podcast_episode.php:36
 msgid "Are you sure you want to permanently delete this episode?"
-msgstr ""
+msgstr "האם אתה בטוח שברצונך למחוק פרק זה לצמיתות?"
 
 #: ../../podcast_episode.php:55
 msgid "Episode has been deleted."
-msgstr ""
+msgstr "פרק נמחק."
 
 #: ../../podcast_episode.php:57
 msgid "Cannot delete this episode."
-msgstr ""
+msgstr "לא ניתן למחוק את הפרק הזה."
 
 #: ../../podcast.php:60
 msgid "Subscribed to Podcast"
-msgstr ""
+msgstr "מנוי ל- Podcast"
 
 #: ../../podcast.php:73 ../../podcast.php:88 ../../podcast.php:90
 msgid "Podcast Deletion"
-msgstr ""
+msgstr "מחיקת Podcast"
 
 #: ../../podcast.php:74
 msgid "Are you sure you want to delete this podcast?"
-msgstr ""
+msgstr "האם אתה בטוח שברצונך למחוק את הפודקאסט הזה?"
 
 #: ../../podcast.php:88
 msgid "Podcast has been deleted."
-msgstr ""
+msgstr "Podcast נמחק."
 
 #: ../../podcast.php:90
 msgid "Cannot delete this podcast."
-msgstr ""
+msgstr "לא ניתן למחוק את הפודקאסט הזה."
 
 #: ../../preferences.php:48 ../../preferences.php:93
 msgid "Server"
-msgstr ""
+msgstr "שרת"
 
 #: ../../preferences.php:66
 msgid "Server preferences updated successfully"
-msgstr ""
+msgstr "העדפות השרת עודכנו בהצלחה"
 
 #: ../../preferences.php:68
 msgid "User preferences updated successfully"
-msgstr ""
+msgstr "העדפות המשתמש עודכנו בהצלחה"
 
 #: ../../preferences.php:126 ../../register.php:100
 msgid "Please fill in your full name (Firstname Lastname)"
-msgstr ""
+msgstr "אנא מלא את שמך המלא (שם פרטי של שם פרטי)"
 
 #: ../../preferences.php:129 ../../register.php:103
 msgid "Please fill in your website"
-msgstr ""
+msgstr "מלא את האתר שלך"
 
 #: ../../preferences.php:132 ../../register.php:106
 msgid "Please fill in your state"
-msgstr ""
+msgstr "מלא את המדינה שלך"
 
 #: ../../preferences.php:135 ../../register.php:109
 msgid "Please fill in your city"
-msgstr ""
+msgstr "נא למלא את העיר שלך"
 
 #: ../../preferences.php:139
 msgid "Error Update Failed"
-msgstr ""
+msgstr "שגיאת השגיאה נכשלה"
 
 #: ../../preferences.php:145 ../../preferences.php:163
 msgid "Your Account has been updated"
-msgstr ""
+msgstr "החשבון שלך עודכן"
 
 #: ../../preferences.php:149
 msgid "User updated successfully"
-msgstr ""
+msgstr "המשתמש עודכן בהצלחה"
 
 #: ../../preferences.php:167
 msgid "Your Account has not been updated"
-msgstr ""
+msgstr "החשבון שלך לא עודכן"
 
 #: ../../pvmsg.php:67
 msgid "Message Sent"
-msgstr ""
+msgstr "הודעה נשלחה"
 
 #: ../../pvmsg.php:90
 msgid "Messages State Changed"
-msgstr ""
+msgstr "הודעות מדינה השתנתה"
 
 #: ../../pvmsg.php:90
 msgid "Messages state have been changed."
-msgstr ""
+msgstr "מצב ההודעות השתנה."
 
 #: ../../pvmsg.php:99
 msgid "Message Deletion"
-msgstr ""
+msgstr "מחיקת הודעה"
 
 #: ../../pvmsg.php:100
 msgid "Are you sure you want to permanently delete the selected messages?"
-msgstr ""
+msgstr "האם אתה בטוח שברצונך למחוק לצמיתות את ההודעות שנבחרו?"
 
 #: ../../pvmsg.php:124
 msgid "Messages Deletion"
-msgstr ""
+msgstr "מחיקת הודעות"
 
 #: ../../pvmsg.php:124
 msgid "Messages have been deleted."
-msgstr ""
+msgstr "ההודעות נמחקו."
 
 #: ../../radio.php:60
 msgid "Radio Station Added"
-msgstr ""
+msgstr "תחנת רדיו נוסף"
 
 #: ../../register.php:72
 msgid "Error Captcha Required"
-msgstr ""
+msgstr "שגיאה נדרש קפטצ'ה"
 
 #: ../../register.php:78
 msgid "Error Captcha Failed"
-msgstr ""
+msgstr "שגיאה ב- Captcha נכשלה"
 
 #: ../../register.php:85
 msgid "You <U>must</U> accept the user agreement"
-msgstr ""
+msgstr "אתה <U> חייב </U> לקבל את הסכם המשתמש"
 
 #: ../../register.php:90
 msgid "You did not enter a username"
-msgstr ""
+msgstr "לא הזנת שם משתמש"
 
 #: ../../register.php:113
 msgid "You must enter a password"
-msgstr ""
+msgstr "עליך להזין סיסמה"
 
 #: ../../register.php:117
 msgid "Your passwords do not match"
-msgstr ""
+msgstr "הסיסמאות שלך לא תואמות"
 
 #: ../../rest/index.php:47 ../../server/xml.server.php:43
 msgid "Access Control not Enabled"
-msgstr ""
+msgstr "בקרת גישה לא מאופשרת"
 
 #: ../../search.php:50
 msgid "Search Saved"
-msgstr ""
+msgstr "החיפוש נשמר"
 
 #: ../../search.php:50
 #, php-format
 msgid "Your Search has been saved as a Smart Playlist with name %s"
-msgstr ""
+msgstr "החיפוש שלך נשמר כ- Smart Playlist עם שם %s"
 
 #: ../../server/index.ajax.php:44
 #, php-format
 msgid ""
-"No catalog configured yet. To start streaming your media, you now need to %s "
-"add a catalog %s"
+"No catalog configured yet. To start streaming your media, you now need to %s"
+" add a catalog %s"
 msgstr ""
+"עדיין לא הוגדר קטלוג. כדי להתחיל הזרמת המדיה שלך, עכשיו אתה צריך %s להוסיף "
+"קטלוג %s"
 
 #: ../../server/playlist.ajax.php:103
 msgid "Added to playlist"
-msgstr ""
+msgstr "נוסף לפלייליסט"
 
 #: ../../server/xml.server.php:54
 msgid "Session Expired"
-msgstr ""
+msgstr "פג תוקף הפעילות באתר"
 
 #: ../../server/xml.server.php:71
 msgid "Unauthorized access attempt to API - ACL Error"
-msgstr ""
+msgstr "ניסיון גישה לא מורשה ל- API - ACL Error"
 
 #: ../../share.php:75
 msgid "Share created."
-msgstr ""
+msgstr "השיתוף נוצר."
 
 #: ../../share.php:76
 msgid "You can now start sharing the following url:"
-msgstr ""
+msgstr "כעת תוכל להתחיל לשתף את כתובת האתר הבאה:"
 
 #: ../../share.php:81
 msgid ""
 "You can also embed this share as a web player into your website, with the "
 "following html code:"
-msgstr ""
+msgstr "תוכל גם להטביע חלק זה כנגן אינטרנט באתר שלך, עם קוד ה- HTML הבא:"
 
 #: ../../share.php:84
 msgid "Object Shared"
-msgstr ""
+msgstr "אובייקט משותף"
 
 #: ../../share.php:94
 msgid "Share Delete"
-msgstr ""
+msgstr "שתף מחק"
 
 #: ../../share.php:107
 msgid "Share Deleted"
-msgstr ""
+msgstr "שתף נמחק"
 
 #: ../../share.php:107
 msgid "The Share has been deleted"
-msgstr ""
+msgstr "השיתוף נמחק"
 
 #: ../../share.php:120
 msgid "Shared Objects cleaned"
-msgstr ""
+msgstr "אובייקטים משותפים ניקו"
 
 #: ../../share.php:120
 msgid "Expired shared objects have been cleaned."
-msgstr ""
+msgstr "אובייקטים משותפים שפג תוקפם נוקו."
 
 #: ../../shout.php:63
 msgid "Invalid Object Selected"
-msgstr ""
+msgstr "אובייקט לא חוקי נבחר"
 
 #: ../../song.php:36 ../../song.php:56 ../../song.php:58
 msgid "Song Deletion"
-msgstr ""
+msgstr "מחיקת שירים"
 
 #: ../../song.php:37
 msgid "Are you sure you want to permanently delete this song?"
-msgstr ""
+msgstr "האם אתה בטוח שברצונך למחוק את השיר הזה לצמיתות?"
 
 #: ../../song.php:56
 msgid "Song has been deleted."
-msgstr ""
+msgstr "השיר נמחק."
 
 #: ../../song.php:58
 msgid "Cannot delete this song."
-msgstr ""
+msgstr "לא ניתן למחוק את השיר הזה."
 
 #: ../../templates/browse_filters.inc.php:30
 msgid "Filters"
-msgstr ""
+msgstr "מסננים"
 
 #: ../../templates/browse_filters.inc.php:35
 msgid "Starts With"
-msgstr ""
+msgstr "מתחיל עם"
 
 #: ../../templates/browse_filters.inc.php:44
 msgid "Minimum Count"
-msgstr ""
+msgstr "ספירה מינימלית"
 
 #: ../../templates/browse_filters.inc.php:51
 msgid "Rated"
-msgstr ""
+msgstr "מדורג"
 
 #: ../../templates/browse_filters.inc.php:58
 msgid "Unplayed"
-msgstr ""
+msgstr "לא הופעלה"
 
 #: ../../templates/browse_filters.inc.php:64
 msgid "All Playlists"
-msgstr ""
+msgstr "כל הפלייליסטים"
 
 #: ../../templates/browse_filters.inc.php:73
 #: ../../templates/show_song_previews.inc.php:31
 #: ../../templates/show_songs.inc.php:33 ../../templates/show_songs.inc.php:96
 msgid "Song Title"
-msgstr ""
+msgstr "שם השיר"
 
 #: ../../templates/browse_filters.inc.php:112
 msgid "Toggle Artwork"
-msgstr ""
+msgstr "החלף גרפיקה"
 
 #: ../../templates/cookie_disclaimer.inc.php:1
 msgid "Use of cookies by Ampache"
-msgstr ""
+msgstr "שימוש בעוגיות על ידי Ampache"
 
 #: ../../templates/cookie_disclaimer.inc.php:4
 msgid ""
 "Cookies are small text files that are placed on your computer by websites "
-"that you visit. They are widely used in order to make websites work, or work "
-"more efficiently, as well as to provide information to the owners of the "
+"that you visit. They are widely used in order to make websites work, or work"
+" more efficiently, as well as to provide information to the owners of the "
 "site."
 msgstr ""
+"קובצי Cookie הם קבצי טקסט קטנים הממוקמים במחשב שלך על ידי אתרי אינטרנט שבהם "
+"אתה מבקר. הם נמצאים בשימוש נרחב על מנת להפוך את אתרי האינטרנט לעבוד, או "
+"לעבוד ביעילות רבה יותר, כמו גם לספק מידע לבעלים של האתר."
 
 #: ../../templates/cookie_disclaimer.inc.php:5
 msgid "The table below explains the cookies we use and why."
-msgstr ""
+msgstr "הטבלה הבאה מסבירה את העוגיות שבהן אנו משתמשים ומדוע."
 
 #: ../../templates/cookie_disclaimer.inc.php:13
 msgid "Cookie"
-msgstr ""
+msgstr "עוגייה"
 
 #: ../../templates/cookie_disclaimer.inc.php:19
 msgid "Purpose"
-msgstr ""
+msgstr "מטרה"
 
 #: ../../templates/cookie_disclaimer.inc.php:27
 msgid "Hide the cookie disclaimer message."
-msgstr ""
+msgstr "הסתר את הודעת כתב ויתור ה- cookie."
 
 #: ../../templates/cookie_disclaimer.inc.php:32
 msgid "Ampache session."
-msgstr ""
+msgstr "מפגש אמפאש."
 
 #: ../../templates/cookie_disclaimer.inc.php:37
 msgid "Ampache session username (if authenticated, information only)."
-msgstr ""
+msgstr "שם המשתמש של אמפאש (אם מאומת, מידע בלבד)."
 
 #: ../../templates/cookie_disclaimer.inc.php:42
 msgid "Automatically authenticate users."
-msgstr ""
+msgstr "בצע אימות אוטומטי של משתמשים."
 
 #: ../../templates/cookie_disclaimer.inc.php:47
 msgid "Keep latest web player volume."
-msgstr ""
+msgstr "שמור את עוצמת הקול האחרונה של נגן האינטרנט."
 
 #: ../../templates/cookie_disclaimer.inc.php:52
 msgid "Show/Hide column [column_index] when browsing [object_type] objects."
-msgstr ""
+msgstr "הצג / הסתר עמודה [column_index] בעת גלישה באובייקטים [object_type]."
 
 #: ../../templates/cookie_disclaimer.inc.php:57
 msgid "Use alphabet when browsing [object_type] objects."
-msgstr ""
+msgstr "השתמש באלפבית בעת גלישה באובייקטים [object_type]."
 
 #: ../../templates/cookie_disclaimer.inc.php:62
 msgid "Use pages when browsing [object_type] objects."
-msgstr ""
+msgstr "השתמש בדפים בעת גלישה באובייקטים [object_type]."
 
 #: ../../templates/cookie_disclaimer.inc.php:67
 msgid "Collapse/Expand Sidebar [menu_section]."
-msgstr ""
+msgstr "כווץ / הרחב את הסרגל הצידי [menu_section]."
 
 #: ../../templates/cookie_disclaimer.inc.php:72
 msgid "Collapse/Expand Sidebar."
-msgstr ""
+msgstr "כווץ / הרחב את הסרגל הצידי."
 
 #: ../../templates/error_page.inc.php:32
 msgid "Ampache error page"
-msgstr ""
+msgstr "דף שגיאה של Ampache"
 
 #: ../../templates/error_page.inc.php:44
 #: ../../templates/show_mail_users.inc.php:43
 #: ../../templates/show_test.inc.php:38 ../../update.php:72
 msgid "aMuzak"
-msgstr ""
+msgstr "אמוזאק"
 
 #: ../../templates/error_page.inc.php:51
 msgid ""
-"The following error has occured, you will automaticly be redirected after 10 "
-"seconds."
-msgstr ""
+"The following error has occured, you will automaticly be redirected after 10"
+" seconds."
+msgstr "אירעה השגיאה הבאה, תנותב באופן אוטומטי לאחר 10 שניות."
 
 #: ../../templates/error_page.inc.php:53
 msgid "Error messages"
-msgstr ""
+msgstr "הודעות שגיאה"
 
 #: ../../templates/footer.inc.php:49
 #: ../../templates/show_lostpassword_form.inc.php:66
 msgid "Queries:"
-msgstr ""
+msgstr "שאילתות:"
 
 #: ../../templates/footer.inc.php:49
 #: ../../templates/show_lostpassword_form.inc.php:67
 msgid "Cache Hits:"
-msgstr ""
+msgstr "התאמות מטמון:"
 
 #: ../../templates/footer.inc.php:53
 msgid "Load time:"
-msgstr ""
+msgstr "זמן טעינה:"
 
 #: ../../templates/header.inc.php:98
 msgid "Save"
-msgstr ""
+msgstr "להציל"
 
 #: ../../templates/header.inc.php:99
 #: ../../templates/show_confirmation.inc.php:35
 #: ../../templates/show_get_art.inc.php:64
 msgid "Cancel"
-msgstr ""
+msgstr "בטל"
 
 #. HINT: Translator, "%s" is replaced by "cookie settings"
 #: ../../templates/header.inc.php:301
 #, php-format
 msgid ""
-"We have placed cookies on your computer to help make this website better. "
-"You can change your %s at any time.\n"
+"We have placed cookies on your computer to help make this website better. You can change your %s at any time.\n"
 "Otherwise, we will assume you are OK to continue.\n"
 "\n"
 "Click on this message to not display it again."
 msgstr ""
+"שמנו קובצי Cookie במחשב שלך כדי לעזור להפוך את האתר הזה טוב יותר. באפשרותך לשנות את %s בכל עת.\n"
+"אחרת, נניח שאתה בסדר להמשיך.\n"
+"\n"
+"לחץ על הודעה זו כדי לא להציג אותה שוב."
 
 #: ../../templates/header.inc.php:302
 msgid "cookie settings"
-msgstr ""
+msgstr "הגדרות קובצי cookie"
 
-#: ../../templates/header.inc.php:338 ../../templates/show_album_row.inc.php:32
+#: ../../templates/header.inc.php:338
+#: ../../templates/show_album_row.inc.php:32
 #: ../../templates/show_artist_row.inc.php:32
 #: ../../templates/show_playlist_row.inc.php:30
 #: ../../templates/show_podcast_episode.inc.php:66
@@ -3247,7 +3307,7 @@ msgstr ""
 #: ../../templates/show_song.inc.php:78
 #: ../../templates/show_song_row.inc.php:38
 msgid "Play next"
-msgstr ""
+msgstr "הבא"
 
 #: ../../templates/header.inc.php:341 ../../templates/show_album.inc.php:120
 #: ../../templates/show_album.inc.php:123
@@ -3262,82 +3322,82 @@ msgstr ""
 #: ../../templates/show_song_preview_row.inc.php:47
 #: ../../templates/show_song_row.inc.php:54
 msgid "Add to existing playlist"
-msgstr ""
+msgstr "הוסף לפלייליסט קיים"
 
 #: ../../templates/header.inc.php:373
 #: ../../templates/show_login_form.inc.php:73
 msgid "Login"
-msgstr ""
+msgstr "התחברות"
 
 #: ../../templates/header.inc.php:377
 #: ../../templates/show_login_form.inc.php:79
 msgid "Register"
-msgstr ""
+msgstr "הירשם"
 
 #: ../../templates/header.inc.php:517
 msgid "Error: Your config file is out of date!"
-msgstr ""
+msgstr "שגיאה: קובץ ההגדרות שלך אינו מעודכן!"
 
 #: ../../templates/header.inc.php:519
 msgid "Generate and download new config file"
-msgstr ""
+msgstr "צור והורד קובץ תצורה חדש"
 
 #: ../../templates/header.inc.php:520
 msgid "Write new config file to disk"
-msgstr ""
+msgstr "כתוב קובץ הגדרות חדש לדיסק"
 
 #: ../../templates/install_header.inc.php:52
 msgid "aMuzak Installation"
-msgstr ""
+msgstr "התקנה של מוצק"
 
 #: ../../templates/list_header.inc.php:116
 msgid "Prev"
-msgstr ""
+msgstr "הקודם"
 
 #: ../../templates/list_header.inc.php:118
 msgid "Page"
-msgstr ""
+msgstr "עמוד"
 
 #: ../../templates/list_header.inc.php:120
 msgid "of"
-msgstr ""
+msgstr "of"
 
 #: ../../templates/list_header.inc.php:122
 msgid "Next"
-msgstr ""
+msgstr "הבא"
 
 #: ../../templates/list_header.inc.php:133
 msgid "Pages"
-msgstr ""
+msgstr "דפים"
 
 #: ../../templates/list_header.inc.php:134
 msgid "Infinite Scroll"
-msgstr ""
+msgstr "גלילה אינסופית"
 
 #: ../../templates/list_header.inc.php:135
 msgid "Grid View"
-msgstr ""
+msgstr "תצוגת רשת"
 
 #: ../../templates/list_header.inc.php:138
 msgid "Alphabet"
-msgstr ""
+msgstr "אלף בית"
 
 #: ../../templates/list_header.inc.php:146
 msgid "Limit"
-msgstr ""
+msgstr "הגבל"
 
 #: ../../templates/list_header.inc.php:155
 msgid "Item Count"
-msgstr ""
+msgstr "מספר פריט"
 
 #: ../../templates/rightbar.inc.php:30
 msgid "Add to Playlist"
-msgstr ""
+msgstr "הוסף לרשימת ההשמעה"
 
 #: ../../templates/rightbar.inc.php:33
 #: ../../templates/show_playlists_dialog.inc.php:27
 msgid "Add to New Playlist"
-msgstr ""
+msgstr "הוסף לרשימת השמעה חדשה"
 
 #: ../../templates/rightbar.inc.php:54
 #: ../../templates/show_album_row.inc.php:104
@@ -3350,70 +3410,70 @@ msgstr ""
 #: ../../templates/show_search_options.inc.php:34
 #: ../../templates/show_search_row.inc.php:54
 msgid "Batch Download"
-msgstr ""
+msgstr "הורד אצווה"
 
 #: ../../templates/rightbar.inc.php:60
 #: ../../templates/show_democratic.inc.php:49
 #: ../../templates/show_democratic.inc.php:50
 msgid "Clear Playlist"
-msgstr ""
+msgstr "נקה רשימת השמעה"
 
 #: ../../templates/rightbar.inc.php:63
 msgid "Add Dynamic Items"
-msgstr ""
+msgstr "הוסף פריטים דינמיים"
 
 #: ../../templates/rightbar.inc.php:66
 msgid "Random Song"
-msgstr ""
+msgstr "שיר אקראי"
 
 #: ../../templates/rightbar.inc.php:69
 msgid "Random Artist"
-msgstr ""
+msgstr "אמן אקראי"
 
 #: ../../templates/rightbar.inc.php:72
 msgid "Random Album"
-msgstr ""
+msgstr "אלבום אקראי"
 
 #: ../../templates/rightbar.inc.php:75
 msgid "Random Playlist"
-msgstr ""
+msgstr "רשימת השמעה אקראית"
 
 #: ../../templates/rightbar.inc.php:117
 msgid "No items"
-msgstr ""
+msgstr "אין פריטים"
 
 #: ../../templates/show_access_list.inc.php:23
 #: ../../templates/sidebar_admin.inc.php:37
 msgid "Access Control"
-msgstr ""
+msgstr "בקרת גישה"
 
 #: ../../templates/show_access_list.inc.php:27
 msgid "Add Current Host"
-msgstr ""
+msgstr "הוסף מארח נוכחית"
 
 #: ../../templates/show_access_list.inc.php:30
 msgid "Add API / RPC Host"
-msgstr ""
+msgstr "הוסף מארח API / RPC"
 
 #: ../../templates/show_access_list.inc.php:33
 msgid "Add Local Network Definition"
-msgstr ""
+msgstr "הוסף הגדרת רשת מקומית"
 
 #: ../../templates/show_access_list.inc.php:35
 msgid "Advanced Add"
-msgstr ""
+msgstr "הוספה מתקדמת"
 
 #: ../../templates/show_access_list.inc.php:40
 msgid "Access Control Entries"
-msgstr ""
+msgstr "גישה לפריטי בקרה"
 
 #: ../../templates/show_access_list.inc.php:48
 msgid "Start Address"
-msgstr ""
+msgstr "כתובת התחלה"
 
 #: ../../templates/show_access_list.inc.php:49
 msgid "End Address"
-msgstr ""
+msgstr "כתובת סיום"
 
 #: ../../templates/show_access_list.inc.php:50
 #: ../../templates/show_add_access.inc.php:35
@@ -3423,7 +3483,7 @@ msgstr ""
 #: ../../templates/show_preference_admin.inc.php:33
 #: ../../templates/show_preference_admin.inc.php:53
 msgid "Level"
-msgstr ""
+msgstr "רמה"
 
 #: ../../templates/show_access_list.inc.php:52
 #: ../../templates/show_add_playlist.inc.php:31
@@ -3436,7 +3496,7 @@ msgstr ""
 #: ../../templates/show_searches.inc.php:44
 #: ../../templates/show_searches.inc.php:74
 msgid "Type"
-msgstr ""
+msgstr "הקלד"
 
 #: ../../templates/show_access_list.inc.php:53
 #: ../../templates/show_artists.inc.php:65
@@ -3467,21 +3527,21 @@ msgstr ""
 #: ../../templates/show_song.inc.php:66 ../../templates/show_songs.inc.php:66
 #: ../../templates/show_users.inc.php:62 ../../templates/show_users.inc.php:94
 msgid "Action"
-msgstr ""
+msgstr "פעולה"
 
 #: ../../templates/show_account.inc.php:33
 #: ../../templates/show_add_user.inc.php:37
 #: ../../templates/show_edit_user.inc.php:40
 #: ../../templates/show_user_registration.inc.php:91
 msgid "Full Name"
-msgstr ""
+msgstr "שם מלא"
 
 #: ../../templates/show_account.inc.php:41
 #: ../../templates/show_add_user.inc.php:45
 #: ../../templates/show_edit_user.inc.php:51
 #: ../../templates/show_user_registration.inc.php:99
 msgid "E-mail"
-msgstr ""
+msgstr "דואר אלקטרוני"
 
 #: ../../templates/show_account.inc.php:49
 #: ../../templates/show_add_label.inc.php:71
@@ -3494,7 +3554,7 @@ msgstr ""
 #: ../../templates/show_podcast_episode.inc.php:116
 #: ../../templates/show_user_registration.inc.php:108
 msgid "Website"
-msgstr ""
+msgstr "אתר אינטרנט"
 
 #: ../../templates/show_account.inc.php:59
 #: ../../templates/show_edit_user.inc.php:69
@@ -3503,17 +3563,17 @@ msgstr ""
 #: ../../templates/show_podcast_episodes.inc.php:92
 #: ../../templates/show_user_registration.inc.php:119
 msgid "State"
-msgstr ""
+msgstr "מדינה"
 
 #: ../../templates/show_account.inc.php:69
 #: ../../templates/show_edit_user.inc.php:78
 #: ../../templates/show_user_registration.inc.php:130
 msgid "City"
-msgstr ""
+msgstr "עיר"
 
 #: ../../templates/show_account.inc.php:77
 msgid "New Password"
-msgstr ""
+msgstr "סיסמה חדשה"
 
 #: ../../templates/show_account.inc.php:84
 #: ../../templates/show_add_user.inc.php:72
@@ -3521,37 +3581,37 @@ msgstr ""
 #: ../../templates/show_install_account.inc.php:63
 #: ../../templates/show_user_registration.inc.php:144
 msgid "Confirm Password"
-msgstr ""
+msgstr "אשר סיסמה"
 
 #: ../../templates/show_account.inc.php:91
 #: ../../templates/show_add_user.inc.php:95
 #: ../../templates/show_edit_user.inc.php:119
 msgid "Avatar"
-msgstr ""
+msgstr "אווטר"
 
 #: ../../templates/show_account.inc.php:101
 #: ../../templates/show_edit_user.inc.php:132
 msgid "API Key"
-msgstr ""
+msgstr "מפתח API"
 
 #: ../../templates/show_account.inc.php:129
 #: ../../templates/show_edit_user.inc.php:157
 #: ../../templates/show_manage_catalogs.inc.php:45
 msgid "Clear Stats"
-msgstr ""
+msgstr "נקה נתונים סטטיסטיים"
 
 #: ../../templates/show_account.inc.php:139
 msgid "Update Account"
-msgstr ""
+msgstr "לעדכן חשבון"
 
 #: ../../templates/show_add_access.inc.php:24
 msgid "Add Access Control List"
-msgstr ""
+msgstr "הוסף רשימת בקרת גישה"
 
 #: ../../templates/show_add_access.inc.php:50
 #: ../../templates/show_edit_access.inc.php:31
 msgid "ACL Type"
-msgstr ""
+msgstr "סוג ACL"
 
 #: ../../templates/show_add_access.inc.php:57
 #: ../../templates/show_add_access.inc.php:58
@@ -3559,170 +3619,172 @@ msgstr ""
 #: ../../templates/show_add_access.inc.php:67
 #, php-format
 msgid "%s + %s"
-msgstr ""
+msgstr "%s + %s"
 
 #: ../../templates/show_add_access.inc.php:86
 #: ../../templates/show_edit_access.inc.php:43
 msgid "IPv4 or IPv6 Addresses"
-msgstr ""
+msgstr "כתובות IPv4 או IPv6"
 
 #: ../../templates/show_add_access.inc.php:92
 #: ../../templates/show_edit_access.inc.php:48
 msgid "Start"
-msgstr ""
+msgstr "התחל"
 
 #: ../../templates/show_add_access.inc.php:102
 #: ../../templates/show_edit_access.inc.php:53
 msgid "End"
-msgstr ""
+msgstr "סוף"
 
 #: ../../templates/show_add_access.inc.php:115
 msgid "Create ACL"
-msgstr ""
+msgstr "צור ACL"
 
 #: ../../templates/show_add_catalog.inc.php:26
 #: ../../templates/sidebar_admin.inc.php:26
 msgid "Add a Catalog"
-msgstr ""
+msgstr "הוסף קטלוג"
 
 #: ../../templates/show_add_catalog.inc.php:27
 msgid ""
-"In the form below enter either a local path (i.e. /data/music) or the URL to "
-"a remote Ampache installation (i.e http://theotherampache.com)"
+"In the form below enter either a local path (i.e. /data/music) or the URL to"
+" a remote Ampache installation (i.e http://theotherampache.com)"
 msgstr ""
+"בטופס שלהלן הזן נתיב מקומי (כלומר / נתונים / מוסיקה) או את כתובת האתר להתקנת"
+" Ampache מרוחקת (לדוגמה, http://theotherampache.com)"
 
 #: ../../templates/show_add_catalog.inc.php:34
 msgid "Catalog Name"
-msgstr ""
+msgstr "שם הקטלוג"
 
 #: ../../templates/show_add_catalog.inc.php:37
 #: ../../templates/show_edit_catalog.inc.php:31
 msgid "Auto-inserted Fields"
-msgstr ""
+msgstr "שדות שנוספו אוטומטית"
 
 #: ../../templates/show_add_catalog.inc.php:38
 #: ../../templates/show_edit_catalog.inc.php:32
 msgid "album name"
-msgstr ""
+msgstr "שם האלבום"
 
 #: ../../templates/show_add_catalog.inc.php:39
 #: ../../templates/show_edit_catalog.inc.php:33
 msgid "artist name"
-msgstr ""
+msgstr "שם אמן"
 
 #: ../../templates/show_add_catalog.inc.php:40
 #: ../../templates/show_edit_catalog.inc.php:34
 msgid "id3 comment"
-msgstr ""
+msgstr "הע להשפיע"
 
 #: ../../templates/show_add_catalog.inc.php:41
 #: ../../templates/show_edit_catalog.inc.php:35
 msgid "track number (padded with leading 0)"
-msgstr ""
+msgstr "מספר מסלול (מרופד עם מוביל 0)"
 
 #: ../../templates/show_add_catalog.inc.php:42
 #: ../../templates/show_edit_catalog.inc.php:36
 msgid "song title"
-msgstr ""
+msgstr "שם השיר"
 
 #: ../../templates/show_add_catalog.inc.php:43
 #: ../../templates/show_edit_catalog.inc.php:37
 msgid "year"
-msgstr ""
+msgstr "שנה"
 
 #: ../../templates/show_add_catalog.inc.php:44
 #: ../../templates/show_edit_catalog.inc.php:38
 msgid "other"
-msgstr ""
+msgstr "אחר"
 
 #: ../../templates/show_add_catalog.inc.php:48
 #: ../../templates/show_edit_catalog.inc.php:42
 msgid "Catalog Type"
-msgstr ""
+msgstr "סוג קטלוג"
 
 #: ../../templates/show_add_catalog.inc.php:52
 msgid "Filename Pattern"
-msgstr ""
+msgstr "תבנית שם קובץ"
 
 #: ../../templates/show_add_catalog.inc.php:56
 #: ../../templates/show_edit_catalog.inc.php:53
 msgid "Folder Pattern"
-msgstr ""
+msgstr "דפוס תיקייה"
 
 #: ../../templates/show_add_catalog.inc.php:56
 #: ../../templates/show_edit_catalog.inc.php:53
 msgid "(no leading or ending '/')"
-msgstr ""
+msgstr "(לא מוביל או מסתיים '/')"
 
 #: ../../templates/show_add_catalog.inc.php:60
 #: ../../templates/show_catalog_row.inc.php:47
 msgid "Gather Art"
-msgstr ""
+msgstr "אוסף אמנות"
 
 #: ../../templates/show_add_catalog.inc.php:64
 msgid "Build Playlists from playlist Files"
-msgstr ""
+msgstr "בניית פלייליסטים מתוך רשימת השמעה קבצים"
 
 #: ../../templates/show_add_catalog.inc.php:68
 msgid "Gather media types"
-msgstr ""
+msgstr "איסוף סוגי מדיה"
 
 #: ../../templates/show_add_catalog.inc.php:89
 msgid "Add Catalog"
-msgstr ""
+msgstr "הוסף קטלוג"
 
 #: ../../templates/show_add_label.inc.php:23
 msgid "Add Label"
-msgstr ""
+msgstr "הוסף תווית"
 
 #: ../../templates/show_add_label.inc.php:39
 #: ../../templates/show_edit_label_row.inc.php:36
 msgid "Personal"
-msgstr ""
+msgstr "אישי"
 
 #: ../../templates/show_add_label.inc.php:42
 #: ../../templates/show_edit_label_row.inc.php:39
 msgid "Association"
-msgstr ""
+msgstr "האגודה"
 
 #: ../../templates/show_add_label.inc.php:45
 #: ../../templates/show_edit_label_row.inc.php:42
 msgid "Company"
-msgstr ""
+msgstr "החברה"
 
 #: ../../templates/show_add_label.inc.php:50
 #: ../../templates/show_edit_artist_row.inc.php:43
 #: ../../templates/show_edit_label_row.inc.php:47
 msgid "Summary"
-msgstr ""
+msgstr "סיכום"
 
 #: ../../templates/show_add_label.inc.php:57
 #: ../../templates/show_edit_label_row.inc.php:51
 msgid "Address"
-msgstr ""
+msgstr "כתובת"
 
 #: ../../templates/show_add_label.inc.php:64
 #: ../../templates/show_edit_label_row.inc.php:55
 #: ../../templates/show_lostpassword_form.inc.php:56
 msgid "Email"
-msgstr ""
+msgstr "דוא\"ל"
 
 #: ../../templates/show_add_live_stream.inc.php:23
 #: ../../templates/show_live_streams.inc.php:29
 msgid "Add Radio Station"
-msgstr ""
+msgstr "הוסף תחנת רדיו"
 
 #: ../../templates/show_add_live_stream.inc.php:34
 #: ../../templates/show_edit_live_stream_row.inc.php:35
 msgid "Homepage"
-msgstr ""
+msgstr "דף הבית"
 
 #: ../../templates/show_add_live_stream.inc.php:41
 #: ../../templates/show_edit_live_stream_row.inc.php:31
 #: ../../templates/show_live_streams.inc.php:45
 #: ../../templates/show_live_streams.inc.php:73
 msgid "Stream URL"
-msgstr ""
+msgstr "כתובת אתר של זרם"
 
 #: ../../templates/show_add_live_stream.inc.php:48
 #: ../../templates/show_edit_live_stream_row.inc.php:39
@@ -3730,70 +3792,70 @@ msgstr ""
 #: ../../templates/show_live_streams.inc.php:46
 #: ../../templates/show_live_streams.inc.php:74
 msgid "Codec"
-msgstr ""
+msgstr "Codec"
 
 #: ../../templates/show_add_playlist.inc.php:23
 msgid "Create a new playlist"
-msgstr ""
+msgstr "צור פלייליסט חדש"
 
 #: ../../templates/show_add_playlist.inc.php:41
 #: ../../templates/show_add_share.inc.php:73
 #: ../../templates/show_add_shout.inc.php:56
 msgid "Create"
-msgstr ""
+msgstr "צור"
 
 #: ../../templates/show_add_podcast.inc.php:23
 msgid "Subscribe to Podcast"
-msgstr ""
+msgstr "הצטרף כמנוי ל- Podcast"
 
 #: ../../templates/show_add_podcast.inc.php:27
 msgid "Podcast feed url"
-msgstr ""
+msgstr "Podcast להאכיל את כתובת האתר"
 
 #: ../../templates/show_add_podcast.inc.php:43
 msgid "Subscribe"
-msgstr ""
+msgstr "הירשם"
 
 #: ../../templates/show_add_pvmsg.inc.php:24
 msgid "Compose Message"
-msgstr ""
+msgstr "לחבר הודעה"
 
 #: ../../templates/show_add_pvmsg.inc.php:28
 #: ../../templates/show_pvmsgs.inc.php:52
 #: ../../templates/show_pvmsgs.inc.php:81
 msgid "Recipient"
-msgstr ""
+msgstr "מקבל"
 
 #: ../../templates/show_add_pvmsg.inc.php:35
 #: ../../templates/show_mail_users.inc.php:48
 #: ../../templates/show_pvmsgs.inc.php:50
 #: ../../templates/show_pvmsgs.inc.php:79
 msgid "Subject"
-msgstr ""
+msgstr "נושא"
 
 #: ../../templates/show_add_pvmsg.inc.php:42
 #: ../../templates/show_mail_users.inc.php:54
 msgid "Message"
-msgstr ""
+msgstr "הודעה"
 
 #: ../../templates/show_add_pvmsg.inc.php:51
 msgid "Send"
-msgstr ""
+msgstr "שלח"
 
 #: ../../templates/show_adds_catalog.inc.php:23
 msgid "Starting New Media Search"
-msgstr ""
+msgstr "הפעלת חיפוש מדיה חדשה"
 
 #. HINT: Catalog Name
 #: ../../templates/show_adds_catalog.inc.php:25
 #, php-format
 msgid "Starting New Media Search on %s catalog"
-msgstr ""
+msgstr "החל חיפוש מדיה חדשה על %s קטלוג"
 
 #: ../../templates/show_adds_catalog.inc.php:27
 #: ../../templates/show_run_add_catalog.inc.php:25
 msgid "Found"
-msgstr ""
+msgstr "מצאתי"
 
 #: ../../templates/show_adds_catalog.inc.php:28
 #: ../../templates/show_clean_catalog.inc.php:28
@@ -3801,121 +3863,126 @@ msgstr ""
 #: ../../templates/show_run_add_catalog.inc.php:26
 #: ../../templates/show_verify_catalog.inc.php:28
 msgid "Reading"
-msgstr ""
+msgstr "קריאה"
 
 #: ../../templates/show_add_share.inc.php:23
 msgid "Create Share"
-msgstr ""
+msgstr "צור שיתוף"
 
 #: ../../templates/show_add_share.inc.php:29
 #: ../../templates/show_edit_share_row.inc.php:27
 msgid "Shared Object"
-msgstr ""
+msgstr "אובייקט משותף"
 
 #: ../../templates/show_add_share.inc.php:42
 #: ../../templates/show_edit_share_row.inc.php:31
 #: ../../templates/show_shared_objects.inc.php:32
 msgid "Max Counter"
-msgstr ""
+msgstr "מונה מקס"
 
 #: ../../templates/show_add_share.inc.php:49
 #: ../../templates/show_edit_share_row.inc.php:35
 #: ../../templates/show_shared_objects.inc.php:35
 msgid "Expiry Days"
-msgstr ""
+msgstr "ימי תפוגה"
 
 #: ../../templates/show_add_share.inc.php:55
 #: ../../templates/show_edit_share_row.inc.php:40
 #: ../../templates/show_shared_objects.inc.php:33
 msgid "Allow Stream"
-msgstr ""
+msgstr "אפשר זרימה"
 
 #: ../../templates/show_add_share.inc.php:63
 #: ../../templates/show_edit_share_row.inc.php:47
 #: ../../templates/show_shared_objects.inc.php:34
 msgid "Allow Download"
-msgstr ""
+msgstr "אפשר הורדה"
 
 #: ../../templates/show_add_shout.inc.php:30
 msgid "Post to Shoutbox"
-msgstr ""
+msgstr "פרסם ב- Shoutbox"
 
 #: ../../templates/show_add_shout.inc.php:38
 #: ../../templates/show_edit_shout.inc.php:31
 msgid "Comment:"
-msgstr ""
+msgstr "תגובה:"
 
 #: ../../templates/show_add_shout.inc.php:46
 #: ../../templates/show_edit_shout.inc.php:39
 msgid "Stick this comment"
-msgstr ""
+msgstr "מקל את ההערה"
 
 #: ../../templates/show_add_shout.inc.php:67
 #: ../../templates/show_shoutbox.inc.php:23
 msgid "Shoutbox"
-msgstr ""
+msgstr "Shoutbox"
 
 #: ../../templates/show_add_upload.inc.php:38
 #: ../../templates/show_add_upload.inc.php:156
 msgid "Target folder"
-msgstr ""
+msgstr "תיקיית היעד"
 
 #: ../../templates/show_add_upload.inc.php:211
 msgid "Files"
-msgstr ""
+msgstr "קבצים"
 
 #: ../../templates/show_add_upload.inc.php:218
 msgid "Allowed file type"
-msgstr ""
+msgstr "סוג קובץ מותרת"
 
 #: ../../templates/show_add_upload.inc.php:223
 msgid "Drop File Here"
-msgstr ""
+msgstr "זרוק קובץ כאן"
 
 #: ../../templates/show_add_upload.inc.php:224
 msgid "Browse"
-msgstr ""
+msgstr "עיון"
 
 #: ../../templates/show_add_user.inc.php:23
 msgid "Adding a New User"
-msgstr ""
+msgstr "הוספת משתמש חדש"
 
 #: ../../templates/show_add_user.inc.php:80
 #: ../../templates/show_edit_user.inc.php:104
 msgid "User Access Level"
-msgstr ""
+msgstr "רמת גישה למשתמש"
 
 #: ../../templates/show_add_user.inc.php:105
 #: ../../templates/sidebar_admin.inc.php:33
 msgid "Add User"
-msgstr ""
+msgstr "הוסף משתמש"
 
 #: ../../templates/show_album_group_disks.inc.php:45
-#: ../../templates/show_album.inc.php:50 ../../templates/show_artist.inc.php:43
+#: ../../templates/show_album.inc.php:50
+#: ../../templates/show_artist.inc.php:43
 #: ../../templates/show_label.inc.php:35 ../../templates/show_song.inc.php:146
 msgid "Search on Google ..."
-msgstr ""
+msgstr "חפש בגוגל ..."
 
 #: ../../templates/show_album_group_disks.inc.php:46
-#: ../../templates/show_album.inc.php:51 ../../templates/show_artist.inc.php:44
+#: ../../templates/show_album.inc.php:51
+#: ../../templates/show_artist.inc.php:44
 #: ../../templates/show_label.inc.php:36 ../../templates/show_song.inc.php:147
 msgid "Search on DuckDuckGo ..."
-msgstr ""
+msgstr "חיפוש על DuckDuckGo ..."
 
 #: ../../templates/show_album_group_disks.inc.php:47
-#: ../../templates/show_album.inc.php:52 ../../templates/show_artist.inc.php:45
+#: ../../templates/show_album.inc.php:52
+#: ../../templates/show_artist.inc.php:45
 #: ../../templates/show_label.inc.php:37
 msgid "Search on Wikipedia ..."
-msgstr ""
+msgstr "חפש בוויקיפדיה ..."
 
 #: ../../templates/show_album_group_disks.inc.php:48
-#: ../../templates/show_album.inc.php:53 ../../templates/show_artist.inc.php:46
+#: ../../templates/show_album.inc.php:53
+#: ../../templates/show_artist.inc.php:46
 #: ../../templates/show_label.inc.php:38 ../../templates/show_song.inc.php:148
 msgid "Search on Last.fm ..."
-msgstr ""
+msgstr "חפש ב- Last.fm ..."
 
 #: ../../templates/show_album_group_disks.inc.php:59
-#: ../../templates/show_album.inc.php:89 ../../templates/show_albums.inc.php:63
+#: ../../templates/show_album.inc.php:89
+#: ../../templates/show_albums.inc.php:63
 #: ../../templates/show_albums.inc.php:137
 #: ../../templates/show_artist.inc.php:84
 #: ../../templates/show_catalogs.inc.php:34
@@ -3933,7 +4000,7 @@ msgstr ""
 #: ../../templates/show_searches.inc.php:78
 #: ../../templates/show_shared_objects.inc.php:37
 msgid "Actions"
-msgstr ""
+msgstr "פעולות"
 
 #: ../../templates/show_album_group_disks.inc.php:84
 #: ../../templates/show_album_group_disks.inc.php:85
@@ -3944,7 +4011,7 @@ msgstr ""
 #: ../../templates/show_artist_row.inc.php:55
 #: ../../templates/show_playlist_row.inc.php:53
 msgid "Random to temporary playlist"
-msgstr ""
+msgstr "אקראית לפלייליסט זמני"
 
 #: ../../templates/show_album_group_disks.inc.php:92
 #: ../../templates/show_album_group_disks.inc.php:93
@@ -3964,7 +4031,7 @@ msgstr ""
 #: ../../templates/show_song.inc.php:102
 #: ../../templates/show_song_row.inc.php:103
 msgid "Download"
-msgstr ""
+msgstr "הורד"
 
 #: ../../templates/show_album_group_disks.inc.php:149
 #: ../../templates/show_album.inc.php:159
@@ -3972,28 +4039,29 @@ msgstr ""
 #: ../../templates/show_playlist.inc.php:61
 #: ../../templates/show_playlist.inc.php:62
 msgid "Save Tracks Order"
-msgstr ""
+msgstr "שמור סדר שירים"
 
 #: ../../templates/show_album_group_disks.inc.php:151
 #: ../../templates/show_album.inc.php:164
 msgid "Do you really want to update from tags?"
-msgstr ""
+msgstr "האם אתה באמת מעוניין לעדכן מתגים?"
 
 #: ../../templates/show_album_group_disks.inc.php:152
 #: ../../templates/show_album.inc.php:164
 msgid "Update from tags"
-msgstr ""
+msgstr "עדכון מתגים"
 
 #: ../../templates/show_album_group_disks.inc.php:154
 #: ../../templates/show_album.inc.php:181
 #: ../../templates/show_album.inc.php:184
 #: ../../templates/show_album_row.inc.php:110
 msgid "Album edit"
-msgstr ""
+msgstr "עריכת אלבום"
 
-#: ../../templates/show_album.inc.php:83 ../../templates/show_artist.inc.php:78
+#: ../../templates/show_album.inc.php:83
+#: ../../templates/show_artist.inc.php:78
 msgid "times"
-msgstr ""
+msgstr "פעמים"
 
 #: ../../templates/show_album.inc.php:151
 #: ../../templates/show_album.inc.php:152
@@ -4004,11 +4072,11 @@ msgstr ""
 #: ../../templates/show_podcast.inc.php:85
 #: ../../templates/show_song.inc.php:109 ../../templates/show_user.inc.php:65
 msgid "Graphs"
-msgstr ""
+msgstr "גרפים"
 
 #: ../../templates/show_album.inc.php:185
 msgid "Edit Album"
-msgstr ""
+msgstr "עריכת אלבום"
 
 #: ../../templates/show_albums.inc.php:35
 #: ../../templates/show_albums.inc.php:109
@@ -4028,7 +4096,7 @@ msgstr ""
 #: ../../templates/show_recommended_artists.inc.php:32
 #: ../../templates/show_recommended_artists.inc.php:90
 msgid "Art"
-msgstr ""
+msgstr "אומנות"
 
 #: ../../templates/show_albums.inc.php:48
 #: ../../templates/show_albums.inc.php:122
@@ -4040,10 +4108,11 @@ msgstr ""
 #: ../../templates/show_now_playing_row.inc.php:54
 #: ../../templates/show_recommended_artists.inc.php:41
 #: ../../templates/show_recommended_artists.inc.php:98
-#: ../../templates/show_songs.inc.php:37 ../../templates/show_songs.inc.php:100
+#: ../../templates/show_songs.inc.php:37
+#: ../../templates/show_songs.inc.php:100
 #: ../../templates/show_stats.inc.php:36
 msgid "Tags"
-msgstr ""
+msgstr "תגים"
 
 #: ../../templates/show_albums.inc.php:53
 #: ../../templates/show_albums.inc.php:127
@@ -4064,7 +4133,7 @@ msgstr ""
 #: ../../templates/show_song.inc.php:34 ../../templates/show_songs.inc.php:54
 #: ../../templates/show_songs.inc.php:116
 msgid "Rating"
-msgstr ""
+msgstr "דירוג"
 
 #: ../../templates/show_albums.inc.php:58
 #: ../../templates/show_albums.inc.php:132
@@ -4084,31 +4153,32 @@ msgstr ""
 #: ../../templates/show_recommended_artists.inc.php:106
 #: ../../templates/show_song.inc.php:45 ../../templates/show_songs.inc.php:60
 msgid "Fav."
-msgstr ""
+msgstr "Fav."
 
 #: ../../templates/show_albums.inc.php:99
 msgid "No album found"
-msgstr ""
+msgstr "לא נמצא אלבום"
 
 #: ../../templates/show_artist.inc.php:49
 #: ../../templates/show_artist.inc.php:243
 #: ../../templates/show_artist.inc.php:253
 #: ../../templates/show_artist.inc.php:263
-#: ../../templates/show_index.inc.php:51 ../../templates/show_label.inc.php:107
+#: ../../templates/show_index.inc.php:51
+#: ../../templates/show_label.inc.php:107
 #: ../../templates/show_now_playing_row.inc.php:83
 #: ../../templates/show_now_playing_row.inc.php:89
 msgid "Loading..."
-msgstr ""
+msgstr "טעינה..."
 
 #: ../../templates/show_artist.inc.php:90
 #: ../../templates/show_artist.inc.php:92
 msgid "Show all"
-msgstr ""
+msgstr "הצג הכול"
 
 #: ../../templates/show_artist.inc.php:98
 #: ../../templates/show_artist.inc.php:100
 msgid "Show albums"
-msgstr ""
+msgstr "הצג אלבומים"
 
 #: ../../templates/show_artist.inc.php:107
 #: ../../templates/show_artist.inc.php:108
@@ -4117,7 +4187,7 @@ msgstr ""
 #: ../../templates/show_podcast.inc.php:66
 #: ../../templates/show_podcast.inc.php:67
 msgid "Play all"
-msgstr ""
+msgstr "לשחק את כל"
 
 #: ../../templates/show_artist.inc.php:113
 #: ../../templates/show_artist.inc.php:114
@@ -4126,7 +4196,7 @@ msgstr ""
 #: ../../templates/show_podcast.inc.php:74
 #: ../../templates/show_podcast.inc.php:75
 msgid "Play all last"
-msgstr ""
+msgstr "לשחק את כל האחרון"
 
 #. HINT: Artist Fullname
 #: ../../templates/show_artist.inc.php:124
@@ -4134,7 +4204,7 @@ msgstr ""
 #: ../../templates/show_playlist.inc.php:102
 #: ../../templates/show_playlist.inc.php:103
 msgid "Add all to temporary playlist"
-msgstr ""
+msgstr "הוסף הכל לפלייליסט זמני"
 
 #. HINT: Artist Fullname
 #: ../../templates/show_artist.inc.php:129
@@ -4142,17 +4212,17 @@ msgstr ""
 #: ../../templates/show_playlist.inc.php:106
 #: ../../templates/show_playlist.inc.php:107
 msgid "Random all to temporary playlist"
-msgstr ""
+msgstr "אקראי כל רשימת השמעה זמנית"
 
 #: ../../templates/show_artist.inc.php:174
 #: ../../templates/show_artist.inc.php:177
 #: ../../templates/show_artist_row.inc.php:90
 msgid "Artist edit"
-msgstr ""
+msgstr "עריכת אמן"
 
 #: ../../templates/show_artist.inc.php:178
 msgid "Edit Artist"
-msgstr ""
+msgstr "עריכת אמן"
 
 #: ../../templates/show_artist.inc.php:201
 #: ../../templates/show_artist.inc.php:242
@@ -4160,12 +4230,12 @@ msgstr ""
 #: ../../templates/show_now_playing_similar.inc.php:28
 #: ../../templates/show_recommended_artists.inc.php:25
 msgid "Similar Artists"
-msgstr ""
+msgstr "אמנים דומים"
 
 #: ../../templates/show_artist.inc.php:206
 #: ../../templates/show_artist.inc.php:252
 msgid "Events"
-msgstr ""
+msgstr "אירועים"
 
 #: ../../templates/show_artists.inc.php:44
 #: ../../templates/show_artists.inc.php:118
@@ -4177,49 +4247,50 @@ msgstr ""
 #: ../../templates/show_podcast_episodes.inc.php:90
 #: ../../templates/show_recommended_artists.inc.php:40
 #: ../../templates/show_recommended_artists.inc.php:97
-#: ../../templates/show_songs.inc.php:38 ../../templates/show_songs.inc.php:101
+#: ../../templates/show_songs.inc.php:38
+#: ../../templates/show_songs.inc.php:101
 msgid "Time"
-msgstr ""
+msgstr "זמן"
 
 #: ../../templates/show_artists.inc.php:101
 msgid "No artist found"
-msgstr ""
+msgstr "לא נמצא אמן"
 
 #: ../../templates/show_arts.inc.php:28
 msgid "Select New Art"
-msgstr ""
+msgstr "בחר אמנות חדשה"
 
 #: ../../templates/show_arts.inc.php:52
 msgid "Invalid"
-msgstr ""
+msgstr "לא חוקי"
 
 #: ../../templates/show_arts.inc.php:55
 #: ../../templates/show_disabled_songs.inc.php:28
 #: ../../templates/show_disabled_songs.inc.php:58
 #: ../../templates/show_pvmsg_row.inc.php:24
 msgid "Select"
-msgstr ""
+msgstr "בחר"
 
 #: ../../templates/show_big_art.inc.php:31
 msgid "Album Art"
-msgstr ""
+msgstr "אלבום תמונות"
 
 #: ../../templates/show_big_art.inc.php:35
 msgid "Click to close window"
-msgstr ""
+msgstr "לחץ כדי לסגור חלון"
 
 #: ../../templates/show_catalog_row.inc.php:36
 msgid "Make it ready ..."
-msgstr ""
+msgstr "תעשו את זה מוכן ..."
 
 #: ../../templates/show_catalog_row.inc.php:44
 msgid "Verify"
-msgstr ""
+msgstr "אמת"
 
 #: ../../templates/show_catalog_row.inc.php:45
 #: ../../templates/show_shares.inc.php:27
 msgid "Clean"
-msgstr ""
+msgstr "נקי"
 
 #: ../../templates/show_catalog_row.inc.php:46
 #: ../../templates/show_create_democratic.inc.php:70
@@ -4228,38 +4299,38 @@ msgstr ""
 #: ../../templates/show_manage_catalogs.inc.php:59
 #: ../../templates/show_preference_admin.inc.php:58
 msgid "Update"
-msgstr ""
+msgstr "עדכון"
 
 #: ../../templates/show_catalog_row.inc.php:52
 msgid "Go"
-msgstr ""
+msgstr "ללכת"
 
 #: ../../templates/show_catalogs.inc.php:30
 #: ../../templates/show_catalogs.inc.php:60
 msgid "Info"
-msgstr ""
+msgstr "מידע"
 
 #: ../../templates/show_catalogs.inc.php:31
 #: ../../templates/show_catalogs.inc.php:61
 #: ../../templates/show_stats.inc.php:70
 msgid "Last Verify"
-msgstr ""
+msgstr "אימות אחרון"
 
 #: ../../templates/show_catalogs.inc.php:32
 #: ../../templates/show_catalogs.inc.php:62
 #: ../../templates/show_stats.inc.php:71
 msgid "Last Add"
-msgstr ""
+msgstr "הוסף לאחרונה"
 
 #: ../../templates/show_catalogs.inc.php:33
 #: ../../templates/show_catalogs.inc.php:63
 #: ../../templates/show_stats.inc.php:72
 msgid "Last Clean"
-msgstr ""
+msgstr "נקי אחרון"
 
 #: ../../templates/show_catalogs.inc.php:51
 msgid "No catalog found"
-msgstr ""
+msgstr "לא נמצא קטלוג"
 
 #: ../../templates/show_catalog_types.inc.php:30
 #: ../../templates/show_catalog_types.inc.php:68
@@ -4271,44 +4342,44 @@ msgstr ""
 #: ../../templates/show_plugins.inc.php:72
 #: ../../templates/show_podcast_episode.inc.php:111
 msgid "Description"
-msgstr ""
+msgstr "תיאור"
 
 #: ../../templates/show_catalog_types.inc.php:31
 #: ../../templates/show_catalog_types.inc.php:69
 #: ../../templates/show_plugins.inc.php:31
 #: ../../templates/show_plugins.inc.php:73
 msgid "Version"
-msgstr ""
+msgstr "גרסה"
 
 #: ../../templates/show_catalog_types.inc.php:48
 #: ../../templates/show_plugins.inc.php:43
 msgid "Activate"
-msgstr ""
+msgstr "הפעל"
 
 #: ../../templates/show_catalog_types.inc.php:60
 #: ../../templates/show_disabled_songs.inc.php:51
 #: ../../templates/show_manage_shoutbox.inc.php:52
 #: ../../templates/show_plugins.inc.php:64
 msgid "No Records Found"
-msgstr ""
+msgstr "לא נמצאו שיאים"
 
 #: ../../templates/show_clean_catalog.inc.php:23
 msgid "Clean Catalog"
-msgstr ""
+msgstr "קטלוג נקי"
 
 #. HINT: Catalog Name
 #: ../../templates/show_clean_catalog.inc.php:25
 #, php-format
 msgid "Cleaning the %s Catalog"
-msgstr ""
+msgstr "ניקוי קטלוג %s"
 
 #: ../../templates/show_clean_catalog.inc.php:27
 msgid "Checking"
-msgstr ""
+msgstr "בודק"
 
 #: ../../templates/show_concerts.inc.php:23
 msgid "Coming Events"
-msgstr ""
+msgstr "האירועים הקרובים"
 
 #: ../../templates/show_concerts.inc.php:27
 #: ../../templates/show_concerts.inc.php:55
@@ -4317,157 +4388,158 @@ msgstr ""
 #: ../../templates/show_pvmsgs.inc.php:53
 #: ../../templates/show_pvmsgs.inc.php:82
 msgid "Date"
-msgstr ""
+msgstr "תאריך"
 
 #: ../../templates/show_concerts.inc.php:29
 #: ../../templates/show_concerts.inc.php:57
 msgid "Location"
-msgstr ""
+msgstr "מקום"
 
 #: ../../templates/show_concerts.inc.php:44
 msgid "No coming events found"
-msgstr ""
+msgstr "לא נמצאו אירועים קרובים"
 
 #: ../../templates/show_concerts.inc.php:51
 msgid "Past Events"
-msgstr ""
+msgstr "אירועי העבר"
 
 #: ../../templates/show_concerts.inc.php:72
 msgid "No past events found"
-msgstr ""
+msgstr "לא נמצאו אירועי עבר"
 
 #: ../../templates/show_confirmation.inc.php:29
 #: ../../templates/show_install_check.inc.php:67
 #: ../../templates/show_update_items.inc.php:28
 msgid "Continue"
-msgstr ""
+msgstr "המשך"
 
 #: ../../templates/show_create_democratic.inc.php:23
 #: ../../templates/show_democratic.inc.php:38
 #: ../../templates/show_democratic.inc.php:40
 msgid "Configure Democratic Playlist"
-msgstr ""
+msgstr "הגדר את רשימת ההשמעה הדמוקרטית"
 
 #: ../../templates/show_create_democratic.inc.php:31
 #: ../../templates/show_manage_democratic.inc.php:27
 msgid "Base Playlist"
-msgstr ""
+msgstr "השמעה בסיסית"
 
 #: ../../templates/show_create_democratic.inc.php:35
 msgid "Cooldown Time"
-msgstr ""
+msgstr "זמן סתום /"
 
 #: ../../templates/show_create_democratic.inc.php:57
 msgid "Make Default"
-msgstr ""
+msgstr "הפוך ברירת מחדל"
 
 #: ../../templates/show_create_democratic.inc.php:64
 msgid "Force Democratic Play"
-msgstr ""
+msgstr "כוח הדמוקרטית"
 
 #: ../../templates/show_debug.inc.php:23
 msgid "Debug Tools"
-msgstr ""
+msgstr "כלי ניקוי באגים"
 
 #: ../../templates/show_debug.inc.php:27
 msgid "Generate Configuration"
-msgstr ""
+msgstr "צור תצורה"
 
 #: ../../templates/show_debug.inc.php:30
 msgid "Write New Config"
-msgstr ""
+msgstr "כתוב תצורה חדשה"
 
 #: ../../templates/show_debug.inc.php:33
 msgid "Set Database Charset"
-msgstr ""
+msgstr "הגדר את מסד הנתונים Charset"
 
 #: ../../templates/show_debug.inc.php:36
 msgid "Clear Songs Cache"
-msgstr ""
+msgstr "נקה מטמון שירים"
 
 #: ../../templates/show_debug.inc.php:39
 msgid "Clear Artists Cache"
-msgstr ""
+msgstr "נקה מטמון אמנים"
 
 #: ../../templates/show_debug.inc.php:42
 msgid "Clear Albums Cache"
-msgstr ""
+msgstr "נקה מטמון של אלבומים"
 
 #: ../../templates/show_debug.inc.php:47 ../../update.php:78
 msgid "Ampache Update"
-msgstr ""
+msgstr "עדכון Ampache"
 
 #: ../../templates/show_debug.inc.php:48
 msgid "Installed Ampache version"
-msgstr ""
+msgstr "גרסת Ampache מותקנת"
 
 #: ../../templates/show_debug.inc.php:49
 msgid "Latest Ampache version"
-msgstr ""
+msgstr "הגרסה האחרונה של Ampache"
 
 #: ../../templates/show_debug.inc.php:50
 msgid "Force check"
-msgstr ""
+msgstr "בדיקת כוח"
 
 #: ../../templates/show_debug.inc.php:59
 msgid "PHP Settings"
-msgstr ""
+msgstr "הגדרות PHP"
 
 #: ../../templates/show_debug.inc.php:67
 msgid "Setting"
-msgstr ""
+msgstr "הגדרה"
 
-#: ../../templates/show_debug.inc.php:68 ../../templates/show_debug.inc.php:121
+#: ../../templates/show_debug.inc.php:68
+#: ../../templates/show_debug.inc.php:121
 #: ../../templates/show_dynamic.inc.php:28
 #: ../../templates/show_preference_box.inc.php:45
 #: ../../templates/show_preference_box.inc.php:96
 #: ../../templates/show_user_preferences.inc.php:38
 msgid "Value"
-msgstr ""
+msgstr "ערך"
 
 #: ../../templates/show_debug.inc.php:73
 msgid "Memory Limit"
-msgstr ""
+msgstr "מגבלת זיכרון"
 
 #: ../../templates/show_debug.inc.php:77
 msgid "Maximum Execution Time"
-msgstr ""
+msgstr "זמן ביצוע מקסימלי"
 
 #: ../../templates/show_debug.inc.php:81
 msgid "Override Execution Time"
-msgstr ""
+msgstr "דרוס את זמן הביצוע"
 
 #: ../../templates/show_debug.inc.php:82
 msgid "Failed"
-msgstr ""
+msgstr "נכשל"
 
 #: ../../templates/show_debug.inc.php:82
 msgid "Succeeded"
-msgstr ""
+msgstr "הצלחתי"
 
 #: ../../templates/show_debug.inc.php:85
 msgid "Safe Mode"
-msgstr ""
+msgstr "מצב בטוח"
 
 #: ../../templates/show_debug.inc.php:93
 msgid "Zlib Support"
-msgstr ""
+msgstr "תמיכה Zlib"
 
 #: ../../templates/show_debug.inc.php:97
 msgid "GD Support"
-msgstr ""
+msgstr "תמיכה ב- GD"
 
 #: ../../templates/show_debug.inc.php:101
 msgid "Iconv Support"
-msgstr ""
+msgstr "תמיכה Iconv"
 
 #: ../../templates/show_debug.inc.php:105
 msgid "Gettext Support"
-msgstr ""
+msgstr "תמיכה Gettext"
 
 #: ../../templates/show_debug.inc.php:112
 msgid "Current Configuration"
-msgstr ""
+msgstr "תצורה נוכחית"
 
 #: ../../templates/show_debug.inc.php:120
 #: ../../templates/show_preference_admin.inc.php:32
@@ -4476,95 +4548,95 @@ msgstr ""
 #: ../../templates/show_preference_box.inc.php:95
 #: ../../templates/show_user_preferences.inc.php:37
 msgid "Preference"
-msgstr ""
+msgstr "העדפה"
 
 #: ../../templates/show_democratic.inc.php:23
 #, php-format
 msgid "%s Playlist"
-msgstr ""
+msgstr "רשימת השמעה של %s"
 
 #: ../../templates/show_democratic.inc.php:31
 #: ../../templates/show_manage_democratic.inc.php:28
 msgid "Cooldown"
-msgstr ""
+msgstr "תירגע"
 
 #: ../../templates/show_democratic.inc.php:46
 msgid "Play Democratic Playlist"
-msgstr ""
+msgstr "השמעת רשימת השמעה דמוקרטית"
 
 #: ../../templates/show_democratic.inc.php:82
 msgid "Reload this page automatically"
-msgstr ""
+msgstr "טען מחדש את הדף באופן אוטומטי"
 
 #: ../../templates/show_democratic_playlist.inc.php:47
 msgid "Playing from base Playlist"
-msgstr ""
+msgstr "משחק מתוך רשימת השמעה בסיסית"
 
 #: ../../templates/show_democratic_playlist.inc.php:59
 #: ../../templates/show_democratic_playlist.inc.php:112
 msgid "Votes"
-msgstr ""
+msgstr "קולות"
 
 #: ../../templates/show_democratic_playlist.inc.php:85
 msgid "Remove Vote"
-msgstr ""
+msgstr "הסר את הצבע"
 
 #: ../../templates/show_democratic_playlist.inc.php:89
 msgid "Add Vote"
-msgstr ""
+msgstr "הוסף את הצבע"
 
 #: ../../templates/show_denied.inc.php:52
 msgid "Access Denied"
-msgstr ""
+msgstr "גישה נדחתה"
 
 #: ../../templates/show_denied.inc.php:53
 #: ../../templates/show_denied.inc.php:60
 msgid "This event has been logged."
-msgstr ""
+msgstr "אירוע זה נרשם."
 
 #: ../../templates/show_denied.inc.php:58
 msgid ""
-"You have been redirected to this page because you do not have access to this "
-"function."
-msgstr ""
+"You have been redirected to this page because you do not have access to this"
+" function."
+msgstr "הופנית לדף זה מכיוון שאין לך גישה לפונקציה זו."
 
 #: ../../templates/show_denied.inc.php:59
 msgid ""
 "If you believe this is an error please contact an Ampache administrator."
-msgstr ""
+msgstr "אם אתה סבור שזוהי שגיאה, צור קשר עם מנהל Ampache."
 
 #: ../../templates/show_denied.inc.php:64
 msgid ""
 "You have been redirected to this page because you attempted to access a "
 "function that is disabled in the demo."
-msgstr ""
+msgstr "הופנית לדף זה מכיוון שניסית לגשת לפונקציה שאינה זמינה בהדגמה."
 
 #: ../../templates/show_disabled_songs.inc.php:33
 #: ../../templates/show_disabled_songs.inc.php:63
 msgid "Addition Time"
-msgstr ""
+msgstr "זמן תוספת"
 
 #: ../../templates/show_duplicate.inc.php:23
 #: ../../templates/show_duplicate.inc.php:36
 #: ../../templates/sidebar_modules.inc.php:32
 msgid "Find Duplicates"
-msgstr ""
+msgstr "מצא כפילויות"
 
 #: ../../templates/show_duplicate.inc.php:27
 msgid "Search Type"
-msgstr ""
+msgstr "סוג חיפוש"
 
 #: ../../templates/show_duplicate.inc.php:30
 msgid "Artist and Title"
-msgstr ""
+msgstr "אמן וכותרת"
 
 #: ../../templates/show_duplicate.inc.php:31
 msgid "Artist, Album and Title"
-msgstr ""
+msgstr "אמן, אלבום וכותרת"
 
 #: ../../templates/show_duplicates.inc.php:23
 msgid "Duplicate Songs"
-msgstr ""
+msgstr "שירים כפולים"
 
 #: ../../templates/show_duplicates.inc.php:28
 #: ../../templates/show_duplicates.inc.php:66
@@ -4575,310 +4647,311 @@ msgstr ""
 #: ../../templates/show_tagcloud.inc.php:26
 #: ../../templates/sidebar_home.inc.php:136
 msgid "Song"
-msgstr ""
+msgstr "שיר"
 
 #: ../../templates/show_duplicates.inc.php:31
 #: ../../templates/show_duplicates.inc.php:69
 #: ../../templates/show_podcast_episode.inc.php:118
-#: ../../templates/show_random.inc.php:65 ../../templates/show_song.inc.php:149
+#: ../../templates/show_random.inc.php:65
+#: ../../templates/show_song.inc.php:149
 msgid "Length"
-msgstr ""
+msgstr "אורך"
 
 #: ../../templates/show_duplicates.inc.php:33
 #: ../../templates/show_duplicates.inc.php:71
 #: ../../templates/show_podcast_episode.inc.php:123
 msgid "Size"
-msgstr ""
+msgstr "גודל"
 
 #: ../../templates/show_dynamic.inc.php:23
 msgid "Advanced Random Rules"
-msgstr ""
+msgstr "כללים אקראיים מתקדמים"
 
 #: ../../templates/show_dynamic.inc.php:26
 msgid "Field"
-msgstr ""
+msgstr "שדה"
 
 #: ../../templates/show_dynamic.inc.php:27
 msgid "Operator"
-msgstr ""
+msgstr "מפעיל"
 
 #: ../../templates/show_dynamic.inc.php:29
 msgid "Method"
-msgstr ""
+msgstr "שיטה"
 
 #: ../../templates/show_dynamic.inc.php:51
 msgid "Like"
-msgstr ""
+msgstr "כמו"
 
 #: ../../templates/show_dynamic.inc.php:59
 msgid "OR"
-msgstr ""
+msgstr "או"
 
 #: ../../templates/show_dynamic.inc.php:60
 msgid "AND"
-msgstr ""
+msgstr "ו"
 
 #: ../../templates/show_dynamic.inc.php:66
 msgid "Add Rule"
-msgstr ""
+msgstr "הוסף כלל"
 
 #: ../../templates/show_dynamic.inc.php:69
 msgid "Save Rules As"
-msgstr ""
+msgstr "שמור את הכללים כ"
 
 #: ../../templates/show_dynamic.inc.php:72
 msgid "Load Saved Rules"
-msgstr ""
+msgstr "טען כללים שמורים"
 
 #: ../../templates/show_edit_access.inc.php:23
 msgid "Edit Access Control List"
-msgstr ""
+msgstr "ערוך רשימת בקרת גישה"
 
 #: ../../templates/show_edit_album_row.inc.php:47
 #: ../../templates/show_song.inc.php:140
 msgid "Album Artist"
-msgstr ""
+msgstr "אמן האלבום"
 
 #: ../../templates/show_edit_album_row.inc.php:71
 #: ../../templates/show_edit_artist_row.inc.php:31
 #: ../../templates/show_edit_song_row.inc.php:59
 msgid "MusicBrainz ID"
-msgstr ""
+msgstr "מזהה"
 
 #: ../../templates/show_edit_album_row.inc.php:84
 msgid "MusicBrainz Release Group ID"
-msgstr ""
+msgstr "מזהה קבוצה"
 
 #: ../../templates/show_edit_album_row.inc.php:96
 msgid "Release Type"
-msgstr ""
+msgstr "סוג השחרור"
 
 #: ../../templates/show_edit_album_row.inc.php:107
 msgid "Overwrite tags of sub songs"
-msgstr ""
+msgstr "החלף תגים של שירי משנה"
 
 #: ../../templates/show_edit_album_row.inc.php:111
 msgid "Add tags to sub songs"
-msgstr ""
+msgstr "הוסף תגים לשירים"
 
 #: ../../templates/show_edit_artist_row.inc.php:47
 msgid "Place Formed"
-msgstr ""
+msgstr "המקום נוצר"
 
 #: ../../templates/show_edit_artist_row.inc.php:51
 msgid "Year Formed"
-msgstr ""
+msgstr "שנה"
 
 #: ../../templates/show_edit_artist_row.inc.php:68
 msgid "Overwrite tags of sub albums and sub songs"
-msgstr ""
+msgstr "החלף תגים של אלבומי משנה ותת שירים"
 
 #: ../../templates/show_edit_artist_row.inc.php:72
 msgid "Add tags to sub albums and sub songs"
-msgstr ""
+msgstr "הוסף תגים לאלבומי משנה ולשירי משנה"
 
 #: ../../templates/show_edit_catalog.inc.php:23
 #, php-format
 msgid "Settings for %s"
-msgstr ""
+msgstr "הגדרות עבור %s"
 
 #: ../../templates/show_edit_catalog.inc.php:46
 msgid "Filename pattern"
-msgstr ""
+msgstr "תבנית שם קובץ"
 
 #: ../../templates/show_edit_catalog.inc.php:63
 msgid "Save Catalog Settings"
-msgstr ""
+msgstr "שמור הגדרות קטלוג"
 
 #: ../../templates/show_edit_license.inc.php:23
 msgid "Configure License"
-msgstr ""
+msgstr "הגדר רשיון"
 
 #: ../../templates/show_edit_license.inc.php:38
 msgid "Description:"
-msgstr ""
+msgstr "תיאור:"
 
 #: ../../templates/show_edit_license.inc.php:44
 msgid "External Link"
-msgstr ""
+msgstr "קישור חיצוני"
 
 #: ../../templates/show_edit_license.inc.php:51
 msgid "Confirm"
-msgstr ""
+msgstr "אשר"
 
 #: ../../templates/show_edit_playlist_row.inc.php:36
 #: ../../templates/show_edit_search_row.inc.php:36
 #: ../../templates/show_edit_user.inc.php:45
 msgid "Public"
-msgstr ""
+msgstr "ציבורי"
 
 #: ../../templates/show_edit_podcast_episode_row.inc.php:35
 msgid "GUID"
-msgstr ""
+msgstr "GUID"
 
 #: ../../templates/show_edit_podcast_episode_row.inc.php:39
 #: ../../templates/show_podcast_episode.inc.php:113
 msgid "Author"
-msgstr ""
+msgstr "מחבר"
 
 #: ../../templates/show_edit_podcast_row.inc.php:27
 msgid "Feed"
-msgstr ""
+msgstr "הזנה"
 
 #: ../../templates/show_edit_podcast_row.inc.php:39
 msgid "Language"
-msgstr ""
+msgstr "שפה"
 
 #: ../../templates/show_edit_podcast_row.inc.php:43
 msgid "Copyright"
-msgstr ""
+msgstr "זכויות יוצרים"
 
 #: ../../templates/show_edit_search_row.inc.php:42
 #: ../../templates/show_searches.inc.php:45
 #: ../../templates/show_searches.inc.php:75
 #: ../../templates/sidebar_home.inc.php:132
 msgid "Random"
-msgstr ""
+msgstr "אקראי"
 
 #: ../../templates/show_edit_search_row.inc.php:48
 msgid "Item Limit (0 = unlimited)"
-msgstr ""
+msgstr "הגבלת פריט (0 = בלתי מוגבל)"
 
 #: ../../templates/show_edit_shout.inc.php:23
 msgid "Edit existing Shoutbox Post"
-msgstr ""
+msgstr "ערוך פוסט Shoutbox קיים"
 
 #. HINT: Client link, Object link
 #: ../../templates/show_edit_shout.inc.php:28
 #, php-format
 msgid "Created by: %s for %s"
-msgstr ""
+msgstr "נוצר על ידי: %s עבור %s"
 
 #: ../../templates/show_edit_song_row.inc.php:55
 #: ../../templates/show_song_previews.inc.php:39
 msgid "Track"
-msgstr ""
+msgstr "עקוב אחר"
 
 #: ../../templates/show_edit_song_row.inc.php:111
 msgid "More Metadata"
-msgstr ""
+msgstr "מטא נתונים נוספים"
 
 #: ../../templates/show_edit_tag_row.inc.php:32
 msgid "Re-tag"
-msgstr ""
+msgstr "תגית מחדש"
 
 #: ../../templates/show_edit_tag_row.inc.php:38
 msgid "Persistent"
-msgstr ""
+msgstr "מתמיד"
 
 #: ../../templates/show_edit_tag_row.inc.php:42
 msgid "Keep Existing"
-msgstr ""
+msgstr "תמשיך להתקיים"
 
 #: ../../templates/show_edit_user.inc.php:23
 msgid "Editing existing User"
-msgstr ""
+msgstr "עריכת משתמש קיים"
 
 #: ../../templates/show_edit_user.inc.php:28
 msgid "User Properties"
-msgstr ""
+msgstr "מאפייני משתמש"
 
 #: ../../templates/show_edit_user.inc.php:128
 msgid "Other Options"
-msgstr ""
+msgstr "אפשרויות אחרות"
 
 #: ../../templates/show_edit_user.inc.php:140
 msgid "Config Preset"
-msgstr ""
+msgstr "קביעת תצורה קבועה מראש"
 
 #: ../../templates/show_edit_user.inc.php:145
 msgid "Flash"
-msgstr ""
+msgstr "פלאש"
 
 #: ../../templates/show_edit_user.inc.php:151
 msgid "Prevent Preset Override"
-msgstr ""
+msgstr "למנוע לעקוף מראש"
 
 #: ../../templates/show_edit_user.inc.php:153
 msgid "This Affects all non-Admin accounts"
-msgstr ""
+msgstr "הדבר משפיע על כל החשבונות שאינם מנהלים"
 
 #: ../../templates/show_edit_user.inc.php:165
 msgid "Update User"
-msgstr ""
+msgstr "עדכן משתמש"
 
 #: ../../templates/show_export.inc.php:28
 #: ../../templates/sidebar_admin.inc.php:49
 msgid "Export Catalog"
-msgstr ""
+msgstr "ייצוא קטלוג"
 
 #: ../../templates/show_export.inc.php:49
 msgid "Format"
-msgstr ""
+msgstr "פורמט"
 
 #: ../../templates/show_export.inc.php:59
 msgid "Export"
-msgstr ""
+msgstr "יצא"
 
 #: ../../templates/show_gather_art.inc.php:23
 msgid "Art Search"
-msgstr ""
+msgstr "חיפוש אמנות"
 
 #: ../../templates/show_gather_art.inc.php:24
 msgid "Starting Art Search"
-msgstr ""
+msgstr "הפעלת חיפוש אמנות"
 
 #: ../../templates/show_gather_art.inc.php:25
 msgid "Searched"
-msgstr ""
+msgstr "חיפוש"
 
 #: ../../templates/show_get_art.inc.php:23
 msgid "Customize Search"
-msgstr ""
+msgstr "התאם אישית את החיפוש"
 
 #: ../../templates/show_get_art.inc.php:44
 msgid "Direct URL to Image"
-msgstr ""
+msgstr "כתובת אתר ישירה לתמונה"
 
 #: ../../templates/show_get_art.inc.php:52
 msgid "Local Image"
-msgstr ""
+msgstr "תמונה מקומית"
 
 #: ../../templates/show_get_art.inc.php:65
 msgid "Get Art"
-msgstr ""
+msgstr "קבל אמנות"
 
 #: ../../templates/show_graphs.inc.php:23
 msgid "Statistical Graphs"
-msgstr ""
+msgstr "תרשימים סטטיסטיים"
 
 #: ../../templates/show_graphs.inc.php:33
 msgid "Show large"
-msgstr ""
+msgstr "הצג גדול"
 
 #: ../../templates/show_graphs.inc.php:54
 msgid "Start Date"
-msgstr ""
+msgstr "תאריך התחלה"
 
 #: ../../templates/show_graphs.inc.php:57
 msgid "End Date"
-msgstr ""
+msgstr "תאריך סיום"
 
 #: ../../templates/show_graphs.inc.php:60
 msgid "Zoom"
-msgstr ""
+msgstr "זום"
 
 #: ../../templates/show_graphs.inc.php:66
 msgid "Month"
-msgstr ""
+msgstr "חודש"
 
 #: ../../templates/show_graphs.inc.php:67
 msgid "Day"
-msgstr ""
+msgstr "יום"
 
 #: ../../templates/show_graphs.inc.php:68
 msgid "Hour"
-msgstr ""
+msgstr "שעה"
 
 #: ../../templates/show_highest.inc.php:23
 #: ../../templates/show_newest.inc.php:23
@@ -4886,98 +4959,100 @@ msgstr ""
 #: ../../templates/show_recent.inc.php:23
 #: ../../templates/sidebar_home.inc.php:95
 msgid "Information"
-msgstr ""
+msgstr "מידע"
 
 #: ../../templates/show_html5_player_headers.inc.php:222
 msgid "Your browser doesn't support this feature."
-msgstr ""
+msgstr "הדפדפן שלך אינו תומך בתכונה זו."
 
 #: ../../templates/show_html5_player_headers.inc.php:474
 msgid "Media is currently playing. Are you sure you want to close"
-msgstr ""
+msgstr "המדיה פועלת כעת. האם אתה בטוח שברצונך לסגור"
 
 #: ../../templates/show_html5_player.inc.php:465
 msgid "My Broadcast"
-msgstr ""
+msgstr "השידור שלי"
 
 #: ../../templates/show_html5_player.inc.php:493
 msgid "Slideshow"
-msgstr ""
+msgstr "מצגת"
 
 #: ../../templates/show_html5_player.inc.php:496
 msgid "Expand/Collapse Playlist"
-msgstr ""
+msgstr "הרחב / כווץ השמעה"
 
 #: ../../templates/show_html5_player.inc.php:501
 msgid "Visualizer"
-msgstr ""
+msgstr "Visualizer"
 
 #: ../../templates/show_html5_player.inc.php:504
 msgid "Visualizer Full-Screen"
-msgstr ""
+msgstr "Visualizer מסך מלא"
 
 #: ../../templates/show_html5_player.inc.php:507
 msgid "ReplayGain"
-msgstr ""
+msgstr "רווח חוזר"
 
 #: ../../templates/show_html5_player.inc.php:510
 msgid "Equalizer"
-msgstr ""
+msgstr "אקולייזר"
 
 #: ../../templates/show_import_playlist.inc.php:23
 msgid "Importing a Playlist from a File"
-msgstr ""
+msgstr "ייבוא רשימת השמעה מקובץ"
 
 #: ../../templates/show_import_playlist.inc.php:35
 msgid "Import Playlist"
-msgstr ""
+msgstr "ייבא פלייליסט"
 
 #: ../../templates/show_index.inc.php:50
 #: ../../templates/show_random_albums.inc.php:26
 msgid "Albums of the Moment"
-msgstr ""
+msgstr "אלבומים של הרגע"
 
 #: ../../templates/show_install_account.inc.php:26
 #: ../../templates/show_install_config.inc.php:41
 #: ../../templates/show_install.inc.php:26
 msgid "Install progress"
-msgstr ""
+msgstr "התקן את ההתקדמות"
 
 #: ../../templates/show_install_account.inc.php:38
 #: ../../templates/show_install_config.inc.php:52
 #: ../../templates/show_install.inc.php:37
 msgid "Step 1 - Create the Ampache database"
-msgstr ""
+msgstr "שלב 1 - יצירת מסד הנתונים של Ampache"
 
 #: ../../templates/show_install_account.inc.php:39
 #: ../../templates/show_install_config.inc.php:53
 #: ../../templates/show_install.inc.php:42
 msgid "Step 2 - Create configuration files (amuzak.cfg.php ...)"
-msgstr ""
+msgstr "שלב 2 - יצירת קבצי תצורה (amuzak.cfg.php ...)"
 
 #: ../../templates/show_install_account.inc.php:41
 #: ../../templates/show_install_config.inc.php:58
 #: ../../templates/show_install.inc.php:43
 msgid "Step 3 - Set up the initial account"
-msgstr ""
+msgstr "שלב 3 - הגדר את החשבון הראשוני"
 
 #: ../../templates/show_install_account.inc.php:43
 msgid ""
 "This step creates your initial Ampache admin account. Once your admin "
 "account has been created you will be redirected to the login page."
 msgstr ""
+"שלב זה יוצר חשבון מנהל Ampache הראשוני שלך. לאחר יצירת חשבון הניהול שלך, "
+"תועבר לדף הכניסה."
 
 #: ../../templates/show_install_account.inc.php:47
 msgid "Create Admin Account"
-msgstr ""
+msgstr "צור חשבון מנהל מערכת"
 
 #: ../../templates/show_install_account.inc.php:69
 msgid "Create Account"
-msgstr ""
+msgstr "צור חשבון"
 
 #: ../../templates/show_install_check.inc.php:28
 msgid "Requirements"
-msgstr ""
+msgstr "דרישות"
 
 #: ../../templates/show_install_check.inc.php:32
 msgid ""
@@ -4985,148 +5060,162 @@ msgid ""
 "of the amuzak.cfg.php file. Before you continue please make sure that you "
 "have the following prerequisites:"
 msgstr ""
+"דף זה מטפל בהתקנה של מסד הנתונים של Ampache וביצירת הקובץ amuzak.cfg.php. "
+"לפני שתמשיך, ודא שיש לך את התנאים המוקדמים הבאים:"
 
 #: ../../templates/show_install_check.inc.php:35
 msgid ""
 "A MySQL server with a username and password that can create/modify databases"
-msgstr ""
+msgstr "שרת MySQL עם שם משתמש וסיסמה שיכולים ליצור / לשנות מסדי נתונים"
 
 #: ../../templates/show_install_check.inc.php:36
 #, php-format
 msgid "Your webserver has read access to the files %s and %s"
-msgstr ""
+msgstr "שרת האינטרנט שלך קרא גישה לקבצים %s ו- %s"
 
 #: ../../templates/show_install_check.inc.php:39
 #, php-format
 msgid ""
 "Once you have ensured that the above requirements are met please fill out "
 "the information below. You will only be asked for the required config "
-"values. If you would like to make changes to your Ampache install at a later "
-"date simply edit %s"
+"values. If you would like to make changes to your Ampache install at a later"
+" date simply edit %s"
 msgstr ""
+"לאחר שהבטחת את הדרישות לעיל הם נפגשו מלא את הפרטים הבאים. תתבקש רק את ערכי "
+"התצורה הנדרשים. אם אתה רוצה לבצע שינויים Ampache שלך להתקין במועד מאוחר יותר"
+" פשוט לערוך %s"
 
 #: ../../templates/show_install_check.inc.php:44
 #: ../../templates/show_test.inc.php:59
 msgid "CHECK"
-msgstr ""
+msgstr "לבדוק"
 
 #: ../../templates/show_install_check.inc.php:45
 #: ../../templates/show_test.inc.php:60
 msgid "STATUS"
-msgstr ""
+msgstr "סטטוס"
 
 #: ../../templates/show_install_check.inc.php:46
 #: ../../templates/show_test.inc.php:61
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "תיאור"
 
 #: ../../templates/show_install_check.inc.php:50
 #: ../../templates/show_install_check.inc.php:55
 #, php-format
 msgid "%s is readable"
-msgstr ""
+msgstr "%s קריא"
 
 #: ../../templates/show_install_check.inc.php:52
 msgid "This tests whether the configuration template can be read."
-msgstr ""
+msgstr "פעולה זו בודקת אם ניתן לקרוא את תבנית התצורה."
 
 #: ../../templates/show_install_check.inc.php:57
 msgid ""
 "This tests whether the file needed to initialise the database structure is "
 "available."
-msgstr ""
+msgstr "זה בודק אם הקובץ צריך לאתחל את מבנה מסד הנתונים זמין."
 
 #: ../../templates/show_install_check.inc.php:60
 msgid "amuzak.cfg.php is writable"
-msgstr ""
+msgstr "amuzak.cfg.php הוא לכתיבה"
 
 #: ../../templates/show_install_check.inc.php:62
 msgid ""
-"This tests whether PHP can write to config/. This is not strictly necessary, "
-"but will help streamline the installation process."
+"This tests whether PHP can write to config/. This is not strictly necessary,"
+" but will help streamline the installation process."
 msgstr ""
+"זה בודק אם PHP יכול לכתוב config /. זה לא נחוץ בהחלט, אבל יסייע לייעל את "
+"תהליך ההתקנה."
 
 #: ../../templates/show_install_config.inc.php:55
 #, php-format
 msgid ""
 "This step takes the basic config values and generates the config file. If "
-"your config/ directory is writable, you can select \"write\" to have Ampache "
-"write the config file directly to the correct location. If you select "
+"your config/ directory is writable, you can select \"write\" to have Ampache"
+" write the config file directly to the correct location. If you select "
 "\"download\" it will prompt you to download the config file, and you can "
 "then manually place the config file in %s"
 msgstr ""
+"שלב זה לוקח את ערכי התצורה הבסיסיים ומייצר את קובץ ההגדרות. אם התצורה / "
+"הספרייה שלך ניתנת לכתיבה, באפשרותך לבחור באפשרות \"כתיבה\" כדי ש- Ampache "
+"יכתוב את קובץ ההגדרות ישירות למיקום הנכון. אם תבחר באפשרות \"הורדה\", תתבקש "
+"להוריד את קובץ התצורה, ואז תוכל למקם את קובץ התצורה באופן ידני ב- %s"
 
 #: ../../templates/show_install_config.inc.php:63
 msgid "Generate Config File"
-msgstr ""
+msgstr "צור קובץ תצורה"
 
 #: ../../templates/show_install_config.inc.php:66
 msgid "Web Path"
-msgstr ""
+msgstr "נתיב אינטרנט"
 
 #: ../../templates/show_install_config.inc.php:71
 #: ../../templates/show_test_table.inc.php:227
 msgid "Database connection"
-msgstr ""
+msgstr "חיבור מסד נתונים"
 
 #: ../../templates/show_install_config.inc.php:74
 msgid "Database Name"
-msgstr ""
+msgstr "שם בסיס הנתונים"
 
 #: ../../templates/show_install_config.inc.php:80
 #: ../../templates/show_install.inc.php:56
 msgid "MySQL Hostname"
-msgstr ""
+msgstr "שם המארח של"
 
 #: ../../templates/show_install_config.inc.php:86
 msgid "MySQL Port (optional)"
-msgstr ""
+msgstr "יציאת MySQL (אופציונלי)"
 
 #: ../../templates/show_install_config.inc.php:92
 msgid "MySQL Username"
-msgstr ""
+msgstr "שם משתמש"
 
 #: ../../templates/show_install_config.inc.php:98
 msgid "MySQL Password"
-msgstr ""
+msgstr "סיסמת"
 
 #: ../../templates/show_install_config.inc.php:108
 msgid "Installation type"
-msgstr ""
+msgstr "סוג התקנה"
 
 #: ../../templates/show_install_config.inc.php:109
 msgid ""
 "Configure Ampache at best for your use case, enabling / disabling features "
 "automatically."
 msgstr ""
+"הגדר את Ampache במקרה הטוב ביותר עבור מקרה השימוש שלך, המאפשר / משבית תכונות"
+" באופן אוטומטי."
 
 #: ../../templates/show_install_config.inc.php:115
 msgid "Ampache is configured for personal use with most greatest features."
-msgstr ""
+msgstr "Ampache מוגדר לשימוש אישי עם רוב התכונות הטובות ביותר."
 
 #: ../../templates/show_install_config.inc.php:120
 msgid "Minimalist"
-msgstr ""
+msgstr "מינימליסטי"
 
 #: ../../templates/show_install_config.inc.php:120
 msgid ""
 "only essential features are enabled to stream simply your music from a web "
 "interface."
-msgstr ""
+msgstr "רק תכונות חיוניות מופעלות להזרים פשוט את המוסיקה שלך מממשק אינטרנט."
 
 #: ../../templates/show_install_config.inc.php:125
 msgid "Community"
-msgstr ""
+msgstr "קהילה"
 
 #: ../../templates/show_install_config.inc.php:125
 msgid ""
 "use recommended settings when using Ampache as a frontend for a music "
 "community."
 msgstr ""
+"השתמש בהגדרות המומלצות בעת שימוש ב- Ampache כספק קדמי עבור קהילת מוסיקה."
 
 #: ../../templates/show_install_config.inc.php:130
 msgid "Transcoding"
-msgstr ""
+msgstr "קידוד"
 
 #: ../../templates/show_install_config.inc.php:132
 msgid ""
@@ -5137,6 +5226,10 @@ msgid ""
 "transcoding to work you must first install the supporting applications and "
 "ensure that they are executable by the web server."
 msgstr ""
+"ההמרה מאפשרת לך להמיר סוג אחד של קובץ אחר. Ampache תומך על ההמרה זבוב של כל "
+"סוגי הקבצים על בסיס משתמש, שחקן, כתובת IP או רוחב פס זמין. כדי להמיר, "
+"Ampache מנצל יישומים בינאריים קיימים כגון ffmpeg. כדי ההמרה לעבוד עליך תחילה"
+" להתקין את היישומים התומכים ולהבטיח כי הם ניתנים להפעלה על ידי שרת האינטרנט."
 
 #: ../../templates/show_install_config.inc.php:134
 msgid ""
@@ -5144,15 +5237,17 @@ msgid ""
 "application you want to use. You may need to customize settings once this "
 "setup ended"
 msgstr ""
+"סעיף זה מחיל תצורת קידוד ברירת מחדל בהתאם ליישום שבו ברצונך להשתמש. ייתכן "
+"שיהיה עליך להתאים אישית את ההגדרות לאחר סיום ההתקנה"
 
 #: ../../templates/show_install_config.inc.php:134
 #: ../../templates/show_install_config.inc.php:164
 msgid "See wiki page"
-msgstr ""
+msgstr "ראה דף ויקי"
 
 #: ../../templates/show_install_config.inc.php:138
 msgid "Template Configuration"
-msgstr ""
+msgstr "תצורת תבנית"
 
 #: ../../templates/show_install_config.inc.php:155
 msgid ""
@@ -5160,517 +5255,524 @@ msgid ""
 "application (ffmpeg, avconv ...) or customize transcoding settings manually "
 "after installation."
 msgstr ""
+"לא נמצא יישום קידוד ברירת מחדל. ייתכן שיהיה עליך להתקין יישום פופולרי "
+"(ffmpeg, avconv ...) או להתאים אישית את הגדרות ההמרה באופן ידני לאחר ההתקנה."
 
 #: ../../templates/show_install_config.inc.php:162
 msgid "Players"
-msgstr ""
+msgstr "שחקנים"
 
 #: ../../templates/show_install_config.inc.php:163
 msgid ""
 "Ampache is more than only a web interface. Several backends are implemented "
 "to ensure you can stream your media from anywhere."
 msgstr ""
+"Ampache הוא יותר ממשק אינטרנט בלבד. כמה backenders מיושמים על מנת להבטיח "
+"שאתה יכול להזרים את התקשורת שלך מכל מקום."
 
 #: ../../templates/show_install_config.inc.php:164
 msgid ""
 "Select backends to enable. Depending the backend, you may need to perform "
 "additional configuration."
 msgstr ""
+"בחר backends כדי לאפשר. בהתאם backend, ייתכן שיהיה עליך לבצע תצורה נוספת."
 
 #: ../../templates/show_install_config.inc.php:204
 msgid "File Insight"
-msgstr ""
+msgstr "קובץ תובנה"
 
 #: ../../templates/show_install_config.inc.php:214
 msgid "channel/.htaccess action"
-msgstr ""
+msgstr "ערוץ /"
 
 #: ../../templates/show_install_config.inc.php:221
 #: ../../templates/show_install_config.inc.php:238
 #: ../../templates/show_install_config.inc.php:255
 #: ../../templates/show_install_config.inc.php:274
 msgid "Write"
-msgstr ""
+msgstr "כתוב"
 
 #: ../../templates/show_install_config.inc.php:224
 msgid "channel/.htaccess exists?"
-msgstr ""
+msgstr "ערוץ / .htaccess קיים?"
 
 #: ../../templates/show_install_config.inc.php:226
 msgid "channel/.htaccess configured?"
-msgstr ""
+msgstr "ערוץ / .htaccess מוגדר?"
 
 #: ../../templates/show_install_config.inc.php:231
 msgid "rest/.htaccess action"
-msgstr ""
+msgstr "פעילות / .htaccess"
 
 #: ../../templates/show_install_config.inc.php:241
 msgid "rest/.htaccess exists?"
-msgstr ""
+msgstr "rest / .htaccess קיים?"
 
 #: ../../templates/show_install_config.inc.php:243
 msgid "rest/.htaccess configured?"
-msgstr ""
+msgstr "שאר / htaccess מוגדר?"
 
 #: ../../templates/show_install_config.inc.php:248
 msgid "play/.htaccess action"
-msgstr ""
+msgstr "לשחק / .htacc פעולה"
 
 #: ../../templates/show_install_config.inc.php:258
 msgid "play/.htaccess exists?"
-msgstr ""
+msgstr "play / .htaccess קיים?"
 
 #: ../../templates/show_install_config.inc.php:260
 msgid "play/.htaccess configured?"
-msgstr ""
+msgstr "הפעל / .htaccess מוגדר?"
 
 #: ../../templates/show_install_config.inc.php:267
 msgid "config/amuzak.cfg.php action"
-msgstr ""
+msgstr "config / amuzak.cfg.php פעולה"
 
 #: ../../templates/show_install_config.inc.php:277
 msgid "config/amuzak.cfg.php exists?"
-msgstr ""
+msgstr "config / amuzak.cfg.php קיים?"
 
 #: ../../templates/show_install_config.inc.php:279
 msgid "config/amuzak.cfg.php configured?"
-msgstr ""
+msgstr "config / amuzak.cfg.php מוגדר?"
 
 #: ../../templates/show_install_config.inc.php:286
 msgid "Recheck Config"
-msgstr ""
+msgstr "בדוק מחדש את התצורה"
 
 #: ../../templates/show_install_config.inc.php:294
 #: ../../templates/show_install.inc.php:130
 msgid "Skip"
-msgstr ""
+msgstr "לדלג"
 
 #: ../../templates/show_install_config.inc.php:297
 msgid "Create config"
-msgstr ""
+msgstr "צור תצורה"
 
 #: ../../templates/show_install.inc.php:39
 msgid ""
 "This step creates and inserts the Ampache database, so please provide a "
-"MySQL account with database creation rights. This step may take some time on "
-"slower computers."
+"MySQL account with database creation rights. This step may take some time on"
+" slower computers."
 msgstr ""
+"שלב זה יוצר ומכניס את מסד הנתונים של Ampache, לכן אנא ספק חשבון MySQL עם "
+"זכויות יצירת מסד נתונים. צעד זה עשוי להימשך זמן מה במחשבים איטיים יותר."
 
 #: ../../templates/show_install.inc.php:47
 msgid "Insert Ampache Database"
-msgstr ""
+msgstr "הוסף מסד נתונים של Ampache"
 
 #: ../../templates/show_install.inc.php:50
 msgid "Desired Database Name"
-msgstr ""
+msgstr "שם מסד נתונים רצוי"
 
 #: ../../templates/show_install.inc.php:62
 msgid "MySQL port (optional)"
-msgstr ""
+msgstr "יציאת MySQL (אופציונלי)"
 
 #: ../../templates/show_install.inc.php:68
 msgid "MySQL Administrative Username"
-msgstr ""
+msgstr "שם משתמש מינהלי"
 
 #: ../../templates/show_install.inc.php:74
 msgid "MySQL Administrative Password"
-msgstr ""
+msgstr "סיסמאות מנהליות"
 
 #: ../../templates/show_install.inc.php:80
 msgid "Create Database"
-msgstr ""
+msgstr "יצירת מסד נתונים"
 
 #: ../../templates/show_install.inc.php:90
 msgid "Overwrite if database already exists"
-msgstr ""
+msgstr "החלף אם מסד הנתונים כבר קיים"
 
 #: ../../templates/show_install.inc.php:99
 msgid "Create Tables"
-msgstr ""
+msgstr "צור טבלאות"
 
 #: ../../templates/show_install.inc.php:108
 msgid "Create Database User"
-msgstr ""
+msgstr "צור משתמש מסד נתונים"
 
 #: ../../templates/show_install.inc.php:118
 msgid "Ampache Database Username"
-msgstr ""
+msgstr "שם משתמש מסד נתונים"
 
 #: ../../templates/show_install.inc.php:124
 msgid "Ampache Database User Password"
-msgstr ""
+msgstr "משתמש סיסמה"
 
 #: ../../templates/show_install.inc.php:133
 msgid "Insert Database"
-msgstr ""
+msgstr "הוסף מסד נתונים"
 
 #: ../../templates/show_install_lang.inc.php:27
 msgid "Ampache Installation"
-msgstr ""
+msgstr "התקנת אמפאצ 'ה"
 
 #: ../../templates/show_install_lang.inc.php:30
 msgid "Choose Installation Language"
-msgstr ""
+msgstr "בחר שפת התקנה"
 
 #: ../../templates/show_install_lang.inc.php:50
 msgid "Start configuration"
-msgstr ""
+msgstr "התחל תצורה"
 
 #. HINT: Username
 #: ../../templates/show_ip_history.inc.php:23
 #, php-format
 msgid "%s IP History"
-msgstr ""
+msgstr "%s היסטוריית IP"
 
 #: ../../templates/show_ip_history.inc.php:30
 msgid "Show Unique"
-msgstr ""
+msgstr "הצג ייחודי"
 
 #: ../../templates/show_ip_history.inc.php:35
 msgid "Show All"
-msgstr ""
+msgstr "הצג הכול"
 
 #: ../../templates/show_ip_history.inc.php:50
 #: ../../templates/show_ip_history.inc.php:66
 msgid "IP Address"
-msgstr ""
+msgstr "כתובת ה - IP"
 
 #: ../../templates/show_label.inc.php:59 ../../templates/show_label.inc.php:60
 msgid "Send e-mail"
-msgstr ""
+msgstr "שלח אימייל"
 
 #: ../../templates/show_label.inc.php:67 ../../templates/show_label.inc.php:70
 msgid "Label edit"
-msgstr ""
+msgstr "עריכת תווית"
 
 #: ../../templates/show_label.inc.php:71
 msgid "Edit Label"
-msgstr ""
+msgstr "ערוך תווית"
 
 #: ../../templates/show_labels.inc.php:29
 msgid "Create a new label"
-msgstr ""
+msgstr "צור תווית חדשה"
 
 #: ../../templates/show_labels.inc.php:65
 msgid "No label found"
-msgstr ""
+msgstr "לא נמצאה תווית"
 
 #: ../../templates/show_live_stream.inc.php:25
 #: ../../templates/show_song.inc.php:26
 msgid "Details"
-msgstr ""
+msgstr "פרטים"
 
 #: ../../templates/show_live_stream_row.inc.php:28
 msgid "Play live stream"
-msgstr ""
+msgstr "הפעל שידור חי"
 
 #: ../../templates/show_live_stream_row.inc.php:46
 msgid "Live Stream edit"
-msgstr ""
+msgstr "עריכת זרם חי"
 
 #: ../../templates/show_live_streams.inc.php:25
 msgid "Manage Radio Stations"
-msgstr ""
+msgstr "ניהול תחנות רדיו"
 
 #: ../../templates/show_live_streams.inc.php:63
 msgid "No live stream found"
-msgstr ""
+msgstr "לא נמצא זרם חי"
 
 #: ../../templates/show_login_form.inc.php:66
 msgid "Remember Me"
-msgstr ""
+msgstr "זכור אותי"
 
 #: ../../templates/show_login_form.inc.php:72
 msgid "Lost password"
-msgstr ""
+msgstr "סיסמה אבודה"
 
 #: ../../templates/show_login_form.inc.php:90
 msgid "Message of the Day"
-msgstr ""
+msgstr "הודעה של היום"
 
 #: ../../templates/show_lostpassword_form.inc.php:60
 msgid "Submit"
-msgstr ""
+msgstr "שלח"
 
 #: ../../templates/show_lyrics.inc.php:61
 msgid "No lyrics found."
-msgstr ""
+msgstr "לא נמצאו מילים לשיר."
 
 #: ../../templates/show_lyrics.inc.php:64
 msgid "Show more"
-msgstr ""
+msgstr "להראות יותר"
 
 #: ../../templates/show_mail_users.inc.php:24
 msgid "Send E-mail to Users"
-msgstr ""
+msgstr "שלח דואר אלקטרוני למשתמשים"
 
 #: ../../templates/show_mail_users.inc.php:28
 msgid "Mail to"
-msgstr ""
+msgstr "שלח אל"
 
 #: ../../templates/show_mail_users.inc.php:34
 msgid "Inactive Users"
-msgstr ""
+msgstr "משתמשים לא פעילים"
 
 #: ../../templates/show_mail_users.inc.php:39
 msgid "From"
-msgstr ""
+msgstr "מ"
 
 #: ../../templates/show_mail_users.inc.php:42
 msgid "Yourself"
-msgstr ""
+msgstr "בעצמך"
 
 #: ../../templates/show_mail_users.inc.php:61
 msgid "Send Mail"
-msgstr ""
+msgstr "שלח מייל"
 
 #: ../../templates/show_manage_catalogs.inc.php:23
 #: ../../templates/sidebar_admin.inc.php:27
 msgid "Show Catalogs"
-msgstr ""
+msgstr "הצג קטלוגים"
 
 #: ../../templates/show_manage_catalogs.inc.php:27
 msgid "Gather All Art"
-msgstr ""
+msgstr "לאסוף את כל האמנות"
 
 #: ../../templates/show_manage_catalogs.inc.php:30
 msgid "Show disabled songs"
-msgstr ""
+msgstr "הצג שירים מושבתים"
 
 #: ../../templates/show_manage_catalogs.inc.php:33
 msgid "Add to All"
-msgstr ""
+msgstr "הוסף לכול"
 
 #: ../../templates/show_manage_catalogs.inc.php:36
 msgid "Verify All"
-msgstr ""
+msgstr "אמת את הכל"
 
 #: ../../templates/show_manage_catalogs.inc.php:39
 msgid "Clean All"
-msgstr ""
+msgstr "לנקות הכל"
 
 #: ../../templates/show_manage_catalogs.inc.php:42
 msgid "Update All"
-msgstr ""
+msgstr "עדכן הכל"
 
 #. HINT: /data/myNewMusic
 #: ../../templates/show_manage_catalogs.inc.php:51
 #, php-format
 msgid "Add from [%s]"
-msgstr ""
+msgstr "הוסף מ [%s]"
 
 #. HINT: /data/myUpdatedMusic
 #: ../../templates/show_manage_catalogs.inc.php:55
 #, php-format
 msgid "Update from [%s]"
-msgstr ""
+msgstr "עדכון מ [%s]"
 
 #: ../../templates/show_manage_democratic.inc.php:23
 msgid "Manage Democratic Playlists"
-msgstr ""
+msgstr "נהל פלייליסטים דמוקרטיים"
 
 #: ../../templates/show_manage_democratic.inc.php:56
 msgid "No democratic found"
-msgstr ""
+msgstr "לא נמצא דמוקרטי"
 
 #: ../../templates/show_manage_democratic.inc.php:63
 msgid "Create New Playlist"
-msgstr ""
+msgstr "צור רשימת השמעה חדשה"
 
 #: ../../templates/show_manage_license.inc.php:28
 msgid "Create new license"
-msgstr ""
+msgstr "צור רישיון חדש"
 
 #: ../../templates/show_manage_license.inc.php:51
 msgid "No Licenses Found"
-msgstr ""
+msgstr "לא נמצאו רישיונות"
 
 #: ../../templates/show_manage_shoutbox.inc.php:28
 #: ../../templates/show_manage_shoutbox.inc.php:59
 #: ../../templates/show_shared_objects.inc.php:26
 msgid "Object"
-msgstr ""
+msgstr "אובייקט"
 
 #: ../../templates/show_manage_shoutbox.inc.php:30
 #: ../../templates/show_manage_shoutbox.inc.php:61
 msgid "Sticky"
-msgstr ""
+msgstr "דביק"
 
 #: ../../templates/show_manage_shoutbox.inc.php:32
 #: ../../templates/show_manage_shoutbox.inc.php:63
 msgid "Date Added"
-msgstr ""
+msgstr "תאריך הוסף"
 
 #: ../../templates/show_mashup.inc.php:27
 msgid "Browse Library"
-msgstr ""
+msgstr "עיון בספריה"
 
 #: ../../templates/show_mashup.inc.php:31
 msgid "Trending"
-msgstr ""
+msgstr "מגמות"
 
 #: ../../templates/show_mashup.inc.php:41
 #: ../../templates/sidebar_home.inc.php:98
 msgid "Newest"
-msgstr ""
+msgstr "החדש ביותר"
 
 #: ../../templates/show_mashup.inc.php:51
 #: ../../templates/sidebar_home.inc.php:99
 msgid "Popular"
-msgstr ""
+msgstr "פופולרי"
 
 #: ../../templates/show_now_playing_row.inc.php:88
 #: ../../templates/show_now_playing_similar.inc.php:48
 msgid "Similar Songs"
-msgstr ""
+msgstr "שירים דומים"
 
 #: ../../templates/show_object_rating.inc.php:47
 msgid "Current rating: "
-msgstr ""
+msgstr "דירוג נוכחי:"
 
 #: ../../templates/show_object_rating.inc.php:49
 msgid "not rated yet"
-msgstr ""
+msgstr "לא מדורג עדיין"
 
 #: ../../templates/show_object_rating.inc.php:51
 #, php-format
 msgid "%s of 5"
-msgstr ""
+msgstr "%s מתוך 5"
 
 #: ../../templates/show_playlist.inc.php:66
 #: ../../templates/show_playlist.inc.php:67
 msgid "Sort Tracks by Artist, Album, Song"
-msgstr ""
+msgstr "מיון שירים לפי אמן, אלבום, שיר"
 
 #: ../../templates/show_playlist.inc.php:70
 #: ../../templates/show_playlist.inc.php:71
 msgid "Remove duplicates"
-msgstr ""
+msgstr "הסר כפילויות"
 
 #: ../../templates/show_playlist.inc.php:112
 #: ../../templates/show_playlist_row.inc.php:99
 msgid "Do you really want to delete the playlist?"
-msgstr ""
+msgstr "האם אתה באמת רוצה למחוק את הפלייליסט?"
 
 #: ../../templates/show_playlist_media_row.inc.php:93
 #: ../../templates/show_song_row.inc.php:133
 msgid "Reorder"
-msgstr ""
+msgstr "להזמין מחדש"
 
 #: ../../templates/show_playlist_row.inc.php:96
 msgid "Playlist edit"
-msgstr ""
+msgstr "עריכת פלייליסט"
 
 #: ../../templates/show_playlists_dialog.inc.php:26
 msgid "Playlist name"
-msgstr ""
+msgstr "שם רשימת השמעה"
 
 #: ../../templates/show_playlists.inc.php:37
 #: ../../templates/show_playlists.inc.php:91
 msgid "Last Update"
-msgstr ""
+msgstr "העדכון אחרון"
 
 #: ../../templates/show_playlists.inc.php:39
 #: ../../templates/show_playlists.inc.php:93
 msgid "# Medias"
-msgstr ""
+msgstr "# מדיאציות"
 
 #: ../../templates/show_playlists.inc.php:40
 #: ../../templates/show_playlists.inc.php:94
 #: ../../templates/show_searches.inc.php:47
 #: ../../templates/show_searches.inc.php:77
 msgid "Owner"
-msgstr ""
+msgstr "בעלים"
 
 #: ../../templates/show_playlists.inc.php:76
 msgid "No playlist found"
-msgstr ""
+msgstr "לא נמצא פלייליסט"
 
 #: ../../templates/show_playlist_title.inc.php:23
 #, php-format
 msgid "%s %s (Playlist)"
-msgstr ""
+msgstr "%s %s (פלייליסט)"
 
 #: ../../templates/show_plugins.inc.php:32
 #: ../../templates/show_plugins.inc.php:74
 msgid "Installed Version"
-msgstr ""
+msgstr "גרסה מותקנת"
 
 #: ../../templates/show_plugins.inc.php:46
 msgid "Deactivate"
-msgstr ""
+msgstr "בטל"
 
 #: ../../templates/show_plugins.inc.php:50
 msgid "Upgrade"
-msgstr ""
+msgstr "שדרג"
 
 #: ../../templates/show_podcast_episode.inc.php:85
 #: ../../templates/show_song.inc.php:101
 msgid "Link"
-msgstr ""
+msgstr "קישור"
 
 #: ../../templates/show_podcast_episode.inc.php:114
 #: ../../templates/show_podcast_episodes.inc.php:35
 #: ../../templates/show_podcast_episodes.inc.php:91
 msgid "Publication Date"
-msgstr ""
+msgstr "תאריך פרסום"
 
 #: ../../templates/show_podcast_episode.inc.php:122
 msgid "File"
-msgstr ""
+msgstr "קובץ"
 
 #: ../../templates/show_podcast_episode_row.inc.php:86
 #: ../../templates/show_podcast.inc.php:105
 #: ../../templates/show_podcast.inc.php:106
 #: ../../templates/show_podcast_row.inc.php:71
 msgid "Sync"
-msgstr ""
+msgstr "סינכרון"
 
 #: ../../templates/show_podcast_episode_row.inc.php:88
 msgid "Podcast Episode edit"
-msgstr ""
+msgstr "Podcast פרק עריכה"
 
 #: ../../templates/show_podcast_episodes.inc.php:74
 msgid "No podcast episode found"
-msgstr ""
+msgstr "לא נמצא פרק podcast"
 
 #: ../../templates/show_podcast.inc.php:97
 #: ../../templates/show_podcast.inc.php:100
 #: ../../templates/show_podcast_row.inc.php:67
 msgid "Podcast edit"
-msgstr ""
+msgstr "Podcast עריכה"
 
 #: ../../templates/show_podcast.inc.php:101
 msgid "Edit Podcast"
-msgstr ""
+msgstr "עריכת Podcast"
 
 #: ../../templates/show_podcast.inc.php:125
 #: ../../templates/show_podcasts.inc.php:48
 #: ../../templates/show_podcasts.inc.php:100
 msgid "Episodes"
-msgstr ""
+msgstr "פרקים"
 
 #: ../../templates/show_podcasts.inc.php:29
 msgid "Subscribe Podcast"
-msgstr ""
+msgstr "הירשם Podcast"
 
 #: ../../templates/show_podcasts.inc.php:86
 msgid "No podcast found"
-msgstr ""
+msgstr "לא נמצא פודקאסט"
 
 #: ../../templates/show_preference_admin.inc.php:23
 msgid "Preference Administration"
-msgstr ""
+msgstr "ניהול העדפות"
 
 #: ../../templates/show_preference_box.inc.php:48
 #: ../../templates/show_preference_box.inc.php:99
 msgid "Apply to All"
-msgstr ""
+msgstr "החל על הכל"
 
 #: ../../templates/show_preference_box.inc.php:49
 #: ../../templates/show_preference_box.inc.php:100
 msgid "Access Level"
-msgstr ""
+msgstr "רמת גישה"
 
 #. HINT: Username
 #. HINT: Editing Username preferences
@@ -5678,596 +5780,620 @@ msgstr ""
 #: ../../templates/show_user_preferences.inc.php:29
 #, php-format
 msgid "Editing %s preferences"
-msgstr ""
+msgstr "עריכת העדפות %s"
 
 #: ../../templates/show_preferences.inc.php:36
 #: ../../templates/show_user_preferences.inc.php:53
 msgid "Update Preferences"
-msgstr ""
+msgstr "עדכן העדפות"
 
 #: ../../templates/show_pvmsg.inc.php:26
 msgid "Sent by"
-msgstr ""
+msgstr "נשלח על - ידי"
 
 #: ../../templates/show_pvmsg.inc.php:34
 #: ../../templates/show_pvmsg_row.inc.php:31
 msgid "Reply"
-msgstr ""
+msgstr "תשובה"
 
 #: ../../templates/show_pvmsgs.inc.php:37
 msgid "Compose"
-msgstr ""
+msgstr "כתוב"
 
 #: ../../templates/show_pvmsgs.inc.php:37
 msgid "Compose a new message"
-msgstr ""
+msgstr "כתוב הודעה חדשה"
 
 #: ../../templates/show_pvmsgs.inc.php:38
 msgid "Set as read"
-msgstr ""
+msgstr "הגדר כנקראה"
 
 #: ../../templates/show_pvmsgs.inc.php:39
 msgid "Set as unread"
-msgstr ""
+msgstr "הגדר כנקראו"
 
 #: ../../templates/show_pvmsgs.inc.php:51
 #: ../../templates/show_pvmsgs.inc.php:80
 msgid "Sender"
-msgstr ""
+msgstr "סנדר"
 
 #: ../../templates/show_pvmsgs.inc.php:71
 msgid "No message found"
-msgstr ""
+msgstr "לא נמצאה הודעה"
 
 #: ../../templates/show_random_albums.inc.php:24
 msgid "Refresh"
-msgstr ""
+msgstr "רענן"
 
 #: ../../templates/show_random.inc.php:23
 msgid "Play Random Selection"
-msgstr ""
+msgstr "הפעל בחירה אקראית"
 
 #: ../../templates/show_random.inc.php:46
 msgid "Item count"
-msgstr ""
+msgstr "ספירת פריטים"
 
 #: ../../templates/show_random.inc.php:73
 #: ../../templates/show_random.inc.php:97
 #: ../../templates/show_search_form.inc.php:50
 msgid "Unlimited"
-msgstr ""
+msgstr "ללא הגבלה"
 
 #: ../../templates/show_random.inc.php:79
 #, php-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d דקות"
+msgstr[1] "%d דקות"
+msgstr[2] "%d דקות"
+msgstr[3] "%d דקות"
 
 #: ../../templates/show_random.inc.php:81
 #, php-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d שעה"
+msgstr[1] "%d שעות"
+msgstr[2] "%d שעות"
+msgstr[3] "%d שעות"
 
 #: ../../templates/show_random.inc.php:90
 msgid "Size Limit"
-msgstr ""
+msgstr "הגבלת גודל"
 
 #: ../../templates/show_random.inc.php:113
 msgid "Enqueue"
-msgstr ""
+msgstr "אנקאו"
 
 #: ../../templates/show_recently_played.inc.php:35
 #: ../../templates/show_recently_played.inc.php:145
 msgid "Last Played"
-msgstr ""
+msgstr "שיחק לאחרונה"
 
 #: ../../templates/show_recently_played.inc.php:60
 #, php-format
 msgid "%d second ago"
 msgid_plural "%d seconds ago"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d לפני"
+msgstr[1] "%d שניות"
+msgstr[2] "%d שניות"
+msgstr[3] "%d שניות"
 
 #: ../../templates/show_recently_played.inc.php:63
 #, php-format
 msgid "%d minute ago"
 msgid_plural "%d minutes ago"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d דקות"
+msgstr[1] "%d לפני דקות"
+msgstr[2] "%d לפני דקות"
+msgstr[3] "%d לפני דקות"
 
 #: ../../templates/show_recently_played.inc.php:66
 #, php-format
 msgid "%d hour ago"
 msgid_plural "%d hours ago"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d לפני שעה"
+msgstr[1] "%d לפני שעות"
+msgstr[2] "%d לפני שעות"
+msgstr[3] "%d לפני שעות"
 
 #: ../../templates/show_recently_played.inc.php:69
 #, php-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d לפני יום"
+msgstr[1] "%d לפני ימים"
+msgstr[2] "%d לפני ימים"
+msgstr[3] "%d לפני ימים"
 
 #: ../../templates/show_recently_played.inc.php:72
 #, php-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d לפני שבוע"
+msgstr[1] "%d לפני חודש"
+msgstr[2] "%d לפני חודש"
+msgstr[3] "%d לפני חודש"
 
 #: ../../templates/show_recently_played.inc.php:75
 #, php-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d לפני חודש"
+msgstr[1] "%d חודשים"
+msgstr[2] "%d חודשים"
+msgstr[3] "%d חודשים"
 
 #: ../../templates/show_recently_played.inc.php:78
 #, php-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d לפני שנה"
+msgstr[1] "%d לפני שנים"
+msgstr[2] "%d לפני שנים"
+msgstr[3] "%d לפני שנים"
 
 #: ../../templates/show_recently_played.inc.php:81
 #, php-format
 msgid "%d decade ago"
 msgid_plural "%d decades ago"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d לפני עשור"
+msgstr[1] "%d לפני עשרות שנים"
+msgstr[2] "%d לפני עשרות שנים"
+msgstr[3] "%d לפני עשרות שנים"
 
 #: ../../templates/show_recently_played.inc.php:132
 msgid "No recently played items found"
-msgstr ""
+msgstr "לא נמצאו פריטים שהופעלו לאחרונה"
 
 #: ../../templates/show_recommended_artists.inc.php:80
 msgid "No similar artist found"
-msgstr ""
+msgstr "לא נמצא אמן דומה"
 
 #: ../../templates/show_registration_confirmation.inc.php:33
 #: ../../templates/show_user_activate.inc.php:31
 #: ../../templates/show_user_registration.inc.php:37
 #: ../../templates/show_user_registration.inc.php:48
 msgid "Registration"
-msgstr ""
+msgstr "הרשמה"
 
 #: ../../templates/show_registration_confirmation.inc.php:40
 msgid "Registration Complete"
-msgstr ""
+msgstr "הרשמה הושלמה"
 
 #: ../../templates/show_registration_confirmation.inc.php:46
 msgid "Your account has been created."
-msgstr ""
+msgstr "החשבון שלך נוצר."
 
 #: ../../templates/show_registration_confirmation.inc.php:49
 msgid "Please wait for an administrator to activate your account."
-msgstr ""
+msgstr "המתן עד שמנהל המערכת יפעיל את חשבונך."
 
 #: ../../templates/show_registration_confirmation.inc.php:51
 msgid ""
 "An activation key has been sent to the e-mail address you provided. Please "
 "check your e-mail for further information."
 msgstr ""
+"מפתח הפעלה נשלח לכתובת הדואר האלקטרוני שסיפקת. אנא בדוק את הדואר האלקטרוני "
+"שלך לקבלת מידע נוסף."
 
 #: ../../templates/show_registration_confirmation.inc.php:55
 msgid "Return to Login Page"
-msgstr ""
+msgstr "חזור לדף ההתחברות"
 
 #: ../../templates/show_rules.inc.php:33
 msgid "Rules"
-msgstr ""
+msgstr "כללים"
 
 #: ../../templates/show_rules.inc.php:37
 msgid "Match"
-msgstr ""
+msgstr "התאמה"
 
 #: ../../templates/show_rules.inc.php:42
 msgid "all rules"
-msgstr ""
+msgstr "כל הכללים"
 
 #: ../../templates/show_rules.inc.php:45
 msgid "any rule"
-msgstr ""
+msgstr "כל כלל"
 
 #: ../../templates/show_rules.inc.php:53
 msgid "Add Another Rule"
-msgstr ""
+msgstr "הוסף כלל נוסף"
 
 #: ../../templates/show_search_bar.inc.php:25
 msgid "Search..."
-msgstr ""
+msgstr "לחפש..."
 
 #: ../../templates/show_searches.inc.php:29
 msgid "Add Smart Playlist"
-msgstr ""
+msgstr "הוסף רשימת השמעה חכמה"
 
 #: ../../templates/show_searches.inc.php:46
 #: ../../templates/show_searches.inc.php:76
 msgid "Item Limit"
-msgstr ""
+msgstr "מגבלת פריט"
 
 #: ../../templates/show_searches.inc.php:64
 msgid "No smart playlist found"
-msgstr ""
+msgstr "לא נמצאה פלייליסט חכם"
 
 #: ../../templates/show_search_form.inc.php:23
 msgid "Search Ampache"
-msgstr ""
+msgstr "חיפוש Ampache"
 
 #: ../../templates/show_search_form.inc.php:47
 msgid "Maximum Results"
-msgstr ""
+msgstr "תוצאות מקסימליות"
 
 #: ../../templates/show_search_form.inc.php:74
 msgid "Save as Smart Playlist"
-msgstr ""
+msgstr "שמור כפלייליסט חכם"
 
 #: ../../templates/show_search.inc.php:41
 #: ../../templates/show_search.inc.php:42
 msgid "Add All"
-msgstr ""
+msgstr "הוסף הכל"
 
 #: ../../templates/show_search.inc.php:60
 msgid "Save Changes"
-msgstr ""
+msgstr "שמור שינויים"
 
 #: ../../templates/show_search_options.inc.php:23
 msgid "Options"
-msgstr ""
+msgstr "אפשרויות"
 
 #: ../../templates/show_search_options.inc.php:27
 #: ../../templates/show_search_options.inc.php:28
 msgid "Add Search Results"
-msgstr ""
+msgstr "הוסף תוצאות חיפוש"
 
 #: ../../templates/show_search_row.inc.php:46
 msgid "Yes"
-msgstr ""
+msgstr "כן"
 
 #: ../../templates/show_search_row.inc.php:46
 msgid "No"
-msgstr ""
+msgstr "לא"
 
 #: ../../templates/show_search_row.inc.php:60
 msgid "Smart Playlist edit"
-msgstr ""
+msgstr "עריכה חכמה של פלייליסטים"
 
 #: ../../templates/show_search_title.inc.php:24
 #, php-format
 msgid "%s %s (Smart Playlist)"
-msgstr ""
+msgstr "%s %s (רשימת השמעה חכמה)"
 
 #: ../../templates/show_shared_objects.inc.php:27
 msgid "Object Type"
-msgstr ""
+msgstr "סוג אובייקט"
 
 #: ../../templates/show_shared_objects.inc.php:29
 msgid "Creation Date"
-msgstr ""
+msgstr "תאריך היווצרות"
 
 #: ../../templates/show_shared_objects.inc.php:30
 msgid "Last Visit"
-msgstr ""
+msgstr "ביקור אחרון"
 
 #: ../../templates/show_shared_objects.inc.php:31
 msgid "Counter"
-msgstr ""
+msgstr "מונה"
 
 #: ../../templates/show_shared_objects.inc.php:36
 msgid "Public Url"
-msgstr ""
+msgstr "כתובת אתר ציבורית"
 
 #: ../../templates/show_share.inc.php:31
 msgid "Shared by"
-msgstr ""
+msgstr "שותף על ידי"
 
 #: ../../templates/show_shares.inc.php:27
 msgid "Clean expired shared objects"
-msgstr ""
+msgstr "נקה אובייקטים משותפים פג"
 
 #: ../../templates/show_song.inc.php:57
 msgid "Waveform"
-msgstr ""
+msgstr "צורת גל"
 
 #: ../../templates/show_song.inc.php:144
 msgid "Genre"
-msgstr ""
+msgstr "ז'אנר"
 
 #: ../../templates/show_song.inc.php:146 ../../templates/show_song.inc.php:147
 #: ../../templates/show_song.inc.php:148
 msgid "Links"
-msgstr ""
+msgstr "קישורים"
 
 #: ../../templates/show_song.inc.php:152
 msgid "Song Language"
-msgstr ""
+msgstr "שפת שירים"
 
 #: ../../templates/show_song.inc.php:153
 msgid "Catalog Number"
-msgstr ""
+msgstr "מספר קטלוגי"
 
 #: ../../templates/show_song.inc.php:155
 msgid "Channels"
-msgstr ""
+msgstr "ערוצים"
 
 #: ../../templates/show_song.inc.php:157
 msgid "ReplayGain Track Gain"
-msgstr ""
+msgstr "ReplayGain מסלול רווח"
 
 #: ../../templates/show_song.inc.php:160
 msgid "ReplayGain Album Gain"
-msgstr ""
+msgstr "ReplayGain אלבום רווח"
 
 #: ../../templates/show_song.inc.php:166
 msgid "Last Updated"
-msgstr ""
+msgstr "עודכן לאחרונה"
 
 #: ../../templates/show_song.inc.php:174
 msgid "Lyrics"
-msgstr ""
+msgstr "מילים"
 
 #: ../../templates/show_song.inc.php:178
 msgid "Licensing"
-msgstr ""
+msgstr "רישוי"
 
 #: ../../templates/show_song_row.inc.php:95
 msgid "Song Information"
-msgstr ""
+msgstr "מידע על השיר"
 
 #: ../../templates/show_song_row.inc.php:108
 msgid "Song edit"
-msgstr ""
+msgstr "עריכת שירים"
 
-#: ../../templates/show_songs.inc.php:41 ../../templates/show_songs.inc.php:104
+#: ../../templates/show_songs.inc.php:41
+#: ../../templates/show_songs.inc.php:104
 msgid "License"
-msgstr ""
+msgstr "רישיון"
 
 #: ../../templates/show_songs.inc.php:88
 msgid "No song found"
-msgstr ""
+msgstr "לא נמצא שיר"
 
 #: ../../templates/show_stats.inc.php:31
 msgid "Connected Users"
-msgstr ""
+msgstr "משתמשים מחוברים"
 
 #: ../../templates/show_stats.inc.php:32
 msgid "Total Users"
-msgstr ""
+msgstr "סה\"כ משתמשים"
 
 #: ../../templates/show_stats.inc.php:37 ../../templates/show_stats.inc.php:74
 msgid "Catalog Size"
-msgstr ""
+msgstr "גודל קטלוג"
 
 #: ../../templates/show_stats.inc.php:38
 msgid "Catalog Time"
-msgstr ""
+msgstr "זמן קטלוג"
 
 #: ../../templates/show_tagcloud.inc.php:60
 msgid "Tag edit"
-msgstr ""
+msgstr "עריכת תג"
 
 #: ../../templates/show_tagcloud.inc.php:65
 msgid "Do you really want to delete the tag?"
-msgstr ""
+msgstr "האם אתה באמת רוצה למחוק את התג?"
 
 #: ../../templates/show_test_config.inc.php:41
 #: ../../templates/show_test.inc.php:44
 #: ../../templates/sidebar_admin.inc.php:47
 msgid "Ampache Debug"
-msgstr ""
+msgstr "Ampache Debug"
 
 #: ../../templates/show_test.inc.php:48
 msgid ""
 "You may have reached this page because a configuration error has occured. "
 "Debug information is below."
-msgstr ""
+msgstr "ייתכן שהגעת לדף זה משום שקיימת שגיאת תצורה. מידע באגים להלן."
 
 #: ../../templates/show_test.inc.php:51
 msgid "Web Installation"
-msgstr ""
+msgstr "התקנת אינטרנט"
 
 #: ../../templates/show_test_table.inc.php:24
 msgid "PHP version"
-msgstr ""
+msgstr "גרסת PHP"
 
 #: ../../templates/show_test_table.inc.php:29
 msgid ""
 "This tests whether you are running at least the minimum version of PHP "
 "required by Ampache."
 msgstr ""
+"זה בודק אם אתה מפעיל לפחות את הגירסה המינימלית של PHP נדרש על ידי Ampache."
 
 #: ../../templates/show_test_table.inc.php:33
 msgid "Dependencies"
-msgstr ""
+msgstr "תלות"
 
 #: ../../templates/show_test_table.inc.php:38
 msgid "This tests whether Ampache dependencies are installed."
-msgstr ""
+msgstr "זה בודק אם תלות Ampache מותקנים."
 
 #: ../../templates/show_test_table.inc.php:42
 msgid ""
-"Please download and install Composer from http://getcomposer.org and install "
-"it (e.g: mv composer.phar /usr/local/bin/composer) then run `composer "
+"Please download and install Composer from http://getcomposer.org and install"
+" it (e.g: mv composer.phar /usr/local/bin/composer) then run `composer "
 "install --prefer-source --no-interaction` on Ampache directory."
 msgstr ""
+"בבקשה להוריד ולהתקין מלחין מ http://getcomposer.org ולהתקין אותו (למשל: mv "
+"composer.phar / usr / local / bin / מלחין) ואז להפעיל `מלחין להתקין - מקור "
+"מקור - לא אינטראקציה` על Ampache ספרייה."
 
 #: ../../templates/show_test_table.inc.php:48
 msgid "PHP hash extension"
-msgstr ""
+msgstr "הרחבת PHP hash"
 
 #: ../../templates/show_test_table.inc.php:53
 msgid ""
 "This tests whether you have the hash extension enabled. This extension is "
 "required by Ampache."
-msgstr ""
+msgstr "זה בודק אם יש לך את הארכת חשיש מופעלת. תוסף זה נדרש על ידי Ampache."
 
 #: ../../templates/show_test_table.inc.php:57
 msgid "SHA256"
-msgstr ""
+msgstr "SHA256"
 
 #: ../../templates/show_test_table.inc.php:62
 msgid ""
 "This tests whether the hash extension supports SHA256. This algorithm is "
 "required by Ampache."
-msgstr ""
+msgstr "זה בודק אם הארכה חשיש תומך SHA256. אלגוריתם זה נדרש על ידי Ampache."
 
 #: ../../templates/show_test_table.inc.php:66
 msgid "PHP PDO extension"
-msgstr ""
+msgstr "PHP PDO הרחבה"
 
 #: ../../templates/show_test_table.inc.php:71
 msgid ""
 "This tests whether you have the PDO extension enabled. This extension is "
 "required by Ampache."
-msgstr ""
+msgstr "זה בודק אם יש לך את הרחבת PDO מופעלת. תוסף זה נדרש על ידי Ampache."
 
 #: ../../templates/show_test_table.inc.php:75
 msgid "MySQL"
-msgstr ""
+msgstr "MySQL"
 
 #: ../../templates/show_test_table.inc.php:80
 msgid ""
 "This tests whether the MySQL driver for PDO is enabled. This driver is "
 "required by Ampache."
 msgstr ""
+"זה בדיקות אם הנהג MySQL עבור PDO מופעלת. הנהג הזה נדרש על ידי Ampache."
 
 #: ../../templates/show_test_table.inc.php:84
 msgid "PHP session extension"
-msgstr ""
+msgstr "הרחבת הפגישה PHP"
 
 #: ../../templates/show_test_table.inc.php:89
 msgid ""
-"This tests whether you have the session extension enabled. This extension is "
-"required by Ampache."
-msgstr ""
+"This tests whether you have the session extension enabled. This extension is"
+" required by Ampache."
+msgstr "פעולה זו בודקת אם הרחבת ההפעלה מופעלת. תוסף זה נדרש על ידי Ampache."
 
 #: ../../templates/show_test_table.inc.php:93
 msgid "PHP iconv extension"
-msgstr ""
+msgstr "הרחבת PHP"
 
 #: ../../templates/show_test_table.inc.php:98
 msgid ""
 "This tests whether you have the iconv extension enabled. This extension is "
 "required by Ampache."
-msgstr ""
+msgstr "זה בודק אם יש לך את התוסף iconv מופעלת. תוסף זה נדרש על ידי Ampache."
 
 #: ../../templates/show_test_table.inc.php:102
 msgid "PHP JSON extension"
-msgstr ""
+msgstr "סיומת PHP JSON"
 
 #: ../../templates/show_test_table.inc.php:107
 msgid ""
 "This tests whether you have the JSON extension enabled. This extension is "
 "required by Ampache."
-msgstr ""
+msgstr "פעולה זו בודקת אם הפעלת את תוסף JSON. תוסף זה נדרש על ידי Ampache."
 
 #: ../../templates/show_test_table.inc.php:111
 msgid "PHP curl extension"
-msgstr ""
+msgstr "PHP תלתל הרחבה"
 
 #: ../../templates/show_test_table.inc.php:116
 msgid ""
-"This tests whether you have the curl extension enabled. This is not strictly "
-"necessary, but may result in a better experience."
+"This tests whether you have the curl extension enabled. This is not strictly"
+" necessary, but may result in a better experience."
 msgstr ""
+"זה בודק אם יש לך את התוסף תלתל מופעלת. זה לא נחוץ בהחלט, אבל עלול לגרום "
+"חוויה טובה יותר."
 
 #: ../../templates/show_test_table.inc.php:120
 msgid "PHP zlib extension"
-msgstr ""
+msgstr "סיומת PHP zlib"
 
 #: ../../templates/show_test_table.inc.php:125
 msgid ""
-"This tests whether you have the zlib extension enabled. This is not strictly "
-"necessary, but may result in a better experience (zip download)."
+"This tests whether you have the zlib extension enabled. This is not strictly"
+" necessary, but may result in a better experience (zip download)."
 msgstr ""
+"זה בודק אם יש לך את התוסף zlib מופעלת. זה לא נחוץ בהחלט, אבל עלול לגרום "
+"לחוויה טובה יותר (להוריד zip)."
 
 #: ../../templates/show_test_table.inc.php:129
 msgid "PHP simplexml extension"
-msgstr ""
+msgstr "סיומת PHP"
 
 #: ../../templates/show_test_table.inc.php:134
 msgid ""
 "This tests whether you have the simplexml extension enabled. This is not "
 "strictly necessary, but may result in a better experience."
 msgstr ""
+"זה בודק אם יש לך את התוסף simplexml מופעלת. זה לא נחוץ בהחלט, אבל עלול לגרום"
+" חוויה טובה יותר."
 
 #: ../../templates/show_test_table.inc.php:138
 msgid "PHP GD extension"
-msgstr ""
+msgstr "הרחבת GD PHP"
 
 #: ../../templates/show_test_table.inc.php:143
 msgid ""
 "This tests whether you have the GD extension enabled. This is not strictly "
 "necessary, but may result in a better experience."
 msgstr ""
+"פעולה זו בודקת אם הפעלת את תוסף GD. זה לא נחוץ בהחלט, אבל עלול לגרום חוויה "
+"טובה יותר."
 
 #: ../../templates/show_test_table.inc.php:147
 msgid "PHP safe mode disabled"
-msgstr ""
+msgstr "מצב בטוח של PHP מושבת"
 
 #: ../../templates/show_test_table.inc.php:152
 msgid ""
 "This test makes sure that PHP is not running in safe mode. Some features of "
 "Ampache will not work correctly in safe mode."
 msgstr ""
+"בדיקה זו מוודאת ש- PHP אינו פועל במצב בטוח. תכונות מסוימות של Ampache לא "
+"יפעלו כראוי במצב בטוח."
 
 #: ../../templates/show_test_table.inc.php:156
 msgid "PHP memory limit override"
-msgstr ""
+msgstr "מגבלת זיכרון PHP לעקוף"
 
 #: ../../templates/show_test_table.inc.php:161
 msgid ""
 "This tests whether Ampache can override the memory limit. This is not "
 "strictly necessary, but may result in a better experience."
 msgstr ""
+"זה בודק אם Ampache יכול לעקוף את מגבלת הזיכרון. זה לא נחוץ בהחלט, אבל עלול "
+"לגרום חוויה טובה יותר."
 
 #: ../../templates/show_test_table.inc.php:165
 msgid "PHP execution time override"
-msgstr ""
+msgstr "זמן הביצוע של PHP"
 
 #: ../../templates/show_test_table.inc.php:170
 msgid ""
-"This tests whether Ampache can override the limit on maximum execution time. "
-"This is not strictly necessary, but may result in a better experience."
+"This tests whether Ampache can override the limit on maximum execution time."
+" This is not strictly necessary, but may result in a better experience."
 msgstr ""
+"זה בודק אם Ampache יכול לעקוף את המגבלה על זמן הביצוע המקסימלי. זה לא נחוץ "
+"בהחלט, אבל עלול לגרום חוויה טובה יותר."
 
 #: ../../templates/show_test_table.inc.php:174
 msgid "PHP max upload size"
-msgstr ""
+msgstr "גודל מקסימלי להעלאה של PHP"
 
 #: ../../templates/show_test_table.inc.php:179
 msgid ""
 "This tests whether Ampache can upload medium files (>= 20M). This is not "
 "strictly necessary, but may result in a better experience."
 msgstr ""
+"זה בודק אם Ampache יכול להעלות קבצים בינוניים (> = 20M). זה לא נחוץ בהחלט, "
+"אבל עלול לגרום חוויה טובה יותר."
 
 #: ../../templates/show_test_table.inc.php:183
 msgid "PHP Integer Size"
-msgstr ""
+msgstr "גודל PHP PHP"
 
 #: ../../templates/show_test_table.inc.php:188
 msgid ""
@@ -6275,10 +6401,12 @@ msgid ""
 "strictly necessary, but may result in a better experience. This generally "
 "requires 64-bit operating system."
 msgstr ""
+"זה בודק אם Ampache יכול לנהל קבצים גדולים (> 2GB). זה לא נחוץ בהחלט, אבל "
+"עלול לגרום חוויה טובה יותר. בדרך כלל זה דורש 64-bit מערכת ההפעלה."
 
 #: ../../templates/show_test_table.inc.php:192
 msgid "PHP mbstring.func_overload"
-msgstr ""
+msgstr "PHP mbstring.func_overload"
 
 #: ../../templates/show_test_table.inc.php:197
 #, php-format
@@ -6288,46 +6416,55 @@ msgid ""
 "(disabled by default) along with mbstring.func_overload may result in "
 "irreversible corruption of your music files."
 msgstr ""
+"זה בדיקות אם PHP %s מוגדר כפי שהוא עלול לשבור את תג תג ID3. זה לא הכרחי "
+"stricly, אבל לאפשר Ampache ID3 תג לכתוב תמיכה (מושבת כברירת מחדל) יחד עם "
+"mbstring.func_overload עלול לגרום לשחיתות בלתי הפיך של קבצי המוסיקה שלך."
 
 #: ../../templates/show_test_table.inc.php:204
 msgid "Configuration file readability"
-msgstr ""
+msgstr "קריאת קובץ תצורה"
 
 #: ../../templates/show_test_table.inc.php:209
 msgid ""
 "This test attempts to read config/amuzak.cfg.php. If this fails the file "
 "either is not in the correct location or is not currently readable."
 msgstr ""
+"בדיקה זו מנסה לקרוא config / amuzak.cfg.php. אם פעולה זו נכשלת, הקובץ אינו "
+"נמצא במיקום הנכון או שאינו ניתן לקריאה כעת."
 
 #: ../../templates/show_test_table.inc.php:214
 msgid "Configuration file validity"
-msgstr ""
+msgstr "תוקף קובץ התצורה"
 
 #: ../../templates/show_test_table.inc.php:223
 msgid ""
 "This test makes sure that you have set all of the required configuration "
 "variables and that we are able to completely parse your config file."
 msgstr ""
+"בדיקה זו מוודאת שהגדרת את כל משתני התצורה הנדרשים וכי אנו מסוגלים לנתח את "
+"קובץ ההגדרות שלך לחלוטין."
 
 #: ../../templates/show_test_table.inc.php:232
 msgid ""
 "This attempts to connect to your database using the values read from your "
 "configuration file."
-msgstr ""
+msgstr "זה מנסה להתחבר למסד הנתונים שלך באמצעות ערכים לקרוא מקובץ התצורה שלך."
 
 #: ../../templates/show_test_table.inc.php:236
 msgid "Database tables"
-msgstr ""
+msgstr "טבלאות מסד נתונים"
 
 #: ../../templates/show_test_table.inc.php:241
 msgid ""
 "This checks a few key tables to make sure that you have successfully "
 "inserted the Ampache database and that the user has access to the database"
 msgstr ""
+"זה בודק כמה טבלאות מפתח כדי לוודא שיש לך בהצלחה הוכנס מסד הנתונים Ampache "
+"וכי למשתמש יש גישה למסד הנתונים"
 
 #: ../../templates/show_test_table.inc.php:246
 msgid "Web path"
-msgstr ""
+msgstr "נתיב אינטרנט"
 
 #: ../../templates/show_test_table.inc.php:256
 msgid ""
@@ -6335,129 +6472,131 @@ msgid ""
 "we are able to get to the index page. If you do not see a check mark here "
 "then your web_path is not set correctly."
 msgstr ""
+"בדיקה זו מוודאת שהמשתנה web_path מוגדר כהלכה וכי אנו יכולים להגיע לדף "
+"האינדקס. אם אינך רואה סימן ביקורת כאן, ה- web_path שלך אינו מוגדר כהלכה."
 
 #: ../../templates/show_update_items.inc.php:23
 msgid "Starting Update from Tags"
-msgstr ""
+msgstr "החל עדכון מתגים"
 
 #: ../../templates/show_update_items.inc.php:27
 msgid "Update from Tags Complete"
-msgstr ""
+msgstr "עדכון מתגים הושלמו"
 
 #: ../../templates/show_uploads.inc.php:23
 #: ../../templates/sidebar_home.inc.php:119
 msgid "Uploads"
-msgstr ""
+msgstr "העלאות"
 
 #: ../../templates/show_user_activate.inc.php:38
 msgid "Registration Validation"
-msgstr ""
+msgstr "רישום אימות"
 
 #: ../../templates/show_user_activate.inc.php:47
 msgid "User Activated"
-msgstr ""
+msgstr "משתמש הופעל"
 
 #. HINT: Start A tag, End A tag
 #: ../../templates/show_user_activate.inc.php:51
 #, php-format
 msgid "This User ID is activated and can be used %sLogin%s"
-msgstr ""
+msgstr "מזהה משתמש זה מופעל וניתן להשתמש בו %sLogin%s"
 
 #: ../../templates/show_user_activate.inc.php:56
 msgid "Validation Failed"
-msgstr ""
+msgstr "האימות נכשל"
 
 #: ../../templates/show_user_activate.inc.php:57
 msgid "The validation key used isn't correct"
-msgstr ""
+msgstr "מפתח האימות שנבחר אינו נכון"
 
 #: ../../templates/show_userflag.inc.php:23
 msgid "User Favorites"
-msgstr ""
+msgstr "מועדפים משתמשים"
 
 #: ../../templates/show_user.inc.php:37
 msgid "Display Name"
-msgstr ""
+msgstr "הצג שם"
 
 #: ../../templates/show_user.inc.php:52
 msgid "Member Since"
-msgstr ""
+msgstr "חבר מאז"
 
 #: ../../templates/show_user.inc.php:55 ../../templates/show_users.inc.php:50
 #: ../../templates/show_users.inc.php:82
 msgid "Last Seen"
-msgstr ""
+msgstr "נראה לאחרונה"
 
 #: ../../templates/show_user.inc.php:60 ../../templates/show_users.inc.php:54
 #: ../../templates/show_users.inc.php:86
 msgid "Activity"
-msgstr ""
+msgstr "פעילות"
 
 #: ../../templates/show_user.inc.php:72
 msgid "Status"
-msgstr ""
+msgstr "סטטוס"
 
 #: ../../templates/show_user.inc.php:76
 msgid "User is Online Now"
-msgstr ""
+msgstr "המשתמש מחובר כעת"
 
 #: ../../templates/show_user.inc.php:80
 msgid "User is Offline Now"
-msgstr ""
+msgstr "המשתמש נמצא במצב לא מקוון עכשיו"
 
 #: ../../templates/show_user.inc.php:105
 msgid "Active Playlist"
-msgstr ""
+msgstr "רשימת השמעה פעילה"
 
 #: ../../templates/show_user_registration.inc.php:66
 msgid "User Agreement"
-msgstr ""
+msgstr "הסכמת המשתמש"
 
 #: ../../templates/show_user_registration.inc.php:73
 msgid "I Accept"
-msgstr ""
+msgstr "אני מקבל"
 
 #: ../../templates/show_user_registration.inc.php:79
 msgid "User Information"
-msgstr ""
+msgstr "מידע משתמש"
 
 #: ../../templates/show_user_registration.inc.php:150
 msgid "* Required fields"
-msgstr ""
+msgstr "* שדות חובה"
 
 #: ../../templates/show_user_registration.inc.php:162
 msgid "Register User"
-msgstr ""
+msgstr "הרשמה משתמש"
 
 #: ../../templates/show_users.inc.php:49 ../../templates/show_users.inc.php:81
 msgid "Fullname"
-msgstr ""
+msgstr "שם מלא"
 
 #: ../../templates/show_users.inc.php:51 ../../templates/show_users.inc.php:83
 msgid "Registration Date"
-msgstr ""
+msgstr "תאריך רישום"
 
 #: ../../templates/show_users.inc.php:57 ../../templates/show_users.inc.php:89
 msgid "Last Ip"
-msgstr ""
+msgstr "האחרון Ip"
 
 #: ../../templates/show_users.inc.php:63 ../../templates/show_users.inc.php:95
 msgid "On-line"
-msgstr ""
+msgstr "באינטרנט"
 
 #: ../../templates/show_verify_catalog.inc.php:23
 msgid "Verify Catalog"
-msgstr ""
+msgstr "אמת את הקטלוג"
 
 #. HINT: Catalog Name
 #: ../../templates/show_verify_catalog.inc.php:25
 #, php-format
 msgid "Updating the %s catalog"
-msgstr ""
+msgstr "מעדכן את הקטלוג %s"
 
 #: ../../templates/show_verify_catalog.inc.php:27
 msgid "Verified"
-msgstr ""
+msgstr "מאומת"
 
 #: ../../templates/sidebar_admin.inc.php:24
 #: ../../templates/sidebar_admin.inc.php:31
@@ -6473,97 +6612,97 @@ msgstr ""
 #: ../../templates/sidebar_modules.inc.php:30
 #: ../../templates/sidebar_preferences.inc.php:30
 msgid "Expand/Collapse"
-msgstr ""
+msgstr "להרחיב לצמצם"
 
 #: ../../templates/sidebar_admin.inc.php:31
 msgid "User Tools"
-msgstr ""
+msgstr "כלי משתמש"
 
 #: ../../templates/sidebar_admin.inc.php:34
 msgid "Browse Users"
-msgstr ""
+msgstr "עיין במשתמשים"
 
 #: ../../templates/sidebar_admin.inc.php:39
 msgid "Add ACL"
-msgstr ""
+msgstr "הוסף ACL"
 
 #: ../../templates/sidebar_admin.inc.php:40
 msgid "Show ACL(s)"
-msgstr ""
+msgstr "הצג רשימות בקרת גישה (ACL)"
 
 #: ../../templates/sidebar_admin.inc.php:45
 #: ../../templates/sidebar_modules.inc.php:30
 msgid "Other Tools"
-msgstr ""
+msgstr "כלים אחרים"
 
 #: ../../templates/sidebar_admin.inc.php:48
 msgid "Clear Now Playing"
-msgstr ""
+msgstr "נקה עכשיו משחק"
 
 #: ../../templates/sidebar_admin.inc.php:52
 msgid "Manage Licenses"
-msgstr ""
+msgstr "ניהול רישיונות"
 
 #: ../../templates/sidebar_admin.inc.php:59
 msgid "Server Config"
-msgstr ""
+msgstr "תצורת שרת"
 
 #: ../../templates/sidebar_home.inc.php:32
 msgid "Song Titles"
-msgstr ""
+msgstr "כותרות שירים"
 
 #: ../../templates/sidebar_home.inc.php:75
 msgid "Currently Playing"
-msgstr ""
+msgstr "פועל כעת"
 
 #: ../../templates/sidebar_home.inc.php:85
 msgid "Import"
-msgstr ""
+msgstr "ייבוא"
 
 #: ../../templates/sidebar_home.inc.php:97
 msgid "Recent"
-msgstr ""
+msgstr "לאחרונה"
 
 #: ../../templates/sidebar_home.inc.php:104
 msgid "Top Rated"
-msgstr ""
+msgstr "מדורג גבוה"
 
 #: ../../templates/sidebar_home.inc.php:140
 msgid "Advanced"
-msgstr ""
+msgstr "מתקדם"
 
 #: ../../templates/sidebar.inc.php:35
 #: ../../templates/sidebar_modules.inc.php:24
 msgid "Modules"
-msgstr ""
+msgstr "מודולים"
 
 #: ../../templates/sidebar.inc.php:60
 msgid "Logout"
-msgstr ""
+msgstr "להתנתק"
 
 #: ../../templates/sidebar.light.inc.php:33
 msgid "Radio"
-msgstr ""
+msgstr "רדיו"
 
 #: ../../templates/sidebar_modules.inc.php:26
 msgid "Catalog Modules"
-msgstr ""
+msgstr "מודולי קטלוג"
 
 #: ../../templates/sidebar_modules.inc.php:27
 msgid "Available Plugins"
-msgstr ""
+msgstr "תוספים זמינים"
 
 #: ../../templates/sidebar_modules.inc.php:33
 msgid "Mail Users"
-msgstr ""
+msgstr "משתמשי דואר"
 
 #: ../../templates/sidebar_modules.inc.php:41
 msgid "Manage Playlist"
-msgstr ""
+msgstr "ניהול פלייליסט"
 
 #: ../../templates/sidebar_preferences.inc.php:41
 msgid "Account"
-msgstr ""
+msgstr "חשבון"
 
 #: ../../update.php:81
 #, php-format
@@ -6572,98 +6711,14 @@ msgid ""
 "<strong>3.3.3.5</strong>. Your current version is <strong>%s</strong> with "
 "database version <strong>%s</strong>."
 msgstr ""
+"דף זה מטפל בכל עדכוני מסד הנתונים ל- Ampache החל מ- <strong> 3.3.3.5 "
+"</strong>. הגרסה הנוכחית שלך היא <strong> %s </strong> עם גרסת מסד הנתונים "
+"<strong> %s </strong>."
 
 #: ../../update.php:91
 msgid "Update Now!"
-msgstr ""
+msgstr "עדכן כעת!"
 
 #: ../../upnp/control-reply.php:46
 msgid "root"
-msgstr ""
-
-#~ msgid "Failed to enable the module, Controller Error"
-#~ msgstr "שגיאת בקר, הפעלת המודול נכשלה."
-
-#~ msgid "localplay enabled"
-#~ msgstr "ניגון מקומי מופעל"
-
-#~ msgid "Localplay Controllers"
-#~ msgstr "בקרי ניגון מקומי"
-
-#~ msgid "Starting broadcasts..."
-#~ msgstr "מתחיל שידורים..."
-
-#~ msgid "UPnP broadcast... "
-#~ msgstr "שידור UPnP..."
-
-#~ msgid "Done."
-#~ msgstr "בוצע."
-
-#~ msgid "UPnP backend disabled. Broadcast skipped."
-#~ msgstr "תשתית UPnP מושבתת. השידור בוטל."
-
-#~ msgid "- Channel "
-#~ msgstr "- ערוץ"
-
-#~ msgid "- Verbose"
-#~ msgstr "- הצג מידע מורחב"
-
-#~ msgid "- Port "
-#~ msgstr "- פורט"
-
-#~ msgid "Starting Channel..."
-#~ msgstr "מתחיל ערוץ..."
-
-#~ msgid "Unknown channel."
-#~ msgstr "ערוץ לא ידוע. "
-
-#~ msgid "Found available port "
-#~ msgstr "נמצא פורט זמין."
-
-#~ msgid "Listening on "
-#~ msgstr "מקשיב ב"
-
-#~ msgid "- Channel Listening -"
-#~ msgstr "- הקשבה לערוצים - "
-
-#~ msgid "Usage: channel_run.inc [-c {CHANNEL ID}|-p {PORT}|-v]"
-#~ msgstr "שימוש: ‭channel_run.inc [-c {CHANNEL ID}|-p {PORT}|-v]"
-
-#~ msgid "Channel id to start"
-#~ msgstr "בתחילה מזהה ערוץ"
-
-#~ msgid "Listening port, default get an available port automatically"
-#~ msgstr "פורט להקשבה, ברירת המחדל היא קבלת הפורט אוטומטית"
-
-#~ msgid "Verbose"
-#~ msgstr "הצגת מידע מפורט"
-
-#~ msgid "- WebSocket server -"
-#~ msgstr "- שרת WebSocket -"
-
-#~ msgid "Usage: websocket_run.inc [-p {PORT}|-v]"
-#~ msgstr "שימוש: ‭websocket_run.inc [-p {PORT}|-v]"
-
-#~ msgid "Listening port, default 8100"
-#~ msgstr "מקשיב לפורט, ברירת מחדל 8100"
-
-#~ msgid "Broadcast Delete"
-#~ msgstr "מחק שידור"
-
-#~ msgid "Broadcast Deleted"
-#~ msgstr "שידור נמחק"
-
-#~ msgid "The Broadcast has been deleted"
-#~ msgstr "השידור נמחק"
-
-#~ msgid "Channel Created"
-#~ msgstr "נוצר ערוץ"
-
-#~ msgid "Channel Delete"
-#~ msgstr "מחק ערוץ"
-
-#~ msgid "Channel Deleted"
-#~ msgstr "ערוץ נמחק"
-
-#~ msgid "The Channel has been deleted"
-#~ msgstr "הערוץ נמחק"
+msgstr "שורש"

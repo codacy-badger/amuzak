@@ -1,13 +1,25 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# lachlan 00 <lachlan.00@gmail.com>, 2019
+# 
+#, fuzzy
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/projects/p/ampache/\n"
 "POT-Creation-Date: 2019-03-28 10:08+1000\n"
-"Language: ko_KR\n"
+"PO-Revision-Date: 2019-03-28 00:51+0000\n"
+"Last-Translator: lachlan 00 <lachlan.00@gmail.com>, 2019\n"
+"Language-Team: Korean (Korea) (https://www.transifex.com/ampachecore/teams/97573/ko_KR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ko_KR\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: PhraseApp (phraseapp.com)\n"
 
 #: ../../admin/access.php:40
 msgid "Deleted"
@@ -38,7 +50,7 @@ msgstr "새 접근 리스트가 만들어졌습니다"
 #: ../../lib/class/search.class.php:403 ../../preferences.php:144
 #: ../../preferences.php:162
 msgid "Updated"
-msgstr "수정됨"
+msgstr "업데이트 됨"
 
 #: ../../admin/access.php:88
 msgid "Access List Entry updated"
@@ -48,15 +60,15 @@ msgstr "접근 리스트 업데이트됨"
 #: ../../admin/catalog.php:66 ../../admin/catalog.php:74
 #: ../../admin/catalog.php:83
 msgid "Catalog Update started..."
-msgstr "카탈로그 수정 시작됨..."
+msgstr "카탈로그 업데이트가 시작되었습니다 ..."
 
 #: ../../admin/catalog.php:105
 msgid "Catalog Deleted"
-msgstr "카탈로그 삭제됨"
+msgstr "카탈로그가 삭제되었습니다."
 
 #: ../../admin/catalog.php:105
 msgid "The Catalog and all associated records have been deleted"
-msgstr "카탈로그와 관련된 모든 레코드들이 삭제되었습니다"
+msgstr "카탈로그 및 모든 관련 레코드가 삭제되었습니다."
 
 #: ../../admin/catalog.php:107 ../../admin/users.php:192
 #: ../../preferences.php:166 ../../templates/error_page.inc.php:50
@@ -65,7 +77,7 @@ msgstr "오류"
 
 #: ../../admin/catalog.php:107
 msgid "Cannot delete the catalog"
-msgstr "카탈로그를 삭제할 수 없습니다"
+msgstr "카탈로그를 삭제할 수 없습니다."
 
 #: ../../admin/catalog.php:112
 msgid "Catalog Delete"
@@ -73,7 +85,7 @@ msgstr "카탈로그 삭제"
 
 #: ../../admin/catalog.php:112 ../../admin/users.php:230 ../../share.php:94
 msgid "Confirm Deletion Request"
-msgstr "카탈로그 삭제 요청 확인"
+msgstr "삭제 요청 확인"
 
 #: ../../admin/catalog.php:125
 msgid " Song Enabled"
@@ -82,7 +94,7 @@ msgstr[0] "활성화된 노래"
 
 #: ../../admin/catalog.php:127
 msgid "No Disabled Songs selected"
-msgstr "비활성화된 노래가 선택되지 않았습니다"
+msgstr "사용할 수없는 노래 없음"
 
 #: ../../admin/catalog.php:130
 msgid " Disabled Song Processed"
@@ -91,43 +103,43 @@ msgstr[0] "노래 비활성화중"
 
 #: ../../admin/catalog.php:135 ../../admin/catalog.php:139
 msgid "Catalog Clean started..."
-msgstr "카탈로그 청소 시작됨"
+msgstr "카탈로그 정리 시작 ..."
 
 #: ../../admin/catalog.php:151
 msgid "Catalog Updated"
-msgstr "카탈로그 수정됨"
+msgstr "카탈로그 업데이트 됨"
 
 #: ../../admin/catalog.php:161
 msgid "Subdirectory update started..."
-msgstr "하부 디렉토리 업데이트 시작됨"
+msgstr "하위 디렉토리 업데이트가 시작되었습니다 ..."
 
 #: ../../admin/catalog.php:172
 msgid "Error: Please select a catalog type"
-msgstr "오류: 카탈로그 타입을 선택하세요"
+msgstr "오류 : 카탈로그 유형을 선택하십시오."
 
 #: ../../admin/catalog.php:176
 msgid "Error: Name not specified"
-msgstr "오류: 이름 지정되지 않음"
+msgstr "오류 : 이름이 지정되지 않았습니다."
 
 #: ../../admin/catalog.php:195
 msgid "Catalog Creation started..."
-msgstr "카탈로그 생성 시작됨"
+msgstr "카탈로그 생성 시작 ..."
 
 #: ../../admin/catalog.php:207
 msgid "Catalog statistics cleared"
-msgstr "카탈로그 통계정보 청소됨"
+msgstr "카탈로그 통계가 삭제되었습니다."
 
 #: ../../admin/catalog.php:220
 msgid "Now Playing Cleared"
-msgstr "지금 재생중 목록 초기화됨"
+msgstr "지금 재생 취소됨"
 
 #: ../../admin/catalog.php:220
 msgid "All now playing data has been cleared"
-msgstr "모든 지금 재생중 정보가 초기화되었습니다"
+msgstr "지금 재생중인 모든 데이터가 삭제되었습니다."
 
 #: ../../admin/catalog.php:232
 msgid "No Disabled songs found"
-msgstr "비활성화된 노래가 없습니다"
+msgstr "사용 중지 된 노래 없음"
 
 #: ../../admin/catalog.php:244
 msgid "Delete Catalog"
@@ -135,19 +147,19 @@ msgstr "카탈로그 삭제"
 
 #: ../../admin/catalog.php:244
 msgid "Do you really want to delete this catalog?"
-msgstr "정말 이 카탈로그를 삭제하시겠습니까?"
+msgstr "이 카탈로그를 정말로 삭제 하시겠습니까?"
 
 #: ../../admin/catalog.php:253
 msgid "Media Art Search started..."
-msgstr "미디어 아트 검색 시작됨..."
+msgstr "미디어 아트 검색 시작 ..."
 
 #: ../../admin/license.php:39
 msgid "License Updated"
-msgstr "라이선스 수정됨"
+msgstr "라이센스 업데이트 됨"
 
 #: ../../admin/license.php:42
 msgid "License Created"
-msgstr "라이선스 생성됨"
+msgstr "생성 된 라이센스"
 
 #: ../../admin/license.php:53
 msgid "License Deleted"
@@ -155,19 +167,19 @@ msgstr "라이선스 삭제됨"
 
 #: ../../admin/mail.php:63
 msgid "E-mail Sent"
-msgstr "이메일 보냄"
+msgstr "보낸 전자 메일"
 
 #: ../../admin/mail.php:64
 msgid "Your E-mail was successfully sent."
-msgstr "이메일을 성공적으로 보냈습니다."
+msgstr "귀하의 이메일이 성공적으로 전송되었습니다."
 
 #: ../../admin/mail.php:66
 msgid "E-mail Not Sent"
-msgstr "이메일 보내지지 않음"
+msgstr "전자 메일을 보내지 않음"
 
 #: ../../admin/mail.php:67
 msgid "Your E-mail was not sent."
-msgstr "이메일이 보내지지 않았습니다."
+msgstr "귀하의 이메일은 전송되지 않았습니다."
 
 #: ../../admin/modules.php:39
 msgid "Failed to enable the module, Catalog Error"
@@ -191,7 +203,7 @@ msgstr "모듈 비활성화됨"
 
 #: ../../admin/modules.php:87
 msgid "Unable to Install Plugin"
-msgstr "플러그인을 설치할 수 없음"
+msgstr "플러그인을 설치할 수 없습니다."
 
 #: ../../admin/modules.php:98
 msgid "Plugin enabled"
@@ -207,7 +219,7 @@ msgstr "플러그인 비활성화됨"
 
 #: ../../admin/modules.php:139
 msgid "Plugin Upgraded"
-msgstr "플러그인 업그레이드됨"
+msgstr "플러그인 업그레이드 됨"
 
 #: ../../admin/modules.php:145
 msgid "Plugins"
@@ -215,65 +227,63 @@ msgstr "플러그인"
 
 #: ../../admin/modules.php:151
 msgid "Catalog Types"
-msgstr "카탈로그 종류"
+msgstr "카탈로그 유형"
 
 #: ../../admin/shout.php:39
 msgid "Shoutbox Post Updated"
-msgstr ""
+msgstr "Shoutbox 포스트 업데이트 됨"
 
 #: ../../admin/shout.php:51
 msgid "Shoutbox Post Deleted"
-msgstr ""
+msgstr "Shoutbox 포스트 삭제됨"
 
 #: ../../admin/system.php:51
 msgid "Database Charset Updated"
-msgstr ""
+msgstr "데이터베이스 Charset 업데이트 됨"
 
 #: ../../admin/system.php:51
 msgid ""
 "Your Database and associated tables have been updated to match your "
 "currently configured charset"
-msgstr ""
+msgstr "데이터베이스 및 관련 테이블이 현재 구성된 charset과 일치하도록 업데이트되었습니다."
 
 #: ../../admin/system.php:66
 msgid "Cache cleared"
-msgstr "캐시 비움"
+msgstr "캐시가 지워짐"
 
 #: ../../admin/system.php:66
 msgid "Your cache has been cleared successfully."
-msgstr "캐시를 비웠습니다."
+msgstr "캐시가 성공적으로 지워졌습니다."
 
 #: ../../admin/users.php:62 ../../admin/users.php:141
 #: ../../lib/class/user.class.php:598
 msgid "Error Username Required"
-msgstr "오류 사용자 이름이 필요합니다"
+msgstr "오류 사용자 이름 필요"
 
 #: ../../admin/users.php:66 ../../admin/users.php:146 ../../register.php:121
 msgid "Error Username already exists"
-msgstr "오류 사용자 이름이 이미 존재합니다"
+msgstr "오류 사용자 이름이 이미 있습니다."
 
 #: ../../admin/users.php:71 ../../admin/users.php:137
 #: ../../lib/class/user.class.php:602
 msgid "Error Passwords don't match"
-msgstr ""
+msgstr "오류 암호가 일치하지 않습니다."
 
 #: ../../admin/users.php:76 ../../admin/users.php:151 ../../register.php:95
 msgid "Invalid email address"
 msgstr "잘못된 이메일 주소"
 
 #: ../../admin/users.php:114
-#, fuzzy
 msgid "User Updated"
-msgstr "라이선스 수정됨"
+msgstr "사용자 업데이트"
 
 #: ../../admin/users.php:114
-#, fuzzy
 msgid "updated"
-msgstr "수정됨"
+msgstr "업데이트 된"
 
 #: ../../admin/users.php:163 ../../register.php:150
 msgid "Error: Insert Failed"
-msgstr "오류: 등록 실패"
+msgstr "오류 : 삽입하지 못했습니다."
 
 #: ../../admin/users.php:169 ../../lib/class/democratic.class.php:158
 #: ../../lib/class/shoutbox.class.php:333
@@ -323,23 +333,23 @@ msgstr "새 사용자 추가됨"
 #: ../../admin/users.php:177
 #, php-format
 msgid "%1$s has been created with an access level of %2$s"
-msgstr "접근 권한 %2$s의 사용자 %1$s(이)가 생성되었습니다."
+msgstr "액세스 수준이 %2$s 인 %1$s가 생성되었습니다."
 
 #: ../../admin/users.php:185
 msgid "User Enabled"
-msgstr "사용자 활성화됨"
+msgstr "사용자 활성화 됨"
 
 #: ../../admin/users.php:190
 msgid "User Disabled"
-msgstr "사용자 비활성화됨"
+msgstr "사용자 비활성화 됨"
 
 #: ../../admin/users.php:192
 msgid "Unable to Disabled last Administrator"
-msgstr "마지막 관리자를 비활성화할 수 없습니다"
+msgstr "마지막 관리자를 비활성화 할 수 없습니다."
 
 #: ../../admin/users.php:212
 msgid "User Deleted"
-msgstr "사용자 삭제됨"
+msgstr "사용자가 삭제되었습니다."
 
 #: ../../admin/users.php:212
 #, php-format
@@ -348,11 +358,11 @@ msgstr "사용자 %s(이)가 삭제되었습니다"
 
 #: ../../admin/users.php:214
 msgid "Delete Error"
-msgstr "삭제 오류"
+msgstr "오류 삭제"
 
 #: ../../admin/users.php:214
 msgid "Unable to delete last Admin User"
-msgstr "마지막 관리자는 삭제할 수 없습니다"
+msgstr "마지막 관리자를 삭제할 수 없습니다."
 
 #: ../../admin/users.php:223
 #, php-format
@@ -361,7 +371,7 @@ msgstr "정말 사용자 %s(을)를 삭제하시겠습니까?"
 
 #: ../../admin/users.php:230
 msgid "User Avatar Delete"
-msgstr "프로필 이미지 삭제"
+msgstr "사용자 아바타 삭제"
 
 #: ../../admin/users.php:246
 msgid "User Avatar Deleted"
@@ -369,7 +379,7 @@ msgstr "프로필 이미지 삭제됨"
 
 #: ../../admin/users.php:246
 msgid "User Avatar has been deleted"
-msgstr "프로필 이미지가 삭제되었습니다"
+msgstr "사용자 아바타가 삭제되었습니다."
 
 #: ../../admin/users.php:252 ../../templates/show_account.inc.php:102
 #: ../../templates/show_edit_user.inc.php:133
@@ -377,9 +387,8 @@ msgid "Generate new API Key"
 msgstr "새 API 키 생성"
 
 #: ../../admin/users.php:252
-#, fuzzy
 msgid "Confirm API Key Generation"
-msgstr "API 키 생성됨"
+msgstr "API 키 생성 확인"
 
 #: ../../admin/users.php:268
 msgid "API Key Generated"
@@ -395,7 +404,7 @@ msgstr "앨범 삭제"
 
 #: ../../albums.php:37
 msgid "Are you sure you want to permanently delete this album?"
-msgstr "정말 이 앨범을 삭제하시겠습니까?"
+msgstr "이 앨범을 완전히 삭제 하시겠습니까?"
 
 #: ../../albums.php:56
 msgid "Album has been deleted."
@@ -406,100 +415,90 @@ msgid "Cannot delete this album."
 msgstr "이 앨범을 삭제할 수 없습니다."
 
 #: ../../artists.php:38 ../../artists.php:58 ../../artists.php:60
-#, fuzzy
 msgid "Artist Deletion"
-msgstr "앨범 삭제"
+msgstr "아티스트 삭제"
 
 #: ../../artists.php:39
-#, fuzzy
 msgid "Are you sure you want to permanently delete this artist?"
-msgstr "정말 이 앨범을 삭제하시겠습니까?"
+msgstr "이 아티스트를 영구적으로 삭제 하시겠습니까?"
 
 #: ../../artists.php:58
-#, fuzzy
 msgid "Artist has been deleted."
-msgstr "앨범이 삭제되었습니다."
+msgstr "아티스트가 삭제되었습니다."
 
 #: ../../artists.php:60
-#, fuzzy
 msgid "Cannot delete this artist."
-msgstr "이 앨범을 삭제할 수 없습니다."
+msgstr "이 아티스트를 삭제할 수 없습니다."
 
 #: ../../artists.php:98
 msgid "Show Artists starting with"
-msgstr ""
+msgstr "다음으로 시작하는 아티스트 표시"
 
 #: ../../arts.php:50
 msgid "Art Cleared"
-msgstr ""
+msgstr "아트 클리어"
 
 #: ../../arts.php:50
 msgid "Art information has been removed from the database"
-msgstr ""
+msgstr "미술 정보가 데이터베이스에서 삭제되었습니다."
 
 #: ../../arts.php:56 ../../arts.php:72 ../../arts.php:139
 msgid "Art Not Located"
-msgstr ""
+msgstr "예술이 발견되지 않음"
 
 #: ../../arts.php:56 ../../arts.php:72 ../../arts.php:139
 msgid ""
 "Art could not be located at this time. This may be due to write access "
 "error, or the file is not received correctly."
-msgstr ""
+msgstr "현재 아트를 찾을 수 없습니다. 쓰기 액세스 오류가 원인이거나 파일이 올바르게 수신되지 않았기 때문일 수 있습니다."
 
 #: ../../arts.php:68 ../../arts.php:94
-#, fuzzy
 msgid "Art Inserted"
-msgstr "오류: 등록 실패"
+msgstr "예술 삽입"
 
 #: ../../bin/catalog_update.inc:44
 msgid "Doing all catalog operations"
-msgstr ""
+msgstr "모든 카탈로그 작업 수행"
 
 #: ../../bin/catalog_update.inc:52
 msgid "Temporary deactivate PHP memory limit"
 msgstr "일시적으로 PHP 메모리 제한 해제"
 
 #: ../../bin/catalog_update.inc:56
-#, fuzzy
 msgid "Setting catalog name"
-msgstr "카탈로그 읽는 중: %s"
+msgstr "카탈로그 이름 설정"
 
 #: ../../bin/catalog_update.inc:60
-#, fuzzy
 msgid "Setting catalog type"
-msgstr "카탈로그 읽는 중: %s"
+msgstr "카탈로그 유형 설정"
 
 #: ../../bin/catalog_update.inc:64
-#, fuzzy
 msgid "Cleaning catalog/s"
-msgstr "카탈로그 읽는 중: %s"
+msgstr "카탈로그 청소 / s"
 
 #: ../../bin/catalog_update.inc:68
-#, fuzzy
 msgid "Verifying catalog/s"
-msgstr "카탈로그 읽는 중: %s"
+msgstr "카탈로그 확인 중"
 
 #: ../../bin/catalog_update.inc:72
 msgid "Adding new media to catalog/s"
-msgstr ""
+msgstr "카탈로그에 새 미디어 추가 / s"
 
 #: ../../bin/catalog_update.inc:76
 msgid "Gathering new media art"
-msgstr ""
+msgstr "새로운 미디어 아트 수집"
 
 #: ../../bin/catalog_update.inc:80
 msgid "Importing playlist/s"
-msgstr ""
+msgstr "재생 목록 가져 오기 / s"
 
 #: ../../bin/catalog_update.inc:84
 msgid "Database table optimization"
-msgstr ""
+msgstr "데이터베이스 테이블 최적화"
 
 #: ../../bin/catalog_update.inc:101
-#, fuzzy
 msgid "Starting catalog operations..."
-msgstr "방송 시작중..."
+msgstr "카탈로그 작업 시작 중 ..."
 
 #: ../../bin/catalog_update.inc:107
 msgid "Deactivated PHP memory limit"
@@ -507,11 +506,11 @@ msgstr "PHP 메모리 제한을 해제했습니다"
 
 #: ../../bin/catalog_update.inc:114
 msgid "Gathering art"
-msgstr ""
+msgstr "예술 수집"
 
 #: ../../bin/catalog_update.inc:120
 msgid "Parsing playlists"
-msgstr ""
+msgstr "재생 목록 파싱"
 
 #: ../../bin/catalog_update.inc:141
 #, php-format
@@ -520,116 +519,119 @@ msgstr "카탈로그 읽는 중: %s"
 
 #: ../../bin/catalog_update.inc:147
 msgid "Start cleaning orphaned media entries"
-msgstr ""
+msgstr "고아 미디어 항목 정리 시작"
 
 #: ../../bin/catalog_update.inc:154
 msgid "Start verifying media related to catalog entries"
-msgstr ""
+msgstr "카탈로그 항목과 관련된 미디어 확인 시작"
 
 #: ../../bin/catalog_update.inc:161
 msgid "Start adding new media"
-msgstr ""
+msgstr "새 미디어 추가 시작"
 
 #: ../../bin/catalog_update.inc:168
 msgid "Start searching new media art"
-msgstr ""
+msgstr "새로운 미디어 아트 검색 시작"
 
 #: ../../bin/catalog_update.inc:176
 msgid "Optimizing database tables"
-msgstr ""
+msgstr "데이터베이스 테이블 최적화"
 
 #: ../../bin/catalog_update.inc:201
-#, fuzzy
 msgid "- Catalog Update Help -"
-msgstr "카탈로그 수정됨"
+msgstr "- 카탈로그 업데이트 도움말 -"
 
 #: ../../bin/catalog_update.inc:203
 msgid ""
-"Usage: catalog_update.inc [-n CATALOG NAME] [-t CATALOG TYPE] [-h|-m|-c|-v|-"
-"a|-g|-i|-o]"
+"Usage: catalog_update.inc [-n CATALOG NAME] [-t CATALOG TYPE] "
+"[-h|-m|-c|-v|-a|-g|-i|-o]"
 msgstr ""
+"사용법 : catalog_update.inc [-n CATALOG NAME] [-t CATALOG TYPE] [-h | -m | -c |"
+" -v | -a | -g | -i | -o]"
 
 #: ../../bin/catalog_update.inc:207
 msgid ""
 "Default behavior is to do all except temporarily deactivate the php memory "
 "limit"
-msgstr ""
+msgstr "기본 동작은 PHP 메모리 제한을 일시적으로 비활성화하는 것을 제외하고 모두 수행하는 것입니다."
 
 #: ../../bin/catalog_update.inc:211
 msgid "This help message"
-msgstr ""
+msgstr "이 도움말 메시지"
 
 #: ../../bin/catalog_update.inc:213
 msgid "Name of Catalog (Optional)"
-msgstr ""
+msgstr "카탈로그 이름 (선택 사항)"
 
 #: ../../bin/catalog_update.inc:215
 msgid "Type of Catalog (Optional)"
-msgstr ""
+msgstr "카탈로그 유형 (선택 사항)"
 
 #: ../../bin/catalog_update.inc:217
-#, fuzzy
 msgid "Temporarily deactivates PHP memory limit."
-msgstr "일시적으로 PHP 메모리 제한 해제"
+msgstr "일시적으로 PHP 메모리 제한을 비활성화합니다."
 
 #: ../../bin/catalog_update.inc:219
 msgid "Cleans catalogs from orphaned entries."
-msgstr ""
+msgstr "고아 항목에서 카탈로그를 지 웁니다."
 
 #: ../../bin/catalog_update.inc:221
 msgid ""
 "Verifies catalog entries and updates them if related files have new "
 "information."
-msgstr ""
+msgstr "관련 파일에 새로운 정보가있는 경우 카탈로그 항목을 검증하고 업데이트합니다."
 
 #: ../../bin/catalog_update.inc:223
 msgid "Adds new media to catalogs."
-msgstr ""
+msgstr "카탈로그에 새 미디어를 추가합니다."
 
 #: ../../bin/catalog_update.inc:225
 msgid "Gathers media Art."
-msgstr ""
+msgstr "미디어 아트를 수집합니다."
 
 #: ../../bin/catalog_update.inc:227
 msgid "Imports playlists."
-msgstr ""
+msgstr "재생 목록을 가져옵니다."
 
 #: ../../bin/catalog_update.inc:229
 msgid "Optimizes Database Tables."
-msgstr ""
+msgstr "데이터베이스 테이블을 최적화합니다."
 
 #: ../../bin/catalog_update.inc:232
 msgid ""
 "Use this option at your own risk! Your system could crash or become "
 "unresponsive due to huge memory consumption!"
-msgstr ""
+msgstr "자신의 책임하에이 옵션을 사용하십시오! 막대한 메모리 사용으로 인해 시스템이 다운되거나 응답하지 않을 수 있습니다!"
 
 #: ../../bin/catalog_update.inc:233
 msgid ""
-"Depending on your systems performance, this option could need a long time to "
-"finish and extremely slow down other database processes if you have big "
+"Depending on your systems performance, this option could need a long time to"
+" finish and extremely slow down other database processes if you have big "
 "catalogs!"
 msgstr ""
+"시스템 성능에 따라 큰 카탈로그가있는 경우이 옵션을 완료하는 데 오랜 시간이 걸리고 다른 데이터베이스 프로세스의 속도가 매우 느려질 수 "
+"있습니다!"
 
 #: ../../bin/catalog_update.inc:234
 msgid ""
-"The switches [-m|-i|-o] can only be used, if one of the other switches [-c|-"
-"v|-a|-g] is used."
+"The switches [-m|-i|-o] can only be used, if one of the other switches "
+"[-c|-v|-a|-g] is used."
 msgstr ""
+"다른 스위치 [-c | -v | -a | -g] 중 하나를 사용하는 경우에만 스위치 [-m | -i | -o]를 사용할 수 있습니다."
 
 #: ../../bin/delete_disabled.inc:37
 msgid "DEBUG ENABLED WILL NOT DELETE FILES!"
-msgstr ""
+msgstr "DEBUG ENABLED는 파일을 삭제하지 않을 것입니다!"
 
 #: ../../bin/delete_disabled.inc:45
 #, php-format
 msgid "Would Delete: %s"
-msgstr ""
+msgstr "겠습니까 삭제 : %s"
 
 #: ../../bin/delete_disabled.inc:49
-#, fuzzy, php-format
+#, php-format
 msgid "Deleting: %s"
-msgstr "삭제 요청"
+msgstr "삭제 중 : %s"
 
 #: ../../bin/fix_filenames.inc:42
 msgid "ERROR: Iconv required for this functionality, quitting"
@@ -638,95 +640,95 @@ msgstr "오류: 이 기능이 정상 동작하려면 iconv가 필요합니다"
 #: ../../bin/fix_filenames.inc:51
 #, php-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: ../../bin/fix_filenames.inc:52
 msgid "Testing Basic Translation, the two strings below should look the same"
-msgstr ""
+msgstr "기본 번역 테스트하기, 아래의 두 문자열은 똑같아 야합니다."
 
 #: ../../bin/fix_filenames.inc:54
 msgid "Original: For the Love of Music"
-msgstr ""
+msgstr "원본 : 음악의 사랑을 위해"
 
 #: ../../bin/fix_filenames.inc:56
 #, php-format
 msgid "Translated: %s"
-msgstr ""
+msgstr "번역본 : %s"
 
 #: ../../bin/fix_filenames.inc:59
 #, php-format
 msgid "Input Charset (%s):"
-msgstr ""
+msgstr "입력 문자셋 (%s) :"
 
 #: ../../bin/fix_filenames.inc:63
 #, php-format
 msgid "Using %s as source character set"
-msgstr ""
+msgstr "원본 문자 집합으로 %s 사용"
 
 #: ../../bin/fix_filenames.inc:72
 #, php-format
 msgid "Checking %s (%s)"
-msgstr ""
+msgstr "%s (%s) 확인"
 
 #: ../../bin/fix_filenames.inc:78
 msgid "Finished checking file names for valid characters"
-msgstr ""
+msgstr "유효한 문자의 파일 이름 확인 완료"
 
 #: ../../bin/fix_filenames.inc:104
 #, php-format
 msgid "ERROR: Unable to open %s"
-msgstr ""
+msgstr "오류 : %s를 열 수 없습니다."
 
 #: ../../bin/fix_filenames.inc:110
 #, php-format
 msgid "ERROR: Unable to chdir to %s"
-msgstr ""
+msgstr "오류 : %s로 채울 수 없습니다."
 
 #: ../../bin/fix_filenames.inc:133
 msgid "Translation failure, stripping non-valid characters"
-msgstr ""
+msgstr "번역 오류, 유효하지 않은 문자 제거"
 
 #: ../../bin/fix_filenames.inc:138
 #, php-format
 msgid "Attempting to Transcode to %s"
-msgstr ""
+msgstr "%s로 변환하려고합니다."
 
 #: ../../bin/fix_filenames.inc:141
 #, php-format
 msgid "OLD: %s has invalid chars"
-msgstr ""
+msgstr "이전 : %s에 잘못된 문자가 있습니다."
 
 #: ../../bin/fix_filenames.inc:143
 #, php-format
 msgid "NEW: %s"
-msgstr ""
+msgstr "새로운 기능 : %s"
 
 #: ../../bin/fix_filenames.inc:147
 msgid "Rename File (Y/N):"
-msgstr ""
+msgstr "파일 이름 바꾸기 (Y / N) :"
 
 #: ../../bin/fix_filenames.inc:150
 msgid "Not Renaming..."
-msgstr ""
+msgstr "이름을 변경하지 않음 ..."
 
 #: ../../bin/fix_filenames.inc:184
 #, php-format
 msgid "Error: Unable to create %s move failed, stopping"
-msgstr ""
+msgstr "오류 : %s 이동을 만들지 못했습니다. 중지되었습니다."
 
 #: ../../bin/fix_filenames.inc:196
 msgid "Error: Copy Failed, not deleting old file"
-msgstr ""
+msgstr "오류 : 이전 파일을 삭제하지 않고 복사하지 못했습니다."
 
 #: ../../bin/fix_filenames.inc:205 ../../bin/sort_files.inc:289
 #, php-format
 msgid "Error: Size Inconsistency, not deleting %s"
-msgstr ""
+msgstr "오류 : 크기 불일치, 삭제 안 함 %s"
 
 #: ../../bin/fix_filenames.inc:212 ../../bin/sort_files.inc:296
-#, fuzzy, php-format
+#, php-format
 msgid "Error: Unable to delete %s"
-msgstr "마지막 관리자는 삭제할 수 없습니다"
+msgstr "오류 : %s을 (를) 삭제할 수 없습니다."
 
 #: ../../bin/fix_filenames.inc:214
 msgid "File Moved..."
@@ -735,36 +737,35 @@ msgstr "파일 이동됨..."
 #: ../../bin/install/add_user.inc:50
 #, php-format
 msgid "Created %s user %s with password %s"
-msgstr ""
+msgstr "암호 %s로 %s 사용자 %s 생성"
 
 #: ../../bin/install/add_user.inc:54
-#, fuzzy
 msgid "User creation failed"
-msgstr "사용자 활성화됨"
+msgstr "사용자 생성 실패"
 
 #: ../../bin/install/install_db.inc:68
 msgid "Existing Ampache installation found."
-msgstr ""
+msgstr "기존 Ampache 설치가 발견되었습니다."
 
 #: ../../bin/install/install_db.inc:70
 msgid "Force specified, proceeding anyway."
-msgstr ""
+msgstr "강제 지정, 계속 진행."
 
 #: ../../bin/install/install_db.inc:73
 msgid "Exiting."
-msgstr ""
+msgstr "나가기."
 
 #: ../../bin/install/install_db.inc:89
 msgid "Database creation failed"
-msgstr ""
+msgstr "데이터베이스를 만들지 못했습니다."
 
 #: ../../bin/install/install_db.inc:101
 msgid "Config file creation failed"
-msgstr ""
+msgstr "구성 파일 만들기 실패"
 
 #: ../../bin/install/update_db.inc:44 ../../update.php:82
 msgid "The following updates need to be performed:"
-msgstr ""
+msgstr "다음 업데이트를 수행해야합니다."
 
 #: ../../bin/migrate_config.inc:50
 msgid "Parsing old config file..."
@@ -779,179 +780,172 @@ msgid "Write success, config migrated"
 msgstr "쓰기 성공. 설정이 마이그레이션 되었습니다"
 
 #: ../../bin/migrate_config.inc:92
-#, fuzzy
 msgid "Access Denied, config migration failed"
-msgstr "쓰기 성공. 설정이 마이그레이션 되었습니다"
+msgstr "액세스가 거부되었습니다. 구성 마이그레이션에 실패했습니다."
 
 #: ../../bin/print_tags.inc:37
 msgid "File not found."
-msgstr ""
+msgstr "파일을 찾을 수 없습니다."
 
 #: ../../bin/print_tags.inc:43
-#, fuzzy, php-format
+#, php-format
 msgid "Reading: %s"
-msgstr "카탈로그 읽는 중: %s"
+msgstr "읽기 : %s"
 
 #: ../../bin/print_tags.inc:58
 #, php-format
 msgid "Using: %s AND %s for file pattern matching"
-msgstr ""
+msgstr "사용 : 파일 패턴 일치를 위해 %s 및 %s"
 
 #: ../../bin/print_tags.inc:67
 msgid "Raw results:"
-msgstr ""
+msgstr "원시 결과 :"
 
 #: ../../bin/print_tags.inc:71
 #, php-format
 msgid "Final results seen by Ampache using %s:"
-msgstr ""
+msgstr "%s를 사용한 Ampache의 최종 결과 :"
 
 #: ../../bin/print_tags.inc:78
 #, php-format
 msgid "%s Version %s"
-msgstr ""
+msgstr "%s 버전 %s"
 
 #: ../../bin/print_tags.inc:80
 msgid "Usage:"
-msgstr ""
+msgstr "용법:"
 
 #: ../../bin/print_tags.inc:82
 msgid "php print_tags.inc <Filename>"
-msgstr ""
+msgstr "PHP print_tags.inc <Filename>"
 
 #: ../../bin/sort_files.inc:61
-#, fuzzy, php-format
+#, php-format
 msgid "Starting Catalog: %s"
-msgstr "카탈로그 읽는 중: %s"
+msgstr "카탈로그 시작 : %s"
 
 #: ../../bin/sort_files.inc:75
 msgid "Moving File..."
-msgstr ""
+msgstr "파일 이동 중 ..."
 
 #: ../../bin/sort_files.inc:77
 #, php-format
 msgid "Source: %s"
-msgstr ""
+msgstr "출처 : %s"
 
 #: ../../bin/sort_files.inc:79
 #, php-format
 msgid "Dest: %s"
-msgstr ""
+msgstr "도착 : %s"
 
 #: ../../bin/sort_files.inc:230
 #, php-format
 msgid "Making %s Directory"
-msgstr ""
+msgstr "%s 디렉토리 만들기"
 
 #: ../../bin/sort_files.inc:237
-#, fuzzy, php-format
+#, php-format
 msgid "Error: Unable to create %s move failed"
-msgstr "오류: 이름 지정되지 않음"
+msgstr "오류 : %s 이동을 만들지 못했습니다."
 
 #. HINT: %1$s: file, %2$s: directory
 #: ../../bin/sort_files.inc:250
 #, php-format
 msgid "Copying %1$s to %2$s"
-msgstr ""
+msgstr "%1$s를 %2$s에 복사 중"
 
 #: ../../bin/sort_files.inc:261
-#, fuzzy, php-format
+#, php-format
 msgid "Error: %s already exists"
-msgstr "오류 사용자 이름이 이미 존재합니다"
+msgstr "오류 : %s가 이미 있습니다."
 
 #: ../../bin/sort_files.inc:282
 #, php-format
 msgid "Error: Unable to copy file to %s"
-msgstr ""
+msgstr "오류 : 파일을 %s에 복사 할 수 없습니다."
 
 #: ../../bin/write_playlists.inc:43
 #, php-format
 msgid "Error: Directory %s is not writable"
-msgstr ""
+msgstr "오류 : 디렉터리 %s에 쓸 수 없습니다."
 
 #: ../../bin/write_playlists.inc:96
 msgid "This will dump a collection of playlists files based on type"
-msgstr ""
+msgstr "이렇게하면 유형에 따른 재생 목록 파일 모음이 덤프됩니다."
 
 #: ../../bin/write_playlists.inc:97
 msgid "Types:"
-msgstr ""
+msgstr "유형 :"
 
 #: ../../bin/write_playlists.inc:98
 msgid "Dumps all of your Playlists"
-msgstr ""
+msgstr "모든 재생 목록을 덤프합니다."
 
 #: ../../bin/write_playlists.inc:99
 msgid "Dumps all Albums as individual playlists"
-msgstr ""
+msgstr "모든 앨범을 개별 재생 목록으로 덤프합니다."
 
 #: ../../bin/write_playlists.inc:100
 msgid "Dumps all Artists as individual playlists"
-msgstr ""
+msgstr "모든 아티스트를 개별 재생 목록으로 덤프합니다."
 
 #: ../../bin/write_playlists.inc:101
 msgid "Extensions: m3u (default), xspf, pls"
-msgstr ""
+msgstr "확장 기능 : m3u (기본값), xspf, pls"
 
 #: ../../browse.php:85 ../../lib/class/browse.class.php:257
 #: ../../templates/header.inc.php:415 ../../templates/sidebar_home.inc.php:40
 #: ../../templates/sidebar.light.inc.php:30
 msgid "Tag Cloud"
-msgstr ""
+msgstr "태그 클라우드"
 
 #: ../../democratic.php:57
-#, fuzzy
 msgid "The Requested Playlist has been deleted."
-msgstr "프로필 이미지가 삭제되었습니다"
+msgstr "요청한 재생 목록이 삭제되었습니다."
 
 #: ../../install.php:121
 msgid "Error: Ampache SQL Username or Password missing"
-msgstr ""
+msgstr "오류 : Ampache SQL 사용자 이름 또는 암호가 누락되었습니다."
 
 #: ../../install.php:170
 msgid "Error: Config files not found or unreadable"
-msgstr ""
+msgstr "오류 : 구성 파일을 찾을 수 없거나 읽을 수 없습니다."
 
 #: ../../labels.php:36 ../../labels.php:56 ../../labels.php:58
-#, fuzzy
 msgid "Label Deletion"
-msgstr "앨범 삭제"
+msgstr "라벨 삭제"
 
 #: ../../labels.php:37
-#, fuzzy
 msgid "Are you sure you want to permanently delete this label?"
-msgstr "정말 이 앨범을 삭제하시겠습니까?"
+msgstr "이 라벨을 영구적으로 삭제 하시겠습니까?"
 
 #: ../../labels.php:56
-#, fuzzy
 msgid "Label has been deleted."
-msgstr "앨범이 삭제되었습니다."
+msgstr "라벨이 삭제되었습니다."
 
 #: ../../labels.php:58
-#, fuzzy
 msgid "Cannot delete this label."
-msgstr "이 앨범을 삭제할 수 없습니다."
+msgstr "이 라벨을 삭제할 수 없습니다."
 
 #: ../../labels.php:85
-#, fuzzy
 msgid "Label Added"
-msgstr "추가됨"
+msgstr "추가 된 레이블"
 
 #: ../../labels.php:110
 msgid "Label cannot be found."
-msgstr ""
+msgstr "라벨을 찾을 수 없습니다."
 
 #: ../../lib/class/access.class.php:157 ../../lib/class/access.class.php:162
 msgid "Invalid IPv4 / IPv6 Address Entered"
-msgstr ""
+msgstr "잘못된 IPv4 / IPv6 주소가 입력되었습니다."
 
 #: ../../lib/class/access.class.php:166 ../../lib/class/access.class.php:167
 msgid "IP Address Version Mismatch"
-msgstr ""
+msgstr "IP 주소 버전 불일치"
 
 #: ../../lib/class/access.class.php:222
 msgid "Duplicate ACL defined"
-msgstr ""
+msgstr "중복 ACL 정의"
 
 #: ../../lib/class/access.class.php:462 ../../lib/class/access.class.php:484
 #: ../../lib/ui.lib.php:398 ../../templates/browse_filters.inc.php:89
@@ -964,27 +958,28 @@ msgstr ""
 #: ../../templates/show_mail_users.inc.php:31
 #: ../../templates/show_random.inc.php:59
 msgid "All"
-msgstr ""
+msgstr "모든"
 
-#: ../../lib/class/access.class.php:465 ../../templates/list_header.inc.php:131
+#: ../../lib/class/access.class.php:465
+#: ../../templates/list_header.inc.php:131
 #: ../../templates/show_add_access.inc.php:37
 #: ../../templates/show_edit_access.inc.php:69
 #: ../../templates/show_graphs.inc.php:83
 #: ../../templates/show_tagcloud.inc.php:33
 msgid "View"
-msgstr ""
+msgstr "전망"
 
 #: ../../lib/class/access.class.php:468
 #: ../../templates/show_add_access.inc.php:38
 #: ../../templates/show_edit_access.inc.php:70
 msgid "Read"
-msgstr ""
+msgstr "독서"
 
 #: ../../lib/class/access.class.php:471
 #: ../../templates/show_add_access.inc.php:39
 #: ../../templates/show_edit_access.inc.php:71
 msgid "Read/Write"
-msgstr ""
+msgstr "읽기 / 쓰기"
 
 #: ../../lib/class/access.class.php:502
 #: ../../templates/show_add_access.inc.php:56
@@ -993,7 +988,7 @@ msgstr ""
 #: ../../templates/show_add_access.inc.php:75
 #: ../../templates/show_edit_access.inc.php:38
 msgid "API/RPC"
-msgstr ""
+msgstr "API / RPC"
 
 #: ../../lib/class/access.class.php:504
 #: ../../templates/show_add_access.inc.php:65
@@ -1002,13 +997,13 @@ msgstr ""
 #: ../../templates/show_add_access.inc.php:74
 #: ../../templates/show_edit_access.inc.php:37
 msgid "Local Network Definition"
-msgstr ""
+msgstr "로컬 네트워크 정의"
 
 #: ../../lib/class/access.class.php:506
 #: ../../templates/show_add_access.inc.php:73
 #: ../../templates/show_edit_access.inc.php:36
 msgid "Web Interface"
-msgstr ""
+msgstr "웹 인터페이스"
 
 #: ../../lib/class/access.class.php:509
 #: ../../templates/show_add_access.inc.php:57
@@ -1016,13 +1011,13 @@ msgstr ""
 #: ../../templates/show_add_access.inc.php:72
 #: ../../templates/show_edit_access.inc.php:35
 msgid "Stream Access"
-msgstr ""
+msgstr "스트림 액세스"
 
 #: ../../lib/class/album.class.php:404 ../../lib/class/artist.class.php:680
 #: ../../templates/show_album_group_disks.inc.php:51
 #: ../../templates/show_lyrics.inc.php:32
 msgid "Unknown (Orphaned)"
-msgstr ""
+msgstr "알 수 없음 (고아원)"
 
 #: ../../lib/class/album.class.php:632
 #: ../../lib/class/subsonic_xml_data.class.php:645
@@ -1032,12 +1027,13 @@ msgstr ""
 #: ../../templates/show_edit_album_row.inc.php:67
 #: ../../templates/show_song_previews.inc.php:40
 msgid "Disk"
-msgstr ""
+msgstr "디스크"
 
 #: ../../lib/class/album.class.php:644 ../../lib/class/browse.class.php:226
 #: ../../lib/class/upnp_api.class.php:337 ../../lib/ui.lib.php:180
 #: ../../server/search.ajax.php:57 ../../templates/header.inc.php:403
-#: ../../templates/show_label.inc.php:91 ../../templates/show_labels.inc.php:47
+#: ../../templates/show_label.inc.php:91
+#: ../../templates/show_labels.inc.php:47
 #: ../../templates/show_labels.inc.php:79
 #: ../../templates/show_random.inc.php:38
 #: ../../templates/show_random.inc.php:40
@@ -1048,21 +1044,21 @@ msgstr ""
 #: ../../templates/sidebar_home.inc.php:150
 #: ../../templates/sidebar.light.inc.php:27
 msgid "Artists"
-msgstr ""
+msgstr "연예인"
 
 #: ../../lib/class/album.class.php:644 ../../lib/class/album.class.php:645
 #: ../../templates/show_edit_album_row.inc.php:38
 #: ../../templates/show_install_config.inc.php:64
 msgid "Various"
-msgstr ""
+msgstr "여러"
 
 #: ../../lib/class/album.class.php:664
 msgid "Album MusicBrainzID"
-msgstr ""
+msgstr "앨범 MusicBrainzID"
 
 #: ../../lib/class/album.class.php:667
 msgid "Release Group MusicBrainzID"
-msgstr ""
+msgstr "릴리스 그룹 MusicBrainzID"
 
 #: ../../lib/class/album.class.php:670 ../../lib/class/artist.class.php:499
 #: ../../lib/class/search.class.php:239 ../../lib/class/search.class.php:492
@@ -1093,7 +1089,7 @@ msgstr ""
 #: ../../templates/show_tagcloud.inc.php:24
 #: ../../templates/sidebar_home.inc.php:138
 msgid "Artist"
-msgstr ""
+msgstr "예술가"
 
 #: ../../lib/class/album.class.php:673 ../../lib/class/search.class.php:232
 #: ../../templates/show_add_upload.inc.php:188
@@ -1116,119 +1112,116 @@ msgstr ""
 #: ../../templates/show_tagcloud.inc.php:25
 #: ../../templates/sidebar_home.inc.php:137
 msgid "Album"
-msgstr ""
+msgstr "앨범"
 
 #: ../../lib/class/ampache_rss.class.php:92 ../../templates/header.inc.php:41
 #: ../../templates/show_now_playing.inc.php:32
-#, fuzzy
 msgid "Now Playing"
-msgstr "지금 재생중 목록 초기화됨"
+msgstr "지금 재생 중"
 
 #: ../../lib/class/ampache_rss.class.php:93 ../../templates/header.inc.php:42
 #: ../../templates/show_recently_played.inc.php:24
 #: ../../templates/show_user.inc.php:90
 msgid "Recently Played"
-msgstr ""
+msgstr "최근에 재생 된"
 
 #: ../../lib/class/ampache_rss.class.php:94 ../../templates/header.inc.php:43
 msgid "Newest Albums"
-msgstr ""
+msgstr "최신 앨범"
 
 #: ../../lib/class/ampache_rss.class.php:95 ../../templates/header.inc.php:44
 msgid "Newest Artists"
-msgstr ""
+msgstr "최신 아티스트"
 
 #: ../../lib/class/ampache_rss.class.php:96
 msgid "Newest Shouts"
-msgstr ""
+msgstr "가장 최근의 외침"
 
 #: ../../lib/class/ampache_rss.class.php:150
 msgid "RSS Feed"
-msgstr ""
+msgstr "RSS 피드"
 
 #: ../../lib/class/ampache_rss.class.php:227
 msgid "seconds ago"
-msgstr ""
+msgstr "몇 초 전"
 
 #: ../../lib/class/ampache_rss.class.php:227
 msgid "minutes ago"
-msgstr ""
+msgstr "몇분 전에"
 
 #: ../../lib/class/ampache_rss.class.php:227
 msgid "hours ago"
-msgstr ""
+msgstr "시간 전"
 
 #: ../../lib/class/ampache_rss.class.php:227
 msgid "days ago"
-msgstr ""
+msgstr "며칠 전에"
 
 #: ../../lib/class/ampache_rss.class.php:227
 msgid "weeks ago"
-msgstr ""
+msgstr "몇주 전에"
 
 #: ../../lib/class/ampache_rss.class.php:227
 msgid "months ago"
-msgstr ""
+msgstr "몇달 전"
 
 #: ../../lib/class/ampache_rss.class.php:227
 msgid "years ago"
-msgstr ""
+msgstr "여러 해 전에"
 
 #: ../../lib/class/ampache_rss.class.php:354
 #: ../../modules/plugins/Flattr/Flattr.plugin.php:91
 #: ../../modules/plugins/Paypal/Paypal.plugin.php:94
 msgid "on"
-msgstr ""
+msgstr "...에"
 
 #: ../../lib/class/ampconfig.class.php:85
 #, php-format
 msgid "Trying to clobber '%s' without setting clobber"
-msgstr ""
+msgstr "clobber를 설정하지 않고 '%s'을 (를) clobber하려고합니다."
 
 #: ../../lib/class/api.class.php:152
 msgid "Login Failed: version too old"
-msgstr ""
+msgstr "로그인 실패 : 버전이 너무 오래됨"
 
 #: ../../lib/class/api.class.php:181 ../../lib/class/api.class.php:182
 msgid "Login Failed: timestamp out of range"
-msgstr ""
+msgstr "로그인 실패 : 타임 스탬프가 범위를 벗어났습니다."
 
 #: ../../lib/class/api.class.php:182 ../../lib/class/api.class.php:195
 #: ../../lib/class/api.class.php:290
 msgid "Error Invalid Handshake - "
-msgstr ""
+msgstr "오류 잘못된 핸드 셰이크 -"
 
 #: ../../lib/class/api.class.php:194 ../../lib/class/api.class.php:195
 #: ../../lib/class/api.class.php:290
 msgid "Invalid Username/Password"
-msgstr ""
+msgstr "잘못된 사용자 이름 / 암호"
 
 #: ../../lib/class/api.class.php:669 ../../lib/class/api.class.php:687
 #: ../../lib/class/api.class.php:705
 msgid "Access denied to this playlist."
-msgstr ""
+msgstr "이 재생 목록에 대한 액세스가 거부되었습니다."
 
 #: ../../lib/class/api.class.php:817 ../../lib/class/api.class.php:835
 msgid "Media Object Invalid or Not Specified"
-msgstr ""
+msgstr "미디어 개체가 잘못되었거나 지정되지 않았습니다."
 
 #: ../../lib/class/api.class.php:857 ../../server/xml.server.php:109
-#, fuzzy
 msgid "Invalid Request"
-msgstr "삭제 요청"
+msgstr "잘못된 요청"
 
 #: ../../lib/class/api.class.php:988
 msgid "Wrong library item type."
-msgstr ""
+msgstr "라이브러리 항목 유형이 잘못되었습니다."
 
 #: ../../lib/class/api.class.php:992
 msgid "Library item not found."
-msgstr ""
+msgstr "라이브러리 항목을 찾을 수 없습니다."
 
 #: ../../lib/class/art.class.php:1330
-#, fuzzy
 msgid "Error: Unable to open"
-msgstr "오류: 이름 지정되지 않음"
+msgstr "오류 : 열 수 없습니다."
 
 #: ../../lib/class/art.class.php:1831 ../../lib/class/shoutbox.class.php:314
 #: ../../modules/plugins/CatalogFavorites/CatalogFavorites.plugin.php:121
@@ -1255,60 +1248,58 @@ msgstr "오류: 이름 지정되지 않음"
 #: ../../templates/show_song_preview_row.inc.php:28
 #: ../../templates/show_song_row.inc.php:36
 msgid "Play"
-msgstr ""
+msgstr "놀이"
 
 #: ../../lib/class/art.class.php:1840
 msgid "Edit/Find Art"
-msgstr ""
+msgstr "미술 편집 / 찾기"
 
 #: ../../lib/class/art.class.php:1843
-#, fuzzy
 msgid "Do you really want to reset art?"
-msgstr "정말 이 카탈로그를 삭제하시겠습니까?"
+msgstr "예술을 재설정하고 싶습니까?"
 
 #: ../../lib/class/art.class.php:1844
 msgid "Reset Art"
-msgstr ""
+msgstr "예술 재설정"
 
 #: ../../lib/class/artist.class.php:496
 msgid "Artist MusicBrainzID"
-msgstr ""
+msgstr "아티스트 MusicBrainzID"
 
 #: ../../lib/class/autoupdate.class.php:234
 msgid "Update available"
-msgstr ""
+msgstr "사용 가능한 업데이트"
 
 #: ../../lib/class/autoupdate.class.php:237
 msgid "See"
-msgstr ""
+msgstr "만나다"
 
 #: ../../lib/class/autoupdate.class.php:237
 msgid "changes"
-msgstr ""
+msgstr "변화들"
 
 #: ../../lib/class/autoupdate.class.php:239
 #: ../../lib/class/autoupdate.class.php:242
 msgid "or"
-msgstr ""
+msgstr "또는"
 
 #: ../../lib/class/autoupdate.class.php:240
 #: ../../lib/class/autoupdate.class.php:243
 msgid "download"
-msgstr ""
+msgstr "다운로드"
 
 #: ../../lib/class/autoupdate.class.php:257
 msgid "Updating Ampache sources with `"
-msgstr ""
+msgstr "`Ampache 소스를`"
 
 #: ../../lib/class/autoupdate.class.php:261
 #: ../../lib/class/autoupdate.class.php:276
-#, fuzzy
 msgid "Done"
-msgstr "완료"
+msgstr "끝난"
 
 #: ../../lib/class/autoupdate.class.php:272
 msgid "Updating dependencies with `"
-msgstr ""
+msgstr "`"
 
 #: ../../lib/class/browse.class.php:204 ../../lib/class/browse.class.php:269
 #: ../../lib/class/upnp_api.class.php:385 ../../server/index.ajax.php:218
@@ -1316,7 +1307,8 @@ msgstr ""
 #: ../../templates/show_albums.inc.php:115
 #: ../../templates/show_artists.inc.php:42
 #: ../../templates/show_artists.inc.php:116
-#: ../../templates/show_label.inc.php:92 ../../templates/show_label.inc.php:107
+#: ../../templates/show_label.inc.php:92
+#: ../../templates/show_label.inc.php:107
 #: ../../templates/show_manage_democratic.inc.php:31
 #: ../../templates/show_random.inc.php:28
 #: ../../templates/show_random.inc.php:30
@@ -1327,7 +1319,7 @@ msgstr ""
 #: ../../templates/show_stats.inc.php:35 ../../templates/show_stats.inc.php:73
 #: ../../templates/sidebar_home.inc.php:148
 msgid "Songs"
-msgstr ""
+msgstr "노래들"
 
 #: ../../lib/class/browse.class.php:210 ../../lib/class/upnp_api.class.php:361
 #: ../../lib/ui.lib.php:176 ../../server/search.ajax.php:90
@@ -1346,10 +1338,9 @@ msgstr ""
 #: ../../templates/sidebar_home.inc.php:149
 #: ../../templates/sidebar.light.inc.php:28
 msgid "Albums"
-msgstr ""
+msgstr "앨범"
 
 #: ../../lib/class/browse.class.php:222
-#, fuzzy
 msgid "Users"
 msgstr "사용자"
 
@@ -1357,48 +1348,48 @@ msgstr "사용자"
 #: ../../templates/sidebar_home.inc.php:45
 #: ../../templates/sidebar.light.inc.php:33
 msgid "Radio Stations"
-msgstr ""
+msgstr "라디오 방송국"
 
 #: ../../lib/class/browse.class.php:236 ../../lib/class/upnp_api.class.php:409
 #: ../../server/search.ajax.php:148 ../../templates/header.inc.php:409
-#: ../../templates/show_user.inc.php:96 ../../templates/sidebar_home.inc.php:41
+#: ../../templates/show_user.inc.php:96
+#: ../../templates/sidebar_home.inc.php:41
 #: ../../templates/sidebar_home.inc.php:151
 #: ../../templates/sidebar.light.inc.php:29
 msgid "Playlists"
-msgstr ""
+msgstr "재생 목록"
 
 #: ../../lib/class/browse.class.php:240
 msgid "Playlist Medias"
-msgstr ""
+msgstr "재생 목록 미디어"
 
 #: ../../lib/class/browse.class.php:244 ../../lib/class/upnp_api.class.php:433
 #: ../../templates/sidebar_home.inc.php:42
 msgid "Smart Playlists"
-msgstr ""
+msgstr "스마트 재생 목록"
 
 #: ../../lib/class/browse.class.php:248 ../../templates/show_stats.inc.php:27
 #: ../../templates/sidebar_admin.inc.php:24
-#, fuzzy
 msgid "Catalogs"
-msgstr "카탈로그 종류"
+msgstr "카탈로그"
 
 #: ../../lib/class/browse.class.php:252
 msgid "Shoutbox Records"
-msgstr ""
+msgstr "Shoutbox 레코드"
 
 #: ../../lib/class/browse.class.php:261
 #: ../../templates/show_democratic.inc.php:23
 msgid "Democratic Playlist"
-msgstr ""
+msgstr "민주당 재생 목록"
 
 #: ../../lib/class/browse.class.php:265
 #: ../../templates/sidebar_home.inc.php:114
 msgid "Shared Objects"
-msgstr ""
+msgstr "공유 객체"
 
 #: ../../lib/class/browse.class.php:273
 msgid "Media Licenses"
-msgstr ""
+msgstr "미디어 라이선스"
 
 #: ../../lib/class/browse.class.php:277 ../../server/search.ajax.php:178
 #: ../../templates/show_artist.inc.php:211
@@ -1406,32 +1397,32 @@ msgstr ""
 #: ../../templates/show_edit_artist_row.inc.php:61
 #: ../../templates/sidebar_home.inc.php:37
 msgid "Labels"
-msgstr ""
+msgstr "레이블"
 
 #: ../../lib/class/browse.class.php:281
 msgid "Private Messages"
-msgstr ""
+msgstr "비공개 메시지"
 
 #: ../../lib/class/browse.class.php:285 ../../lib/class/upnp_api.class.php:481
 #: ../../templates/sidebar_home.inc.php:50
 msgid "Podcasts"
-msgstr ""
+msgstr "포드 캐스트"
 
 #: ../../lib/class/browse.class.php:289
 msgid "Podcast Episodes"
-msgstr ""
+msgstr "팟 캐스트 에피소드"
 
 #: ../../lib/class/browse.class.php:330 ../../templates/rightbar.inc.php:123
 #: ../../templates/show_recently_played.inc.php:156
 msgid "More"
-msgstr ""
+msgstr "더"
 
 #: ../../lib/class/catalog.class.php:518 ../../lib/class/catalog.class.php:521
 #: ../../lib/class/catalog.class.php:524 ../../lib/class/user.class.php:1017
 #: ../../lib/preferences.php:303 ../../templates/show_user.inc.php:23
 #: ../../templates/show_users.inc.php:71
 msgid "Never"
-msgstr ""
+msgstr "못"
 
 #: ../../lib/class/catalog.class.php:604
 msgid "day"
@@ -1445,46 +1436,45 @@ msgstr[0] ""
 
 #: ../../lib/class/catalog.class.php:651
 msgid "Catalog Insert Failed check debug logs"
-msgstr ""
+msgstr "카탈로그 삽입 디버그 로그 검사 실패"
 
 #: ../../lib/class/catalog.class.php:1407
-#, fuzzy
 msgid "No Update Needed"
-msgstr "수정됨"
+msgstr "업데이트 필요 없음"
 
 #: ../../lib/class/catalog.class.php:1688
-#, fuzzy, php-format
+#, php-format
 msgid "Catalog Clean Done. %d file removed."
 msgid_plural "Catalog Clean Done. %d files removed."
-msgstr[0] "카탈로그 청소 시작됨"
+msgstr[0] ""
 
 #: ../../lib/class/catalog.class.php:1713
 #, php-format
 msgid "Catalog Verify Done. %d of %d files updated."
-msgstr ""
+msgstr "완료 확인 카탈로그. %d 개의 파일 중 %d이 업데이트되었습니다."
 
 #: ../../lib/class/catalog.class.php:1925
 msgid "Failed to create playlist."
-msgstr ""
+msgstr "재생 목록을 만들지 못했습니다."
 
 #: ../../lib/class/catalog.class.php:1942
 msgid "No valid songs found in playlist file."
-msgstr ""
+msgstr "재생 목록 파일에 유효한 노래가 없습니다."
 
 #: ../../lib/class/catalog.class.php:2298
 msgid ""
 "This subdirectory is not part of an existing catalog. Update cannot be "
 "processed."
-msgstr ""
+msgstr "이 서브 디렉토리는 기존 카탈로그의 일부가 아닙니다. 업데이트를 처리 할 수 없습니다."
 
 #: ../../lib/class/democratic.class.php:153
 #: ../../templates/show_create_democratic.inc.php:36
 msgid "minutes"
-msgstr ""
+msgstr "의사록"
 
 #: ../../lib/class/democratic.class.php:154
 msgid "Primary"
-msgstr ""
+msgstr "행성"
 
 #: ../../lib/class/democratic.class.php:164
 #: ../../templates/show_add_user.inc.php:87
@@ -1492,61 +1482,59 @@ msgstr ""
 #: ../../templates/show_edit_user.inc.php:111
 #: ../../templates/show_preference_box.inc.php:81
 msgid "Content Manager"
-msgstr ""
+msgstr "콘텐츠 관리자"
 
 #: ../../lib/class/democratic.class.php:167
 #: ../../templates/show_add_user.inc.php:88
 #: ../../templates/show_create_democratic.inc.php:50
 #: ../../templates/show_edit_user.inc.php:112
 #: ../../templates/show_preference_box.inc.php:82
-#, fuzzy
 msgid "Catalog Manager"
-msgstr "카탈로그 수정됨"
+msgstr "카탈로그 매니저"
 
 #: ../../lib/class/label.class.php:153 ../../lib/class/search.class.php:260
 #: ../../templates/show_edit_song_row.inc.php:81
 #: ../../templates/show_labels.inc.php:45
-#: ../../templates/show_labels.inc.php:77 ../../templates/show_song.inc.php:151
+#: ../../templates/show_labels.inc.php:77
+#: ../../templates/show_song.inc.php:151
 msgid "Label"
-msgstr ""
+msgstr "상표"
 
 #: ../../lib/class/live_stream.class.php:192
 #: ../../lib/class/live_stream.class.php:229
-#, fuzzy
 msgid "Name Required"
-msgstr "오류 사용자 이름이 필요합니다"
+msgstr "이름 (필수"
 
 #: ../../lib/class/live_stream.class.php:200
 msgid "Invalid URL must be mms:// , https:// or http://"
-msgstr ""
+msgstr "잘못된 URL은 mms : //, https : // 또는 http : //이어야합니다."
 
 #: ../../lib/class/live_stream.class.php:206
 #: ../../lib/class/live_stream.class.php:240
 #: ../../lib/class/live_stream.class.php:246
 msgid "Invalid URL must be http:// or https://"
-msgstr ""
+msgstr "잘못된 URL은 http : // 또는 https : //이어야합니다."
 
 #: ../../lib/class/live_stream.class.php:232
 msgid "Codec (eg. MP3, OGG...) Required"
-msgstr ""
+msgstr "코덱 (예 : MP3, OGG ...) 필수"
 
 #: ../../lib/class/live_stream.class.php:253
-#, fuzzy
 msgid "Invalid Catalog"
-msgstr "카탈로그 삭제"
+msgstr "카탈로그가 잘못되었습니다."
 
 #: ../../lib/class/playlist.class.php:138
-#: ../../lib/class/playlist.class.php:139 ../../lib/class/podcast.class.php:291
-#: ../../lib/class/user.class.php:1024 ../../templates/show_user.inc.php:24
-#: ../../templates/show_users.inc.php:72
+#: ../../lib/class/playlist.class.php:139
+#: ../../lib/class/podcast.class.php:291 ../../lib/class/user.class.php:1024
+#: ../../templates/show_user.inc.php:24 ../../templates/show_users.inc.php:72
 msgid "Unknown"
-msgstr ""
+msgstr "알 수 없는"
 
 #: ../../lib/class/playlist_object.abstract.php:70
 #: ../../templates/show_edit_playlist_row.inc.php:37
 #: ../../templates/show_edit_search_row.inc.php:37
 msgid "Private"
-msgstr ""
+msgstr "은밀한"
 
 #: ../../lib/class/podcast.class.php:173
 #: ../../lib/class/podcast_episode.class.php:154
@@ -1557,28 +1545,27 @@ msgstr ""
 #: ../../templates/show_podcast_episodes.inc.php:89
 #: ../../templates/show_podcast.inc.php:92
 msgid "Podcast"
-msgstr ""
+msgstr "팟 캐스트"
 
 #: ../../lib/class/podcast.class.php:274
 msgid "Wrong feed url"
-msgstr ""
+msgstr "잘못된 피드 URL"
 
 #: ../../lib/class/podcast.class.php:279
 msgid "Target catalog required"
-msgstr ""
+msgstr "대상 카탈로그 필요"
 
 #: ../../lib/class/podcast.class.php:283
-#, fuzzy
 msgid "Wrong target catalog type"
-msgstr "오류: 카탈로그 타입을 선택하세요"
+msgstr "잘못된 대상 카탈로그 유형"
 
 #: ../../lib/class/podcast.class.php:303
 msgid "Cannot access the feed."
-msgstr ""
+msgstr "피드에 액세스 할 수 없습니다."
 
 #: ../../lib/class/podcast.class.php:307
 msgid "Cannot read the feed."
-msgstr ""
+msgstr "피드를 읽을 수 없습니다."
 
 #: ../../lib/class/podcast_episode.class.php:157
 #: ../../lib/class/search.class.php:225 ../../lib/class/search.class.php:485
@@ -1600,20 +1587,19 @@ msgstr ""
 #: ../../templates/show_podcasts.inc.php:99
 #: ../../templates/show_song.inc.php:137
 msgid "Title"
-msgstr ""
+msgstr "표제"
 
 #: ../../lib/class/privatemsg.class.php:143
-#, fuzzy
 msgid "Error: Subject Required"
-msgstr "오류 사용자 이름이 필요합니다"
+msgstr "오류 : 제목 필요"
 
 #: ../../lib/class/privatemsg.class.php:148
 msgid "Error: Unknown user"
-msgstr ""
+msgstr "오류 : 알 수없는 사용자"
 
 #: ../../lib/class/privatemsg.class.php:168
 msgid "Private Message"
-msgstr ""
+msgstr "사신"
 
 #: ../../lib/class/privatemsg.class.php:169
 #, php-format
@@ -1628,15 +1614,24 @@ msgid ""
 "        %s\n"
 "        "
 msgstr ""
+"%s에서 새 비공개 메시지를 방금 받았습니다.\n"
+"\n"
+"\n"
+"        ----------------------\n"
+"        %s\n"
+"        ----------------------\n"
+"\n"
+"        %s\n"
+"        "
 
 #: ../../lib/class/query.class.php:100
 msgid "Browse not found or expired, try reloading the page"
-msgstr ""
+msgstr "찾아보기가 없거나 만료되었습니다. 페이지를 다시로드하십시오."
 
 #: ../../lib/class/registration.class.php:53
 #, php-format
 msgid "New User Registration at %s"
-msgstr ""
+msgstr "새 사용자 등록 (%s)"
 
 #: ../../lib/class/registration.class.php:55
 #, php-format
@@ -1644,19 +1639,30 @@ msgid ""
 "Thank you for registering\n"
 "\n"
 "\n"
-"Please keep this e-mail for your records. Your account information is as "
-"follows:\n"
+"Please keep this e-mail for your records. Your account information is as follows:\n"
 "----------------------\n"
 "Username: %s\n"
 "----------------------\n"
 "\n"
-"Your account is currently inactive. You cannot use it until you've visited "
-"the following link:\n"
+"Your account is currently inactive. You cannot use it until you've visited the following link:\n"
 "\n"
 "%s\n"
 "\n"
 "Thank you for registering\n"
 msgstr ""
+"등록 해 주셔서 감사합니다.\n"
+"\n"
+"\n"
+"기록을 남기려면이 전자 메일을 보관하십시오. 귀하의 계정 정보는 다음과 같습니다 :\n"
+"----------------------\n"
+"사용자 이름 : %s\n"
+"----------------------\n"
+"\n"
+"귀하의 계정은 현재 비활성 상태입니다. 다음 링크를 방문 할 때까지 사용할 수 없습니다.\n"
+"\n"
+"%s\n"
+"\n"
+"등록 해 주셔서 감사합니다.\n"
 
 #: ../../lib/class/registration.class.php:77
 #, php-format
@@ -1670,11 +1676,19 @@ msgid ""
 "Website: %s\n"
 "\n"
 msgstr ""
+"새로운 사용자가 등록되었습니다.\n"
+"다음 값이 입력되었습니다.\n"
+"\n"
+"사용자 이름 : %s\n"
+"전체 이름 : %s\n"
+"전자 메일 : %s\n"
+"웹 사이트 : %s\n"
+"\n"
 
 #: ../../lib/class/registration.class.php:104
 #, php-format
 msgid "Account enabled at %s"
-msgstr ""
+msgstr "계정이 %s에서 활성화되었습니다."
 
 #: ../../lib/class/registration.class.php:105
 #, php-format
@@ -1684,90 +1698,94 @@ msgid ""
 "\n"
 "            Please logon using %s"
 msgstr ""
+"귀하의 계정 %s가 활성화되었습니다.\n"
+"\n"
+"\n"
+"            %s를 사용하여 로그온하십시오."
 
 #: ../../lib/class/search.class.php:62
 msgid "is greater than or equal to"
-msgstr ""
+msgstr "~보다 크거나 같음"
 
 #: ../../lib/class/search.class.php:68
 msgid "is less than or equal to"
-msgstr ""
+msgstr "보다 작거나 같음"
 
 #: ../../lib/class/search.class.php:74 ../../lib/class/search.class.php:144
 #: ../../lib/class/search.class.php:163 ../../lib/class/search.class.php:176
 msgid "is"
-msgstr ""
+msgstr "~이다."
 
 #: ../../lib/class/search.class.php:80 ../../lib/class/search.class.php:169
 #: ../../lib/class/search.class.php:182
 msgid "is not"
-msgstr ""
+msgstr "아니다"
 
 #: ../../lib/class/search.class.php:86
 msgid "is greater than"
-msgstr ""
+msgstr "~보다 큼"
 
 #: ../../lib/class/search.class.php:92
 msgid "is less than"
-msgstr ""
+msgstr "~보다 작다"
 
 #: ../../lib/class/search.class.php:99
 msgid "is true"
-msgstr ""
+msgstr "사실이다"
 
 #: ../../lib/class/search.class.php:105
 msgid "is false"
-msgstr ""
+msgstr "거짓이다"
 
 #: ../../lib/class/search.class.php:112
 msgid "contains"
-msgstr ""
+msgstr "~을 포함하다"
 
 #: ../../lib/class/search.class.php:120
 msgid "does not contain"
-msgstr ""
+msgstr "포함되어 있지 않다"
 
 #: ../../lib/class/search.class.php:128
 msgid "starts with"
-msgstr ""
+msgstr "~로 시작하다"
 
 #: ../../lib/class/search.class.php:136
 msgid "ends with"
-msgstr ""
+msgstr "로 끝나다"
 
 #: ../../lib/class/search.class.php:150
 msgid "sounds like"
-msgstr ""
+msgstr "~처럼 들리다"
 
 #: ../../lib/class/search.class.php:156
 msgid "does not sound like"
-msgstr ""
+msgstr "소리가 나지 않는다."
 
 #: ../../lib/class/search.class.php:189
 msgid "before"
-msgstr ""
+msgstr "전에"
 
 #: ../../lib/class/search.class.php:195
 msgid "after"
-msgstr ""
+msgstr "후"
 
 #: ../../lib/class/search.class.php:202
 msgid "before (x) days ago"
-msgstr ""
+msgstr "before (x) 일 전"
 
 #: ../../lib/class/search.class.php:208
 msgid "after (x) days ago"
-msgstr ""
+msgstr "after (x) 일 전"
 
 #: ../../lib/class/search.class.php:218
 msgid "Any searchable text"
-msgstr ""
+msgstr "검색 가능한 텍스트"
 
 #: ../../lib/class/search.class.php:246
 #: ../../templates/show_edit_song_row.inc.php:73
 #: ../../templates/show_song.inc.php:143
 msgid "Composer"
-msgstr ""
+msgstr "작곡가"
 
 #: ../../lib/class/search.class.php:253
 #: ../../templates/show_edit_song_row.inc.php:77
@@ -1775,17 +1793,16 @@ msgstr ""
 #: ../../templates/show_manage_shoutbox.inc.php:62
 #: ../../templates/show_song.inc.php:150
 msgid "Comment"
-msgstr ""
+msgstr "논평"
 
 #: ../../lib/class/search.class.php:268 ../../lib/class/search.class.php:577
 #: ../../lib/class/search.class.php:611 ../../lib/class/tag.class.php:740
 msgid "Tag"
-msgstr ""
+msgstr "꼬리표"
 
 #: ../../lib/class/search.class.php:275
-#, fuzzy
 msgid "Album tag"
-msgstr "앨범 삭제"
+msgstr "앨범 태그"
 
 #: ../../lib/class/search.class.php:282 ../../lib/class/search.class.php:585
 #: ../../templates/show_disabled_songs.inc.php:32
@@ -1795,36 +1812,37 @@ msgstr "앨범 삭제"
 #: ../../templates/show_import_playlist.inc.php:28
 #: ../../templates/show_song.inc.php:163
 msgid "Filename"
-msgstr ""
+msgstr "파일 이름"
 
 #: ../../lib/class/search.class.php:289 ../../lib/class/search.class.php:499
 #: ../../lib/class/search.class.php:599 ../../templates/show_albums.inc.php:42
 #: ../../templates/show_albums.inc.php:116
 #: ../../templates/show_edit_album_row.inc.php:63
 #: ../../templates/show_edit_song_row.inc.php:85
-#: ../../templates/show_graphs.inc.php:65 ../../templates/show_song.inc.php:145
+#: ../../templates/show_graphs.inc.php:65
+#: ../../templates/show_song.inc.php:145
 msgid "Year"
-msgstr ""
+msgstr "년"
 
 #: ../../lib/class/search.class.php:296
 msgid "Length (in minutes)"
-msgstr ""
+msgstr "길이 (분)"
 
 #: ../../lib/class/search.class.php:304 ../../lib/class/search.class.php:521
 #: ../../lib/class/search.class.php:618
 msgid "Rating (Average)"
-msgstr ""
+msgstr "평점 (평균)"
 
 #: ../../lib/class/search.class.php:322 ../../templates/header.inc.php:426
 #: ../../templates/sidebar_home.inc.php:109
 #: ../../templates/sidebar.light.inc.php:38
 msgid "Favorites"
-msgstr ""
+msgstr "즐겨 찾기"
 
 #: ../../lib/class/search.class.php:331 ../../lib/class/search.class.php:539
 #: ../../lib/class/search.class.php:643
 msgid "Rating (Mine)"
-msgstr ""
+msgstr "등급 (광산)"
 
 #: ../../lib/class/search.class.php:349 ../../templates/show_albums.inc.php:45
 #: ../../templates/show_albums.inc.php:119
@@ -1833,40 +1851,39 @@ msgstr ""
 #: ../../templates/show_song.inc.php:170 ../../templates/show_songs.inc.php:46
 #: ../../templates/show_songs.inc.php:109
 msgid "# Played"
-msgstr ""
+msgstr "# 경기 중"
 
 #: ../../lib/class/search.class.php:357
 #: ../../templates/show_duplicates.inc.php:32
 #: ../../templates/show_duplicates.inc.php:70
 #: ../../templates/show_song.inc.php:154
 msgid "Bitrate"
-msgstr ""
+msgstr "전송률"
 
 #: ../../lib/class/search.class.php:382 ../../lib/class/search.class.php:556
 #: ../../lib/class/search.class.php:635
 msgid "My Last Play"
-msgstr ""
+msgstr "나의 마지막 플레이"
 
 #: ../../lib/class/search.class.php:389 ../../templates/show_album.inc.php:83
 #: ../../templates/show_artist.inc.php:78
 msgid "Played"
-msgstr ""
+msgstr "경기 중"
 
 #: ../../lib/class/search.class.php:416 ../../lib/class/search.class.php:569
 #: ../../templates/browse_filters.inc.php:87
 #: ../../templates/show_add_live_stream.inc.php:55
 #: ../../templates/show_add_podcast.inc.php:34
 #: ../../templates/show_export.inc.php:32
-#, fuzzy
 msgid "Catalog"
-msgstr "카탈로그 종류"
+msgstr "목록"
 
 #: ../../lib/class/search.class.php:429 ../../lib/ui.lib.php:135
 #: ../../templates/show_manage_democratic.inc.php:26
 #: ../../templates/sidebar_home.inc.php:69
 #: ../../templates/sidebar_home.inc.php:139
 msgid "Playlist"
-msgstr ""
+msgstr "재생 목록"
 
 #: ../../lib/class/search.class.php:436
 #: ../../templates/show_playlists.inc.php:35
@@ -1874,29 +1891,29 @@ msgstr ""
 #: ../../templates/show_searches.inc.php:42
 #: ../../templates/show_searches.inc.php:72
 msgid "Playlist Name"
-msgstr ""
+msgstr "재생 목록 이름"
 
 #: ../../lib/class/search.class.php:449
 msgid "Smart Playlist"
-msgstr ""
+msgstr "스마트 재생 목록"
 
 #: ../../lib/class/search.class.php:461
 msgid "Metadata"
-msgstr ""
+msgstr "메타 데이터"
 
 #: ../../lib/class/search.class.php:475
 #: ../../templates/show_add_upload.inc.php:199
 #: ../../templates/show_edit_song_row.inc.php:98
 msgid "Music License"
-msgstr ""
+msgstr "음악 라이센스"
 
 #: ../../lib/class/search.class.php:506
 msgid "Image Width"
-msgstr ""
+msgstr "이미지 너비"
 
 #: ../../lib/class/search.class.php:513
 msgid "Image Height"
-msgstr ""
+msgstr "이미지 높이"
 
 #: ../../lib/class/search.class.php:593 ../../lib/class/search.class.php:661
 #: ../../lib/class/search.class.php:669
@@ -1928,13 +1945,13 @@ msgstr ""
 #: ../../templates/show_plugins.inc.php:71
 #: ../../templates/show_stats.inc.php:68
 msgid "Name"
-msgstr ""
+msgstr "이름"
 
 #: ../../lib/class/search.class.php:605
 #: ../../templates/show_concerts.inc.php:28
 #: ../../templates/show_concerts.inc.php:56
 msgid "Place"
-msgstr ""
+msgstr "장소"
 
 #: ../../lib/class/search.class.php:675
 #: ../../templates/show_add_label.inc.php:34
@@ -1944,7 +1961,7 @@ msgstr ""
 #: ../../templates/show_labels.inc.php:78
 #: ../../templates/show_podcast_episode.inc.php:112
 msgid "Category"
-msgstr ""
+msgstr "범주"
 
 #: ../../lib/class/search.class.php:683
 #: ../../modules/catalog/remote/remote.catalog.php:103
@@ -1958,13 +1975,12 @@ msgstr ""
 #: ../../templates/show_recently_played.inc.php:144
 #: ../../templates/show_user_registration.inc.php:81
 #: ../../templates/show_users.inc.php:49 ../../templates/show_users.inc.php:81
-#, fuzzy
 msgid "Username"
-msgstr "사용자 활성화됨"
+msgstr "사용자 이름"
 
 #: ../../lib/class/share.class.php:216
 msgid "Share edit"
-msgstr ""
+msgstr "수정 공유"
 
 #: ../../lib/class/share.class.php:216
 #: ../../templates/show_access_list.inc.php:70
@@ -1990,7 +2006,7 @@ msgstr ""
 #: ../../templates/show_user.inc.php:42 ../../templates/show_user.inc.php:47
 #: ../../templates/show_user_row.inc.php:58
 msgid "Edit"
-msgstr ""
+msgstr "편집하다"
 
 #: ../../lib/class/share.class.php:217 ../../templates/rightbar.inc.php:112
 #: ../../templates/show_access_list.inc.php:71
@@ -2023,26 +2039,25 @@ msgstr ""
 #: ../../templates/show_song_row.inc.php:124
 #: ../../templates/show_tagcloud.inc.php:65
 #: ../../templates/show_user_row.inc.php:71
-#, fuzzy
 msgid "Delete"
-msgstr "삭제됨"
+msgstr "지우다"
 
 #: ../../lib/class/share.class.php:369 ../../lib/class/share.class.php:371
 #: ../../templates/show_shares.inc.php:23
 msgid "Share"
-msgstr ""
+msgstr "몫"
 
 #: ../../lib/class/share.class.php:379
 msgid "Advanced Share"
-msgstr ""
+msgstr "고급 공유"
 
 #: ../../lib/class/share.class.php:394
 msgid "Temporary direct link"
-msgstr ""
+msgstr "임시 직접 링크"
 
 #: ../../lib/class/shoutbox.class.php:236
 msgid "New shout on your content"
-msgstr ""
+msgstr "콘텐츠에 대한 새로운 호언 장담"
 
 #: ../../lib/class/shoutbox.class.php:237
 #, php-format
@@ -2057,6 +2072,15 @@ msgid ""
 "    %s\n"
 "    "
 msgstr ""
+"귀하의 콘텐츠`%s`에 %s의 새로운 소리를 받았습니다.\n"
+"\n"
+"\n"
+"    ----------------------\n"
+"    %s\n"
+"    ----------------------\n"
+"\n"
+"    %s\n"
+"    "
 
 #: ../../lib/class/shoutbox.class.php:315
 #: ../../templates/show_add_label.inc.php:80
@@ -2066,240 +2090,235 @@ msgstr ""
 #: ../../templates/show_live_streams.inc.php:29
 #: ../../templates/show_podcasts.inc.php:29
 #: ../../templates/show_searches.inc.php:29
-#, fuzzy
 msgid "Add"
-msgstr "추가됨"
+msgstr "더하다"
 
 #: ../../lib/class/shoutbox.class.php:318
 msgid "Post Shout"
-msgstr ""
+msgstr "포스트 외침"
 
 #: ../../lib/class/shoutbox.class.php:322
 msgid "by"
-msgstr ""
+msgstr "으로"
 
 #: ../../lib/class/song.class.php:1467
 #: ../../templates/show_html5_player.inc.php:151
 msgid "Show Lyrics"
-msgstr ""
+msgstr "가사 표시"
 
 #: ../../lib/class/song.class.php:1493
 msgid "Track MusicBrainzID"
-msgstr ""
+msgstr "MusicBrainzID 추적"
 
 #: ../../lib/class/stream_playlist.class.php:614
 msgid "Vote added"
-msgstr ""
+msgstr "투표가 추가되었습니다."
 
 #: ../../lib/class/update.class.php:615
 msgid "No updates needed."
-msgstr ""
+msgstr "업데이트가 필요하지 않습니다."
 
 #: ../../lib/class/update.class.php:617
 msgid "Return to main page"
-msgstr ""
+msgstr "메인 페이지로 돌아 가기"
 
 #: ../../lib/class/update.class.php:2665 ../../lib/class/update.class.php:2681
 msgid "File copy error."
-msgstr ""
+msgstr "파일 복사 오류."
 
 #: ../../lib/class/update.class.php:2672 ../../lib/class/update.class.php:2688
 msgid "Cannot copy default .htaccess file."
-msgstr ""
+msgstr "기본 .htaccess 파일을 복사 할 수 없습니다."
 
 #: ../../lib/class/upnp_api.class.php:510
 #: ../../templates/show_add_catalog.inc.php:72
 #: ../../templates/sidebar_home.inc.php:24
 msgid "Music"
-msgstr ""
+msgstr "음악"
 
 #: ../../lib/class/upnp_api.class.php:752
 msgid "TV Shows"
-msgstr ""
+msgstr "TV 프로그램"
 
 #: ../../lib/class/upnp_api.class.php:792
 msgid "Clips"
-msgstr ""
+msgstr "클립"
 
 #: ../../lib/class/upnp_api.class.php:816
 msgid "Movies"
-msgstr ""
+msgstr "영화 산업"
 
 #: ../../lib/class/upnp_api.class.php:840
 msgid "Personal Videos"
-msgstr ""
+msgstr "개인 동영상"
 
 #: ../../lib/class/upnp_api.class.php:861
 #: ../../templates/show_tagcloud.inc.php:27
 msgid "Video"
-msgstr ""
+msgstr "비디오"
 
 #: ../../lib/class/useractivity.class.php:209
 msgid "uploaded"
-msgstr ""
+msgstr "업로드 된"
 
 #: ../../lib/class/useractivity.class.php:212
 msgid "played"
-msgstr ""
+msgstr "연주 한"
 
 #: ../../lib/class/useractivity.class.php:215
 msgid "favorited"
-msgstr ""
+msgstr "호의적 인"
 
 #: ../../lib/class/useractivity.class.php:218
 msgid "started to follow"
-msgstr ""
+msgstr "따르기 시작했다."
 
 #: ../../lib/class/useractivity.class.php:221
 msgid "did something on"
-msgstr ""
+msgstr "에 뭔가를했다."
 
-#: ../../lib/class/user.class.php:1053 ../../templates/show_tagcloud.inc.php:88
+#: ../../lib/class/user.class.php:1053
+#: ../../templates/show_tagcloud.inc.php:88
 msgid "Not Enough Data"
-msgstr ""
+msgstr "충분하지 않은 데이터"
 
 #: ../../lib/class/user.class.php:1337
-#, fuzzy
 msgid "User avatar"
-msgstr "프로필 이미지 삭제"
+msgstr "사용자 아바타"
 
 #: ../../lib/class/user.class.php:1544
 msgid "Unfollow"
-msgstr ""
+msgstr "팔로우 해제"
 
 #: ../../lib/class/user.class.php:1544
 msgid "Follow"
-msgstr ""
+msgstr "따르다"
 
 #: ../../lib/debug.lib.php:317 ../../lib/debug.lib.php:334
 msgid "OK"
-msgstr ""
+msgstr "승인"
 
 #: ../../lib/debug.lib.php:317
 msgid "ERROR"
-msgstr ""
+msgstr "오류"
 
 #: ../../lib/debug.lib.php:334
 msgid "WARNING"
-msgstr ""
+msgstr "경고"
 
 #: ../../lib/general.lib.php:214
 #, php-format
 msgid "Unknown %s"
-msgstr ""
+msgstr "알 수 없음 %s"
 
 #: ../../lib/install.lib.php:85
 msgid "Unable to connect to database, check your ampache config"
-msgstr ""
+msgstr "데이터베이스에 연결할 수 없습니다. 설정을 확인하십시오."
 
 #: ../../lib/install.lib.php:94
 msgid "Unable to query database, check your ampache config"
-msgstr ""
+msgstr "데이터베이스를 쿼리 할 수 없습니다. ampache config를 확인하십시오."
 
 #: ../../lib/install.lib.php:102
 msgid "Existing Database detected, unable to continue installation"
-msgstr ""
+msgstr "기존 데이터베이스가 감지되었습니다. 설치를 계속할 수 없습니다."
 
 #: ../../lib/install.lib.php:166 ../../lib/install.lib.php:311
-#, fuzzy
 msgid "Error writing config file"
-msgstr "예전 설정 파일 파싱중..."
+msgstr "구성 파일 쓰기 오류"
 
 #: ../../lib/install.lib.php:192
 msgid "Error: Invalid database name."
-msgstr ""
+msgstr "오류 : 데이터베이스 이름이 잘못되었습니다."
 
 #: ../../lib/install.lib.php:198
 #, php-format
 msgid "Error: Unable to make database connection: %s"
-msgstr ""
+msgstr "오류 : 데이터베이스 연결을 만들 수 없습니다 : %s"
 
 #: ../../lib/install.lib.php:209
 msgid "Error: Database already exists and overwrite not checked"
-msgstr ""
+msgstr "오류 : 데이터베이스가 이미 존재하고 덮어 쓰기가 선택되지 않았습니다."
 
 #: ../../lib/install.lib.php:217
 #, php-format
 msgid "Error: Unable to create database: %s"
-msgstr ""
+msgstr "오류 : 데이터베이스를 만들 수 없습니다 : %s"
 
 #: ../../lib/install.lib.php:235
 #, php-format
 msgid ""
 "Error: Unable to create user %1$s with permissions to %2$s on %3$s: %4$s"
-msgstr ""
+msgstr "오류 : %3$s에서 %2$s에 대한 사용 권한을 가진 사용자 %1$s를 만들 수 없습니다 : %4$s"
 
 #: ../../lib/install.lib.php:288
 msgid "Invalid configuration settings"
-msgstr ""
+msgstr "구성 설정이 잘못되었습니다."
 
 #: ../../lib/install.lib.php:295
 msgid "Database Connection Failed Check Hostname, Username and Password"
-msgstr ""
+msgstr "데이터베이스 연결 실패 호스트 이름, 사용자 이름 및 암호 확인"
 
 #: ../../lib/install.lib.php:305
 msgid "Config file is not writable"
-msgstr ""
+msgstr "구성 파일에 쓸 수 없습니다."
 
 #: ../../lib/install.lib.php:333
 msgid "No Username/Password specified"
-msgstr ""
+msgstr "사용자 이름 / 비밀번호가 지정되지 않았습니다."
 
 #: ../../lib/install.lib.php:339
 msgid "Passwords do not match"
-msgstr ""
+msgstr "비밀번호가 일치하지 않습니다"
 
 #: ../../lib/install.lib.php:345
 #, php-format
 msgid "Database connection failed: %s"
-msgstr ""
+msgstr "데이터베이스 연결 실패 : %s"
 
 #: ../../lib/install.lib.php:351
 #, php-format
 msgid "Database select failed: %s"
-msgstr ""
+msgstr "데이터베이스 선택 실패 : %s"
 
 #: ../../lib/install.lib.php:362
 #, php-format
 msgid "Administrative user creation failed: %s"
-msgstr ""
+msgstr "관리 사용자 만들기가 실패했습니다 : %s"
 
 #: ../../lib/javascript/search-data.php:52
 msgid "Remove"
-msgstr ""
+msgstr "풀다"
 
 #: ../../lib/login.php:80
 msgid "Error Username or Password incorrect, please try again"
-msgstr ""
+msgstr "사용자 이름 또는 비밀번호 오류가 잘못되었습니다. 다시 시도하십시오."
 
 #: ../../lib/login.php:100
-#, fuzzy
 msgid "User Disabled please contact Admin"
-msgstr "마지막 관리자를 비활성화할 수 없습니다"
+msgstr "사용자가 사용 중지됨 관리자에게 문의하십시오."
 
 #: ../../lib/login.php:108
 msgid "User Already Logged in"
-msgstr ""
+msgstr "이미 로그인 한 사용자"
 
 #: ../../lib/login.php:131
 msgid "Unable to create local account"
-msgstr ""
+msgstr "로컬 계정을 만들 수 없습니다."
 
 #: ../../lib/preferences.php:214 ../../lib/preferences.php:317
 #: ../../templates/show_disabled_songs.inc.php:68
 #: ../../templates/show_user_row.inc.php:66
-#, fuzzy
 msgid "Enable"
-msgstr "사용자 활성화됨"
+msgstr "사용"
 
 #: ../../lib/preferences.php:215 ../../lib/preferences.php:318
 #: ../../templates/show_catalog_types.inc.php:45
 #: ../../templates/show_duplicates.inc.php:27
 #: ../../templates/show_duplicates.inc.php:65
 #: ../../templates/show_user_row.inc.php:68
-#, fuzzy
 msgid "Disable"
-msgstr "사용자 비활성화됨"
+msgstr "사용 안함"
 
 #: ../../lib/preferences.php:233 ../../lib/ui.lib.php:333
 #: ../../lib/ui.lib.php:424 ../../templates/show_adds_catalog.inc.php:27
@@ -2307,126 +2326,126 @@ msgstr "사용자 비활성화됨"
 #: ../../templates/show_install_config.inc.php:141
 #: ../../templates/show_search_row.inc.php:47
 msgid "None"
-msgstr ""
+msgstr "없음"
 
 #: ../../lib/preferences.php:235 ../../templates/show_edit_user.inc.php:146
 #: ../../templates/show_live_stream.inc.php:51
 #: ../../templates/show_playtype_switch.inc.php:36
 msgid "Stream"
-msgstr ""
+msgstr "흐름"
 
 #: ../../lib/preferences.php:238 ../../templates/show_edit_user.inc.php:144
 #: ../../templates/show_playtype_switch.inc.php:43
 #: ../../templates/sidebar_home.inc.php:80
 #: ../../templates/sidebar_modules.inc.php:39
 msgid "Democratic"
-msgstr ""
+msgstr "민주당의"
 
 #: ../../lib/preferences.php:240
 #: ../../templates/show_playtype_switch.inc.php:48
 msgid "Web Player"
-msgstr ""
+msgstr "웹 플레이어"
 
 #: ../../lib/preferences.php:247
 msgid "M3U"
-msgstr ""
+msgstr "M3U"
 
 #: ../../lib/preferences.php:248
 msgid "Simple M3U"
-msgstr ""
+msgstr "단순한 M3U"
 
 #: ../../lib/preferences.php:249
 msgid "PLS"
-msgstr ""
+msgstr "PLS"
 
 #: ../../lib/preferences.php:250
 msgid "Asx"
-msgstr ""
+msgstr "Asx"
 
 #: ../../lib/preferences.php:251
 msgid "RAM"
-msgstr ""
+msgstr "램"
 
 #: ../../lib/preferences.php:252
 msgid "XSPF"
-msgstr ""
+msgstr "XSPF"
 
 #: ../../lib/preferences.php:294
 msgid "Send on Add"
-msgstr ""
+msgstr "추가시 보내기"
 
 #: ../../lib/preferences.php:295
 msgid "Send and Clear on Add"
-msgstr ""
+msgstr "추가시 보내기 및 지우기"
 
 #: ../../lib/preferences.php:296
 msgid "Clear on Send"
-msgstr ""
+msgstr "보내기시 지우기"
 
 #: ../../lib/preferences.php:297 ../../lib/preferences.php:304
 #: ../../lib/preferences.php:340
 #: ../../templates/show_install_config.inc.php:115
 #: ../../templates/show_manage_democratic.inc.php:30
 msgid "Default"
-msgstr ""
+msgstr "태만"
 
 #: ../../lib/preferences.php:305
 msgid "Always"
-msgstr ""
+msgstr "항상"
 
 #: ../../lib/preferences.php:341
 msgid "Year ascending"
-msgstr ""
+msgstr "연도 오름차순"
 
 #: ../../lib/preferences.php:342
 msgid "Year descending"
-msgstr ""
+msgstr "작년 내림차순"
 
 #: ../../lib/preferences.php:343
 msgid "Name ascending"
-msgstr ""
+msgstr "오름차순 이름"
 
 #: ../../lib/preferences.php:344
 msgid "Name descending"
-msgstr ""
+msgstr "이름 강등"
 
 #: ../../lib/preferences.php:365
 #, php-format
 msgid "Click to grant %s access to Ampache"
-msgstr ""
+msgstr "%s에 Ampache에 대한 액세스 권한을 부여하려면 누릅니다."
 
 #: ../../lib/rating.lib.php:42
 msgid "Don't Play"
-msgstr ""
+msgstr "놀지 마라."
 
 #: ../../lib/rating.lib.php:44
 msgid "It's Pretty Bad"
-msgstr ""
+msgstr "그것은 꽤 나쁜 것입니다."
 
 #: ../../lib/rating.lib.php:46
 msgid "It's Ok"
-msgstr ""
+msgstr "괜찮아"
 
 #: ../../lib/rating.lib.php:48
 msgid "It's Pretty Good"
-msgstr ""
+msgstr "예쁘다."
 
 #: ../../lib/rating.lib.php:50
 msgid "I Love It!"
-msgstr ""
+msgstr "나는 그것을 사랑한다!"
 
 #: ../../lib/rating.lib.php:52
 msgid "It's Insane"
-msgstr ""
+msgstr "미쳤어."
 
 #: ../../lib/rating.lib.php:55
 msgid "Off the Charts!"
-msgstr ""
+msgstr "차트 끄기!"
 
 #: ../../lib/ui.lib.php:126 ../../templates/header.inc.php:397
 #: ../../templates/sidebar.inc.php:33
 msgid "Home"
-msgstr ""
+msgstr "집"
 
 #: ../../lib/ui.lib.php:129 ../../templates/header.inc.php:438
 #: ../../templates/show_add_upload.inc.php:26
@@ -2437,115 +2456,114 @@ msgstr ""
 #: ../../templates/sidebar_home.inc.php:55
 #: ../../templates/sidebar.light.inc.php:43
 msgid "Upload"
-msgstr ""
+msgstr "업로드"
 
 #: ../../lib/ui.lib.php:132
 msgid "Random Play"
-msgstr ""
+msgstr "임의 재생"
 
 #: ../../lib/ui.lib.php:138 ../../templates/show_search_bar.inc.php:30
 #: ../../templates/show_search_form.inc.php:71
 #: ../../templates/sidebar_home.inc.php:144
 msgid "Search"
-msgstr ""
+msgstr "수색"
 
 #: ../../lib/ui.lib.php:141 ../../templates/show_user.inc.php:43
 #: ../../templates/show_user_row.inc.php:61 ../../templates/sidebar.inc.php:34
 #: ../../templates/sidebar_preferences.inc.php:30
 msgid "Preferences"
-msgstr ""
+msgstr "환경 설정"
 
 #: ../../lib/ui.lib.php:144 ../../lib/ui.lib.php:148
 msgid "Admin-Catalog"
-msgstr ""
+msgstr "관리자 카탈로그"
 
 #: ../../lib/ui.lib.php:152
 msgid "Admin-User Management"
-msgstr ""
+msgstr "관리자 - 사용자 관리"
 
 #: ../../lib/ui.lib.php:156
 msgid "Admin-Mail Users"
-msgstr ""
+msgstr "관리 메일 사용자"
 
 #: ../../lib/ui.lib.php:160
 msgid "Admin-Manage Access Lists"
-msgstr ""
+msgstr "관리자 - 액세스 목록 관리"
 
 #: ../../lib/ui.lib.php:164
 msgid "Admin-Site Preferences"
-msgstr ""
+msgstr "관리 사이트 환경 설정"
 
 #: ../../lib/ui.lib.php:168
 msgid "Admin-Manage Modules"
-msgstr ""
+msgstr "관리자 - 모듈 관리"
 
 #: ../../lib/ui.lib.php:172 ../../templates/sidebar_home.inc.php:24
 msgid "Browse Music"
-msgstr ""
+msgstr "음악 찾아보기"
 
 #: ../../lib/ui.lib.php:184 ../../templates/show_stats.inc.php:26
 #: ../../templates/sidebar_home.inc.php:124
 msgid "Statistics"
-msgstr ""
+msgstr "통계"
 
 #: ../../lib/ui.lib.php:251 ../../lib/ui.lib.php:304
 msgid "Add New"
-msgstr ""
+msgstr "새로운 걸 더하다"
 
 #: ../../lib/ui.lib.php:387
 msgid "View License"
-msgstr ""
+msgstr "라이센스보기"
 
 #: ../../lib/ui.lib.php:654
 msgid "On"
-msgstr ""
+msgstr "에"
 
 #: ../../lib/ui.lib.php:656
 msgid "Off"
-msgstr ""
+msgstr "떨어져서"
 
 #: ../../lostpassword.php:39
-#, fuzzy
 msgid "Password has been sent"
-msgstr "사용자 %s(이)가 삭제되었습니다"
+msgstr "비밀번호가 전송되었습니다."
 
 #: ../../lostpassword.php:41
 msgid "Password has not been sent"
-msgstr ""
+msgstr "비밀번호를 보내지 않았습니다."
 
 #: ../../lostpassword.php:60
 msgid "Lost Password"
-msgstr ""
+msgstr "비밀번호 분실"
 
 #: ../../lostpassword.php:64
 #, php-format
 msgid "A user from %s has requested a password reset for '%s'."
-msgstr ""
+msgstr "%s의 사용자가 '%s'에 대한 암호 재설정을 요청했습니다."
 
 #: ../../lostpassword.php:66
 #, php-format
 msgid "The password has been set to: %s"
-msgstr ""
+msgstr "암호가 다음으로 설정되었습니다. %s"
 
 #: ../../modules/Beets/Catalog.php:126
 msgid "Running Beets Update"
-msgstr ""
+msgstr "사탕 무우 업데이트 실행"
 
 #: ../../modules/Beets/Catalog.php:205
 #: ../../modules/catalog/remote/remote.catalog.php:273
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:300
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:254
-#, fuzzy, php-format
+#, php-format
 msgid "Unable to Insert Song - %s"
-msgstr "플러그인을 설치할 수 없음"
+msgstr "노래를 삽입 할 수 없습니다 - %s"
 
 #: ../../modules/catalog/beets/beets.catalog.php:86
 msgid "Beets Database File"
-msgstr ""
+msgstr "사탕무 데이타베이스 파일"
 
 #: ../../modules/catalog/beets/beets.catalog.php:103
 msgid "Error: Beets selected, but no Beets DB File provided"
-msgstr ""
+msgstr "오류 : Beets가 선택되었지만 Beets DB File이 제공되지 않았습니다."
 
 #: ../../modules/catalog/beets/beets.catalog.php:114
 #: ../../modules/catalog/beetsremote/beetsremote.catalog.php:115
@@ -2553,98 +2571,97 @@ msgstr ""
 #: ../../modules/catalog/remote/remote.catalog.php:162
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:183
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:163
-#, fuzzy, php-format
+#, php-format
 msgid "Error: Catalog with %s already exists"
-msgstr "오류 사용자 이름이 이미 존재합니다"
+msgstr "오류 : %s가있는 카탈로그가 이미 있습니다."
 
 #: ../../modules/catalog/beetsremote/beetsremote.catalog.php:87
 msgid "Beets Server URI"
-msgstr ""
+msgstr "Beets 서버 URI"
 
 #: ../../modules/catalog/beetsremote/beetsremote.catalog.php:104
 msgid "Error: Beets selected, but path is not a URL"
-msgstr ""
+msgstr "오류 : Beets가 선택되었지만 경로가 URL이 아닙니다."
 
 #: ../../modules/catalog/local/local.catalog.php:104
 #: ../../templates/show_stats.inc.php:69
 msgid "Path"
-msgstr ""
+msgstr "통로"
 
 #: ../../modules/catalog/local/local.catalog.php:175
-#, fuzzy
 msgid "Error: Path not specified"
-msgstr "오류: 이름 지정되지 않음"
+msgstr "오류 : 경로가 지정되지 않았습니다."
 
 #: ../../modules/catalog/local/local.catalog.php:182
 msgid "Error: Defined Path is inside an existing catalog"
-msgstr ""
+msgstr "오류 : 정의 된 경로가 기존 카탈로그 안에 있습니다."
 
 #: ../../modules/catalog/local/local.catalog.php:190
 #, php-format
 msgid "Error: %s is not readable or does not exist"
-msgstr ""
+msgstr "오류 : %s를 읽을 수 없거나 존재하지 않습니다."
 
 #: ../../modules/catalog/local/local.catalog.php:242
 #, php-format
 msgid "Error: Unable to open %s"
-msgstr ""
+msgstr "오류 : %s를 열 수 없습니다."
 
 #: ../../modules/catalog/local/local.catalog.php:250
 #: ../../modules/catalog/local/local.catalog.php:314
 #, php-format
 msgid "Error: Unable to change to directory %s"
-msgstr ""
+msgstr "오류 : 디렉토리 %s로 변경할 수 없습니다."
 
 #. HINT: FullFile
 #: ../../modules/catalog/local/local.catalog.php:338
 #, php-format
 msgid "Error: Unable to get filesize for %s"
-msgstr ""
+msgstr "오류 : %s에 대한 파일 크기를 가져올 수 없습니다."
 
 #. HINT: FullFile
 #: ../../modules/catalog/local/local.catalog.php:345
 #, php-format
 msgid "%s is not readable by ampache"
-msgstr ""
+msgstr "%s는 ampache에서 읽을 수 없습니다."
 
 #. HINT: FullFile
 #: ../../modules/catalog/local/local.catalog.php:368
 #, php-format
 msgid "%s does not match site charset"
-msgstr ""
+msgstr "%s가 사이트 문자 세트와 일치하지 않습니다."
 
 #: ../../modules/catalog/local/local.catalog.php:491
 msgid "N/A"
-msgstr ""
+msgstr "N / A"
 
 #: ../../modules/catalog/local/local.catalog.php:497
 #, php-format
 msgid ""
 "Catalog Update Finished.  Total Time: [%s] Total Media: [%s] Media Per "
 "Second: [%s]"
-msgstr ""
+msgstr "카탈로그 업데이트가 완료되었습니다. 총 시간 : [%s] 총 미디어 : [%s] 초당 미디어 : [%s]"
 
 #: ../../modules/catalog/local/local.catalog.php:575
 #, php-format
 msgid "%s does not exist or is not readable"
-msgstr ""
+msgstr "%s가 없거나 읽을 수 없습니다."
 
 #: ../../modules/catalog/local/local.catalog.php:604
 msgid "Catalog Root unreadable, stopping clean"
-msgstr ""
+msgstr "카탈로그 루트를 읽을 수 없으며, 깨끗하게 멈 춥니 다."
 
 #: ../../modules/catalog/local/local.catalog.php:630
 msgid "All files would be removed. Doing nothing"
-msgstr ""
+msgstr "모든 파일이 제거됩니다. 아무것도하지 않고"
 
 #: ../../modules/catalog/local/local.catalog.php:674
 #, php-format
 msgid "Error File Not Found or 0 Bytes: %s"
-msgstr ""
+msgstr "오류 파일을 찾을 수 없거나 0 바이트 : %s"
 
 #: ../../modules/catalog/remote/remote.catalog.php:102
 msgid "Uri"
-msgstr ""
+msgstr "우리"
 
 #: ../../modules/catalog/remote/remote.catalog.php:104
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:104
@@ -2654,100 +2671,98 @@ msgstr ""
 #: ../../templates/show_login_form.inc.php:62
 #: ../../templates/show_user_registration.inc.php:138
 msgid "Password"
-msgstr ""
+msgstr "암호"
 
 #: ../../modules/catalog/remote/remote.catalog.php:144
 msgid "Error: Remote selected, but path is not a URL"
-msgstr ""
+msgstr "오류 : 원격이 선택되었지만 경로가 URL이 아닙니다."
 
 #: ../../modules/catalog/remote/remote.catalog.php:150
 msgid "Error: Username and Password Required for Remote Catalogs"
-msgstr ""
+msgstr "오류 : 원격 카탈로그에 필요한 사용자 이름과 암호"
 
 #: ../../modules/catalog/remote/remote.catalog.php:181
 msgid "Running Remote Update"
-msgstr ""
+msgstr "원격 업데이트 실행"
 
 #: ../../modules/catalog/remote/remote.catalog.php:217
 msgid "Error connecting to remote server"
-msgstr ""
+msgstr "원격 서버에 연결하는 중 오류가 발생했습니다."
 
 #: ../../modules/catalog/remote/remote.catalog.php:245
 #, php-format
 msgid "%u remote catalog(s) found (%u songs)"
-msgstr ""
+msgstr "%u 원격 카탈로그를 찾았습니다 (%u 곡)."
 
 #: ../../modules/catalog/remote/remote.catalog.php:281
 msgid "Completed updating remote catalog(s)."
-msgstr ""
+msgstr "원격 카탈로그 업데이트를 완료했습니다."
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:107
-#, fuzzy
 msgid "User ID"
-msgstr "사용자"
+msgstr "사용자 ID"
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:108
 #: ../../templates/show_add_share.inc.php:35
 msgid "Secret"
-msgstr ""
+msgstr "비밀"
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:172
 msgid "Error: UserID and Secret Required for SoundCloud Catalogs"
-msgstr ""
+msgstr "오류 : SoundCloud 카탈로그에 필요한 UserID 및 Secret"
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:238
 msgid "Running SoundCloud Remote Update"
-msgstr ""
+msgstr "SoundCloud Remote Update 실행하기"
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:308
 msgid "Completed updating SoundCloud catalog(s)."
-msgstr ""
+msgstr "SoundCloud 카탈로그 업데이트가 완료되었습니다."
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:308
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:271
-#, fuzzy
 msgid "Songs added."
-msgstr "활성화된 노래"
+msgstr "노래가 추가되었습니다."
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:313
 msgid "API Error: cannot get song list."
-msgstr ""
+msgstr "API 오류 : 노래 목록을 가져올 수 없습니다."
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:317
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:375
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:450
 msgid "API Error: cannot connect to SoundCloud."
-msgstr ""
+msgstr "API 오류 : SoundCloud에 연결할 수 없습니다."
 
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:321
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:379
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:455
 msgid "SoundCloud exception: "
-msgstr ""
+msgstr "SoundCloud 예외 :"
 
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:102
 msgid "URI"
-msgstr ""
+msgstr "URI"
 
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:146
 msgid "Error: Subsonic selected, but path is not a URL"
-msgstr ""
+msgstr "오류 : 아음속이 선택되었지만 경로가 URL이 아닙니다."
 
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:152
 msgid "Error: Username and Password Required for Subsonic Catalogs"
-msgstr ""
+msgstr "오류 : 아음속 카탈로그에 필요한 사용자 이름과 암호"
 
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:185
 msgid "Running Subsonic Remote Update"
-msgstr ""
+msgstr "아음속 원격 업데이트 실행"
 
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:271
 msgid "Completed updating Subsonic catalog(s)."
-msgstr ""
+msgstr "아음속 카탈로그를 업데이트했습니다."
 
 #: ../../modules/plugins/CatalogFavorites/CatalogFavorites.plugin.php:102
 msgid "Highlight"
-msgstr ""
+msgstr "가장 밝은 부분"
 
 #: ../../modules/plugins/CatalogFavorites/CatalogFavorites.plugin.php:123
 #: ../../templates/header.inc.php:339
@@ -2771,7 +2786,7 @@ msgstr ""
 #: ../../templates/show_song_preview_row.inc.php:30
 #: ../../templates/show_song_row.inc.php:40
 msgid "Play last"
-msgstr ""
+msgstr "마지막으로 재생"
 
 #: ../../modules/plugins/CatalogFavorites/CatalogFavorites.plugin.php:126
 #: ../../templates/header.inc.php:340
@@ -2794,33 +2809,32 @@ msgstr ""
 #: ../../templates/show_song_preview_row.inc.php:43
 #: ../../templates/show_song_row.inc.php:50
 msgid "Add to temporary playlist"
-msgstr ""
+msgstr "임시 재생 목록에 추가"
 
 #: ../../modules/plugins/CatalogFavorites/CatalogFavorites.plugin.php:144
 msgid "recommended by"
-msgstr ""
+msgstr "~에 의해 추천 된"
 
 #: ../../modules/plugins/GoogleMaps/GoogleMaps.plugin.php:121
 msgid "Hits:"
-msgstr ""
+msgstr "조회수 :"
 
 #: ../../modules/plugins/GoogleMaps/GoogleMaps.plugin.php:122
 msgid "Last activity:"
-msgstr ""
+msgstr "마지막 활동:"
 
 #: ../../playlist.php:54
-#, fuzzy
 msgid "Playlist Created"
-msgstr "채널 생성됨"
+msgstr "재생 목록 생성됨"
 
 #: ../../playlist.php:54
-#, fuzzy, php-format
+#, php-format
 msgid "%1$s (%2$s) has been created"
-msgstr "사용자 %s(이)가 삭제되었습니다"
+msgstr "%1$s (%2$s)가 생성되었습니다."
 
 #: ../../playlist.php:80
 msgid "Playlist Imported"
-msgstr ""
+msgstr "재생 목록 가져 오기"
 
 #: ../../playlist.php:83
 #, php-format
@@ -2830,453 +2844,432 @@ msgstr[0] ""
 
 #: ../../playlist.php:86
 msgid "Playlist Not Imported"
-msgstr ""
+msgstr "가져온 재생 목록 없음"
 
 #: ../../playlist.php:135
 msgid "Empty Playlists Deleted"
-msgstr ""
+msgstr "빈 재생 목록이 삭제되었습니다."
 
 #: ../../plex/web/index.php:32
 msgid ""
 "Changing the server UUID could break clients connectivity. Do you confirm?"
-msgstr ""
+msgstr "서버 UUID를 변경하면 클라이언트 연결이 중단 될 수 있습니다. 당신이 확인합니까?"
 
 #: ../../plex/web/index.php:84
 msgid "myPlex authentication completed."
-msgstr ""
+msgstr "myPlex 인증이 완료되었습니다."
 
 #: ../../plex/web/index.php:98
 msgid "Server registration completed."
-msgstr ""
+msgstr "서버 등록이 완료되었습니다."
 
 #: ../../plex/web/index.php:101
 msgid "Cannot register the server on myPlex."
-msgstr ""
+msgstr "myPlex에 서버를 등록 할 수 없습니다."
 
 #: ../../plex/web/index.php:107
 msgid "Cannot authenticate on myPlex."
-msgstr ""
+msgstr "myPlex에서 인증 할 수 없습니다."
 
 #: ../../plex/web/index.php:135
 msgid "Server UUID changed."
-msgstr ""
+msgstr "서버 UUID가 변경되었습니다."
 
 #: ../../plex/web/init.php:38
 msgid "Unauthorized."
-msgstr ""
+msgstr "무단으로."
 
 #: ../../podcast_episode.php:35 ../../podcast_episode.php:55
 #: ../../podcast_episode.php:57
 msgid "Podcast Episode Deletion"
-msgstr ""
+msgstr "팟 캐스트 에피소드 삭제"
 
 #: ../../podcast_episode.php:36
-#, fuzzy
 msgid "Are you sure you want to permanently delete this episode?"
-msgstr "정말 이 앨범을 삭제하시겠습니까?"
+msgstr "이 에피소드를 영구적으로 삭제 하시겠습니까?"
 
 #: ../../podcast_episode.php:55
-#, fuzzy
 msgid "Episode has been deleted."
-msgstr "사용자 %s(이)가 삭제되었습니다"
+msgstr "에피소드가 삭제되었습니다."
 
 #: ../../podcast_episode.php:57
-#, fuzzy
 msgid "Cannot delete this episode."
-msgstr "이 앨범을 삭제할 수 없습니다."
+msgstr "이 에피소드를 삭제할 수 없습니다."
 
 #: ../../podcast.php:60
 msgid "Subscribed to Podcast"
-msgstr ""
+msgstr "팟 캐스트 구독"
 
 #: ../../podcast.php:73 ../../podcast.php:88 ../../podcast.php:90
-#, fuzzy
 msgid "Podcast Deletion"
-msgstr "앨범 삭제"
+msgstr "팟 캐스트 삭제"
 
 #: ../../podcast.php:74
-#, fuzzy
 msgid "Are you sure you want to delete this podcast?"
-msgstr "정말 이 모듈을 비활성화하시겠습니까?"
+msgstr "이 Podcast를 삭제 하시겠습니까?"
 
 #: ../../podcast.php:88
-#, fuzzy
 msgid "Podcast has been deleted."
-msgstr "사용자 %s(이)가 삭제되었습니다"
+msgstr "팟 캐스트가 삭제되었습니다."
 
 #: ../../podcast.php:90
-#, fuzzy
 msgid "Cannot delete this podcast."
-msgstr "이 앨범을 삭제할 수 없습니다."
+msgstr "이 Podcast를 삭제할 수 없습니다."
 
 #: ../../preferences.php:48 ../../preferences.php:93
 msgid "Server"
-msgstr ""
+msgstr "섬기는 사람"
 
 #: ../../preferences.php:66
-#, fuzzy
 msgid "Server preferences updated successfully"
-msgstr "캐시를 비웠습니다."
+msgstr "서버 환경 설정이 성공적으로 업데이트되었습니다."
 
 #: ../../preferences.php:68
-#, fuzzy
 msgid "User preferences updated successfully"
-msgstr "캐시를 비웠습니다."
+msgstr "사용자 환경 설정이 성공적으로 업데이트되었습니다."
 
 #: ../../preferences.php:126 ../../register.php:100
 msgid "Please fill in your full name (Firstname Lastname)"
-msgstr ""
+msgstr "성명 (이름 성)을 기입하십시오."
 
 #: ../../preferences.php:129 ../../register.php:103
 msgid "Please fill in your website"
-msgstr ""
+msgstr "귀하의 웹 사이트를 입력하십시오"
 
 #: ../../preferences.php:132 ../../register.php:106
 msgid "Please fill in your state"
-msgstr ""
+msgstr "주를 작성하십시오."
 
 #: ../../preferences.php:135 ../../register.php:109
 msgid "Please fill in your city"
-msgstr ""
+msgstr "귀하의 도시를 입력하십시오."
 
 #: ../../preferences.php:139
-#, fuzzy
 msgid "Error Update Failed"
-msgstr "오류: 등록 실패"
+msgstr "오류 업데이트 실패"
 
 #: ../../preferences.php:145 ../../preferences.php:163
-#, fuzzy
 msgid "Your Account has been updated"
-msgstr "접근 리스트 항목이 제거되었습니다"
+msgstr "당신의 계좌가 업데이트되었습니다"
 
 #: ../../preferences.php:149
 msgid "User updated successfully"
-msgstr ""
+msgstr "사용자가 성공적으로 업데이트되었습니다."
 
 #: ../../preferences.php:167
-#, fuzzy
 msgid "Your Account has not been updated"
-msgstr "접근 리스트 항목이 제거되었습니다"
+msgstr "귀하의 계정이 업데이트되지 않았습니다."
 
 #: ../../pvmsg.php:67
 msgid "Message Sent"
-msgstr ""
+msgstr "메시지 전송 됨"
 
 #: ../../pvmsg.php:90
 msgid "Messages State Changed"
-msgstr ""
+msgstr "메시지 상태가 변경됨"
 
 #: ../../pvmsg.php:90
 msgid "Messages state have been changed."
-msgstr ""
+msgstr "메시지 상태가 변경되었습니다."
 
 #: ../../pvmsg.php:99
-#, fuzzy
 msgid "Message Deletion"
-msgstr "앨범 삭제"
+msgstr "메시지 삭제"
 
 #: ../../pvmsg.php:100
-#, fuzzy
 msgid "Are you sure you want to permanently delete the selected messages?"
-msgstr "정말 이 앨범을 삭제하시겠습니까?"
+msgstr "선택한 메시지를 영구적으로 삭제 하시겠습니까?"
 
 #: ../../pvmsg.php:124
 msgid "Messages Deletion"
-msgstr ""
+msgstr "메시지 삭제"
 
 #: ../../pvmsg.php:124
-#, fuzzy
 msgid "Messages have been deleted."
-msgstr "사용자 %s(이)가 삭제되었습니다"
+msgstr "메시지가 삭제되었습니다."
 
 #: ../../radio.php:60
 msgid "Radio Station Added"
-msgstr ""
+msgstr "라디오 방송국 추가됨"
 
 #: ../../register.php:72
-#, fuzzy
 msgid "Error Captcha Required"
-msgstr "오류 사용자 이름이 필요합니다"
+msgstr "오류 보안 문자 필요"
 
 #: ../../register.php:78
-#, fuzzy
 msgid "Error Captcha Failed"
-msgstr "오류: 등록 실패"
+msgstr "오류 보안 문자 실패"
 
 #: ../../register.php:85
 msgid "You <U>must</U> accept the user agreement"
-msgstr ""
+msgstr "<U>는 사용자 계약에 동의해야합니다 (</U>)."
 
 #: ../../register.php:90
 msgid "You did not enter a username"
-msgstr ""
+msgstr "사용자 이름을 입력하지 않았습니다."
 
 #: ../../register.php:113
 msgid "You must enter a password"
-msgstr ""
+msgstr "비밀번호를 입력해야합니다."
 
 #: ../../register.php:117
 msgid "Your passwords do not match"
-msgstr ""
+msgstr "비밀번호가 일치하지 않습니다"
 
 #: ../../rest/index.php:47 ../../server/xml.server.php:43
 msgid "Access Control not Enabled"
-msgstr ""
+msgstr "액세스 제어를 사용할 수 없음"
 
 #: ../../search.php:50
 msgid "Search Saved"
-msgstr ""
+msgstr "저장된 검색"
 
 #: ../../search.php:50
 #, php-format
 msgid "Your Search has been saved as a Smart Playlist with name %s"
-msgstr ""
+msgstr "검색이 이름이 %s 인 스마트 재생 목록으로 저장되었습니다."
 
 #: ../../server/index.ajax.php:44
 #, php-format
 msgid ""
-"No catalog configured yet. To start streaming your media, you now need to %s "
-"add a catalog %s"
-msgstr ""
+"No catalog configured yet. To start streaming your media, you now need to %s"
+" add a catalog %s"
+msgstr "아직 구성된 카탈로그가 없습니다. 미디어 스트리밍을 시작하려면 %s 카탈로그를 추가해야합니다. %s"
 
 #: ../../server/playlist.ajax.php:103
 msgid "Added to playlist"
-msgstr ""
+msgstr "재생 목록에 추가됨"
 
 #: ../../server/xml.server.php:54
 msgid "Session Expired"
-msgstr ""
+msgstr "세션 만료 됨"
 
 #: ../../server/xml.server.php:71
 msgid "Unauthorized access attempt to API - ACL Error"
-msgstr ""
+msgstr "API에 대한 무단 액세스 시도 - ACL 오류"
 
 #: ../../share.php:75
-#, fuzzy
 msgid "Share created."
-msgstr "채널 생성됨"
+msgstr "공유가 생성되었습니다."
 
 #: ../../share.php:76
 msgid "You can now start sharing the following url:"
-msgstr ""
+msgstr "이제 다음 URL 공유를 시작할 수 있습니다."
 
 #: ../../share.php:81
 msgid ""
 "You can also embed this share as a web player into your website, with the "
 "following html code:"
-msgstr ""
+msgstr "다음 HTML 코드와 함께이 공유를 웹 플레이어로 웹 사이트에 퍼갈 수도 있습니다."
 
 #: ../../share.php:84
 msgid "Object Shared"
-msgstr ""
+msgstr "공유 객체"
 
 #: ../../share.php:94
-#, fuzzy
 msgid "Share Delete"
-msgstr "채널 삭제"
+msgstr "공유 삭제"
 
 #: ../../share.php:107
-#, fuzzy
 msgid "Share Deleted"
-msgstr "채널 삭제됨"
+msgstr "삭제 된 공유"
 
 #: ../../share.php:107
-#, fuzzy
 msgid "The Share has been deleted"
-msgstr "프로필 이미지가 삭제되었습니다"
+msgstr "공유가 삭제되었습니다."
 
 #: ../../share.php:120
 msgid "Shared Objects cleaned"
-msgstr ""
+msgstr "공유 객체 삭제됨"
 
 #: ../../share.php:120
 msgid "Expired shared objects have been cleaned."
-msgstr ""
+msgstr "만료 된 공유 객체가 정리되었습니다."
 
 #: ../../shout.php:63
 msgid "Invalid Object Selected"
-msgstr ""
+msgstr "잘못된 개체가 선택되었습니다."
 
 #: ../../song.php:36 ../../song.php:56 ../../song.php:58
-#, fuzzy
 msgid "Song Deletion"
-msgstr "앨범 삭제"
+msgstr "노래 삭제"
 
 #: ../../song.php:37
-#, fuzzy
 msgid "Are you sure you want to permanently delete this song?"
-msgstr "정말 이 앨범을 삭제하시겠습니까?"
+msgstr "이 노래를 완전히 삭제 하시겠습니까?"
 
 #: ../../song.php:56
-#, fuzzy
 msgid "Song has been deleted."
-msgstr "앨범이 삭제되었습니다."
+msgstr "노래가 삭제되었습니다."
 
 #: ../../song.php:58
-#, fuzzy
 msgid "Cannot delete this song."
-msgstr "이 앨범을 삭제할 수 없습니다."
+msgstr "이 노래를 삭제할 수 없습니다."
 
 #: ../../templates/browse_filters.inc.php:30
 msgid "Filters"
-msgstr ""
+msgstr "필터"
 
 #: ../../templates/browse_filters.inc.php:35
 msgid "Starts With"
-msgstr ""
+msgstr "함께 시작"
 
 #: ../../templates/browse_filters.inc.php:44
 msgid "Minimum Count"
-msgstr ""
+msgstr "최소 수"
 
 #: ../../templates/browse_filters.inc.php:51
-#, fuzzy
 msgid "Rated"
-msgstr "수정됨"
+msgstr "정격"
 
 #: ../../templates/browse_filters.inc.php:58
 msgid "Unplayed"
-msgstr ""
+msgstr "재생되지 않음"
 
 #: ../../templates/browse_filters.inc.php:64
 msgid "All Playlists"
-msgstr ""
+msgstr "모든 재생 목록"
 
 #: ../../templates/browse_filters.inc.php:73
 #: ../../templates/show_song_previews.inc.php:31
 #: ../../templates/show_songs.inc.php:33 ../../templates/show_songs.inc.php:96
-#, fuzzy
 msgid "Song Title"
-msgstr "활성화된 노래"
+msgstr "노래 제목"
 
 #: ../../templates/browse_filters.inc.php:112
 msgid "Toggle Artwork"
-msgstr ""
+msgstr "아트웍 토글"
 
 #: ../../templates/cookie_disclaimer.inc.php:1
 msgid "Use of cookies by Ampache"
-msgstr ""
+msgstr "Ampache의 쿠키 사용"
 
 #: ../../templates/cookie_disclaimer.inc.php:4
 msgid ""
 "Cookies are small text files that are placed on your computer by websites "
-"that you visit. They are widely used in order to make websites work, or work "
-"more efficiently, as well as to provide information to the owners of the "
+"that you visit. They are widely used in order to make websites work, or work"
+" more efficiently, as well as to provide information to the owners of the "
 "site."
 msgstr ""
+"쿠키는 귀하가 방문하는 웹 사이트에 귀하의 컴퓨터에 저장되는 작은 텍스트 파일입니다. 그들은 사이트의 소유자에게 정보를 제공 할뿐만 "
+"아니라 웹 사이트를 작동 시키거나보다 효율적으로 작업하기 위해 널리 사용됩니다."
 
 #: ../../templates/cookie_disclaimer.inc.php:5
 msgid "The table below explains the cookies we use and why."
-msgstr ""
+msgstr "아래 표는 우리가 사용하는 쿠키와 그 이유를 설명합니다."
 
 #: ../../templates/cookie_disclaimer.inc.php:13
 msgid "Cookie"
-msgstr ""
+msgstr "쿠키"
 
 #: ../../templates/cookie_disclaimer.inc.php:19
 msgid "Purpose"
-msgstr ""
+msgstr "목적"
 
 #: ../../templates/cookie_disclaimer.inc.php:27
 msgid "Hide the cookie disclaimer message."
-msgstr ""
+msgstr "쿠키 면책 조항 메시지를 숨 깁니다."
 
 #: ../../templates/cookie_disclaimer.inc.php:32
 msgid "Ampache session."
-msgstr ""
+msgstr "암피시 세션."
 
 #: ../../templates/cookie_disclaimer.inc.php:37
 msgid "Ampache session username (if authenticated, information only)."
-msgstr ""
+msgstr "Ampache 세션 사용자 이름 (인증 된 경우 정보 만)."
 
 #: ../../templates/cookie_disclaimer.inc.php:42
 msgid "Automatically authenticate users."
-msgstr ""
+msgstr "사용자를 자동으로 인증합니다."
 
 #: ../../templates/cookie_disclaimer.inc.php:47
 msgid "Keep latest web player volume."
-msgstr ""
+msgstr "최신 웹 플레이어 볼륨 유지."
 
 #: ../../templates/cookie_disclaimer.inc.php:52
 msgid "Show/Hide column [column_index] when browsing [object_type] objects."
-msgstr ""
+msgstr "[object_type] 개체를 탐색 할 때 [column_index] 열 표시 / 숨기기"
 
 #: ../../templates/cookie_disclaimer.inc.php:57
 msgid "Use alphabet when browsing [object_type] objects."
-msgstr ""
+msgstr "[object_type] 개체를 탐색 할 때 알파벳을 사용하십시오."
 
 #: ../../templates/cookie_disclaimer.inc.php:62
 msgid "Use pages when browsing [object_type] objects."
-msgstr ""
+msgstr "[object_type] 개체를 탐색 할 때 페이지를 사용하십시오."
 
 #: ../../templates/cookie_disclaimer.inc.php:67
 msgid "Collapse/Expand Sidebar [menu_section]."
-msgstr ""
+msgstr "사이드 바 축소 / 확장 [menu_section]."
 
 #: ../../templates/cookie_disclaimer.inc.php:72
 msgid "Collapse/Expand Sidebar."
-msgstr ""
+msgstr "사이드 바 축소 / 확장."
 
 #: ../../templates/error_page.inc.php:32
 msgid "Ampache error page"
-msgstr ""
+msgstr "암페어 오류 페이지"
 
 #: ../../templates/error_page.inc.php:44
 #: ../../templates/show_mail_users.inc.php:43
 #: ../../templates/show_test.inc.php:38 ../../update.php:72
 msgid "aMuzak"
-msgstr ""
+msgstr "아 뮤자 크"
 
 #: ../../templates/error_page.inc.php:51
 msgid ""
-"The following error has occured, you will automaticly be redirected after 10 "
-"seconds."
-msgstr ""
+"The following error has occured, you will automaticly be redirected after 10"
+" seconds."
+msgstr "다음 오류가 발생했습니다. 10 초 후에 자동으로 리디렉션됩니다."
 
 #: ../../templates/error_page.inc.php:53
 msgid "Error messages"
-msgstr ""
+msgstr "오류 메시지"
 
 #: ../../templates/footer.inc.php:49
 #: ../../templates/show_lostpassword_form.inc.php:66
 msgid "Queries:"
-msgstr ""
+msgstr "검색어 :"
 
 #: ../../templates/footer.inc.php:49
 #: ../../templates/show_lostpassword_form.inc.php:67
 msgid "Cache Hits:"
-msgstr ""
+msgstr "캐시 히트 :"
 
 #: ../../templates/footer.inc.php:53
 msgid "Load time:"
-msgstr ""
+msgstr "로드 시간 :"
 
 #: ../../templates/header.inc.php:98
 msgid "Save"
-msgstr ""
+msgstr "구하다"
 
 #: ../../templates/header.inc.php:99
 #: ../../templates/show_confirmation.inc.php:35
 #: ../../templates/show_get_art.inc.php:64
 msgid "Cancel"
-msgstr ""
+msgstr "취소"
 
 #. HINT: Translator, "%s" is replaced by "cookie settings"
 #: ../../templates/header.inc.php:301
 #, php-format
 msgid ""
-"We have placed cookies on your computer to help make this website better. "
-"You can change your %s at any time.\n"
+"We have placed cookies on your computer to help make this website better. You can change your %s at any time.\n"
 "Otherwise, we will assume you are OK to continue.\n"
 "\n"
 "Click on this message to not display it again."
 msgstr ""
+"우리는 귀하의 컴퓨터에 쿠키를 넣어서이 웹 사이트를보다 잘 만들 수 있도록 도와줍니다. 언제든지 %s를 변경할 수 있습니다.\n"
+"그렇지 않으면 계속 진행할 수 있다고 가정합니다.\n"
+"\n"
+"이 메시지를 클릭하면 다시 표시되지 않습니다."
 
 #: ../../templates/header.inc.php:302
 msgid "cookie settings"
-msgstr ""
+msgstr "쿠키 설정"
 
-#: ../../templates/header.inc.php:338 ../../templates/show_album_row.inc.php:32
+#: ../../templates/header.inc.php:338
+#: ../../templates/show_album_row.inc.php:32
 #: ../../templates/show_artist_row.inc.php:32
 #: ../../templates/show_playlist_row.inc.php:30
 #: ../../templates/show_podcast_episode.inc.php:66
@@ -3285,7 +3278,7 @@ msgstr ""
 #: ../../templates/show_song.inc.php:78
 #: ../../templates/show_song_row.inc.php:38
 msgid "Play next"
-msgstr ""
+msgstr "다음에 재생"
 
 #: ../../templates/header.inc.php:341 ../../templates/show_album.inc.php:120
 #: ../../templates/show_album.inc.php:123
@@ -3300,83 +3293,82 @@ msgstr ""
 #: ../../templates/show_song_preview_row.inc.php:47
 #: ../../templates/show_song_row.inc.php:54
 msgid "Add to existing playlist"
-msgstr ""
+msgstr "기존 재생 목록에 추가"
 
 #: ../../templates/header.inc.php:373
 #: ../../templates/show_login_form.inc.php:73
 msgid "Login"
-msgstr ""
+msgstr "로그인"
 
 #: ../../templates/header.inc.php:377
 #: ../../templates/show_login_form.inc.php:79
 msgid "Register"
-msgstr ""
+msgstr "레지스터"
 
 #: ../../templates/header.inc.php:517
 msgid "Error: Your config file is out of date!"
-msgstr ""
+msgstr "오류 : 설정 파일이 오래되었습니다!"
 
 #: ../../templates/header.inc.php:519
 msgid "Generate and download new config file"
-msgstr ""
+msgstr "새 구성 파일 생성 및 다운로드"
 
 #: ../../templates/header.inc.php:520
-#, fuzzy
 msgid "Write new config file to disk"
-msgstr "쓰기 성공. 설정이 마이그레이션 되었습니다"
+msgstr "디스크에 새 구성 파일 작성"
 
 #: ../../templates/install_header.inc.php:52
 msgid "aMuzak Installation"
-msgstr ""
+msgstr "무자크 설치"
 
 #: ../../templates/list_header.inc.php:116
 msgid "Prev"
-msgstr ""
+msgstr "예전의"
 
 #: ../../templates/list_header.inc.php:118
 msgid "Page"
-msgstr ""
+msgstr "페이지"
 
 #: ../../templates/list_header.inc.php:120
 msgid "of"
-msgstr ""
+msgstr "의"
 
 #: ../../templates/list_header.inc.php:122
 msgid "Next"
-msgstr ""
+msgstr "다음 것"
 
 #: ../../templates/list_header.inc.php:133
 msgid "Pages"
-msgstr ""
+msgstr "페이지"
 
 #: ../../templates/list_header.inc.php:134
 msgid "Infinite Scroll"
-msgstr ""
+msgstr "무한 스크롤"
 
 #: ../../templates/list_header.inc.php:135
 msgid "Grid View"
-msgstr ""
+msgstr "격자보기"
 
 #: ../../templates/list_header.inc.php:138
 msgid "Alphabet"
-msgstr ""
+msgstr "알파벳"
 
 #: ../../templates/list_header.inc.php:146
 msgid "Limit"
-msgstr ""
+msgstr "한도"
 
 #: ../../templates/list_header.inc.php:155
 msgid "Item Count"
-msgstr ""
+msgstr "아이템 수"
 
 #: ../../templates/rightbar.inc.php:30
 msgid "Add to Playlist"
-msgstr ""
+msgstr "재생 목록에 추가"
 
 #: ../../templates/rightbar.inc.php:33
 #: ../../templates/show_playlists_dialog.inc.php:27
 msgid "Add to New Playlist"
-msgstr ""
+msgstr "새 재생 목록에 추가"
 
 #: ../../templates/rightbar.inc.php:54
 #: ../../templates/show_album_row.inc.php:104
@@ -3389,70 +3381,70 @@ msgstr ""
 #: ../../templates/show_search_options.inc.php:34
 #: ../../templates/show_search_row.inc.php:54
 msgid "Batch Download"
-msgstr ""
+msgstr "일괄 다운로드"
 
 #: ../../templates/rightbar.inc.php:60
 #: ../../templates/show_democratic.inc.php:49
 #: ../../templates/show_democratic.inc.php:50
 msgid "Clear Playlist"
-msgstr ""
+msgstr "재생 목록 지우기"
 
 #: ../../templates/rightbar.inc.php:63
 msgid "Add Dynamic Items"
-msgstr ""
+msgstr "동적 항목 추가"
 
 #: ../../templates/rightbar.inc.php:66
 msgid "Random Song"
-msgstr ""
+msgstr "무작위 송"
 
 #: ../../templates/rightbar.inc.php:69
 msgid "Random Artist"
-msgstr ""
+msgstr "랜덤 아티스트"
 
 #: ../../templates/rightbar.inc.php:72
 msgid "Random Album"
-msgstr ""
+msgstr "임의 앨범"
 
 #: ../../templates/rightbar.inc.php:75
 msgid "Random Playlist"
-msgstr ""
+msgstr "무작위 재생 목록"
 
 #: ../../templates/rightbar.inc.php:117
 msgid "No items"
-msgstr ""
+msgstr "항목이 없습니다"
 
 #: ../../templates/show_access_list.inc.php:23
 #: ../../templates/sidebar_admin.inc.php:37
 msgid "Access Control"
-msgstr ""
+msgstr "액세스 제어"
 
 #: ../../templates/show_access_list.inc.php:27
 msgid "Add Current Host"
-msgstr ""
+msgstr "현재 호스트 추가"
 
 #: ../../templates/show_access_list.inc.php:30
 msgid "Add API / RPC Host"
-msgstr ""
+msgstr "API / RPC 호스트 추가"
 
 #: ../../templates/show_access_list.inc.php:33
 msgid "Add Local Network Definition"
-msgstr ""
+msgstr "로컬 네트워크 정의 추가"
 
 #: ../../templates/show_access_list.inc.php:35
 msgid "Advanced Add"
-msgstr ""
+msgstr "고급 추가"
 
 #: ../../templates/show_access_list.inc.php:40
 msgid "Access Control Entries"
-msgstr ""
+msgstr "액세스 제어 항목"
 
 #: ../../templates/show_access_list.inc.php:48
 msgid "Start Address"
-msgstr ""
+msgstr "시작 주소"
 
 #: ../../templates/show_access_list.inc.php:49
 msgid "End Address"
-msgstr ""
+msgstr "최종 주소"
 
 #: ../../templates/show_access_list.inc.php:50
 #: ../../templates/show_add_access.inc.php:35
@@ -3462,7 +3454,7 @@ msgstr ""
 #: ../../templates/show_preference_admin.inc.php:33
 #: ../../templates/show_preference_admin.inc.php:53
 msgid "Level"
-msgstr ""
+msgstr "수평"
 
 #: ../../templates/show_access_list.inc.php:52
 #: ../../templates/show_add_playlist.inc.php:31
@@ -3475,7 +3467,7 @@ msgstr ""
 #: ../../templates/show_searches.inc.php:44
 #: ../../templates/show_searches.inc.php:74
 msgid "Type"
-msgstr ""
+msgstr "유형"
 
 #: ../../templates/show_access_list.inc.php:53
 #: ../../templates/show_artists.inc.php:65
@@ -3506,22 +3498,21 @@ msgstr ""
 #: ../../templates/show_song.inc.php:66 ../../templates/show_songs.inc.php:66
 #: ../../templates/show_users.inc.php:62 ../../templates/show_users.inc.php:94
 msgid "Action"
-msgstr ""
+msgstr "동작"
 
 #: ../../templates/show_account.inc.php:33
 #: ../../templates/show_add_user.inc.php:37
 #: ../../templates/show_edit_user.inc.php:40
 #: ../../templates/show_user_registration.inc.php:91
 msgid "Full Name"
-msgstr ""
+msgstr "성명"
 
 #: ../../templates/show_account.inc.php:41
 #: ../../templates/show_add_user.inc.php:45
 #: ../../templates/show_edit_user.inc.php:51
 #: ../../templates/show_user_registration.inc.php:99
-#, fuzzy
 msgid "E-mail"
-msgstr "이메일 보냄"
+msgstr "이메일"
 
 #: ../../templates/show_account.inc.php:49
 #: ../../templates/show_add_label.inc.php:71
@@ -3534,7 +3525,7 @@ msgstr "이메일 보냄"
 #: ../../templates/show_podcast_episode.inc.php:116
 #: ../../templates/show_user_registration.inc.php:108
 msgid "Website"
-msgstr ""
+msgstr "웹 사이트"
 
 #: ../../templates/show_account.inc.php:59
 #: ../../templates/show_edit_user.inc.php:69
@@ -3543,17 +3534,17 @@ msgstr ""
 #: ../../templates/show_podcast_episodes.inc.php:92
 #: ../../templates/show_user_registration.inc.php:119
 msgid "State"
-msgstr ""
+msgstr "상태"
 
 #: ../../templates/show_account.inc.php:69
 #: ../../templates/show_edit_user.inc.php:78
 #: ../../templates/show_user_registration.inc.php:130
 msgid "City"
-msgstr ""
+msgstr "시티"
 
 #: ../../templates/show_account.inc.php:77
 msgid "New Password"
-msgstr ""
+msgstr "새 비밀번호"
 
 #: ../../templates/show_account.inc.php:84
 #: ../../templates/show_add_user.inc.php:72
@@ -3561,37 +3552,37 @@ msgstr ""
 #: ../../templates/show_install_account.inc.php:63
 #: ../../templates/show_user_registration.inc.php:144
 msgid "Confirm Password"
-msgstr ""
+msgstr "비밀번호 확인"
 
 #: ../../templates/show_account.inc.php:91
 #: ../../templates/show_add_user.inc.php:95
 #: ../../templates/show_edit_user.inc.php:119
 msgid "Avatar"
-msgstr ""
+msgstr "화신"
 
 #: ../../templates/show_account.inc.php:101
 #: ../../templates/show_edit_user.inc.php:132
 msgid "API Key"
-msgstr ""
+msgstr "API 키"
 
 #: ../../templates/show_account.inc.php:129
 #: ../../templates/show_edit_user.inc.php:157
 #: ../../templates/show_manage_catalogs.inc.php:45
 msgid "Clear Stats"
-msgstr ""
+msgstr "통계 지우기"
 
 #: ../../templates/show_account.inc.php:139
 msgid "Update Account"
-msgstr ""
+msgstr "계정 업데이트"
 
 #: ../../templates/show_add_access.inc.php:24
 msgid "Add Access Control List"
-msgstr ""
+msgstr "액세스 제어 목록 추가"
 
 #: ../../templates/show_add_access.inc.php:50
 #: ../../templates/show_edit_access.inc.php:31
 msgid "ACL Type"
-msgstr ""
+msgstr "ACL 유형"
 
 #: ../../templates/show_add_access.inc.php:57
 #: ../../templates/show_add_access.inc.php:58
@@ -3599,174 +3590,172 @@ msgstr ""
 #: ../../templates/show_add_access.inc.php:67
 #, php-format
 msgid "%s + %s"
-msgstr ""
+msgstr "%s + %s"
 
 #: ../../templates/show_add_access.inc.php:86
 #: ../../templates/show_edit_access.inc.php:43
 msgid "IPv4 or IPv6 Addresses"
-msgstr ""
+msgstr "IPv4 또는 IPv6 주소"
 
 #: ../../templates/show_add_access.inc.php:92
 #: ../../templates/show_edit_access.inc.php:48
 msgid "Start"
-msgstr ""
+msgstr "스타트"
 
 #: ../../templates/show_add_access.inc.php:102
 #: ../../templates/show_edit_access.inc.php:53
 msgid "End"
-msgstr ""
+msgstr "종료"
 
 #: ../../templates/show_add_access.inc.php:115
 msgid "Create ACL"
-msgstr ""
+msgstr "ACL 작성"
 
 #: ../../templates/show_add_catalog.inc.php:26
 #: ../../templates/sidebar_admin.inc.php:26
 msgid "Add a Catalog"
-msgstr ""
+msgstr "카탈로그 추가"
 
 #: ../../templates/show_add_catalog.inc.php:27
 msgid ""
-"In the form below enter either a local path (i.e. /data/music) or the URL to "
-"a remote Ampache installation (i.e http://theotherampache.com)"
+"In the form below enter either a local path (i.e. /data/music) or the URL to"
+" a remote Ampache installation (i.e http://theotherampache.com)"
 msgstr ""
+"아래 양식에서 로컬 경로 (예 : / data / music) 또는 원격 Ampache 설치 URL (예 : "
+"http://theotherampache.com)을 입력하십시오."
 
 #: ../../templates/show_add_catalog.inc.php:34
-#, fuzzy
 msgid "Catalog Name"
-msgstr "카탈로그 수정됨"
+msgstr "카탈로그 이름"
 
 #: ../../templates/show_add_catalog.inc.php:37
 #: ../../templates/show_edit_catalog.inc.php:31
 msgid "Auto-inserted Fields"
-msgstr ""
+msgstr "자동 삽입 필드"
 
 #: ../../templates/show_add_catalog.inc.php:38
 #: ../../templates/show_edit_catalog.inc.php:32
 msgid "album name"
-msgstr ""
+msgstr "앨범 이름"
 
 #: ../../templates/show_add_catalog.inc.php:39
 #: ../../templates/show_edit_catalog.inc.php:33
 msgid "artist name"
-msgstr ""
+msgstr "아티스트 이름"
 
 #: ../../templates/show_add_catalog.inc.php:40
 #: ../../templates/show_edit_catalog.inc.php:34
 msgid "id3 comment"
-msgstr ""
+msgstr "id3 덧글"
 
 #: ../../templates/show_add_catalog.inc.php:41
 #: ../../templates/show_edit_catalog.inc.php:35
 msgid "track number (padded with leading 0)"
-msgstr ""
+msgstr "트랙 번호 (앞에 0이 채워짐)"
 
 #: ../../templates/show_add_catalog.inc.php:42
 #: ../../templates/show_edit_catalog.inc.php:36
 msgid "song title"
-msgstr ""
+msgstr "노래 제목"
 
 #: ../../templates/show_add_catalog.inc.php:43
 #: ../../templates/show_edit_catalog.inc.php:37
 msgid "year"
-msgstr ""
+msgstr "년"
 
 #: ../../templates/show_add_catalog.inc.php:44
 #: ../../templates/show_edit_catalog.inc.php:38
 msgid "other"
-msgstr ""
+msgstr "다른"
 
 #: ../../templates/show_add_catalog.inc.php:48
 #: ../../templates/show_edit_catalog.inc.php:42
-#, fuzzy
 msgid "Catalog Type"
-msgstr "카탈로그 종류"
+msgstr "카탈로그 유형"
 
 #: ../../templates/show_add_catalog.inc.php:52
 msgid "Filename Pattern"
-msgstr ""
+msgstr "파일 이름 패턴"
 
 #: ../../templates/show_add_catalog.inc.php:56
 #: ../../templates/show_edit_catalog.inc.php:53
 msgid "Folder Pattern"
-msgstr ""
+msgstr "폴더 패턴"
 
 #: ../../templates/show_add_catalog.inc.php:56
 #: ../../templates/show_edit_catalog.inc.php:53
 msgid "(no leading or ending '/')"
-msgstr ""
+msgstr "(선행 또는 결말 '/'없음)"
 
 #: ../../templates/show_add_catalog.inc.php:60
 #: ../../templates/show_catalog_row.inc.php:47
 msgid "Gather Art"
-msgstr ""
+msgstr "미술 수집"
 
 #: ../../templates/show_add_catalog.inc.php:64
 msgid "Build Playlists from playlist Files"
-msgstr ""
+msgstr "재생 목록 파일에서 재생 목록 작성"
 
 #: ../../templates/show_add_catalog.inc.php:68
 msgid "Gather media types"
-msgstr ""
+msgstr "미디어 유형 수집"
 
 #: ../../templates/show_add_catalog.inc.php:89
-#, fuzzy
 msgid "Add Catalog"
-msgstr "카탈로그 삭제"
+msgstr "카탈로그 추가"
 
 #: ../../templates/show_add_label.inc.php:23
 msgid "Add Label"
-msgstr ""
+msgstr "라벨 추가"
 
 #: ../../templates/show_add_label.inc.php:39
 #: ../../templates/show_edit_label_row.inc.php:36
 msgid "Personal"
-msgstr ""
+msgstr "개인적인"
 
 #: ../../templates/show_add_label.inc.php:42
 #: ../../templates/show_edit_label_row.inc.php:39
 msgid "Association"
-msgstr ""
+msgstr "협회"
 
 #: ../../templates/show_add_label.inc.php:45
 #: ../../templates/show_edit_label_row.inc.php:42
 msgid "Company"
-msgstr ""
+msgstr "회사"
 
 #: ../../templates/show_add_label.inc.php:50
 #: ../../templates/show_edit_artist_row.inc.php:43
 #: ../../templates/show_edit_label_row.inc.php:47
 msgid "Summary"
-msgstr ""
+msgstr "개요"
 
 #: ../../templates/show_add_label.inc.php:57
 #: ../../templates/show_edit_label_row.inc.php:51
 msgid "Address"
-msgstr ""
+msgstr "주소"
 
 #: ../../templates/show_add_label.inc.php:64
 #: ../../templates/show_edit_label_row.inc.php:55
 #: ../../templates/show_lostpassword_form.inc.php:56
-#, fuzzy
 msgid "Email"
-msgstr "이메일 보냄"
+msgstr "이메일"
 
 #: ../../templates/show_add_live_stream.inc.php:23
 #: ../../templates/show_live_streams.inc.php:29
 msgid "Add Radio Station"
-msgstr ""
+msgstr "라디오 방송국 추가"
 
 #: ../../templates/show_add_live_stream.inc.php:34
 #: ../../templates/show_edit_live_stream_row.inc.php:35
 msgid "Homepage"
-msgstr ""
+msgstr "홈페이지"
 
 #: ../../templates/show_add_live_stream.inc.php:41
 #: ../../templates/show_edit_live_stream_row.inc.php:31
 #: ../../templates/show_live_streams.inc.php:45
 #: ../../templates/show_live_streams.inc.php:73
 msgid "Stream URL"
-msgstr ""
+msgstr "스트림 URL"
 
 #: ../../templates/show_add_live_stream.inc.php:48
 #: ../../templates/show_edit_live_stream_row.inc.php:39
@@ -3774,70 +3763,70 @@ msgstr ""
 #: ../../templates/show_live_streams.inc.php:46
 #: ../../templates/show_live_streams.inc.php:74
 msgid "Codec"
-msgstr ""
+msgstr "코덱"
 
 #: ../../templates/show_add_playlist.inc.php:23
 msgid "Create a new playlist"
-msgstr ""
+msgstr "새 재생 목록 만들기"
 
 #: ../../templates/show_add_playlist.inc.php:41
 #: ../../templates/show_add_share.inc.php:73
 #: ../../templates/show_add_shout.inc.php:56
 msgid "Create"
-msgstr ""
+msgstr "몹시 떠들어 대다"
 
 #: ../../templates/show_add_podcast.inc.php:23
 msgid "Subscribe to Podcast"
-msgstr ""
+msgstr "팟 캐스트 구독"
 
 #: ../../templates/show_add_podcast.inc.php:27
 msgid "Podcast feed url"
-msgstr ""
+msgstr "팟 캐스트 피드 URL"
 
 #: ../../templates/show_add_podcast.inc.php:43
 msgid "Subscribe"
-msgstr ""
+msgstr "구독하기"
 
 #: ../../templates/show_add_pvmsg.inc.php:24
 msgid "Compose Message"
-msgstr ""
+msgstr "메시지 작성"
 
 #: ../../templates/show_add_pvmsg.inc.php:28
 #: ../../templates/show_pvmsgs.inc.php:52
 #: ../../templates/show_pvmsgs.inc.php:81
 msgid "Recipient"
-msgstr ""
+msgstr "수신자"
 
 #: ../../templates/show_add_pvmsg.inc.php:35
 #: ../../templates/show_mail_users.inc.php:48
 #: ../../templates/show_pvmsgs.inc.php:50
 #: ../../templates/show_pvmsgs.inc.php:79
 msgid "Subject"
-msgstr ""
+msgstr "제목"
 
 #: ../../templates/show_add_pvmsg.inc.php:42
 #: ../../templates/show_mail_users.inc.php:54
 msgid "Message"
-msgstr ""
+msgstr "메시지"
 
 #: ../../templates/show_add_pvmsg.inc.php:51
 msgid "Send"
-msgstr ""
+msgstr "보내다"
 
 #: ../../templates/show_adds_catalog.inc.php:23
 msgid "Starting New Media Search"
-msgstr ""
+msgstr "새로운 미디어 검색 시작하기"
 
 #. HINT: Catalog Name
 #: ../../templates/show_adds_catalog.inc.php:25
 #, php-format
 msgid "Starting New Media Search on %s catalog"
-msgstr ""
+msgstr "%s 카탈로그에서 새 미디어 검색 시작"
 
 #: ../../templates/show_adds_catalog.inc.php:27
 #: ../../templates/show_run_add_catalog.inc.php:25
 msgid "Found"
-msgstr ""
+msgstr "녹이다"
 
 #: ../../templates/show_adds_catalog.inc.php:28
 #: ../../templates/show_clean_catalog.inc.php:28
@@ -3845,122 +3834,126 @@ msgstr ""
 #: ../../templates/show_run_add_catalog.inc.php:26
 #: ../../templates/show_verify_catalog.inc.php:28
 msgid "Reading"
-msgstr ""
+msgstr "독서"
 
 #: ../../templates/show_add_share.inc.php:23
 msgid "Create Share"
-msgstr ""
+msgstr "공유 만들기"
 
 #: ../../templates/show_add_share.inc.php:29
 #: ../../templates/show_edit_share_row.inc.php:27
 msgid "Shared Object"
-msgstr ""
+msgstr "공유 객체"
 
 #: ../../templates/show_add_share.inc.php:42
 #: ../../templates/show_edit_share_row.inc.php:31
 #: ../../templates/show_shared_objects.inc.php:32
 msgid "Max Counter"
-msgstr ""
+msgstr "최대 카운터"
 
 #: ../../templates/show_add_share.inc.php:49
 #: ../../templates/show_edit_share_row.inc.php:35
 #: ../../templates/show_shared_objects.inc.php:35
 msgid "Expiry Days"
-msgstr ""
+msgstr "만료일"
 
 #: ../../templates/show_add_share.inc.php:55
 #: ../../templates/show_edit_share_row.inc.php:40
 #: ../../templates/show_shared_objects.inc.php:33
 msgid "Allow Stream"
-msgstr ""
+msgstr "스트림 허용"
 
 #: ../../templates/show_add_share.inc.php:63
 #: ../../templates/show_edit_share_row.inc.php:47
 #: ../../templates/show_shared_objects.inc.php:34
 msgid "Allow Download"
-msgstr ""
+msgstr "다운로드 허용"
 
 #: ../../templates/show_add_shout.inc.php:30
 msgid "Post to Shoutbox"
-msgstr ""
+msgstr "Shoutbox에 게시"
 
 #: ../../templates/show_add_shout.inc.php:38
 #: ../../templates/show_edit_shout.inc.php:31
 msgid "Comment:"
-msgstr ""
+msgstr "논평:"
 
 #: ../../templates/show_add_shout.inc.php:46
 #: ../../templates/show_edit_shout.inc.php:39
 msgid "Stick this comment"
-msgstr ""
+msgstr "이 댓글 붙이기"
 
 #: ../../templates/show_add_shout.inc.php:67
 #: ../../templates/show_shoutbox.inc.php:23
 msgid "Shoutbox"
-msgstr ""
+msgstr "Shoutbox"
 
 #: ../../templates/show_add_upload.inc.php:38
 #: ../../templates/show_add_upload.inc.php:156
 msgid "Target folder"
-msgstr ""
+msgstr "대상 폴더"
 
 #: ../../templates/show_add_upload.inc.php:211
 msgid "Files"
-msgstr ""
+msgstr "파일들"
 
 #: ../../templates/show_add_upload.inc.php:218
 msgid "Allowed file type"
-msgstr ""
+msgstr "허용 된 파일 형식"
 
 #: ../../templates/show_add_upload.inc.php:223
 msgid "Drop File Here"
-msgstr ""
+msgstr "여기에 파일 놓기"
 
 #: ../../templates/show_add_upload.inc.php:224
 msgid "Browse"
-msgstr ""
+msgstr "검색"
 
 #: ../../templates/show_add_user.inc.php:23
 msgid "Adding a New User"
-msgstr ""
+msgstr "새 사용자 추가"
 
 #: ../../templates/show_add_user.inc.php:80
 #: ../../templates/show_edit_user.inc.php:104
 msgid "User Access Level"
-msgstr ""
+msgstr "사용자 액세스 수준"
 
 #: ../../templates/show_add_user.inc.php:105
 #: ../../templates/sidebar_admin.inc.php:33
-#, fuzzy
 msgid "Add User"
-msgstr "사용자"
+msgstr "사용자 추가"
 
 #: ../../templates/show_album_group_disks.inc.php:45
-#: ../../templates/show_album.inc.php:50 ../../templates/show_artist.inc.php:43
+#: ../../templates/show_album.inc.php:50
+#: ../../templates/show_artist.inc.php:43
 #: ../../templates/show_label.inc.php:35 ../../templates/show_song.inc.php:146
 msgid "Search on Google ..."
-msgstr ""
+msgstr "Google 검색 ..."
 
 #: ../../templates/show_album_group_disks.inc.php:46
-#: ../../templates/show_album.inc.php:51 ../../templates/show_artist.inc.php:44
+#: ../../templates/show_album.inc.php:51
+#: ../../templates/show_artist.inc.php:44
 #: ../../templates/show_label.inc.php:36 ../../templates/show_song.inc.php:147
 msgid "Search on DuckDuckGo ..."
-msgstr ""
+msgstr "DuckDuckGo에서 검색 ..."
 
 #: ../../templates/show_album_group_disks.inc.php:47
-#: ../../templates/show_album.inc.php:52 ../../templates/show_artist.inc.php:45
+#: ../../templates/show_album.inc.php:52
+#: ../../templates/show_artist.inc.php:45
 #: ../../templates/show_label.inc.php:37
 msgid "Search on Wikipedia ..."
-msgstr ""
+msgstr "위키 피 디아에서 검색 ..."
 
 #: ../../templates/show_album_group_disks.inc.php:48
-#: ../../templates/show_album.inc.php:53 ../../templates/show_artist.inc.php:46
+#: ../../templates/show_album.inc.php:53
+#: ../../templates/show_artist.inc.php:46
 #: ../../templates/show_label.inc.php:38 ../../templates/show_song.inc.php:148
 msgid "Search on Last.fm ..."
-msgstr ""
+msgstr "Last.fm에서 검색 ..."
 
 #: ../../templates/show_album_group_disks.inc.php:59
-#: ../../templates/show_album.inc.php:89 ../../templates/show_albums.inc.php:63
+#: ../../templates/show_album.inc.php:89
+#: ../../templates/show_albums.inc.php:63
 #: ../../templates/show_albums.inc.php:137
 #: ../../templates/show_artist.inc.php:84
 #: ../../templates/show_catalogs.inc.php:34
@@ -3978,7 +3971,7 @@ msgstr ""
 #: ../../templates/show_searches.inc.php:78
 #: ../../templates/show_shared_objects.inc.php:37
 msgid "Actions"
-msgstr ""
+msgstr "행위"
 
 #: ../../templates/show_album_group_disks.inc.php:84
 #: ../../templates/show_album_group_disks.inc.php:85
@@ -3989,7 +3982,7 @@ msgstr ""
 #: ../../templates/show_artist_row.inc.php:55
 #: ../../templates/show_playlist_row.inc.php:53
 msgid "Random to temporary playlist"
-msgstr ""
+msgstr "무작위에서 임시 재생 목록"
 
 #: ../../templates/show_album_group_disks.inc.php:92
 #: ../../templates/show_album_group_disks.inc.php:93
@@ -4009,7 +4002,7 @@ msgstr ""
 #: ../../templates/show_song.inc.php:102
 #: ../../templates/show_song_row.inc.php:103
 msgid "Download"
-msgstr ""
+msgstr "다운로드"
 
 #: ../../templates/show_album_group_disks.inc.php:149
 #: ../../templates/show_album.inc.php:159
@@ -4017,30 +4010,29 @@ msgstr ""
 #: ../../templates/show_playlist.inc.php:61
 #: ../../templates/show_playlist.inc.php:62
 msgid "Save Tracks Order"
-msgstr ""
+msgstr "트랙 순서 저장"
 
 #: ../../templates/show_album_group_disks.inc.php:151
 #: ../../templates/show_album.inc.php:164
-#, fuzzy
 msgid "Do you really want to update from tags?"
-msgstr "정말 이 카탈로그를 삭제하시겠습니까?"
+msgstr "정말로 태그에서 업데이트 하시겠습니까?"
 
 #: ../../templates/show_album_group_disks.inc.php:152
 #: ../../templates/show_album.inc.php:164
 msgid "Update from tags"
-msgstr ""
+msgstr "태그에서 업데이트"
 
 #: ../../templates/show_album_group_disks.inc.php:154
 #: ../../templates/show_album.inc.php:181
 #: ../../templates/show_album.inc.php:184
 #: ../../templates/show_album_row.inc.php:110
-#, fuzzy
 msgid "Album edit"
-msgstr "앨범 삭제"
+msgstr "앨범 편집"
 
-#: ../../templates/show_album.inc.php:83 ../../templates/show_artist.inc.php:78
+#: ../../templates/show_album.inc.php:83
+#: ../../templates/show_artist.inc.php:78
 msgid "times"
-msgstr ""
+msgstr "타임스"
 
 #: ../../templates/show_album.inc.php:151
 #: ../../templates/show_album.inc.php:152
@@ -4051,11 +4043,11 @@ msgstr ""
 #: ../../templates/show_podcast.inc.php:85
 #: ../../templates/show_song.inc.php:109 ../../templates/show_user.inc.php:65
 msgid "Graphs"
-msgstr ""
+msgstr "그래프"
 
 #: ../../templates/show_album.inc.php:185
 msgid "Edit Album"
-msgstr ""
+msgstr "앨범 수정"
 
 #: ../../templates/show_albums.inc.php:35
 #: ../../templates/show_albums.inc.php:109
@@ -4075,7 +4067,7 @@ msgstr ""
 #: ../../templates/show_recommended_artists.inc.php:32
 #: ../../templates/show_recommended_artists.inc.php:90
 msgid "Art"
-msgstr ""
+msgstr "미술"
 
 #: ../../templates/show_albums.inc.php:48
 #: ../../templates/show_albums.inc.php:122
@@ -4087,10 +4079,11 @@ msgstr ""
 #: ../../templates/show_now_playing_row.inc.php:54
 #: ../../templates/show_recommended_artists.inc.php:41
 #: ../../templates/show_recommended_artists.inc.php:98
-#: ../../templates/show_songs.inc.php:37 ../../templates/show_songs.inc.php:100
+#: ../../templates/show_songs.inc.php:37
+#: ../../templates/show_songs.inc.php:100
 #: ../../templates/show_stats.inc.php:36
 msgid "Tags"
-msgstr ""
+msgstr "태그"
 
 #: ../../templates/show_albums.inc.php:53
 #: ../../templates/show_albums.inc.php:127
@@ -4111,7 +4104,7 @@ msgstr ""
 #: ../../templates/show_song.inc.php:34 ../../templates/show_songs.inc.php:54
 #: ../../templates/show_songs.inc.php:116
 msgid "Rating"
-msgstr ""
+msgstr "평가"
 
 #: ../../templates/show_albums.inc.php:58
 #: ../../templates/show_albums.inc.php:132
@@ -4131,31 +4124,32 @@ msgstr ""
 #: ../../templates/show_recommended_artists.inc.php:106
 #: ../../templates/show_song.inc.php:45 ../../templates/show_songs.inc.php:60
 msgid "Fav."
-msgstr ""
+msgstr "Fav."
 
 #: ../../templates/show_albums.inc.php:99
 msgid "No album found"
-msgstr ""
+msgstr "앨범이 없습니다."
 
 #: ../../templates/show_artist.inc.php:49
 #: ../../templates/show_artist.inc.php:243
 #: ../../templates/show_artist.inc.php:253
 #: ../../templates/show_artist.inc.php:263
-#: ../../templates/show_index.inc.php:51 ../../templates/show_label.inc.php:107
+#: ../../templates/show_index.inc.php:51
+#: ../../templates/show_label.inc.php:107
 #: ../../templates/show_now_playing_row.inc.php:83
 #: ../../templates/show_now_playing_row.inc.php:89
 msgid "Loading..."
-msgstr ""
+msgstr "로드 중 ..."
 
 #: ../../templates/show_artist.inc.php:90
 #: ../../templates/show_artist.inc.php:92
 msgid "Show all"
-msgstr ""
+msgstr "모두 보이기"
 
 #: ../../templates/show_artist.inc.php:98
 #: ../../templates/show_artist.inc.php:100
 msgid "Show albums"
-msgstr ""
+msgstr "앨범 표시"
 
 #: ../../templates/show_artist.inc.php:107
 #: ../../templates/show_artist.inc.php:108
@@ -4164,7 +4158,7 @@ msgstr ""
 #: ../../templates/show_podcast.inc.php:66
 #: ../../templates/show_podcast.inc.php:67
 msgid "Play all"
-msgstr ""
+msgstr "모두 재생"
 
 #: ../../templates/show_artist.inc.php:113
 #: ../../templates/show_artist.inc.php:114
@@ -4173,7 +4167,7 @@ msgstr ""
 #: ../../templates/show_podcast.inc.php:74
 #: ../../templates/show_podcast.inc.php:75
 msgid "Play all last"
-msgstr ""
+msgstr "마지막으로 모두 재생"
 
 #. HINT: Artist Fullname
 #: ../../templates/show_artist.inc.php:124
@@ -4181,7 +4175,7 @@ msgstr ""
 #: ../../templates/show_playlist.inc.php:102
 #: ../../templates/show_playlist.inc.php:103
 msgid "Add all to temporary playlist"
-msgstr ""
+msgstr "임시 재생 목록에 모두 추가"
 
 #. HINT: Artist Fullname
 #: ../../templates/show_artist.inc.php:129
@@ -4189,17 +4183,17 @@ msgstr ""
 #: ../../templates/show_playlist.inc.php:106
 #: ../../templates/show_playlist.inc.php:107
 msgid "Random all to temporary playlist"
-msgstr ""
+msgstr "모든 임시 재생 목록에 무작위"
 
 #: ../../templates/show_artist.inc.php:174
 #: ../../templates/show_artist.inc.php:177
 #: ../../templates/show_artist_row.inc.php:90
 msgid "Artist edit"
-msgstr ""
+msgstr "아티스트 편집"
 
 #: ../../templates/show_artist.inc.php:178
 msgid "Edit Artist"
-msgstr ""
+msgstr "아티스트 편집"
 
 #: ../../templates/show_artist.inc.php:201
 #: ../../templates/show_artist.inc.php:242
@@ -4207,12 +4201,12 @@ msgstr ""
 #: ../../templates/show_now_playing_similar.inc.php:28
 #: ../../templates/show_recommended_artists.inc.php:25
 msgid "Similar Artists"
-msgstr ""
+msgstr "비슷한 아티스트"
 
 #: ../../templates/show_artist.inc.php:206
 #: ../../templates/show_artist.inc.php:252
 msgid "Events"
-msgstr ""
+msgstr "이벤트"
 
 #: ../../templates/show_artists.inc.php:44
 #: ../../templates/show_artists.inc.php:118
@@ -4224,50 +4218,50 @@ msgstr ""
 #: ../../templates/show_podcast_episodes.inc.php:90
 #: ../../templates/show_recommended_artists.inc.php:40
 #: ../../templates/show_recommended_artists.inc.php:97
-#: ../../templates/show_songs.inc.php:38 ../../templates/show_songs.inc.php:101
+#: ../../templates/show_songs.inc.php:38
+#: ../../templates/show_songs.inc.php:101
 msgid "Time"
-msgstr ""
+msgstr "시각"
 
 #: ../../templates/show_artists.inc.php:101
 msgid "No artist found"
-msgstr ""
+msgstr "아티스트를 찾을 수 없습니다."
 
 #: ../../templates/show_arts.inc.php:28
 msgid "Select New Art"
-msgstr ""
+msgstr "새 아트 선택"
 
 #: ../../templates/show_arts.inc.php:52
 msgid "Invalid"
-msgstr ""
+msgstr "무효"
 
 #: ../../templates/show_arts.inc.php:55
 #: ../../templates/show_disabled_songs.inc.php:28
 #: ../../templates/show_disabled_songs.inc.php:58
 #: ../../templates/show_pvmsg_row.inc.php:24
 msgid "Select"
-msgstr ""
+msgstr "고르다"
 
 #: ../../templates/show_big_art.inc.php:31
-#, fuzzy
 msgid "Album Art"
-msgstr "앨범 삭제"
+msgstr "앨범 아트"
 
 #: ../../templates/show_big_art.inc.php:35
 msgid "Click to close window"
-msgstr ""
+msgstr "창을 닫으려면 클릭하십시오."
 
 #: ../../templates/show_catalog_row.inc.php:36
 msgid "Make it ready ..."
-msgstr ""
+msgstr "준비 시켜라."
 
 #: ../../templates/show_catalog_row.inc.php:44
 msgid "Verify"
-msgstr ""
+msgstr "확인"
 
 #: ../../templates/show_catalog_row.inc.php:45
 #: ../../templates/show_shares.inc.php:27
 msgid "Clean"
-msgstr ""
+msgstr "깨끗한"
 
 #: ../../templates/show_catalog_row.inc.php:46
 #: ../../templates/show_create_democratic.inc.php:70
@@ -4275,41 +4269,39 @@ msgstr ""
 #: ../../templates/show_edit_shout.inc.php:43
 #: ../../templates/show_manage_catalogs.inc.php:59
 #: ../../templates/show_preference_admin.inc.php:58
-#, fuzzy
 msgid "Update"
-msgstr "수정됨"
+msgstr "최신 정보"
 
 #: ../../templates/show_catalog_row.inc.php:52
 msgid "Go"
-msgstr ""
+msgstr "가기"
 
 #: ../../templates/show_catalogs.inc.php:30
 #: ../../templates/show_catalogs.inc.php:60
 msgid "Info"
-msgstr ""
+msgstr "정보"
 
 #: ../../templates/show_catalogs.inc.php:31
 #: ../../templates/show_catalogs.inc.php:61
 #: ../../templates/show_stats.inc.php:70
 msgid "Last Verify"
-msgstr ""
+msgstr "마지막 확인"
 
 #: ../../templates/show_catalogs.inc.php:32
 #: ../../templates/show_catalogs.inc.php:62
 #: ../../templates/show_stats.inc.php:71
 msgid "Last Add"
-msgstr ""
+msgstr "마지막 추가"
 
 #: ../../templates/show_catalogs.inc.php:33
 #: ../../templates/show_catalogs.inc.php:63
 #: ../../templates/show_stats.inc.php:72
 msgid "Last Clean"
-msgstr ""
+msgstr "마지막 청소"
 
 #: ../../templates/show_catalogs.inc.php:51
-#, fuzzy
 msgid "No catalog found"
-msgstr "비활성화된 노래가 없습니다"
+msgstr "카탈로그를 찾을 수 없음"
 
 #: ../../templates/show_catalog_types.inc.php:30
 #: ../../templates/show_catalog_types.inc.php:68
@@ -4321,45 +4313,44 @@ msgstr "비활성화된 노래가 없습니다"
 #: ../../templates/show_plugins.inc.php:72
 #: ../../templates/show_podcast_episode.inc.php:111
 msgid "Description"
-msgstr ""
+msgstr "기술"
 
 #: ../../templates/show_catalog_types.inc.php:31
 #: ../../templates/show_catalog_types.inc.php:69
 #: ../../templates/show_plugins.inc.php:31
 #: ../../templates/show_plugins.inc.php:73
 msgid "Version"
-msgstr ""
+msgstr "번역"
 
 #: ../../templates/show_catalog_types.inc.php:48
 #: ../../templates/show_plugins.inc.php:43
 msgid "Activate"
-msgstr ""
+msgstr "활성화"
 
 #: ../../templates/show_catalog_types.inc.php:60
 #: ../../templates/show_disabled_songs.inc.php:51
 #: ../../templates/show_manage_shoutbox.inc.php:52
 #: ../../templates/show_plugins.inc.php:64
 msgid "No Records Found"
-msgstr ""
+msgstr "기록이 없습니다"
 
 #: ../../templates/show_clean_catalog.inc.php:23
-#, fuzzy
 msgid "Clean Catalog"
-msgstr "카탈로그 삭제"
+msgstr "깨끗한 카탈로그"
 
 #. HINT: Catalog Name
 #: ../../templates/show_clean_catalog.inc.php:25
-#, fuzzy, php-format
+#, php-format
 msgid "Cleaning the %s Catalog"
-msgstr "카탈로그 삭제"
+msgstr "%s 카탈로그 정리"
 
 #: ../../templates/show_clean_catalog.inc.php:27
 msgid "Checking"
-msgstr ""
+msgstr "확인 중"
 
 #: ../../templates/show_concerts.inc.php:23
 msgid "Coming Events"
-msgstr ""
+msgstr "다가오는 이벤트"
 
 #: ../../templates/show_concerts.inc.php:27
 #: ../../templates/show_concerts.inc.php:55
@@ -4368,159 +4359,158 @@ msgstr ""
 #: ../../templates/show_pvmsgs.inc.php:53
 #: ../../templates/show_pvmsgs.inc.php:82
 msgid "Date"
-msgstr ""
+msgstr "날짜"
 
 #: ../../templates/show_concerts.inc.php:29
 #: ../../templates/show_concerts.inc.php:57
 msgid "Location"
-msgstr ""
+msgstr "위치"
 
 #: ../../templates/show_concerts.inc.php:44
 msgid "No coming events found"
-msgstr ""
+msgstr "예정된 이벤트 없음"
 
 #: ../../templates/show_concerts.inc.php:51
 msgid "Past Events"
-msgstr ""
+msgstr "과거 사건들"
 
 #: ../../templates/show_concerts.inc.php:72
-#, fuzzy
 msgid "No past events found"
-msgstr "비활성화된 노래가 없습니다"
+msgstr "과거 이벤트가 없습니다."
 
 #: ../../templates/show_confirmation.inc.php:29
 #: ../../templates/show_install_check.inc.php:67
 #: ../../templates/show_update_items.inc.php:28
 msgid "Continue"
-msgstr ""
+msgstr "잇다"
 
 #: ../../templates/show_create_democratic.inc.php:23
 #: ../../templates/show_democratic.inc.php:38
 #: ../../templates/show_democratic.inc.php:40
 msgid "Configure Democratic Playlist"
-msgstr ""
+msgstr "민주당 재생 목록 구성"
 
 #: ../../templates/show_create_democratic.inc.php:31
 #: ../../templates/show_manage_democratic.inc.php:27
 msgid "Base Playlist"
-msgstr ""
+msgstr "기본 재생 목록"
 
 #: ../../templates/show_create_democratic.inc.php:35
 msgid "Cooldown Time"
-msgstr ""
+msgstr "쿨 다운 시간"
 
 #: ../../templates/show_create_democratic.inc.php:57
 msgid "Make Default"
-msgstr ""
+msgstr "기본 설정"
 
 #: ../../templates/show_create_democratic.inc.php:64
 msgid "Force Democratic Play"
-msgstr ""
+msgstr "강제 민주주의 놀이"
 
 #: ../../templates/show_debug.inc.php:23
 msgid "Debug Tools"
-msgstr ""
+msgstr "디버그 도구"
 
 #: ../../templates/show_debug.inc.php:27
 msgid "Generate Configuration"
-msgstr ""
+msgstr "구성 생성"
 
 #: ../../templates/show_debug.inc.php:30
 msgid "Write New Config"
-msgstr ""
+msgstr "새 구성 쓰기"
 
 #: ../../templates/show_debug.inc.php:33
 msgid "Set Database Charset"
-msgstr ""
+msgstr "데이터베이스 문자 세트 설정"
 
 #: ../../templates/show_debug.inc.php:36
 msgid "Clear Songs Cache"
-msgstr ""
+msgstr "노래 캐시 지우기"
 
 #: ../../templates/show_debug.inc.php:39
 msgid "Clear Artists Cache"
-msgstr ""
+msgstr "아티스트 캐시 지우기"
 
 #: ../../templates/show_debug.inc.php:42
 msgid "Clear Albums Cache"
-msgstr ""
+msgstr "앨범 캐시 지우기"
 
 #: ../../templates/show_debug.inc.php:47 ../../update.php:78
-#, fuzzy
 msgid "Ampache Update"
-msgstr "라이선스 수정됨"
+msgstr "암페어 업데이트"
 
 #: ../../templates/show_debug.inc.php:48
 msgid "Installed Ampache version"
-msgstr ""
+msgstr "설치된 Ampache 버전"
 
 #: ../../templates/show_debug.inc.php:49
 msgid "Latest Ampache version"
-msgstr ""
+msgstr "최신 Ampache 버전"
 
 #: ../../templates/show_debug.inc.php:50
 msgid "Force check"
-msgstr ""
+msgstr "강제 점검"
 
 #: ../../templates/show_debug.inc.php:59
 msgid "PHP Settings"
-msgstr ""
+msgstr "PHP 설정"
 
 #: ../../templates/show_debug.inc.php:67
 msgid "Setting"
-msgstr ""
+msgstr "환경"
 
-#: ../../templates/show_debug.inc.php:68 ../../templates/show_debug.inc.php:121
+#: ../../templates/show_debug.inc.php:68
+#: ../../templates/show_debug.inc.php:121
 #: ../../templates/show_dynamic.inc.php:28
 #: ../../templates/show_preference_box.inc.php:45
 #: ../../templates/show_preference_box.inc.php:96
 #: ../../templates/show_user_preferences.inc.php:38
 msgid "Value"
-msgstr ""
+msgstr "값"
 
 #: ../../templates/show_debug.inc.php:73
 msgid "Memory Limit"
-msgstr ""
+msgstr "메모리 제한"
 
 #: ../../templates/show_debug.inc.php:77
 msgid "Maximum Execution Time"
-msgstr ""
+msgstr "최대 실행 시간"
 
 #: ../../templates/show_debug.inc.php:81
 msgid "Override Execution Time"
-msgstr ""
+msgstr "실행 시간 무시"
 
 #: ../../templates/show_debug.inc.php:82
 msgid "Failed"
-msgstr ""
+msgstr "실패한"
 
 #: ../../templates/show_debug.inc.php:82
 msgid "Succeeded"
-msgstr ""
+msgstr "성공"
 
 #: ../../templates/show_debug.inc.php:85
 msgid "Safe Mode"
-msgstr ""
+msgstr "안전 모드"
 
 #: ../../templates/show_debug.inc.php:93
 msgid "Zlib Support"
-msgstr ""
+msgstr "Zlib 지원"
 
 #: ../../templates/show_debug.inc.php:97
 msgid "GD Support"
-msgstr ""
+msgstr "GD 지원"
 
 #: ../../templates/show_debug.inc.php:101
 msgid "Iconv Support"
-msgstr ""
+msgstr "Iconv 지원"
 
 #: ../../templates/show_debug.inc.php:105
 msgid "Gettext Support"
-msgstr ""
+msgstr "Gettext 지원"
 
 #: ../../templates/show_debug.inc.php:112
 msgid "Current Configuration"
-msgstr ""
+msgstr "현재 구성"
 
 #: ../../templates/show_debug.inc.php:120
 #: ../../templates/show_preference_admin.inc.php:32
@@ -4529,96 +4519,95 @@ msgstr ""
 #: ../../templates/show_preference_box.inc.php:95
 #: ../../templates/show_user_preferences.inc.php:37
 msgid "Preference"
-msgstr ""
+msgstr "우선권"
 
 #: ../../templates/show_democratic.inc.php:23
 #, php-format
 msgid "%s Playlist"
-msgstr ""
+msgstr "%s 재생 목록"
 
 #: ../../templates/show_democratic.inc.php:31
 #: ../../templates/show_manage_democratic.inc.php:28
 msgid "Cooldown"
-msgstr ""
+msgstr "재사용 대기 시간"
 
 #: ../../templates/show_democratic.inc.php:46
 msgid "Play Democratic Playlist"
-msgstr ""
+msgstr "민주당 재생 목록 재생"
 
 #: ../../templates/show_democratic.inc.php:82
 msgid "Reload this page automatically"
-msgstr ""
+msgstr "자동으로이 페이지 새로 고침"
 
 #: ../../templates/show_democratic_playlist.inc.php:47
 msgid "Playing from base Playlist"
-msgstr ""
+msgstr "기본 재생 목록에서 재생 중"
 
 #: ../../templates/show_democratic_playlist.inc.php:59
 #: ../../templates/show_democratic_playlist.inc.php:112
 msgid "Votes"
-msgstr ""
+msgstr "투표 수"
 
 #: ../../templates/show_democratic_playlist.inc.php:85
 msgid "Remove Vote"
-msgstr ""
+msgstr "투표 삭제"
 
 #: ../../templates/show_democratic_playlist.inc.php:89
 msgid "Add Vote"
-msgstr ""
+msgstr "투표 추가"
 
 #: ../../templates/show_denied.inc.php:52
 msgid "Access Denied"
-msgstr ""
+msgstr "접근 불가"
 
 #: ../../templates/show_denied.inc.php:53
 #: ../../templates/show_denied.inc.php:60
-#, fuzzy
 msgid "This event has been logged."
-msgstr "프로필 이미지가 삭제되었습니다"
+msgstr "이 이벤트가 기록되었습니다."
 
 #: ../../templates/show_denied.inc.php:58
 msgid ""
-"You have been redirected to this page because you do not have access to this "
-"function."
-msgstr ""
+"You have been redirected to this page because you do not have access to this"
+" function."
+msgstr "이 기능에 액세스 할 수 없으므로이 페이지로 리디렉션되었습니다."
 
 #: ../../templates/show_denied.inc.php:59
 msgid ""
 "If you believe this is an error please contact an Ampache administrator."
-msgstr ""
+msgstr "이것이 오류라고 생각되면 Ampache 관리자에게 문의하십시오."
 
 #: ../../templates/show_denied.inc.php:64
 msgid ""
 "You have been redirected to this page because you attempted to access a "
 "function that is disabled in the demo."
-msgstr ""
+msgstr "데모에서 사용할 수없는 기능에 액세스하려고했기 때문에이 페이지로 리디렉션되었습니다."
 
 #: ../../templates/show_disabled_songs.inc.php:33
 #: ../../templates/show_disabled_songs.inc.php:63
 msgid "Addition Time"
-msgstr ""
+msgstr "추가 시간"
 
 #: ../../templates/show_duplicate.inc.php:23
 #: ../../templates/show_duplicate.inc.php:36
 #: ../../templates/sidebar_modules.inc.php:32
 msgid "Find Duplicates"
-msgstr ""
+msgstr "중복 찾기"
 
 #: ../../templates/show_duplicate.inc.php:27
 msgid "Search Type"
-msgstr ""
+msgstr "검색 유형"
 
 #: ../../templates/show_duplicate.inc.php:30
 msgid "Artist and Title"
-msgstr ""
+msgstr "아티스트 및 제목"
 
 #: ../../templates/show_duplicate.inc.php:31
 msgid "Artist, Album and Title"
-msgstr ""
+msgstr "아티스트, 앨범 및 제목"
 
 #: ../../templates/show_duplicates.inc.php:23
 msgid "Duplicate Songs"
-msgstr ""
+msgstr "중복 노래"
 
 #: ../../templates/show_duplicates.inc.php:28
 #: ../../templates/show_duplicates.inc.php:66
@@ -4629,313 +4618,311 @@ msgstr ""
 #: ../../templates/show_tagcloud.inc.php:26
 #: ../../templates/sidebar_home.inc.php:136
 msgid "Song"
-msgstr ""
+msgstr "노래"
 
 #: ../../templates/show_duplicates.inc.php:31
 #: ../../templates/show_duplicates.inc.php:69
 #: ../../templates/show_podcast_episode.inc.php:118
-#: ../../templates/show_random.inc.php:65 ../../templates/show_song.inc.php:149
+#: ../../templates/show_random.inc.php:65
+#: ../../templates/show_song.inc.php:149
 msgid "Length"
-msgstr ""
+msgstr "길이"
 
 #: ../../templates/show_duplicates.inc.php:33
 #: ../../templates/show_duplicates.inc.php:71
 #: ../../templates/show_podcast_episode.inc.php:123
 msgid "Size"
-msgstr ""
+msgstr "크기"
 
 #: ../../templates/show_dynamic.inc.php:23
 msgid "Advanced Random Rules"
-msgstr ""
+msgstr "고급 무작위 규칙"
 
 #: ../../templates/show_dynamic.inc.php:26
 msgid "Field"
-msgstr ""
+msgstr "들"
 
 #: ../../templates/show_dynamic.inc.php:27
 msgid "Operator"
-msgstr ""
+msgstr "운영자"
 
 #: ../../templates/show_dynamic.inc.php:29
 msgid "Method"
-msgstr ""
+msgstr "방법"
 
 #: ../../templates/show_dynamic.inc.php:51
 msgid "Like"
-msgstr ""
+msgstr "처럼"
 
 #: ../../templates/show_dynamic.inc.php:59
 msgid "OR"
-msgstr ""
+msgstr "또는"
 
 #: ../../templates/show_dynamic.inc.php:60
 msgid "AND"
-msgstr ""
+msgstr "과"
 
 #: ../../templates/show_dynamic.inc.php:66
 msgid "Add Rule"
-msgstr ""
+msgstr "규칙 추가"
 
 #: ../../templates/show_dynamic.inc.php:69
 msgid "Save Rules As"
-msgstr ""
+msgstr "규칙을 다른 이름으로 저장"
 
 #: ../../templates/show_dynamic.inc.php:72
 msgid "Load Saved Rules"
-msgstr ""
+msgstr "저장된 규칙로드"
 
 #: ../../templates/show_edit_access.inc.php:23
 msgid "Edit Access Control List"
-msgstr ""
+msgstr "액세스 제어 목록 편집"
 
 #: ../../templates/show_edit_album_row.inc.php:47
 #: ../../templates/show_song.inc.php:140
-#, fuzzy
 msgid "Album Artist"
-msgstr "앨범 삭제"
+msgstr "앨범 아티스트"
 
 #: ../../templates/show_edit_album_row.inc.php:71
 #: ../../templates/show_edit_artist_row.inc.php:31
 #: ../../templates/show_edit_song_row.inc.php:59
 msgid "MusicBrainz ID"
-msgstr ""
+msgstr "MusicBrainz ID"
 
 #: ../../templates/show_edit_album_row.inc.php:84
 msgid "MusicBrainz Release Group ID"
-msgstr ""
+msgstr "MusicBrainz 출시 그룹 ID"
 
 #: ../../templates/show_edit_album_row.inc.php:96
 msgid "Release Type"
-msgstr ""
+msgstr "릴리스 유형"
 
 #: ../../templates/show_edit_album_row.inc.php:107
 msgid "Overwrite tags of sub songs"
-msgstr ""
+msgstr "부 노래의 태그 덮어 쓰기"
 
 #: ../../templates/show_edit_album_row.inc.php:111
 msgid "Add tags to sub songs"
-msgstr ""
+msgstr "하위 노래에 태그 추가"
 
 #: ../../templates/show_edit_artist_row.inc.php:47
 msgid "Place Formed"
-msgstr ""
+msgstr "장소 형성"
 
 #: ../../templates/show_edit_artist_row.inc.php:51
 msgid "Year Formed"
-msgstr ""
+msgstr "1 년"
 
 #: ../../templates/show_edit_artist_row.inc.php:68
 msgid "Overwrite tags of sub albums and sub songs"
-msgstr ""
+msgstr "하위 앨범 및 하위 노래의 태그 덮어 쓰기"
 
 #: ../../templates/show_edit_artist_row.inc.php:72
 msgid "Add tags to sub albums and sub songs"
-msgstr ""
+msgstr "하위 앨범 및 하위 노래에 태그 추가"
 
 #: ../../templates/show_edit_catalog.inc.php:23
 #, php-format
 msgid "Settings for %s"
-msgstr ""
+msgstr "%s에 대한 설정"
 
 #: ../../templates/show_edit_catalog.inc.php:46
 msgid "Filename pattern"
-msgstr ""
+msgstr "파일 이름 패턴"
 
 #: ../../templates/show_edit_catalog.inc.php:63
 msgid "Save Catalog Settings"
-msgstr ""
+msgstr "카탈로그 설정 저장"
 
 #: ../../templates/show_edit_license.inc.php:23
 msgid "Configure License"
-msgstr ""
+msgstr "라이센스 구성"
 
 #: ../../templates/show_edit_license.inc.php:38
 msgid "Description:"
-msgstr ""
+msgstr "기술:"
 
 #: ../../templates/show_edit_license.inc.php:44
 msgid "External Link"
-msgstr ""
+msgstr "외부 링크"
 
 #: ../../templates/show_edit_license.inc.php:51
 msgid "Confirm"
-msgstr ""
+msgstr "확인"
 
 #: ../../templates/show_edit_playlist_row.inc.php:36
 #: ../../templates/show_edit_search_row.inc.php:36
 #: ../../templates/show_edit_user.inc.php:45
 msgid "Public"
-msgstr ""
+msgstr "공공의"
 
 #: ../../templates/show_edit_podcast_episode_row.inc.php:35
 msgid "GUID"
-msgstr ""
+msgstr "GUID"
 
 #: ../../templates/show_edit_podcast_episode_row.inc.php:39
 #: ../../templates/show_podcast_episode.inc.php:113
 msgid "Author"
-msgstr ""
+msgstr "저자"
 
 #: ../../templates/show_edit_podcast_row.inc.php:27
 msgid "Feed"
-msgstr ""
+msgstr "먹이"
 
 #: ../../templates/show_edit_podcast_row.inc.php:39
 msgid "Language"
-msgstr ""
+msgstr "언어"
 
 #: ../../templates/show_edit_podcast_row.inc.php:43
 msgid "Copyright"
-msgstr ""
+msgstr "저작권"
 
 #: ../../templates/show_edit_search_row.inc.php:42
 #: ../../templates/show_searches.inc.php:45
 #: ../../templates/show_searches.inc.php:75
 #: ../../templates/sidebar_home.inc.php:132
 msgid "Random"
-msgstr ""
+msgstr "랜덤"
 
 #: ../../templates/show_edit_search_row.inc.php:48
 msgid "Item Limit (0 = unlimited)"
-msgstr ""
+msgstr "항목 제한 (0 = 무제한)"
 
 #: ../../templates/show_edit_shout.inc.php:23
 msgid "Edit existing Shoutbox Post"
-msgstr ""
+msgstr "기존 Shoutbox Post 편집"
 
 #. HINT: Client link, Object link
 #: ../../templates/show_edit_shout.inc.php:28
 #, php-format
 msgid "Created by: %s for %s"
-msgstr ""
+msgstr "만든 사람 : %s에 %s"
 
 #: ../../templates/show_edit_song_row.inc.php:55
 #: ../../templates/show_song_previews.inc.php:39
 msgid "Track"
-msgstr ""
+msgstr "선로"
 
 #: ../../templates/show_edit_song_row.inc.php:111
 msgid "More Metadata"
-msgstr ""
+msgstr "더 많은 메타 데이터"
 
 #: ../../templates/show_edit_tag_row.inc.php:32
 msgid "Re-tag"
-msgstr ""
+msgstr "태그 다시 지정"
 
 #: ../../templates/show_edit_tag_row.inc.php:38
 msgid "Persistent"
-msgstr ""
+msgstr "지속성 있는"
 
 #: ../../templates/show_edit_tag_row.inc.php:42
 msgid "Keep Existing"
-msgstr ""
+msgstr "계속 존재"
 
 #: ../../templates/show_edit_user.inc.php:23
 msgid "Editing existing User"
-msgstr ""
+msgstr "기존 사용자 편집"
 
 #: ../../templates/show_edit_user.inc.php:28
 msgid "User Properties"
-msgstr ""
+msgstr "사용자 속성"
 
 #: ../../templates/show_edit_user.inc.php:128
 msgid "Other Options"
-msgstr ""
+msgstr "다른 옵션"
 
 #: ../../templates/show_edit_user.inc.php:140
 msgid "Config Preset"
-msgstr ""
+msgstr "사전 설정 구성"
 
 #: ../../templates/show_edit_user.inc.php:145
 msgid "Flash"
-msgstr ""
+msgstr "플래시"
 
 #: ../../templates/show_edit_user.inc.php:151
 msgid "Prevent Preset Override"
-msgstr ""
+msgstr "프리셋 덮어 쓰기 방지"
 
 #: ../../templates/show_edit_user.inc.php:153
 msgid "This Affects all non-Admin accounts"
-msgstr ""
+msgstr "이것은 모든 비 관리자 계정에 영향을 미칩니다."
 
 #: ../../templates/show_edit_user.inc.php:165
-#, fuzzy
 msgid "Update User"
-msgstr "수정됨"
+msgstr "사용자 업데이트"
 
 #: ../../templates/show_export.inc.php:28
 #: ../../templates/sidebar_admin.inc.php:49
-#, fuzzy
 msgid "Export Catalog"
-msgstr "카탈로그 삭제"
+msgstr "카탈로그 내보내기"
 
 #: ../../templates/show_export.inc.php:49
 msgid "Format"
-msgstr ""
+msgstr "체재"
 
 #: ../../templates/show_export.inc.php:59
 msgid "Export"
-msgstr ""
+msgstr "수출"
 
 #: ../../templates/show_gather_art.inc.php:23
 msgid "Art Search"
-msgstr ""
+msgstr "예술 검색"
 
 #: ../../templates/show_gather_art.inc.php:24
 msgid "Starting Art Search"
-msgstr ""
+msgstr "아트 검색 시작하기"
 
 #: ../../templates/show_gather_art.inc.php:25
 msgid "Searched"
-msgstr ""
+msgstr "검색된"
 
 #: ../../templates/show_get_art.inc.php:23
 msgid "Customize Search"
-msgstr ""
+msgstr "검색 맞춤 설정"
 
 #: ../../templates/show_get_art.inc.php:44
 msgid "Direct URL to Image"
-msgstr ""
+msgstr "이미지에 대한 직접 URL"
 
 #: ../../templates/show_get_art.inc.php:52
 msgid "Local Image"
-msgstr ""
+msgstr "로컬 이미지"
 
 #: ../../templates/show_get_art.inc.php:65
 msgid "Get Art"
-msgstr ""
+msgstr "미술 작품"
 
 #: ../../templates/show_graphs.inc.php:23
 msgid "Statistical Graphs"
-msgstr ""
+msgstr "통계 그래프"
 
 #: ../../templates/show_graphs.inc.php:33
 msgid "Show large"
-msgstr ""
+msgstr "큰 표시"
 
 #: ../../templates/show_graphs.inc.php:54
 msgid "Start Date"
-msgstr ""
+msgstr "시작 날짜"
 
 #: ../../templates/show_graphs.inc.php:57
 msgid "End Date"
-msgstr ""
+msgstr "종료일"
 
 #: ../../templates/show_graphs.inc.php:60
 msgid "Zoom"
-msgstr ""
+msgstr "줌"
 
 #: ../../templates/show_graphs.inc.php:66
 msgid "Month"
-msgstr ""
+msgstr "달"
 
 #: ../../templates/show_graphs.inc.php:67
 msgid "Day"
-msgstr ""
+msgstr "일"
 
 #: ../../templates/show_graphs.inc.php:68
 msgid "Hour"
-msgstr ""
+msgstr "시간"
 
 #: ../../templates/show_highest.inc.php:23
 #: ../../templates/show_newest.inc.php:23
@@ -4943,99 +4930,98 @@ msgstr ""
 #: ../../templates/show_recent.inc.php:23
 #: ../../templates/sidebar_home.inc.php:95
 msgid "Information"
-msgstr ""
+msgstr "정보"
 
 #: ../../templates/show_html5_player_headers.inc.php:222
 msgid "Your browser doesn't support this feature."
-msgstr ""
+msgstr "브라우저가이 기능을 지원하지 않습니다."
 
 #: ../../templates/show_html5_player_headers.inc.php:474
 msgid "Media is currently playing. Are you sure you want to close"
-msgstr ""
+msgstr "미디어가 현재 재생 중입니다. 닫으시겠습니까?"
 
 #: ../../templates/show_html5_player.inc.php:465
-#, fuzzy
 msgid "My Broadcast"
-msgstr "UPnP 방송..."
+msgstr "내 방송"
 
 #: ../../templates/show_html5_player.inc.php:493
 msgid "Slideshow"
-msgstr ""
+msgstr "슬라이드 쇼"
 
 #: ../../templates/show_html5_player.inc.php:496
 msgid "Expand/Collapse Playlist"
-msgstr ""
+msgstr "재생 목록 펼치기 / 접기"
 
 #: ../../templates/show_html5_player.inc.php:501
 msgid "Visualizer"
-msgstr ""
+msgstr "시각화 프로그램"
 
 #: ../../templates/show_html5_player.inc.php:504
 msgid "Visualizer Full-Screen"
-msgstr ""
+msgstr "시각화 프로그램 전체 화면"
 
 #: ../../templates/show_html5_player.inc.php:507
 msgid "ReplayGain"
-msgstr ""
+msgstr "리플레이 게인"
 
 #: ../../templates/show_html5_player.inc.php:510
 msgid "Equalizer"
-msgstr ""
+msgstr "평형 장치"
 
 #: ../../templates/show_import_playlist.inc.php:23
 msgid "Importing a Playlist from a File"
-msgstr ""
+msgstr "파일에서 재생 목록 가져 오기"
 
 #: ../../templates/show_import_playlist.inc.php:35
 msgid "Import Playlist"
-msgstr ""
+msgstr "재생 목록 가져 오기"
 
 #: ../../templates/show_index.inc.php:50
 #: ../../templates/show_random_albums.inc.php:26
 msgid "Albums of the Moment"
-msgstr ""
+msgstr "순간의 앨범"
 
 #: ../../templates/show_install_account.inc.php:26
 #: ../../templates/show_install_config.inc.php:41
 #: ../../templates/show_install.inc.php:26
 msgid "Install progress"
-msgstr ""
+msgstr "설치 진행률"
 
 #: ../../templates/show_install_account.inc.php:38
 #: ../../templates/show_install_config.inc.php:52
 #: ../../templates/show_install.inc.php:37
 msgid "Step 1 - Create the Ampache database"
-msgstr ""
+msgstr "1 단계 - Ampache 데이터베이스 만들기"
 
 #: ../../templates/show_install_account.inc.php:39
 #: ../../templates/show_install_config.inc.php:53
 #: ../../templates/show_install.inc.php:42
 msgid "Step 2 - Create configuration files (amuzak.cfg.php ...)"
-msgstr ""
+msgstr "2 단계 - 구성 파일 만들기 (amuzak.cfg.php ...)"
 
 #: ../../templates/show_install_account.inc.php:41
 #: ../../templates/show_install_config.inc.php:58
 #: ../../templates/show_install.inc.php:43
 msgid "Step 3 - Set up the initial account"
-msgstr ""
+msgstr "3 단계 - 초기 계정 설정"
 
 #: ../../templates/show_install_account.inc.php:43
 msgid ""
 "This step creates your initial Ampache admin account. Once your admin "
 "account has been created you will be redirected to the login page."
-msgstr ""
+msgstr "이 단계에서는 초기 Ampache 관리자 계정을 만듭니다. 관리자 계정이 생성되면 로그인 페이지로 리디렉션됩니다."
 
 #: ../../templates/show_install_account.inc.php:47
 msgid "Create Admin Account"
-msgstr ""
+msgstr "관리자 계정 만들기"
 
 #: ../../templates/show_install_account.inc.php:69
 msgid "Create Account"
-msgstr ""
+msgstr "계정 만들기"
 
 #: ../../templates/show_install_check.inc.php:28
 msgid "Requirements"
-msgstr ""
+msgstr "요구 사항"
 
 #: ../../templates/show_install_check.inc.php:32
 msgid ""
@@ -5043,149 +5029,156 @@ msgid ""
 "of the amuzak.cfg.php file. Before you continue please make sure that you "
 "have the following prerequisites:"
 msgstr ""
+"이 페이지는 Ampache 데이터베이스 설치 및 amuzak.cfg.php 파일 작성을 처리합니다. 계속하기 전에 다음 전제 조건이 "
+"충족되어 있는지 확인하십시오."
 
 #: ../../templates/show_install_check.inc.php:35
 msgid ""
 "A MySQL server with a username and password that can create/modify databases"
-msgstr ""
+msgstr "데이터베이스를 생성 / 수정할 수있는 사용자 이름과 암호가있는 MySQL 서버"
 
 #: ../../templates/show_install_check.inc.php:36
 #, php-format
 msgid "Your webserver has read access to the files %s and %s"
-msgstr ""
+msgstr "웹 서버가 %s 및 %s 파일에 대한 읽기 권한을 가지고 있습니다."
 
 #: ../../templates/show_install_check.inc.php:39
 #, php-format
 msgid ""
 "Once you have ensured that the above requirements are met please fill out "
 "the information below. You will only be asked for the required config "
-"values. If you would like to make changes to your Ampache install at a later "
-"date simply edit %s"
+"values. If you would like to make changes to your Ampache install at a later"
+" date simply edit %s"
 msgstr ""
+"위의 요구 사항이 충족되면 다음 정보를 작성하십시오. 필요한 구성 값을 묻는 메시지가 나타납니다. 나중에 Ampache를 변경하려면 "
+"간단히 %s를 편집하십시오"
 
 #: ../../templates/show_install_check.inc.php:44
 #: ../../templates/show_test.inc.php:59
 msgid "CHECK"
-msgstr ""
+msgstr "검사"
 
 #: ../../templates/show_install_check.inc.php:45
 #: ../../templates/show_test.inc.php:60
 msgid "STATUS"
-msgstr ""
+msgstr "지위"
 
 #: ../../templates/show_install_check.inc.php:46
 #: ../../templates/show_test.inc.php:61
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "기술"
 
 #: ../../templates/show_install_check.inc.php:50
 #: ../../templates/show_install_check.inc.php:55
 #, php-format
 msgid "%s is readable"
-msgstr ""
+msgstr "%s를 읽을 수 있습니다."
 
 #: ../../templates/show_install_check.inc.php:52
 msgid "This tests whether the configuration template can be read."
-msgstr ""
+msgstr "이 구성 템플릿을 읽을 수 있는지 여부를 테스트합니다."
 
 #: ../../templates/show_install_check.inc.php:57
 msgid ""
 "This tests whether the file needed to initialise the database structure is "
 "available."
-msgstr ""
+msgstr "이것은 데이터베이스 구조를 초기화하는 데 필요한 파일이 사용 가능한지 여부를 테스트합니다."
 
 #: ../../templates/show_install_check.inc.php:60
 msgid "amuzak.cfg.php is writable"
-msgstr ""
+msgstr "amuzak.cfg.php는 쓰기 가능합니다."
 
 #: ../../templates/show_install_check.inc.php:62
 msgid ""
-"This tests whether PHP can write to config/. This is not strictly necessary, "
-"but will help streamline the installation process."
+"This tests whether PHP can write to config/. This is not strictly necessary,"
+" but will help streamline the installation process."
 msgstr ""
+"이것은 PHP가 config /에 쓸 수 있는지 테스트합니다. 이는 꼭 필요한 것은 아니지만 설치 과정을 간소화하는 데 도움이됩니다."
 
 #: ../../templates/show_install_config.inc.php:55
 #, php-format
 msgid ""
 "This step takes the basic config values and generates the config file. If "
-"your config/ directory is writable, you can select \"write\" to have Ampache "
-"write the config file directly to the correct location. If you select "
+"your config/ directory is writable, you can select \"write\" to have Ampache"
+" write the config file directly to the correct location. If you select "
 "\"download\" it will prompt you to download the config file, and you can "
 "then manually place the config file in %s"
 msgstr ""
+"이 단계에서는 기본 구성 값을 사용하고 구성 파일을 생성합니다. config / 디렉토리에 쓰기가 가능하다면 \"쓰기\"를 선택하여 "
+"Ampache가 설정 파일을 올바른 위치에 직접 기록하도록 할 수 있습니다. \"다운로드\"를 선택하면 구성 파일을 다운로드하라는 "
+"메시지가 표시되고 %s에 수동으로 구성 파일을 배치 할 수 있습니다"
 
 #: ../../templates/show_install_config.inc.php:63
-#, fuzzy
 msgid "Generate Config File"
-msgstr "새 API 키 생성"
+msgstr "구성 파일 생성"
 
 #: ../../templates/show_install_config.inc.php:66
 msgid "Web Path"
-msgstr ""
+msgstr "웹 경로"
 
 #: ../../templates/show_install_config.inc.php:71
 #: ../../templates/show_test_table.inc.php:227
 msgid "Database connection"
-msgstr ""
+msgstr "데이터베이스 연결"
 
 #: ../../templates/show_install_config.inc.php:74
 msgid "Database Name"
-msgstr ""
+msgstr "데이터베이스 이름"
 
 #: ../../templates/show_install_config.inc.php:80
 #: ../../templates/show_install.inc.php:56
 msgid "MySQL Hostname"
-msgstr ""
+msgstr "MySQL 호스트 이름"
 
 #: ../../templates/show_install_config.inc.php:86
 msgid "MySQL Port (optional)"
-msgstr ""
+msgstr "MySQL 포트 (옵션)"
 
 #: ../../templates/show_install_config.inc.php:92
 msgid "MySQL Username"
-msgstr ""
+msgstr "MySQL 사용자 이름"
 
 #: ../../templates/show_install_config.inc.php:98
 msgid "MySQL Password"
-msgstr ""
+msgstr "MySQL 암호"
 
 #: ../../templates/show_install_config.inc.php:108
 msgid "Installation type"
-msgstr ""
+msgstr "설치 유형"
 
 #: ../../templates/show_install_config.inc.php:109
 msgid ""
 "Configure Ampache at best for your use case, enabling / disabling features "
 "automatically."
-msgstr ""
+msgstr "사용 케이스에 맞게 Ampache를 구성하고 자동으로 기능을 활성화 / 비활성화합니다."
 
 #: ../../templates/show_install_config.inc.php:115
 msgid "Ampache is configured for personal use with most greatest features."
-msgstr ""
+msgstr "Ampache는 가장 큰 기능을 가진 개인용으로 구성되어 있습니다."
 
 #: ../../templates/show_install_config.inc.php:120
 msgid "Minimalist"
-msgstr ""
+msgstr "미니멀리스트"
 
 #: ../../templates/show_install_config.inc.php:120
 msgid ""
 "only essential features are enabled to stream simply your music from a web "
 "interface."
-msgstr ""
+msgstr "필수 기능 만 웹 인터페이스에서 음악을 스트리밍 할 수 있습니다."
 
 #: ../../templates/show_install_config.inc.php:125
 msgid "Community"
-msgstr ""
+msgstr "커뮤니티"
 
 #: ../../templates/show_install_config.inc.php:125
 msgid ""
 "use recommended settings when using Ampache as a frontend for a music "
 "community."
-msgstr ""
+msgstr "Ampache를 음악 커뮤니티의 프론트 엔드로 사용할 때 권장 설정을 사용하십시오."
 
 #: ../../templates/show_install_config.inc.php:130
 msgid "Transcoding"
-msgstr ""
+msgstr "트랜스 코딩"
 
 #: ../../templates/show_install_config.inc.php:132
 msgid ""
@@ -5196,6 +5189,9 @@ msgid ""
 "transcoding to work you must first install the supporting applications and "
 "ensure that they are executable by the web server."
 msgstr ""
+"변환은 한 유형의 파일을 다른 유형으로 변환 할 수있게합니다. Ampache는 사용자, 플레이어, IP 주소 또는 사용 가능한 대역폭을 "
+"기반으로 모든 파일 형식의 변환 코드 변환을 지원합니다. 코드 변환을 위해 Ampache는 ffmpeg와 같은 기존 바이너리 응용 "
+"프로그램을 활용합니다. 트랜스 코딩이 작동하려면 먼저 지원되는 응용 프로그램을 설치하고 웹 서버에서 실행 가능해야합니다."
 
 #: ../../templates/show_install_config.inc.php:134
 msgid ""
@@ -5203,15 +5199,17 @@ msgid ""
 "application you want to use. You may need to customize settings once this "
 "setup ended"
 msgstr ""
+"이 섹션에서는 사용할 응용 프로그램에 따라 기본 트랜스 코딩 구성을 적용합니다. 이 설정이 끝나면 설정을 사용자 정의해야 할 수도 "
+"있습니다."
 
 #: ../../templates/show_install_config.inc.php:134
 #: ../../templates/show_install_config.inc.php:164
 msgid "See wiki page"
-msgstr ""
+msgstr "위키 페이지보기"
 
 #: ../../templates/show_install_config.inc.php:138
 msgid "Template Configuration"
-msgstr ""
+msgstr "템플릿 구성"
 
 #: ../../templates/show_install_config.inc.php:155
 msgid ""
@@ -5219,530 +5217,521 @@ msgid ""
 "application (ffmpeg, avconv ...) or customize transcoding settings manually "
 "after installation."
 msgstr ""
+"기본 트랜스 코딩 애플리케이션이 없습니다. 자주 사용하는 응용 프로그램 (ffmpeg, avconv ...)을 설치하거나 설치 후 "
+"수동으로 코드 변환 설정을 사용자 정의해야 할 수 있습니다."
 
 #: ../../templates/show_install_config.inc.php:162
 msgid "Players"
-msgstr ""
+msgstr "플레이어"
 
 #: ../../templates/show_install_config.inc.php:163
 msgid ""
 "Ampache is more than only a web interface. Several backends are implemented "
 "to ensure you can stream your media from anywhere."
-msgstr ""
+msgstr "Ampache는 웹 인터페이스 이상의 것입니다. 여러 백엔드가 구현되어 어디에서든 미디어를 스트리밍 할 수 있습니다."
 
 #: ../../templates/show_install_config.inc.php:164
 msgid ""
 "Select backends to enable. Depending the backend, you may need to perform "
 "additional configuration."
-msgstr ""
+msgstr "사용하도록 백엔드를 선택하십시오. 백엔드에 따라 추가 구성을 수행해야합니다."
 
 #: ../../templates/show_install_config.inc.php:204
 msgid "File Insight"
-msgstr ""
+msgstr "파일 통찰력"
 
 #: ../../templates/show_install_config.inc.php:214
 msgid "channel/.htaccess action"
-msgstr ""
+msgstr "채널 / .htaccess 작업"
 
 #: ../../templates/show_install_config.inc.php:221
 #: ../../templates/show_install_config.inc.php:238
 #: ../../templates/show_install_config.inc.php:255
 #: ../../templates/show_install_config.inc.php:274
 msgid "Write"
-msgstr ""
+msgstr "쓰다"
 
 #: ../../templates/show_install_config.inc.php:224
 msgid "channel/.htaccess exists?"
-msgstr ""
+msgstr "채널 / .htaccess가 존재합니까?"
 
 #: ../../templates/show_install_config.inc.php:226
 msgid "channel/.htaccess configured?"
-msgstr ""
+msgstr "채널 / .htaccess가 구성 되었습니까?"
 
 #: ../../templates/show_install_config.inc.php:231
 msgid "rest/.htaccess action"
-msgstr ""
+msgstr "휴식 / .htaccess 작업"
 
 #: ../../templates/show_install_config.inc.php:241
 msgid "rest/.htaccess exists?"
-msgstr ""
+msgstr "나머지 / .htaccess가 존재합니까?"
 
 #: ../../templates/show_install_config.inc.php:243
-#, fuzzy
 msgid "rest/.htaccess configured?"
-msgstr "쓰기 성공. 설정이 마이그레이션 되었습니다"
+msgstr "나머지 / .htaccess가 구성 되었습니까?"
 
 #: ../../templates/show_install_config.inc.php:248
 msgid "play/.htaccess action"
-msgstr ""
+msgstr "재생 / .htaccess 작업"
 
 #: ../../templates/show_install_config.inc.php:258
 msgid "play/.htaccess exists?"
-msgstr ""
+msgstr "재생 / .htaccess가 존재합니까?"
 
 #: ../../templates/show_install_config.inc.php:260
 msgid "play/.htaccess configured?"
-msgstr ""
+msgstr "재생 / .htaccess가 구성 되었습니까?"
 
 #: ../../templates/show_install_config.inc.php:267
 msgid "config/amuzak.cfg.php action"
-msgstr ""
+msgstr "config / amuzak.cfg.php 작업"
 
 #: ../../templates/show_install_config.inc.php:277
 msgid "config/amuzak.cfg.php exists?"
-msgstr ""
+msgstr "config / amuzak.cfg.php가 존재합니까?"
 
 #: ../../templates/show_install_config.inc.php:279
 msgid "config/amuzak.cfg.php configured?"
-msgstr ""
+msgstr "config / amuzak.cfg.php가 설정 되었습니까?"
 
 #: ../../templates/show_install_config.inc.php:286
 msgid "Recheck Config"
-msgstr ""
+msgstr "구성 다시 검사"
 
 #: ../../templates/show_install_config.inc.php:294
 #: ../../templates/show_install.inc.php:130
 msgid "Skip"
-msgstr ""
+msgstr "버킷"
 
 #: ../../templates/show_install_config.inc.php:297
 msgid "Create config"
-msgstr ""
+msgstr "구성 만들기"
 
 #: ../../templates/show_install.inc.php:39
 msgid ""
 "This step creates and inserts the Ampache database, so please provide a "
-"MySQL account with database creation rights. This step may take some time on "
-"slower computers."
+"MySQL account with database creation rights. This step may take some time on"
+" slower computers."
 msgstr ""
+"이 단계는 Ampache 데이터베이스를 생성하고 삽입하기 때문에 데이터베이스 생성 권한이있는 MySQL 계정을 제공하십시오. 느린 "
+"컴퓨터에서는이 단계를 수행하는 데 약간의 시간이 걸릴 수 있습니다."
 
 #: ../../templates/show_install.inc.php:47
 msgid "Insert Ampache Database"
-msgstr ""
+msgstr "Ampache 데이터베이스 삽입"
 
 #: ../../templates/show_install.inc.php:50
 msgid "Desired Database Name"
-msgstr ""
+msgstr "원하는 데이터베이스 이름"
 
 #: ../../templates/show_install.inc.php:62
 msgid "MySQL port (optional)"
-msgstr ""
+msgstr "MySQL 포트 (옵션)"
 
 #: ../../templates/show_install.inc.php:68
 msgid "MySQL Administrative Username"
-msgstr ""
+msgstr "MySQL 관리 사용자 이름"
 
 #: ../../templates/show_install.inc.php:74
 msgid "MySQL Administrative Password"
-msgstr ""
+msgstr "MySQL 관리 비밀번호"
 
 #: ../../templates/show_install.inc.php:80
 msgid "Create Database"
-msgstr ""
+msgstr "데이터베이스 생성"
 
 #: ../../templates/show_install.inc.php:90
-#, fuzzy
 msgid "Overwrite if database already exists"
-msgstr "오류 사용자 이름이 이미 존재합니다"
+msgstr "데이터베이스가 이미있는 경우 덮어 쓰기"
 
 #: ../../templates/show_install.inc.php:99
 msgid "Create Tables"
-msgstr ""
+msgstr "표 만들기"
 
 #: ../../templates/show_install.inc.php:108
 msgid "Create Database User"
-msgstr ""
+msgstr "데이터베이스 사용자 만들기"
 
 #: ../../templates/show_install.inc.php:118
 msgid "Ampache Database Username"
-msgstr ""
+msgstr "암페어 데이터베이스 사용자 이름"
 
 #: ../../templates/show_install.inc.php:124
 msgid "Ampache Database User Password"
-msgstr ""
+msgstr "암페어 데이터베이스 사용자 암호"
 
 #: ../../templates/show_install.inc.php:133
 msgid "Insert Database"
-msgstr ""
+msgstr "데이터베이스 삽입"
 
 #: ../../templates/show_install_lang.inc.php:27
 msgid "Ampache Installation"
-msgstr ""
+msgstr "Ampache 설치"
 
 #: ../../templates/show_install_lang.inc.php:30
 msgid "Choose Installation Language"
-msgstr ""
+msgstr "설치 언어 선택"
 
 #: ../../templates/show_install_lang.inc.php:50
 msgid "Start configuration"
-msgstr ""
+msgstr "구성 시작"
 
 #. HINT: Username
 #: ../../templates/show_ip_history.inc.php:23
 #, php-format
 msgid "%s IP History"
-msgstr ""
+msgstr "%s IP 기록"
 
 #: ../../templates/show_ip_history.inc.php:30
 msgid "Show Unique"
-msgstr ""
+msgstr "고유 한 항목 표시"
 
 #: ../../templates/show_ip_history.inc.php:35
 msgid "Show All"
-msgstr ""
+msgstr "모두 보이기"
 
 #: ../../templates/show_ip_history.inc.php:50
 #: ../../templates/show_ip_history.inc.php:66
 msgid "IP Address"
-msgstr ""
+msgstr "IP 주소"
 
 #: ../../templates/show_label.inc.php:59 ../../templates/show_label.inc.php:60
 msgid "Send e-mail"
-msgstr ""
+msgstr "이메일을 보내"
 
 #: ../../templates/show_label.inc.php:67 ../../templates/show_label.inc.php:70
 msgid "Label edit"
-msgstr ""
+msgstr "라벨 편집"
 
 #: ../../templates/show_label.inc.php:71
 msgid "Edit Label"
-msgstr ""
+msgstr "라벨 수정"
 
 #: ../../templates/show_labels.inc.php:29
 msgid "Create a new label"
-msgstr ""
+msgstr "새 라벨 만들기"
 
 #: ../../templates/show_labels.inc.php:65
-#, fuzzy
 msgid "No label found"
-msgstr "비활성화된 노래가 없습니다"
+msgstr "라벨을 찾을 수 없음"
 
 #: ../../templates/show_live_stream.inc.php:25
 #: ../../templates/show_song.inc.php:26
 msgid "Details"
-msgstr ""
+msgstr "세부"
 
 #: ../../templates/show_live_stream_row.inc.php:28
 msgid "Play live stream"
-msgstr ""
+msgstr "실시간 스트림 재생"
 
 #: ../../templates/show_live_stream_row.inc.php:46
 msgid "Live Stream edit"
-msgstr ""
+msgstr "라이브 스트림 편집"
 
 #: ../../templates/show_live_streams.inc.php:25
 msgid "Manage Radio Stations"
-msgstr ""
+msgstr "라디오 방송국 관리"
 
 #: ../../templates/show_live_streams.inc.php:63
-#, fuzzy
 msgid "No live stream found"
-msgstr "비활성화된 노래가 없습니다"
+msgstr "실시간 스트림을 찾을 수 없습니다."
 
 #: ../../templates/show_login_form.inc.php:66
 msgid "Remember Me"
-msgstr ""
+msgstr "날 기억해"
 
 #: ../../templates/show_login_form.inc.php:72
 msgid "Lost password"
-msgstr ""
+msgstr "비밀번호 분실"
 
 #: ../../templates/show_login_form.inc.php:90
 msgid "Message of the Day"
-msgstr ""
+msgstr "오늘의 메시지"
 
 #: ../../templates/show_lostpassword_form.inc.php:60
 msgid "Submit"
-msgstr ""
+msgstr "제출"
 
 #: ../../templates/show_lyrics.inc.php:61
 msgid "No lyrics found."
-msgstr ""
+msgstr "가사를 찾지 못했습니다."
 
 #: ../../templates/show_lyrics.inc.php:64
 msgid "Show more"
-msgstr ""
+msgstr "자세히보기"
 
 #: ../../templates/show_mail_users.inc.php:24
 msgid "Send E-mail to Users"
-msgstr ""
+msgstr "사용자에게 전자 메일 보내기"
 
 #: ../../templates/show_mail_users.inc.php:28
 msgid "Mail to"
-msgstr ""
+msgstr "님에게 메일"
 
 #: ../../templates/show_mail_users.inc.php:34
 msgid "Inactive Users"
-msgstr ""
+msgstr "비활성 사용자"
 
 #: ../../templates/show_mail_users.inc.php:39
 msgid "From"
-msgstr ""
+msgstr "에서"
 
 #: ../../templates/show_mail_users.inc.php:42
 msgid "Yourself"
-msgstr ""
+msgstr "당신 자신"
 
 #: ../../templates/show_mail_users.inc.php:61
 msgid "Send Mail"
-msgstr ""
+msgstr "메일을 보내다"
 
 #: ../../templates/show_manage_catalogs.inc.php:23
 #: ../../templates/sidebar_admin.inc.php:27
-#, fuzzy
 msgid "Show Catalogs"
-msgstr "카탈로그 종류"
+msgstr "카탈로그보기"
 
 #: ../../templates/show_manage_catalogs.inc.php:27
 msgid "Gather All Art"
-msgstr ""
+msgstr "모든 미술 수집"
 
 #: ../../templates/show_manage_catalogs.inc.php:30
-#, fuzzy
 msgid "Show disabled songs"
-msgstr "비활성화된 노래가 없습니다"
+msgstr "사용 중지 된 노래 표시"
 
 #: ../../templates/show_manage_catalogs.inc.php:33
 msgid "Add to All"
-msgstr ""
+msgstr "모두에 추가"
 
 #: ../../templates/show_manage_catalogs.inc.php:36
 msgid "Verify All"
-msgstr ""
+msgstr "모두 확인"
 
 #: ../../templates/show_manage_catalogs.inc.php:39
 msgid "Clean All"
-msgstr ""
+msgstr "모두 지우기"
 
 #: ../../templates/show_manage_catalogs.inc.php:42
-#, fuzzy
 msgid "Update All"
-msgstr "수정됨"
+msgstr "모두 업데이트"
 
 #. HINT: /data/myNewMusic
 #: ../../templates/show_manage_catalogs.inc.php:51
 #, php-format
 msgid "Add from [%s]"
-msgstr ""
+msgstr "[%s]에서 추가"
 
 #. HINT: /data/myUpdatedMusic
 #: ../../templates/show_manage_catalogs.inc.php:55
 #, php-format
 msgid "Update from [%s]"
-msgstr ""
+msgstr "[%s]에서 업데이트"
 
 #: ../../templates/show_manage_democratic.inc.php:23
 msgid "Manage Democratic Playlists"
-msgstr ""
+msgstr "민주적 인 재생 목록 관리"
 
 #: ../../templates/show_manage_democratic.inc.php:56
 msgid "No democratic found"
-msgstr ""
+msgstr "민주주의가 없다."
 
 #: ../../templates/show_manage_democratic.inc.php:63
 msgid "Create New Playlist"
-msgstr ""
+msgstr "새 재생 목록 만들기"
 
 #: ../../templates/show_manage_license.inc.php:28
 msgid "Create new license"
-msgstr ""
+msgstr "새 라이센스 만들기"
 
 #: ../../templates/show_manage_license.inc.php:51
-#, fuzzy
 msgid "No Licenses Found"
-msgstr "비활성화된 노래가 없습니다"
+msgstr "라이센스를 찾을 수 없음"
 
 #: ../../templates/show_manage_shoutbox.inc.php:28
 #: ../../templates/show_manage_shoutbox.inc.php:59
 #: ../../templates/show_shared_objects.inc.php:26
 msgid "Object"
-msgstr ""
+msgstr "목적"
 
 #: ../../templates/show_manage_shoutbox.inc.php:30
 #: ../../templates/show_manage_shoutbox.inc.php:61
 msgid "Sticky"
-msgstr ""
+msgstr "어려운"
 
 #: ../../templates/show_manage_shoutbox.inc.php:32
 #: ../../templates/show_manage_shoutbox.inc.php:63
-#, fuzzy
 msgid "Date Added"
-msgstr "추가됨"
+msgstr "추가 된 날짜"
 
 #: ../../templates/show_mashup.inc.php:27
 msgid "Browse Library"
-msgstr ""
+msgstr "라이브러리 찾아보기"
 
 #: ../../templates/show_mashup.inc.php:31
 msgid "Trending"
-msgstr ""
+msgstr "인기 급상승"
 
 #: ../../templates/show_mashup.inc.php:41
 #: ../../templates/sidebar_home.inc.php:98
 msgid "Newest"
-msgstr ""
+msgstr "최신"
 
 #: ../../templates/show_mashup.inc.php:51
 #: ../../templates/sidebar_home.inc.php:99
 msgid "Popular"
-msgstr ""
+msgstr "인기 있는"
 
 #: ../../templates/show_now_playing_row.inc.php:88
 #: ../../templates/show_now_playing_similar.inc.php:48
 msgid "Similar Songs"
-msgstr ""
+msgstr "비슷한 노래"
 
 #: ../../templates/show_object_rating.inc.php:47
 msgid "Current rating: "
-msgstr ""
+msgstr "현재 평가 :"
 
 #: ../../templates/show_object_rating.inc.php:49
 msgid "not rated yet"
-msgstr ""
+msgstr "아직 등급 없음"
 
 #: ../../templates/show_object_rating.inc.php:51
 #, php-format
 msgid "%s of 5"
-msgstr ""
+msgstr "%s of 5"
 
 #: ../../templates/show_playlist.inc.php:66
 #: ../../templates/show_playlist.inc.php:67
 msgid "Sort Tracks by Artist, Album, Song"
-msgstr ""
+msgstr "아티스트, 앨범, 노래별로 트랙 정렬"
 
 #: ../../templates/show_playlist.inc.php:70
 #: ../../templates/show_playlist.inc.php:71
 msgid "Remove duplicates"
-msgstr ""
+msgstr "중복 된 항목 삭제"
 
 #: ../../templates/show_playlist.inc.php:112
 #: ../../templates/show_playlist_row.inc.php:99
-#, fuzzy
 msgid "Do you really want to delete the playlist?"
-msgstr "정말 이 카탈로그를 삭제하시겠습니까?"
+msgstr "정말로 재생 목록을 삭제 하시겠습니까?"
 
 #: ../../templates/show_playlist_media_row.inc.php:93
 #: ../../templates/show_song_row.inc.php:133
 msgid "Reorder"
-msgstr ""
+msgstr "재주문"
 
 #: ../../templates/show_playlist_row.inc.php:96
 msgid "Playlist edit"
-msgstr ""
+msgstr "재생 목록 수정"
 
 #: ../../templates/show_playlists_dialog.inc.php:26
 msgid "Playlist name"
-msgstr ""
+msgstr "재생 목록 이름"
 
 #: ../../templates/show_playlists.inc.php:37
 #: ../../templates/show_playlists.inc.php:91
-#, fuzzy
 msgid "Last Update"
-msgstr "카탈로그 수정됨"
+msgstr "마지막 업데이트"
 
 #: ../../templates/show_playlists.inc.php:39
 #: ../../templates/show_playlists.inc.php:93
 msgid "# Medias"
-msgstr ""
+msgstr "# 미디어"
 
 #: ../../templates/show_playlists.inc.php:40
 #: ../../templates/show_playlists.inc.php:94
 #: ../../templates/show_searches.inc.php:47
 #: ../../templates/show_searches.inc.php:77
 msgid "Owner"
-msgstr ""
+msgstr "소유자"
 
 #: ../../templates/show_playlists.inc.php:76
-#, fuzzy
 msgid "No playlist found"
-msgstr "비활성화된 노래가 없습니다"
+msgstr "재생 목록이 없습니다."
 
 #: ../../templates/show_playlist_title.inc.php:23
 #, php-format
 msgid "%s %s (Playlist)"
-msgstr ""
+msgstr "%s %s (재생 목록)"
 
 #: ../../templates/show_plugins.inc.php:32
 #: ../../templates/show_plugins.inc.php:74
 msgid "Installed Version"
-msgstr ""
+msgstr "설치된 버전"
 
 #: ../../templates/show_plugins.inc.php:46
 msgid "Deactivate"
-msgstr ""
+msgstr "비활성화"
 
 #: ../../templates/show_plugins.inc.php:50
-#, fuzzy
 msgid "Upgrade"
-msgstr "플러그인 업그레이드됨"
+msgstr "업그레이드"
 
 #: ../../templates/show_podcast_episode.inc.php:85
 #: ../../templates/show_song.inc.php:101
 msgid "Link"
-msgstr ""
+msgstr "링크"
 
 #: ../../templates/show_podcast_episode.inc.php:114
 #: ../../templates/show_podcast_episodes.inc.php:35
 #: ../../templates/show_podcast_episodes.inc.php:91
 msgid "Publication Date"
-msgstr ""
+msgstr "발행일"
 
 #: ../../templates/show_podcast_episode.inc.php:122
 msgid "File"
-msgstr ""
+msgstr "파일"
 
 #: ../../templates/show_podcast_episode_row.inc.php:86
 #: ../../templates/show_podcast.inc.php:105
 #: ../../templates/show_podcast.inc.php:106
 #: ../../templates/show_podcast_row.inc.php:71
 msgid "Sync"
-msgstr ""
+msgstr "동조"
 
 #: ../../templates/show_podcast_episode_row.inc.php:88
 msgid "Podcast Episode edit"
-msgstr ""
+msgstr "팟 캐스트 에피소드 편집"
 
 #: ../../templates/show_podcast_episodes.inc.php:74
 msgid "No podcast episode found"
-msgstr ""
+msgstr "팟 캐스트 에피소드 없음"
 
 #: ../../templates/show_podcast.inc.php:97
 #: ../../templates/show_podcast.inc.php:100
 #: ../../templates/show_podcast_row.inc.php:67
 msgid "Podcast edit"
-msgstr ""
+msgstr "팟 캐스트 편집"
 
 #: ../../templates/show_podcast.inc.php:101
 msgid "Edit Podcast"
-msgstr ""
+msgstr "팟 캐스트 편집"
 
 #: ../../templates/show_podcast.inc.php:125
 #: ../../templates/show_podcasts.inc.php:48
 #: ../../templates/show_podcasts.inc.php:100
 msgid "Episodes"
-msgstr ""
+msgstr "에피소드"
 
 #: ../../templates/show_podcasts.inc.php:29
 msgid "Subscribe Podcast"
-msgstr ""
+msgstr "팟 캐스트 구독"
 
 #: ../../templates/show_podcasts.inc.php:86
 msgid "No podcast found"
-msgstr ""
+msgstr "팟 캐스트를 찾을 수 없음"
 
 #: ../../templates/show_preference_admin.inc.php:23
 msgid "Preference Administration"
-msgstr ""
+msgstr "환경 설정 관리"
 
 #: ../../templates/show_preference_box.inc.php:48
 #: ../../templates/show_preference_box.inc.php:99
 msgid "Apply to All"
-msgstr ""
+msgstr "모두에 적용"
 
 #: ../../templates/show_preference_box.inc.php:49
 #: ../../templates/show_preference_box.inc.php:100
 msgid "Access Level"
-msgstr ""
+msgstr "액세스 수준"
 
 #. HINT: Username
 #. HINT: Editing Username preferences
@@ -5750,65 +5739,64 @@ msgstr ""
 #: ../../templates/show_user_preferences.inc.php:29
 #, php-format
 msgid "Editing %s preferences"
-msgstr ""
+msgstr "%s 환경 설정 편집 중"
 
 #: ../../templates/show_preferences.inc.php:36
 #: ../../templates/show_user_preferences.inc.php:53
 msgid "Update Preferences"
-msgstr ""
+msgstr "업데이트 환경 설정"
 
 #: ../../templates/show_pvmsg.inc.php:26
 msgid "Sent by"
-msgstr ""
+msgstr "에 의해 전송"
 
 #: ../../templates/show_pvmsg.inc.php:34
 #: ../../templates/show_pvmsg_row.inc.php:31
 msgid "Reply"
-msgstr ""
+msgstr "댓글"
 
 #: ../../templates/show_pvmsgs.inc.php:37
 msgid "Compose"
-msgstr ""
+msgstr "짓다"
 
 #: ../../templates/show_pvmsgs.inc.php:37
 msgid "Compose a new message"
-msgstr ""
+msgstr "새 메시지 작성"
 
 #: ../../templates/show_pvmsgs.inc.php:38
 msgid "Set as read"
-msgstr ""
+msgstr "읽은 상태로 설정"
 
 #: ../../templates/show_pvmsgs.inc.php:39
 msgid "Set as unread"
-msgstr ""
+msgstr "읽지 않은 상태로 설정"
 
 #: ../../templates/show_pvmsgs.inc.php:51
 #: ../../templates/show_pvmsgs.inc.php:80
 msgid "Sender"
-msgstr ""
+msgstr "송신기"
 
 #: ../../templates/show_pvmsgs.inc.php:71
-#, fuzzy
 msgid "No message found"
-msgstr "비활성화된 노래가 없습니다"
+msgstr "메시지가 없습니다."
 
 #: ../../templates/show_random_albums.inc.php:24
 msgid "Refresh"
-msgstr ""
+msgstr "새롭게 하다"
 
 #: ../../templates/show_random.inc.php:23
 msgid "Play Random Selection"
-msgstr ""
+msgstr "무작위 선택 재생"
 
 #: ../../templates/show_random.inc.php:46
 msgid "Item count"
-msgstr ""
+msgstr "항목 수"
 
 #: ../../templates/show_random.inc.php:73
 #: ../../templates/show_random.inc.php:97
 #: ../../templates/show_search_form.inc.php:50
 msgid "Unlimited"
-msgstr ""
+msgstr "제한 없는"
 
 #: ../../templates/show_random.inc.php:79
 #, php-format
@@ -5824,16 +5812,16 @@ msgstr[0] ""
 
 #: ../../templates/show_random.inc.php:90
 msgid "Size Limit"
-msgstr ""
+msgstr "크기 제한"
 
 #: ../../templates/show_random.inc.php:113
 msgid "Enqueue"
-msgstr ""
+msgstr "대기열에 넣기"
 
 #: ../../templates/show_recently_played.inc.php:35
 #: ../../templates/show_recently_played.inc.php:145
 msgid "Last Played"
-msgstr ""
+msgstr "마지막으로 재생 된"
 
 #: ../../templates/show_recently_played.inc.php:60
 #, php-format
@@ -5885,446 +5873,450 @@ msgstr[0] ""
 
 #: ../../templates/show_recently_played.inc.php:132
 msgid "No recently played items found"
-msgstr ""
+msgstr "최근에 재생 된 항목이 없습니다."
 
 #: ../../templates/show_recommended_artists.inc.php:80
 msgid "No similar artist found"
-msgstr ""
+msgstr "유사한 아티스트가 없습니다."
 
 #: ../../templates/show_registration_confirmation.inc.php:33
 #: ../../templates/show_user_activate.inc.php:31
 #: ../../templates/show_user_registration.inc.php:37
 #: ../../templates/show_user_registration.inc.php:48
 msgid "Registration"
-msgstr ""
+msgstr "기재"
 
 #: ../../templates/show_registration_confirmation.inc.php:40
 msgid "Registration Complete"
-msgstr ""
+msgstr "등록 완료"
 
 #: ../../templates/show_registration_confirmation.inc.php:46
-#, fuzzy
 msgid "Your account has been created."
-msgstr "접근 리스트 항목이 제거되었습니다"
+msgstr "귀하의 계정이 생성되었습니다."
 
 #: ../../templates/show_registration_confirmation.inc.php:49
 msgid "Please wait for an administrator to activate your account."
-msgstr ""
+msgstr "관리자가 귀하의 계정을 활성화 할 때까지 기다려주십시오."
 
 #: ../../templates/show_registration_confirmation.inc.php:51
 msgid ""
 "An activation key has been sent to the e-mail address you provided. Please "
 "check your e-mail for further information."
-msgstr ""
+msgstr "제공 한 전자 메일 주소로 활성화 키가 전송되었습니다. 자세한 내용은 전자 메일을 확인하십시오."
 
 #: ../../templates/show_registration_confirmation.inc.php:55
 msgid "Return to Login Page"
-msgstr ""
+msgstr "로그인 페이지로 돌아 가기"
 
 #: ../../templates/show_rules.inc.php:33
 msgid "Rules"
-msgstr ""
+msgstr "규칙"
 
 #: ../../templates/show_rules.inc.php:37
 msgid "Match"
-msgstr ""
+msgstr "시합"
 
 #: ../../templates/show_rules.inc.php:42
 msgid "all rules"
-msgstr ""
+msgstr "모든 규칙들"
 
 #: ../../templates/show_rules.inc.php:45
 msgid "any rule"
-msgstr ""
+msgstr "어떤 규칙"
 
 #: ../../templates/show_rules.inc.php:53
 msgid "Add Another Rule"
-msgstr ""
+msgstr "다른 규칙 추가"
 
 #: ../../templates/show_search_bar.inc.php:25
 msgid "Search..."
-msgstr ""
+msgstr "수색..."
 
 #: ../../templates/show_searches.inc.php:29
 msgid "Add Smart Playlist"
-msgstr ""
+msgstr "스마트 재생 목록 추가"
 
 #: ../../templates/show_searches.inc.php:46
 #: ../../templates/show_searches.inc.php:76
 msgid "Item Limit"
-msgstr ""
+msgstr "항목 한도"
 
 #: ../../templates/show_searches.inc.php:64
 msgid "No smart playlist found"
-msgstr ""
+msgstr "스마트 재생 목록이 없습니다."
 
 #: ../../templates/show_search_form.inc.php:23
 msgid "Search Ampache"
-msgstr ""
+msgstr "Ampache 검색"
 
 #: ../../templates/show_search_form.inc.php:47
 msgid "Maximum Results"
-msgstr ""
+msgstr "최대 결과"
 
 #: ../../templates/show_search_form.inc.php:74
 msgid "Save as Smart Playlist"
-msgstr ""
+msgstr "스마트 재생 목록으로 저장"
 
 #: ../../templates/show_search.inc.php:41
 #: ../../templates/show_search.inc.php:42
 msgid "Add All"
-msgstr ""
+msgstr "모두 추가"
 
 #: ../../templates/show_search.inc.php:60
 msgid "Save Changes"
-msgstr ""
+msgstr "변경 사항을 저장하다"
 
 #: ../../templates/show_search_options.inc.php:23
 msgid "Options"
-msgstr ""
+msgstr "옵션"
 
 #: ../../templates/show_search_options.inc.php:27
 #: ../../templates/show_search_options.inc.php:28
 msgid "Add Search Results"
-msgstr ""
+msgstr "검색 결과 추가"
 
 #: ../../templates/show_search_row.inc.php:46
 msgid "Yes"
-msgstr ""
+msgstr "예"
 
 #: ../../templates/show_search_row.inc.php:46
 msgid "No"
-msgstr ""
+msgstr "아니"
 
 #: ../../templates/show_search_row.inc.php:60
 msgid "Smart Playlist edit"
-msgstr ""
+msgstr "스마트 재생 목록 편집"
 
 #: ../../templates/show_search_title.inc.php:24
 #, php-format
 msgid "%s %s (Smart Playlist)"
-msgstr ""
+msgstr "%s %s (스마트 재생 목록)"
 
 #: ../../templates/show_shared_objects.inc.php:27
 msgid "Object Type"
-msgstr ""
+msgstr "객체 유형"
 
 #: ../../templates/show_shared_objects.inc.php:29
-#, fuzzy
 msgid "Creation Date"
-msgstr "카탈로그 생성 시작됨"
+msgstr "제작 일"
 
 #: ../../templates/show_shared_objects.inc.php:30
 msgid "Last Visit"
-msgstr ""
+msgstr "마지막 방문"
 
 #: ../../templates/show_shared_objects.inc.php:31
 msgid "Counter"
-msgstr ""
+msgstr "계수기"
 
 #: ../../templates/show_shared_objects.inc.php:36
 msgid "Public Url"
-msgstr ""
+msgstr "공개 URL"
 
 #: ../../templates/show_share.inc.php:31
 msgid "Shared by"
-msgstr ""
+msgstr "공유자"
 
 #: ../../templates/show_shares.inc.php:27
 msgid "Clean expired shared objects"
-msgstr ""
+msgstr "만료 된 공유 객체 정리"
 
 #: ../../templates/show_song.inc.php:57
 msgid "Waveform"
-msgstr ""
+msgstr "파형"
 
 #: ../../templates/show_song.inc.php:144
 msgid "Genre"
-msgstr ""
+msgstr "유형"
 
 #: ../../templates/show_song.inc.php:146 ../../templates/show_song.inc.php:147
 #: ../../templates/show_song.inc.php:148
 msgid "Links"
-msgstr ""
+msgstr "모래밭"
 
 #: ../../templates/show_song.inc.php:152
-#, fuzzy
 msgid "Song Language"
-msgstr "활성화된 노래"
+msgstr "송 언어"
 
 #: ../../templates/show_song.inc.php:153
-#, fuzzy
 msgid "Catalog Number"
-msgstr "카탈로그 종류"
+msgstr "카탈로그 번호"
 
 #: ../../templates/show_song.inc.php:155
-#, fuzzy
 msgid "Channels"
-msgstr "채널 삭제"
+msgstr "채널"
 
 #: ../../templates/show_song.inc.php:157
 msgid "ReplayGain Track Gain"
-msgstr ""
+msgstr "리플레이 게인 트랙 게인"
 
 #: ../../templates/show_song.inc.php:160
 msgid "ReplayGain Album Gain"
-msgstr ""
+msgstr "ReplayGain 앨범 게인"
 
 #: ../../templates/show_song.inc.php:166
-#, fuzzy
 msgid "Last Updated"
-msgstr "카탈로그 수정됨"
+msgstr "마지막 업데이트"
 
 #: ../../templates/show_song.inc.php:174
 msgid "Lyrics"
-msgstr ""
+msgstr "가사"
 
 #: ../../templates/show_song.inc.php:178
 msgid "Licensing"
-msgstr ""
+msgstr "라이센스"
 
 #: ../../templates/show_song_row.inc.php:95
 msgid "Song Information"
-msgstr ""
+msgstr "노래 정보"
 
 #: ../../templates/show_song_row.inc.php:108
-#, fuzzy
 msgid "Song edit"
-msgstr "활성화된 노래"
+msgstr "노래 편집"
 
-#: ../../templates/show_songs.inc.php:41 ../../templates/show_songs.inc.php:104
-#, fuzzy
+#: ../../templates/show_songs.inc.php:41
+#: ../../templates/show_songs.inc.php:104
 msgid "License"
-msgstr "라이선스 생성됨"
+msgstr "특허"
 
 #: ../../templates/show_songs.inc.php:88
-#, fuzzy
 msgid "No song found"
-msgstr "비활성화된 노래가 없습니다"
+msgstr "노래 없음"
 
 #: ../../templates/show_stats.inc.php:31
 msgid "Connected Users"
-msgstr ""
+msgstr "연결된 사용자"
 
 #: ../../templates/show_stats.inc.php:32
 msgid "Total Users"
-msgstr ""
+msgstr "총 사용자"
 
 #: ../../templates/show_stats.inc.php:37 ../../templates/show_stats.inc.php:74
-#, fuzzy
 msgid "Catalog Size"
-msgstr "카탈로그 종류"
+msgstr "카탈로그 크기"
 
 #: ../../templates/show_stats.inc.php:38
-#, fuzzy
 msgid "Catalog Time"
-msgstr "카탈로그 종류"
+msgstr "카탈로그 시간"
 
 #: ../../templates/show_tagcloud.inc.php:60
 msgid "Tag edit"
-msgstr ""
+msgstr "태그 편집"
 
 #: ../../templates/show_tagcloud.inc.php:65
-#, fuzzy
 msgid "Do you really want to delete the tag?"
-msgstr "정말 이 카탈로그를 삭제하시겠습니까?"
+msgstr "태그를 정말로 삭제 하시겠습니까?"
 
 #: ../../templates/show_test_config.inc.php:41
 #: ../../templates/show_test.inc.php:44
 #: ../../templates/sidebar_admin.inc.php:47
 msgid "Ampache Debug"
-msgstr ""
+msgstr "암페어 디버그"
 
 #: ../../templates/show_test.inc.php:48
 msgid ""
 "You may have reached this page because a configuration error has occured. "
 "Debug information is below."
-msgstr ""
+msgstr "구성 오류가 발생하여이 페이지에 도달했을 수 있습니다. 디버그 정보는 다음과 같습니다."
 
 #: ../../templates/show_test.inc.php:51
 msgid "Web Installation"
-msgstr ""
+msgstr "웹 설치"
 
 #: ../../templates/show_test_table.inc.php:24
 msgid "PHP version"
-msgstr ""
+msgstr "PHP 버전"
 
 #: ../../templates/show_test_table.inc.php:29
 msgid ""
 "This tests whether you are running at least the minimum version of PHP "
 "required by Ampache."
-msgstr ""
+msgstr "이것은 Ampache가 요구하는 최소 PHP 버전 이상을 실행 중인지 여부를 테스트합니다."
 
 #: ../../templates/show_test_table.inc.php:33
 msgid "Dependencies"
-msgstr ""
+msgstr "종속성"
 
 #: ../../templates/show_test_table.inc.php:38
 msgid "This tests whether Ampache dependencies are installed."
-msgstr ""
+msgstr "Ampache 종속성이 설치되어 있는지 여부를 테스트합니다."
 
 #: ../../templates/show_test_table.inc.php:42
 msgid ""
-"Please download and install Composer from http://getcomposer.org and install "
-"it (e.g: mv composer.phar /usr/local/bin/composer) then run `composer "
+"Please download and install Composer from http://getcomposer.org and install"
+" it (e.g: mv composer.phar /usr/local/bin/composer) then run `composer "
 "install --prefer-source --no-interaction` on Ampache directory."
 msgstr ""
+"http://getcomposer.org에서 Composer를 다운로드하여 설치하고 (예 : mv composer.phar / usr /"
+" local / bin / composer) 설치 한 다음 Ampache에`composer install --prefer-source "
+"--no-interaction`을 실행하십시오. 예배 규칙서."
 
 #: ../../templates/show_test_table.inc.php:48
 msgid "PHP hash extension"
-msgstr ""
+msgstr "PHP 해시 확장"
 
 #: ../../templates/show_test_table.inc.php:53
 msgid ""
 "This tests whether you have the hash extension enabled. This extension is "
 "required by Ampache."
-msgstr ""
+msgstr "이것은 해시 확장을 사용할 수 있는지 여부를 테스트합니다. 이 확장은 Ampache에서 필요합니다."
 
 #: ../../templates/show_test_table.inc.php:57
 msgid "SHA256"
-msgstr ""
+msgstr "SHA256"
 
 #: ../../templates/show_test_table.inc.php:62
 msgid ""
 "This tests whether the hash extension supports SHA256. This algorithm is "
 "required by Ampache."
-msgstr ""
+msgstr "이것은 해시 확장이 SHA256을 지원하는지 여부를 테스트합니다. 이 알고리즘은 Ampache에서 필요합니다."
 
 #: ../../templates/show_test_table.inc.php:66
 msgid "PHP PDO extension"
-msgstr ""
+msgstr "PHP PDO 확장"
 
 #: ../../templates/show_test_table.inc.php:71
 msgid ""
 "This tests whether you have the PDO extension enabled. This extension is "
 "required by Ampache."
-msgstr ""
+msgstr "이것은 PDO 확장을 사용할 수 있는지 여부를 테스트합니다. 이 확장은 Ampache에서 필요합니다."
 
 #: ../../templates/show_test_table.inc.php:75
 msgid "MySQL"
-msgstr ""
+msgstr "MySQL"
 
 #: ../../templates/show_test_table.inc.php:80
 msgid ""
 "This tests whether the MySQL driver for PDO is enabled. This driver is "
 "required by Ampache."
-msgstr ""
+msgstr "이것은 PDO 용 MySQL 드라이버가 사용 가능한지 여부를 테스트합니다. 이 드라이버는 Ampache에서 필요합니다."
 
 #: ../../templates/show_test_table.inc.php:84
 msgid "PHP session extension"
-msgstr ""
+msgstr "PHP 세션 확장"
 
 #: ../../templates/show_test_table.inc.php:89
 msgid ""
-"This tests whether you have the session extension enabled. This extension is "
-"required by Ampache."
-msgstr ""
+"This tests whether you have the session extension enabled. This extension is"
+" required by Ampache."
+msgstr "이것은 세션 확장을 사용할 수 있는지 여부를 테스트합니다. 이 확장은 Ampache에서 필요합니다."
 
 #: ../../templates/show_test_table.inc.php:93
 msgid "PHP iconv extension"
-msgstr ""
+msgstr "PHP iconv 확장"
 
 #: ../../templates/show_test_table.inc.php:98
 msgid ""
 "This tests whether you have the iconv extension enabled. This extension is "
 "required by Ampache."
-msgstr ""
+msgstr "이것은 iconv 확장을 사용할 수 있는지 여부를 테스트합니다. 이 확장은 Ampache에서 필요합니다."
 
 #: ../../templates/show_test_table.inc.php:102
 msgid "PHP JSON extension"
-msgstr ""
+msgstr "PHP JSON 확장"
 
 #: ../../templates/show_test_table.inc.php:107
 msgid ""
 "This tests whether you have the JSON extension enabled. This extension is "
 "required by Ampache."
-msgstr ""
+msgstr "JSON 확장을 사용할 수 있는지 여부를 테스트합니다. 이 확장은 Ampache에서 필요합니다."
 
 #: ../../templates/show_test_table.inc.php:111
 msgid "PHP curl extension"
-msgstr ""
+msgstr "PHP 컬 확장"
 
 #: ../../templates/show_test_table.inc.php:116
 msgid ""
-"This tests whether you have the curl extension enabled. This is not strictly "
-"necessary, but may result in a better experience."
+"This tests whether you have the curl extension enabled. This is not strictly"
+" necessary, but may result in a better experience."
 msgstr ""
+"이것은 컬 확장을 사용할 수 있는지 여부를 테스트합니다. 이는 꼭 필요한 것은 아니지만보다 나은 경험을 제공 할 수 있습니다."
 
 #: ../../templates/show_test_table.inc.php:120
 msgid "PHP zlib extension"
-msgstr ""
+msgstr "PHP zlib 확장"
 
 #: ../../templates/show_test_table.inc.php:125
 msgid ""
-"This tests whether you have the zlib extension enabled. This is not strictly "
-"necessary, but may result in a better experience (zip download)."
+"This tests whether you have the zlib extension enabled. This is not strictly"
+" necessary, but may result in a better experience (zip download)."
 msgstr ""
+"이것은 zlib 확장을 사용할 수 있는지 여부를 테스트합니다. 이는 꼭 필요한 것은 아니지만보다 나은 경험을 제공 할 수 있습니다 "
+"(zip 다운로드)."
 
 #: ../../templates/show_test_table.inc.php:129
 msgid "PHP simplexml extension"
-msgstr ""
+msgstr "PHP simplexml 확장 기능"
 
 #: ../../templates/show_test_table.inc.php:134
 msgid ""
 "This tests whether you have the simplexml extension enabled. This is not "
 "strictly necessary, but may result in a better experience."
 msgstr ""
+"이것은 simplexml 확장을 사용할 수 있는지 여부를 테스트합니다. 이는 꼭 필요한 것은 아니지만보다 나은 경험을 제공 할 수 "
+"있습니다."
 
 #: ../../templates/show_test_table.inc.php:138
 msgid "PHP GD extension"
-msgstr ""
+msgstr "PHP GD 확장"
 
 #: ../../templates/show_test_table.inc.php:143
 msgid ""
 "This tests whether you have the GD extension enabled. This is not strictly "
 "necessary, but may result in a better experience."
 msgstr ""
+"이것은 GD 확장을 사용하도록 설정했는지 여부를 테스트합니다. 이는 꼭 필요한 것은 아니지만보다 나은 경험을 제공 할 수 있습니다."
 
 #: ../../templates/show_test_table.inc.php:147
-#, fuzzy
 msgid "PHP safe mode disabled"
-msgstr "모듈 비활성화됨"
+msgstr "PHP 안전 모드 사용 중지됨"
 
 #: ../../templates/show_test_table.inc.php:152
 msgid ""
 "This test makes sure that PHP is not running in safe mode. Some features of "
 "Ampache will not work correctly in safe mode."
 msgstr ""
+"이 테스트는 PHP가 안전 모드에서 실행되고 있지 않은지 확인합니다. Ampache의 일부 기능은 안전 모드에서 올바르게 작동하지 "
+"않습니다."
 
 #: ../../templates/show_test_table.inc.php:156
-#, fuzzy
 msgid "PHP memory limit override"
-msgstr "PHP 메모리 제한을 해제했습니다"
+msgstr "PHP 메모리 제한 무시"
 
 #: ../../templates/show_test_table.inc.php:161
 msgid ""
 "This tests whether Ampache can override the memory limit. This is not "
 "strictly necessary, but may result in a better experience."
 msgstr ""
+"Ampache가 메모리 제한을 무시할 수 있는지 여부를 테스트합니다. 이는 꼭 필요한 것은 아니지만보다 나은 경험을 제공 할 수 "
+"있습니다."
 
 #: ../../templates/show_test_table.inc.php:165
 msgid "PHP execution time override"
-msgstr ""
+msgstr "PHP 실행 시간 오버라이드"
 
 #: ../../templates/show_test_table.inc.php:170
 msgid ""
-"This tests whether Ampache can override the limit on maximum execution time. "
-"This is not strictly necessary, but may result in a better experience."
+"This tests whether Ampache can override the limit on maximum execution time."
+" This is not strictly necessary, but may result in a better experience."
 msgstr ""
+"Ampache가 최대 실행 시간 제한을 무시할 수 있는지 여부를 테스트합니다. 이는 꼭 필요한 것은 아니지만보다 나은 경험을 제공 할 수"
+" 있습니다."
 
 #: ../../templates/show_test_table.inc.php:174
 msgid "PHP max upload size"
-msgstr ""
+msgstr "최대 PHP 업로드 크기"
 
 #: ../../templates/show_test_table.inc.php:179
 msgid ""
 "This tests whether Ampache can upload medium files (>= 20M). This is not "
 "strictly necessary, but may result in a better experience."
 msgstr ""
+"이것은 Ampache가 중간 파일 (> = 20M)을 업로드 할 수 있는지 여부를 테스트합니다. 이는 꼭 필요한 것은 아니지만보다 나은 "
+"경험을 제공 할 수 있습니다."
 
 #: ../../templates/show_test_table.inc.php:183
 msgid "PHP Integer Size"
-msgstr ""
+msgstr "PHP 정수 크기"
 
 #: ../../templates/show_test_table.inc.php:188
 msgid ""
@@ -6332,10 +6324,12 @@ msgid ""
 "strictly necessary, but may result in a better experience. This generally "
 "requires 64-bit operating system."
 msgstr ""
+"Ampache가 대용량 파일 (> 2GB)을 관리 할 수 있는지 여부를 테스트합니다. 이는 꼭 필요한 것은 아니지만보다 나은 경험을 제공"
+" 할 수 있습니다. 일반적으로 64 비트 운영 체제가 필요합니다."
 
 #: ../../templates/show_test_table.inc.php:192
 msgid "PHP mbstring.func_overload"
-msgstr ""
+msgstr "PHP mbstring.func_overload"
 
 #: ../../templates/show_test_table.inc.php:197
 #, php-format
@@ -6345,46 +6339,53 @@ msgid ""
 "(disabled by default) along with mbstring.func_overload may result in "
 "irreversible corruption of your music files."
 msgstr ""
+"이것은 PHP %s가 설정되어 있는지 여부를 테스트하여 ID3 태그 지원을 손상시킬 수 있습니다. 이것은 엄격하게 필요하지 않지만 "
+"mbstring.func_overload와 함께 Ampache ID3 태그 쓰기 지원 (기본적으로 비활성화 됨)을 활성화하면 음악 파일이"
+" 되돌릴 수 없게 될 수 있습니다."
 
 #: ../../templates/show_test_table.inc.php:204
 msgid "Configuration file readability"
-msgstr ""
+msgstr "구성 파일 가독성"
 
 #: ../../templates/show_test_table.inc.php:209
 msgid ""
 "This test attempts to read config/amuzak.cfg.php. If this fails the file "
 "either is not in the correct location or is not currently readable."
 msgstr ""
+"이 테스트는 config / amuzak.cfg.php를 읽으려고 시도합니다. 이것이 실패하면 파일이 올바른 위치에 없거나 현재 읽을 수"
+" 없습니다."
 
 #: ../../templates/show_test_table.inc.php:214
 msgid "Configuration file validity"
-msgstr ""
+msgstr "구성 파일 유효성"
 
 #: ../../templates/show_test_table.inc.php:223
 msgid ""
 "This test makes sure that you have set all of the required configuration "
 "variables and that we are able to completely parse your config file."
-msgstr ""
+msgstr "이 테스트는 필수 구성 변수를 모두 설정하고 구성 파일을 완전히 구문 분석 할 수 있는지 확인합니다."
 
 #: ../../templates/show_test_table.inc.php:232
 msgid ""
 "This attempts to connect to your database using the values read from your "
 "configuration file."
-msgstr ""
+msgstr "이렇게하면 구성 파일에서 읽은 값을 사용하여 데이터베이스에 연결하려고합니다."
 
 #: ../../templates/show_test_table.inc.php:236
 msgid "Database tables"
-msgstr ""
+msgstr "데이터베이스 테이블"
 
 #: ../../templates/show_test_table.inc.php:241
 msgid ""
 "This checks a few key tables to make sure that you have successfully "
 "inserted the Ampache database and that the user has access to the database"
 msgstr ""
+"이렇게하면 몇 가지 키 테이블을 검사하여 Ampache 데이터베이스가 성공적으로 삽입되었고 사용자가 데이터베이스에 액세스 할 수 있는지 "
+"확인합니다"
 
 #: ../../templates/show_test_table.inc.php:246
 msgid "Web path"
-msgstr ""
+msgstr "웹 경로"
 
 #: ../../templates/show_test_table.inc.php:256
 msgid ""
@@ -6392,132 +6393,131 @@ msgid ""
 "we are able to get to the index page. If you do not see a check mark here "
 "then your web_path is not set correctly."
 msgstr ""
+"이 테스트는 web_path 변수가 올바르게 설정되었고 색인 페이지로 갈 수 있는지 확인합니다. 여기에 체크 표시가 보이지 않으면 "
+"web_path가 올바르게 설정되지 않은 것입니다."
 
 #: ../../templates/show_update_items.inc.php:23
 msgid "Starting Update from Tags"
-msgstr ""
+msgstr "태그에서 업데이트 시작 중"
 
 #: ../../templates/show_update_items.inc.php:27
 msgid "Update from Tags Complete"
-msgstr ""
+msgstr "태그 완료에서 업데이트"
 
 #: ../../templates/show_uploads.inc.php:23
 #: ../../templates/sidebar_home.inc.php:119
 msgid "Uploads"
-msgstr ""
+msgstr "업로드"
 
 #: ../../templates/show_user_activate.inc.php:38
 msgid "Registration Validation"
-msgstr ""
+msgstr "등록 확인"
 
 #: ../../templates/show_user_activate.inc.php:47
-#, fuzzy
 msgid "User Activated"
-msgstr "프로필 이미지 삭제됨"
+msgstr "사용자 활성화 됨"
 
 #. HINT: Start A tag, End A tag
 #: ../../templates/show_user_activate.inc.php:51
 #, php-format
 msgid "This User ID is activated and can be used %sLogin%s"
-msgstr ""
+msgstr "이 사용자 ID가 활성화되어 사용할 수 있습니다. %sLogin%s"
 
 #: ../../templates/show_user_activate.inc.php:56
 msgid "Validation Failed"
-msgstr ""
+msgstr "검증에 실패했습니다"
 
 #: ../../templates/show_user_activate.inc.php:57
 msgid "The validation key used isn't correct"
-msgstr ""
+msgstr "사용 된 유효성 검사 키가 올바르지 않습니다."
 
 #: ../../templates/show_userflag.inc.php:23
 msgid "User Favorites"
-msgstr ""
+msgstr "사용자 즐겨 찾기"
 
 #: ../../templates/show_user.inc.php:37
 msgid "Display Name"
-msgstr ""
+msgstr "표시 이름"
 
 #: ../../templates/show_user.inc.php:52
 msgid "Member Since"
-msgstr ""
+msgstr "회원 가입일"
 
 #: ../../templates/show_user.inc.php:55 ../../templates/show_users.inc.php:50
 #: ../../templates/show_users.inc.php:82
 msgid "Last Seen"
-msgstr ""
+msgstr "마지막 본"
 
 #: ../../templates/show_user.inc.php:60 ../../templates/show_users.inc.php:54
 #: ../../templates/show_users.inc.php:86
 msgid "Activity"
-msgstr ""
+msgstr "활동"
 
 #: ../../templates/show_user.inc.php:72
 msgid "Status"
-msgstr ""
+msgstr "지위"
 
 #: ../../templates/show_user.inc.php:76
 msgid "User is Online Now"
-msgstr ""
+msgstr "사용자는 지금 온라인 상태입니다."
 
 #: ../../templates/show_user.inc.php:80
 msgid "User is Offline Now"
-msgstr ""
+msgstr "사용자가 지금 오프라인 상태입니다."
 
 #: ../../templates/show_user.inc.php:105
 msgid "Active Playlist"
-msgstr ""
+msgstr "활성 재생 목록"
 
 #: ../../templates/show_user_registration.inc.php:66
-#, fuzzy
 msgid "User Agreement"
-msgstr "프로필 이미지 삭제"
+msgstr "사용자 동의서"
 
 #: ../../templates/show_user_registration.inc.php:73
 msgid "I Accept"
-msgstr ""
+msgstr "동의 함"
 
 #: ../../templates/show_user_registration.inc.php:79
 msgid "User Information"
-msgstr ""
+msgstr "사용자 정보"
 
 #: ../../templates/show_user_registration.inc.php:150
 msgid "* Required fields"
-msgstr ""
+msgstr "* 필수 입력 사항"
 
 #: ../../templates/show_user_registration.inc.php:162
 msgid "Register User"
-msgstr ""
+msgstr "사용자 등록"
 
 #: ../../templates/show_users.inc.php:49 ../../templates/show_users.inc.php:81
 msgid "Fullname"
-msgstr ""
+msgstr "성명"
 
 #: ../../templates/show_users.inc.php:51 ../../templates/show_users.inc.php:83
 msgid "Registration Date"
-msgstr ""
+msgstr "등록 날짜"
 
 #: ../../templates/show_users.inc.php:57 ../../templates/show_users.inc.php:89
 msgid "Last Ip"
-msgstr ""
+msgstr "마지막 IP"
 
 #: ../../templates/show_users.inc.php:63 ../../templates/show_users.inc.php:95
 msgid "On-line"
-msgstr ""
+msgstr "온라인"
 
 #: ../../templates/show_verify_catalog.inc.php:23
-#, fuzzy
 msgid "Verify Catalog"
-msgstr "카탈로그 삭제"
+msgstr "카탈로그 확인"
 
 #. HINT: Catalog Name
 #: ../../templates/show_verify_catalog.inc.php:25
 #, php-format
 msgid "Updating the %s catalog"
-msgstr ""
+msgstr "%s 카탈로그 업데이트"
 
 #: ../../templates/show_verify_catalog.inc.php:27
 msgid "Verified"
-msgstr ""
+msgstr "검증 됨"
 
 #: ../../templates/sidebar_admin.inc.php:24
 #: ../../templates/sidebar_admin.inc.php:31
@@ -6533,101 +6533,97 @@ msgstr ""
 #: ../../templates/sidebar_modules.inc.php:30
 #: ../../templates/sidebar_preferences.inc.php:30
 msgid "Expand/Collapse"
-msgstr ""
+msgstr "확장 / 축소"
 
 #: ../../templates/sidebar_admin.inc.php:31
 msgid "User Tools"
-msgstr ""
+msgstr "사용자 도구"
 
 #: ../../templates/sidebar_admin.inc.php:34
 msgid "Browse Users"
-msgstr ""
+msgstr "사용자 찾아보기"
 
 #: ../../templates/sidebar_admin.inc.php:39
 msgid "Add ACL"
-msgstr ""
+msgstr "ACL 추가"
 
 #: ../../templates/sidebar_admin.inc.php:40
 msgid "Show ACL(s)"
-msgstr ""
+msgstr "ACL 표시"
 
 #: ../../templates/sidebar_admin.inc.php:45
 #: ../../templates/sidebar_modules.inc.php:30
 msgid "Other Tools"
-msgstr ""
+msgstr "기타 도구"
 
 #: ../../templates/sidebar_admin.inc.php:48
-#, fuzzy
 msgid "Clear Now Playing"
-msgstr "지금 재생중 목록 초기화됨"
+msgstr "지금 지우기"
 
 #: ../../templates/sidebar_admin.inc.php:52
 msgid "Manage Licenses"
-msgstr ""
+msgstr "라이선스 관리"
 
 #: ../../templates/sidebar_admin.inc.php:59
 msgid "Server Config"
-msgstr ""
+msgstr "서버 구성"
 
 #: ../../templates/sidebar_home.inc.php:32
 msgid "Song Titles"
-msgstr ""
+msgstr "노래 제목"
 
 #: ../../templates/sidebar_home.inc.php:75
 msgid "Currently Playing"
-msgstr ""
+msgstr "현재 재생 중"
 
 #: ../../templates/sidebar_home.inc.php:85
 msgid "Import"
-msgstr ""
+msgstr "수입"
 
 #: ../../templates/sidebar_home.inc.php:97
 msgid "Recent"
-msgstr ""
+msgstr "충적세"
 
 #: ../../templates/sidebar_home.inc.php:104
-#, fuzzy
 msgid "Top Rated"
-msgstr "수정됨"
+msgstr "최고 등급"
 
 #: ../../templates/sidebar_home.inc.php:140
 msgid "Advanced"
-msgstr ""
+msgstr "많은"
 
 #: ../../templates/sidebar.inc.php:35
 #: ../../templates/sidebar_modules.inc.php:24
-#, fuzzy
 msgid "Modules"
-msgstr "모듈 비활성화됨"
+msgstr "모듈"
 
 #: ../../templates/sidebar.inc.php:60
 msgid "Logout"
-msgstr ""
+msgstr "로그 아웃"
 
 #: ../../templates/sidebar.light.inc.php:33
 msgid "Radio"
-msgstr ""
+msgstr "라디오"
 
 #: ../../templates/sidebar_modules.inc.php:26
-#, fuzzy
 msgid "Catalog Modules"
-msgstr "카탈로그 종류"
+msgstr "카탈로그 모듈"
 
 #: ../../templates/sidebar_modules.inc.php:27
 msgid "Available Plugins"
-msgstr ""
+msgstr "사용 가능한 플러그인"
 
 #: ../../templates/sidebar_modules.inc.php:33
 msgid "Mail Users"
-msgstr ""
+msgstr "메일 사용자"
 
 #: ../../templates/sidebar_modules.inc.php:41
 msgid "Manage Playlist"
-msgstr ""
+msgstr "재생 목록 관리"
 
 #: ../../templates/sidebar_preferences.inc.php:41
 msgid "Account"
-msgstr ""
+msgstr "계정"
 
 #: ../../update.php:81
 #, php-format
@@ -6636,21 +6632,13 @@ msgid ""
 "<strong>3.3.3.5</strong>. Your current version is <strong>%s</strong> with "
 "database version <strong>%s</strong>."
 msgstr ""
+"이 페이지는 Ampache에 대한 모든 데이터베이스 업데이트를 <strong> 3.3.3.5 </strong>로 시작하여 처리합니다. "
+"현재 버전은 데이터베이스 버전 <strong> %s </strong> 인 <strong> %s </strong>입니다."
 
 #: ../../update.php:91
-#, fuzzy
 msgid "Update Now!"
-msgstr "수정됨"
+msgstr "지금 업데이트!"
 
 #: ../../upnp/control-reply.php:46
 msgid "root"
-msgstr ""
-
-#~ msgid "Failed to enable the module, Controller Error"
-#~ msgstr "모듈을 활성화할 수 없습니다. 컨트롤러 오류입니다"
-
-#~ msgid "localplay enabled"
-#~ msgstr "로컬 플레이 활성화됨"
-
-#~ msgid "UPnP backend disabled. Broadcast skipped."
-#~ msgstr "UPnP 백앤드가 비활성화되어 있습니다. 방송을 스킵합니다."
+msgstr "뿌리"
