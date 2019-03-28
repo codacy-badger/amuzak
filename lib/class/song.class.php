@@ -309,7 +309,7 @@ class Song extends database_object implements media, library_item
      */
     public function __construct($id = null, $limit_threshold = '')
     {
-        if (!$id) {
+        if ($id === null) {
             return false;
         }
 
@@ -1734,7 +1734,7 @@ class Song extends database_object implements media, library_item
         $media_name = rawurlencode($media_name);
 
         $url = Stream::get_base_url($local) . "type=" . $object_type . "&oid=" . $object_id . "&uid=" . $uid . $additional_params;
-        if ($player) {
+        if ($player !== null) {
             $url .= "&player=" . $player;
         }
         $url .= "&name=" . $media_name;
@@ -1831,7 +1831,7 @@ class Song extends database_object implements media, library_item
     {
         $types     = array();
         $transcode = AmpConfig::get('transcode_' . $type);
-        if ($player) {
+        if ($player !== null) {
             $player_transcode = AmpConfig::get('transcode_player_' . $player . '_' . $type);
             if ($player_transcode) {
                 $transcode = $player_transcode;
@@ -1863,7 +1863,7 @@ class Song extends database_object implements media, library_item
             $setting_target = 'encode_' . $media_type . '_target';
         }
 
-        if ($player) {
+        if ($player !== null) {
             $player_setting_target = 'encode_player_' . $player . '_target';
             if ($media_type != 'song') {
                 $player_setting_target = 'encode_' . $media_type . '_player_' . $player . '_target';

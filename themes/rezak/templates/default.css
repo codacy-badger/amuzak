@@ -444,7 +444,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 125px;
+    max-width: 125px;
     display: inline-block;
 }
 
@@ -570,7 +570,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 #sidebar-tabs .sb2 li h4 {
-    height: 14px;
+    height: 20px;
     margin: 10px 0 5px 0;
     padding: 0 10px 0 20px;
     border-bottom: 1px solid;
@@ -1403,6 +1403,9 @@ span.fatalerror {
 
 #item_summary {
     margin-right: 150px;
+    max-height: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /************************************************/

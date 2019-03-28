@@ -80,7 +80,7 @@ class Live_Stream extends database_object implements media, library_item
      */
     public function __construct($id = null)
     {
-        if (!$id) {
+        if ($id === null) {
             return false;
         }
 

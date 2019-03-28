@@ -172,6 +172,7 @@ function get_languages()
                 case 'da_DK': $name = 'Dansk'; break; /* Danish */
                 case 'de_DE': $name = 'Deutsch'; break; /* German */
                 case 'el_GR': $name = 'Greek'; break; /* Greek */
+                case 'en_AU': $name = 'English (AU)'; break; /* English */
                 case 'en_GB': $name = 'English (UK)'; break; /* English */
                 case 'en_US': $name = 'English (US)'; break; /* English */
                 case 'es_AR': $name = 'Espa&#241;ol (AR)'; break; /* Spanish */

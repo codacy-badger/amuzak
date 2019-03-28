@@ -143,7 +143,7 @@ class Artist extends database_object implements library_item
     public function __construct($id=null, $catalog_init=0)
     {
         /* If they failed to pass in an id, just run for it */
-        if (!$id) {
+        if ($id === null) {
             return false;
         }
 
@@ -545,6 +545,7 @@ class Artist extends database_object implements library_item
      */
     public function search_childrens($name)
     {
+        $search                    = array();
         $search['type']            = "album";
         $search['rule_0_input']    = $name;
         $search['rule_0_operator'] = 4;

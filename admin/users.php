@@ -123,10 +123,10 @@ switch ($_REQUEST['action']) {
             exit;
         }
 
-        $username       = scrub_in($_POST['username']);
-        $fullname       = scrub_in($_POST['fullname']);
-        $email          = scrub_in($_POST['email']);
-        $website        = scrub_in($_POST['website']);
+        $username       = (string) scrub_in($_POST['username']);
+        $fullname       = (string) scrub_in($_POST['fullname']);
+        $email          = (string) scrub_in($_POST['email']);
+        $website        = (string) scrub_in($_POST['website']);
         $access         = scrub_in($_POST['access']);
         $pass1          = $_POST['password_1'];
         $pass2          = $_POST['password_2'];

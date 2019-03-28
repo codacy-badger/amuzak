@@ -330,15 +330,6 @@ if ($is_share && $isVideo) {
 </head>
 <body>
 <?php
-if ($iframed && !$is_share) {
-    ?>
-  <div class="jp-close">
-    <a href="javascript:ExitPlayer();" title="Close Player"><img src="<?php echo AmpConfig::get('web_path') ?>/images/close.png" border="0" /></a><br />
-  </div>
-<?php
-}
-?>
-<?php
 $areaClass = "";
 if ((!AmpConfig::get('waveform') || $is_share) && !$embed) {
     $areaClass .= " jp-area-center";
@@ -452,70 +443,6 @@ if ($isVideo) {
     } ?>
         </div>
       </div>
-<?php if (!$is_share) {
-        ?>
-      <div class="player_actions">
-<?php if (AmpConfig::get('broadcast') && Access::check('interface', '25')) {
-            ?>
-        <div id="broadcast" class="broadcast action_button">
-<?php
-        if (AmpConfig::get('broadcast_by_default')) {
-            $broadcasts = Broadcast::get_broadcasts($GLOBALS['user']->id);
-            if (count($broadcasts) < 1) {
-                $broadcast_id = Broadcast::create(T_('My Broadcast'));
-            } else {
-                $broadcast_id = $broadcasts[0];
-            }
-
-            $broadcast = new Broadcast($broadcast_id);
-            $key       = Broadcast::generate_key();
-            $broadcast->update_state(true, $key);
-            echo Broadcast::get_unbroadcast_link($broadcast_id) . '<script type="text/javascript">startBroadcast(\'' . $key . '\');</script>';
-        } else {
-            echo Broadcast::get_broadcast_link();
-        } ?>
-        </div>
-<?php
-        } ?>
-<?php if ($iframed) {
-            ?>
-        <?php if (Access::check('interface', '25')) {
-                ?>
-            <div class="action_button">
-                <a onclick="javascript:SaveToExistingPlaylist(event);">
-                    <?php echo UI::get_icon('playlist_add', T_('Add to existing playlist')) ?>
-                </a>
-            </div>
-
-        <?php
-            } ?>
-        <div id="slideshow" class="slideshow action_button">
-            <a href="javascript:SwapSlideshow();"><?php echo UI::get_icon('image', T_('Slideshow')) ?></a>
-        </div>
-        <div id="expandplaylistbtn" class="action_button">
-            <a href="javascript:TogglePlaylistExpand();"><?php echo UI::get_icon('multilines', T_('Expand/Collapse Playlist')) ?></a>
-        </div>
-<?php if (AmpConfig::get('webplayer_html5')) {
-                ?>
-        <div class="action_button">
-            <a href="javascript:ShowVisualizer();"><?php echo UI::get_icon('visualizer', T_('Visualizer')) ?></a>
-        </div>
-        <div class="action_button">
-            <a onClick="ShowVisualizerFullScreen();" href="#"><?php echo UI::get_icon('fullscreen', T_('Visualizer Full-Screen')) ?></a>
-        </div>
-        <div id="replaygainbtn" class="action_button">
-            <a href="javascript:ToggleReplayGain();"><?php echo UI::get_icon('replaygain', T_('ReplayGain')) ?></a>
-        </div>
-        <div id="equalizerbtn" class="action_button" style="visibility: hidden;">
-            <a href="javascript:ShowEqualizer();"><?php echo UI::get_icon('equalizer', T_('Equalizer')) ?></a>
-        </div>
-<?php
-            } ?>
-<?php
-        } ?>
-      </div>
-<?php
-    } ?>
       <div class="jp-playlist">
           <ul>
               <li></li>

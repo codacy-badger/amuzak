@@ -67,7 +67,7 @@ if (!empty($link)) {
 
 $results['load_time_begin'] = $load_time_begin;
 /** This is the version.... fluff nothing more... **/
-$results['version']            = '4.0.2';
+$results['version']            = '4.0.3';
 $results['int_config_version'] = '41';
 
 if (!empty($results['force_ssl'])) {
@@ -134,7 +134,7 @@ $old_error_handler = set_error_handler('ampache_error_handler');
 $post_size = @ini_get('post_max_size');
 if (substr($post_size, strlen($post_size) - 1, strlen($post_size)) != 'M') {
     /* Sane value time */
-    ini_set('post_max_size', '8M');
+    ini_set('post_max_size', '128M');
 }
 
 // In case the local setting is 0

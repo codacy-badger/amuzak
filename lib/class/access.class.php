@@ -93,7 +93,7 @@ class Access
      */
     public function __construct($access_id = null)
     {
-        if (!$access_id) {
+        if ($access_id === null) {
             return false;
         }
 
@@ -395,7 +395,7 @@ class Access
         }
 
         $user = $GLOBALS['user'];
-        if ($user_id) {
+        if ($user_id !== null) {
             $user = new User($user_id);
         }
         $level = intval($level);
