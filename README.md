@@ -99,7 +99,7 @@ for more instructions.
 
 Translation progress so far:
 
-[![](https://www.transifex.com/_/charts/redirects/ampache/ampache/image_png/messagespot/)](https://www.transifex.com/projects/p/ampache/)
+[![](https://www.transifex.com/_/charts/redirects/ampachecore/amuzak/image_png/config/)](https://www.transifex.com/projects/p/ampache/)
 
 Credits
 -------
