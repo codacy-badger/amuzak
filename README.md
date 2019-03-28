@@ -98,8 +98,9 @@ If you prefer it old school or want to work offline, take a look at [/locale/bas
 for more instructions.
 
 Translation progress so far:
+**Please Help Review Google Machine Learing Translations!**
 
-[![](https://www.transifex.com/_/charts/redirects/ampachecore/amuzak/image_png/config/)](https://www.transifex.com/projects/p/ampache/)
+[![](https://www.transifex.com/_/charts/redirects/ampachecore/amuzak/image_png/config/)](https://www.transifex.com/projects/p/amuzak/)
 
 Credits
 -------
