@@ -932,6 +932,7 @@ class Subsonic_Api
     private static function _updatePlaylist($id, $name, $songsIdToAdd = array(), $songIndexToRemove = array(), $public = true)
     {
         $playlist = new Playlist($id);
+        $songsIdToAdd_count = 0;
 
         $newdata            = array();
         $newdata['name']    = (!empty($name)) ? $name : $playlist->name;

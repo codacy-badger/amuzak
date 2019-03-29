@@ -132,7 +132,7 @@ class Waveform
                     }
                 }
 
-                if ($waveform) {
+                if ($waveform !== null) {
                     self::save_to_db($song_id, $waveform);
                 }
             }
@@ -334,7 +334,7 @@ class Waveform
     /**
      * Save waveform to db.
      * @param int $song_id
-     * @param binary|string $waveform
+     * @param string $waveform
      * @return boolean
      */
     protected static function save_to_db($song_id, $waveform)

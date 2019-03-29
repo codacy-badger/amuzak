@@ -426,6 +426,7 @@ class Subsonic_XML_Data
 
     /**
      * @param Album $album
+     * @param SimpleXMLElement $xml
      */
     public static function addAlbum($xml, $album, $songs=false, $addAmpacheInfo=false, $elementName="album")
     {
@@ -542,6 +543,7 @@ class Subsonic_XML_Data
     
     public static function getCatalogData($catalogId, $file_Path)
     {
+        $results = array();
         $sql        = 'SELECT `catalog_type` FROM `catalog` WHERE `id` = ?';
         $db_results = Dba::read($sql, array($catalogId));
         if ($result = Dba::fetch_assoc($db_results)) {

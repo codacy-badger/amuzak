@@ -16,10 +16,10 @@ you should contact us, before you start translating Ampache into a new language,
 on IRC (chat.freenode.net #ampache), just to make sure that nobody else is already working on a translation.
 Once you are ready to start your translation you will need to get a few tools:
 
- - [Gettext](http://www.gnu.org/software/gettext/)
- - xgettext (Generates PO files)
- - msgmerge (Merges old and new PO files)
- - msgfmt (Generates the MO file from a PO file)
+- [Gettext](http://www.gnu.org/software/gettext/)
+- xgettext (Generates PO files)
+- msgmerge (Merges old and new PO files)
+- msgfmt (Generates the MO file from a PO file)
 
 ### B) Quick Reference
 Below are all of the commands listed you may have to run when working on a translation.
@@ -104,7 +104,7 @@ code at all. Simply run:
 
 And then check it within the web interface!
 
-## Questions:
+## Questions
 If you have any questions or if you are unable to get gettext to work, please
 feel free to contact us.
 Thanks!
