@@ -163,7 +163,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     width: 100%;
     position: relative;
     z-index: 1;
-    padding-bottom: 40px;
+    padding-bottom: 10px;
 }
 
 #footer {
@@ -522,7 +522,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 .sidebar-float {
-    margin: 20px auto auto 5px;
+    margin: 5px auto auto 5px;
     float: left;
 }
 
@@ -643,7 +643,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0px 18px auto auto;
-    min-width: 100px;
+    min-width: max-content;
     max-height: 85%;
     max-width: 200px;
     overflow-y: auto;
@@ -651,7 +651,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     position: fixed;
     right: 10px;
     top: 66px;
-    z-index: 10;
+    z-index: 10000;
 }
 
 /* For jQuery scrolling feature */
@@ -674,8 +674,9 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 #rightbar #rb_action li {
-    margin-right: 5px;
     display: inline;
+    margin-right: 5px;
+    padding-bottom: 3px;
 }
 
 #rightbar li #rb_add, #rightbar li #pl_add {
@@ -683,10 +684,10 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 #rightbar #rb_current_playlist li {
-    min-height: 29px;
-    font-size: 14px;
-    width: 100%;
     display: table;
+    font-size: 14px;
+    min-height: 29px;
+    min-width: 100px;
 }
 
 #rightbar #rb_current_playlist li a {
@@ -705,18 +706,18 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 #rightbar .submenu {
-    display: none;
-    position: fixed;
-    top: 120px;
-    right: 15px;
     border: 2px solid;
-    width: 210px;
-    padding: 0.6em;
+    display: none;
     font-size: 12px;
-    z-index: 99;
+	max-height: 350px;
+    min-width: 210px;
 	overflow: hidden;
     overflow-y: scroll;
-	max-height: 350px;
+    padding: 0.6em;
+    position: fixed;
+    right: 15px;
+    top: 100px;
+    z-index: 99;
 }
 
 #rightbar #rb_action .submenu li {
@@ -775,7 +776,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 .content-float {
-    margin: 20px 250px 0px 205px;
+    margin: 5px 250px 0px 160px;
 }
 
 .content-right-wild {
