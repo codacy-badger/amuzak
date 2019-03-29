@@ -543,7 +543,7 @@ class Subsonic_XML_Data
     
     public static function getCatalogData($catalogId, $file_Path)
     {
-        $results = array();
+        $results    = array();
         $sql        = 'SELECT `catalog_type` FROM `catalog` WHERE `id` = ?';
         $db_results = Dba::read($sql, array($catalogId));
         if ($result = Dba::fetch_assoc($db_results)) {
