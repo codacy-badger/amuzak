@@ -17,7 +17,7 @@
  
 div.jp-area {
     height: 100px;
-    width: 100%;
+    min-width: 50%;
  }
  
  div.jp-area-video {
@@ -53,6 +53,7 @@ div.jp-video {
 	font-family: 'Verdana', Arial, sans-serif;
 	line-height: 1.6;
 	margin: auto;
+        margin-left: 3px;
 }
 div.jp-audio {
 	width: 480px;
@@ -171,7 +172,7 @@ div.jp-video div.jp-type-single ul.jp-controls {
 
 div.jp-video div.jp-type-playlist ul.jp-controls {
 	width: 134px;
-	margin-left: 172px;
+	margin-r8ght: 3px;
 }
 div.jp-video ul.jp-controls,
 div.jp-interface ul.jp-controls li {
