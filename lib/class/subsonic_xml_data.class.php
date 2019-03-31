@@ -476,6 +476,9 @@ class Subsonic_XML_Data
         }
     }
 
+    /**
+     * @param SimpleXMLElement $xml
+     */
     public static function addSong($xml, $songId, $addAmpacheInfo=false, $elementName='song')
     {
         $songData     = self::getSongData($songId);
