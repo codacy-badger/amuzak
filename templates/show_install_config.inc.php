@@ -131,7 +131,7 @@ require $prefix . '/templates/install_header.inc.php';
 <div>
     <?php echo T_('Transcoding allows you to convert one type of file to another. Ampache supports on the fly transcoding of all file types based on user, player, IP address or available bandwidth. In order to transcode, Ampache takes advantage of existing binary applications such as ffmpeg. In order for transcoding to work you must first install the supporting applications and ensure that they are executable by the web server.'); ?>
     <br />
-    <?php echo T_('This section apply default transcoding configuration according to the application you want to use. You may need to customize settings once this setup ended'); ?>. <a href="https://github.com/ampache/ampache/wiki/Transcoding" target="_blank"><?php echo T_('See wiki page'); ?>.</a>
+    <?php echo T_('This section apply default transcoding configuration according to the application you want to use. You may need to customize settings once this setup ended'); ?>. <a href="https://github.com/ampcore/amuzak/wiki/Transcoding" target="_blank"><?php echo T_('See wiki page'); ?>.</a>
 </div>
 <br />
 <div class="form-group">
@@ -161,7 +161,7 @@ require $prefix . '/templates/install_header.inc.php';
 <p>&nbsp;</p>
 <h3><?php echo T_('Players'); ?></h3>
 <div><?php echo T_('Ampache is more than only a web interface. Several backends are implemented to ensure you can stream your media from anywhere.'); ?></div>
-<div><?php echo T_('Select backends to enable. Depending the backend, you may need to perform additional configuration.'); ?> <a href="https://github.com/ampache/ampache/wiki/API" target="_blank"><?php echo T_('See wiki page'); ?>.</a></div>
+<div><?php echo T_('Select backends to enable. Depending the backend, you may need to perform additional configuration.'); ?> <a href="https://github.com/ampcore/amuzak/wiki/API" target="_blank"><?php echo T_('See wiki page'); ?>.</a></div>
 <br />
 <div class="form-group">
     <div class="checkbox-inline disabled">

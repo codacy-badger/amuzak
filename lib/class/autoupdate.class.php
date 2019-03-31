@@ -77,7 +77,7 @@ class AutoUpdate
     {
         try {
             // https is mandatory
-            $url     = "https://api.github.com/repos/ampache/ampache" . $action;
+            $url     = "https://api.github.com/repos/ampcore/amuzak" . $action;
             $request = Requests::get($url, array(), Core::requests_options());
 
             // Not connected / API rate limit exceeded: just ignore, it will pass next time
