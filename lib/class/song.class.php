@@ -670,7 +670,7 @@ class Song extends database_object implements media, library_item
      *
      * Gets a list of the disabled songs for and returns an array of Songs
      * @param int $count
-     * @return int[]
+     * @return integer[]
      */
     public static function get_disabled($count = 0)
     {
@@ -766,7 +766,7 @@ class Song extends database_object implements media, library_item
      * Get duplicate information.
      * @param array $dupe
      * @param string $search_type
-     * @return int[]
+     * @return integer[]
      */
     public static function get_duplicate_info($dupe, $search_type)
     {
@@ -1654,7 +1654,7 @@ class Song extends database_object implements media, library_item
      * get_from_path
      * This returns all of the songs that exist under the specified path
      * @param string $path
-     * @return int[]
+     * @return integer[]
      */
     public static function get_from_path($path)
     {
@@ -1874,7 +1874,7 @@ class Song extends database_object implements media, library_item
             }
         }
 
-        if ($target) {
+        if ($target !== null) {
             debug_event('media', 'Explicit format request {' . $target . '}', 5);
         } else {
             if ($target = AmpConfig::get('encode_target_' . $source)) {
@@ -2107,6 +2107,7 @@ class Song extends database_object implements media, library_item
                 Art::gc('song', $this->id);
                 Userflag::gc('song', $this->id);
                 Rating::gc('song', $this->id);
+                Shoutbox::gc('song', $this->id);
                 Useractivity::gc('song', $this->id);
             }
         } else {
