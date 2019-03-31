@@ -94,7 +94,7 @@ class Subsonic_XML_Data
     {
         return $id + Subsonic_XML_Data::AMPACHEID_VIDEO;
     }
-    
+
     /**
      * @return string|null
      */
@@ -102,7 +102,7 @@ class Subsonic_XML_Data
     {
         return $id + Subsonic_XML_Data::AMPACHEID_PODCAST;
     }
-    
+
     /**
      * @param integer|null $id
      */
@@ -370,7 +370,7 @@ class Subsonic_XML_Data
                 self::addArtist($xlastcat, $artist, $extra, false, $albumsSet);
             }
         }
-        
+
         // Always add # index at the end
         if (count($sharpartists) > 0) {
             $xsharpcat = $xml->addChild('index');
@@ -652,7 +652,7 @@ class Subsonic_XML_Data
 
         return self::checkName($name);
     }
-    
+
     /**
      * @return string|null
      */
@@ -896,7 +896,7 @@ class Subsonic_XML_Data
             self::addSong($xresult, $id);
         }
     }
-    
+
     /**
      * @param string $objectType
      */
@@ -1138,7 +1138,7 @@ class Subsonic_XML_Data
             }
         }
     }
-    
+
     /**
      * @param SimpleXMLElement $xml
      * @param Podcast[] $podcasts
@@ -1166,7 +1166,7 @@ class Subsonic_XML_Data
             }
         }
     }
-    
+
     /**
      * @param Podcast_Episode $episode
      * @param SimpleXMLElement $xml
@@ -1202,7 +1202,7 @@ class Subsonic_XML_Data
             $xepisode->addAttribute("path", $path);
         }
     }
-    
+
     /**
      * @param SimpleXMLElement $xml
      * @param Podcast_Episode[] $episodes
@@ -1215,7 +1215,7 @@ class Subsonic_XML_Data
             self::addPodcastEpisode($xpodcasts, $episode);
         }
     }
-    
+
     /**
      * @param SimpleXMLElement $xml
      */
@@ -1227,7 +1227,7 @@ class Subsonic_XML_Data
             self::addBookmark($xbookmarks, $bookmark);
         }
     }
-    
+
     /**
      * @param SimpleXMLElement $xml
      */
