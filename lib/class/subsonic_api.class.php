@@ -931,7 +931,8 @@ class Subsonic_Api
 
     private static function _updatePlaylist($id, $name, $songsIdToAdd = array(), $songIndexToRemove = array(), $public = true)
     {
-        $playlist = new Playlist($id);
+        $playlist           = new Playlist($id);
+        $songsIdToAdd_count = 0;
 
         $newdata            = array();
         $newdata['name']    = (!empty($name)) ? $name : $playlist->name;
@@ -1047,6 +1048,11 @@ class Subsonic_Api
         }
 
         $url = '';
+        if (Subsonic_XML_Data::isSong($fileid)) {
+            $url = Song::play_url(Subsonic_XML_Data::getAmpacheId($fileid), $params, 'api', function_exists('curl_version'));
+        } elseif (Subsonic_XML_Data::isPodcastEp($fileid)) {
+            $url = Podcast_Episode::play_url(Subsonic_XML_Data::getAmpacheId($fileid), $params, 'api', function_exists('curl_version'));
+        }
 
         if (!empty($url)) {
             self::follow_stream($url);

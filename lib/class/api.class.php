@@ -655,7 +655,31 @@ class Api
         $uid = Playlist::create($name, $type);
         echo XML_Data::playlists(array($uid));
     }
-
+    /**
+     * playlist_edit
+     * This modifies name and type of playlist
+     * @param array $input
+     */
+    
+    public static function playlist_edit($input)
+    {
+        $name = $input['name'];
+        $type = $input['type'];
+        ob_end_clean();
+        $playlist = new Playlist($input['filter']);
+        
+        if (!$playlist->has_access()) {
+            echo XML_Data::error('401', T_('Access denied to this playlist.'));
+        } else {
+            $array = [
+            "name" => $name,
+            "pl_type" => $type,
+            ];
+            $playlist->update($array);
+            echo XML_Data::single_string('success');
+        }
+    }
+    
     /**
      * playlist_delete
      * This delete a playlist
@@ -686,7 +710,7 @@ class Api
         if (!$playlist->has_access()) {
             echo XML_Data::error('401', T_('Access denied to this playlist.'));
         } else {
-            $playlist->add_songs(array($song));
+            $playlist->add_songs(array($song), true);
             echo XML_Data::single_string('success');
         }
     } // playlist_add_song

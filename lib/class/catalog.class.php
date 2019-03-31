@@ -553,7 +553,7 @@ abstract class Catalog extends database_object
 
     /**
      * Get last catalogs update.
-     * @param int[]|null $catalogs
+     * @param integer[] $catalogs
      * @return int
      */
     public static function getLastUpdate($catalogs = null)

@@ -81,6 +81,7 @@ class Recommendation
 
     /**
      * @param string $type
+     * @param integer $id
      */
     protected static function get_recommendation_cache($type, $id, $get_items = false)
     {

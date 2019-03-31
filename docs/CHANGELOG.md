@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+4.0.4
+----------
+- Add a default user picture for users with no avatar
+- Point auto update URL to aMuzak repo
+- Delete plugins for google+ and friends timeline
+- More CSS edits
+- Fix user list page column sorting
+- Subsonic updated and tested
+
 4.0.3
 ----------
 - Moved translations and CI integrations.

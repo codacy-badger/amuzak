@@ -94,7 +94,7 @@ class Subsonic_XML_Data
     {
         return $id + Subsonic_XML_Data::AMPACHEID_VIDEO;
     }
-    
+
     /**
      * @return string|null
      */
@@ -102,7 +102,7 @@ class Subsonic_XML_Data
     {
         return $id + Subsonic_XML_Data::AMPACHEID_PODCAST;
     }
-    
+
     /**
      * @param integer|null $id
      */
@@ -370,7 +370,7 @@ class Subsonic_XML_Data
                 self::addArtist($xlastcat, $artist, $extra, false, $albumsSet);
             }
         }
-        
+
         // Always add # index at the end
         if (count($sharpartists) > 0) {
             $xsharpcat = $xml->addChild('index');
@@ -426,6 +426,7 @@ class Subsonic_XML_Data
 
     /**
      * @param Album $album
+     * @param SimpleXMLElement $xml
      */
     public static function addAlbum($xml, $album, $songs=false, $addAmpacheInfo=false, $elementName="album")
     {
@@ -475,6 +476,9 @@ class Subsonic_XML_Data
         }
     }
 
+    /**
+     * @param SimpleXMLElement $xml
+     */
     public static function addSong($xml, $songId, $addAmpacheInfo=false, $elementName='song')
     {
         $songData     = self::getSongData($songId);
@@ -542,6 +546,7 @@ class Subsonic_XML_Data
     
     public static function getCatalogData($catalogId, $file_Path)
     {
+        $results    = array();
         $sql        = 'SELECT `catalog_type` FROM `catalog` WHERE `id` = ?';
         $db_results = Dba::read($sql, array($catalogId));
         if ($result = Dba::fetch_assoc($db_results)) {
@@ -647,7 +652,7 @@ class Subsonic_XML_Data
 
         return self::checkName($name);
     }
-    
+
     /**
      * @return string|null
      */
@@ -891,7 +896,7 @@ class Subsonic_XML_Data
             self::addSong($xresult, $id);
         }
     }
-    
+
     /**
      * @param string $objectType
      */
@@ -1133,7 +1138,7 @@ class Subsonic_XML_Data
             }
         }
     }
-    
+
     /**
      * @param SimpleXMLElement $xml
      * @param Podcast[] $podcasts
@@ -1161,7 +1166,7 @@ class Subsonic_XML_Data
             }
         }
     }
-    
+
     /**
      * @param Podcast_Episode $episode
      * @param SimpleXMLElement $xml
@@ -1197,7 +1202,7 @@ class Subsonic_XML_Data
             $xepisode->addAttribute("path", $path);
         }
     }
-    
+
     /**
      * @param SimpleXMLElement $xml
      * @param Podcast_Episode[] $episodes
@@ -1210,7 +1215,7 @@ class Subsonic_XML_Data
             self::addPodcastEpisode($xpodcasts, $episode);
         }
     }
-    
+
     /**
      * @param SimpleXMLElement $xml
      */
@@ -1222,7 +1227,7 @@ class Subsonic_XML_Data
             self::addBookmark($xbookmarks, $bookmark);
         }
     }
-    
+
     /**
      * @param SimpleXMLElement $xml
      */
