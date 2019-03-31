@@ -216,8 +216,6 @@ class Core
         $buffer = '';
         if (function_exists('random_bytes')) {
             $buffer = random_bytes($length);
-        } elseif (function_exists('mcrypt_create_iv')) {
-            $buffer = mcrypt_create_iv($length, MCRYPT_DEV_RANDOM);
         } elseif (phpversion() > "5.6.12" && function_exists('openssl_random_pseudo_bytes')) {
             // PHP version check for https://bugs.php.net/bug.php?id=70014
             $buffer = openssl_random_pseudo_bytes($length);

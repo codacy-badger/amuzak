@@ -390,13 +390,22 @@ END;
         $id++;
     }
 
-    public static function get_logo_url()
+    /**
+     * get_logo_url
+     *
+     * Get the custom logo or logo relating to your theme color
+     * @param string $color
+     */
+    public static function get_logo_url($color = null)
     {
         if (AmpConfig::get('custom_logo')) {
             return AmpConfig::get('custom_logo');
-        } else {
-            return AmpConfig::get('web_path') . AmpConfig::get('theme_path') . '/images/amuzak-' . AmpConfig::get('theme_color') . '.png';
         }
+        if ($color !== null) {
+            return AmpConfig::get('web_path') . AmpConfig::get('theme_path') . '/images/amuzak-' . $color . '.png';
+        }
+
+        return AmpConfig::get('web_path') . AmpConfig::get('theme_path') . '/images/amuzak-' . AmpConfig::get('theme_color') . '.png';
     }
     
     public static function is_grid_view($type)
