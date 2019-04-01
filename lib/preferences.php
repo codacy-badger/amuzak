@@ -173,6 +173,7 @@ function create_preference_input($name, $value)
         case 'allow_personal_info_agent':
         case 'ui_fixed':
         case 'autoupdate':
+        case 'autoupdate_develop':
         case 'webplayer_confirmclose':
         case 'webplayer_pausetabs':
         case 'stream_beautiful_url':
@@ -203,7 +204,6 @@ function create_preference_input($name, $value)
         case 'catalogfav_gridview':
         case 'browse_filter':
         case 'sidebar_light':
-        case 'autoupdate_develop':
             $is_true  = '';
             $is_false = '';
             if ($value == '1') {
