@@ -44,9 +44,12 @@ class AutoUpdate
      */
     protected static function is_develop()
     {
-        $version = AmpConfig::get('version');
-        $vspart  = explode('-', $version);
-
+        $version_develop = AmpConfig::get('autoupdate_develop');
+        $version         = AmpConfig::get('version');
+        $vspart          = explode('-', $version);
+        if ($version_develop == '1') {
+            return true;
+        }
         return ($vspart[count($vspart) - 1] == 'develop');
     }
 

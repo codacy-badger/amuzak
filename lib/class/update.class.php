@@ -568,6 +568,9 @@ class Update
         $update_string = "Increase copyright column size to fix issue #1861.<br />";
         $version[]     = array('version' => '400002', 'description' => $update_string);
 
+        $update_string = "Add a system option 'autoupdate_develop' to allow you to stay on develop branch.<br />";
+        $version[]     = array('version' => '400003', 'description' => $update_string);
+
         return $version;
     }
 
@@ -4085,6 +4088,23 @@ class Update
         $sql = "ALTER TABLE `podcast` MODIFY `copyright` VARCHAR(255)";
         $retval &= Dba::write($sql);
 
+        return $retval;
+    }
+    
+    /**
+     * update_400003
+     *
+     * Add a preference to force using develop branch
+     */
+    public static function update_400003()
+    {
+        $retval = true;
+
+        $sql = "INSERT INTO `preference` (`name`,`value`,`description`,`level`,`type`,`catagory`) " .
+        "VALUES ('autoupdate_develop','0','Force server to follow develop branch','175','boolean','system')";
+        
+        $retval &= Dba::write($sql);
+        
         return $retval;
     }
 }
