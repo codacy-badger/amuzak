@@ -1860,8 +1860,11 @@ class Song extends database_object implements media, library_item
     public static function get_transcode_settings_for_media($source, $target = null, $player = null, $media_type = 'song', $options=array())
     {
         $setting_target = 'encode_target';
-        if ($media_type != 'song') {
+        if ($media_type !== 'song') {
             $setting_target = 'encode_' . $media_type . '_target';
+        }
+        if ($media_type === 'song' and $target === null) {
+            $target = AmpConfig::get($setting_target);
         }
 
         if ($player !== null) {
@@ -1871,6 +1874,7 @@ class Song extends database_object implements media, library_item
             }
             if (AmpConfig::get($player_setting_target)) {
                 $setting_target = $player_setting_target;
+                $target = AmpConfig::get($player_setting_target);
             }
         }
 
