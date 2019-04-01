@@ -31,7 +31,7 @@ Recommended Version
 -------------------
 
 The recommended and most stable version is [git HEAD](https://github.com/ampcore/amuzak/archive/master.tar.gz).
-[![Build Status](https://api.travis-ci.org/ampcore/amuzak.svg?branch=develop)](https://travis-ci.org/ampcore/amuzak)
+[![Build Status](https://api.travis-ci.org/ampcore/amuzak.svg?branch=master)](https://travis-ci.org/ampcore/amuzak)
 
 You get the latest version with recent changes and fixes but maybe in an unstable state from our [develop branch](https://github.com/ampcore/amuzak/archive/develop.tar.gz).
 [![Build Status](https://api.travis-ci.org/ampcore/amuzak.svg?branch=develop)](https://travis-ci.org/ampcore/amuzak)
