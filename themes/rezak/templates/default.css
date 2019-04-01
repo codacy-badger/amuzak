@@ -524,6 +524,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 .sidebar-float {
     margin: 5px auto auto 5px;
     float: left;
+    width: 148px;
 }
 
 .sidebar-fixed {
