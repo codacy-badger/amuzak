@@ -4102,10 +4102,9 @@ class Update
 
         $sql = "INSERT INTO `preference` (`id`,`name`,`value`,`description`,`level`,`type`,`catagory`,`subcatagory`) " .
         "VALUES (180,'autoupdate_develop','0','Force server to follow develop branch','100','boolean','system', 'update')";
-        
-        $sql = "INSERT INTO `user_preference` VALUES (-1,180,'0')";
-        Dba::write($sql);
+        $retval &= Dba::write($sql);
 
+        $sql = "INSERT INTO `user_preference` VALUES (-1,180,'0')";
         $retval &= Dba::write($sql);
         
         return $retval;
