@@ -268,6 +268,7 @@ class Stats
             $sql = "SELECT `id` as `id`, `last_update` FROM playlist" .
             " WHERE `last_update` >= '" . $date . "' ";
             $sql .= " GROUP BY `id` ORDER BY `last_update` DESC ";
+
             return $sql;
         }
         if ($user_id !== null) {
@@ -279,6 +280,7 @@ class Stats
             }
             $sql .= " AND `count_type` = '" . $count_type . "'";
             $sql .= " GROUP BY object_id ORDER BY `count` DESC ";
+
             return $sql;
         }
         /* Select Top objects counting by # of rows */

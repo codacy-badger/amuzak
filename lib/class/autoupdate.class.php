@@ -50,6 +50,7 @@ class AutoUpdate
         if ($version_develop == '1') {
             return true;
         }
+
         return ($vspart[count($vspart) - 1] == 'develop');
     }
 
