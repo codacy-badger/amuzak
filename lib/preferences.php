@@ -203,6 +203,7 @@ function create_preference_input($name, $value)
         case 'catalogfav_gridview':
         case 'browse_filter':
         case 'sidebar_light':
+        case 'autoupdate_develop':
             $is_true  = '';
             $is_false = '';
             if ($value == '1') {
