@@ -315,6 +315,7 @@ class Stats
             $limit = intval($offset) . "," . $count;
         }
 
+        $sql = '';
         if ($user_id !== null) {
             $sql = self::get_top_sql($type, $threshold, 'stream', $user_id);
         }
