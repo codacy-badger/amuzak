@@ -253,8 +253,9 @@ class Stats
      * get_top_sql
      * This returns the get_top sql
      * @param string $type
+     * @param integer $user_id
      */
-    public static function get_top_sql($type, $threshold = '', $count_type = 'stream')
+    public static function get_top_sql($type, $threshold = '', $count_type = 'stream', $user_id = null)
     {
         $type = self::validate_type($type);
         /* If they don't pass one, then use the preference */
@@ -267,16 +268,28 @@ class Stats
             $sql = "SELECT `id` as `id`, `last_update` FROM playlist" .
             " WHERE `last_update` >= '" . $date . "' ";
             $sql .= " GROUP BY `id` ORDER BY `last_update` DESC ";
-        } else {
-            /* Select Top objects counting by # of rows */
+            return $sql;
+        }
+        if ($user_id !== null) {
+            /* Select Top objects counting by # of rows for you only */
             $sql = "SELECT object_id as `id`, COUNT(*) AS `count` FROM object_count" .
-                " WHERE `object_type` = '" . $type . "' AND `date` >= '" . $date . "' ";
+                " WHERE `object_type` = '" . $type . "' AND `user` = " . $user_id;
             if (AmpConfig::get('catalog_disable')) {
-                $sql .= "AND " . Catalog::get_enable_filter($type, '`object_id`');
+                $sql .= " AND " . Catalog::get_enable_filter($type, '`object_id`');
             }
             $sql .= " AND `count_type` = '" . $count_type . "'";
             $sql .= " GROUP BY object_id ORDER BY `count` DESC ";
+            return $sql;
         }
+        /* Select Top objects counting by # of rows */
+        $sql = "SELECT object_id as `id`, COUNT(*) AS `count` FROM object_count" .
+            " WHERE `object_type` = '" . $type . "' AND `date` >= '" . $date . "' ";
+        if (AmpConfig::get('catalog_disable')) {
+            $sql .= "AND " . Catalog::get_enable_filter($type, '`object_id`');
+        }
+        $sql .= " AND `count_type` = '" . $count_type . "'";
+        $sql .= " GROUP BY object_id ORDER BY `count` DESC ";
+
 
         return $sql;
     }
@@ -287,7 +300,7 @@ class Stats
      * last stats_threshold days
      * @param string $type
      */
-    public static function get_top($type, $count='', $threshold = '', $offset='')
+    public static function get_top($type, $count='', $threshold = '', $offset='', $user_id = null)
     {
         if (!$count) {
             $count = AmpConfig::get('popular_threshold');
@@ -300,8 +313,13 @@ class Stats
             $limit = intval($offset) . "," . $count;
         }
 
-        $sql = self::get_top_sql($type, $threshold);
-        $sql .= "LIMIT $limit";
+        if ($user_id !== null) {
+            $sql = self::get_top_sql($type, $threshold, 'stream', $user_id);
+        }
+        if ($user_id === null) {
+            $sql = self::get_top_sql($type, $threshold);
+            $sql .= "LIMIT $limit";
+        }
         $db_results = Dba::read($sql);
 
         $results = array();
