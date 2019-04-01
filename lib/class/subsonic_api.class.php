@@ -261,8 +261,7 @@ class Subsonic_Api
             foreach ($xml->children($namespace) as $childXml) {
                 //recurse into child nodes
                 $childArray                           = self::xml2json($childXml, $options);
-                list($childTagName, $childProperties) = each($childArray);
-
+                foreach ($childArray as $childTagName => $childProperties); //REPLACING list($childTagName, $childProperties) = each($childArray);
                 //replace characters in tag name
                 if ($options['keySearch']) {
                     $childTagName =

@@ -22,7 +22,7 @@
 
 $threshold = AmpConfig::get('stats_threshold');
 $user_id   = $GLOBALS['user']->id;
-$count     = 16;
+$count     = 20;
 ?>
 <p>
     <input type="button" value="<?php echo T_('Browse Library') ?>" onclick="NavigateTo('<?php echo AmpConfig::get('web_path') ?>/browse.php?action=<?php echo $object_type ?>');" />

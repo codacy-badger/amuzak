@@ -7,6 +7,7 @@
 *.sln
 *.v11.suo
 *.suo
+*.save
 /logs/
 /log/
 /nbproject/private/
@@ -17,6 +18,7 @@
 *.log
 /lib/vendor/
 /lib/components/
+composer.lock
 web.config
 /config/motd.php
 /config/registration_agreement.php
@@ -30,15 +32,6 @@ cs_fixer_tmp_*
 .env
 .project
 .settings/
-<<<<<<< HEAD
-components/
-node_modules/
-vendor/
-<<<<<<< HEAD
-
-=======
->>>>>>> 52c2c20... Cleaned up user-agent and header messages.
-=======
 bootstrap/
 components/
 node_modules/
@@ -46,4 +39,3 @@ public/
 resources/
 storage/
 vendor/
->>>>>>> develop
