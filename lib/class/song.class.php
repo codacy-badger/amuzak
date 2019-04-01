@@ -1874,7 +1874,7 @@ class Song extends database_object implements media, library_item
             }
             if (AmpConfig::get($player_setting_target)) {
                 $setting_target = $player_setting_target;
-                $target = AmpConfig::get($player_setting_target);
+                $target         = AmpConfig::get($player_setting_target);
             }
         }
 
