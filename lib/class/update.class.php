@@ -571,6 +571,9 @@ class Update
         $update_string = "Add a system option 'autoupdate_develop' to allow you to stay on develop branch.<br />";
         $version[]     = array('version' => '400003', 'description' => $update_string);
 
+        $update_string = "Expand user_activity table.<br />";
+        $version[]     = array('version' => '400004', 'description' => $update_string);
+
         return $version;
     }
 
@@ -4107,6 +4110,24 @@ class Update
         $sql = "INSERT INTO `user_preference` VALUES (-1,180,'0')";
         $retval &= Dba::write($sql);
         
+        return $retval;
+    }
+
+    /**
+     * update_400004
+     *
+     * Add song_name, song_artist, song_album to user_activity
+     */
+    public static function update_400004()
+    {
+        $retval = true;
+
+        $sql = "ALTER TABLE `user_activity` " .
+                "ADD COLUMN `song_name` VARCHAR(255) NULL DEFAULT NULL," .
+                "ADD COLUMN `song_artist` VARCHAR(255) NULL DEFAULT NULL," .
+                "ADD COLUMN `song_album` VARCHAR(255) NULL DEFAULT NULL;";
+        $retval &= Dba::write($sql);
+
         return $retval;
     }
 }

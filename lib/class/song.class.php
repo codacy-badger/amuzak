@@ -797,6 +797,36 @@ class Song extends database_object implements media, library_item
     }
 
     /**
+     * get_song_details
+     * gets the name of $this->album, allows passing of id
+     * @param int $song_id
+     * @param string $object_type
+     * @return string|null
+     */
+    public function get_song_details($song_id=0, $object_type)
+    {
+        $results = array();
+        $song    = null;
+        if (!$song_id) {
+            $song_id = $this->song;
+        }
+        $song = new Song($song_id);
+        if ($song) {
+            if ($object_type === 'song') {
+                return $song->title;
+            }
+            if ($object_type === 'album') {
+                return Song::get_album_name($song->album);
+            }
+            if ($object_type === 'artist') {
+                return Song::get_artist_name($song->artist);
+            }
+        }
+
+        return null;
+    } // get_song_details
+
+    /**
      * get_album_name
      * gets the name of $this->album, allows passing of id
      * @param int $album_id
