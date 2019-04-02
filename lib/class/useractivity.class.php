@@ -131,6 +131,7 @@ class Useractivity extends database_object
 
             if ($name_song and $name_artist and $name_album) {
                 debug_event('post_activity', 'Inserting details for ' . $name_song . ' - ' . $name_artist . ' - ' . $name_album . '.', 5);
+
                 return Dba::write($sql, array($user_id, $action, $object_type, $object_id, time(), $name_song, $name_artist, $name_album));
             }
             $sql = "INSERT INTO `user_activity` (`user`, `action`, `object_type`, `object_id`, `activity_date`) VALUES (?, ?, ?, ?, ?)";
