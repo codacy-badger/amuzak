@@ -135,7 +135,8 @@ class Useractivity extends database_object
             $sql = "INSERT INTO `user_activity` (`user`, `action`, `object_type`, `object_id`, `activity_date`, `name_artist`)" .
                     "VALUES (?, ?, ?, ?, ?, ?)";
             $artist = new Artist($object_id);
-            $artist->format();;
+            $artist->format();
+            ;
             $name_artist = $artist->f_name;
             debug_event('post_activity', 'Inserting details for ' . $name_artist . '.', 5);
 
