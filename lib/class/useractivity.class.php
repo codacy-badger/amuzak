@@ -112,9 +112,6 @@ class Useractivity extends database_object
      */
     public static function post_activity($user_id, $action, $object_type, $object_id)
     {
-        $name_song   = null;
-        $name_artist = null;
-        $name_album  = null;
         if ($object_type !== 'song') {
             // This is probably a good feature to keep by default
             $sql = "INSERT INTO `user_activity` (`user`, `action`, `object_type`, `object_id`, `activity_date`) VALUES (?, ?, ?, ?, ?)";
@@ -125,9 +122,12 @@ class Useractivity extends database_object
             // insert fields to be more like last.fm activity stats
             $sql = "INSERT INTO `user_activity` (`user`, `action`, `object_type`, `object_id`, `activity_date`, `song_name`, `song_artist`, `song_album`)" .
                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-            $name_song   = Song::get_song_details($object_id, 'song');
-            $name_artist = Song::get_song_details($object_id, 'artist');
-            $name_album  = Song::get_song_details($object_id, 'album');
+            $song = new Song($object_id);
+            $song->format();
+            $name_song   = $song->f_title;
+            $name_artist = $song->f_artist;
+            $name_album  = $song->f_album;
+            debug_event('post_activity', 'Song details: ' . $name_song . ' - ' . $name_artist . ' - ' . $name_album . '.', 5);
 
             if ($name_song and $name_artist and $name_album) {
                 debug_event('post_activity', 'Inserting details for ' . $name_song . ' - ' . $name_artist . ' - ' . $name_album . '.', 5);
