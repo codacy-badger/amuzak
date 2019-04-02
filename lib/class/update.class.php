@@ -4116,16 +4116,16 @@ class Update
     /**
      * update_400004
      *
-     * Add song_name, song_artist, song_album to user_activity
+     * Add name_track, name_artist, name_album to user_activity
      */
     public static function update_400004()
     {
         $retval = true;
 
         $sql = "ALTER TABLE `user_activity` " .
-                "ADD COLUMN `song_name` VARCHAR(255) NULL DEFAULT NULL," .
-                "ADD COLUMN `song_artist` VARCHAR(255) NULL DEFAULT NULL," .
-                "ADD COLUMN `song_album` VARCHAR(255) NULL DEFAULT NULL;";
+                "ADD COLUMN `name_track` VARCHAR(255) NULL DEFAULT NULL," .
+                "ADD COLUMN `name_artist` VARCHAR(255) NULL DEFAULT NULL," .
+                "ADD COLUMN `name_album` VARCHAR(255) NULL DEFAULT NULL;";
         $retval &= Dba::write($sql);
 
         return $retval;
