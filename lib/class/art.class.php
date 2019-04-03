@@ -1752,6 +1752,14 @@ class Art extends database_object
                 /* Popup Web Player size */
             case 11:
                 /* Large view browse size */
+            case 12:
+                 $size['height'] = 256;
+                 $size['width']  = 256;
+            break;
+            case 13:
+                 $size['height'] = 300;
+                 $size['width']  = 300;
+            break;
             default:
                 $size['height']   = 200;
                 $size['width']    = 200;

@@ -40,7 +40,7 @@
         ?>
 <td class="cel_cover">
     <?php
-    $libitem->display_art(3); ?>
+    $libitem->display_art(12); ?>
 </td>
 <?php
     } ?>
