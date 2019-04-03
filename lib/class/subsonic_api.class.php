@@ -261,43 +261,43 @@ class Subsonic_Api
             foreach ($xml->children($namespace) as $childXml) {
                 //recurse into child nodes
                 $childArray                           = self::xml2json($childXml, $options);
-                list($childTagName, $childProperties) = each($childArray);
-
-                //replace characters in tag name
-                if ($options['keySearch']) {
-                    $childTagName =
-                        str_replace($options['keySearch'], $options['keyReplace'], $childTagName);
-                }
-                //add namespace prefix, if any
-                if ($prefix) {
-                    $childTagName = $prefix . $options['namespaceSeparator'] . $childTagName;
-                }
-
-                if (!isset($tagsArray[$childTagName])) {
-                    //only entry with this key
-                    
-                    if (count($childProperties) == 0) {
-                        $tagsArray[$childTagName] = (object) $childProperties;
-                    } elseif (self::has_Nested_Array($childProperties)) {
-                        $tagsArray[$childTagName] = (object) $childProperties;
-                    } else {
-                        
-                    //test if tags of this type should always be arrays, no matter the element count
-                        $tagsArray[$childTagName] =
-                            in_array($childTagName, $options['alwaysArray']) || !$options['autoArray']
-                            ? array($childProperties) : $childProperties;
+                foreach ($childArray as $childTagName => $childProperties) {
+                    //replace characters in tag name
+                    if ($options['keySearch']) {
+                        $childTagName =
+                            str_replace($options['keySearch'], $options['keyReplace'], $childTagName);
                     }
-                } elseif (
-                    is_array($tagsArray[$childTagName]) && array_keys($tagsArray[$childTagName])
-                    === range(0, count($tagsArray[$childTagName]) - 1)
-                ) {
-                    //key already exists and is integer indexed array
-                    $tagsArray[$childTagName][] = $childProperties;
-                } else {
-                    //key exists so convert to integer indexed array with previous value in position 0
-                    $tagsArray[$childTagName] = array($tagsArray[$childTagName], $childProperties);
+                    //add namespace prefix, if any
+                    if ($prefix) {
+                        $childTagName = $prefix . $options['namespaceSeparator'] . $childTagName;
+                    }
+
+                    if (!isset($tagsArray[$childTagName])) {
+                        //only entry with this key
+
+                        if (count($childProperties) == 0) {
+                            $tagsArray[$childTagName] = (object) $childProperties;
+                        } elseif (self::has_Nested_Array($childProperties)) {
+                            $tagsArray[$childTagName] = (object) $childProperties;
+                        } else {
+
+                        //test if tags of this type should always be arrays, no matter the element count
+                            $tagsArray[$childTagName] =
+                                in_array($childTagName, $options['alwaysArray']) || !$options['autoArray']
+                                ? array($childProperties) : $childProperties;
+                        }
+                    } elseif (
+                        is_array($tagsArray[$childTagName]) && array_keys($tagsArray[$childTagName])
+                        === range(0, count($tagsArray[$childTagName]) - 1)
+                    ) {
+                        //key already exists and is integer indexed array
+                        $tagsArray[$childTagName][] = $childProperties;
+                    } else {
+                        //key exists so convert to integer indexed array with previous value in position 0
+                        $tagsArray[$childTagName] = array($tagsArray[$childTagName], $childProperties);
+                    }
                 }
-            }
+            } //REPLACING list($childTagName, $childProperties) = each($childArray);
         }
 
         //get text content of node

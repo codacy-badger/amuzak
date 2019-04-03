@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+4.0.5
+----------
+- Add a system option 'autoupdate_develop' to allow you to stay on develop branch.
+- Make popular check your user, trending is everyone.
+- Scrutinizer patches and fix warnings
+- Extended user_activity table to allow recording the name, etc for actions
+- Loads of visual fixes and tested on dsub/power ampache/firefox mobile.
+
 4.0.4
 ----------
 - Add a default user picture for users with no avatar

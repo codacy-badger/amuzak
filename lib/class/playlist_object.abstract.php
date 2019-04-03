@@ -178,7 +178,7 @@ abstract class playlist_object extends database_object implements library_item
                     if ($media !== null) {
                         if (!in_array($media, $media_arts)) {
                             $media_arts[] = $media;
-                            if (count($media_arts) >= 2) {
+                            if (count($media_arts) >= 1) {
                                 break;
                             }
                         }

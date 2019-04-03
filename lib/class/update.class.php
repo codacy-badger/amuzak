@@ -568,6 +568,12 @@ class Update
         $update_string = "Increase copyright column size to fix issue #1861.<br />";
         $version[]     = array('version' => '400002', 'description' => $update_string);
 
+        $update_string = "Add a system option 'autoupdate_develop' to allow you to stay on develop branch.<br />";
+        $version[]     = array('version' => '400003', 'description' => $update_string);
+
+        $update_string = "Expand user_activity table.<br />";
+        $version[]     = array('version' => '400004', 'description' => $update_string);
+
         return $version;
     }
 
@@ -4083,6 +4089,43 @@ class Update
         $retval = true;
 
         $sql = "ALTER TABLE `podcast` MODIFY `copyright` VARCHAR(255)";
+        $retval &= Dba::write($sql);
+
+        return $retval;
+    }
+    
+    /**
+     * update_400003
+     *
+     * Add a preference to force using develop branch
+     */
+    public static function update_400003()
+    {
+        $retval = true;
+
+        $sql = "INSERT INTO `preference` (`id`,`name`,`value`,`description`,`level`,`type`,`catagory`,`subcatagory`) " .
+        "VALUES (180,'autoupdate_develop','0','Force server to follow develop branch','100','boolean','system', 'update')";
+        $retval &= Dba::write($sql);
+
+        $sql = "INSERT INTO `user_preference` VALUES (-1,180,'0')";
+        $retval &= Dba::write($sql);
+        
+        return $retval;
+    }
+
+    /**
+     * update_400004
+     *
+     * Add name_track, name_artist, name_album to user_activity
+     */
+    public static function update_400004()
+    {
+        $retval = true;
+
+        $sql = "ALTER TABLE `user_activity` " .
+                "ADD COLUMN `name_track` VARCHAR(255) NULL DEFAULT NULL," .
+                "ADD COLUMN `name_artist` VARCHAR(255) NULL DEFAULT NULL," .
+                "ADD COLUMN `name_album` VARCHAR(255) NULL DEFAULT NULL;";
         $retval &= Dba::write($sql);
 
         return $retval;

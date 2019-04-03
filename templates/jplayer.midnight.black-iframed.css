@@ -55,7 +55,7 @@ div.jp-video {
 	margin: auto;
 }
 div.jp-audio {
-	max-width: 40%;
+	max-width: 500px;
 
 }
 div.jp-audio-stream {
@@ -530,9 +530,9 @@ div.playing_actions div {
 
 div.waveform {
     position: absolute;
-    top: 50px;
-    left: 40px;
-    height: 32px;
+    top: 65px;
+    left: 50px;
+    height: 28px;
     visibility: hidden;
 }
 
@@ -545,12 +545,13 @@ div.waveform a {
 }
 
 div.waveform-time {
-    position: absolute;
-    display: block;
-    height: 100%;
-    width: 0px;
     border-left: 1px solid #ffcaca;
+    display: block;
+    height: 90%;
     left: 0px;
+    position: absolute;
+    top: 4px;
+    width: 0px;
 }
 
 div.jp-title,
