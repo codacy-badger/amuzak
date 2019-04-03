@@ -102,7 +102,7 @@ class AmpacheCatalogFavorites
             UI::show_box_top(T_('Highlight'));
             echo '<table class="tabledata';
             if (!$this->gridview) {
-                echo " disablegv";
+                echo " highlightdisablegv";
             }
             echo '">';
             foreach ($userflags as $userflag) {
@@ -110,7 +110,7 @@ class AmpacheCatalogFavorites
                 $item->format();
                 $user = new User($userflag['user']);
                 $user->format();
-                
+
                 if ($item->id) {
                     echo '<tr id="' . $userflag['type'] . '_' . $userflag['id'] . '" class="' . ((($i % 2) == 0) ? 'even' : 'odd') . ' libitem_menu">';
                     echo '<td style="height: auto;">';
@@ -127,16 +127,16 @@ class AmpacheCatalogFavorites
                         echo '</span>';
                     }
 
-                    echo '<div style="float: left; margin-right: 20px;">';
+                    echo '<div style="float: left; margin-right: 10px;">';
                     $thumb = ($this->gridview && UI::is_grid_view('album')) ? 2 : 11;
                     $item->display_art($thumb, true);
                     echo '</div>';
                     echo '</td>';
-                    
+
                     if (!$this->gridview) {
                         echo '<td>' . $item->f_link . '</td>';
                     }
-                    
+
                     echo '<td class="optional">';
                     echo '<div style="white-space: normal;">' . $item->get_description() . '</div>';
                     echo '</div>';

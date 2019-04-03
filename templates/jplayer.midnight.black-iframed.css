@@ -531,7 +531,7 @@ div.playing_actions div {
 div.waveform {
     position: absolute;
     top: 65px;
-    left: 100px;
+    left: 50px;
     height: 28px;
     visibility: hidden;
 }
