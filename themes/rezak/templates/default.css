@@ -1068,8 +1068,10 @@ table.highlightdisablegv td.cel_rating {
 
 .random_selection .random_album, .random_selection .random_video {
     float: left;
-    width: 16%;
-    margin-bottom: 10px;
+    min-width: 110px;
+    max-width: 16%;
+    margin-bottom: 1%;
+    margin-right: 5%;
     text-align: center;
 }
 
