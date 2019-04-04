@@ -574,6 +574,9 @@ class Update
         $update_string = "Expand user_activity table.<br />";
         $version[]     = array('version' => '400004', 'description' => $update_string);
 
+        $update_string = "Remove reborn theme from  preferences.<br />";
+        $version[]     = array('version' => '400005', 'description' => $update_string);
+
         return $version;
     }
 
@@ -4126,6 +4129,27 @@ class Update
                 "ADD COLUMN `name_track` VARCHAR(255) NULL DEFAULT NULL," .
                 "ADD COLUMN `name_artist` VARCHAR(255) NULL DEFAULT NULL," .
                 "ADD COLUMN `name_album` VARCHAR(255) NULL DEFAULT NULL;";
+        $retval &= Dba::write($sql);
+
+        return $retval;
+    }
+
+        $update_string = "Remove reborn theme from  preferences.<br />";
+        $version[]     = array('version' => '400005', 'description' => $update_string);
+
+    /**
+     * update_400005
+     *
+     * Remove reborn theme from  preferences
+     */
+    public static function update_400005()
+    {
+        $retval = true;
+
+        $sql = "UPDATE `preference` SET `value` = 'rezak' WHERE `preference`.`name` = 'theme_name';";
+        $retval &= Dba::write($sql);
+
+        $sql = "UPDATE `user_preference` SET `value` = 'rezak' WHERE `user_preference`.`value` = 'reborn';";
         $retval &= Dba::write($sql);
 
         return $retval;
