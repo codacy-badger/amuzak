@@ -31,6 +31,7 @@ switch ($_REQUEST['action']) {
     case 'sync':
         if (!Access::check('interface', '75')) {
             debug_event('DENIED', $GLOBALS['user']->username . ' attempted to sync podcast', 1);
+
             return false;
         }
         

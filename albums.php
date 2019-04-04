@@ -49,6 +49,7 @@ switch ($_REQUEST['action']) {
         if (!Catalog::can_remove($album)) {
             debug_event('album', 'Unauthorized to remove the album `.' . $album->id . '`.', 1);
             UI::access_denied();
+
             return false;
         }
 
@@ -62,6 +63,7 @@ switch ($_REQUEST['action']) {
         // Make sure they are a 'power' user at least
         if (!Access::check('interface', '75')) {
             UI::access_denied();
+
             return false;
         }
 
@@ -75,6 +77,7 @@ switch ($_REQUEST['action']) {
 
         if (!Access::check('interface', '75')) {
             UI::access_denied();
+
             return false;
         }
 

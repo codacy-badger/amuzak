@@ -24,6 +24,7 @@ require_once 'lib/init.php';
 
 if (!AmpConfig::get('live_stream')) {
     UI::access_denied();
+
     return false;
 }
 
@@ -34,6 +35,7 @@ switch ($_REQUEST['action']) {
     case 'show_create':
         if (!Access::check('interface', 75)) {
             UI::access_denied();
+
             return false;
         }
 
@@ -43,11 +45,13 @@ switch ($_REQUEST['action']) {
     case 'create':
         if (!Access::check('interface', 75) || AmpConfig::get('demo_mode')) {
             UI::access_denied();
+
             return false;
         }
 
         if (!Core::form_verify('add_radio', 'post')) {
             UI::access_denied();
+
             return false;
         }
 

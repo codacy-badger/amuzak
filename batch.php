@@ -26,6 +26,7 @@ if (!defined('NO_SESSION')) {
         require_once 'lib/init.php';
         if (!Session::exists('stream', $_REQUEST['ssid'])) {
             UI::access_denied();
+
             return false;
         }
     } else {
@@ -37,6 +38,7 @@ ob_end_clean();
 //test that batch download is permitted
 if (!defined('NO_SESSION') && !Access::check_function('batch_download')) {
     UI::access_denied();
+
     return false;
 }
 
@@ -55,6 +57,7 @@ if ($object_type == 'browse') {
 if (!check_can_zip($object_type)) {
     debug_event('batch', 'Object type `' . $object_type . '` is not allowed to be zipped.', 1);
     UI::access_denied();
+
     return false;
 }
 
@@ -103,6 +106,7 @@ if (Core::is_playable_item($_REQUEST['action'])) {
 if (!User::stream_control($media_ids)) {
     debug_event('UI::access_denied', 'Stream control failed for user ' . $GLOBALS['user']->username, '3');
     UI::access_denied();
+
     return false;
 }
 
@@ -117,4 +121,5 @@ if (is_array($song_files['0'])) {
     set_memory_limit($song_files['1'] + 32);
     send_zip($name, $song_files['0']);
 }
+
 return false;

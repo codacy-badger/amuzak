@@ -49,6 +49,7 @@ switch ($_REQUEST['action']) {
         if (!Catalog::can_remove($label)) {
             debug_event('label', 'Unauthorized to remove the label `.' . $label->id . '`.', 1);
             UI::access_denied();
+
             return false;
         }
 
@@ -62,11 +63,13 @@ switch ($_REQUEST['action']) {
         // Must be at least a content manager or edit upload enabled
         if (!Access::check('interface', '50') && !AmpConfig::get('upload_allow_edit')) {
             UI::access_denied();
+
             return false;
         }
 
         if (!Core::form_verify('add_label', 'post')) {
             UI::access_denied();
+
             return false;
         }
 
@@ -101,6 +104,7 @@ switch ($_REQUEST['action']) {
             $object_type = 'artist';
             require_once AmpConfig::get('prefix') . UI::find_template('show_label.inc.php');
             UI::show_footer();
+
             return false;
         }
     case 'show_add_label':

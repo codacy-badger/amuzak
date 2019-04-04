@@ -60,6 +60,7 @@ class Subsonic_Api
                 self::setHeader($input['f']);
             }
             self::apiOutput($input, Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_MISSINGPARAM));
+
             return false;
         }
 

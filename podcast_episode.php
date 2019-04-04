@@ -48,6 +48,7 @@ switch ($_REQUEST['action']) {
         if (!Catalog::can_remove($episode)) {
             debug_event('video', 'Unauthorized to remove the episode `.' . $episode->id . '`.', 1);
             UI::access_denied();
+
             return false;
         }
 

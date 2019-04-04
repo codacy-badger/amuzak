@@ -25,6 +25,7 @@ require_once '../lib/init.php';
 
 if (!AmpConfig::get('plex_backend')) {
     echo "Disabled.";
+
     return false;
 }
 
@@ -94,6 +95,7 @@ if ($show_index) {
     Plex_Api::setHeader('xml');
     Plex_Api::setPlexHeader($headers);
     Plex_Api::root();
+
     return false;
 }
 

@@ -85,6 +85,7 @@ class Plex_Api
                 // Never fail OPTIONS requests
                 if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
                     self::setPlexHeader($headers);
+
                     return false;
                 } else {
                     debug_event('Access Control', 'Authentication token is missing.', '3');
@@ -212,6 +213,7 @@ class Plex_Api
         if (($GLOBALS['user']->access < $level || AmpConfig::get('demo_mode'))) {
             debug_event('plex', 'User ' . $GLOBALS['user']->username . ' is unauthorized to complete the action.', '3');
             self::createError(401);
+
             return false;
         }
     }
@@ -312,6 +314,7 @@ class Plex_Api
 
         $html = "<html><head><title>" . $error . "</title></head><body><h1>" . $code . " " . $error . "</h1></body></html>";
         self::apiOutput($html);
+
         return false;
     }
 
@@ -466,6 +469,7 @@ class Plex_Api
         if (connection_status() != 0) {
             curl_close($ch);
             debug_event('plex', 'Stream cancelled.', 5);
+
             return false;
         }
 
@@ -604,6 +608,7 @@ class Plex_Api
                         $art->raw = $request->body;
                         $thumb    = $art->generate_thumb($art->raw, array('width' => $width, 'height' => $height), $mime);
                         echo $thumb['thumb'];
+
                         return false;
                     }
                 }
@@ -1015,6 +1020,7 @@ class Plex_Api
 
                             header('Content-Type: text/html');
                             echo $uri;
+
                             return false;
                         }
                     }
@@ -1063,6 +1069,7 @@ class Plex_Api
                                 self::setHeader($art->thumb_mime);
                                 echo $thumb['thumb'];
                             }
+
                             return false;
                         }
                     }
@@ -1188,6 +1195,7 @@ class Plex_Api
         if ($params[0] == "small_black_7.png") {
             header("Content-type: image/png", true);
             echo file_get_contents(AmpConfig::get('prefix') . '/plex/resources/small_black_7.png');
+
             return false;
         }
     }
@@ -1509,6 +1517,7 @@ class Plex_Api
                         if ($delMode) {
                             $playlist->delete_track_number($index);
                             $playlist->regenerate_track_numbers();
+
                             return false;
                         }
                     }

@@ -42,6 +42,7 @@ switch ($_REQUEST['action']) {
     case 'save_as_smartplaylist':
         if (!Access::check('interface', 25)) {
             UI::access_denied();
+
             return false;
         }
         $playlist = new Search();
@@ -53,6 +54,7 @@ switch ($_REQUEST['action']) {
         // This is a little special we don't want header/footers so trash what we've got in the OB
         ob_clean();
         require_once AmpConfig::get('prefix') . UI::find_template('show_search_descriptor.inc.php');
+
         return false;
     default:
         require_once AmpConfig::get('prefix') . UI::find_template('show_search_form.inc.php');

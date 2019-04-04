@@ -34,6 +34,7 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'update') {
     if ($_REQUEST['type'] == 'sources') {
         if (!Access::check('interface', '100')) {
             UI::access_denied();
+
             return false;
         }
 
@@ -41,6 +42,7 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'update') {
         AutoUpdate::update_files();
         AutoUpdate::update_dependencies();
         echo '<script language="javascript" type="text/javascript">window.location="' . AmpConfig::get('web_path') . '";</script>';
+
         return false;
     } else {
         /* Run the Update Mojo Here */

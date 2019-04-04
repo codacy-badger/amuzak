@@ -210,6 +210,7 @@ switch ($_REQUEST['action']) {
 
         if (Core::is_library_item($object_type) && $object_id > 0) {
             Share::display_ui_links($object_type, $object_id);
+
             return false;
         }
     break;

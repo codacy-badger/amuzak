@@ -65,6 +65,7 @@ class UI
         ob_end_clean();
         header("HTTP/1.1 403 $error");
         require_once AmpConfig::get('prefix') . UI::find_template('show_denied.inc.php');
+
         return false;
     }
 
