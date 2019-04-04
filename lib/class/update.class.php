@@ -4134,9 +4134,6 @@ class Update
         return $retval;
     }
 
-        $update_string = "Remove reborn theme from  preferences.<br />";
-        $version[]     = array('version' => '400005', 'description' => $update_string);
-
     /**
      * update_400005
      *
