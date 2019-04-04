@@ -49,7 +49,7 @@ switch ($_REQUEST['action']) {
         if (!Catalog::can_remove($song)) {
             debug_event('song', 'Unauthorized to remove the song `.' . $song->id . '`.', 1);
             UI::access_denied();
-            exit;
+            return false;
         }
 
         if ($song->remove_from_disk()) {

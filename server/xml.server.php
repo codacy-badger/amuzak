@@ -41,7 +41,7 @@ if (!AmpConfig::get('access_control')) {
     ob_end_clean();
     debug_event('Access Control', 'Error Attempted to use XML API with Access Control turned off', '3');
     echo XML_Data::error('501', T_('Access Control not Enabled'));
-    exit;
+    return false;
 }
 
 /**
@@ -52,7 +52,7 @@ if (!Session::exists('api', $_REQUEST['auth']) and $_REQUEST['action'] != 'hands
     debug_event('Access Denied', 'Invalid Session attempt to API [' . $_REQUEST['action'] . ']', '3');
     ob_end_clean();
     echo XML_Data::error('401', T_('Session Expired'));
-    exit();
+    return false;
 }
 
 // If the session exists then let's try to pull some data from it to see if we're still allowed to do this
@@ -69,7 +69,7 @@ if (!Access::check_network('init-api', $username, 5, null, $apikey)) {
     debug_event('Access Denied', 'Unauthorized access attempt to API [' . $_SERVER['REMOTE_ADDR'] . ']', '3');
     ob_end_clean();
     echo XML_Data::error('403', T_('Unauthorized access attempt to API - ACL Error'));
-    exit();
+    return false;
 }
 
 if (($_REQUEST['action'] != 'handshake') && ($_REQUEST['action'] != 'ping')) {
@@ -100,7 +100,7 @@ foreach ($methods as $method) {
     if ($_GET['action'] == $method) {
         call_user_func(array('api', $method), $_GET);
         // We only allow a single function to be called, and we assume it's cleaned up!
-        exit;
+        return false;
     }
 } // end foreach methods in API
 

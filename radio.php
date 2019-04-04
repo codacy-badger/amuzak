@@ -24,7 +24,7 @@ require_once 'lib/init.php';
 
 if (!AmpConfig::get('live_stream')) {
     UI::access_denied();
-    exit;
+    return false;
 }
 
 UI::show_header();
@@ -34,7 +34,7 @@ switch ($_REQUEST['action']) {
     case 'show_create':
         if (!Access::check('interface', 75)) {
             UI::access_denied();
-            exit;
+            return false;
         }
 
         require_once AmpConfig::get('prefix') . UI::find_template('show_add_live_stream.inc.php');
@@ -43,12 +43,12 @@ switch ($_REQUEST['action']) {
     case 'create':
         if (!Access::check('interface', 75) || AmpConfig::get('demo_mode')) {
             UI::access_denied();
-            exit;
+            return false;
         }
 
         if (!Core::form_verify('add_radio', 'post')) {
             UI::access_denied();
-            exit;
+            return false;
         }
 
         // Try to create the sucker

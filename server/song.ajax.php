@@ -24,14 +24,14 @@
  * Sub-Ajax page, requires AJAX_INCLUDE
  */
 if (!defined('AJAX_INCLUDE')) {
-    exit;
+    return false;
 }
 
 switch ($_REQUEST['action']) {
     case 'flip_state':
         if (!Access::check('interface', '75')) {
             debug_event('DENIED', $GLOBALS['user']->username . ' attempted to change the state of a song', '1');
-            exit;
+            return false;
         }
 
         $song        = new Song($_REQUEST['song_id']);

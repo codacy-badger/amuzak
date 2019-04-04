@@ -1,5 +1,5 @@
 ;;;;;;;;;;;;;;;;;;
-;<?php exit(); ?>;
+;<?php return false; ?>;
 ;;;;;;;;;;;;;;;;;;
 ; Copyright 2019 ampcore
 ;

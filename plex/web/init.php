@@ -31,10 +31,10 @@ require_once '../../lib/init.php';
 
 if (!AmpConfig::get('plex_backend')) {
     echo "Disabled.";
-    exit;
+    return false;
 }
 
 if (!defined('NO_SESSION') && !Access::check('interface', '100')) {
     echo T_('Unauthorized.');
-    exit();
+    return false;
 }

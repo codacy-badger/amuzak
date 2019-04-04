@@ -34,14 +34,14 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'update') {
     if ($_REQUEST['type'] == 'sources') {
         if (!Access::check('interface', '100')) {
             UI::access_denied();
-            exit;
+            return false;
         }
 
         set_time_limit(300);
         AutoUpdate::update_files();
         AutoUpdate::update_dependencies();
         echo '<script language="javascript" type="text/javascript">window.location="' . AmpConfig::get('web_path') . '";</script>';
-        exit;
+        return false;
     } else {
         /* Run the Update Mojo Here */
         Update::run_update();

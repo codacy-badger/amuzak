@@ -32,12 +32,12 @@ switch ($_REQUEST['action']) {
     case 'update_preferences':
         if ($_POST['method'] == 'admin' && !Access::check('interface', '100')) {
             UI::access_denied();
-            exit;
+            return false;
         }
 
         if (!Core::form_verify('update_preference', 'post')) {
             UI::access_denied();
-            exit;
+            return false;
         }
 
         $system = false;
@@ -72,12 +72,12 @@ switch ($_REQUEST['action']) {
         // Make sure only admins here
         if (!Access::check('interface', '100')) {
             UI::access_denied();
-            exit;
+            return false;
         }
 
         if (!Core::form_verify('update_preference', 'post')) {
             UI::access_denied();
-            exit;
+            return false;
         }
 
         update_preferences($_POST['user_id']);
@@ -88,7 +88,7 @@ switch ($_REQUEST['action']) {
         // Make sure only admins here
         if (!Access::check('interface', '100')) {
             UI::access_denied();
-            exit;
+            return false;
         }
         $fullname    = T_('Server');
         $preferences = $GLOBALS['user']->get_preferences($_REQUEST['tab'], true);
@@ -96,7 +96,7 @@ switch ($_REQUEST['action']) {
     case 'user':
         if (!Access::check('interface', '100')) {
             UI::access_denied();
-            exit;
+            return false;
         }
         $client      = new User($_REQUEST['user_id']);
         $fullname    = $client->fullname;
@@ -106,12 +106,12 @@ switch ($_REQUEST['action']) {
         // Make sure we're a user and they came from the form
         if (!Access::check('interface', '25') && $GLOBALS['user']->id > 0) {
             UI::access_denied();
-            exit;
+            return false;
         }
 
         if (!Core::form_verify('update_user', 'post')) {
             UI::access_denied();
-            exit;
+            return false;
         }
 
         // Remove the value
@@ -152,7 +152,7 @@ switch ($_REQUEST['action']) {
         // Make sure we're a user and they came from the form
         if (!Access::check('interface', '25') && $GLOBALS['user']->id > 0) {
             UI::access_denied();
-            exit;
+            return false;
         }
         if ($_REQUEST['token'] && in_array($_REQUEST['plugin'], Plugin::get_plugins('save_mediaplay'))) {
             // we receive a token for a valid plugin, have to call getSession and obtain a session key

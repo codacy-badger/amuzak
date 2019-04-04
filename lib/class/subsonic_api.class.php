@@ -45,7 +45,7 @@ class Subsonic_Api
             ob_end_clean();
             if ($addheader) self::setHeader($input['f']);
             self::apiOutput($input, Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_APIVERSION_CLIENT));
-            exit;
+            return false;
         }*/
     }
 
@@ -60,7 +60,7 @@ class Subsonic_Api
                 self::setHeader($input['f']);
             }
             self::apiOutput($input, Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_MISSINGPARAM));
-            exit;
+            return false;
         }
 
         return $input[$parameter];

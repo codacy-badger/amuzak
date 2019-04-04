@@ -25,7 +25,7 @@ require_once '../lib/init.php';
 
 if (!AmpConfig::get('plex_backend')) {
     echo "Disabled.";
-    exit;
+    return false;
 }
 
 if (function_exists('apache_setenv')) {
@@ -82,7 +82,7 @@ if (count($params) > 0) {
                     Plex_Api::setPlexHeader($headers);
                     call_user_func(array('plex_api', $method), array_slice($params, $i, count($params) - $i));
                     // We only allow a single function to be called, and we assume it's cleaned up!
-                    exit();
+                    return false;
                 }
             } // end foreach methods in API
         }
@@ -94,7 +94,7 @@ if ($show_index) {
     Plex_Api::setHeader('xml');
     Plex_Api::setPlexHeader($headers);
     Plex_Api::root();
-    exit();
+    return false;
 }
 
 Plex_Api::createError(404);
