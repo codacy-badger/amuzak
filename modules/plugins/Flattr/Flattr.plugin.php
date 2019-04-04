@@ -88,8 +88,8 @@ class AmpacheFlattr
      */
     public function display_user_field(library_item $libitem = null)
     {
-        $name = ($libitem != null) ? $libitem->get_fullname() : (T_('User') . " `" . $this->user->fullname . "` " . T_('on') . " " . AmpConfig::get('site_title'));
-        $link = ($libitem != null && $libitem->link) ? $libitem->link : $this->user->link;
+        $name = ($libitem !== null) ? $libitem->get_fullname() : (T_('User') . " `" . $this->user->fullname . "` " . T_('on') . " " . AmpConfig::get('site_title'));
+        $link = ($libitem !== null && $libitem->link) ? $libitem->link : $this->user->link;
 
         echo "<a rel='nohtml' href='https://flattr.com/submit/auto?user_id=" . scrub_out($this->user_id) . "&url=" . rawurlencode($link) . "&category=audio&title=" . rawurlencode($name) . "' target='_blank'><img src='//button.flattr.com/flattr-badge-large.png' alt='Flattr this' title='Flattr this' border='0'></a>";
     }

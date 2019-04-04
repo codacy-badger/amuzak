@@ -162,7 +162,7 @@ http://www.consulenza-web.com/2012/01/mediatable-jquery-plugin/
           scripts[sil].parentNode.removeChild(scripts[sil]);
         }
         colname = $(div).text();
-        if (colname != '') {
+        if (colname !== '') {
             var $li = $('<li><input type="checkbox" name="toggle-cols" id="toggle-col-'+wdg.id+'-'+i+'" value="'+id+'" /> <label for="toggle-col-'+wdg.id+'-'+i+'">'+colname+'</label></li>');
             wdg.$menu.$list.append($li);
 

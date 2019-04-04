@@ -766,11 +766,11 @@ OggDemuxer.plugins.push({
     this.list.append(new AV.Buffer(packet));
     
     stream.advance(5); // magic
-    if (stream.readUInt8() != 1)
+    if (stream.readUInt8() !== 1)
       throw new Error('Unsupported FLAC version');
       
     stream.advance(3);
-    if (stream.peekString(0, 4) != 'fLaC')
+    if (stream.peekString(0, 4) !== 'fLaC')
       throw new Error('Not flac');
       
     this.flac = AV.Demuxer.find(stream.peekSingleBuffer(0, stream.remainingBytes()));

@@ -116,40 +116,40 @@ class AmpacheOmdb
                 $match = false;
                 $yse   = explode('-', $q->Year);
                 if (in_array('movie', $gather_types) && $q->Type == 'movie') {
-                    if ($yse[0] != "N/A") {
+                    if ($yse[0] !== "N/A") {
                         $results['year'] = $yse[0];
                     }
-                    if ($q->Released != "N/A") {
+                    if ($q->Released !== "N/A") {
                         $results['release_date'] = $q->Released;
                     }
                     $results['original_name'] = $q->Title;
                     $results['imdb_id']       = $q->imdbID;
-                    if ($q->Plot != "N/A") {
+                    if ($q->Plot !== "N/A") {
                         $results['description'] = $q->Plot;
                     }
-                    if ($q->Poster != "N/A") {
+                    if ($q->Poster !== "N/A") {
                         $results['art'] = $q->Poster;
                     }
                     $match = true;
                 }
                 
                 if (in_array('tvshow', $gather_types) && $q->Type == 'series') {
-                    if ($yse[0] != "N/A") {
+                    if ($yse[0] !== "N/A") {
                         $results['tvshow_year'] = $yse[0];
                     }
                     $results['tvshow'] = $q->Title;
-                    if ($q->Plot != "N/A") {
+                    if ($q->Plot !== "N/A") {
                         $results['tvshow_description'] = $q->Plot;
                     }
                     $results['imdb_tvshow_id'] = $q->imdbID;
-                    if ($q->Poster != "N/A") {
+                    if ($q->Poster !== "N/A") {
                         $results['tvshow_art'] = $q->Poster;
                     }
                     $match = true;
                 }
                 
                 if ($match) {
-                    if ($q->Runtime != "N/A") {
+                    if ($q->Runtime !== "N/A") {
                         $results['time'] = $this->parse_runtime($q->Runtime);
                     }
                     $results['genre'] = $q->Genre;

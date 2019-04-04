@@ -247,7 +247,7 @@ var AudioHandler = function() {
 	}
     
     function loadMediaSource(mediaElement) {
-        if (mediaElement != undefined) {
+        if (mediaElement !== undefined) {
 			if (mediaSource == null) {
 				mediaSource = audioContext.createMediaElementSource(mediaElement);
 			}

@@ -116,7 +116,7 @@ abstract class OAuthSignatureMethod
             return false;
         }
 
-        if (strlen($built) != strlen($signature)) {
+        if (strlen($built) !== strlen($signature)) {
             return false;
         }
 
@@ -293,7 +293,7 @@ class OAuthRequest
      */
     public static function from_request($http_method=null, $http_url=null, $parameters=null)
     {
-        $scheme = (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on")
+        $scheme = (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== "on")
               ? 'http'
               : 'https';
         $http_url = ($http_url) ? $http_url : $scheme .
@@ -449,8 +449,8 @@ class OAuthRequest
         $host   = (isset($parts['host'])) ? strtolower($parts['host']) : '';
         $path   = (isset($parts['path'])) ? $parts['path'] : '';
 
-        if (($scheme == 'https' && $port != '443')
-        || ($scheme == 'http' && $port != '80')) {
+        if (($scheme == 'https' && $port !== '443')
+        || ($scheme == 'http' && $port !== '80')) {
             $host = "$host:$port";
         }
 
@@ -494,7 +494,7 @@ class OAuthRequest
 
         $total = array();
         foreach ($this->parameters as $k => $v) {
-            if (substr($k, 0, 5) != "oauth") {
+            if (substr($k, 0, 5) !== "oauth") {
                 continue;
             }
             if (is_array($v)) {

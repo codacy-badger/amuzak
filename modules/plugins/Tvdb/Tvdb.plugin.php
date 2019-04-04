@@ -194,7 +194,7 @@ class AmpacheTvdb
             }
         }
     
-        if ((count($titles) > 1) && ($year != null)) {
+        if ((count($titles) > 1) && ($year !== null)) {
             foreach ($titles as $index) {
                 $y = $index->firstAired->format('Y');
                 if ($year == $y) {

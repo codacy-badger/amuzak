@@ -154,7 +154,7 @@ class Catalog_local extends Catalog
             // Keep going until the path stops changing
             $old_path       = $component_path;
             $component_path = realpath($component_path . '/../');
-        } while (strcmp($component_path, $old_path) != 0);
+        } while (strcmp($component_path, $old_path) !== 0);
 
         return false;
     }
@@ -357,7 +357,7 @@ class Catalog_local extends Catalog
                 }
 
                 $enc_full_file = iconv($lc_charset, $site_charset, $full_file);
-                if ($lc_charset != $site_charset) {
+                if ($lc_charset !== $site_charset) {
                     $convok = (strcmp($full_file, iconv($site_charset, $lc_charset, $enc_full_file)) == 0);
                 } else {
                     $convok = (strcmp($enc_full_file, $full_file) == 0);
@@ -738,7 +738,7 @@ class Catalog_local extends Catalog
 
             if ($options['move_match_pattern']) {
                 $patres = vainfo::parse_pattern($file, $this->sort_pattern, $this->rename_pattern);
-                if ($patres['artist'] != $results['artist'] || $patres['album'] != $results['album'] || $patres['track'] != $results['track'] || $patres['title'] != $results['title']) {
+                if ($patres['artist'] !== $results['artist'] || $patres['album'] !== $results['album'] || $patres['track'] !== $results['track'] || $patres['title'] !== $results['title']) {
                     // Remove first left directories from filename to match pattern
                     $cntslash = substr_count($pattern, preg_quote(DIRECTORY_SEPARATOR)) + 1;
                     $filepart = explode(DIRECTORY_SEPARATOR, $file);

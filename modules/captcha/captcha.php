@@ -424,7 +424,7 @@ class easy_captcha
         if ((rand(0, 100) <= 5) && ($dh = opendir($dir))) {
             $t_kill = time() - CAPTCHA_TIMEOUT * 1.2;
             while (false !== ($fn = readdir($dh))) {
-                if ($fn[0] != ".") {
+                if ($fn[0] !== ".") {
                     if (filemtime("$dir/$fn") < $t_kill) {
                         @unlink("$dir/$fn");
                     }
@@ -1232,7 +1232,7 @@ function captcha_find_urls_in_form() {
 }
 // diff URL lists and hide captcha if nothing new was entered
 function captcha_spamfree_no_new_urls() {
-   var has_new_urls = captcha_find_urls_in_form().join(",") != captcha_form_urls.join(",");
+   var has_new_urls = captcha_find_urls_in_form().join(",") !== captcha_form_urls.join(",");
    var s = document.getElementById("captcha").style;
    if (s.opacity) {
       s.opacity = has_new_urls ? "0.9" : "0.1";

@@ -253,7 +253,7 @@
 						if ($item.children('.' + vars.prefix + 'caption').length == 0) {
 							if ($item.children('img').length > 0) {
 								var title = $.trim($item.children('img:first').attr('title'));
-								if(undefined != title || '' == title){
+								if(undefined !== title || '' == title){
 									$item.append('<div class="' + vars.prefix + 'caption">' + title + '</div>');
 									$item.children('.' + vars.prefix + 'caption:empty').remove();
 								}

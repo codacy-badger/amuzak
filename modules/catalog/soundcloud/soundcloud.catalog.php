@@ -230,7 +230,7 @@ class Catalog_soundcloud extends Catalog
         // Prevent the script from timing out
         set_time_limit(0);
 
-        if ($options != null) {
+        if ($options !== null) {
             $this->authcode = $options['authcode'];
         }
 
@@ -273,7 +273,7 @@ class Catalog_soundcloud extends Catalog
         $songsadded = 0;
         try {
             $api = $this->createClient();
-            if ($api != null) {
+            if ($api !== null) {
                 // Get all liked songs
                 $songs = json_decode($api->get('me/favorites'));
                 if ($songs) {
@@ -341,7 +341,7 @@ class Catalog_soundcloud extends Catalog
 
         try {
             $api = $this->createClient();
-            if ($api != null) {
+            if ($api !== null) {
                 $sql        = 'SELECT `id`, `file` FROM `song` WHERE `catalog` = ?';
                 $db_results = Dba::read($sql, array($this->id));
                 while ($row = Dba::fetch_assoc($db_results)) {
@@ -350,7 +350,7 @@ class Catalog_soundcloud extends Catalog
                     try {
                         $track = $this->url_to_track($row['file']);
                         $song  = json_decode($api->get('tracks/' . $track));
-                        if ($song->user_favorite != true) {
+                        if ($song->user_favorite !== true) {
                             $remove = true;
                         }
                     } catch (Services_Soundcloud_Invalid_Http_Response_Code_Exception $e) {
@@ -434,7 +434,7 @@ class Catalog_soundcloud extends Catalog
     {
         try {
             $api = $this->createClient();
-            if ($api != null) {
+            if ($api !== null) {
                 $track = $this->url_to_track($media->file);
                 debug_event('play', 'Starting stream - ' . $track, 5);
 

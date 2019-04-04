@@ -413,7 +413,7 @@ class Horde_Browser
                 $this->setFeature('homepage');
                 $this->setFeature('accesskey');
                 $this->setFeature('optgroup');
-                if ($this->_majorVersion != 7) {
+                if ($this->_majorVersion !== 7) {
                     $this->setFeature('cite');
                     $this->setFeature('dataurl', ($this->_majorVersion == 8) ? 32768 : true);
                 }
@@ -1259,7 +1259,7 @@ class Horde_Browser
 
             if (strpos($this->_accept, '*/*') !== false) {
                 $wildcard_match = true;
-                if ($type != 'image') {
+                if ($type !== 'image') {
                     return true;
                 }
             }
@@ -1278,7 +1278,7 @@ class Horde_Browser
             }
         }
 
-        if (!$this->hasFeature('images') || ($type != 'image')) {
+        if (!$this->hasFeature('images') || ($type !== 'image')) {
             return false;
         }
 

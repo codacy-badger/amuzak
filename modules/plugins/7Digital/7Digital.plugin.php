@@ -116,7 +116,7 @@ class Ampache7digital
             }
         }
 
-        if ($enSong != null) {
+        if ($enSong !== null) {
             $file = $enSong[0]['tracks'][0]['preview_url'];
             
             debug_event('echonest', 'EchoNest `' . $title . '` preview: ' . $file, '1');

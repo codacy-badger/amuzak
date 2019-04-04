@@ -110,7 +110,7 @@ class Ampachelibrefm
     public function save_mediaplay($song)
     {
         // Only support songs
-        if (strtolower(get_class($song)) != 'song') {
+        if (strtolower(get_class($song)) !== 'song') {
             return false;
         }
         

@@ -142,7 +142,7 @@ class Catalog_subsonic extends Catalog
         $username = $data['username'];
         $password = $data['password'];
         
-        if (substr($uri, 0, 7) != 'http://' && substr($uri, 0, 8) != 'https://') {
+        if (substr($uri, 0, 7) !== 'http://' && substr($uri, 0, 8) !== 'https://') {
             AmpError::add('general', T_('Error: Subsonic selected, but path is not a URL'));
             
             return false;
