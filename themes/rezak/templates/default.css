@@ -178,8 +178,8 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 
 #ajax-loading {
     position: fixed;
-    top: 63px;
-    left: 6px;
+    top: 41px;
+    left: 52px;
     font-size: 12px;
     text-align: center;
     width: 120px;
