@@ -53,6 +53,7 @@ class UI
         }
     }
 
+
     /**
      * access_denied
      *
@@ -300,6 +301,16 @@ END;
     public static function show_header()
     {
         require_once AmpConfig::get('prefix') . UI::find_template('header.inc.php');
+    }
+
+    /**
+     * show_header_tiny
+     *
+     * For now this just shows the header-tiny template
+     */
+    public static function show_header_tiny()
+    {
+        require_once AmpConfig::get('prefix') . UI::find_template('header-tiny.inc.php');
     }
 
     /**

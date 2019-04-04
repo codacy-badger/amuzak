@@ -30,7 +30,7 @@ if (!defined('AJAX_INCLUDE')) {
 $results = array();
 switch ($_REQUEST['action']) {
     case 'random_albums':
-        $albums = Album::get_random(6);
+        $albums = Album::get_random(8);
         if (count($albums) and is_array($albums)) {
             ob_start();
             require_once AmpConfig::get('prefix') . UI::find_template('show_random_albums.inc.php');

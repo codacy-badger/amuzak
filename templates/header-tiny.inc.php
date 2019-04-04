@@ -46,7 +46,7 @@ $_SESSION['login'] = false;
             }
         ?>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=<?php echo AmpConfig::get('site_charset'); ?>" />
-        <meta name="viewport" content="width=930, initial-scale=1.0">
+        <meta name="viewport" content="width=780, initial-scale=1.0">
         <title><?php echo AmpConfig::get('site_title'); ?> - <?php echo $location['title']; ?></title>
 
         <?php require_once AmpConfig::get('prefix') . UI::find_template('stylesheets.inc.php'); ?>
@@ -353,16 +353,15 @@ $_SESSION['login'] = false;
         <div id="maincontainer">
             <div id="header" class="header-<?php echo AmpConfig::get('ui_fixed') ? 'fixed' : 'float'; ?>"><!-- This is the header -->
                 <h1 id="headerlogo">
-                  <a href="<?php echo $web_path; ?>/index.php">
+                  <a href="<?php echo $web_path; ?>/jukebox.php">
                     <img src="<?php echo UI::get_logo_url(); ?>" title="<?php echo AmpConfig::get('site_title'); ?>" alt="<?php echo AmpConfig::get('site_title'); ?>" />
                   </a>
                 </h1>
                 <div id="headerbox">
                     <?php
                         UI::show_box_top('', 'box box_headerbox');
-                        require_once AmpConfig::get('prefix') . UI::find_template('show_search_bar.inc.php');
                         if (User::is_registered()) {
-                            require_once AmpConfig::get('prefix') . UI::find_template('show_playtype_switch.inc.php'); ?>
+                            ?>
                         <span id="loginInfo">
                             <a href="<?php echo $web_path; ?>/stats.php?action=show_user&user_id=<?php echo $GLOBALS['user']->id; ?>"><?php echo $GLOBALS['user']->fullname; ?></a>
                             <a rel="nohtml" href="<?php echo $web_path; ?>/logout.php">[<?php echo T_('Log out'); ?>]</a>
@@ -388,110 +387,9 @@ $_SESSION['login'] = false;
             </div><!-- End header -->
 
             <?php
-                if (AmpConfig::get('topmenu')) {
-                    ?>
-
-            <div id="topmenu_container" class="topmenu_container-<?php echo AmpConfig::get('ui_fixed') ? 'fixed' : 'float'; ?>">
-                <div class="topmenu_item">
-                    <a href="<?php echo $web_path ?>/index.php">
-                        <img src="<?php echo $web_path ?>/images/topmenu-home.png" />
-                        <span><?php echo T_('Home') ?></span>
-                    </a>
-                </div>
-                <div class="topmenu_item">
-                    <a href="<?php echo $web_path ?>/browse.php?action=artist">
-                        <img src="<?php echo $web_path ?>/images/topmenu-artist.png" />
-                        <span><?php echo T_('Artists') ?></span>
-                    </a>
-                </div>
-                <div class="topmenu_item">
-                    <a href="<?php echo $web_path ?>/browse.php?action=playlist">
-                        <img src="<?php echo $web_path ?>/images/topmenu-playlist.png" />
-                        <span><?php echo T_('Playlists') ?></span>
-                    </a>
-                </div>
-                <div class="topmenu_item">
-                    <a href="<?php echo $web_path ?>/browse.php?action=tag">
-                        <img src="<?php echo $web_path ?>/images/topmenu-tagcloud.png" />
-                        <span><?php echo T_('Tag Cloud') ?></span>
-                    </a>
-                </div>
-
-                <?php
-                    if (AmpConfig::get('userflags') && Access::check('interface', '25')) {
-                        ?>
-
-                <div class="topmenu_item">
-                    <a href="<?php echo $web_path ?>/stats.php?action=userflag">
-                        <img src="<?php echo $web_path ?>/images/topmenu-favorite.png" />
-                        <span><?php echo T_('Favorites') ?></span>
-                    </a>
-                </div>
-                
-                <?php
-                    }
-                    if (AmpConfig::get('allow_upload') && Access::check('interface', '25')) {
-                        ?>
-
-                <div class="topmenu_item">
-                    <a href="<?php echo $web_path ?>/upload.php">
-                        <img src="<?php echo $web_path ?>/images/topmenu-upload.png" />
-                        <span><?php echo T_('Upload') ?></span>
-                    </a>
-                </div>
-
-                <?php
-                    } ?>
-
-            </div>
-
-            <?php
-                }
                 $isCollapsed = ((AmpConfig::get('sidebar_light') && $_COOKIE['sidebar_state'] != "expanded") || $_COOKIE['sidebar_state'] == "collapsed");
             ?>
-
-            <div id="sidebar" class="sidebar-<?php echo AmpConfig::get('ui_fixed') ? 'fixed' : 'float'; ?>">
-                <div id="sidebar-content" class="<?php echo $isCollapsed ? 'sidebar-content-collapsed' : ''; ?>" >
-                    <?php require_once AmpConfig::get('prefix') . UI::find_template('sidebar.inc.php'); ?>
-                </div>
-                <div id="sidebar-content-light" class="<?php echo $isCollapsed ? 'sidebar-content-light-collapsed' : ''; ?>" >
-                    <?php require_once AmpConfig::get('prefix') . UI::find_template('sidebar.light.inc.php'); ?>
-                </div>
-            </div>
-            <!-- Handle collapsed visibility -->
-            <script type="text/javascript">
-            $('#sidebar-header').click(function(){
-                var newstate = "collapsed";
-                if ($('#sidebar-header').hasClass("sidebar-header-collapsed")) {
-                    newstate = "expanded";
-                }
-
-                if (newstate != "expanded") {
-                    $("#content").addClass("content-left-wild", 600);
-                } else {
-                    $("#content").removeClass("content-left-wild", 1000);
-                }
-
-                $('#sidebar').hide(500, function() {
-                    if (newstate == "expanded") {
-                        $('#sidebar-content-light').removeClass("sidebar-content-light-collapsed");
-                        $('#sidebar-content').removeClass("sidebar-content-collapsed");
-                        $('#sidebar-header').removeClass("sidebar-header-collapsed");
-                        $('#sidebar-header-content').text('<<<');
-                    } else {
-                        $('#sidebar-content').addClass("sidebar-content-collapsed");
-                        $('#sidebar-header').addClass("sidebar-header-collapsed");
-                        $('#sidebar-content-light').addClass("sidebar-content-light-collapsed");
-                        $('#sidebar-header-content').text('>>>');
-                    }
-
-                    $('#sidebar').show(500);
-                });
-
-                $.cookie('sidebar_state', newstate, { expires: 30, path: '/'});
-            });
-            </script>
-
+            <?php require_once AmpConfig::get('prefix') . UI::find_template('sidebar.light.inc.php'); ?>
             <div id="rightbar" class="rightbar-fixed">
                 <?php require_once AmpConfig::get('prefix') . UI::find_template('rightbar.inc.php'); ?>
             </div>
@@ -501,7 +399,7 @@ $_SESSION['login'] = false;
             <div id="util_div" style="display:none;"></div>
             <iframe name="util_iframe" id="util_iframe" style="display:none;" src="<?php echo $web_path; ?>/util.php"></iframe>
             
-            <div id="content" class="content-<?php echo AmpConfig::get('ui_fixed') ? (AmpConfig::get('topmenu') ? 'fixed-topmenu' : 'fixed') : 'float'; ?> <?php echo(($count_temp_playlist) ? '' : 'content-right-wild'); echo $isCollapsed ? ' content-left-wild' : ''; ?>">
+            <div id="content" class="content-<?php echo AmpConfig::get('ui_fixed') ? (AmpConfig::get('topmenu') ? 'fixed-topmenu' : 'fixed') : 'float'; ?> <?php echo(($count_temp_playlist) ? '' : 'content-right-wild'); echo $isCollapsed ? ' content-left-wild' : ''; ?>" style="margin-left: 80px">
 
                 <?php
                     if (Access::check('interface', '100')) {
@@ -529,3 +427,4 @@ $_SESSION['login'] = false;
                 } //load the web_player early to make sure the browser doesn't block audio playback?>
 
                 <div id="guts">
+
