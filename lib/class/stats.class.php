@@ -287,7 +287,7 @@ class Stats
         if (AmpConfig::get('rating_browse_filter')) {
             $user_id       = $GLOBALS['user']->id;
             $rating_filter = intval(AmpConfig::get('rating_browse_minimum_stars'));
-            debug_event('random', 'Found a ratings filter ' . $rating_filter . '.', 4);
+            debug_event('stats', 'Requested a ratings filter of: ' . $rating_filter . '.', 5);
             if ($rating_filter > 0 && $rating_filter <= 5) {
                 $sql .= " AND `object_id` NOT IN" .
                             " (SELECT `object_id` FROM `rating`" .
@@ -357,6 +357,18 @@ class Stats
             " WHERE `object_type` = '" . $type . "'" . $user_sql;
         if (AmpConfig::get('catalog_disable')) {
             $sql .= " AND " . Catalog::get_enable_filter($type, '`object_id`');
+        }
+        if (AmpConfig::get('rating_browse_filter')) {
+            $user_id       = $GLOBALS['user']->id;
+            $rating_filter = intval(AmpConfig::get('rating_browse_minimum_stars'));
+            debug_event(''stats', 'Requested a ratings filter of: ' . $rating_filter . '.', 5);
+            if ($rating_filter > 0 && $rating_filter <= 5) {
+                $sql .= " AND `object_id` NOT IN" .
+                            " (SELECT `object_id` FROM `rating`" .
+                            " WHERE `rating`.`object_type` = '" . $type . "'" .
+                            " AND `rating`.`rating` <=" . $rating_filter .
+                            " AND `rating`.`user` = " . $user_id . ")";
+            }
         }
         $sql .= " GROUP BY `object_id` ORDER BY MAX(`date`) DESC, `id` ";
 
@@ -473,6 +485,18 @@ class Stats
             }
             if ($catalog > 0) {
                 $sql .= "AND `catalog` = '" . scrub_in($catalog) . "' ";
+            }
+            if (AmpConfig::get('rating_browse_filter')) {
+                $user_id       = $GLOBALS['user']->id;
+                $rating_filter = intval(AmpConfig::get('rating_browse_minimum_stars'));
+                debug_event(''stats', 'Requested a ratings filter of: ' . $rating_filter . '.', 5);
+                if ($rating_filter > 0 && $rating_filter <= 5) {
+                    $sql .= "WHERE `" . $base_type . "`.`" . $type . "` NOT IN" .
+                            " (SELECT `object_id` FROM `rating`" .
+                            " WHERE `rating`.`object_type` = '" . $type . "'" .
+                            " AND `rating`.`rating` <=" . $rating_filter .
+                            " AND `rating`.`user` = " . $user_id . ")";
+                }
             }
         }
         $sql .= "GROUP BY `$type` ORDER BY `real_atime` DESC ";
