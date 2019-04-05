@@ -238,7 +238,7 @@ class Art extends database_object
     {
         // Get the data either way
         if (!$this->get_db()) {
-            return false;
+            return '';
         }
 
         if ($raw || !$this->thumb) {
@@ -693,35 +693,35 @@ class Art extends database_object
         if (!self::test_image($image)) {
             debug_event('Art', 'Not trying to generate thumbnail, invalid data passed', 1);
 
-            return false;
+            return '';
         }
 
         if (!function_exists('gd_info')) {
             debug_event('Art', 'PHP-GD Not found - unable to resize art', 1);
 
-            return false;
+            return '';
         }
 
         // Check and make sure we can resize what you've asked us to
         if (($type == 'jpg' or $type == 'jpeg') and !(imagetypes() & IMG_JPG)) {
             debug_event('Art', 'PHP-GD Does not support JPGs - unable to resize', 1);
 
-            return false;
+            return '';
         }
         if ($type == 'png' and !imagetypes() & IMG_PNG) {
             debug_event('Art', 'PHP-GD Does not support PNGs - unable to resize', 1);
 
-            return false;
+            return '';
         }
         if ($type == 'gif' and !imagetypes() & IMG_GIF) {
             debug_event('Art', 'PHP-GD Does not support GIFs - unable to resize', 1);
 
-            return false;
+            return '';
         }
         if ($type == 'bmp' and !imagetypes() & IMG_WBMP) {
             debug_event('Art', 'PHP-GD Does not support BMPs - unable to resize', 1);
 
-            return false;
+            return '';
         }
 
         $source = imagecreatefromstring($image);
@@ -729,7 +729,7 @@ class Art extends database_object
         if (!$source) {
             debug_event('Art', 'Failed to create Image from string - Source Image is damaged / malformed', 1);
 
-            return false;
+            return '';
         }
 
         $source_size = array('height' => imagesy($source), 'width' => imagesx($source));
