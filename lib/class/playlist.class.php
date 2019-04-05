@@ -431,10 +431,10 @@ class Playlist extends playlist_object
      */
     public static function create($name, $type, $user_id = null, $date = null)
     {
-        if ($user_id === null) {
+        if ($user_id == null) {
             $user_id = $GLOBALS['user']->id;
         }
-        if ($date === null) {
+        if ($date == null) {
             $date = time();
         }
 

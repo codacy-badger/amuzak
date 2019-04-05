@@ -81,7 +81,7 @@ class Stats
      * @param string $object_type
      * @param int $old_object_id
      * @param int $new_object_id
-     * @return boolean|PDOStatement
+     * @return boolean
      */
     public static function migrate($object_type, $old_object_id, $new_object_id)
     {
@@ -257,7 +257,6 @@ class Stats
      */
     public static function get_top_sql($type, $threshold = '', $count_type = 'stream', $user_id = null)
     {
-        $sql  = '';
         $type = self::validate_type($type);
         /* If they don't pass one, then use the preference */
         if (!$threshold) {
@@ -467,7 +466,7 @@ class Stats
                 $sql .= "WHERE `catalog`.`enabled` = '1' ";
             }
             if ($catalog > 0) {
-                $sql .= "AND `catalog` = '" . $catalog . "' ";
+                $sql .= "AND `catalog` = '" . scrub_in($catalog) . "' ";
             }
         }
         $sql .= "GROUP BY `$type` ORDER BY `real_atime` DESC ";
