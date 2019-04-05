@@ -361,7 +361,7 @@ class Stats
         if (AmpConfig::get('rating_browse_filter')) {
             $user_id       = $GLOBALS['user']->id;
             $rating_filter = intval(AmpConfig::get('rating_browse_minimum_stars'));
-            debug_event(''stats', 'Requested a ratings filter of: ' . $rating_filter . '.', 5);
+            debug_event('stats', 'Requested a ratings filter of: ' . $rating_filter . '.', 5);
             if ($rating_filter > 0 && $rating_filter <= 5) {
                 $sql .= " AND `object_id` NOT IN" .
                             " (SELECT `object_id` FROM `rating`" .
@@ -489,7 +489,7 @@ class Stats
             if (AmpConfig::get('rating_browse_filter')) {
                 $user_id       = $GLOBALS['user']->id;
                 $rating_filter = intval(AmpConfig::get('rating_browse_minimum_stars'));
-                debug_event(''stats', 'Requested a ratings filter of: ' . $rating_filter . '.', 5);
+                debug_event('stats', 'Requested a ratings filter of: ' . $rating_filter . '.', 5);
                 if ($rating_filter > 0 && $rating_filter <= 5) {
                     $sql .= "WHERE `" . $base_type . "`.`" . $type . "` NOT IN" .
                             " (SELECT `object_id` FROM `rating`" .
