@@ -842,7 +842,7 @@ class Album extends database_object implements library_item
         $db_results = Dba::read($sql, array($this->id));
 
         $results = array();
-        while ($owr = Dba::fetch_row($db_results)) {
+        while ($row = Dba::fetch_row($db_results)) {
             $results[] = $row['0'];
         }
 

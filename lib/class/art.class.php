@@ -875,7 +875,7 @@ class Art extends database_object
 
         if (AmpConfig::get('use_auth') && AmpConfig::get('require_session')) {
             $sid = $sid ? scrub_out($sid) : scrub_out(session_id());
-            if ($sid === null) {
+            if ($sid == null) {
                 $sid = Session::create(array(
                     'type' => 'api'
                 ));
