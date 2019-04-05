@@ -1006,7 +1006,7 @@ class Api
         ob_end_clean();
         $type   = $input['type'];
         $id     = $input['id'];
-        $rate = $input['rating'];
+        $rating = $input['rating'];
 
         if (!Core::is_library_item($type) || !$id) {
             echo XML_Data::error('401', T_('Wrong library item type.'));
@@ -1016,7 +1016,7 @@ class Api
                 echo XML_Data::error('404', T_('Library item not found.'));
             } else {
                 $rate = new Rating($id, $type);
-                $rate->set_rating($rate);
+                $rate->set_rating($rating);
                 echo XML_Data::single_string('success');
             }
         }
