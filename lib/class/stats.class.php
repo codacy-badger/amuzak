@@ -275,23 +275,29 @@ class Stats
             /* Select Top objects counting by # of rows for you only */
             $sql = "SELECT object_id as `id`, COUNT(*) AS `count` FROM object_count" .
                 " WHERE `object_type` = '" . $type . "' AND `user` = " . $user_id;
-            if (AmpConfig::get('catalog_disable')) {
-                $sql .= " AND " . Catalog::get_enable_filter($type, '`object_id`');
-            }
-            $sql .= " AND `count_type` = '" . $count_type . "'";
-            $sql .= " GROUP BY object_id ORDER BY `count` DESC ";
-
-            return $sql;
         }
-        /* Select Top objects counting by # of rows */
-        $sql = "SELECT object_id as `id`, COUNT(*) AS `count` FROM object_count" .
-            " WHERE `object_type` = '" . $type . "' AND `date` >= '" . $date . "' ";
+        if ($user_id == null) {
+            /* Select Top objects counting by # of rows */
+            $sql = "SELECT object_id as `id`, COUNT(*) AS `count` FROM object_count" .
+                        " WHERE `object_type` = '" . $type . "' AND `date` >= '" . $date . "' ";
+        }
         if (AmpConfig::get('catalog_disable')) {
             $sql .= "AND " . Catalog::get_enable_filter($type, '`object_id`');
         }
+        if (AmpConfig::get('rating_browse_filter')) {
+            $user_id       = $GLOBALS['user']->id;
+            $rating_filter = intval(AmpConfig::get('rating_browse_minimum_stars'));
+            debug_event('random', 'Found a ratings filter ' . $rating_filter . '.', 4);
+            if ($rating_filter > 0 && $rating_filter <= 5) {
+                $sql .= " AND `object_id` NOT IN" .
+                            " (SELECT `object_id` FROM `rating`" .
+                            " WHERE `rating`.`object_type` = '" . $type . "'" .
+                            " AND `rating`.`rating` <=" . $rating_filter .
+                            " AND `rating`.`user` = " . $user_id . ")";
+            }
+        }
         $sql .= " AND `count_type` = '" . $count_type . "'";
         $sql .= " GROUP BY object_id ORDER BY `count` DESC ";
-
 
         return $sql;
     }

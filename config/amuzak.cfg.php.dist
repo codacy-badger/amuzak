@@ -7,7 +7,7 @@
 ; if this config file is up to date
 ; this is compared against a value hard-coded
 ; into the init script
-config_version = 41
+config_version = 42
 
 ;#########################################################
 ; Path Vars                                              #
@@ -210,6 +210,16 @@ additional_genre_delimiters = "[/]{2}|[/|\\\\|\|,|;]"
 ; DEFAULT: false
 ;enable_custom_metadata = "false"
 
+; Enable filtering on browse pages for artists and albums.
+; If you enable this setting the get_random and browse pages
+; will remove artists and albums that are <= to that rating
+; DEFAULT: false
+;rating_browse_filter = "false"
+
+; Set the rating that will be filtered
+; eg. 2 will filter 1 and 2 start albums and artists
+; DEFAULT: 1
+;rating_browse_minimum_stars = 1
 
 ;#########################################################
 ; Catalog                                                #
