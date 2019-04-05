@@ -743,9 +743,9 @@ class Search extends playlist_object
     {
         $sql        = "SELECT `name` FROM `search` WHERE `id` = '$id'";
         $db_results = Dba::read($sql);
-        $r          = Dba::fetch_assoc($db_results);
+        $row        = Dba::fetch_assoc($db_results);
 
-        return $r['name'];
+        return $row['name'];
     }
 
     /**

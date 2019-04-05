@@ -349,8 +349,8 @@ class Label extends database_object implements library_item
         $db_results = Dba::read($sql, array($this->name));
 
         $results = array();
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = $r['id'];
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $results[] = $row['id'];
         }
 
         return $results;

@@ -216,7 +216,7 @@ class Upload
 
     public static function get_root($catalog = null, $username = null)
     {
-        if ($catalog == null) {
+        if ($catalog === null) {
             $catalog_id = AmpConfig::get('upload_catalog');
             if ($catalog_id > 0) {
                 $catalog = Catalog::create_from_id($catalog_id);

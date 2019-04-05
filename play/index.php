@@ -352,7 +352,7 @@ if ($media->catalog) {
         return false;
     }
 }
-if ($media == null) {
+if ($media === null) {
     // Handle democratic removal
     if ($demo_id && isset($democratic)) {
         $democratic->delete_from_oid($oid, $type);
@@ -603,7 +603,7 @@ if ($range_values > 0 && ($start > 0 || $end > 0)) {
     }
     $stream_size = ($end - $start) + 1;
 
-    if ($stream_size == null) {
+    if ($stream_size === null) {
         debug_event('play', 'Content-Range header received, which we cannot fulfill due to unknown final length (transcoding?)', 2);
     } else {
         if ($transcode) {

@@ -378,8 +378,8 @@ class Dba
             print '<br/>Profiling data: <br/>';
             $res = Dba::read('SHOW PROFILES');
             print '<table>';
-            while ($r = Dba::fetch_row($res)) {
-                print '<tr><td>' . implode('</td><td>', $r) . '</td></tr>';
+            while ($row = Dba::fetch_row($res)) {
+                print '<tr><td>' . implode('</td><td>', $row) . '</td></tr>';
             }
             print '</table>';
         }

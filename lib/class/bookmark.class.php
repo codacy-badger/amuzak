@@ -55,7 +55,7 @@ class Bookmark extends database_object
         if (!$object_type) {
             $info = $this->get_info($object_id);
         } else {
-            if ($user_id == null) {
+            if ($user_id === null) {
                 $user_id = $GLOBALS['user']->id;
             }
 
@@ -103,7 +103,7 @@ class Bookmark extends database_object
     public static function get_bookmarks_ids($user = null)
     {
         $ids = array();
-        if ($user == null) {
+        if ($user === null) {
             $user = $GLOBALS['user'];
         }
         

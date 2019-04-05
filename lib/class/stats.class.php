@@ -276,7 +276,7 @@ class Stats
             $sql = "SELECT object_id as `id`, COUNT(*) AS `count` FROM object_count" .
                 " WHERE `object_type` = '" . $type . "' AND `user` = " . $user_id;
         }
-        if ($user_id == null) {
+        if ($user_id === null) {
             /* Select Top objects counting by # of rows */
             $sql = "SELECT object_id as `id`, COUNT(*) AS `count` FROM object_count" .
                         " WHERE `object_type` = '" . $type . "' AND `date` >= '" . $date . "' ";
@@ -286,7 +286,7 @@ class Stats
         }
         if (AmpConfig::get('rating_browse_filter')) {
             $user_id       = $GLOBALS['user']->id;
-            $rating_filter = intval(AmpConfig::get('rating_browse_minimum_stars'));
+            $rating_filter = AmpConfig::get('rating_browse_minimum_stars');
             debug_event('stats', 'Requested a ratings filter of: ' . $rating_filter . '.', 5);
             if ($rating_filter > 0 && $rating_filter <= 5) {
                 $sql .= " AND `object_id` NOT IN" .
@@ -360,7 +360,7 @@ class Stats
         }
         if (AmpConfig::get('rating_browse_filter')) {
             $user_id       = $GLOBALS['user']->id;
-            $rating_filter = intval(AmpConfig::get('rating_browse_minimum_stars'));
+            $rating_filter = AmpConfig::get('rating_browse_minimum_stars');
             debug_event('stats', 'Requested a ratings filter of: ' . $rating_filter . '.', 5);
             if ($rating_filter > 0 && $rating_filter <= 5) {
                 $sql .= " AND `object_id` NOT IN" .
@@ -433,8 +433,8 @@ class Stats
 
         $results = array();
 
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = $r;
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $results[] = $row;
         }
 
         return $results;
@@ -488,7 +488,7 @@ class Stats
             }
             if (AmpConfig::get('rating_browse_filter')) {
                 $user_id       = $GLOBALS['user']->id;
-                $rating_filter = intval(AmpConfig::get('rating_browse_minimum_stars'));
+                $rating_filter = AmpConfig::get('rating_browse_minimum_stars');
                 debug_event('stats', 'Requested a ratings filter of: ' . $rating_filter . '.', 5);
                 if ($rating_filter > 0 && $rating_filter <= 5) {
                     $sql .= "WHERE `" . $base_type . "`.`" . $type . "` NOT IN" .

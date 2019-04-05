@@ -998,7 +998,7 @@ class Api
 
     /**
      * rate
-     * This rate a library item
+     * This rates a library item
      * @param array $input
      */
     public static function rate($input)
@@ -1015,8 +1015,8 @@ class Api
             if (!$item->id) {
                 echo XML_Data::error('404', T_('Library item not found.'));
             } else {
-                $r = new Rating($id, $type);
-                $r->set_rating($rating);
+                $rating = new Rating($id, $type);
+                $rating->set_rating($rating);
                 echo XML_Data::single_string('success');
             }
         }

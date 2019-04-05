@@ -799,12 +799,12 @@ class easy_captcha_dxy_wave
     {
         $BEG  = $this->real_rand($a, $b);
         $DIFF = $this->real_rand($a, $b) - $BEG;
-        $r    = array();
+        $rand = array();
         for ($i = 0; $i <= $max; $i++) {
-            $r[$i] = $BEG + $DIFF * $i / $max;
+            $rand[$i] = $BEG + $DIFF * $i / $max;
         }
 
-        return($r);
+        return($rand);
     }
 
     #-- returns random value in given interval

@@ -1606,7 +1606,7 @@ class User extends database_object
      */
     public static function stream_control($media_ids, User $user = null)
     {
-        if ($user == null) {
+        if ($user === null) {
             $user = $GLOBALS['user'];
         }
 

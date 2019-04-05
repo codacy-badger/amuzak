@@ -126,7 +126,7 @@ class Mailer
     {
         $mailtype = AmpConfig::get('mail_type');
 
-        if ($phpmailer == null) {
+        if ($phpmailer === null) {
             $mail = new PHPMailer();
 
             $recipient_name = $this->recipient_name;

@@ -559,7 +559,7 @@ abstract class Catalog extends database_object
     public static function getLastUpdate($catalogs = null)
     {
         $last_update = 0;
-        if ($catalogs == null || !is_array($catalogs)) {
+        if ($catalogs === null || !is_array($catalogs)) {
             $catalogs = self::get_catalogs();
         }
         foreach ($catalogs as $id) {
@@ -1173,7 +1173,7 @@ abstract class Catalog extends database_object
 
         $search_count = 0;
         $searches     = array();
-        if ($songs == null) {
+        if ($songs === null) {
             $searches['album']  = $this->get_album_ids();
             $searches['artist'] = $this->get_artist_ids();
         } else {

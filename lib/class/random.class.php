@@ -41,7 +41,7 @@ class Random
         }
         if (AmpConfig::get('rating_browse_filter')) {
             $user_id       = $GLOBALS['user']->id;
-            $rating_filter = intval(AmpConfig::get('rating_browse_minimum_stars'));
+            $rating_filter = AmpConfig::get('rating_browse_minimum_stars');
             debug_event('random', 'Found a ratings filter ' . $rating_filter . '.', 5);
             if ($rating_filter > 0 && $rating_filter <= 5) {
                 $sql .= " AND `artist`.`id` NOT IN" .
@@ -114,7 +114,7 @@ class Random
         }
         if (AmpConfig::get('rating_browse_filter')) {
             $user_id       = $GLOBALS['user']->id;
-            $rating_filter = intval(AmpConfig::get('rating_browse_minimum_stars'));
+            $rating_filter = AmpConfig::get('rating_browse_minimum_stars');
             debug_event('random', 'Found a ratings filter ' . $rating_filter . '.', 4);
             if ($rating_filter > 0 && $rating_filter <= 5) {
                 $sql .= " AND `song`.`artist` NOT IN" .
@@ -164,7 +164,7 @@ class Random
         }
         if (AmpConfig::get('rating_browse_filter')) {
             $user_id       = $GLOBALS['user']->id;
-            $rating_filter = intval(AmpConfig::get('rating_browse_minimum_stars'));
+            $rating_filter = AmpConfig::get('rating_browse_minimum_stars');
             debug_event('random', 'Found a ratings filter ' . $rating_filter . '.', 4);
             if ($rating_filter > 0 && $rating_filter <= 5) {
                 $sql .= " AND `song`.`artist` NOT IN" .
@@ -213,7 +213,7 @@ class Random
         }
         if (AmpConfig::get('rating_browse_filter')) {
             $user_id       = $GLOBALS['user']->id;
-            $rating_filter = intval(AmpConfig::get('rating_browse_minimum_stars'));
+            $rating_filter = AmpConfig::get('rating_browse_minimum_stars');
             debug_event('random', 'Found a ratings filter ' . $rating_filter . '.', 4);
             if ($rating_filter > 0 && $rating_filter <= 5) {
                 $sql .= " AND `song`.`artist` NOT IN" .

@@ -426,7 +426,7 @@ class Catalog_local extends Catalog
      */
     public function add_to_catalog($options = null)
     {
-        if ($options == null) {
+        if ($options === null) {
             $options = array(
                 'gather_art' => true,
                 'parse_playlist' => false

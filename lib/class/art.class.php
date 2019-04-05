@@ -875,7 +875,7 @@ class Art extends database_object
 
         if (AmpConfig::get('use_auth') && AmpConfig::get('require_session')) {
             $sid = $sid ? scrub_out($sid) : scrub_out(session_id());
-            if ($sid == null) {
+            if ($sid === null) {
                 $sid = Session::create(array(
                     'type' => 'api'
                 ));
@@ -1806,7 +1806,7 @@ class Art extends database_object
         }
         $size        = self::get_thumb_size($thumb);
         $prettyPhoto = ($link == null);
-        if ($link == null) {
+        if ($link === null) {
             $link = AmpConfig::get('web_path') . "/image.php?object_id=" . $object_id . "&object_type=" . $object_type;
             if (AmpConfig::get('use_auth') && AmpConfig::get('require_session')) {
                 $link .= "&auth=" . session_id();

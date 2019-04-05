@@ -394,7 +394,7 @@ class Core
 
     public static function requests_options($options = null)
     {
-        if ($options == null) {
+        if ($options === null) {
             $options = array();
         }
 
