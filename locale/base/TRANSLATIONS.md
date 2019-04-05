@@ -16,10 +16,10 @@ you should contact us, before you start translating Ampache into a new language,
 on IRC (chat.freenode.net #ampache), just to make sure that nobody else is already working on a translation.
 Once you are ready to start your translation you will need to get a few tools:
 
-- [Gettext](http://www.gnu.org/software/gettext/)
-- xgettext (Generates PO files)
-- msgmerge (Merges old and new PO files)
-- msgfmt (Generates the MO file from a PO file)
+ - [Gettext](http://www.gnu.org/software/gettext/)
+ - xgettext (Generates PO files)
+ - msgmerge (Merges old and new PO files)
+ - msgfmt (Generates the MO file from a PO file)
 
 ### B) Quick Reference
 Below are all of the commands listed you may have to run when working on a translation.
@@ -75,9 +75,9 @@ Find /lib/preferences.php and then find "case 'lang':" under
 the "create_preference_input" function and add a line for your own 
 language. For example to add en_US support add the following line
 
-```php
-echo "\t<option value=\"en_US\" $en_US_lang>" . T_("English") . "</option>\n";
-```
+    ```php
+    echo "\t<option value=\"en_US\" $en_US_lang>" . T_("English") . "</option>\n";
+    ```
 
 Make sure that it comes after the `<select>` statement. This will be fixed
 for future releases... Sorry :S

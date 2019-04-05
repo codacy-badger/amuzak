@@ -30,12 +30,12 @@ switch ($_REQUEST['action']) {
         // Must be at least a user to do this
         if (!Access::check('interface', '25')) {
             UI::access_denied();
-            exit;
+            return false;
         }
 
         if (!Core::form_verify('add_shout', 'post')) {
             UI::access_denied();
-            exit;
+            return false;
         }
 
         // Remove unauthorized defined values from here
@@ -48,13 +48,12 @@ switch ($_REQUEST['action']) {
 
         if (!Core::is_library_item($_POST['object_type'])) {
             UI::access_denied();
-            exit;
+            return false;
         }
 
         $shout_id = Shoutbox::create($_POST);
         header("Location:" . AmpConfig::get('web_path') . '/shout.php?action=show_add_shout&type=' . $_POST['object_type'] . '&id=' . intval($_POST['object_id']));
-        exit;
-    break;
+        return false;
     case 'show_add_shout':
         // Get our object first
         $object = Shoutbox::get_object($_REQUEST['type'], $_REQUEST['id']);
