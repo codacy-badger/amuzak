@@ -64,143 +64,143 @@ class Subsonic_XML_Data
     /**
      * @return string|null
      */
-    public static function getArtistId($id)
+    public static function getArtistId($artistid)
     {
-        return $id + Subsonic_XML_Data::AMPACHEID_ARTIST;
+        return $artistid + self::AMPACHEID_ARTIST;
     }
 
     /**
      * @return string|null
      */
-    public static function getAlbumId($id)
+    public static function getAlbumId($albumid)
     {
-        return $id + Subsonic_XML_Data::AMPACHEID_ALBUM;
+        return $albumid + self::AMPACHEID_ALBUM;
     }
 
-    public static function getSongId($id)
+    public static function getSongId($songid)
     {
-        return $id + Subsonic_XML_Data::AMPACHEID_SONG;
+        return $songid + self::AMPACHEID_SONG;
     }
 
     /**
      * @param integer $id
      */
-    public static function getSmartPlId($id)
+    public static function getSmartPlId($plistid)
     {
-        return $id + Subsonic_XML_Data::AMPACHEID_SMARTPL;
+        return $plistid + self::AMPACHEID_SMARTPL;
     }
 
-    public static function getVideoId($id)
+    public static function getVideoId($videoid)
     {
-        return $id + Subsonic_XML_Data::AMPACHEID_VIDEO;
+        return $videoid + self::AMPACHEID_VIDEO;
     }
 
     /**
      * @return string|null
      */
-    public static function getPodcastId($id)
+    public static function getPodcastId($podcastid)
     {
-        return $id + Subsonic_XML_Data::AMPACHEID_PODCAST;
+        return $podcastid + self::AMPACHEID_PODCAST;
     }
 
     /**
      * @param integer|null $id
      */
-    public static function getPodcastEpId($id)
+    public static function getPodcastEpId($episodeid)
     {
-        return $id + Subsonic_XML_Data::AMPACHEID_PODCASTEP;
+        return $episodeid + self::AMPACHEID_PODCASTEP;
     }
     
-    private static function cleanId($id)
+    private static function cleanId($objectid)
     {
         // Remove all al-, ar-, ... prefixs
-        $tpos = strpos($id, "-");
+        $tpos = strpos($objectid, "-");
         if ($tpos !== false) {
-            $id = intval(substr($id, $tpos + 1));
+            $objectid = intval(substr($objectid, $tpos + 1));
         }
 
-        return $id;
+        return $objectid;
     }
 
-    public static function getAmpacheId($id)
+    public static function getAmpacheId($objectid)
     {
-        return (self::cleanId($id) % Subsonic_XML_Data::AMPACHEID_ARTIST);
+        return (self::cleanId($objectid) % self::AMPACHEID_ARTIST);
     }
 
     public static function getAmpacheIds($ids)
     {
         $ampids = array();
-        foreach ($ids as $id) {
-            $ampids[] = self::getAmpacheId($id);
+        foreach ($ids as $objectid) {
+            $ampids[] = self::getAmpacheId($objectid);
         }
 
         return $ampids;
     }
 
-    public static function isArtist($id)
+    public static function isArtist($artistid)
     {
-        $id = self::cleanId($id);
+        $artistid = self::cleanId($artistid);
 
-        return ($id >= Subsonic_XML_Data::AMPACHEID_ARTIST && $id < Subsonic_XML_Data::AMPACHEID_ALBUM);
+        return ($artistid >= self::AMPACHEID_ARTIST && $artistid < self::AMPACHEID_ALBUM);
     }
 
-    public static function isAlbum($id)
+    public static function isAlbum($albumid)
     {
-        $id = self::cleanId($id);
+        $albumid = self::cleanId($albumid);
 
-        return ($id >= Subsonic_XML_Data::AMPACHEID_ALBUM && $id < Subsonic_XML_Data::AMPACHEID_SONG);
+        return ($albumid >= self::AMPACHEID_ALBUM && $albumid < self::AMPACHEID_SONG);
     }
 
-    public static function isSong($id)
+    public static function isSong($songid)
     {
-        $id = self::cleanId($id);
+        $songid = self::cleanId($id);
 
-        return ($id >= Subsonic_XML_Data::AMPACHEID_SONG && $id < Subsonic_XML_Data::AMPACHEID_SMARTPL);
+        return ($songid >= self::AMPACHEID_SONG && $songid < self::AMPACHEID_SMARTPL);
     }
 
-    public static function isSmartPlaylist($id)
+    public static function isSmartPlaylist($plistid)
     {
-        $id = self::cleanId($id);
+        $plistid = self::cleanId($plistid);
 
-        return ($id >= Subsonic_XML_Data::AMPACHEID_SMARTPL && $id < Subsonic_XML_Data::AMPACHEID_VIDEO);
+        return ($plistid >= self::AMPACHEID_SMARTPL && $plistid < self::AMPACHEID_VIDEO);
     }
 
-    public static function isVideo($id)
+    public static function isVideo($videoid)
     {
-        $id = self::cleanId($id);
+        $videoid = self::cleanId($videoid);
 
-        return ($id >= Subsonic_XML_Data::AMPACHEID_VIDEO && $id < Subsonic_XML_Data::AMPACHEID_PODCAST);
-    }
-    
-    public static function isPodcast($id)
-    {
-        $id = self::cleanId($id);
-
-        return ($id >= Subsonic_XML_Data::AMPACHEID_PODCAST && $id < Subsonic_XML_Data::AMPACHEID_PODCASTEP);
+        return ($videoid >= self::AMPACHEID_VIDEO && $videoid < self::AMPACHEID_PODCAST);
     }
     
-    public static function isPodcastEp($id)
+    public static function isPodcast($podcastid)
     {
-        $id = self::cleanId($id);
+        $podcastid = self::cleanId($podcastid);
 
-        return ($id >= Subsonic_XML_Data::AMPACHEID_PODCASTEP);
+        return ($podcastid >= self::AMPACHEID_PODCAST && $podcastid < self::AMPACHEID_PODCASTEP);
     }
     
-    public static function getAmpacheType($id)
+    public static function isPodcastEp($episodeid)
     {
-        if (self::isArtist($id)) {
+        $episodeid = self::cleanId($episodeid);
+
+        return ($episodeid >= self::AMPACHEID_PODCASTEP);
+    }
+    
+    public static function getAmpacheType($objectid)
+    {
+        if (self::isArtist($objectid)) {
             return "artist";
-        } elseif (self::isAlbum($id)) {
+        } elseif (self::isAlbum($objectid)) {
             return "album";
-        } elseif (self::isSong($id)) {
+        } elseif (self::isSong($objectid)) {
             return "song";
-        } elseif (self::isSmartPlaylist($id)) {
+        } elseif (self::isSmartPlaylist($objectid)) {
             return "search";
-        } elseif (self::isVideo($id)) {
+        } elseif (self::isVideo($objectid)) {
             return "video";
-        } elseif (self::isPodcast($id)) {
+        } elseif (self::isPodcast($objectid)) {
             return "podcast";
-        } elseif (self::isPodcastEp($id)) {
+        } elseif (self::isPodcastEp($objectid)) {
             return "podcast_episode";
         }
         
@@ -225,7 +225,7 @@ class Subsonic_XML_Data
     public static function createResponse($version = "")
     {
         if (empty($version)) {
-            $version = Subsonic_XML_Data::API_VERSION;
+            $version = self::API_VERSION;
         }
         $response = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><subsonic-response/>');
         $response->addAttribute('xmlns', 'http://subsonic.org/restapi');
@@ -239,7 +239,7 @@ class Subsonic_XML_Data
     public static function createError($code, $message = "", $version = "")
     {
         if (empty($version)) {
-            $version = Subsonic_XML_Data::API_VERSION;
+            $version = self::API_VERSION;
         }
         $response = self::createFailedResponse($version);
         self::setError($response, $code, $message);
@@ -261,15 +261,15 @@ class Subsonic_XML_Data
 
         if (empty($message)) {
             switch ($code) {
-                case Subsonic_XML_Data::SSERROR_GENERIC:            $message    = "A generic error."; break;
-                case Subsonic_XML_Data::SSERROR_MISSINGPARAM:       $message    = "Required parameter is missing."; break;
-                case Subsonic_XML_Data::SSERROR_APIVERSION_CLIENT:  $message    = "Incompatible Subsonic REST protocol version. Client must upgrade."; break;
-                case Subsonic_XML_Data::SSERROR_APIVERSION_SERVER:  $message    = "Incompatible Subsonic REST protocol version. Server must upgrade."; break;
-                case Subsonic_XML_Data::SSERROR_BADAUTH:            $message    = "Wrong username or password."; break;
-                case Subsonic_XML_Data::SSERROR_TOKENAUTHNOTSUPPORTED: $message = "Token authentication not supported."; break;
-                case Subsonic_XML_Data::SSERROR_UNAUTHORIZED:       $message    = "User is not authorized for the given operation."; break;
-                case Subsonic_XML_Data::SSERROR_TRIAL:              $message    = "The trial period for the Subsonic server is over. Please upgrade to Subsonic Premium. Visit subsonic.org for details."; break;
-                case Subsonic_XML_Data::SSERROR_DATA_NOTFOUND:      $message    = "The requested data was not found."; break;
+                case self::SSERROR_GENERIC:            $message    = "A generic error."; break;
+                case self::SSERROR_MISSINGPARAM:       $message    = "Required parameter is missing."; break;
+                case self::SSERROR_APIVERSION_CLIENT:  $message    = "Incompatible Subsonic REST protocol version. Client must upgrade."; break;
+                case self::SSERROR_APIVERSION_SERVER:  $message    = "Incompatible Subsonic REST protocol version. Server must upgrade."; break;
+                case self::SSERROR_BADAUTH:            $message    = "Wrong username or password."; break;
+                case self::SSERROR_TOKENAUTHNOTSUPPORTED: $message = "Token authentication not supported."; break;
+                case self::SSERROR_UNAUTHORIZED:       $message    = "User is not authorized for the given operation."; break;
+                case self::SSERROR_TRIAL:              $message    = "The trial period for the Subsonic server is over. Please upgrade to Subsonic Premium. Visit subsonic.org for details."; break;
+                case self::SSERROR_DATA_NOTFOUND:      $message    = "The requested data was not found."; break;
             }
         }
 
@@ -485,7 +485,7 @@ class Subsonic_XML_Data
         $albumData    = self::getAlbumData($songData['album']);
         $artistData   = self::getArtistData($songData['artist']);
         $catalogData  = self::getCatalogData($songData['catalog'], $songData['file']);
-        $catalog_path = rtrim($catalogData[0], "/");
+        //$catalog_path = rtrim($catalogData[0], "/");
         
         self::createSong($xml, $songData, $albumData,$artistData, $catalogData, $addAmpacheInfo, $elementName);
     }
@@ -504,12 +504,12 @@ class Subsonic_XML_Data
         $results = Dba::fetch_assoc($db_results);
         if (isset($results['id'])) {
             if (AmpConfig::get('show_played_times')) {
-                $results['object_cnt'] = Stats::get_object_count('song', $results['id'], $limit_threshold);
+                $results['object_cnt'] = Stats::get_object_count('song', $results['id'], null);
             }
         }
         $extension       = pathinfo($results['file'], PATHINFO_EXTENSION);
         $results['type'] = strtolower($extension);
-        $results['mime'] = Song::type_to_mime($type);
+        $results['mime'] = Song::type_to_mime($results['type']);
         
         return $results;
     }
@@ -624,10 +624,9 @@ class Subsonic_XML_Data
         $valid_types   = Song::get_stream_types_for_type($songData['type'], 'api');
         if ($transcode_cfg == 'always' || ($transcode_cfg != 'never' && !in_array('native', $valid_types))) {
             $transcode_settings = Song::get_transcode_settings_for_media(null, null, 'api', 'song');
-            if ($transcode_settings) {
-                $transcode_type = AmpConfig::get('encode_player_api_target', 'mp3');
-                $xsong->addAttribute('transcodedSuffix', $transcode_type);
-                $xsong->addAttribute('transcodedContentType', Song::type_to_mime($transcode_type));
+            $transcode_type = AmpConfig::get('encode_player_api_target', 'mp3');
+            $xsong->addAttribute('transcodedSuffix', $transcode_type);
+            $xsong->addAttribute('transcodedContentType', Song::type_to_mime($transcode_type));
             }
         }
 
@@ -708,8 +707,8 @@ class Subsonic_XML_Data
         foreach ($disc_ids as $id) {
             $disc     = new Album($id);
             $allsongs = $disc->get_songs();
-            foreach ($allsongs as $id) {
-                self::addSong($xdir, $id, false, "child");
+            foreach ($allsongs as $songid) {
+                self::addSong($xdir, $songid, false, "child");
             }
         }
     }
@@ -761,7 +760,7 @@ class Subsonic_XML_Data
         $xvideo->addAttribute('contentType', $video->mime);
         // Create a clean fake path instead of song real file path to have better offline mode storage on Subsonic clients
         $path = basename($video->file);
-        $xvideo->addAttribute('path', $video);
+        $xvideo->addAttribute('path', $path);
         
         self::setIfStarred($xvideo, 'video', $video->id);
 

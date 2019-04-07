@@ -160,7 +160,7 @@ class Stats
      * Get count for an object
      * @param string $object_type
      */
-    public static function get_object_count($object_type, $object_id, $threshold = '', $count_type = 'stream')
+    public static function get_object_count($object_type, $object_id, $threshold = null, $count_type = 'stream')
     {
         $date = '';
         if ($threshold) {

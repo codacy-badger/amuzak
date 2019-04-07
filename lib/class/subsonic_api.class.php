@@ -181,22 +181,22 @@ class Subsonic_Api
      */
     public static function apiOutput($input, $xml, $alwaysArray=array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'))
     {
-        $f        = $input['f'];
+        $type        = $input['f'];
         $callback = $input['callback'];
-        self::apiOutput2(strtolower($f), $xml, $callback, $alwaysArray);
+        self::apiOutput2(strtolower($type), $xml, $callback, $alwaysArray);
     }
 
     /**
-     * @param string $f
+     * @param string $file
      * @param SimpleXMLElement $xml
      */
-    public static function apiOutput2($f, $xml, $callback='', $alwaysArray=array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'))
+    public static function apiOutput2($outputtype, $xml, $callback='', $alwaysArray=array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'))
     {
         $conf = array('alwaysArray' => $alwaysArray);
-        if ($f == "json") {
+        if ($outputtype == "json") {
             $output = json_encode(self::xml2json($xml, $conf), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
         } else {
-            if ($f == "jsonp") {
+            if ($outputtype == "jsonp") {
                 $output = $callback . '(' . json_encode(self::xml2json($xml, $conf), JSON_PRETTY_PRINT) . ')';
             } else {
                 $xmlstr = $xml->asXml();
