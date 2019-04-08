@@ -153,7 +153,7 @@ class Subsonic_XML_Data
 
     public static function isSong($songid)
     {
-        $songid = self::cleanId($id);
+        $songid = self::cleanId($songid);
 
         return ($songid >= self::AMPACHEID_SONG && $songid < self::AMPACHEID_SMARTPL);
     }
@@ -487,7 +487,7 @@ class Subsonic_XML_Data
         $catalogData  = self::getCatalogData($songData['catalog'], $songData['file']);
         //$catalog_path = rtrim($catalogData[0], "/");
         
-        self::createSong($xml, $songData, $albumData,$artistData, $catalogData, $addAmpacheInfo, $elementName);
+        self::createSong($xml, $songData, $albumData, $artistData, $catalogData, $addAmpacheInfo, $elementName);
     }
     
     public static function getSongData($songId)
@@ -762,18 +762,6 @@ class Subsonic_XML_Data
         $xvideo->addAttribute('path', $path);
         
         self::setIfStarred($xvideo, 'video', $video->id);
-
-        // Set transcoding information if required
-        $transcode_cfg = AmpConfig::get('transcode');
-        $valid_types   = Song::get_stream_types_for_type($video->type, 'api');
-        if ($transcode_cfg == 'always' || ($transcode_cfg != 'never' && !in_array('native', $valid_types))) {
-            $transcode_settings = $video->get_transcode_settings(null, 'api');
-            if ($transcode_settings) {
-                $transcode_type = $transcode_settings['format'];
-                $xvideo->addAttribute('transcodedSuffix', $transcode_type);
-                $xvideo->addAttribute('transcodedContentType', Video::type_to_mime($transcode_type));
-            }
-        }
     }
 
     /**
@@ -867,7 +855,7 @@ class Subsonic_XML_Data
     {
         $xplaynow = $xml->addChild('nowPlaying');
         foreach ($data as $d) {
-            $track = self::createSong($xplaynow, $d['media'], false, "entry");
+            $track = self::addSong($xplaynow, $d['media'], false, "entry");
             if ($track !== null) {
                 $track->addAttribute('username', $d['client']->username);
                 $track->addAttribute('minutesAgo', intval(time() - ($d['expire'] - AmpConfig::get('stream_length')) / 1000));
@@ -1057,7 +1045,7 @@ class Subsonic_XML_Data
         foreach ($tracks as $track) {
             if ($track['oid']) {
                 $song = new Song($track['oid']);
-                self::createSong($xjbox, $song, false, 'entry');
+                self::addSong($xjbox, $song, false, 'entry');
             }
         }
     }
