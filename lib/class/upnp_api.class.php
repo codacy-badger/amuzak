@@ -33,13 +33,15 @@
  */
 class Upnp_Api
 {
-    # UPnP classes:
-    # object.item.audioItem
-    # object.item.imageItem
-    # object.item.videoItem
-    # object.item.playlistItem
-    # object.item.textItem
-    # object.container
+    /**
+    * UPnP classes:
+    * object.item.audioItem
+    * object.item.imageItem
+    * object.item.videoItem
+    * object.item.playlistItem
+    * object.item.textItem
+    * object.container
+     */
 
     /**
      * constructor
@@ -125,46 +127,46 @@ class Upnp_Api
                         $reader->read();
                         if ($reader->nodeType == XMLReader::TEXT) {
                             $retArr['objectid'] = $reader->value;
-                        } # end if
+                        } // end if
                         break;
                     case 'BrowseFlag':
                         $reader->read();
                         if ($reader->nodeType == XMLReader::TEXT) {
                             $retArr['browseflag'] = $reader->value;
-                        } # end if
+                        } // end if
                         break;
                     case 'Filter':
                         $reader->read();
                         if ($reader->nodeType == XMLReader::TEXT) {
                             $retArr['filter'] = $reader->value;
-                        } # end if
+                        } // end if
                         break;
                     case 'StartingIndex':
                         $reader->read();
                         if ($reader->nodeType == XMLReader::TEXT) {
                             $retArr['startingindex'] = $reader->value;
-                        } # end if
+                        } // end if
                         break;
                     case 'RequestedCount':
                         $reader->read();
                         if ($reader->nodeType == XMLReader::TEXT) {
                             $retArr['requestedcount'] = $reader->value;
-                        } # end if
+                        } // end if
                         break;
                     case 'SearchCriteria':
                         $reader->read();
                         if ($reader->nodeType == XMLReader::TEXT) {
                             $retArr['searchcriteria'] = $reader->value;
-                        } # end if
+                        } // end if
                         break;
                     case 'SortCriteria':
                         $reader->read();
                         if ($reader->nodeType == XMLReader::TEXT) {
                             $retArr['sortcriteria'] = $reader->value;
-                        } # end if
+                        } // end if
                         break;
-                } # end switch
-            } # end if
+                } // end switch
+            } // end if
         } #end while
         return $retArr;
     } #end function
@@ -175,23 +177,23 @@ class Upnp_Api
         $xmlDoc               = new DOMDocument('1.0', 'utf-8');
         $xmlDoc->formatOutput = true;
 
-        # Create root element and add namespaces:
+        // Create root element and add namespaces:
         $ndDIDL = $xmlDoc->createElementNS('urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/', 'DIDL-Lite');
         $ndDIDL->setAttribute('xmlns:dc', 'http://purl.org/dc/elements/1.1/');
         $ndDIDL->setAttribute('xmlns:upnp', 'urn:schemas-upnp-org:metadata-1-0/upnp/');
         $xmlDoc->appendChild($ndDIDL);
 
-        # Return empty DIDL if no items present:
+        // Return empty DIDL if no items present:
         if ((!isset($prmItems)) || (!is_array($prmItems))) {
             return $xmlDoc;
         }
 
-        # sometimes here comes only one single item, not an array. Convert it to array. (TODO - UGLY)
+        // sometimes here comes only one single item, not an array. Convert it to array. (TODO - UGLY)
         if ((count($prmItems) > 0) && (!is_array($prmItems[0]))) {
             $prmItems = array($prmItems);
         }
 
-        # Add each item in $prmItems array to $ndDIDL:
+        // Add each item in $prmItems array to $ndDIDL:
         foreach ($prmItems as $item) {
             if (!is_array($item)) {
                 debug_event('upnp_class', 'item is not array', 2);
@@ -209,9 +211,9 @@ class Upnp_Api
             $ndRes_text = $xmlDoc->createTextNode($item['res']);
             $ndRes->appendChild($ndRes_text);
 
-            # Add each element / attribute in $item array to item node:
+            // Add each element / attribute in $item array to item node:
             foreach ($item as $key => $value) {
-                # Handle attributes. Better solution?
+                // Handle attributes. Better solution?
                 switch ($key) {
                     case 'id':
                         $ndItem->setAttribute('id', $value);
@@ -262,7 +264,7 @@ class Upnp_Api
                     default:
                         $ndTag = $xmlDoc->createElement($key);
                         $ndItem->appendChild($ndTag);
-                        # check if string is already utf-8 encoded
+                        // check if string is already utf-8 encoded
                         $ndTag_text = $xmlDoc->createTextNode((mb_detect_encoding($value, 'auto') == 'UTF-8')?$value:utf8_encode($value));
                         $ndTag->appendChild($ndTag_text);
                 }
@@ -279,8 +281,8 @@ class Upnp_Api
 
     public static function createSOAPEnvelope($prmDIDL, $prmNumRet, $prmTotMatches, $prmResponseType = 'u:BrowseResponse', $prmUpdateID = '0')
     {
-        # $prmDIDL is DIDL XML string
-        # XML-Layout:
+        // $prmDIDL is DIDL XML string
+        // XML-Layout:
         #
         #		-s:Envelope
         #				-s:Body
@@ -305,8 +307,8 @@ class Upnp_Api
         $ndBrowseResp->appendChild($ndNumRet);
         $ndTotMatches = $doc->createElement('TotalMatches', $prmTotMatches);
         $ndBrowseResp->appendChild($ndTotMatches);
-        $ndUpdateID = $doc->createElement('UpdateID', $prmUpdateID); # seems to be ignored by the WDTVL
-        #$ndUpdateID = $doc->createElement('UpdateID', (string) mt_rand(); # seems to be ignored by the WDTVL
+        $ndUpdateID = $doc->createElement('UpdateID', $prmUpdateID); // seems to be ignored by the WDTVL
+        // $ndUpdateID = $doc->createElement('UpdateID', (string) mt_rand(); // seems to be ignored by the WDTVL
         $ndBrowseResp->appendChild($ndUpdateID);
 
         return $doc;
@@ -730,7 +732,7 @@ class Upnp_Api
     /**
      * @param string $prmPath
      */
-    public static function _videoMetadata($prmPath, $prmQuery = '')
+    public static function _videoMetadata($prmPath)
     {
         $root    = 'amp://video';
         $pathreq = explode('/', $prmPath);
@@ -738,131 +740,14 @@ class Upnp_Api
             array_shift($pathreq);
         }
 
-        $meta = null;
-        switch ($pathreq[0]) {
-            case 'tvshows':
-                switch (count($pathreq)) {
-                    case 1:
-                        $counts = count(Catalog::get_tvshows());
-                        $meta   = array(
-                            'id' => $root . '/tvshows',
-                            'parentID' => $root,
-                            'restricted' => '1',
-                            'childCount' => $counts,
-                            'dc:title' => T_('TV Shows'),
-                            'upnp:class' => 'object.container',
-                        );
-                    break;
-
-                    case 2:
-                        $tvshow = new TVShow($pathreq[1]);
-                        if ($tvshow->id) {
-                            $tvshow->format();
-                            $meta = self::_itemTVShow($tvshow, $root . '/tvshows');
-                        }
-                    break;
-
-                    case 3:
-                        $season = new TVShow_Season($pathreq[2]);
-                        if ($season->id) {
-                            $season->format();
-                            $meta = self::_itemTVShowSeason($season, $root . '/tvshows/' . $pathreq[1]);
-                        }
-                    break;
-
-                    case 4:
-                        $video = new TVShow_Episode($pathreq[3]);
-                        if ($video->id) {
-                            $video->format();
-                            $meta = self::_itemVideo($video, $root . '/tvshows/' . $pathreq[1] . '/' . $pathreq[2]);
-                        }
-                    break;
-                }
-            break;
-
-            case 'clips':
-                switch (count($pathreq)) {
-                    case 1:
-                        $counts = Catalog::get_videos_count(null, 'clip');
-                        $meta   = array(
-                            'id' => $root . '/clips',
-                            'parentID' => $root,
-                            'restricted' => '1',
-                            'childCount' => $counts,
-                            'dc:title' => T_('Clips'),
-                            'upnp:class' => 'object.container',
-                        );
-                    break;
-
-                    case 2:
-                        $video = new Clip($pathreq[1]);
-                        if ($video->id) {
-                            $video->format();
-                            $meta = self::_itemVideo($video, $root . '/clips');
-                        }
-                    break;
-                }
-            break;
-
-            case 'movies':
-                switch (count($pathreq)) {
-                    case 1:
-                        $counts = Catalog::get_videos_count(null, 'movie');
-                        $meta   = array(
-                            'id' => $root . '/movies',
-                            'parentID' => $root,
-                            'restricted' => '1',
-                            'childCount' => $counts,
-                            'dc:title' => T_('Movies'),
-                            'upnp:class' => 'object.container',
-                        );
-                    break;
-
-                    case 2:
-                        $video = new Movie($pathreq[1]);
-                        if ($video->id) {
-                            $video->format();
-                            $meta = self::_itemVideo($video, $root . '/movies');
-                        }
-                    break;
-                }
-            break;
-
-            case 'personal_videos':
-                switch (count($pathreq)) {
-                    case 1:
-                        $counts = Catalog::get_videos_count(null, 'personal_video');
-                        $meta   = array(
-                            'id' => $root . '/personal_videos',
-                            'parentID' => $root,
-                            'restricted' => '1',
-                            'childCount' => $counts,
-                            'dc:title' => T_('Personal Videos'),
-                            'upnp:class' => 'object.container',
-                        );
-                    break;
-
-                    case 2:
-                        $video = new Personal_Video($pathreq[1]);
-                        if ($video->id) {
-                            $video->format();
-                            $meta = self::_itemVideo($video, $root . '/personal_videos');
-                        }
-                    break;
-                }
-            break;
-
-            default:
-                $meta = array(
-                    'id' => $root,
-                    'parentID' => '0',
-                    'restricted' => '1',
-                    'childCount' => '4',
-                    'dc:title' => T_('Video'),
-                    'upnp:class' => 'object.container',
-                );
-            break;
-        }
+        $meta = array(
+            'id' => $root,
+            'parentID' => '0',
+            'restricted' => '1',
+            'childCount' => '4',
+            'dc:title' => T_('Video'),
+            'upnp:class' => 'object.container',
+        );
 
         return $meta;
     }
@@ -878,91 +763,6 @@ class Upnp_Api
         $pathreq = explode('/', $prmPath);
         if ($pathreq[0] == '' && count($pathreq) > 0) {
             array_shift($pathreq);
-        }
-
-        switch ($pathreq[0]) {
-            case 'tvshows':
-                switch (count($pathreq)) {
-                    case 1: // Get tvshow list
-                        $tvshows                  = Catalog::get_tvshows();
-                        list($maxCount, $tvshows) = self::_slice($tvshows, $start, $count);
-                        foreach ($tvshows as $tvshow) {
-                            $tvshow->format();
-                            $mediaItems[] = self::_itemTVShow($tvshow, $parent);
-                        }
-                    break;
-                    case 2: // Get season list
-                        $tvshow = new TVShow($pathreq[1]);
-                        if ($tvshow->id) {
-                            $season_ids                  = $tvshow->get_seasons();
-                            list($maxCount, $season_ids) = self::_slice($season_ids, $start, $count);
-                            foreach ($season_ids as $season_id) {
-                                $season = new TVShow_Season($season_id);
-                                $season->format();
-                                $mediaItems[] = self::_itemTVShowSeason($season, $parent);
-                            }
-                        }
-                    break;
-                    case 3: // Get episode list
-                        $season = new TVShow_Season($pathreq[2]);
-                        if ($season->id) {
-                            $episode_ids                  = $season->get_episodes();
-                            list($maxCount, $episode_ids) = self::_slice($episode_ids, $start, $count);
-                            foreach ($episode_ids as $episode_id) {
-                                $video = new Video($episode_id);
-                                $video->format();
-                                $mediaItems[] = self::_itemVideo($video, $parent);
-                            }
-                        }
-                    break;
-                }
-            break;
-
-            case 'clips':
-                switch (count($pathreq)) {
-                    case 1: // Get clips list
-                        $videos                  = Catalog::get_videos(null, 'clip');
-                        list($maxCount, $videos) = self::_slice($videos, $start, $count);
-                        foreach ($videos as $video) {
-                            $video->format();
-                            $mediaItems[] = self::_itemVideo($video, $parent);
-                        }
-                    break;
-                }
-            break;
-
-            case 'movies':
-                switch (count($pathreq)) {
-                    case 1: // Get clips list
-                        $videos                  = Catalog::get_videos(null, 'movie');
-                        list($maxCount, $videos) = self::_slice($videos, $start, $count);
-                        foreach ($videos as $video) {
-                            $video->format();
-                            $mediaItems[] = self::_itemVideo($video, $parent);
-                        }
-                    break;
-                }
-            break;
-
-            case 'personal_videos':
-                switch (count($pathreq)) {
-                    case 1: // Get clips list
-                        $videos                  = Catalog::get_videos(null, 'personal_video');
-                        list($maxCount, $videos) = self::_slice($videos, $start, $count);
-                        foreach ($videos as $video) {
-                            $video->format();
-                            $mediaItems[] = self::_itemVideo($video, $parent);
-                        }
-                    break;
-                }
-            break;
-
-            default:
-                $mediaItems[] = self::_videoMetadata('clips');
-                $mediaItems[] = self::_videoMetadata('tvshows');
-                $mediaItems[] = self::_videoMetadata('movies');
-                $mediaItems[] = self::_videoMetadata('personal_videos');
-            break;
         }
 
         if ($maxCount == 0) {

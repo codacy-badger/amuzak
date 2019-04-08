@@ -300,7 +300,7 @@ class Api
      */
     public static function ping($input)
     {
-        $xmldata = array('server' => AmpConfig::get('version'),'version' => Api::$version,'compatible' => '350001');
+        $xmldata = array('server' => AmpConfig::get('version'),'version' => self::$version,'compatible' => '350001');
 
         // Check and see if we should extend the api sessions (done if valid sess is passed)
         if (Session::exists('api', $input['auth'])) {
@@ -327,9 +327,9 @@ class Api
         self::$browse->set_sort('name', 'ASC');
 
         $method = $input['exact'] ? 'exact_match' : 'alpha_match';
-        Api::set_filter($method, $input['filter']);
-        Api::set_filter('add', $input['add']);
-        Api::set_filter('update', $input['update']);
+        self::set_filter($method, $input['filter']);
+        self::set_filter('add', $input['add']);
+        self::set_filter('update', $input['update']);
 
         // Set the offset
         XML_Data::set_offset($input['offset']);
@@ -398,9 +398,9 @@ class Api
         self::$browse->set_type('album');
         self::$browse->set_sort('name', 'ASC');
         $method = $input['exact'] ? 'exact_match' : 'alpha_match';
-        Api::set_filter($method, $input['filter']);
-        Api::set_filter('add', $input['add']);
-        Api::set_filter('update', $input['update']);
+        self::set_filter($method, $input['filter']);
+        self::set_filter('add', $input['add']);
+        self::set_filter('update', $input['update']);
 
         $albums = self::$browse->get_objects();
 
@@ -452,7 +452,7 @@ class Api
         self::$browse->set_sort('name', 'ASC');
 
         $method = $input['exact'] ? 'exact_match' : 'alpha_match';
-        Api::set_filter($method, $input['filter']);
+        self::set_filter($method, $input['filter']);
         $tags = self::$browse->get_objects();
 
         // Set the offset
@@ -537,11 +537,11 @@ class Api
         self::$browse->set_sort('title', 'ASC');
 
         $method = $input['exact'] ? 'exact_match' : 'alpha_match';
-        Api::set_filter($method, $input['filter']);
-        Api::set_filter('add', $input['add']);
-        Api::set_filter('update', $input['update']);
+        self::set_filter($method, $input['filter']);
+        self::set_filter('add', $input['add']);
+        self::set_filter('update', $input['update']);
         // Filter out disabled songs
-        Api::set_filter('enabled', '1');
+        self::set_filter('enabled', '1');
 
         $songs = self::$browse->get_objects();
 
@@ -592,7 +592,7 @@ class Api
         self::$browse->set_sort('name', 'ASC');
 
         $method = $input['exact'] ? 'exact_match' : 'alpha_match';
-        Api::set_filter($method, $input['filter']);
+        self::set_filter($method, $input['filter']);
         self::$browse->set_filter('playlist_type', '1');
 
         $playlist_ids = self::$browse->get_objects();
@@ -800,7 +800,7 @@ class Api
         self::$browse->set_sort('title', 'ASC');
 
         $method = $input['exact'] ? 'exact_match' : 'alpha_match';
-        Api::set_filter($method, $input['filter']);
+        self::set_filter($method, $input['filter']);
 
         $video_ids = self::$browse->get_objects();
 

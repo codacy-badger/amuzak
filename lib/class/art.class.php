@@ -81,7 +81,7 @@ class Art extends database_object
      */
     public function __construct($uid, $type = 'album', $kind = 'default')
     {
-        if (!Art::is_valid_type($type)) {
+        if (!self::is_valid_type($type)) {
             return false;
         }
         $this->type = $type;
@@ -329,7 +329,7 @@ class Art extends database_object
     public function insert_url($url)
     {
         debug_event('art', 'Insert art from url ' . $url, '5');
-        $image = Art::get_from_source(array('url' => $url), $this->type);
+        $image = self::get_from_source(array('url' => $url), $this->type);
         $rurl  = pathinfo($url);
         $mime  = "image/" . $rurl['extension'];
         $this->insert($image, $mime);
@@ -342,7 +342,7 @@ class Art extends database_object
     public function insert_from_file($filepath)
     {
         debug_event('art', 'Insert art from file on disk ' . $filepath, '5');
-        $image = Art::get_from_source(array('file' => $filepath), $this->type);
+        $image = self::get_from_source(array('file' => $filepath), $this->type);
         $rfile = pathinfo($filepath);
         $mime  = "image/" . $rfile['extension'];
         $this->insert($image, $mime);
@@ -1826,7 +1826,7 @@ class Art extends database_object
             $imgurl .= '&kind=' . $kind;
         }
         // This to keep browser cache feature but force a refresh in case image just changed
-        if (Art::has_db($object_id, $object_type)) {
+        if (self::has_db($object_id, $object_type)) {
             $art = new Art($object_id, $object_type);
             if ($art->get_db()) {
                 $imgurl .= '&fooid=' . $art->id;

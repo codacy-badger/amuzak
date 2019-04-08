@@ -271,7 +271,7 @@ class Podcast_Episode extends database_object implements media, library_item
         }
 
         /* If it hasn't been played, set it! */
-        Podcast_Episode::update_played(true, $this->id);
+        self::update_played(true, $this->id);
 
         return true;
     } // set_played

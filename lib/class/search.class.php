@@ -439,10 +439,10 @@ class Search extends playlist_object
             );
 
             $playlists = array();
-            foreach (Search::get_searches() as $playlistid) {
+            foreach (self::get_searches() as $playlistid) {
                 // Slightly different from the above so we don't instigate
                 // a vicious loop.
-                $playlists[$playlistid] = Search::get_name_byid($playlistid);
+                $playlists[$playlistid] = self::get_name_byid($playlistid);
             }
             $this->types[] = array(
                 'name' => 'smartplaylist',
@@ -778,7 +778,7 @@ class Search extends playlist_object
     {
         $limit  = intval($data['limit']);
         $offset = intval($data['offset']);
-        $data   = Search::clean_request($data);
+        $data   = self::clean_request($data);
 
         $search = new Search(null, $data['type']);
         $search->parse_rules($data);

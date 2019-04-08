@@ -417,12 +417,12 @@ class Daap_Api
                 
                 self::check_session('daap.playlistsongs');
                 
-                if ($id == Daap_Api::BASE_LIBRARY) {
+                if ($id == self::BASE_LIBRARY) {
                     $o = self::catalog_songs();
                     $o = self::tlv('daap.playlistsongs', $o);
                 } else {
-                    if ($id > Daap_Api::AMPACHEID_SMARTPL) {
-                        $id -= Daap_Api::AMPACHEID_SMARTPL;
+                    if ($id > self::AMPACHEID_SMARTPL) {
+                        $id -= self::AMPACHEID_SMARTPL;
                         $playlist = new Search($id, 'song');
                     } else {
                         $playlist = new Playlist($id);
@@ -544,8 +544,8 @@ class Daap_Api
     
     public static function base_library()
     {
-        $p = self::tlv('dmap.itemid', Daap_Api::BASE_LIBRARY);
-        $p .= self::tlv('dmap.persistentid', Daap_Api::BASE_LIBRARY);
+        $p = self::tlv('dmap.itemid', self::BASE_LIBRARY);
+        $p .= self::tlv('dmap.persistentid', self::BASE_LIBRARY);
         $p .= self::tlv('dmap.itemname', 'Music');
         $p .= self::tlv('daap.baseplaylist', 1);
         $stats = Catalog::count_medias();
@@ -560,7 +560,7 @@ class Daap_Api
         if (strtolower(get_class($playlist)) == 'search') {
             $isSmart = true;
         }
-        $id = (($isSmart) ? Daap_Api::AMPACHEID_SMARTPL : 0) + $playlist->id;
+        $id = (($isSmart) ? self::AMPACHEID_SMARTPL : 0) + $playlist->id;
         $p  = self::tlv('dmap.itemid', $id);
         $p .= self::tlv('dmap.persistentid', $id);
         $p .= self::tlv('dmap.itemname', $playlist->f_name);

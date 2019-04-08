@@ -533,7 +533,7 @@ class Session
                 $sql        = "SELECT * FROM `session_remember` WHERE `username` = ? AND `token` = ? AND `expire` >= ?";
                 $db_results = Dba::read($sql, array($username, $token, time()));
                 if (Dba::num_rows($db_results) > 0) {
-                    Session::create_cookie();
+                    self::create_cookie();
                     self::create(array(
                         'type' => 'mysql',
                         'username' => $username

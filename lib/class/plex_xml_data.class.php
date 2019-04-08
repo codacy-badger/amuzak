@@ -62,7 +62,7 @@ class Plex_XML_Data
      */
     public static function getArtistId($id)
     {
-        return $id + Plex_XML_Data::AMPACHEID_ARTIST;
+        return $id + self::AMPACHEID_ARTIST;
     }
 
     /**
@@ -70,7 +70,7 @@ class Plex_XML_Data
      */
     public static function getAlbumId($id)
     {
-        return $id + Plex_XML_Data::AMPACHEID_ALBUM;
+        return $id + self::AMPACHEID_ALBUM;
     }
 
     /**
@@ -78,7 +78,7 @@ class Plex_XML_Data
      */
     public static function getTrackId($id)
     {
-        return $id + Plex_XML_Data::AMPACHEID_TRACK;
+        return $id + self::AMPACHEID_TRACK;
     }
 
     /**
@@ -86,37 +86,37 @@ class Plex_XML_Data
      */
     public static function getSongId($id)
     {
-        return $id + Plex_XML_Data::AMPACHEID_SONG;
+        return $id + self::AMPACHEID_SONG;
     }
 
     public static function getPartId($id)
     {
-        return $id + Plex_XML_Data::AMPACHEID_PART;
+        return $id + self::AMPACHEID_PART;
     }
 
     public static function getTVShowId($id)
     {
-        return $id + Plex_XML_Data::AMPACHEID_TVSHOW;
+        return $id + self::AMPACHEID_TVSHOW;
     }
 
     public static function getTVShowSeasonId($id)
     {
-        return $id + Plex_XML_Data::AMPACHEID_TVSHOW_SEASON;
+        return $id + self::AMPACHEID_TVSHOW_SEASON;
     }
 
     public static function getVideoId($id)
     {
-        return $id + Plex_XML_Data::AMPACHEID_VIDEO;
+        return $id + self::AMPACHEID_VIDEO;
     }
 
     public static function getPlaylistId($id)
     {
-        return $id + Plex_XML_Data::AMPACHEID_PLAYLIST;
+        return $id + self::AMPACHEID_PLAYLIST;
     }
 
     public static function getAmpacheId($id)
     {
-        return ($id % Plex_XML_Data::AMPACHEID_ARTIST);
+        return ($id % self::AMPACHEID_ARTIST);
     }
 
     public static function getAmpacheIds($ids)
@@ -133,66 +133,66 @@ class Plex_XML_Data
     {
         $id = self::clearItemId($id);
 
-        return ($id >= Plex_XML_Data::AMPACHEID_ARTIST && $id < Plex_XML_Data::AMPACHEID_ALBUM);
+        return ($id >= self::AMPACHEID_ARTIST && $id < self::AMPACHEID_ALBUM);
     }
 
     public static function isAlbum($id)
     {
         $id = self::clearItemId($id);
 
-        return ($id >= Plex_XML_Data::AMPACHEID_ALBUM && $id < Plex_XML_Data::AMPACHEID_TRACK);
+        return ($id >= self::AMPACHEID_ALBUM && $id < self::AMPACHEID_TRACK);
     }
 
     public static function isTrack($id)
     {
         $id = self::clearItemId($id);
 
-        return ($id >= Plex_XML_Data::AMPACHEID_TRACK && $id < Plex_XML_Data::AMPACHEID_SONG);
+        return ($id >= self::AMPACHEID_TRACK && $id < self::AMPACHEID_SONG);
     }
 
     public static function isSong($id)
     {
         $id = self::clearItemId($id);
 
-        return ($id >= Plex_XML_Data::AMPACHEID_SONG && $id < Plex_XML_Data::AMPACHEID_TVSHOW);
+        return ($id >= self::AMPACHEID_SONG && $id < self::AMPACHEID_TVSHOW);
     }
 
     public static function isTVShow($id)
     {
         $id = self::clearItemId($id);
 
-        return ($id >= Plex_XML_Data::AMPACHEID_TVSHOW && $id < Plex_XML_Data::AMPACHEID_TVSHOW_SEASON);
+        return ($id >= self::AMPACHEID_TVSHOW && $id < self::AMPACHEID_TVSHOW_SEASON);
     }
 
     public static function isTVShowSeason($id)
     {
         $id = self::clearItemId($id);
 
-        return ($id >= Plex_XML_Data::AMPACHEID_TVSHOW_SEASON && $id < Plex_XML_Data::AMPACHEID_VIDEO);
+        return ($id >= self::AMPACHEID_TVSHOW_SEASON && $id < self::AMPACHEID_VIDEO);
     }
 
     public static function isVideo($id)
     {
         $id = self::clearItemId($id);
 
-        return ($id >= Plex_XML_Data::AMPACHEID_VIDEO && $id < Plex_XML_Data::AMPACHEID_PLAYLIST);
+        return ($id >= self::AMPACHEID_VIDEO && $id < self::AMPACHEID_PLAYLIST);
     }
 
     public static function isPlaylist($id)
     {
         $id = self::clearItemId($id);
 
-        return ($id >= Plex_XML_Data::AMPACHEID_PLAYLIST);
+        return ($id >= self::AMPACHEID_PLAYLIST);
     }
 
     public static function clearItemId($id)
     {
-        return ($id % Plex_XML_Data::AMPACHEID_PART);
+        return ($id % self::AMPACHEID_PART);
     }
 
     public static function isPart($id)
     {
-        return ($id >= Plex_XML_Data::AMPACHEID_PART);
+        return ($id >= self::AMPACHEID_PART);
     }
 
     public static function getPlexVersion()
@@ -1547,11 +1547,11 @@ class Plex_XML_Data
         $agent->addAttribute('hasPrefs', '0');
         $agent->addAttribute('hasAttribution', '0');
         $agent->addAttribute('identifier', 'com.plexapp.agents.none');
-        self::addNoneAgentMediaType($agent, 'Personal Media Artists', Plex_XML_Data::PLEX_ARTIST);
-        self::addNoneAgentMediaType($agent, 'Personal Media', Plex_XML_Data::PLEX_MOVIE);
-        self::addNoneAgentMediaType($agent, 'Personal Media Shows', Plex_XML_Data::PLEX_TVSHOW);
+        self::addNoneAgentMediaType($agent, 'Personal Media Artists', self::PLEX_ARTIST);
+        self::addNoneAgentMediaType($agent, 'Personal Media', self::PLEX_MOVIE);
+        self::addNoneAgentMediaType($agent, 'Personal Media Shows', self::PLEX_TVSHOW);
         self::addNoneAgentMediaType($agent, 'Photos', '13');
-        self::addNoneAgentMediaType($agent, 'Personal Media Albums', Plex_XML_Data::PLEX_ALBUM);
+        self::addNoneAgentMediaType($agent, 'Personal Media Albums', self::PLEX_ALBUM);
     }
 
     /**
@@ -1633,17 +1633,17 @@ class Plex_XML_Data
     public static function getAmpacheType($plex_type)
     {
         switch ($plex_type) {
-            case Plex_XML_Data::PLEX_MOVIE:
+            case self::PLEX_MOVIE:
                 return 'movie';
-            case Plex_XML_Data::PLEX_TVSHOW:
+            case self::PLEX_TVSHOW:
                 return 'tvshow';
-            case Plex_XML_Data::PLEX_SEASON:
+            case self::PLEX_SEASON:
                 return 'season';
-            case Plex_XML_Data::PLEX_EPISODE:
+            case self::PLEX_EPISODE:
                 return 'episode';
-            case Plex_XML_Data::PLEX_ARTIST:
+            case self::PLEX_ARTIST:
                 return 'artist';
-            case Plex_XML_Data::PLEX_ALBUM:
+            case self::PLEX_ALBUM:
                 return 'album';
         }
     }
@@ -1701,19 +1701,19 @@ class Plex_XML_Data
         if ($primaryAgent == 'com.plexapp.agents.none') {
             $type = '';
             switch ($plex_type) {
-                case Plex_XML_Data::PLEX_MOVIE:
+                case self::PLEX_MOVIE:
                     $type = 'Movies';
                 break;
-                case Plex_XML_Data::PLEX_TVSHOW:
+                case self::PLEX_TVSHOW:
                     $type = 'TV';
                 break;
-                case Plex_XML_Data::PLEX_PHOTO:
+                case self::PLEX_PHOTO:
                     $type = 'Photos';
                 break;
-                case Plex_XML_Data::PLEX_ARTIST:
+                case self::PLEX_ARTIST:
                     $type = 'Artists';
                 break;
-                case Plex_XML_Data::PLEX_ALBUM:
+                case self::PLEX_ALBUM:
                     $type = 'Albums';
                 break;
             }

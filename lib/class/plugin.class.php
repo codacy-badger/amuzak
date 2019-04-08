@@ -129,7 +129,7 @@ class Plugin
             
             if ($type != '') {
                 $plugin = new Plugin($cfile);
-                if (! Plugin::is_installed($plugin->_plugin->name)) {
+                if (! self::is_installed($plugin->_plugin->name)) {
                     debug_event('Plugins', 'Plugin ' . $plugin->_plugin->name . ' is not installed, skipping', 6);
                     continue;
                 }

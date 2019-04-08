@@ -902,9 +902,9 @@ class Album extends database_object implements library_item
             Art::migrate('album', $this->id, $album_id);
             self::gc();
         } else {
-            Album::update_year($year, $album_id);
-            Album::update_mbid_group($mbid_group, $album_id);
-            Album::update_release_type($release_type, $album_id);
+            self::update_year($year, $album_id);
+            self::update_mbid_group($mbid_group, $album_id);
+            self::update_release_type($release_type, $album_id);
         }
         $this->year         = $year;
         $this->mbid_group   = $mbid_group;

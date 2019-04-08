@@ -1041,7 +1041,7 @@ class vainfo
         $file    = pathinfo($filepath, PATHINFO_FILENAME);
    
         if (in_array('music', $this->gather_types) || in_array('clip', $this->gather_types)) {
-            $patres  = vainfo::parse_pattern($filepath, $this->_dir_pattern, $this->_file_pattern);
+            $patres  = self::parse_pattern($filepath, $this->_dir_pattern, $this->_file_pattern);
             $results = array_merge($results, $patres);
             if ($this->islocal) {
                 $results['size'] = Core::get_filesize(Core::conv_lc_file($origin));
