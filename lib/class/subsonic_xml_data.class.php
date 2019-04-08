@@ -139,43 +139,36 @@ class Subsonic_XML_Data
 
     public static function isArtist($artistid)
     {
-
         return (self::cleanId($artistid) >= self::AMPACHEID_ARTIST && $artistid < self::AMPACHEID_ALBUM);
     }
 
     public static function isAlbum($albumid)
     {
-
         return (self::cleanId($albumid) >= self::AMPACHEID_ALBUM && $albumid < self::AMPACHEID_SONG);
     }
 
     public static function isSong($songid)
     {
-
         return (self::cleanId($songid) >= self::AMPACHEID_SONG && $songid < self::AMPACHEID_SMARTPL);
     }
 
     public static function isSmartPlaylist($plistid)
     {
-
         return (self::cleanId($plistid) >= self::AMPACHEID_SMARTPL && $plistid < self::AMPACHEID_VIDEO);
     }
 
     public static function isVideo($videoid)
     {
-
         return (self::cleanId($videoid) >= self::AMPACHEID_VIDEO && $videoid < self::AMPACHEID_PODCAST);
     }
     
     public static function isPodcast($podcastid)
     {
-
         return (self::cleanId($podcastid) >= self::AMPACHEID_PODCAST && $podcastid < self::AMPACHEID_PODCASTEP);
     }
     
     public static function isPodcastEp($episodeid)
     {
-
         return (self::cleanId($episodeid) >= self::AMPACHEID_PODCASTEP);
     }
     
