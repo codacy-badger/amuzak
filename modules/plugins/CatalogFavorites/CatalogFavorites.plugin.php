@@ -128,7 +128,7 @@ class AmpacheCatalogFavorites
                     }
 
                     echo '<div style="float: left; margin-right: 10px;">';
-                    $thumb = ($this->gridview && UI::is_grid_view('album')) ? 2 : 12;
+                    $thumb = ($this->gridview && UI::is_grid_view('album')) ? 2 : 99; // default to 200x200
                     $item->display_art($thumb, true);
                     echo '</div>';
                     echo '</td>';
@@ -167,7 +167,7 @@ class AmpacheCatalogFavorites
 
         $this->maxitems = intval($data['catalogfav_max_items']);
         if ($this->maxitems < 1) {
-            $this->maxitems = 5;
+            $this->maxitems = 6;
         }
         $this->gridview = ($data['catalogfav_gridview'] == '1');
 

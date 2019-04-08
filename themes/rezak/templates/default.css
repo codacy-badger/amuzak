@@ -931,6 +931,8 @@ table.tabledata tbody .cel_cover img {
     border-radius: 2px;
     height: 100%;
     margin: 2px;
+    min-height: 24px;
+    min-width: 24px;
     object-fit: cover;
     vertical-align: middle;
     width: 99%;
