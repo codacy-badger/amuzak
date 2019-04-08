@@ -24,13 +24,13 @@
  * Sub-Ajax page, requires AJAX_INCLUDE
  */
 if (!defined('AJAX_INCLUDE')) {
-    exit;
+    return false;
 }
 
 $results = array();
 switch ($_REQUEST['action']) {
     case 'random_albums':
-        $albums = Album::get_random(6);
+        $albums = Album::get_random(8);
         if (count($albums) and is_array($albums)) {
             ob_start();
             require_once AmpConfig::get('prefix') . UI::find_template('show_random_albums.inc.php');
@@ -160,11 +160,11 @@ switch ($_REQUEST['action']) {
                 if (Access::check('interface', '100')) {
                     $button = $_REQUEST['button'];
                 } else {
-                    exit;
+                    return false;
                 }
             break;
             default:
-                exit;
+                return false;
         } // end switch on button
 
         Ajax::set_include_override(true);

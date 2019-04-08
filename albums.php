@@ -49,7 +49,8 @@ switch ($_REQUEST['action']) {
         if (!Catalog::can_remove($album)) {
             debug_event('album', 'Unauthorized to remove the album `.' . $album->id . '`.', 1);
             UI::access_denied();
-            exit;
+
+            return false;
         }
 
         if ($album->remove_from_disk()) {
@@ -62,7 +63,8 @@ switch ($_REQUEST['action']) {
         // Make sure they are a 'power' user at least
         if (!Access::check('interface', '75')) {
             UI::access_denied();
-            exit;
+
+            return false;
         }
 
         $type          = 'album';
@@ -75,7 +77,8 @@ switch ($_REQUEST['action']) {
 
         if (!Access::check('interface', '75')) {
             UI::access_denied();
-            exit;
+
+            return false;
         }
 
         // Retrieving final song order from url

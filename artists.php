@@ -51,7 +51,8 @@ switch ($_REQUEST['action']) {
         if (!Catalog::can_remove($artist)) {
             debug_event('artist', 'Unauthorized to remove the artist `.' . $artist->id . '`.', 1);
             UI::access_denied();
-            exit;
+
+            return false;
         }
 
         if ($artist->remove_from_disk()) {

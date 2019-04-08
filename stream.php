@@ -24,14 +24,16 @@ require_once 'lib/init.php';
 
 if (!isset($_REQUEST['action']) || empty($_REQUEST['action'])) {
     debug_event("stream.php", "Asked without action. Exiting...", 5);
-    exit;
+
+    return false;
 }
 
 if (!defined('NO_SESSION')) {
     /* If we are running a demo, quick while you still can! */
     if (AmpConfig::get('demo_mode') || (AmpConfig::get('use_auth')) && !Access::check('interface', '25')) {
         UI::access_denied();
-        exit;
+
+        return false;
     }
 }
 
@@ -129,11 +131,6 @@ switch ($_REQUEST['action']) {
                 'object_type' => 'song',
                 'object_id' => scrub_in($_REQUEST['song_id'])
             );
-        } elseif (isset($_REQUEST['video_id'])) {
-            $media_ids[] = array(
-                'object_type' => 'video',
-                'object_id' => scrub_in($_REQUEST['video_id'])
-            );
         } elseif (isset($_REQUEST['podcast_episode_id'])) {
             $media_ids[] = array(
                 'object_type' => 'podcast_episode',
@@ -172,7 +169,8 @@ if (count($media_ids) || isset($urls)) {
         if (!User::stream_control($media_ids)) {
             debug_event('UI::access_denied', 'Stream control failed for user ' . $GLOBALS['user']->username, 3);
             UI::access_denied();
-            exit;
+
+            return false;
         }
     }
 

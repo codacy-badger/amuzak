@@ -48,8 +48,6 @@ foreach ($results as $item) {
 <?php
 if (strtolower(get_class($media)) == 'song') {
             require AmpConfig::get('prefix') . UI::find_template('show_now_playing_row.inc.php');
-        } else {
-            require AmpConfig::get('prefix') . UI::find_template('show_now_playing_video_row.inc.php');
         } ?>
 </div>
 <?php

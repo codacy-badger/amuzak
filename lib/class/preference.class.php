@@ -102,7 +102,7 @@ class Preference extends database_object
             $user_id = Dba::escape($user_id);
             $sql     = "UPDATE `user_preference` SET `value`='$value' WHERE `preference`='$id'$user_check";
             Dba::write($sql);
-            Preference::clear_from_session();
+            self::clear_from_session();
 
             parent::remove_from_cache('get_by_user', $user_id);
 

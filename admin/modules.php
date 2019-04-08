@@ -35,7 +35,7 @@ switch ($_REQUEST['action']) {
     case 'install_catalog_type':
         $type    = (string) scrub_in($_REQUEST['type']);
         $catalog = Catalog::create_catalog_type($type);
-        if ($catalog == null) {
+        if ($catalog === null) {
             AmpError::add('general', T_('Failed to enable the module, Catalog Error'));
             AmpError::display('general');
             break;
@@ -60,7 +60,7 @@ switch ($_REQUEST['action']) {
         $type = (string) scrub_in($_REQUEST['type']);
 
         $catalog = Catalog::create_catalog_type($type);
-        if ($catalog == null) {
+        if ($catalog === null) {
             AmpError::add('general', T_('Failed to disable module, Catalog Error'));
             AmpError::display('general');
             break;

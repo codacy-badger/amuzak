@@ -117,7 +117,8 @@ class Stream
             if ($bit_rate < ($min_bitrate ?: 8)) {
                 debug_event('stream', 'Max transcode bandwidth already allocated. Active streams: ' . $active_streams, 2);
                 header('HTTP/1.1 503 Service Temporarily Unavailable');
-                exit();
+
+                return false;
             }
 
             // Never go over the user's sample rate
@@ -152,7 +153,6 @@ class Stream
             return false;
         }
 
-        //$media_rate = $media->video_bitrate ?: $media->bitrate;
         if (!$options['bitrate']) {
             $bit_rate = self::get_allowed_bitrate($media);
             debug_event('stream', 'Configured bitrate is ' . $bit_rate, 5);

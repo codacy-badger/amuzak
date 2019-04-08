@@ -81,7 +81,7 @@ class Art extends database_object
      */
     public function __construct($uid, $type = 'album', $kind = 'default')
     {
-        if (!Art::is_valid_type($type)) {
+        if (!self::is_valid_type($type)) {
             return false;
         }
         $this->type = $type;
@@ -238,7 +238,7 @@ class Art extends database_object
     {
         // Get the data either way
         if (!$this->get_db()) {
-            return false;
+            return '';
         }
 
         if ($raw || !$this->thumb) {
@@ -329,7 +329,7 @@ class Art extends database_object
     public function insert_url($url)
     {
         debug_event('art', 'Insert art from url ' . $url, '5');
-        $image = Art::get_from_source(array('url' => $url), $this->type);
+        $image = self::get_from_source(array('url' => $url), $this->type);
         $rurl  = pathinfo($url);
         $mime  = "image/" . $rurl['extension'];
         $this->insert($image, $mime);
@@ -342,7 +342,7 @@ class Art extends database_object
     public function insert_from_file($filepath)
     {
         debug_event('art', 'Insert art from file on disk ' . $filepath, '5');
-        $image = Art::get_from_source(array('file' => $filepath), $this->type);
+        $image = self::get_from_source(array('file' => $filepath), $this->type);
         $rfile = pathinfo($filepath);
         $mime  = "image/" . $rfile['extension'];
         $this->insert($image, $mime);
@@ -693,35 +693,35 @@ class Art extends database_object
         if (!self::test_image($image)) {
             debug_event('Art', 'Not trying to generate thumbnail, invalid data passed', 1);
 
-            return false;
+            return '';
         }
 
         if (!function_exists('gd_info')) {
             debug_event('Art', 'PHP-GD Not found - unable to resize art', 1);
 
-            return false;
+            return '';
         }
 
         // Check and make sure we can resize what you've asked us to
         if (($type == 'jpg' or $type == 'jpeg') and !(imagetypes() & IMG_JPG)) {
             debug_event('Art', 'PHP-GD Does not support JPGs - unable to resize', 1);
 
-            return false;
+            return '';
         }
         if ($type == 'png' and !imagetypes() & IMG_PNG) {
             debug_event('Art', 'PHP-GD Does not support PNGs - unable to resize', 1);
 
-            return false;
+            return '';
         }
         if ($type == 'gif' and !imagetypes() & IMG_GIF) {
             debug_event('Art', 'PHP-GD Does not support GIFs - unable to resize', 1);
 
-            return false;
+            return '';
         }
         if ($type == 'bmp' and !imagetypes() & IMG_WBMP) {
             debug_event('Art', 'PHP-GD Does not support BMPs - unable to resize', 1);
 
-            return false;
+            return '';
         }
 
         $source = imagecreatefromstring($image);
@@ -729,7 +729,7 @@ class Art extends database_object
         if (!$source) {
             debug_event('Art', 'Failed to create Image from string - Source Image is damaged / malformed', 1);
 
-            return false;
+            return '';
         }
 
         $source_size = array('height' => imagesy($source), 'width' => imagesx($source));
@@ -942,9 +942,9 @@ class Art extends database_object
      */
     public static function gc($object_type = null, $object_id = null)
     {
-        $types = array('album', 'artist','tvshow','tvshow_season','video','user','live_stream');
+        $types = array('album', 'artist', 'user', 'live_stream');
 
-        if ($object_type != null) {
+        if ($object_type !== null) {
             if (in_array($object_type, $types)) {
                 if (AmpConfig::get('album_art_store_disk')) {
                     self::delete_from_dir($object_type, $object_id);
@@ -1309,11 +1309,6 @@ class Art extends database_object
                 $song   = new Song($song_id);
                 $dirs[] = Core::conv_lc_file(dirname($song->file));
             }
-        } else {
-            if ($this->type == 'video') {
-                $media  = new Video($this->uid);
-                $dirs[] = Core::conv_lc_file(dirname($media->file));
-            }
         }
 
         foreach ($dirs as $dir) {
@@ -1637,14 +1632,6 @@ class Art extends database_object
         $gtypes     = array();
         $media_info = array();
         switch ($type) {
-            case 'tvshow':
-            case 'tvshow_season':
-            case 'tvshow_episode':
-                $gtypes[]                     = 'tvshow';
-                $media_info['tvshow']         = $options['tvshow'];
-                $media_info['tvshow_season']  = $options['tvshow_season'];
-                $media_info['tvshow_episode'] = $options['tvshow_episode'];
-            break;
             case 'song':
                 $media_info['mb_trackid'] = $options['mb_trackid'];
                 $media_info['title']      = $options['title'];
@@ -1666,10 +1653,6 @@ class Art extends database_object
                 $gtypes[]                  = 'music';
                 $gtypes[]                  = 'artist';
                 break;
-            case 'movie':
-                $gtypes[]            = 'movie';
-                $media_info['title'] = $options['keyword'];
-            break;
         }
 
         $meta   = $plugin->get_metadata($gtypes, $media_info);
@@ -1677,16 +1660,6 @@ class Art extends database_object
 
         if ($meta['art']) {
             $url      = $meta['art'];
-            $ures     = pathinfo($url);
-            $images[] = array('url' => $url, 'mime' => 'image/' . $ures['extension'], 'title' => $plugin->name);
-        }
-        if ($meta['tvshow_season_art']) {
-            $url      = $meta['tvshow_season_art'];
-            $ures     = pathinfo($url);
-            $images[] = array('url' => $url, 'mime' => 'image/' . $ures['extension'], 'title' => $plugin->name);
-        }
-        if ($meta['tvshow_art']) {
-            $url      = $meta['tvshow_art'];
             $ures     = pathinfo($url);
             $images[] = array('url' => $url, 'mime' => 'image/' . $ures['extension'], 'title' => $plugin->name);
         }
@@ -1722,26 +1695,6 @@ class Art extends database_object
                 /* Web Player size */
                 $size['height'] = 32;
                 $size['width']  = 32;
-            break;
-            case 6:
-                /* Video browsing size */
-                $size['height'] = 150;
-                $size['width']  = 100;
-            break;
-            case 7:
-                /* Video page size */
-                $size['height'] = 300;
-                $size['width']  = 200;
-            break;
-            case 8:
-                /* Video preview size */
-                 $size['height'] = 200;
-                 $size['width']  = 470;
-            break;
-            case 9:
-                /* Video preview size */
-                 $size['height'] = 100;
-                 $size['width']  = 235;
             break;
             case 10:
                 /* Search preview size */
@@ -1806,7 +1759,7 @@ class Art extends database_object
         }
         $size        = self::get_thumb_size($thumb);
         $prettyPhoto = ($link == null);
-        if ($link == null) {
+        if ($link === null) {
             $link = AmpConfig::get('web_path') . "/image.php?object_id=" . $object_id . "&object_type=" . $object_type;
             if (AmpConfig::get('use_auth') && AmpConfig::get('require_session')) {
                 $link .= "&auth=" . session_id();
@@ -1826,7 +1779,7 @@ class Art extends database_object
             $imgurl .= '&kind=' . $kind;
         }
         // This to keep browser cache feature but force a refresh in case image just changed
-        if (Art::has_db($object_id, $object_type)) {
+        if (self::has_db($object_id, $object_type)) {
             $art = new Art($object_id, $object_type);
             if ($art->get_db()) {
                 $imgurl .= '&fooid=' . $art->id;

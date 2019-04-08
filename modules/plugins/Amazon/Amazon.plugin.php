@@ -142,7 +142,7 @@ class AmpacheAmazon
             'SmallImage'
         );
         
-        $mediaType = ($type == 'album' || $type == 'artist') ? 'Music' : 'Video';
+        $mediaType = 'Music';
 
         // Prevent the script from timing out
         set_time_limit(0);

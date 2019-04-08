@@ -91,7 +91,7 @@ class AmpachePaypal
      */
     public function display_user_field(library_item $libitem = null)
     {
-        $name = ($libitem != null) ? $libitem->get_fullname() : (T_('User') . " `" . $this->user->fullname . "` " . T_('on') . " " . AmpConfig::get('site_title'));
+        $name = ($libitem !== null) ? $libitem->get_fullname() : (T_('User') . " `" . $this->user->fullname . "` " . T_('on') . " " . AmpConfig::get('site_title'));
         $lang = substr(AmpConfig::get('lang'), 0, 2);
         if (empty($lang)) {
             $lang = 'US';

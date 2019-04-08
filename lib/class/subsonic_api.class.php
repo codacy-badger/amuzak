@@ -45,7 +45,7 @@ class Subsonic_Api
             ob_end_clean();
             if ($addheader) self::setHeader($input['f']);
             self::apiOutput($input, Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_APIVERSION_CLIENT));
-            exit;
+            return false;
         }*/
     }
 
@@ -60,7 +60,8 @@ class Subsonic_Api
                 self::setHeader($input['f']);
             }
             self::apiOutput($input, Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_MISSINGPARAM));
-            exit;
+
+            return false;
         }
 
         return $input[$parameter];
@@ -180,29 +181,29 @@ class Subsonic_Api
      */
     public static function apiOutput($input, $xml, $alwaysArray=array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'))
     {
-        $f        = $input['f'];
-        $callback = $input['callback'];
-        self::apiOutput2(strtolower($f), $xml, $callback, $alwaysArray);
+        $type        = $input['f'];
+        $callback    = $input['callback'];
+        self::apiOutput2(strtolower($type), $xml, $callback, $alwaysArray);
     }
 
     /**
-     * @param string $f
+     * @param string $file
      * @param SimpleXMLElement $xml
      */
-    public static function apiOutput2($f, $xml, $callback='', $alwaysArray=array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'))
+    public static function apiOutput2($outputtype, $xml, $callback='', $alwaysArray=array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'))
     {
         $conf = array('alwaysArray' => $alwaysArray);
-        if ($f == "json") {
+        if ($outputtype == "json") {
             $output = json_encode(self::xml2json($xml, $conf), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
         } else {
-            if ($f == "jsonp") {
+            if ($outputtype == "jsonp") {
                 $output = $callback . '(' . json_encode(self::xml2json($xml, $conf), JSON_PRETTY_PRINT) . ')';
             } else {
                 $xmlstr = $xml->asXml();
                 //clean illegal XML characters.
                 $xmlstr = preg_replace('/[^\x{0009}\x{000a}\x{000d}\x{0020}-\x{D7FF}\x{E000}-\x{FFFD}]+/u', '_', $xmlstr);               // Format xml output
                 $dom    = new DOMDocument();
-                $dom->loadXML($xmlstr);
+                $dom->loadXML($xmlstr, LIBXML_PARSEHUGE);
                 $dom->formatOutput = true;
                 $output            = $dom->saveXML();
             }
@@ -1030,7 +1031,6 @@ class Subsonic_Api
         $maxBitRate            = $input['maxBitRate'];
         $format                = $input['format']; // mp3, flv or raw
         $timeOffset            = $input['timeOffset'];
-        $size                  = $input['size']; // For video streaming. Not supported.
         $estimateContentLength = $input['estimateContentLength']; // Force content-length guessing if transcode
 
         $params = '&client=' . rawurlencode($input['c']) . '&noscrobble=1';
@@ -1203,9 +1203,11 @@ class Subsonic_Api
     {
         self::check_version($input, "1.7.0");
 
-        $r = Subsonic_XML_Data::createSuccessResponse();
-        Subsonic_XML_Data::addStarred($r, Userflag::get_latest('artist', null, 99999), Userflag::get_latest('album', null, 99999), Userflag::get_latest('song', null, 99999), $elementName);
-        self::apiOutput($input, $r);
+        $user_id = $GLOBALS['user']->id;
+
+        $response = Subsonic_XML_Data::createSuccessResponse();
+        Subsonic_XML_Data::addStarred($response, Userflag::get_latest('artist', $user_id, 10000), Userflag::get_latest('album', $user_id, 10000), Userflag::get_latest('song', $user_id, 10000), $elementName);
+        self::apiOutput($input, $response);
     }
 
 

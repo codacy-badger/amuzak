@@ -48,7 +48,8 @@ if (empty($type)) {
 
 if (!Core::is_library_item($object_type) && $object_type != 'share') {
     debug_event('edit.server.php', 'Type `' . $type . '` is not based on an item library.', '3');
-    exit();
+
+    return false;
 }
 
 $libitem = new $object_type($object_id);
@@ -65,7 +66,8 @@ if ($_REQUEST['action'] == 'show_edit_playlist') {
 // Make sure they got them rights
 if (!Access::check('interface', $level) || AmpConfig::get('demo_mode')) {
     echo xoutput_from_array(array('rfc3514' => '0x1'));
-    exit;
+
+    return false;
 }
 
 switch ($_REQUEST['action']) {
@@ -142,9 +144,10 @@ switch ($_REQUEST['action']) {
         xoutput_headers();
         $results['id'] = $new_id;
         echo xoutput_from_array($results);
-        exit;
+
+        return false;
     default:
-        exit;
+        return false;
 } // end switch action
 
 ob_end_clean();

@@ -34,7 +34,6 @@ class Catalog_local extends Catalog
 
     private $count;
     private $added_songs_to_gather;
-    private $added_videos_to_gather;
 
     /**
      * get_description
@@ -154,7 +153,7 @@ class Catalog_local extends Catalog
             // Keep going until the path stops changing
             $old_path       = $component_path;
             $component_path = realpath($component_path . '/../');
-        } while (strcmp($component_path, $old_path) != 0);
+        } while (strcmp($component_path, $old_path) !== 0);
 
         return false;
     }
@@ -319,16 +318,13 @@ class Catalog_local extends Catalog
         } //it's a directory
 
         $is_audio_file = Catalog::is_audio_file($full_file);
-        if (AmpConfig::get('catalog_video_pattern')) {
-            $is_video_file = Catalog::is_video_file($full_file);
-        }
 
         if ($options['parse_playlist'] && AmpConfig::get('catalog_playlist_pattern')) {
             $is_playlist = Catalog::is_playlist_file($full_file);
         }
 
         /* see if this is a valid audio file or playlist file */
-        if ($is_audio_file || $is_video_file || $is_playlist) {
+        if ($is_audio_file || $is_playlist) {
             /* Now that we're sure its a file get filesize  */
             $file_size = Core::get_filesize($full_file);
 
@@ -357,7 +353,7 @@ class Catalog_local extends Catalog
                 }
 
                 $enc_full_file = iconv($lc_charset, $site_charset, $full_file);
-                if ($lc_charset != $site_charset) {
+                if ($lc_charset !== $site_charset) {
                     $convok = (strcmp($full_file, iconv($site_charset, $lc_charset, $enc_full_file)) == 0);
                 } else {
                     $convok = (strcmp($enc_full_file, $full_file) == 0);
@@ -391,16 +387,6 @@ class Catalog_local extends Catalog
 
                         return false;
                     }
-                } else {
-                    if (count($this->get_gather_types('video')) > 0) {
-                        if ($is_video_file) {
-                            $this->insert_local_video($full_file, $options);
-                        } else {
-                            debug_event('read', $full_file . " ignored, bad media type for this video catalog.", 5);
-
-                            return false;
-                        }
-                    }
                 }
 
                 $this->count++;
@@ -426,7 +412,7 @@ class Catalog_local extends Catalog
      */
     public function add_to_catalog($options = null)
     {
-        if ($options == null) {
+        if ($options === null) {
             $options = array(
                 'gather_art' => true,
                 'parse_playlist' => false
@@ -435,7 +421,6 @@ class Catalog_local extends Catalog
 
         $this->count                  = 0;
         $this->added_songs_to_gather  = array();
-        $this->added_videos_to_gather = array();
 
         if (!defined('SSE_OUTPUT')) {
             require AmpConfig::get('prefix') . UI::find_template('show_adds_catalog.inc.php');
@@ -478,7 +463,7 @@ class Catalog_local extends Catalog
                     require AmpConfig::get('prefix') . UI::find_template('show_gather_art.inc.php');
                     flush();
                 }
-                $this->gather_art($this->added_songs_to_gather, $this->added_videos_to_gather);
+                $this->gather_art($this->added_songs_to_gather, null);
             }
         }
 
@@ -510,7 +495,7 @@ class Catalog_local extends Catalog
         set_time_limit(0);
 
         $stats         = self::get_stats($this->id);
-        $number        = $stats['videos'] + $stats['songs'];
+        $number        = $stats['songs'];
         $total_updated = 0;
         $this->count   = 0;
 
@@ -519,11 +504,8 @@ class Catalog_local extends Catalog
             flush();
         }
 
-        foreach (array('video', 'song') as $media_type) {
-            $total = $stats[$media_type . 's']; // UGLY
-            if ($total == 0) {
-                continue;
-            }
+        $total = $stats[$media_type . 's']; // UGLY
+        if ($total !== 0) {
             $chunks = floor($total / 10000);
             foreach (range(0, $chunks) as $chunk) {
                 // Try to be nice about memory usage
@@ -607,14 +589,12 @@ class Catalog_local extends Catalog
             return 0;
         }
 
-        $dead_total  = 0;
-        $stats       = self::get_stats($this->id);
-        $this->count = 0;
-        foreach (array('video', 'song') as $media_type) {
-            $total = $stats[$media_type . 's']; // UGLY
-            if ($total == 0) {
-                continue;
-            }
+        $dead_total    = 0;
+        $stats         = self::get_stats($this->id);
+        $this->count   = 0;
+        $media_type    = 'song';
+        $total         = $stats[$media_type . 's']; // UGLY
+        if ($total !== 0) {
             $chunks = floor($total / 10000);
             $dead   = array();
             foreach (range(0, $chunks) as $chunk) {
@@ -628,10 +608,9 @@ class Catalog_local extends Catalog
                 if ($dead_count >= $total) {
                     debug_event('catalog', 'All files would be removed. Doing nothing.', 1);
                     AmpError::add('general', T_('All files would be removed. Doing nothing'));
-                    continue;
                 }
             }
-            if ($dead_count) {
+            if ($dead_count < $total) {
                 $dead_total += $dead_count;
                 $sql = "DELETE FROM `$media_type` WHERE `id` IN " .
                     '(' . implode(',', $dead) . ')';
@@ -738,7 +717,7 @@ class Catalog_local extends Catalog
 
             if ($options['move_match_pattern']) {
                 $patres = vainfo::parse_pattern($file, $this->sort_pattern, $this->rename_pattern);
-                if ($patres['artist'] != $results['artist'] || $patres['album'] != $results['album'] || $patres['track'] != $results['track'] || $patres['title'] != $results['title']) {
+                if ($patres['artist'] !== $results['artist'] || $patres['album'] !== $results['album'] || $patres['track'] !== $results['track'] || $patres['title'] !== $results['title']) {
                     // Remove first left directories from filename to match pattern
                     $cntslash = substr_count($pattern, preg_quote(DIRECTORY_SEPARATOR)) + 1;
                     $filepart = explode(DIRECTORY_SEPARATOR, $file);
@@ -797,40 +776,6 @@ class Catalog_local extends Catalog
 
         return $id;
     }
-
-    /**
-     * insert_local_video
-     * This inserts a video file into the video file table the tag
-     * information we can get is super sketchy so it's kind of a crap shoot
-     * here
-     */
-    public function insert_local_video($file, $options = array())
-    {
-        /* Create the vainfo object and get info */
-        $gtypes     = $this->get_gather_types('video');
-        $vainfo     = new vainfo($file, $gtypes, '', '', '', $this->sort_pattern, $this->rename_pattern);
-        $vainfo->get_info();
-
-        $tag_name           = vainfo::get_tag_type($vainfo->tags, 'metadata_order_video');
-        $results            = vainfo::clean_tag_info($vainfo->tags, $tag_name, $file);
-        $results['catalog'] = $this->id;
-
-        $id = Video::insert($results, $gtypes, $options);
-        if ($results['art']) {
-            $art = new Art($id, 'video');
-            $art->insert_url($results['art']);
-
-            if (AmpConfig::get('generate_video_preview')) {
-                Video::generate_preview($id);
-            }
-        } else {
-            $this->added_videos_to_gather[] = $id;
-        }
-
-        $this->_filecache[strtolower($file)] = 'v_' . $id;
-
-        return $id;
-    } // insert_local_video
 
     private function sync_podcasts()
     {

@@ -61,10 +61,6 @@ class Stream_URL extends memory_object
                 case 'oid':
                     $key = 'id';
                 break;
-                case 'video':
-                    if (make_bool($value)) {
-                        $results['type'] = 'video';
-                    }
                 default:
                     // Nothing
                 break;

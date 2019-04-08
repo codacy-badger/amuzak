@@ -291,7 +291,7 @@ class Shoutbox
 
     public function get_display($details = true, $jsbuttons = false)
     {
-        $object = Shoutbox::get_object($this->object_type, $this->object_id);
+        $object = self::get_object($this->object_type, $this->object_id);
         $object->format();
         $img  = $this->get_image();
         $html = "<div class='shoutbox-item'>";

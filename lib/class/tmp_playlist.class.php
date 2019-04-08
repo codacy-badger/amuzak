@@ -93,7 +93,7 @@ class Tmp_Playlist extends database_object
         $results = Dba::fetch_row($db_results);
 
         if (!$results['0']) {
-            $results['0'] = Tmp_Playlist::create(array(
+            $results['0'] = self::create(array(
                 'session_id' => $session_id,
                 'type' => 'user',
                 'object_type' => 'song'

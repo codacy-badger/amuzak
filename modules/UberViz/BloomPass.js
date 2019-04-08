@@ -4,10 +4,10 @@
 
 THREE.BloomPass = function ( strength, kernelSize, sigma, resolution ) {
 
-	strength = ( strength !== undefined ) ? strength : 1;
-	kernelSize = ( kernelSize !== undefined ) ? kernelSize : 25;
-	sigma = ( sigma !== undefined ) ? sigma : 4.0;
-	resolution = ( resolution !== undefined ) ? resolution : 256;
+	strength = ( typeof strength !== "undefined" ) ? strength : 1;
+	kernelSize = ( typeof kernelSize !== "undefined" ) ? kernelSize : 25;
+	sigma = ( typeof sigma !== "undefined" ) ? sigma : 4.0;
+	resolution = ( typeof resolution !== "undefined" ) ? resolution : 256;
 
 	// render targets
 
@@ -18,7 +18,7 @@ THREE.BloomPass = function ( strength, kernelSize, sigma, resolution ) {
 
 	// copy material
 
-	if ( THREE.CopyShader === undefined )
+	if ( typeof THREE.CopyShader === "undefined" )
 		console.error( "THREE.BloomPass relies on THREE.CopyShader" );
 
 	var copyShader = THREE.CopyShader;
@@ -39,7 +39,7 @@ THREE.BloomPass = function ( strength, kernelSize, sigma, resolution ) {
 
 	// convolution material
 
-	if ( THREE.ConvolutionShader === undefined )
+	if ( typeof THREE.ConvolutionShader === "undefined" )
 		console.error( "THREE.BloomPass relies on THREE.ConvolutionShader" );
 
 	var convolutionShader = THREE.ConvolutionShader;

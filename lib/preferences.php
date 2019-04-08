@@ -40,8 +40,8 @@ function update_preferences($pref_id=0)
 
     $results = array();
     // Collect the current possible keys
-    while ($r = Dba::fetch_assoc($db_results)) {
-        $results[] = array('id' => $r['id'], 'name' => $r['name'],'type' => $r['type']);
+    while ($row = Dba::fetch_assoc($db_results)) {
+        $results[] = array('id' => $row['id'], 'name' => $row['name'],'type' => $row['type']);
     } // end collecting keys
 
     /* Foreach through possible keys and assign them */
@@ -190,7 +190,6 @@ function create_preference_input($name, $value)
         case 'upnp_backend':
         case 'album_release_type':
         case 'home_moment_albums':
-        case 'home_moment_videos':
         case 'home_recently_played':
         case 'home_now_playing':
         case 'browser_notify':

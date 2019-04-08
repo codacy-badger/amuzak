@@ -100,7 +100,7 @@ class Catalog_beetsremote extends Beets\Catalog
     { // TODO: This Method should be required / provided by parent
         $uri = $data['uri'];
 
-        if (substr($uri, 0, 7) != 'http://' && substr($uri, 0, 8) != 'https://') {
+        if (substr($uri, 0, 7) !== 'http://' && substr($uri, 0, 8) !== 'https://') {
             AmpError::add('general', T_('Error: Beets selected, but path is not a URL'));
 
             return false;

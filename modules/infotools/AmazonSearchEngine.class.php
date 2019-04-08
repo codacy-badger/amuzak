@@ -62,7 +62,7 @@ class AmazonSearch
     {
 
         /* If we have a base url then use it */
-        if ($base_url_param != '') {
+        if ($base_url_param !== '') {
             $this->base_url = str_replace('http://', '', $base_url_param);
             debug_event('amazon-search-results', 'Retrieving from ' . $base_url_param . $this->url_suffix, '5');
         } else {
@@ -341,7 +341,7 @@ class AmazonSearch
         if (strlen($this->_sourceTag)) {
             $this->_currentTag = $tag;
         } else {
-            if ($tag != "TotalPages") {
+            if ($tag !== "TotalPages") {
                 $this->_currentTag = '';
             } else {
                 $this->_currentTag = $tag;

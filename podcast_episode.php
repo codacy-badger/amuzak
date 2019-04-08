@@ -46,9 +46,10 @@ switch ($_REQUEST['action']) {
 
         $episode = new Podcast_Episode($_REQUEST['podcast_episode_id']);
         if (!Catalog::can_remove($episode)) {
-            debug_event('video', 'Unauthorized to remove the episode `.' . $episode->id . '`.', 1);
+            debug_event('podcast_ep', 'Unauthorized to remove the episode `.' . $episode->id . '`.', 1);
             UI::access_denied();
-            exit;
+
+            return false;
         }
 
         if ($episode->remove()) {

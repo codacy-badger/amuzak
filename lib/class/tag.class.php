@@ -214,10 +214,10 @@ class Tag extends database_object implements library_item
         if ($data['edit_tags']) {
             $tag_names = explode(',', $data['edit_tags']);
             foreach ($tag_names as $tag) {
-                $merge_to = Tag::construct_from_name($tag);
+                $merge_to = self::construct_from_name($tag);
                 if ($merge_to->id == 0) {
-                    Tag::add_tag($tag);
-                    $merge_to = Tag::construct_from_name($tag);
+                    self::add_tag($tag);
+                    $merge_to = self::construct_from_name($tag);
                 }
                 $this->merge($merge_to->id, $data['merge_persist'] == '1');
             }
@@ -376,7 +376,7 @@ class Tag extends database_object implements library_item
         Dba::write($sql, array($this->id));
 
         // Call the garbage collector to clean everything
-        Tag::gc();
+        self::gc();
 
         parent::clear_cache();
     }
@@ -606,7 +606,7 @@ class Tag extends database_object implements library_item
     {
         debug_event('tag.class', 'Updating tags for values {' . $tags_comma . '} type {' . $type . '} object_id {' . $object_id . '}', '5');
 
-        $ctags      = Tag::get_top_tags($type, $object_id);
+        $ctags      = self::get_top_tags($type, $object_id);
         $editedTags = explode(",", $tags_comma);
 
         if (is_array($ctags)) {
@@ -640,7 +640,7 @@ class Tag extends database_object implements library_item
         foreach ($editedTags as  $tk => $tv) {
             if ($tv != '') {
                 debug_event('tag.class', 'Adding new tag {' . $tv . '}', '5');
-                Tag::add($type, $object_id, $tv, false);
+                self::add($type, $object_id, $tv, false);
             }
         }
     } // update_tag_list
@@ -663,7 +663,7 @@ class Tag extends database_object implements library_item
         foreach ($ar as $tag) {
             $tag = trim($tag);
             if (!empty($tag)) {
-                if (Tag::tag_exists($tag)) {
+                if (self::tag_exists($tag)) {
                     $ret[] = $tag;
                 }
             }
@@ -770,7 +770,7 @@ class Tag extends database_object implements library_item
     {
         $medias = array();
         if ($filter_type) {
-            $ids = Tag::get_tag_objects($filter_type, $this->id);
+            $ids = self::get_tag_objects($filter_type, $this->id);
             if ($ids) {
                 foreach ($ids as $id) {
                     $medias[] = array(

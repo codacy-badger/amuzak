@@ -71,7 +71,7 @@ class Stats
      */
     public static function gc()
     {
-        foreach (array('song', 'album', 'artist', 'live_stream', 'video') as $object_type) {
+        foreach (array('song', 'album', 'artist', 'live_stream') as $object_type) {
             Dba::write("DELETE FROM `object_count` USING `object_count` LEFT JOIN `$object_type` ON `$object_type`.`id` = `object_count`.`object_id` WHERE `object_type` = '$object_type' AND `$object_type`.`id` IS NULL");
         }
     }
@@ -95,6 +95,7 @@ class Stats
      * This inserts a new record for the specified object
      * with the specified information, amazing!
      * @param string $type
+     * @param integer $oid
      * @param integer $user
      */
     public static function insert($type, $oid, $user, $agent='', $location, $count_type = 'stream')
@@ -160,7 +161,7 @@ class Stats
      * Get count for an object
      * @param string $object_type
      */
-    public static function get_object_count($object_type, $object_id, $threshold = '', $count_type = 'stream')
+    public static function get_object_count($object_type, $object_id, $threshold = null, $count_type = 'stream')
     {
         $date = '';
         if ($threshold) {
@@ -184,7 +185,8 @@ class Stats
         $name       = null;
         $sql        = "SELECT `geo_name` FROM `object_count` WHERE `geo_latitude` = ? AND `geo_longitude` = ? AND `geo_name` IS NOT NULL ORDER BY `id` DESC LIMIT 1";
         $db_results = Dba::read($sql, array($latitude, $longitude));
-        if ($results = Dba::fetch_assoc($db_results)) {
+        $results    = Dba::fetch_assoc($db_results);
+        if (!empty($results)) {
             $name = $results['geo_name'];
         }
 
@@ -200,7 +202,9 @@ class Stats
      */
     public static function get_last_song($user_id='')
     {
-        $user_id = $user_id ? $user_id : $GLOBALS['user']->id;
+        if ($user_id === '') {
+            $user_id = $GLOBALS['user']->id;
+        }
 
         $sql = "SELECT * FROM `object_count` " .
             "LEFT JOIN `song` ON `song`.`id` = `object_count`.`object_id` ";
@@ -226,7 +230,9 @@ class Stats
      */
     public static function get_object_history($user_id='', $time)
     {
-        $user_id = $user_id ? $user_id : $GLOBALS['user']->id;
+        if ($user_id === '') {
+            $user_id = $GLOBALS['user']->id;
+        }
 
         $sql = "SELECT * FROM `object_count` " .
             "LEFT JOIN `song` ON `song`.`id` = `object_count`.`object_id` ";
@@ -275,23 +281,29 @@ class Stats
             /* Select Top objects counting by # of rows for you only */
             $sql = "SELECT object_id as `id`, COUNT(*) AS `count` FROM object_count" .
                 " WHERE `object_type` = '" . $type . "' AND `user` = " . $user_id;
-            if (AmpConfig::get('catalog_disable')) {
-                $sql .= " AND " . Catalog::get_enable_filter($type, '`object_id`');
-            }
-            $sql .= " AND `count_type` = '" . $count_type . "'";
-            $sql .= " GROUP BY object_id ORDER BY `count` DESC ";
-
-            return $sql;
         }
-        /* Select Top objects counting by # of rows */
-        $sql = "SELECT object_id as `id`, COUNT(*) AS `count` FROM object_count" .
-            " WHERE `object_type` = '" . $type . "' AND `date` >= '" . $date . "' ";
+        if ($user_id === null) {
+            /* Select Top objects counting by # of rows */
+            $sql = "SELECT object_id as `id`, COUNT(*) AS `count` FROM object_count" .
+                        " WHERE `object_type` = '" . $type . "' AND `date` >= '" . $date . "' ";
+        }
         if (AmpConfig::get('catalog_disable')) {
             $sql .= "AND " . Catalog::get_enable_filter($type, '`object_id`');
         }
+        if (AmpConfig::get('rating_browse_filter')) {
+            $user_id       = $GLOBALS['user']->id;
+            $rating_filter = AmpConfig::get('rating_browse_minimum_stars');
+            debug_event('stats', 'Requested a ratings filter of: ' . $rating_filter . '.', 5);
+            if ($rating_filter > 0 && $rating_filter <= 5) {
+                $sql .= " AND `object_id` NOT IN" .
+                            " (SELECT `object_id` FROM `rating`" .
+                            " WHERE `rating`.`object_type` = '" . $type . "'" .
+                            " AND `rating`.`rating` <=" . $rating_filter .
+                            " AND `rating`.`user` = " . $user_id . ")";
+            }
+        }
         $sql .= " AND `count_type` = '" . $count_type . "'";
         $sql .= " GROUP BY object_id ORDER BY `count` DESC ";
-
 
         return $sql;
     }
@@ -351,6 +363,18 @@ class Stats
             " WHERE `object_type` = '" . $type . "'" . $user_sql;
         if (AmpConfig::get('catalog_disable')) {
             $sql .= " AND " . Catalog::get_enable_filter($type, '`object_id`');
+        }
+        if (AmpConfig::get('rating_browse_filter')) {
+            $user_id       = $GLOBALS['user']->id;
+            $rating_filter = AmpConfig::get('rating_browse_minimum_stars');
+            debug_event('stats', 'Requested a ratings filter of: ' . $rating_filter . '.', 5);
+            if ($rating_filter > 0 && $rating_filter <= 5) {
+                $sql .= " AND `object_id` NOT IN" .
+                            " (SELECT `object_id` FROM `rating`" .
+                            " WHERE `rating`.`object_type` = '" . $type . "'" .
+                            " AND `rating`.`rating` <=" . $rating_filter .
+                            " AND `rating`.`user` = " . $user_id . ")";
+            }
         }
         $sql .= " GROUP BY `object_id` ORDER BY MAX(`date`) DESC, `id` ";
 
@@ -415,8 +439,8 @@ class Stats
 
         $results = array();
 
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = $r;
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $results[] = $row;
         }
 
         return $results;
@@ -451,10 +475,7 @@ class Stats
         $type = self::validate_type($type);
 
         $base_type = 'song';
-        if ($type == 'video') {
-            $base_type = $type;
-            $type      = $type . '`.`id';
-        }
+
         // add playlists to mashup browsing
         if ($type == 'playlist') {
             $type      = $type . '`.`id';
@@ -467,6 +488,18 @@ class Stats
             }
             if ($catalog > 0) {
                 $sql .= "AND `catalog` = '" . scrub_in($catalog) . "' ";
+            }
+            if (AmpConfig::get('rating_browse_filter')) {
+                $user_id       = $GLOBALS['user']->id;
+                $rating_filter = AmpConfig::get('rating_browse_minimum_stars');
+                debug_event('stats', 'Requested a ratings filter of: ' . $rating_filter . '.', 5);
+                if ($rating_filter > 0 && $rating_filter <= 5) {
+                    $sql .= "WHERE `" . $base_type . "`.`" . $type . "` NOT IN" .
+                            " (SELECT `object_id` FROM `rating`" .
+                            " WHERE `rating`.`object_type` = '" . $type . "'" .
+                            " AND `rating`.`rating` <=" . $rating_filter .
+                            " AND `rating`.`user` = " . $user_id . ")";
+                }
             }
         }
         $sql .= "GROUP BY `$type` ORDER BY `real_atime` DESC ";

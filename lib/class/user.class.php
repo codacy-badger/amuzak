@@ -859,7 +859,7 @@ class User extends database_object
                     debug_event('user.class.php', 'Error when starting the thread.', 1);
                 }
             } else {
-                User::save_mediaplay($GLOBALS['user'], $media);
+                self::save_mediaplay($GLOBALS['user'], $media);
             }
         } else {
             debug_event('user.class.php', 'Scrobbling explicitly skipped', 5);
@@ -1591,7 +1591,7 @@ class User extends database_object
             "SELECT COUNT(`id`) FROM `preference` WHERE `catagory` != 'system')";
         $db_results = Dba::read($sql);
         while ($row = Dba::fetch_assoc($db_results)) {
-            User::fix_preferences($row['user']);
+            self::fix_preferences($row['user']);
         }
 
         return true;
@@ -1606,7 +1606,7 @@ class User extends database_object
      */
     public static function stream_control($media_ids, User $user = null)
     {
-        if ($user == null) {
+        if ($user === null) {
             $user = $GLOBALS['user'];
         }
 

@@ -62,7 +62,7 @@ class Playlist extends playlist_object
      */
     public static function gc()
     {
-        foreach (array('song', 'video') as $object_type) {
+        foreach (array('song') as $object_type) {
             Dba::write("DELETE FROM `playlist_data` USING `playlist_data` LEFT JOIN `" . $object_type . "` ON `" . $object_type . "`.`id` = `playlist_data`.`object_id` WHERE `" . $object_type . "`.`file` IS NULL AND `playlist_data`.`object_type`='" . $object_type . "'");
         }
         Dba::write("DELETE FROM `playlist` USING `playlist` LEFT JOIN `playlist_data` ON `playlist_data`.`playlist` = `playlist`.`id` WHERE `playlist_data`.`object_id` IS NULL");
@@ -215,8 +215,8 @@ class Playlist extends playlist_object
         $sql        = "SELECT * FROM `playlist_data` WHERE `playlist` = ? AND `object_type` = 'song' ORDER BY `track`";
         $db_results = Dba::read($sql, array($this->id));
 
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = $r['object_id'];
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $results[] = $row['object_id'];
         } // end while
 
         return $results;
@@ -431,10 +431,10 @@ class Playlist extends playlist_object
      */
     public static function create($name, $type, $user_id = null, $date = null)
     {
-        if ($user_id == null) {
+        if ($user_id === null) {
             $user_id = $GLOBALS['user']->id;
         }
-        if ($date == null) {
+        if ($date === null) {
             $date = time();
         }
 
@@ -523,9 +523,9 @@ class Playlist extends playlist_object
         $i       = 1;
         $results = array();
 
-        while ($r = Dba::fetch_assoc($db_results)) {
+        while ($row = Dba::fetch_assoc($db_results)) {
             $new_data               = array();
-            $new_data['id']         = $r['id'];
+            $new_data['id']         = $row['id'];
             $new_data['track']      = $i;
             $results[]              = $new_data;
             $i++;

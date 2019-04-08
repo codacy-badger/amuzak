@@ -488,8 +488,8 @@ class Album extends database_object implements library_item
         }
         $db_results = Dba::read($sql, $params);
 
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = $r['id'];
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $results[] = $row['id'];
         }
 
         return $results;
@@ -551,8 +551,8 @@ class Album extends database_object implements library_item
 
         $db_results = Dba::read($sql);
 
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = $r['id'];
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $results[] = $row['id'];
         }
 
         return $results;
@@ -842,8 +842,8 @@ class Album extends database_object implements library_item
         $db_results = Dba::read($sql, array($this->id));
 
         $results = array();
-        while ($r = Dba::fetch_row($db_results)) {
-            $results[] = $r['0'];
+        while ($row = Dba::fetch_row($db_results)) {
+            $results[] = $row['0'];
         }
 
         return $results;
@@ -902,9 +902,9 @@ class Album extends database_object implements library_item
             Art::migrate('album', $this->id, $album_id);
             self::gc();
         } else {
-            Album::update_year($year, $album_id);
-            Album::update_mbid_group($mbid_group, $album_id);
-            Album::update_release_type($release_type, $album_id);
+            self::update_year($year, $album_id);
+            self::update_mbid_group($mbid_group, $album_id);
+            self::update_release_type($release_type, $album_id);
         }
         $this->year         = $year;
         $this->mbid_group   = $mbid_group;
@@ -952,7 +952,7 @@ class Album extends database_object implements library_item
      */
     public function update_tags($tags_comma, $override_childs, $add_to_childs, $current_id = null, $force_update = false)
     {
-        if ($current_id == null) {
+        if ($current_id === null) {
             $current_id = $this->id;
         }
 

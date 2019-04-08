@@ -47,10 +47,10 @@ class WebDAV_Directory extends DAV\Collection
         foreach ($childs as $key => $child) {
             if (is_string($key)) {
                 foreach ($child as $schild) {
-                    $children[] = WebDAV_Directory::getChildFromArray($schild);
+                    $children[] = self::getChildFromArray($schild);
                 }
             } else {
-                $children[] = WebDAV_Directory::getChildFromArray($child);
+                $children[] = self::getChildFromArray($child);
             }
         }
 
@@ -71,7 +71,7 @@ class WebDAV_Directory extends DAV\Collection
         // Always return first match
         // Warning: this means that two items with the same name will not be supported for now
         if (count($matches) > 0) {
-            return WebDAV_Directory::getChildFromArray($matches[0]);
+            return self::getChildFromArray($matches[0]);
         }
 
         throw new DAV\Exception\NotFound('The child with name: ' . $name . ' could not be found');

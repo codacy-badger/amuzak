@@ -24,7 +24,6 @@ $tag_types = array(
     'artist' => T_('Artist'),
     'album' => T_('Album'),
     'song' => T_('Song'),
-    'video' => T_('Video'),
 );
 ?>
 <?php Ajax::start_container('tag_filter'); ?>

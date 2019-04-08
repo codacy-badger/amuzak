@@ -25,7 +25,7 @@
  * Sub-Ajax page, requires AJAX_INCLUDE
  */
 if (!defined('AJAX_INCLUDE')) {
-    exit;
+    return false;
 }
 
 debug_event('stream.ajax.php', 'Called for action {' . $_REQUEST['action'] . '}', 5);

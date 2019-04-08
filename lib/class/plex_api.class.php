@@ -85,7 +85,8 @@ class Plex_Api
                 // Never fail OPTIONS requests
                 if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
                     self::setPlexHeader($headers);
-                    exit();
+
+                    return false;
                 } else {
                     debug_event('Access Control', 'Authentication token is missing.', '3');
                     self::createError(401);
@@ -212,7 +213,8 @@ class Plex_Api
         if (($GLOBALS['user']->access < $level || AmpConfig::get('demo_mode'))) {
             debug_event('plex', 'User ' . $GLOBALS['user']->username . ' is unauthorized to complete the action.', '3');
             self::createError(401);
-            exit;
+
+            return false;
         }
     }
 
@@ -263,13 +265,13 @@ class Plex_Api
     }
 
     /**
-     * @param string|false $xml
+     * @param string|false $xmlstr
      */
-    public static function apiOutputXml($xml)
+    public static function apiOutputXml($xmlstr)
     {
         // Format xml output
         $dom = new DOMDocument();
-        $dom->loadXML($xml);
+        $dom->loadXML($xmlstr, LIBXML_PARSEHUGE);
         $dom->formatOutput = true;
         self::apiOutput($dom->saveXML());
     }
@@ -312,7 +314,8 @@ class Plex_Api
 
         $html = "<html><head><title>" . $error . "</title></head><body><h1>" . $code . " " . $error . "</h1></body></html>";
         self::apiOutput($html);
-        exit();
+
+        return false;
     }
 
     public static function validateMyPlex($myplex_username, $myplex_password)
@@ -466,7 +469,8 @@ class Plex_Api
         if (connection_status() != 0) {
             curl_close($ch);
             debug_event('plex', 'Stream cancelled.', 5);
-            exit;
+
+            return false;
         }
 
         echo $data;
@@ -604,7 +608,8 @@ class Plex_Api
                         $art->raw = $request->body;
                         $thumb    = $art->generate_thumb($art->raw, array('width' => $width, 'height' => $height), $mime);
                         echo $thumb['thumb'];
-                        exit();
+
+                        return false;
                     }
                 }
             }
@@ -742,8 +747,6 @@ class Plex_Api
                     if ($id) {
                         if (Plex_XML_Data::isSong($id)) {
                             $url = Song::play_url(Plex_XML_Data::getAmpacheId($id), $additional_params, 'api');
-                        } elseif (Plex_XML_Data::isVideo($id)) {
-                            $url = Video::play_url(Plex_XML_Data::getAmpacheId($id), $additional_params, 'api');
                         }
 
                         if ($url) {
@@ -938,27 +941,6 @@ class Plex_Api
                     $litem = new TVShow_Season($id);
                     $litem->format();
                     Plex_XML_Data::addTVShowSeason($r, $litem);
-                } elseif (Plex_XML_Data::isVideo($key)) {
-                    $litem = Video::create_from_id($id);
-
-                    if ($editMode) {
-                        $dmap = array(
-                            'title' => null,
-                            'year' => null,
-                            'originallyAvailableAt' => 'release_date',
-                            'originalTitle' => 'original_name',
-                            'summary' => null,
-                        );
-                        $litem->update(self::get_data_from_map($dmap));
-                    }
-                    $litem->format();
-
-                    $subtype = strtolower(get_class($litem));
-                    if ($subtype == 'tvshow_episode') {
-                        Plex_XML_Data::addEpisode($r, $litem, true);
-                    } elseif ($subtype == 'movie') {
-                        Plex_XML_Data::addMovie($r, $litem, true);
-                    }
                 } elseif (Plex_XML_Data::isPlaylist($key)) {
                     $litem = new Playlist($id);
                     $litem->format();
@@ -1015,7 +997,8 @@ class Plex_Api
 
                             header('Content-Type: text/html');
                             echo $uri;
-                            exit;
+
+                            return false;
                         }
                     }
                     Plex_XML_Data::addPhotos($r, $key, $kind);
@@ -1063,7 +1046,8 @@ class Plex_Api
                                 self::setHeader($art->thumb_mime);
                                 echo $thumb['thumb'];
                             }
-                            exit();
+
+                            return false;
                         }
                     }
                 }
@@ -1134,14 +1118,6 @@ class Plex_Api
                     } else {
                         self::createError(404);
                     }
-                } elseif (Plex_XML_Data::isVideo($key)) {
-                    $media = new Video($id);
-                    if ($media->id) {
-                        $url = Video::play_url($id, '', 'api', true);
-                        self::stream_url($url);
-                    } else {
-                        self::createError(404);
-                    }
                 }
             } elseif ($n == 1) {
                 if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
@@ -1188,7 +1164,8 @@ class Plex_Api
         if ($params[0] == "small_black_7.png") {
             header("Content-type: image/png", true);
             echo file_get_contents(AmpConfig::get('prefix') . '/plex/resources/small_black_7.png');
-            exit;
+
+            return false;
         }
     }
 
@@ -1509,7 +1486,8 @@ class Plex_Api
                         if ($delMode) {
                             $playlist->delete_track_number($index);
                             $playlist->regenerate_track_numbers();
-                            exit;
+
+                            return false;
                         }
                     }
                 }

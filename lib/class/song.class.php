@@ -682,8 +682,8 @@ class Song extends database_object implements media, library_item
         }
         $db_results = Dba::read($sql);
 
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = new Song($r['id']);
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $results[] = new Song($row['id']);
         }
 
         return $results;
@@ -1720,7 +1720,7 @@ class Song extends database_object implements media, library_item
         // Checking if the media is gonna be transcoded into another type
         // Some players doesn't allow a type streamed into another without giving the right extension
         $transcode_cfg = AmpConfig::get('transcode');
-        $valid_types   = Song::get_stream_types_for_type($type, $player);
+        $valid_types   = self::get_stream_types_for_type($type, $player);
         if ($transcode_cfg == 'always' || ($transcode_cfg != 'never' && !in_array('native', $valid_types))) {
             $transcode_settings = $media->get_transcode_settings(null);
             if ($transcode_settings) {
@@ -1820,7 +1820,7 @@ class Song extends database_object implements media, library_item
      */
     public function get_stream_types($player = null)
     {
-        return Song::get_stream_types_for_type($this->type, $player);
+        return self::get_stream_types_for_type($this->type, $player);
     }
 
     /**
@@ -1932,7 +1932,7 @@ class Song extends database_object implements media, library_item
      */
     public function get_transcode_settings($target = null, $player = null, $options=array())
     {
-        return Song::get_transcode_settings_for_media($this->type, $target, $player, 'song', $options);
+        return self::get_transcode_settings_for_media($this->type, $target, $player, 'song', $options);
     }
 
     /**
@@ -1941,6 +1941,7 @@ class Song extends database_object implements media, library_item
      */
     public function get_lyrics()
     {
+        $lyrics = array();
         if ($this->lyrics) {
             return array('text' => $this->lyrics);
         }
@@ -1949,10 +1950,11 @@ class Song extends database_object implements media, library_item
             $plugin = new Plugin($plugin_name);
             if ($plugin->load($GLOBALS['user'])) {
                 $lyrics = $plugin->_plugin->get_lyrics($this);
-                if ($lyrics != false) {
-                    return $lyrics;
-                }
             }
+        }
+
+        if (!empty($lyrics)) {
+            return $lyrics;
         }
 
         return null;
@@ -1967,7 +1969,7 @@ class Song extends database_object implements media, library_item
     public function run_custom_play_action($action_index, $codec='')
     {
         $transcoder = array();
-        $actions    = Song::get_custom_play_actions();
+        $actions    = self::get_custom_play_actions();
         if ($action_index <= count($actions)) {
             $action = $actions[$action_index - 1];
             if (!$codec) {
@@ -2003,7 +2005,7 @@ class Song extends database_object implements media, library_item
      */
     public function show_custom_play_actions()
     {
-        $actions = Song::get_custom_play_actions();
+        $actions = self::get_custom_play_actions();
         foreach ($actions as $action) {
             echo Ajax::button('?page=stream&action=directplay&object_type=song&object_id=' . $this->id . '&custom_play_action=' . $action['index'], $action['icon'], T_($action['title']), $action['icon'] . '_song_' . $this->id);
         }

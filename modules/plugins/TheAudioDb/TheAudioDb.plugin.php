@@ -175,7 +175,7 @@ class AmpacheTheaudiodb
         debug_event('tadb', 'API call: ' . $url, 5);
         $request = Requests::get($url, array(), Core::requests_options());
 
-        if ($request->status_code != 200) {
+        if ($request->status_code !== 200) {
             return null;
         }
 

@@ -349,8 +349,8 @@ class Label extends database_object implements library_item
         $db_results = Dba::read($sql, array($this->name));
 
         $results = array();
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = $r['id'];
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $results[] = $row['id'];
         }
 
         return $results;
@@ -439,7 +439,7 @@ class Label extends database_object implements library_item
     {
         debug_event('label.class', 'Updating labels for values {' . $labels_comma . '} artist {' . $artist_id . '}', '5');
 
-        $clabels      = Label::get_labels($artist_id);
+        $clabels      = self::get_labels($artist_id);
         $editedLabels = explode(",", $labels_comma);
 
         if (is_array($clabels)) {
@@ -473,10 +473,10 @@ class Label extends database_object implements library_item
         foreach ($editedLabels as  $lk => $lv) {
             if ($lv != '') {
                 debug_event('label.class', 'Adding new label {' . $lv . '}', '5');
-                $label_id = Label::lookup(array('name' => $lv));
+                $label_id = self::lookup(array('name' => $lv));
                 if ($label_id === 0) {
                     debug_event('label.class', 'Creating a label directly from artist editing is not allowed.', '5');
-                    //$label_id = Label::create(array('name' => $lv));
+                    //$label_id = self::create(array('name' => $lv));
                 }
                 if ($label_id > 0) {
                     $clabel = new Label($label_id);
@@ -506,7 +506,7 @@ class Label extends database_object implements library_item
         foreach ($ar as $label) {
             $label = trim($label);
             if (!empty($label)) {
-                if (Label::lookup(array('name' => $label)) > 0) {
+                if (self::lookup(array('name' => $label)) > 0) {
                     $ret[] = $label;
                 }
             }

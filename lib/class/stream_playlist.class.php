@@ -188,11 +188,6 @@ class Stream_Playlist
                     $url['album']     = $object->f_album_full;
                     $url['track_num'] = $object->f_track;
                 break;
-                case 'video':
-                    $url['title']      = 'Video - ' . $object->title;
-                    $url['author']     = $object->f_artist_full;
-                    $url['resolution'] = $object->f_resolution;
-                break;
                 case 'live_stream':
                     $url['title'] = 'Radio - ' . $object->name;
                     if (!empty($object->site_url)) {
@@ -264,9 +259,6 @@ class Stream_Playlist
                 $redirect = false;
                 unset($ext);
             break;
-            case 'asx':
-                $ct = 'video/x-ms-asf';
-            break;
             case 'pls':
                 $ct = 'audio/x-scpls';
             break;
@@ -296,7 +288,8 @@ class Stream_Playlist
             // Our ID is the SID, so we always want to include it
             AmpConfig::set('require_session', true, true);
             header('Location: ' . Stream::get_base_url() . 'uid=' . scrub_out($this->user) . '&type=playlist&playlist_type=' . scrub_out($type));
-            exit;
+
+            return false;
         }
 
         if (isset($ext)) {
@@ -451,13 +444,6 @@ class Stream_Playlist
                 'location' => $url->url,
                 'identifier' => $url->url
             );
-            if ($url->type == 'video') {
-                $xml['track']['meta'] =
-                    array(
-                        'attribute' => 'rel="provider"',
-                        'value' => 'video'
-                    );
-            }
             if ($url->info_url) {
                 $xml['track']['info'] = $url->info_url;
             }
@@ -629,7 +615,8 @@ class Stream_Playlist
         $url = current($this->urls);
         $url = Stream_URL::add_options($url->url, '&action=download');
         header('Location: ' . $url);
-        exit;
+
+        return false;
     } //create_download
 
     /**

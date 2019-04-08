@@ -124,15 +124,7 @@ class Graph
             $type = $object_type;
         }
         $song_values  = $this->$fct($id, $type, $object_id, $start_date, $end_date, $zoom);
-        $video_values = array();
         $values       = $song_values;
-        foreach ($video_values as $date => $value) {
-            if (array_key_exists($date, $values)) {
-                $values[$date] += $value;
-            } else {
-                $values[$date] = $value;
-            }
-        }
         ksort($values, SORT_NUMERIC);
 
         return $values;
@@ -290,7 +282,7 @@ class Graph
 
         $where = $this->get_user_sql_where($user, $object_type, $object_id, $start_date, $end_date);
         if ($object_type == null) {
-            $where .= " AND `object_type` IN ('song', 'video')";
+            $where .= " AND `object_type` IN ('song')";
         }
         $sql = "SELECT `geo_latitude`, `geo_longitude`, `geo_name`, MAX(`date`) AS `last_date`, COUNT(`id`) AS `hits` FROM `object_count` " .
                 $where . " AND `geo_latitude` IS NOT NULL AND `geo_longitude` IS NOT NULL " .
@@ -511,7 +503,7 @@ class Graph
 
             $gtypes   = array();
             $gtypes[] = 'user_hits';
-            if ($object_type == null || $object_type == 'song' || $object_type == 'video') {
+            if ($object_type == null || $object_type == 'song') {
                 $gtypes[] = 'user_bandwidth';
             }
             if (!$user_id && !$object_id) {

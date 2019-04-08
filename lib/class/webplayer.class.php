@@ -41,16 +41,6 @@ class WebPlayer
     }
 
     /**
-     * Check if the playlist is a video playlist.
-     * @param \Playlist $playlist
-     * @return boolean
-     */
-    public static function is_playlist_video($playlist)
-    {
-        return (count($playlist->urls) > 0 && $playlist->urls[0]->type == "video");
-    }
-
-    /**
      * Get types information for an item.
      * @param \playable_item $item
      * @param string $force_type
@@ -123,20 +113,6 @@ class WebPlayer
                 } else {
                     if ($types['real'] == "mp4") {
                         $types['player'] = "m4a";
-                    }
-                }
-            } else {
-                if ($urlinfo['type'] == 'video') {
-                    if ($types['real'] == "ogg") {
-                        $types['player'] = "ogv";
-                    } else {
-                        if ($types['real'] == "webm") {
-                            $types['player'] = "webmv";
-                        } else {
-                            if ($types['real'] == "mp4") {
-                                $types['player'] = "m4v";
-                            }
-                        }
                     }
                 }
             }

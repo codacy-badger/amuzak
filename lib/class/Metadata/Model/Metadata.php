@@ -36,7 +36,7 @@ class Metadata extends \Lib\DatabaseObject implements \Lib\Interfaces\Model
     protected $id;
 
     /**
-     * A library item like song or video
+     * A library item like song
      * @var \library_item
      */
     protected $objectId;

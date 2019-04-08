@@ -26,7 +26,8 @@ require_once 'lib/init.php';
 /* Check Perms */
 if (!AmpConfig::get('use_now_playing_embedded') || AmpConfig::get('demo_mode')) {
     UI::access_denied();
-    exit;
+
+    return false;
 }
 
 ?>

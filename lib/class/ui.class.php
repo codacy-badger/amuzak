@@ -53,6 +53,7 @@ class UI
         }
     }
 
+
     /**
      * access_denied
      *
@@ -63,8 +64,9 @@ class UI
         // Clear any buffered crap
         ob_end_clean();
         header("HTTP/1.1 403 $error");
-        require_once AmpConfig::get('prefix') . UI::find_template('show_denied.inc.php');
-        exit;
+        require_once AmpConfig::get('prefix') . self::find_template('show_denied.inc.php');
+
+        return false;
     }
 
     /**
@@ -76,7 +78,7 @@ class UI
     public static function ajax_include($template)
     {
         ob_start();
-        require AmpConfig::get('prefix') . UI::find_template('') . $template;
+        require AmpConfig::get('prefix') . self::find_template('') . $template;
         $output = ob_get_contents();
         ob_end_clean();
 
@@ -299,7 +301,17 @@ END;
      */
     public static function show_header()
     {
-        require_once AmpConfig::get('prefix') . UI::find_template('header.inc.php');
+        require_once AmpConfig::get('prefix') . self::find_template('header.inc.php');
+    }
+
+    /**
+     * show_header_tiny
+     *
+     * For now this just shows the header-tiny template
+     */
+    public static function show_header_tiny()
+    {
+        require_once AmpConfig::get('prefix') . self::find_template('header-tiny.inc.php');
     }
 
     /**
@@ -321,7 +333,7 @@ END;
             }
         }
 
-        require_once AmpConfig::get('prefix') . UI::find_template('footer.inc.php');
+        require_once AmpConfig::get('prefix') . self::find_template('footer.inc.php');
         if (isset($_REQUEST['profiling'])) {
             Dba::show_profile();
         }
@@ -334,7 +346,7 @@ END;
      */
     public static function show_box_top($title = '', $class = '')
     {
-        require AmpConfig::get('prefix') . UI::find_template('show_box_top.inc.php');
+        require AmpConfig::get('prefix') . self::find_template('show_box_top.inc.php');
     }
 
     /**
@@ -344,7 +356,7 @@ END;
      */
     public static function show_box_bottom()
     {
-        require AmpConfig::get('prefix') . UI::find_template('show_box_bottom.inc.php');
+        require AmpConfig::get('prefix') . self::find_template('show_box_bottom.inc.php');
     }
 
     public static function show_custom_style()

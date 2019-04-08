@@ -25,7 +25,8 @@ require_once '../lib/init.php';
 
 if (!AmpConfig::get('daap_backend')) {
     echo "Disabled.";
-    exit;
+
+    return false;
 }
 
 $action = $_GET['action'];
@@ -59,7 +60,7 @@ if (count($params) > 0) {
             if ($act == $method) {
                 call_user_func(array('daap_api', $method), array_slice($params, $i, count($params) - $i));
                 // We only allow a single function to be called, and we assume it's cleaned up!
-                exit();
+                return false;
             }
         } // end foreach methods in API
     }

@@ -78,7 +78,7 @@ class Ampachelyricwiki
         if ($request->status_code == 200) {
             $xml = simplexml_load_string($request->body);
             if ($xml) {
-                if (!empty($xml->lyrics) && $xml->lyrics != "Not found") {
+                if (!empty($xml->lyrics) && $xml->lyrics !== "Not found") {
                     return array('text' => nl2br($xml->lyrics), 'url' => $xml->url);
                 }
             }

@@ -405,9 +405,7 @@ class vainfo
             $info['display_x']     = $info['display_x'] ?: intval($tags['display_x']);
             $info['display_y']     = $info['display_y'] ?: intval($tags['display_y']);
             $info['frame_rate']    = $info['frame_rate'] ?: floatval($tags['frame_rate']);
-            $info['video_bitrate'] = $info['video_bitrate'] ?: intval($tags['video_bitrate']);
             $info['audio_codec']   = $info['audio_codec'] ?: trim($tags['audio_codec']);
-            $info['video_codec']   = $info['video_codec'] ?: trim($tags['video_codec']);
             $info['description']   = $info['description'] ?: trim($tags['description']);
 
             $info['release_date']   = $info['release_date'] ?: trim($tags['release_date']);
@@ -475,9 +473,6 @@ class vainfo
     {
         // There are a few places that the file type can come from, in the end
         // we trust the encoding type.
-        if ($type = $this->_raw['video']['dataformat']) {
-            return $this->_clean_type($type);
-        }
         if ($type = $this->_raw['audio']['streams']['0']['dataformat']) {
             return $this->_clean_type($type);
         }
@@ -569,10 +564,6 @@ class vainfo
 
     private function get_metadata_order_key()
     {
-        if (!in_array('music', $this->gather_types)) {
-            return 'metadata_order_video';
-        }
-
         return 'metadata_order';
     }
 
@@ -630,13 +621,6 @@ class vainfo
         $parsed['mime']          = $tags['mime_type'];
         $parsed['time']          = ($this->_forcedSize ? ((($this->_forcedSize - $tags['avdataoffset']) * 8) / $tags['bitrate']) : $tags['playtime_seconds']);
         $parsed['audio_codec']   = $tags['audio']['dataformat'];
-        $parsed['video_codec']   = $tags['video']['dataformat'];
-        $parsed['resolution_x']  = $tags['video']['resolution_x'];
-        $parsed['resolution_y']  = $tags['video']['resolution_y'];
-        $parsed['display_x']     = $tags['video']['display_x'];
-        $parsed['display_y']     = $tags['video']['display_y'];
-        $parsed['frame_rate']    = $tags['video']['frame_rate'];
-        $parsed['video_bitrate'] = $tags['video']['bitrate'];
 
         if (isset($tags['ape'])) {
             if (isset($tags['ape']['items'])) {
@@ -1041,7 +1025,7 @@ class vainfo
         $file    = pathinfo($filepath, PATHINFO_FILENAME);
    
         if (in_array('music', $this->gather_types) || in_array('clip', $this->gather_types)) {
-            $patres  = vainfo::parse_pattern($filepath, $this->_dir_pattern, $this->_file_pattern);
+            $patres  = self::parse_pattern($filepath, $this->_dir_pattern, $this->_file_pattern);
             $results = array_merge($results, $patres);
             if ($this->islocal) {
                 $results['size'] = Core::get_filesize(Core::conv_lc_file($origin));
@@ -1103,31 +1087,6 @@ class vainfo
 
         return $results;
     }
-    
-    /**
-     * @return string
-     */
-    private function removeCommonAbbreviations($name)
-    {
-        $abbr             = explode(",", AmpConfig::get('common_abbr'));
-        $commonabbr       = preg_replace("~\n~", '', $abbr);
-        $commonabbr[]     = '[1|2][0-9]{3}';   //Remove release year
-        $commonabbr_count = count($commonabbr);
-
-        //scan for brackets, braces, etc and ignore case.
-        for ($i=0; $i < $commonabbr_count; $i++) {
-            $commonabbr[$i] = "~\[*|\(*|\<*|\{*\b(?i)" . trim($commonabbr[$i]) . "\b\]*|\)*|\>*|\}*~";
-        }
-        $string = preg_replace($commonabbr, '', $name);
-
-        return $string;
-    }
-    
-    private function formatVideoName($name)
-    {
-        return ucwords(trim($this->removeCommonAbbreviations(str_replace(['.', '_', '-'], ' ', $name), "\s\t\n\r\0\x0B\.\_\-")));
-    }
-
 
     /**
      * set_broken

@@ -32,7 +32,7 @@ header('Expires: ' . gmdate(DATE_RFC1123, time() - 1));
 <title><?php echo AmpConfig::get('site_title'); ?></title>
 <meta property="og:title" content="<?php echo AmpConfig::get('site_title'); ?>" />
 <meta property="og:image" content="<?php echo UI::get_logo_url(); ?>"/>
-<meta property="og:description" content="A web based audio/video streaming application and file manager allowing you to access your music & videos from anywhere, using almost any internet enabled device." />
+<meta property="og:description" content="A web based audio streaming application and file manager allowing you to access your music from anywhere, using almost any internet enabled device." />
 <meta property="og:site_name" content="Ampache"/>
 <?php
 if (!$is_share) {
@@ -40,7 +40,6 @@ if (!$is_share) {
 }
 
 $isRadio = false;
-$isVideo = false;
 $radio   = null;
 if (isset($playlist)) {
     if (WebPlayer::is_playlist_radio($playlist)) {
@@ -48,8 +47,6 @@ if (isset($playlist)) {
         // No special stuff for now
         $isRadio = true;
         $radio   = $playlist->urls[0];
-    } else {
-        $isVideo = WebPlayer::is_playlist_video($playlist);
     }
 }
 require_once AmpConfig::get('prefix') . UI::find_template('show_html5_player.inc.php');

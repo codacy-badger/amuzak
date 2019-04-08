@@ -424,7 +424,7 @@ class easy_captcha
         if ((rand(0, 100) <= 5) && ($dh = opendir($dir))) {
             $t_kill = time() - CAPTCHA_TIMEOUT * 1.2;
             while (false !== ($fn = readdir($dh))) {
-                if ($fn[0] != ".") {
+                if ($fn[0] !== ".") {
                     if (filemtime("$dir/$fn") < $t_kill) {
                         @unlink("$dir/$fn");
                     }
@@ -799,12 +799,12 @@ class easy_captcha_dxy_wave
     {
         $BEG  = $this->real_rand($a, $b);
         $DIFF = $this->real_rand($a, $b) - $BEG;
-        $r    = array();
+        $rand = array();
         for ($i = 0; $i <= $max; $i++) {
-            $r[$i] = $BEG + $DIFF * $i / $max;
+            $rand[$i] = $BEG + $DIFF * $i / $max;
         }
 
-        return($r);
+        return($rand);
     }
 
     #-- returns random value in given interval
@@ -1178,7 +1178,7 @@ class easy_captcha_utility
                     print $bin;
                 }
             }
-            exit;
+            return false;
         }
     }
 
@@ -1232,7 +1232,7 @@ function captcha_find_urls_in_form() {
 }
 // diff URL lists and hide captcha if nothing new was entered
 function captcha_spamfree_no_new_urls() {
-   var has_new_urls = captcha_find_urls_in_form().join(",") != captcha_form_urls.join(",");
+   var has_new_urls = captcha_find_urls_in_form().join(",") !== captcha_form_urls.join(",");
    var s = document.getElementById("captcha").style;
    if (s.opacity) {
       s.opacity = has_new_urls ? "0.9" : "0.1";

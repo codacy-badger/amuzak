@@ -257,9 +257,7 @@ class Api
                 $artist     = Dba::fetch_assoc($db_results);
 
                 // Next the video counts
-                $sql        = "SELECT COUNT(`id`) AS `video` FROM `video`";
-                $db_results = Dba::read($sql);
-                $vcounts    = Dba::fetch_assoc($db_results);
+                $vcounts    = array('video', 0);
 
                 $sql        = "SELECT COUNT(`id`) AS `playlist` FROM `playlist`";
                 $db_results = Dba::read($sql);
@@ -300,7 +298,7 @@ class Api
      */
     public static function ping($input)
     {
-        $xmldata = array('server' => AmpConfig::get('version'),'version' => Api::$version,'compatible' => '350001');
+        $xmldata = array('server' => AmpConfig::get('version'),'version' => self::$version,'compatible' => '350001');
 
         // Check and see if we should extend the api sessions (done if valid sess is passed)
         if (Session::exists('api', $input['auth'])) {
@@ -327,9 +325,9 @@ class Api
         self::$browse->set_sort('name', 'ASC');
 
         $method = $input['exact'] ? 'exact_match' : 'alpha_match';
-        Api::set_filter($method, $input['filter']);
-        Api::set_filter('add', $input['add']);
-        Api::set_filter('update', $input['update']);
+        self::set_filter($method, $input['filter']);
+        self::set_filter('add', $input['add']);
+        self::set_filter('update', $input['update']);
 
         // Set the offset
         XML_Data::set_offset($input['offset']);
@@ -398,9 +396,9 @@ class Api
         self::$browse->set_type('album');
         self::$browse->set_sort('name', 'ASC');
         $method = $input['exact'] ? 'exact_match' : 'alpha_match';
-        Api::set_filter($method, $input['filter']);
-        Api::set_filter('add', $input['add']);
-        Api::set_filter('update', $input['update']);
+        self::set_filter($method, $input['filter']);
+        self::set_filter('add', $input['add']);
+        self::set_filter('update', $input['update']);
 
         $albums = self::$browse->get_objects();
 
@@ -452,7 +450,7 @@ class Api
         self::$browse->set_sort('name', 'ASC');
 
         $method = $input['exact'] ? 'exact_match' : 'alpha_match';
-        Api::set_filter($method, $input['filter']);
+        self::set_filter($method, $input['filter']);
         $tags = self::$browse->get_objects();
 
         // Set the offset
@@ -537,11 +535,11 @@ class Api
         self::$browse->set_sort('title', 'ASC');
 
         $method = $input['exact'] ? 'exact_match' : 'alpha_match';
-        Api::set_filter($method, $input['filter']);
-        Api::set_filter('add', $input['add']);
-        Api::set_filter('update', $input['update']);
+        self::set_filter($method, $input['filter']);
+        self::set_filter('add', $input['add']);
+        self::set_filter('update', $input['update']);
         // Filter out disabled songs
-        Api::set_filter('enabled', '1');
+        self::set_filter('enabled', '1');
 
         $songs = self::$browse->get_objects();
 
@@ -592,7 +590,7 @@ class Api
         self::$browse->set_sort('name', 'ASC');
 
         $method = $input['exact'] ? 'exact_match' : 'alpha_match';
-        Api::set_filter($method, $input['filter']);
+        self::set_filter($method, $input['filter']);
         self::$browse->set_filter('playlist_type', '1');
 
         $playlist_ids = self::$browse->get_objects();
@@ -789,40 +787,6 @@ class Api
     } // advanced_search
 
     /**
-     * videos
-     * This returns video objects!
-     * @param array $input
-     */
-    public static function videos($input)
-    {
-        self::$browse->reset_filters();
-        self::$browse->set_type('video');
-        self::$browse->set_sort('title', 'ASC');
-
-        $method = $input['exact'] ? 'exact_match' : 'alpha_match';
-        Api::set_filter($method, $input['filter']);
-
-        $video_ids = self::$browse->get_objects();
-
-        XML_Data::set_offset($input['offset']);
-        XML_Data::set_limit($input['limit']);
-
-        echo XML_Data::videos($video_ids);
-    } // videos
-
-    /**
-     * video
-     * This returns a single video
-     * @param array $input
-     */
-    public static function video($input)
-    {
-        $video_id = scrub_in($input['filter']);
-
-        echo XML_Data::videos(array($video_id));
-    } // video
-
-    /**
      * democratic
      * This is for controlling democratic play
      * @param array $input
@@ -998,7 +962,7 @@ class Api
 
     /**
      * rate
-     * This rate a library item
+     * This rates a library item
      * @param array $input
      */
     public static function rate($input)
@@ -1015,8 +979,8 @@ class Api
             if (!$item->id) {
                 echo XML_Data::error('404', T_('Library item not found.'));
             } else {
-                $r = new Rating($id, $type);
-                $r->set_rating($rating);
+                $rate = new Rating($id, $type);
+                $rate->set_rating($rating);
                 echo XML_Data::single_string('success');
             }
         }

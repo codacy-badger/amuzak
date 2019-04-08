@@ -110,7 +110,7 @@ class AmpacheLastfm
     public function save_mediaplay($song)
     {
         // Only support songs
-        if (strtolower(get_class($song)) != 'song') {
+        if (strtolower(get_class($song)) !== 'song') {
             return false;
         }
         // Make sure there's actually a session before we keep going

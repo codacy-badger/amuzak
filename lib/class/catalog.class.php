@@ -359,18 +359,6 @@ abstract class Catalog extends database_object
     }
 
     /**
-     * Check if a file is a video.
-     * @param string $file
-     * @return boolean
-     */
-    public static function is_video_file($file)
-    {
-        $video_pattern = "/\.(" . AmpConfig::get('catalog_video_pattern') . ")$/i";
-
-        return (preg_match($video_pattern, $file) === 1);
-    }
-
-    /**
      * Check if a file is a playlist.
      * @param string $file
      * @return integer
@@ -423,9 +411,6 @@ abstract class Catalog extends database_object
             }
             $sql = "(SELECT COUNT(`song_dis`.`id`) FROM `song` AS `song_dis` LEFT JOIN `catalog` AS `catalog_dis` ON `catalog_dis`.`id` = `song_dis`.`catalog` " .
                 "WHERE `song_dis`.`" . $type . "`=" . $id . " AND `catalog_dis`.`enabled` = '1' GROUP BY `song_dis`.`" . $type . "`) > 0";
-        } elseif ($type == "video") {
-            $sql = "(SELECT COUNT(`video_dis`.`id`) FROM `video` AS `video_dis` LEFT JOIN `catalog` AS `catalog_dis` ON `catalog_dis`.`id` = `video_dis`.`catalog` " .
-                "WHERE `video_dis`.`id`=" . $id . " AND `catalog_dis`.`enabled` = '1' GROUP BY `video_dis`.`id`) > 0";
         }
 
         return $sql;
@@ -447,13 +432,6 @@ abstract class Catalog extends database_object
             // Populate the filecache
             while ($results = Dba::fetch_assoc($db_results)) {
                 $this->_filecache[strtolower($results['file'])] = $results['id'];
-            }
-
-            $sql        = 'SELECT `id`,`file` FROM `video` WHERE `catalog` = ?';
-            $db_results = Dba::read($sql, array($this->id));
-
-            while ($results = Dba::fetch_assoc($db_results)) {
-                $this->_filecache[strtolower($results['file'])] = 'v_' . $results['id'];
             }
         }
 
@@ -559,11 +537,11 @@ abstract class Catalog extends database_object
     public static function getLastUpdate($catalogs = null)
     {
         $last_update = 0;
-        if ($catalogs == null || !is_array($catalogs)) {
+        if ($catalogs === null || !is_array($catalogs)) {
             $catalogs = self::get_catalogs();
         }
         foreach ($catalogs as $id) {
-            $catalog = Catalog::create_from_id($id);
+            $catalog = self::create_from_id($id);
             if ($catalog->last_add > $last_update) {
                 $last_update = $catalog->last_add;
             }
@@ -685,7 +663,7 @@ abstract class Catalog extends database_object
     /**
      * count_medias
      *
-     * This returns the current number of songs, videos, albums, and artists
+     * This returns the current number of songs, albums, and artists
      * in this catalog.
      * @param int|null $catalog_id
      * @return array
@@ -702,14 +680,6 @@ abstract class Catalog extends database_object
         $songs      = $data[0];
         $time       = $data[1];
         $size       = $data[2];
-
-        $sql = 'SELECT COUNT(`id`), SUM(`time`), SUM(`size`) FROM `video` ' .
-            $where_sql;
-        $db_results = Dba::read($sql, $params);
-        $data       = Dba::fetch_row($db_results);
-        $videos     = $data[0];
-        $time += $data[1];
-        $size += $data[2];
 
         $sql        = 'SELECT COUNT(DISTINCT(`album`)) FROM `song` ' . $where_sql;
         $db_results = Dba::read($sql, $params);
@@ -743,7 +713,6 @@ abstract class Catalog extends database_object
 
         $results                   = array();
         $results['songs']          = $songs;
-        $results['videos']         = $videos;
         $results['albums']         = $albums;
         $results['artists']        = $artists;
         $results['playlists']      = $playlists;
@@ -1024,7 +993,7 @@ abstract class Catalog extends database_object
 
         $results = array();
         foreach ($catalogs as $catalog_id) {
-            $catalog     = Catalog::create_from_id($catalog_id);
+            $catalog     = self::create_from_id($catalog_id);
             $podcast_ids = $catalog->get_podcast_ids();
             foreach ($podcast_ids as $podcast_id) {
                 $results[] = new Podcast($podcast_id);
@@ -1069,7 +1038,7 @@ abstract class Catalog extends database_object
 
         $results = array();
         foreach ($catalogs as $catalog_id) {
-            $catalog     = Catalog::create_from_id($catalog_id);
+            $catalog     = self::create_from_id($catalog_id);
             $episode_ids = $catalog->get_newest_podcasts_ids();
             foreach ($episode_ids as $episode_id) {
                 $results[] = new Podcast_Episode($episode_id);
@@ -1173,7 +1142,7 @@ abstract class Catalog extends database_object
 
         $search_count = 0;
         $searches     = array();
-        if ($songs == null) {
+        if ($songs === null) {
             $searches['album']  = $this->get_album_ids();
             $searches['artist'] = $this->get_artist_ids();
         } else {
@@ -1424,13 +1393,13 @@ abstract class Catalog extends database_object
     {
         debug_event('tag-read', 'Reading tags from ' . $media->file, 5);
 
-        $catalog        = Catalog::create_from_id($media->catalog);
+        $catalog        = self::create_from_id($media->catalog);
 
         $results = $catalog->get_media_tags($media, $gather_types, $sort_pattern, $rename_pattern);
 
         // Figure out what type of object this is and call the right
         // function, giving it the stuff we've figured out above
-        $name = (strtolower(get_class($media)) == 'song') ? 'song' : 'video';
+        $name = 'song';
 
         $function = 'update_' . $name . '_from_tags';
 
@@ -2053,9 +2022,6 @@ abstract class Catalog extends database_object
             return false;
         }
         self::clean_empty_albums();
-        
-        $sql        = "DELETE FROM `video` WHERE `catalog` = ?";
-        $db_results = Dba::write($sql, array($catalog_id));
 
         if (!$db_results) {
             return false;
@@ -2216,11 +2182,11 @@ abstract class Catalog extends database_object
 
         switch ($action) {
             case 'add_to_all_catalogs':
-                $catalogs = Catalog::get_catalogs();
+                $catalogs = self::get_catalogs();
             case 'add_to_catalog':
                 if ($catalogs) {
                     foreach ($catalogs as $catalog_id) {
-                        $catalog = Catalog::create_from_id($catalog_id);
+                        $catalog = self::create_from_id($catalog_id);
                         if ($catalog !== null) {
                             $catalog->add_to_catalog($options);
                         }
@@ -2232,11 +2198,11 @@ abstract class Catalog extends database_object
                 }
                 break;
             case 'update_all_catalogs':
-                $catalogs = Catalog::get_catalogs();
+                $catalogs = self::get_catalogs();
             case 'update_catalog':
                 if ($catalogs) {
                     foreach ($catalogs as $catalog_id) {
-                        $catalog = Catalog::create_from_id($catalog_id);
+                        $catalog = self::create_from_id($catalog_id);
                         if ($catalog !== null) {
                             $catalog->verify_catalog();
                         }
@@ -2245,12 +2211,12 @@ abstract class Catalog extends database_object
                 break;
             case 'full_service':
                 if (!$catalogs) {
-                    $catalogs = Catalog::get_catalogs();
+                    $catalogs = self::get_catalogs();
                 }
 
                 /* This runs the clean/verify/add in that order */
                 foreach ($catalogs as $catalog_id) {
-                    $catalog = Catalog::create_from_id($catalog_id);
+                    $catalog = self::create_from_id($catalog_id);
                     if ($catalog !== null) {
                         $catalog->clean_catalog();
                         $catalog->verify_catalog();
@@ -2260,11 +2226,11 @@ abstract class Catalog extends database_object
                 Dba::optimize_tables();
                 break;
             case 'clean_all_catalogs':
-                $catalogs = Catalog::get_catalogs();
+                $catalogs = self::get_catalogs();
             case 'clean_catalog':
                 if ($catalogs) {
                     foreach ($catalogs as $catalog_id) {
-                        $catalog = Catalog::create_from_id($catalog_id);
+                        $catalog = self::create_from_id($catalog_id);
                         if ($catalog !== null) {
                             $catalog->clean_catalog();
                         }
@@ -2277,7 +2243,7 @@ abstract class Catalog extends database_object
                 // First see if we need to do an add
                 if ($options['add_path'] != '/' && strlen($options['add_path'])) {
                     if ($catalog_id = Catalog_local::get_from_path($options['add_path'])) {
-                        $catalog = Catalog::create_from_id($catalog_id);
+                        $catalog = self::create_from_id($catalog_id);
                         if ($catalog !== null) {
                             $catalog->add_to_catalog(array('subdirectory' => $options['add_path']));
                         }
@@ -2289,7 +2255,7 @@ abstract class Catalog extends database_object
                     if ($catalog_id = Catalog_local::get_from_path($options['update_path'])) {
                         $songs = Song::get_from_path($options['update_path']);
                         foreach ($songs as $song_id) {
-                            Catalog::update_single_item('song', $song_id);
+                            self::update_single_item('song', $song_id);
                         }
                     }
                 } // end if update
@@ -2300,12 +2266,12 @@ abstract class Catalog extends database_object
                 break;
             case 'gather_media_art':
                 if (!$catalogs) {
-                    $catalogs = Catalog::get_catalogs();
+                    $catalogs = self::get_catalogs();
                 }
 
                 // Iterate throught the catalogs and gather as needed
                 foreach ($catalogs as $catalog_id) {
-                    $catalog = Catalog::create_from_id($catalog_id);
+                    $catalog = self::create_from_id($catalog_id);
                     if ($catalog !== null) {
                         require AmpConfig::get('prefix') . UI::find_template('show_gather_art.inc.php');
                         flush();

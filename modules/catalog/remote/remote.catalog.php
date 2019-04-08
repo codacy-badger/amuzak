@@ -140,7 +140,7 @@ class Catalog_remote extends Catalog
         $username = $data['username'];
         $password = $data['password'];
 
-        if (substr($uri, 0, 7) != 'http://' && substr($uri, 0, 8) != 'https://') {
+        if (substr($uri, 0, 7) !== 'http://' && substr($uri, 0, 8) !== 'https://') {
             AmpError::add('general', T_('Error: Remote selected, but path is not a URL'));
 
             return false;
@@ -212,7 +212,7 @@ class Catalog_remote extends Catalog
             return false;
         }
 
-        if ($remote_handle->state() != 'CONNECTED') {
+        if ($remote_handle->state() !== 'CONNECTED') {
             debug_event('catalog', 'API client failed to connect', 1);
             AmpError::add('general', T_('Error connecting to remote server'));
             AmpError::display('general');
@@ -376,7 +376,8 @@ class Catalog_remote extends Catalog
         // If we don't get anything back we failed and should bail now
         if (!$remote_handle) {
             debug_event('play', 'Connection to remote server failed', 1);
-            exit;
+
+            return false;
         }
 
         $handshake = $remote_handle->info();

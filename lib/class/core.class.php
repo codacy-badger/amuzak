@@ -55,7 +55,7 @@ class Core
         }
 
         foreach ($possiblePaths as $path) {
-            if (is_file($path) && Core::is_readable($path)) {
+            if (is_file($path) && self::is_readable($path)) {
                 require_once($path);
                 self::executeAutoCall($class);
             } else {
@@ -394,7 +394,7 @@ class Core
 
     public static function requests_options($options = null)
     {
-        if ($options == null) {
+        if ($options === null) {
             $options = array();
         }
 

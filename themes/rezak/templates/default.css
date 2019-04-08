@@ -21,11 +21,7 @@
 
 @font-face {
     font-family: 'DejaVuSansCondensed';
-    src: url('fonts/dejavusanscondensed.eot');
-    src: url('fonts/dejavusanscondensed.eot') format('embedded-opentype'),
-         url('fonts/dejavusanscondensed.woff') format('woff'),
-         url('fonts/dejavusanscondensed.ttf') format('truetype'),
-         url('fonts/dejavusanscondensed.svg#DejaVuSansCondensed') format('svg');
+    src: url('fonts/dejavusanscondensed.eot?') format('embedded-opentype'),  url('fonts/dejavusanscondensed.woff') format('woff'), url('fonts/dejavusanscondensed.ttf') format('truetype'), url('fonts/dejavusanscondensed.svg#DejaVuSansCondensed') format('svg');
 }
 
 /***********************************************
@@ -43,6 +39,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 html {
     font-size: 100%;
     -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
     height: 100%;
 }
 
@@ -169,7 +166,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 #footer {
     width: auto;
     z-index: 5;
-    margin: 15px 250px 0px 0px;
+    margin: 15px 250px 0 0;
 }
 
 .footer-wild {
@@ -177,15 +174,15 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 #ajax-loading {
-    position: fixed;
-    top: 63px;
-    left: 6px;
-    font-size: 12px;
-    text-align: center;
-    width: 120px;
-    display: none;
     background-repeat: no-repeat;
     background-position: right; 
+    display: none;
+    font-size: 12px;
+    left: 52px;
+    position: absolute;
+    text-align: center;
+    top: 41px;
+    width: 120px;
 }
 
 /***********************************************
@@ -200,13 +197,10 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     z-index: 5;
 }
 
-.header-float {
-}
-
 .header-fixed {
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 99%;
 }
 
@@ -359,6 +353,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     margin-left: 0;
     width: 100%;
     min-height: 28px;
+    -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
@@ -455,6 +450,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -webkit-box-sizing: border-box;
+    border-radius: 2px;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
@@ -476,10 +472,10 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 #sidebar-content, #sidebar-content-light, #sidebar-light {
-    border-radius: 2px;
     border: 2px solid;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
+    border-radius: 2px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -493,7 +489,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 #sidebar-content-light {
-    padding: 0px;
+    padding: 0;
     display: none;
     width: 70px;
 }
@@ -501,7 +497,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 #sidebar-light {
     width: 70px;
     position: fixed;
-    left: 0px;
+    left: 0;
     margin: 17px auto 5px 5px;
     padding: 10px 0 10px 0;
     text-align: center;
@@ -528,7 +524,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 .sidebar-fixed {
-    margin: 0px auto auto 5px;
+    margin: 0 auto auto 5px;
     float: left;
     width: 148px;
 }
@@ -541,7 +537,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 
 #sidebar-tabs li.sb1 {
     float: left;
-    margin: 0px 4px 0px 4px;
+    margin: 0 4px 0 4px;
     height: 25px;
 }
 
@@ -567,7 +563,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 
 .sidebar-page-float {
     position: absolute;
-    left: 0px;
+    left: 0;
 }
 
 #sidebar-tabs .sb2 li h4 {
@@ -744,7 +740,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 #rightbar #localplay-control {
     padding: 5px;
     text-align: center;
-    margin: 7px 0px;
+    margin: 7px 0;
 }
 
 #rightbar #localplay-control img {
@@ -772,11 +768,10 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 20px;
 }
 
 .content-float {
-    margin: 5px 250px 0px 160px;
+    margin: 5px 250px 0 160px;
 }
 
 .content-right-wild {
@@ -788,11 +783,11 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 .content-fixed {
-    margin: 86px 250px 0px 158px;
+    margin: 86px 250px 0 158px;
 }
 
 .content-fixed-topmenu {
-    margin: 0px 250px 0px 205px;
+    margin: 0 250px 0 205px;
 }
 
 .browse_content {
@@ -936,6 +931,8 @@ table.tabledata tbody .cel_cover img {
     border-radius: 2px;
     height: 100%;
     margin: 2px;
+    min-height: 24px;
+    min-width: 24px;
     object-fit: cover;
     vertical-align: middle;
     width: 99%;
@@ -943,7 +940,7 @@ table.tabledata tbody .cel_cover img {
 
 table.tabledata tbody .cel_cover img:hover {
     border: 2px solid;
-    margin: 0px;
+    margin: 0;
 }
 
 table.tabledata .cel_drag {
@@ -1095,7 +1092,7 @@ table.highlightdisablegv td.cel_rating {
 
 .random_selection .random_album .art_album img:hover {
     border: 2px solid;
-    margin: 0px;
+    margin: 0;
 }
 
 .random_selection .random_album .star-rating, .random_selection .random_video .star-rating {
@@ -1217,9 +1214,6 @@ div.box.box_rules {
     margin-right: 30px;
 }
 
-.album_group_disks_actions {
-
-}
 
 /***********************************************
     Content (Tag cloud)
@@ -1355,8 +1349,8 @@ span.fatalerror {
     display: none;
     position: absolute;
     float: right;
-    bottom: 0px;
-    right: 0px;
+    bottom: 0;
+    right: 0;
     padding-bottom: 10px;
     padding-top: 5px;
     width: 100%;
@@ -1383,7 +1377,7 @@ span.fatalerror {
 
 .item_art:hover {
     border: 2px solid;
-    margin: 0px;
+    margin: 0;
 }
 
 .item_art:hover  .item_art_actions {
@@ -1412,7 +1406,7 @@ span.fatalerror {
 }
 
 #information_actions input {
-    margin: 0px 5px 0 2px;
+    margin: 0 5px 0 2px;
 }
 
 #information_actions .star-rating li {
@@ -1428,7 +1422,7 @@ span.fatalerror {
 }
 
 .item_uploaded_by {
-	padding-left: 0px;
+	padding-left: 0;
 	padding-top: 10px;
 	font-size: small;
 }
@@ -1443,7 +1437,7 @@ span.fatalerror {
 }
 
 .external_links a {
-    margin: 0px 5px 0px 0px;
+    margin: 0 5px 0 0;
     opacity: 0.3;
 }
 
@@ -1508,8 +1502,8 @@ span.fatalerror {
 .star-rating .current-rating { z-index:1; background-position: left bottom; }
 
 .star-rating a.star0 {
-    left:0px;
-    width:16px;
+    left: 0;
+    width: 16px;
     background: url(../../../images/ratings/x_off.gif) left top;
 }
 
@@ -1521,7 +1515,7 @@ span.fatalerror {
     background: url(../../../images/ratings/x.gif) left top;
 }
 .dynamic-star-rating ul {
-    left:16px;
+    left: 16px;
 }
 
 /************************************************/
@@ -1638,7 +1632,7 @@ ol, ul, #rightbar ul {
 }
 
 input.list-header-navmenu-input {
-	padding: 0px;
+	padding: 0;
 	margin-bottom: 2px;
 	width: 50px;
 	height: 16px;
@@ -1670,12 +1664,12 @@ a.option-list:hover {
 	padding: 5px 12px 4px;
 	font-size: 15px;
 	line-height: normal;
-	border: 0px none;
+	border: 0 none;
 	cursor: pointer;
 	border-radius: 2px;
-	background-position: 0px -10px;
+	background-position: 0 -10px;
 	transition: background-position 0.1s linear 0s;
-	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.5);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
 	text-decoration: none;
 	min-width: 100px;
 	background-color: #363F4A;

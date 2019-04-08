@@ -1,4 +1,4 @@
-!function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.AV=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
+!function(e){if("object"==typeof exports&&"undefined"!==typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!==typeof window?f=window:"undefined"!==typeof global?f=global:"undefined"!==typeof self&&(f=self),f.AV=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
 var key, val, _ref;
 
 _ref = _dereq_('./src/aurora');
@@ -76,7 +76,7 @@ Asset = (function(_super) {
     if (this.active) {
       return;
     }
-    if (decode != null) {
+    if (decode !== null) {
       this.shouldDecode = decode;
     }
     if (this.shouldDecode == null) {
@@ -101,7 +101,7 @@ Asset = (function(_super) {
     if (event !== 'format' && event !== 'duration' && event !== 'metadata') {
       return;
     }
-    if (this[event] != null) {
+    if (this[event] !== null) {
       return callback(this[event]);
     } else {
       this.once(event, (function(_this) {
@@ -601,7 +601,7 @@ AVBuffer = (function() {
     var _ref;
     if (input instanceof Uint8Array) {
       this.data = input;
-    } else if (input instanceof ArrayBuffer || Array.isArray(input) || typeof input === 'number' || ((_ref = global.Buffer) != null ? _ref.isBuffer(input) : void 0)) {
+    } else if (input instanceof ArrayBuffer || Array.isArray(input) || typeof input === 'number' || ((_ref = global.Buffer) !== null ? _ref.isBuffer(input) : void 0)) {
       this.data = new Uint8Array(input);
     } else if (input.buffer instanceof ArrayBuffer) {
       this.data = new Uint8Array(input.buffer, input.byteOffset, input.length * input.BYTES_PER_ELEMENT);
@@ -648,7 +648,7 @@ AVBuffer = (function() {
         type: type
       });
     } catch (_error) {}
-    if (BlobBuilder != null) {
+    if (BlobBuilder !== null) {
       bb = new BlobBuilder;
       bb.append(data);
       return bb.getBlob(type);
@@ -657,11 +657,11 @@ AVBuffer = (function() {
   };
 
   AVBuffer.makeBlobURL = function(data, type) {
-    return URL != null ? URL.createObjectURL(this.makeBlob(data, type)) : void 0;
+    return URL !== null ? URL.createObjectURL(this.makeBlob(data, type)) : void 0;
   };
 
   AVBuffer.revokeBlobURL = function(url) {
-    return URL != null ? URL.revokeObjectURL(url) : void 0;
+    return URL !== null ? URL.revokeObjectURL(url) : void 0;
   };
 
   AVBuffer.prototype.toBlob = function() {
@@ -706,7 +706,7 @@ BufferList = (function() {
   BufferList.prototype.append = function(buffer) {
     var _ref;
     buffer.prev = this.last;
-    if ((_ref = this.last) != null) {
+    if ((_ref = this.last) !== null) {
       _ref.next = buffer;
     }
     this.last = buffer;
@@ -723,7 +723,7 @@ BufferList = (function() {
       this.availableBytes -= this.first.length;
       this.availableBuffers--;
       this.first = this.first.next;
-      return this.first != null;
+      return this.first !== null;
     }
     return false;
   };
@@ -733,12 +733,12 @@ BufferList = (function() {
     if (this.first && !this.first.prev) {
       return false;
     }
-    this.first = ((_ref = this.first) != null ? _ref.prev : void 0) || this.last;
+    this.first = ((_ref = this.first) !== null ? _ref.prev : void 0) || this.last;
     if (this.first) {
       this.availableBytes += this.first.length;
       this.availableBuffers++;
     }
-    return this.first != null;
+    return this.first !== null;
   };
 
   BufferList.prototype.reset = function() {
@@ -785,7 +785,7 @@ EventEmitter = (function(_super) {
 
   EventEmitter.prototype.off = function(event, fn) {
     var index, _ref;
-    if (!((_ref = this.events) != null ? _ref[event] : void 0)) {
+    if (!((_ref = this.events) !== null ? _ref[event] : void 0)) {
       return;
     }
     index = this.events[event].indexOf(fn);
@@ -805,7 +805,7 @@ EventEmitter = (function(_super) {
   EventEmitter.prototype.emit = function() {
     var args, event, fn, _i, _len, _ref, _ref1;
     event = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
-    if (!((_ref = this.events) != null ? _ref[event] : void 0)) {
+    if (!((_ref = this.events) !== null ? _ref[event] : void 0)) {
       return;
     }
     _ref1 = this.events[event].slice();
@@ -2149,7 +2149,7 @@ M4ADemuxer = (function(_super) {
       }
       path = this.atoms.join('.');
       handler = atoms[path];
-      if (handler != null ? handler.fn : void 0) {
+      if (handler !== null ? handler.fn : void 0) {
         if (!(this.stream.available(this.len) || path === 'mdat')) {
           return;
         }
@@ -2167,7 +2167,7 @@ M4ADemuxer = (function(_super) {
       }
       while (this.stream.offset >= this.offsets[this.offsets.length - 1]) {
         handler = atoms[this.atoms.join('.')];
-        if (handler != null ? handler.after : void 0) {
+        if (handler !== null ? handler.after : void 0) {
           handler.after.call(this);
         }
         type = this.atoms.pop();
@@ -2252,7 +2252,7 @@ M4ADemuxer = (function(_super) {
     } else if (version !== 0) {
       this.emit('error', 'Unknown version in stsd atom');
     }
-    if (BITS_PER_CHANNEL[format.formatID] != null) {
+    if (BITS_PER_CHANNEL[format.formatID] !== null) {
       format.bitsPerChannel = BITS_PER_CHANNEL[format.formatID];
     }
     format.floatingPoint = (_ref = format.formatID) === 'fl32' || _ref === 'fl64';
@@ -2394,7 +2394,7 @@ M4ADemuxer = (function(_super) {
 
   M4ADemuxer.prototype.setupSeekPoints = function() {
     var i, j, offset, position, sampleIndex, size, stscIndex, sttsIndex, sttsSample, timestamp, _i, _j, _len, _ref, _ref1, _results;
-    if (!((this.track.chunkOffsets != null) && (this.track.stsc != null) && (this.track.sampleSize != null) && (this.track.stts != null))) {
+    if (!((this.track.chunkOffsets !== null) && (this.track.stsc !== null) && (this.track.sampleSize !== null) && (this.track.stts !== null))) {
       return;
     }
     stscIndex = 0;
@@ -2435,7 +2435,7 @@ M4ADemuxer = (function(_super) {
 
   after('moov', function() {
     var track, _i, _len, _ref;
-    if (this.mdatOffset != null) {
+    if (this.mdatOffset !== null) {
       this.stream.seek(this.mdatOffset - 8);
     }
     _ref = this.tracks;
@@ -2530,7 +2530,7 @@ M4ADemuxer = (function(_super) {
 
   M4ADemuxer.prototype.parseChapters = function() {
     var bom, id, len, nextTimestamp, point, title, track, _i, _len, _ref, _ref1, _ref2, _ref3;
-    if (!(((_ref = this.track.chapterTracks) != null ? _ref.length : void 0) > 0)) {
+    if (!(((_ref = this.track.chapterTracks) !== null ? _ref.length : void 0) > 0)) {
       return true;
     }
     id = this.track.chapterTracks[0];
@@ -2567,7 +2567,7 @@ M4ADemuxer = (function(_super) {
       if (title == null) {
         title = this.stream.readString(len, 'utf8');
       }
-      nextTimestamp = (_ref2 = (_ref3 = track.seekPoints[this.chapters.length + 1]) != null ? _ref3.timestamp : void 0) != null ? _ref2 : track.duration;
+      nextTimestamp = (_ref2 = (_ref3 = track.seekPoints[this.chapters.length + 1]) !== null ? _ref3.timestamp : void 0) !== null ? _ref2 : track.duration;
       this.chapters.push({
         title: title,
         timestamp: point.timestamp / track.timeScale * 1000 | 0,
@@ -3237,7 +3237,7 @@ WebAudioDevice = (function(_super) {
     this.sampleRate = sampleRate;
     this.channels = channels;
     this.refill = __bind(this.refill, this);
-    this.context = sharedContext != null ? sharedContext : sharedContext = new AudioContext;
+    this.context = sharedContext !== null ? sharedContext : sharedContext = new AudioContext;
     this.deviceSampleRate = this.context.sampleRate;
     this.bufferSize = Math.ceil(4096 / (this.deviceSampleRate / this.sampleRate) * this.channels);
     this.bufferSize += this.bufferSize % this.channels;
@@ -3469,7 +3469,7 @@ Player = (function(_super) {
       this.preload();
     }
     this.playing = true;
-    return (_ref = this.device) != null ? _ref.start() : void 0;
+    return (_ref = this.device) !== null ? _ref.start() : void 0;
   };
 
   Player.prototype.pause = function() {
@@ -3478,7 +3478,7 @@ Player = (function(_super) {
       return;
     }
     this.playing = false;
-    return (_ref = this.device) != null ? _ref.stop() : void 0;
+    return (_ref = this.device) !== null ? _ref.stop() : void 0;
   };
 
   Player.prototype.togglePlayback = function() {
@@ -3493,22 +3493,22 @@ Player = (function(_super) {
     var _ref;
     this.pause();
     this.asset.stop();
-    return (_ref = this.device) != null ? _ref.destroy() : void 0;
+    return (_ref = this.device) !== null ? _ref.destroy() : void 0;
   };
 
   Player.prototype.seek = function(timestamp) {
     var _ref;
-    if ((_ref = this.device) != null) {
+    if ((_ref = this.device) !== null) {
       _ref.stop();
     }
     this.queue.once('ready', (function(_this) {
       return function() {
         var _ref1, _ref2;
-        if ((_ref1 = _this.device) != null) {
+        if ((_ref1 = _this.device) !== null) {
           _ref1.seek(_this.currentTime);
         }
         if (_this.playing) {
-          return (_ref2 = _this.device) != null ? _ref2.start() : void 0;
+          return (_ref2 = _this.device) !== null ? _ref2.start() : void 0;
         }
       };
     })(this));
@@ -3721,7 +3721,7 @@ FileSource = (function(_super) {
     var _ref;
     this.active = false;
     try {
-      return (_ref = this.reader) != null ? _ref.abort() : void 0;
+      return (_ref = this.reader) !== null ? _ref.abort() : void 0;
     } catch (_error) {}
   };
 
@@ -3844,7 +3844,7 @@ HTTPSource = (function(_super) {
   HTTPSource.prototype.pause = function() {
     var _ref;
     this.inflight = false;
-    return (_ref = this.xhr) != null ? _ref.abort() : void 0;
+    return (_ref = this.xhr) !== null ? _ref.abort() : void 0;
   };
 
   HTTPSource.prototype.reset = function() {
