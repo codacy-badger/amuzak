@@ -520,9 +520,9 @@ class Subsonic_XML_Data
     
     public static function getCatalogData($catalogId, $file_Path)
     {
-        $results    = array();
-        $sqllook    = 'SELECT `catalog_type` FROM `catalog` WHERE `id` = ?';
-        $db_results = Dba::read($sqllook, [$catalogId]);
+        $results         = array();
+        $sqllook         = 'SELECT `catalog_type` FROM `catalog` WHERE `id` = ?';
+        $db_results      = Dba::read($sqllook, [$catalogId]);
         $resultcheck     = Dba::fetch_assoc($db_results);
         if ($resultcheck) {
             $sql             = 'SELECT `path` FROM ' . 'catalog_' . $resultcheck['catalog_type'] . ' WHERE `catalog_id` = ?';
