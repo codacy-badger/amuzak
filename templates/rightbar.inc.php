@@ -104,6 +104,8 @@
         ?>
             $("#content").addClass("content-right-wild", 500);
             $("#footer").addClass("footer-wild", 500);
+<?php 
+} ?>
     </script>
 <?php
     // Limit the number of objects we show here
@@ -146,4 +148,3 @@
 if (count($objects)) {
     Stream::run_playlist_method();
 }
-?>
