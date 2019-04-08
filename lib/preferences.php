@@ -154,6 +154,7 @@ function create_preference_input($name, $value)
         case 'access_control':
         case 'allow_stream_playback':
         case 'allow_democratic_playback':
+        case 'allow_localplay_playback':
         case 'demo_mode':
         case 'condPL':
         case 'rio_track_stats':
@@ -219,10 +220,13 @@ function create_preference_input($name, $value)
             show_catalog_select('upload_catalog', $value, '', true);
         break;
         case 'play_type':
+            $is_localplay  = '';
             $is_democratic = '';
             $is_web_player = '';
             $is_stream     = '';
-            if ($value == 'democratic') {
+            if ($value == 'localplay') {
+                $is_localplay = 'selected="selected"';
+            } elseif ($value == 'democratic') {
                 $is_democratic = 'selected="selected"';
             } elseif ($value == 'web_player') {
                 $is_web_player = 'selected="selected"';
@@ -236,6 +240,9 @@ function create_preference_input($name, $value)
             }
             if (AmpConfig::get('allow_democratic_playback')) {
                 echo "\t<option value=\"democratic\" $is_democratic>" . T_('Democratic') . "</option>\n";
+            }
+            if (AmpConfig::get('allow_localplay_playback')) {
+                echo "\t<option value=\"localplay\" $is_localplay>" . T_('Localplay') . "</option>\n";
             }
             echo "\t<option value=\"web_player\" $is_web_player>" . T_('Web Player') . "</option>\n";
             echo "</select>\n";
@@ -259,6 +266,40 @@ function create_preference_input($name, $value)
                 $selected = ($lang == $value) ? 'selected="selected"' : '';
                 echo "\t<option value=\"$lang\" " . $selected . ">$name</option>\n";
             } // end foreach
+            echo "</select>\n";
+        break;
+        case 'localplay_controller':
+            $controllers = Localplay::get_controllers();
+            echo "<select name=\"$name\">\n";
+            echo "\t<option value=\"\">" . T_('None') . "</option>\n";
+            foreach ($controllers as $controller) {
+                if (!Localplay::is_enabled($controller)) {
+                    continue;
+                }
+                $is_selected = '';
+                if ($value == $controller) {
+                    $is_selected = 'selected="selected"';
+                }
+                echo "\t<option value=\"" . $controller . "\" $is_selected>" . ucfirst($controller) . "</option>\n";
+            } // end foreach
+            echo "</select>\n";
+        break;
+        case 'localplay_level':
+            $is_user    = '';
+            $is_admin   = '';
+            $is_manager = '';
+            if ($value == '25') {
+                $is_user = 'selected="selected"';
+            } elseif ($value == '100') {
+                $is_admin = 'selected="selected"';
+            } elseif ($value == '50') {
+                $is_manager = 'selected="selected"';
+            }
+            echo "<select name=\"$name\">\n";
+            echo "<option value=\"0\">" . T_('Disabled') . "</option>\n";
+            echo "<option value=\"25\" $is_user>" . T_('User') . "</option>\n";
+            echo "<option value=\"50\" $is_manager>" . T_('Manager') . "</option>\n";
+            echo "<option value=\"100\" $is_admin>" . T_('Admin') . "</option>\n";
             echo "</select>\n";
         break;
         case 'theme_name':

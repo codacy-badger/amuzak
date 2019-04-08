@@ -142,6 +142,7 @@
                 <select name="preset">
                     <option value=""></option>
                     <option value="democratic"><?php echo T_('Democratic'); ?></option>
+                    <option value="localplay"><?php echo T_('Localplay'); ?></option>
                     <option value="flash"><?php echo T_('Flash'); ?></option>
                     <option value="stream"><?php echo T_('Stream'); ?></option>
                 </select>

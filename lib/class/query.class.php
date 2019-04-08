@@ -622,6 +622,7 @@ class Query
             case 'album':
             case 'artist':
             case 'tag':
+            case 'playlist_localplay':
             case 'live_stream':
             case 'democratic':
             case 'share':

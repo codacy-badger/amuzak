@@ -36,6 +36,13 @@ if (Preference::has_access('play_type')) {
         } ?>><?php echo T_('Stream'); ?></option>
             <?php
     }
+    if (AmpConfig::get('allow_localplay_playback')) {
+        ?>
+                <option value="localplay" <?php if (isset($is_localplay)) {
+            echo $is_localplay;
+        } ?>><?php echo T_('Localplay'); ?></option>
+            <?php
+    }
     if (AmpConfig::get('allow_democratic_playback')) {
         ?>
                 <option value="democratic" <?php if (isset($is_democratic)) {
