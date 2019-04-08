@@ -203,11 +203,11 @@
 
   AV = (window.AV);
 
-  Aglib = require('./ag_dec');
+  Aglib = require("./ag_dec");
 
-  Dplib = require('./dp_dec');
+  Dplib = require("./dp_dec");
 
-  Matrixlib = require('./matrix_dec');
+  Matrixlib = require("./matrix_dec");
 
   ALACDecoder = (function(_super) {
     var ID_CCE, ID_CPE, ID_DSE, ID_END, ID_FIL, ID_LFE, ID_PCE, ID_SCE;
@@ -218,7 +218,7 @@
       return ALACDecoder.__super__.constructor.apply(this, arguments);
     }
 
-    AV.Decoder.register('alac', ALACDecoder);
+    AV.Decoder.register("alac", ALACDecoder);
 
     ID_SCE = 0;
 
@@ -239,10 +239,10 @@
     ALACDecoder.prototype.setCookie = function(cookie) {
       var data, predictorBuffer, _base;
       data = AV.Stream.fromBuffer(cookie);
-      if (data.peekString(4, 4) === 'frma') {
+      if (data.peekString(4, 4) === "frma") {
         data.advance(12);
       }
-      if (data.peekString(4, 4) === 'alac') {
+      if (data.peekString(4, 4) === "alac") {
         data.advance(12);
       }
       this.config = {
@@ -284,12 +284,12 @@
           case ID_CPE:
             channels = tag === ID_CPE ? 2 : 1;
             if (channelIndex + channels > numChannels) {
-              throw new Error('Too many channels!');
+              throw new Error("Too many channels!");
             }
             elementInstanceTag = data.read(4);
             unused = data.read(12);
             if (unused !== 0) {
-              throw new Error('Unused part of header does not contain 0, it should');
+              throw new Error("Unused part of header does not contain 0, it should");
             }
             partialFrame = data.read(1);
             bytesShifted = data.read(2);
@@ -329,7 +329,7 @@
                 params = Aglib.ag_params(mb, (pb * pbFactor[ch]) / 4, kb, samples, samples, maxRun);
                 status = Aglib.dyn_decomp(params, data, this.predictor, samples, chanBits);
                 if (!status) {
-                  throw new Error('Error in Aglib.dyn_decomp');
+                  throw new Error("Error in Aglib.dyn_decomp");
                 }
                 if (mode[ch] === 0) {
                   Dplib.unpc_block(this.predictor, this.mixBuffers[ch], samples, coefs[ch], num[ch], chanBits, denShift[ch]);
@@ -371,7 +371,7 @@
                 }
                 break;
               default:
-                throw new Error('Only supports 16-bit samples right now');
+                throw new Error("Only supports 16-bit samples right now");
             }
             channelIndex += channels;
             break;
@@ -391,7 +391,7 @@
             }
             data.advance(count * 8);
             if (!(data.pos < data.length)) {
-              throw new Error('buffer overrun');
+              throw new Error("buffer overrun");
             }
             break;
           case ID_FIL:
@@ -401,7 +401,7 @@
             }
             data.advance(count * 8);
             if (!(data.pos < data.length)) {
-              throw new Error('buffer overrun');
+              throw new Error("buffer overrun");
             }
             break;
           case ID_END:
@@ -412,7 +412,7 @@
             throw new Error("Unknown element: " + tag);
         }
         if (channelIndex > numChannels) {
-          throw new Error('Channel index too large.');
+          throw new Error("Channel index too large.");
         }
       }
       return new Int16Array(output);

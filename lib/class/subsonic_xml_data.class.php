@@ -627,7 +627,6 @@ class Subsonic_XML_Data
             $transcode_type = AmpConfig::get('encode_player_api_target', 'mp3');
             $xsong->addAttribute('transcodedSuffix', $transcode_type);
             $xsong->addAttribute('transcodedContentType', Song::type_to_mime($transcode_type));
-            }
         }
 
         return $xsong;
