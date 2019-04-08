@@ -15,6 +15,7 @@ CHANGELOG
 - Removed as much video code as possible
 - Bugfix parse large XML files
 
+=======
 4.0.5
 ----------
 - Add a system option 'autoupdate_develop' to allow you to stay on develop branch.
