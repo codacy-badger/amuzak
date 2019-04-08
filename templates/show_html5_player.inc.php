@@ -73,20 +73,20 @@ $supplied = WebPlayer::get_supplied_types($playlist);
             size: {
 <?php
 if ($isRadio) {
-    // No size
-} else {
-    if ($iframed) {
-        ?>
+            // No size
+        } else {
+            if ($iframed) {
+                ?>
         width: "80px",
         height: "80px",
 <?php
-    } else {
-        ?>
+            } else {
+                ?>
         width: "200px",
         height: "auto",
 <?php
-        }
-    } ?>
+            }
+        } ?>
         }
 <?php
     } ?>
@@ -347,10 +347,10 @@ $playerClass    = "jp-jplayer-video";
                 <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
             </ul>
 <?php if (AmpConfig::get('waveform') && !$is_share) {
-            ?>
+    ?>
             <div class="waveform"></div>
 <?php
-        } ?>
+} ?>
         </div>
       </div>
       <div class="jp-playlist">

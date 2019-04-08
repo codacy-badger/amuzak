@@ -589,11 +589,11 @@ class Catalog_local extends Catalog
             return 0;
         }
 
-        $dead_total  = 0;
-        $stats       = self::get_stats($this->id);
-        $this->count = 0;
+        $dead_total    = 0;
+        $stats         = self::get_stats($this->id);
+        $this->count   = 0;
         $media_type    = 'song';
-        $total = $stats[$media_type . 's']; // UGLY
+        $total         = $stats[$media_type . 's']; // UGLY
         if ($total !== 0) {
             $chunks = floor($total / 10000);
             $dead   = array();

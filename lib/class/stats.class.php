@@ -185,7 +185,7 @@ class Stats
         $name       = null;
         $sql        = "SELECT `geo_name` FROM `object_count` WHERE `geo_latitude` = ? AND `geo_longitude` = ? AND `geo_name` IS NOT NULL ORDER BY `id` DESC LIMIT 1";
         $db_results = Dba::read($sql, array($latitude, $longitude));
-        $results = Dba::fetch_assoc($db_results);
+        $results    = Dba::fetch_assoc($db_results);
         if (!empty($results)) {
             $name = $results['geo_name'];
         }
