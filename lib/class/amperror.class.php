@@ -61,14 +61,14 @@ class AmpError
     {
         // Make sure its set first
         if (!isset(self::$errors[$name])) {
-            self::$errors[$name]      = $message;
-            self::$state              = true;
+            self::$errors[$name]          = $message;
+            self::$state                  = true;
             $_SESSION['errors'][$name]    = $message;
         }
         // They want us to clobber it
         elseif ($clobber) {
-            self::$state              = true;
-            self::$errors[$name]      = $message;
+            self::$state                  = true;
+            self::$errors[$name]          = $message;
             $_SESSION['errors'][$name]    = $message;
         }
         // They want us to append the error, add a BR\n and then the message

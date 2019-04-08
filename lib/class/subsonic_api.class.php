@@ -182,7 +182,7 @@ class Subsonic_Api
     public static function apiOutput($input, $xml, $alwaysArray=array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'))
     {
         $type        = $input['f'];
-        $callback = $input['callback'];
+        $callback    = $input['callback'];
         self::apiOutput2(strtolower($type), $xml, $callback, $alwaysArray);
     }
 
