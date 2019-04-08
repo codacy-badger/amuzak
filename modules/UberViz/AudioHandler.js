@@ -6,6 +6,7 @@
 var AudioHandler = function() {
 
     //PUBLIC/////////////
+    var audioContext = new AudioContext();
     var waveData = []; //waveform - from 0 - 1 . no sound is 0.5. Array [binCount]
     var levelsData = []; //levels of each frequecy - from 0 - 1 . no sound is 0. Array [levelsCount]
     var volume = 0; // averaged normalized level from 0 - 1

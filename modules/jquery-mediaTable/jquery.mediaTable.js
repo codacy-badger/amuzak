@@ -210,7 +210,7 @@ http://www.consulenza-web.com/2012/01/mediatable-jquery-plugin/
 
       var updateCheck = function() {
       
-        if ($.cookie(cookname) !== undefined) {
+        if (typeof $.cookie(cookname) !== "undefined") {
             $checkbox.prop("checked", $.cookie(cookname) === "true");
             change();
         }
@@ -245,10 +245,10 @@ http://www.consulenza-web.com/2012/01/mediatable-jquery-plugin/
     // Columns Initialization Loop.
     wdg.$table.find("thead th").each(function(i){ __thInit.call( this, i, wdg );  });
 
-    if (wdg.$menu.$list !== undefined) {
+    if (typeof wdg.$menu.$list !== "undefined") {
         wdg.$menu.$list.append(wdg.$menu.$footer);
     }
-    if (wdg.$menu.$footer !== undefined) {
+    if (typeof wdg.$menu.$footer !== "undefined") {
         wdg.$menu.$footer.bind("click",function(){
             __reset.call(_this);
           });
@@ -265,7 +265,7 @@ http://www.consulenza-web.com/2012/01/mediatable-jquery-plugin/
         var $th = $("#" + wdg.id + "-mediaTableCol-" + i);
         var $checkbox = $("#toggle-col-" + wdg.id + "-" + i);
         var cookname = "mt_" + wdg.$table.attr("data-objecttype") + "_" + $th.index();
-        if ($checkbox !== undefined) {
+        if (typeof $checkbox !== "undefined") {
             $th.removeAttr("style");
             if ( $th.is(":visible") ) {
               $checkbox.prop("checked", true);
