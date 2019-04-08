@@ -1205,9 +1205,9 @@ class Subsonic_Api
 
         $user_id = $GLOBALS['user']->id;
 
-        $r = Subsonic_XML_Data::createSuccessResponse();
-        Subsonic_XML_Data::addStarred($r, Userflag::get_latest('artist', $user_id, 10000), Userflag::get_latest('album', $user_id, 10000), Userflag::get_latest('song', $user_id, 10000), $elementName);
-        self::apiOutput($input, $r);
+        $response = Subsonic_XML_Data::createSuccessResponse();
+        Subsonic_XML_Data::addStarred($response, Userflag::get_latest('artist', $user_id, 10000), Userflag::get_latest('album', $user_id, 10000), Userflag::get_latest('song', $user_id, 10000), $elementName);
+        self::apiOutput($input, $response);
     }
 
 
