@@ -521,11 +521,13 @@ class Subsonic_XML_Data
     public static function getCatalogData($catalogId, $file_Path)
     {
         $results    = array();
-        $sql        = 'SELECT `catalog_type` FROM `catalog` WHERE `id` = ?';
-        $db_results = Dba::read($sql, [$catalogId]);
-        $result     = Dba::fetch_assoc($db_results);
-        if ($result) {
-            $sql             = 'SELECT `path` FROM ' . 'catalog_' . $result['catalog_type'] . ' WHERE `catalog_id` = ?';
+        $sqllook    = 'SELECT `catalog_type` FROM `catalog` WHERE `id` = ?';
+        $db_results = Dba::read($sqllook, [$catalogId]);
+        $resultcheck     = Dba::fetch_assoc($db_results);
+        if ($resultcheck) {
+            $sql             = 'SELECT `path` FROM ' . 'catalog_' . $resultcheck['catalog_type'] . ' WHERE `catalog_id` = ?';
+            $db_results      = Dba::read($sql, [$catalogId]);
+            $result          = Dba::fetch_assoc($db_results);
             $catalog_path    = rtrim($result['path'], "/");
             $results['path'] = str_replace($catalog_path . "/", "", $file_Path);
 
