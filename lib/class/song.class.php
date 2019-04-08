@@ -1941,6 +1941,7 @@ class Song extends database_object implements media, library_item
      */
     public function get_lyrics()
     {
+        $lyrics = array();
         if ($this->lyrics) {
             return array('text' => $this->lyrics);
         }
@@ -1952,7 +1953,7 @@ class Song extends database_object implements media, library_item
             }
         }
 
-        if ($lyrics != false) {
+        if (!empty($lyrics)) {
             return $lyrics;
         }
 

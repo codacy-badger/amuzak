@@ -944,7 +944,7 @@ class Art extends database_object
     {
         $types = array('album', 'artist', 'user', 'live_stream');
 
-        if ($object_type != null) {
+        if ($object_type !== null) {
             if (in_array($object_type, $types)) {
                 if (AmpConfig::get('album_art_store_disk')) {
                     self::delete_from_dir($object_type, $object_id);

@@ -1012,7 +1012,7 @@ class Subsonic_XML_Data
         $song->fill_ext_info();
         $lyrics = $song->get_lyrics();
 
-        if ($lyrics && $lyrics['text']) {
+        if (!empty($lyrics) && $lyrics['text']) {
             $text    = preg_replace('/\<br(\s*)?\/?\>/i', "\n", $lyrics['text']);
             $text    = str_replace("\r", '', $text);
             $xlyrics = $xml->addChild("lyrics", $text);

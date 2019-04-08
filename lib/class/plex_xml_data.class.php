@@ -1264,19 +1264,6 @@ class Plex_XML_Data
         return $xvid;
     }
 
-    private static function addVideoExt(SimpleXMLElement $xml, Video $video, $details = false)
-    {
-        $type = strtolower(get_class($video));
-        switch ($type) {
-            case 'tvshow_episode':
-                return self::addEpisode($xml, $video, $details);
-            case 'movie':
-                return self::addMovie($xml, $video, $details);
-            default:
-                return self::addVideo($xml, $video, $details);
-        }
-    }
-
     private static function addVideo(SimpleXMLElement $xml, Video $video, $details = false)
     {
         $id   = self::getVideoId($video->id);
