@@ -11,7 +11,7 @@ aMuzak
 - You can upgrade from Ampache to aMuzak but will not be able to go 
 back. I recommend copying your database to allow you to keep your 
 Ampache server running.
-- This release is to provide a baseline release for upgrading.
+- Things are really stable now. Really happy with the progress made so far.
 
 Basics
 ------

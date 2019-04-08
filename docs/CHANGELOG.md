@@ -1,6 +1,20 @@
 CHANGELOG
 =========
 
+4.0.6
+----------
+- Remove reborn theme and point to reZak
+- Make the light theme usable
+- Add light loader images to light theme
+- reZak CSS linting
+- Repurpose the old light sidebar into a simple jukebox page (jukebox.php in your web root)
+- Swap exit for return (don't be harsh now you can test codacy)
+- Config bump, you can now filter mashup by rating. (set in the config file)
+- Filter newest from the mashups. Who cares if you hate someone?
+- Remove xml strings from name/titles in subsonic (&amp; making titles look weird)
+- Removed as much video code as possible
+- Bugfix parse large XML files
+
 4.0.5
 ----------
 - Add a system option 'autoupdate_develop' to allow you to stay on develop branch.
