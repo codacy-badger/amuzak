@@ -112,7 +112,7 @@ var FLACDecoder = AV.Decoder.extend(function() {
         
         var frame_or_sample_num = stream.read(7 - ones);
         for (; ones > 1; ones--) {
-            stream.advance(2); // == 2
+            stream.advance(2); // === 2
             frame_or_sample_num = (frame_or_sample_num << 6) | stream.read(6);
         }
                 
@@ -660,7 +660,7 @@ var FLACDemuxer = AV.Demuxer.extend(function() {
                     case SEEKTABLE:
                         for(var s=0; s<this.size/18; s++)
                         {
-                            if(stream.peekUInt32(0) == 0xFFFFFFFF && stream.peekUInt32(1) == 0xFFFFFFFF)
+                            if(stream.peekUInt32(0) === 0xFFFFFFFF && stream.peekUInt32(1) === 0xFFFFFFFF)
                             {
                                 //placeholder, ignore
                                 stream.advance(18);

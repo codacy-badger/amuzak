@@ -171,7 +171,8 @@ function install_rewrite_rules($file, $web_path, $download)
         $browser = new Horde_Browser();
         $browser->downloadHeaders(basename($file), 'text/plain', false, strlen($final));
         echo $final;
-        exit();
+
+        return false;
     }
 
     return true;
