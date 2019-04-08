@@ -831,8 +831,8 @@ class Subsonic_XML_Data
         if (Core::is_library_item($objectType)) {
             if (AmpConfig::get('userflags')) {
                 $starred = new Userflag($objectId, $objectType);
-                if ($res === $starred->get_flag(null, true)) {
-                    $xml->addAttribute('starred', date("Y-m-d",$res[1]) . 'T' . date("H:i:s", $res[1]) . 'Z');
+                if ($starred->get_flag(null, true)) {
+                    $xml->addAttribute('starred', date("Y-m-d",$starred->get_date) . 'T' . date("H:i:s", $starred->get_date) . 'Z');
                 }
             }
         }
