@@ -13,7 +13,6 @@ set_time_limit(600);
 header("Content-Type: text/html; charset=UTF-8");
 $rootMediaItems   = array();
 $rootMediaItems[] = Upnp_Api::_musicMetadata('');
-$rootMediaItems[] = Upnp_Api::_videoMetadata('');
 
     // Parse the request from UPnP player
     $requestRaw = file_get_contents('php://input');
@@ -72,13 +71,6 @@ $rootMediaItems[] = Upnp_Api::_videoMetadata('');
                                     $items = Upnp_Api::_musicMetadata($reqObjectURL['path'], $reqObjectURL['query']);
                                 } else {
                                     list($totMatches, $items) = Upnp_Api::_musicChilds($reqObjectURL['path'], $reqObjectURL['query'], $upnpRequest['startingindex'], $upnpRequest['requestedcount']);
-                                }
-                                break;
-                            case 'video':
-                                if ($upnpRequest['browseflag'] == 'BrowseMetadata') {
-                                    $items = Upnp_Api::_videoMetadata($reqObjectURL['path'], $reqObjectURL['query']);
-                                } else {
-                                    list($totMatches, $items) = Upnp_Api::_videoChilds($reqObjectURL['path'], $reqObjectURL['query'], $upnpRequest['startingindex'], $upnpRequest['requestedcount']);
                                 }
                                 break;
                         }

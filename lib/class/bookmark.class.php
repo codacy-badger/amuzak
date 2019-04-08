@@ -84,7 +84,7 @@ class Bookmark extends database_object
      */
     public static function gc($object_type = null, $object_id = null)
     {
-        $types = array('song', 'video', 'podcast_episode');
+        $types = array('song', 'podcast_episode');
 
         if ($object_type != null) {
             if (in_array($object_type, $types)) {

@@ -579,14 +579,6 @@ class Search extends playlist_object
                 'widget' => array('input', 'text')
             );
         break;
-        case 'video':
-            $this->types[] = array(
-                'name' => 'filename',
-                'label' => T_('Filename'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-        break;
         case 'artist':
             $this->types[] = array(
                 'name' => 'name',
@@ -719,7 +711,6 @@ class Search extends playlist_object
         switch ($data['type']) {
             case 'album':
             case 'artist':
-            case 'video':
             case 'song':
             case 'playlist':
             case 'label':
@@ -1601,67 +1592,6 @@ class Search extends playlist_object
 
         return array(
             'base' => 'SELECT DISTINCT(`song`.`id`) FROM `song`',
-            'join' => $join,
-            'where' => $where,
-            'where_sql' => $where_sql,
-            'table' => $table,
-            'table_sql' => $table_sql,
-            'group_sql' => $group_sql,
-            'having_sql' => $having_sql
-        );
-    }
-
-    /**
-     * video_to_sql
-     *
-     * Handles the generation of the SQL for video searches.
-     */
-    private function video_to_sql()
-    {
-        $sql_logic_operator = $this->logic_operator;
-
-        $where  = array();
-        $table  = array();
-        $join   = array();
-        $group  = array();
-        $having = array();
-
-        foreach ($this->rules as $rule) {
-            $type     = $this->name_to_basetype($rule[0]);
-            $operator = array();
-            foreach ($this->basetypes[$type] as $op) {
-                if ($op['name'] == $rule[1]) {
-                    $operator = $op;
-                    break;
-                }
-            }
-            $input              = $this->_mangle_data($rule[2], $type, $operator);
-            $sql_match_operator = $operator['sql'];
-
-            switch ($rule[0]) {
-                case 'filename':
-                    $where[] = "`video`.`file` $sql_match_operator '$input'";
-                break;
-                default:
-                    // WE WILLNA BE FOOLED AGAIN!
-            } // switch on ruletype
-        } // foreach rule
-
-        $join['catalog'] = AmpConfig::get('catalog_disable');
-
-        $where_sql = implode(" $sql_logic_operator ", $where);
-
-        if ($join['catalog']) {
-            $table['catalog'] = "LEFT JOIN `catalog` AS `catalog_se` ON `catalog_se`.`id`=`video`.`catalog`";
-            $where_sql .= " AND `catalog_se`.`enabled` = '1'";
-        }
-
-        $table_sql  = implode(' ', $table);
-        $group_sql  = implode(', ', $group);
-        $having_sql = implode(" $sql_logic_operator ", $having);
-
-        return array(
-            'base' => 'SELECT DISTINCT(`video`.`id`) FROM `video`',
             'join' => $join,
             'where' => $where,
             'where_sql' => $where_sql,

@@ -72,35 +72,22 @@ $supplied = WebPlayer::get_supplied_types($playlist);
         ?>
             size: {
 <?php
-if ($isVideo) {
-            if ($iframed) {
-                ?>
-                width: "640px",
+if ($isRadio) {
+    // No size
+} else {
+    if ($iframed) {
+        ?>
+        width: "80px",
+        height: "80px",
 <?php
-            } else {
-                ?>
-                width: "192px",
-                height: "108px",
+    } else {
+        ?>
+        width: "200px",
+        height: "auto",
 <?php
-            } ?>
-                cssClass: "jp-video-360p"
-<?php
-        } elseif ($isRadio) {
-            // No size
-        } else {
-            if ($iframed) {
-                ?>
-                width: "80px",
-                height: "80px",
-<?php
-            } else {
-                ?>
-                width: "200px",
-                height: "auto",
-<?php
-            }
-        } ?>
-            }
+        }
+    } ?>
+        }
 <?php
     } ?>
         });
@@ -143,7 +130,7 @@ if ($isVideo) {
                     sendBroadcastMessage('SONG', currenti.attr("data-media_id"));
                 }
 <?php
-if (!$isVideo && !$isRadio && !$is_share) {
+if (!$isRadio && !$is_share) {
         if ($iframed) {
             echo "ajaxPut(jsAjaxUrl + '?action=action_buttons&object_type=song&object_id=' + currenti.attr('data-media_id'));";
             echo "var titleobj = (currenti.attr('data-album_id') !== 'undefined') ? '<a href=\"javascript:NavigateTo(\'" . AmpConfig::get('web_path') . "/albums.php?action=show&album=' + currenti.attr('data-album_id') + '\');\" title=\"' + obj.title + '\">' + obj.title + '</a>' : obj.title;";
@@ -261,11 +248,8 @@ if (AmpConfig::get('song_page_title') && !$is_share) {
 <?php echo WebPlayer::add_media_js($playlist); ?>
 
     $("#jquery_jplayer_1").resizable({
-        alsoResize: "#jquery_jplayer_1 video",
         handles: "nw, ne, se, sw, n, e, w, s"
     });
-
-    $("#jquery_jplayer_1 video").resizable();
 
     $("#jquery_jplayer_1").draggable();
 
@@ -312,21 +296,8 @@ if (AmpConfig::get('webplayer_aurora')) {
             echo '<script src="' . AmpConfig::get('web_path') . $spath . '" language="javascript" type="text/javascript"></script>' . "\n";
         }
     }
-}
+} ?>
 
-// TODO: avoid share style here
-if ($is_share && $isVideo) {
-    ?>
-<style>
-    div.jp-jplayer
-    {
-        bottom: 0px !important;
-        top: 100px !important;
-    }
-</style>
-<?php
-}
-?>
 </head>
 <body>
 <?php
@@ -338,76 +309,17 @@ if ($embed) {
     $areaClass .= " jp-area-embed";
 }
 
-if (!$isVideo) {
-    $containerClass = "jp-audio";
-    $playerClass    = "jp-jplayer-audio"; ?>
-<div class="playing_info">
-    <div class="playing_artist"></div>
-    <div class="playing_title"></div>
-    <div class="playing_features">
-        <div class="playing_lyrics"></div>
-        <div class="playing_actions"></div>
-    </div>
-</div>
-<?php
-} else {
-        $areaClass .= " jp-area-video";
-        $containerClass = "jp-video jp-video-float jp-video-360p";
-        $playerClass    = "jp-jplayer-video";
-    } ?>
+$areaClass .= " jp-area-video";
+$containerClass = "jp-video jp-video-float jp-video-360p";
+$playerClass    = "jp-jplayer-video";
+?>
 <div id="shouts_data"></div>
 <div class="jp-area<?php echo $areaClass; ?>">
   <div id="jp_container_1" class="<?php echo $containerClass; ?>">
     <div class="jp-type-playlist">
       <div id="jquery_jplayer_1" class="jp-jplayer <?php echo $playerClass; ?>"></div>
       <div class="jp-gui">
-<?php
-if ($isVideo) {
-        ?>
-        <div class="jp-video-play">
-            <a href="javascript:;" class="jp-video-play-icon" tabindex="1">play</a>
-        </div>
-<?php
-    } ?>
         <div class="jp-interface">
-<?php
-if ($isVideo) {
-        ?>
-            <div class="jp-progress">
-                <div class="jp-seek-bar">
-                    <div class="jp-play-bar"></div>
-                </div>
-            </div>
-            <div class="jp-current-time"></div>
-            <div class="jp-duration"></div>
-            <div class="jp-title"></div>
-            <div class="jp-controls-holder">
-                <ul class="jp-controls">
-                    <li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
-                    <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
-                    <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
-                    <li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
-                    <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
-                    <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
-                    <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
-                    <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
-                </ul>
-                <div class="jp-volume-bar">
-                    <div class="jp-volume-bar-value"></div>
-                </div>
-
-                <ul class="jp-toggles">
-                    <li><a href="javascript:;" class="jp-full-screen" tabindex="1" title="full screen">full screen</a></li>
-                    <li><a href="javascript:;" class="jp-restore-screen" tabindex="1" title="restore screen">restore screen</a></li>
-                    <li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
-                    <li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>
-                    <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
-                    <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
-                </ul>
-            </div>
-<?php
-    } else {
-        ?>
             <ul class="jp-controls">
               <li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
               <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
@@ -439,8 +351,6 @@ if ($isVideo) {
             <div class="waveform"></div>
 <?php
         } ?>
-<?php
-    } ?>
         </div>
       </div>
       <div class="jp-playlist">

@@ -942,7 +942,7 @@ class Art extends database_object
      */
     public static function gc($object_type = null, $object_id = null)
     {
-        $types = array('album', 'artist','tvshow','tvshow_season','video','user','live_stream');
+        $types = array('album', 'artist', 'user', 'live_stream');
 
         if ($object_type != null) {
             if (in_array($object_type, $types)) {
@@ -1309,11 +1309,6 @@ class Art extends database_object
                 $song   = new Song($song_id);
                 $dirs[] = Core::conv_lc_file(dirname($song->file));
             }
-        } else {
-            if ($this->type == 'video') {
-                $media  = new Video($this->uid);
-                $dirs[] = Core::conv_lc_file(dirname($media->file));
-            }
         }
 
         foreach ($dirs as $dir) {
@@ -1637,14 +1632,6 @@ class Art extends database_object
         $gtypes     = array();
         $media_info = array();
         switch ($type) {
-            case 'tvshow':
-            case 'tvshow_season':
-            case 'tvshow_episode':
-                $gtypes[]                     = 'tvshow';
-                $media_info['tvshow']         = $options['tvshow'];
-                $media_info['tvshow_season']  = $options['tvshow_season'];
-                $media_info['tvshow_episode'] = $options['tvshow_episode'];
-            break;
             case 'song':
                 $media_info['mb_trackid'] = $options['mb_trackid'];
                 $media_info['title']      = $options['title'];
@@ -1666,10 +1653,6 @@ class Art extends database_object
                 $gtypes[]                  = 'music';
                 $gtypes[]                  = 'artist';
                 break;
-            case 'movie':
-                $gtypes[]            = 'movie';
-                $media_info['title'] = $options['keyword'];
-            break;
         }
 
         $meta   = $plugin->get_metadata($gtypes, $media_info);
@@ -1677,16 +1660,6 @@ class Art extends database_object
 
         if ($meta['art']) {
             $url      = $meta['art'];
-            $ures     = pathinfo($url);
-            $images[] = array('url' => $url, 'mime' => 'image/' . $ures['extension'], 'title' => $plugin->name);
-        }
-        if ($meta['tvshow_season_art']) {
-            $url      = $meta['tvshow_season_art'];
-            $ures     = pathinfo($url);
-            $images[] = array('url' => $url, 'mime' => 'image/' . $ures['extension'], 'title' => $plugin->name);
-        }
-        if ($meta['tvshow_art']) {
-            $url      = $meta['tvshow_art'];
             $ures     = pathinfo($url);
             $images[] = array('url' => $url, 'mime' => 'image/' . $ures['extension'], 'title' => $plugin->name);
         }
@@ -1722,26 +1695,6 @@ class Art extends database_object
                 /* Web Player size */
                 $size['height'] = 32;
                 $size['width']  = 32;
-            break;
-            case 6:
-                /* Video browsing size */
-                $size['height'] = 150;
-                $size['width']  = 100;
-            break;
-            case 7:
-                /* Video page size */
-                $size['height'] = 300;
-                $size['width']  = 200;
-            break;
-            case 8:
-                /* Video preview size */
-                 $size['height'] = 200;
-                 $size['width']  = 470;
-            break;
-            case 9:
-                /* Video preview size */
-                 $size['height'] = 100;
-                 $size['width']  = 235;
             break;
             case 10:
                 /* Search preview size */

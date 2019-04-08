@@ -153,7 +153,6 @@ class Stream
             return false;
         }
 
-        //$media_rate = $media->video_bitrate ?: $media->bitrate;
         if (!$options['bitrate']) {
             $bit_rate = self::get_allowed_bitrate($media);
             debug_event('stream', 'Configured bitrate is ' . $bit_rate, 5);

@@ -1031,7 +1031,7 @@ class Subsonic_Api
         $maxBitRate            = $input['maxBitRate'];
         $format                = $input['format']; // mp3, flv or raw
         $timeOffset            = $input['timeOffset'];
-        $size                  = $input['size']; // For video streaming. Not supported.
+        $size                  = $input['size']; // Not supported.
         $estimateContentLength = $input['estimateContentLength']; // Force content-length guessing if transcode
 
         $params = '&client=' . rawurlencode($input['c']) . '&noscrobble=1';

@@ -1949,10 +1949,11 @@ class Song extends database_object implements media, library_item
             $plugin = new Plugin($plugin_name);
             if ($plugin->load($GLOBALS['user'])) {
                 $lyrics = $plugin->_plugin->get_lyrics($this);
-                if ($lyrics != false) {
-                    return $lyrics;
-                }
             }
+        }
+
+        if ($lyrics != false) {
+            return $lyrics;
         }
 
         return null;

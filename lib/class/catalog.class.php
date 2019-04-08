@@ -359,18 +359,6 @@ abstract class Catalog extends database_object
     }
 
     /**
-     * Check if a file is a video.
-     * @param string $file
-     * @return boolean
-     */
-    public static function is_video_file($file)
-    {
-        $video_pattern = "/\.(" . AmpConfig::get('catalog_video_pattern') . ")$/i";
-
-        return (preg_match($video_pattern, $file) === 1);
-    }
-
-    /**
      * Check if a file is a playlist.
      * @param string $file
      * @return integer
@@ -423,9 +411,6 @@ abstract class Catalog extends database_object
             }
             $sql = "(SELECT COUNT(`song_dis`.`id`) FROM `song` AS `song_dis` LEFT JOIN `catalog` AS `catalog_dis` ON `catalog_dis`.`id` = `song_dis`.`catalog` " .
                 "WHERE `song_dis`.`" . $type . "`=" . $id . " AND `catalog_dis`.`enabled` = '1' GROUP BY `song_dis`.`" . $type . "`) > 0";
-        } elseif ($type == "video") {
-            $sql = "(SELECT COUNT(`video_dis`.`id`) FROM `video` AS `video_dis` LEFT JOIN `catalog` AS `catalog_dis` ON `catalog_dis`.`id` = `video_dis`.`catalog` " .
-                "WHERE `video_dis`.`id`=" . $id . " AND `catalog_dis`.`enabled` = '1' GROUP BY `video_dis`.`id`) > 0";
         }
 
         return $sql;
@@ -447,13 +432,6 @@ abstract class Catalog extends database_object
             // Populate the filecache
             while ($results = Dba::fetch_assoc($db_results)) {
                 $this->_filecache[strtolower($results['file'])] = $results['id'];
-            }
-
-            $sql        = 'SELECT `id`,`file` FROM `video` WHERE `catalog` = ?';
-            $db_results = Dba::read($sql, array($this->id));
-
-            while ($results = Dba::fetch_assoc($db_results)) {
-                $this->_filecache[strtolower($results['file'])] = 'v_' . $results['id'];
             }
         }
 
@@ -685,7 +663,7 @@ abstract class Catalog extends database_object
     /**
      * count_medias
      *
-     * This returns the current number of songs, videos, albums, and artists
+     * This returns the current number of songs, albums, and artists
      * in this catalog.
      * @param int|null $catalog_id
      * @return array
@@ -702,14 +680,6 @@ abstract class Catalog extends database_object
         $songs      = $data[0];
         $time       = $data[1];
         $size       = $data[2];
-
-        $sql = 'SELECT COUNT(`id`), SUM(`time`), SUM(`size`) FROM `video` ' .
-            $where_sql;
-        $db_results = Dba::read($sql, $params);
-        $data       = Dba::fetch_row($db_results);
-        $videos     = $data[0];
-        $time += $data[1];
-        $size += $data[2];
 
         $sql        = 'SELECT COUNT(DISTINCT(`album`)) FROM `song` ' . $where_sql;
         $db_results = Dba::read($sql, $params);
@@ -743,7 +713,6 @@ abstract class Catalog extends database_object
 
         $results                   = array();
         $results['songs']          = $songs;
-        $results['videos']         = $videos;
         $results['albums']         = $albums;
         $results['artists']        = $artists;
         $results['playlists']      = $playlists;
@@ -1430,7 +1399,7 @@ abstract class Catalog extends database_object
 
         // Figure out what type of object this is and call the right
         // function, giving it the stuff we've figured out above
-        $name = (strtolower(get_class($media)) == 'song') ? 'song' : 'video';
+        $name = 'song';
 
         $function = 'update_' . $name . '_from_tags';
 
@@ -2053,9 +2022,6 @@ abstract class Catalog extends database_object
             return false;
         }
         self::clean_empty_albums();
-        
-        $sql        = "DELETE FROM `video` WHERE `catalog` = ?";
-        $db_results = Dba::write($sql, array($catalog_id));
 
         if (!$db_results) {
             return false;

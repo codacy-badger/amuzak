@@ -1417,10 +1417,6 @@ class Plex_XML_Data
                 $media = new Song($item['object_id']);
                 $media->format();
                 $xitem = self::addSong($xml, $media);
-            } elseif ($item['object_type'] == 'video') {
-                $media = Video::create_from_id($item['object_id']);
-                $media->format();
-                $xitem = self::addVideoExt($xml, $media);
             }
 
             if ($xitem != null) {
@@ -1678,11 +1674,7 @@ class Plex_XML_Data
         $type = self::getLibraryItemType($id);
 
         if ($type) {
-            if ($type == 'video') {
-                $item = Video::create_from_id($oid);
-            } else {
-                $item = new $type($oid);
-            }
+            $item = new $type($oid);
         }
 
         if ($item != null) {

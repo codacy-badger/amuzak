@@ -110,7 +110,6 @@ class Share extends database_object
             case 'album':
             case 'song':
             case 'playlist':
-            case 'video':
                 return $type;
             default:
                 return '';
@@ -352,7 +351,7 @@ class Share extends database_object
                 }
             break;
             default:
-                $is_shared = (($this->object_type == 'song' || $this->object_type == 'video') && $this->object_id == $media_id);
+                $is_shared = ($this->object_type == 'song' && $this->object_id == $media_id);
             break;
         }
 
@@ -379,7 +378,7 @@ class Share extends database_object
         echo "<li><a onclick=\"handleShareAction('" . AmpConfig::get('web_path') . "/share.php?action=show_create&type=" . $object_type . "&id=" . $object_id . "')\">" . UI::get_icon('share', T_('Advanced Share')) . " &nbsp;" . T_('Advanced Share') . "</a></li>";
         if (AmpConfig::get('download')) {
             $dllink = "";
-            if ($object_type == "song" || $object_type == "video") {
+            if ($object_type == "song") {
                 $dllink = AmpConfig::get('web_path') . "/play/index.php?action=download&type=" . $object_type . "&oid=" . $object_id . "&uid=-1";
             } else {
                 if (Access::check_function('batch_download') && check_can_zip($object_type)) {

@@ -257,9 +257,7 @@ class Api
                 $artist     = Dba::fetch_assoc($db_results);
 
                 // Next the video counts
-                $sql        = "SELECT COUNT(`id`) AS `video` FROM `video`";
-                $db_results = Dba::read($sql);
-                $vcounts    = Dba::fetch_assoc($db_results);
+                $vcounts    = array('video', 0);
 
                 $sql        = "SELECT COUNT(`id`) AS `playlist` FROM `playlist`";
                 $db_results = Dba::read($sql);
@@ -787,40 +785,6 @@ class Api
                 break;
         }
     } // advanced_search
-
-    /**
-     * videos
-     * This returns video objects!
-     * @param array $input
-     */
-    public static function videos($input)
-    {
-        self::$browse->reset_filters();
-        self::$browse->set_type('video');
-        self::$browse->set_sort('title', 'ASC');
-
-        $method = $input['exact'] ? 'exact_match' : 'alpha_match';
-        self::set_filter($method, $input['filter']);
-
-        $video_ids = self::$browse->get_objects();
-
-        XML_Data::set_offset($input['offset']);
-        XML_Data::set_limit($input['limit']);
-
-        echo XML_Data::videos($video_ids);
-    } // videos
-
-    /**
-     * video
-     * This returns a single video
-     * @param array $input
-     */
-    public static function video($input)
-    {
-        $video_id = scrub_in($input['filter']);
-
-        echo XML_Data::videos(array($video_id));
-    } // video
 
     /**
      * democratic

@@ -301,13 +301,6 @@ if ($type == 'song') {
 } elseif ($type == 'podcast_episode') {
     $media = new Podcast_Episode($oid);
     $media->format();
-} else {
-    $type  = 'video';
-    $media = new Video($oid);
-    if (isset($_REQUEST['subtitle'])) {
-        $subtitle = $media->get_subtitle_file($_REQUEST['subtitle']);
-    }
-    $media->format();
 }
 
 if (!User::stream_control(array(array('object_type' => $type, 'object_id' => $media->id)))) {

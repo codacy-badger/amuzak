@@ -37,7 +37,6 @@ class Upnp_Api
     * UPnP classes:
     * object.item.audioItem
     * object.item.imageItem
-    * object.item.videoItem
     * object.item.playlistItem
     * object.item.textItem
     * object.container
@@ -729,49 +728,6 @@ class Upnp_Api
         return array($maxCount, $mediaItems);
     }
 
-    /**
-     * @param string $prmPath
-     */
-    public static function _videoMetadata($prmPath)
-    {
-        $root    = 'amp://video';
-        $pathreq = explode('/', $prmPath);
-        if ($pathreq[0] == '' && count($pathreq) > 0) {
-            array_shift($pathreq);
-        }
-
-        $meta = array(
-            'id' => $root,
-            'parentID' => '0',
-            'restricted' => '1',
-            'childCount' => '4',
-            'dc:title' => T_('Video'),
-            'upnp:class' => 'object.container',
-        );
-
-        return $meta;
-    }
-
-    public static function _videoChilds($prmPath, $prmQuery, $start, $count)
-    {
-        $mediaItems = array();
-        $maxCount   = 0;
-        $queryData  = array();
-        parse_str($prmQuery, $queryData);
-
-        $parent  = 'amp://video' . $prmPath;
-        $pathreq = explode('/', $prmPath);
-        if ($pathreq[0] == '' && count($pathreq) > 0) {
-            array_shift($pathreq);
-        }
-
-        if ($maxCount == 0) {
-            $maxCount = count($mediaItems);
-        }
-
-        return array($maxCount, $mediaItems);
-    }
-
     public static function _callSearch($criteria)
     {
         // Not supported yet
@@ -922,63 +878,6 @@ class Upnp_Api
     /**
      * @param string $parent
      */
-    private static function _itemTVShow($tvshow, $parent)
-    {
-        return array(
-            'id' => 'amp://video/tvshows/' . $tvshow->id,
-            'parentID' => $parent,
-            'restricted' => '1',
-            'childCount' => count($tvshow->get_seasons()),
-            'dc:title' => self::_replaceSpecialSymbols($tvshow->f_name),
-            'upnp:class' => 'object.container',
-        );
-    }
-
-    /**
-     * @param string $parent
-     */
-    private static function _itemTVShowSeason($season, $parent)
-    {
-        return array(
-            'id' => 'amp://video/tvshows/' . $season->tvshow . '/' . $season->id,
-            'parentID' => $parent,
-            'restricted' => '1',
-            'childCount' => count($season->get_episodes()),
-            'dc:title' => self::_replaceSpecialSymbols($season->f_name),
-            'upnp:class' => 'object.container',
-        );
-    }
-
-    /**
-     * @param string $parent
-     */
-    private static function _itemVideo($video, $parent)
-    {
-        $api_session = (AmpConfig::get('require_session')) ? Stream::get_session() : false;
-        $art_url     = Art::url($video->id, 'video', $api_session);
-
-        $fileTypesByExt = self::_getFileTypes();
-        $arrFileType    = $fileTypesByExt[$video->type];
-
-        return array(
-            'id' => $parent . '/' . $video->id,
-            'parentID' => $parent,
-            'restricted' => '1',
-            'dc:title' => self::_replaceSpecialSymbols($video->f_title),
-            'upnp:class' => (isset($arrFileType['class'])) ? $arrFileType['class'] : 'object.item.unknownItem',
-            'upnp:albumArtURI' => $art_url,
-            'upnp:genre' => Tag::get_display($video->tags, false, 'video'),
-
-            'res' => Video::play_url($video->id, '', 'api'),
-            'protocolInfo' => $arrFileType['mime'],
-            'size' => $video->size,
-            'duration' => $video->f_time_h . '.0',
-        );
-    }
-    
-    /**
-     * @param string $parent
-     */
     private static function _itemPodcast($podcast, $parent)
     {
         return array(
@@ -1124,122 +1023,6 @@ class Upnp_Api
             'bmp' => array(
                 'class' => 'object.item.imageItem',
                 'mime' => 'http-get:*:image/bmp:*',
-            ),
-            'asf' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/x-ms-asf:*',
-            ),
-            'wmv' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/x-ms-wmv:*',
-            ),
-            'mpeg2' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mpeg2:*',
-            ),
-            'avi' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/x-msvideo:*',
-            ),
-            'divx' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/x-msvideo:*',
-            ),
-            'mpg' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mpeg:*',
-            ),
-            'm1v' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mpeg:*',
-            ),
-            'm2v' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mpeg:*',
-            ),
-            'mp4' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mp4:*',
-            ),
-            'mov' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/quicktime:*',
-            ),
-            'vob' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/dvd:*',
-            ),
-            'dvr-ms' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/x-ms-dvr:*',
-            ),
-            'dat' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mpeg:*',
-            ),
-            'mpeg' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mpeg:*',
-            ),
-            'm1s' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mpeg:*',
-            ),
-            'm2p' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mpeg2:*',
-            ),
-            'm2t' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mpeg2ts:*',
-            ),
-            'm2ts' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mpeg2ts:*',
-            ),
-            'mts' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mpeg2ts:*',
-            ),
-            'ts' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mpeg2ts:*',
-            ),
-            'tp' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mpeg2ts:*',
-            ),
-            'trp' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mpeg2ts:*',
-            ),
-            'm4t' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mpeg2ts:*',
-            ),
-            'm4v' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/MP4V-ES:*',
-            ),
-            'vbs' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mpeg2:*',
-            ),
-            'mod' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mpeg2:*',
-            ),
-            'mkv' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/x-matroska:*',
-            ),
-            '3g2' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mp4:*',
-            ),
-            '3gp' => array(
-                'class' => 'object.item.videoItem',
-                'mime' => 'http-get:*:video/mp4:*',
             ),
         );
     }

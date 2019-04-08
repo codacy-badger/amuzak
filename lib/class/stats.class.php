@@ -71,7 +71,7 @@ class Stats
      */
     public static function gc()
     {
-        foreach (array('song', 'album', 'artist', 'live_stream', 'video') as $object_type) {
+        foreach (array('song', 'album', 'artist', 'live_stream') as $object_type) {
             Dba::write("DELETE FROM `object_count` USING `object_count` LEFT JOIN `$object_type` ON `$object_type`.`id` = `object_count`.`object_id` WHERE `object_type` = '$object_type' AND `$object_type`.`id` IS NULL");
         }
     }
@@ -95,6 +95,7 @@ class Stats
      * This inserts a new record for the specified object
      * with the specified information, amazing!
      * @param string $type
+     * @param integer $oid
      * @param integer $user
      */
     public static function insert($type, $oid, $user, $agent='', $location, $count_type = 'stream')
@@ -184,7 +185,8 @@ class Stats
         $name       = null;
         $sql        = "SELECT `geo_name` FROM `object_count` WHERE `geo_latitude` = ? AND `geo_longitude` = ? AND `geo_name` IS NOT NULL ORDER BY `id` DESC LIMIT 1";
         $db_results = Dba::read($sql, array($latitude, $longitude));
-        if ($results = Dba::fetch_assoc($db_results)) {
+        $results = Dba::fetch_assoc($db_results);
+        if (!empty($results)) {
             $name = $results['geo_name'];
         }
 
@@ -200,7 +202,9 @@ class Stats
      */
     public static function get_last_song($user_id='')
     {
-        $user_id = $user_id ? $user_id : $GLOBALS['user']->id;
+        if ($user_id === '') {
+            $user_id = $GLOBALS['user']->id;
+        }
 
         $sql = "SELECT * FROM `object_count` " .
             "LEFT JOIN `song` ON `song`.`id` = `object_count`.`object_id` ";
@@ -226,7 +230,9 @@ class Stats
      */
     public static function get_object_history($user_id='', $time)
     {
-        $user_id = $user_id ? $user_id : $GLOBALS['user']->id;
+        if ($user_id === '') {
+            $user_id = $GLOBALS['user']->id;
+        }
 
         $sql = "SELECT * FROM `object_count` " .
             "LEFT JOIN `song` ON `song`.`id` = `object_count`.`object_id` ";
@@ -469,10 +475,7 @@ class Stats
         $type = self::validate_type($type);
 
         $base_type = 'song';
-        if ($type == 'video') {
-            $base_type = $type;
-            $type      = $type . '`.`id';
-        }
+
         // add playlists to mashup browsing
         if ($type == 'playlist') {
             $type      = $type . '`.`id';

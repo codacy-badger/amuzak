@@ -188,11 +188,6 @@ class Stream_Playlist
                     $url['album']     = $object->f_album_full;
                     $url['track_num'] = $object->f_track;
                 break;
-                case 'video':
-                    $url['title']      = 'Video - ' . $object->title;
-                    $url['author']     = $object->f_artist_full;
-                    $url['resolution'] = $object->f_resolution;
-                break;
                 case 'live_stream':
                     $url['title'] = 'Radio - ' . $object->name;
                     if (!empty($object->site_url)) {
@@ -263,9 +258,6 @@ class Stream_Playlist
                 $ct       = "";
                 $redirect = false;
                 unset($ext);
-            break;
-            case 'asx':
-                $ct = 'video/x-ms-asf';
             break;
             case 'pls':
                 $ct = 'audio/x-scpls';
@@ -452,13 +444,6 @@ class Stream_Playlist
                 'location' => $url->url,
                 'identifier' => $url->url
             );
-            if ($url->type == 'video') {
-                $xml['track']['meta'] =
-                    array(
-                        'attribute' => 'rel="provider"',
-                        'value' => 'video'
-                    );
-            }
             if ($url->info_url) {
                 $xml['track']['info'] = $url->info_url;
             }

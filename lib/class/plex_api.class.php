@@ -747,8 +747,6 @@ class Plex_Api
                     if ($id) {
                         if (Plex_XML_Data::isSong($id)) {
                             $url = Song::play_url(Plex_XML_Data::getAmpacheId($id), $additional_params, 'api');
-                        } elseif (Plex_XML_Data::isVideo($id)) {
-                            $url = Video::play_url(Plex_XML_Data::getAmpacheId($id), $additional_params, 'api');
                         }
 
                         if ($url) {
@@ -943,27 +941,6 @@ class Plex_Api
                     $litem = new TVShow_Season($id);
                     $litem->format();
                     Plex_XML_Data::addTVShowSeason($r, $litem);
-                } elseif (Plex_XML_Data::isVideo($key)) {
-                    $litem = Video::create_from_id($id);
-
-                    if ($editMode) {
-                        $dmap = array(
-                            'title' => null,
-                            'year' => null,
-                            'originallyAvailableAt' => 'release_date',
-                            'originalTitle' => 'original_name',
-                            'summary' => null,
-                        );
-                        $litem->update(self::get_data_from_map($dmap));
-                    }
-                    $litem->format();
-
-                    $subtype = strtolower(get_class($litem));
-                    if ($subtype == 'tvshow_episode') {
-                        Plex_XML_Data::addEpisode($r, $litem, true);
-                    } elseif ($subtype == 'movie') {
-                        Plex_XML_Data::addMovie($r, $litem, true);
-                    }
                 } elseif (Plex_XML_Data::isPlaylist($key)) {
                     $litem = new Playlist($id);
                     $litem->format();
@@ -1137,14 +1114,6 @@ class Plex_Api
                     $media = new Song($id);
                     if ($media->id) {
                         $url = Song::play_url($id, '', 'api', true);
-                        self::stream_url($url);
-                    } else {
-                        self::createError(404);
-                    }
-                } elseif (Plex_XML_Data::isVideo($key)) {
-                    $media = new Video($id);
-                    if ($media->id) {
-                        $url = Video::play_url($id, '', 'api', true);
                         self::stream_url($url);
                     } else {
                         self::createError(404);

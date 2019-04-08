@@ -60,7 +60,6 @@ $catalogs = Catalog::get_catalogs();
       <col id="col_lastadd" />
       <col id="col_lastclean" />
       <col id="col_songs" />
-      <col id="col_video" />
       <col id="col_total" />
     </colgroup>
     <thead>

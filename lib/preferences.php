@@ -190,7 +190,6 @@ function create_preference_input($name, $value)
         case 'upnp_backend':
         case 'album_release_type':
         case 'home_moment_albums':
-        case 'home_moment_videos':
         case 'home_recently_played':
         case 'home_now_playing':
         case 'browser_notify':
