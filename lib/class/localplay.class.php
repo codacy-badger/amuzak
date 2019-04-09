@@ -287,7 +287,7 @@ class Localplay
     public function add_url(Stream_URL $url)
     {
         if (!$this->_player->add_url($url)) {
-            debug_event('localplay', 'Unable to add url ' . __toString($url) . ', check ' . $this->type . ' controller', 1);
+            debug_event('localplay', 'Unable to add url ' . print_r($url) . ', check ' . $this->type . ' controller', 1);
 
             return false;
         }
