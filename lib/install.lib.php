@@ -318,7 +318,7 @@ function install_create_config($download = false)
         $browser = new Horde_Browser();
         $browser->downloadHeaders('amuzak.cfg.php', 'text/plain', false, strlen($final));
         echo $final;
-        exit();
+        return false;
     }
 
     return true;
