@@ -435,7 +435,7 @@ if ($isVideo) {
                 <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
             </ul>
 <?php if (AmpConfig::get('waveform') && !$is_share) {
-    ?>
+            ?>
             <div class="waveform"></div>
 <?php
         } ?>
