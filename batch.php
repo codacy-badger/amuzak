@@ -83,8 +83,8 @@ if (Core::is_playable_item($_REQUEST['action'])) {
         break;
         case 'browse':
             $objectid               = intval(scrub_in($_REQUEST['browse_id']));
-            $browse           = new Browse($objectid);
-            $browse_media_ids = $browse->get_saved();
+            $browse                 = new Browse($objectid);
+            $browse_media_ids       = $browse->get_saved();
             foreach ($browse_media_ids as $media_id) {
                 switch ($object_type) {
                     case 'album':

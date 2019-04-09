@@ -296,6 +296,7 @@ class UPnPPlayer
     {
         //!! TODO not implemented yet
         debug_event('upnpPlayer', 'Repeat (not implemented) ' . $value, 5);
+
         return true;
     }
 

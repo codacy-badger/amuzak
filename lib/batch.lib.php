@@ -38,7 +38,7 @@ function get_media_files($media_ids)
                 $type    = $element['object_type'];
                 $mediaid = $element['object_id'];
             } else {
-                $type = array_shift($element);
+                $type      = array_shift($element);
                 $mediaid   = array_shift($element);
             }
             $media = new $type($mediaid);
