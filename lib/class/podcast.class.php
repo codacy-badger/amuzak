@@ -362,7 +362,7 @@ class Podcast extends database_object implements library_item
         $dlnb = AmpConfig::get('podcast_new_download');
         if ($dlnb != 0) {
             $sql = "SELECT `podcast_episode`.`id` FROM `podcast_episode` INNER JOIN `podcast` ON `podcast`.`id` = `podcast_episode`.`podcast` " .
-                    "WHERE `podcast`.`id` = ? AND `podcast_episode`.`addition_time` > `podcast`.`lastsync` " .
+                    "WHERE `podcast`.`id` = ? AND `podcast_episode`.`addition_time` > `podcast`.`lastsync` - 15552000 " .
                     "ORDER BY `podcast_episode`.`pubdate` DESC";
             if ($dlnb != -1) {
                 $sql .= " LIMIT " . $dlnb;
@@ -415,7 +415,9 @@ class Podcast extends database_object implements library_item
         if ($pubdatestr) {
             $pubdate = strtotime($pubdatestr);
         }
-        
+        if ($afterdate > 0) {
+            $sfterdate = $afterdate - 15552000; // give you six months to grab an episode
+        }
         if ($pubdate <= 0) {
             debug_event('podcast', 'Invalid episode publication date, skipped', 3);
 
@@ -424,7 +426,7 @@ class Podcast extends database_object implements library_item
         
         if ($pubdate > $afterdate) {
             $sql = "INSERT INTO `podcast_episode` (`title`, `guid`, `podcast`, `state`, `source`, `website`, `description`, `author`, `category`, `time`, `pubdate`, `addition_time`) " .
-                    "VALUES (?, ?, ?, 'skipped', ?, ?, ?, ?, ?, ?, ?, ?)";
+                    "VALUES (?, ?, ?, 'new', ?, ?, ?, ?, ?, ?, ?, ?)";
 
             return Dba::write($sql, array($title, $guid, $this->id, $source, $website, $description, $author, $category, $time, $pubdate, time()));
         } else {

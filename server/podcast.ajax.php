@@ -40,14 +40,14 @@ switch ($_REQUEST['action']) {
             if ($podcast->id) {
                 $podcast->sync_episodes(true);
             } else {
-                debug_event('podcast', 'Cannot found podcast', 1);
+                debug_event('podcast', 'Cannot find podcast', 1);
             }
         } elseif (isset($_REQUEST['podcast_episode_id'])) {
             $episode = new Podcast_Episode($_REQUEST['podcast_episode_id']);
             if ($episode->id) {
                 $episode->gather();
             } else {
-                debug_event('podcast', 'Cannot found podcast episode', 1);
+                debug_event('podcast', 'Cannot find podcast episode', 1);
             }
         }
         $results['rfc3514'] = '0x1';
