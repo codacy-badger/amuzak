@@ -311,7 +311,7 @@ class Daap_Api
     private static function catalog_songs()
     {
         // $type = $_GET['type'];
-        $meta = explode(',', strtolower($_GET['meta']));
+        $meta      = explode(',', strtolower($_GET['meta']));
         $output    = self::tlv('dmap.status', 200);
         $output .= self::tlv('dmap.updatetype', 0);
 
@@ -430,7 +430,7 @@ class Daap_Api
                     }
 
                     if ($playlist->id) {
-                        $meta = explode(',', strtolower($_GET['meta']));
+                        $meta      = explode(',', strtolower($_GET['meta']));
                         $output    = self::tlv('dmap.status', 200);
                         $output .= self::tlv('dmap.updatetype', 0);
                         $items    = $playlist->get_items();
