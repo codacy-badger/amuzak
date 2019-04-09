@@ -188,16 +188,16 @@ class UPnPPlayer
 
     private function prepareURIRequest($song, $prefix)
     {
-        if ($song == null) {
+        if ($song === null) {
             return null;
         }
 
         $songUrl = $song['link'];
         $songId  = preg_replace('/(.+)\/oid\/(\d+)\/(.+)/i', '${2}', $songUrl);
 
-        $song = new song($songId);
-        $song->format();
-        $songItem = Upnp_Api::_itemSong($song, '');
+        $item = new song($songId);
+        $item->format();
+        $songItem = Upnp_Api::_itemSong($item, '');
         $domDIDL  = Upnp_Api::createDIDL($songItem);
         $xmlDIDL  = $domDIDL->saveXML();
 
@@ -229,10 +229,13 @@ class UPnPPlayer
         $this->SetIntState(1);
 
         $currentSongArgs = $this->prepareURIRequest($this->Playlist()->CurrentItem(), "Current");
-        $response        = $this->Device()->sendRequestToDevice('SetAVTransportURI', $currentSongArgs, 'AVTransport');
+        $currentResponse = $this->Device()->sendRequestToDevice('SetAVTransportURI', $currentSongArgs, 'AVTransport');
+        debug_event('upnpPlayer', 'PlayResponse = ' . $currentResponse, 5);
 
-        $args     = array( 'InstanceID' => 0, 'Speed' => 1);
-        $response = $this->Device()->sendRequestToDevice('Play', $args, 'AVTransport');
+        $playArgs     = array( 'InstanceID' => 0, 'Speed' => 1);
+        $playResponse = $this->Device()->sendRequestToDevice('Play', $playArgs, 'AVTransport');
+        debug_event('upnpPlayer', 'PlayResponse = ' . $playResponse, 5);
+
 
         //!! UPNP subscription work not for all renderers, and works strange
         //!! so now is not used
@@ -254,6 +257,8 @@ class UPnPPlayer
     {
         $this->SetIntState(0);
         $response = $this->Device()->instanceOnly('Stop');
+        debug_event('upnpPlayer', 'StopResponse = ' . $response, 5);
+
 
         //!! UPNP subscription work not for all renderers, and works strange
         //!! so now is not used
@@ -290,6 +295,7 @@ class UPnPPlayer
     public function Repeat($value)
     {
         //!! TODO not implemented yet
+        debug_event('upnpPlayer', 'Repeat (not implemented) ' . $value, 5);
         return true;
     }
 
@@ -300,6 +306,8 @@ class UPnPPlayer
     public function Random($value)
     {
         //!! TODO not implemented yet
+        debug_event('upnpPlayer', 'Random (not implemented) ' . $value, 5);
+
         return true;
     }
 
@@ -350,6 +358,7 @@ class UPnPPlayer
             'Channel' => $channel,
             'DesiredVolume' => $desiredVolume
         ));
+        debug_event('upnpPlayer', 'setVolResponse = ' . $response, 5);
 
         return true;
     }
@@ -398,4 +407,3 @@ class UPnPPlayer
         debug_event('upnpPlayer', 'ReadIndState:' . $this->_intState, 5);
     }
 } // End UPnPPlayer Class
-;

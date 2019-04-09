@@ -79,6 +79,7 @@ abstract class localplay_controller
      */
     public function get_file($object)
     {
+        debug_event('localplay_controller', 'get_file ' . $object, 5);
     } // get_file
 
     /**

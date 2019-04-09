@@ -121,7 +121,7 @@ class UPnPDevice
             }
         }
 
-        $response = join("\r\n", $tmp);
+        $request = join("\r\n", $tmp);
 
         /*
         $lastHeaders = $headers[count($headers) - 1];
@@ -137,7 +137,7 @@ class UPnPDevice
         }
         */
         
-        return $response;
+        return $request;
     }
 
     /**

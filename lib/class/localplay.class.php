@@ -90,7 +90,7 @@ class Localplay
     /**
      * _load_player
      * This function attempts to load the player class that localplay
-     * Will interface with in order to make all this magical stuf work
+     * Will interface with in order to make all this magical stuff work
      * all LocalPlay modules should be located in /modules/<name>/<name>.class.php
      */
     private function _load_player()
@@ -128,10 +128,10 @@ class Localplay
      */
     public function format_name($name, $id)
     {
-        $name = scrub_out($name);
-        $name = Ajax::text('?page=localplay&action=command&command=skip&id=' . $id, $name, 'localplay_skip_' . $id);
+        $scrubname = scrub_out($name);
+        $cleanname = Ajax::text('?page=localplay&action=command&command=skip&id=' . $id, $scrubname, 'localplay_skip_' . $id);
 
-        return $name;
+        return $cleanname;
     } // format_name
 
     /**
@@ -287,7 +287,7 @@ class Localplay
     public function add_url(Stream_URL $url)
     {
         if (!$this->_player->add_url($url)) {
-            debug_event('localplay', 'Unable to add url ' . $url . ', check ' . $this->type . ' controller', 1);
+            debug_event('localplay', 'Unable to add url ' . __toString($url) . ', check ' . $this->type . ' controller', 1);
 
             return false;
         }
@@ -373,14 +373,14 @@ class Localplay
     public function volume_set($value)
     {
         /* Make sure it's int and 0 - 100 */
-        $value = int($value);
+        $intvalue = int($value);
 
         /* Make sure that it's between 0 and 100 */
-        if ($value > 100 or $value < 0) {
+        if ($intvalue > 100 or $value < 0) {
             return false;
         }
 
-        if (!$this->_player->volume($value)) {
+        if (!$this->_player->volume($intvalue)) {
             debug_event('localplay', 'Error: Unable to set volume, check ' . $this->type . ' controller', '1');
 
             return false;
@@ -539,9 +539,9 @@ class Localplay
      */
     public function update_instance($uid, $data)
     {
-        $data = $this->_player->update_instance($uid, $data);
+        $update = $this->_player->update_instance($uid, $data);
 
-        return $data;
+        return $update;
     } // update_instance
 
     /**
