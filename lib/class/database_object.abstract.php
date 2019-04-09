@@ -115,7 +115,11 @@ abstract class database_object
             return false;
         }
 
-        $value                           = is_null($data) ? false : $data;
+        $value = false;
+        if ($data !== null) {
+            $value = $data;
+        }
+
         self::$object_cache[$index][$id] = $value;
     } // add_to_cache
 

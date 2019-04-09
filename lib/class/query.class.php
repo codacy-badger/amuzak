@@ -76,7 +76,7 @@ class Query
             return true;
         }
 
-        if (is_null($id)) {
+        if ($id === null) {
             $this->reset();
             $data = self::_serialize($this->_state);
 

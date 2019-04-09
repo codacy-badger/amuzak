@@ -131,7 +131,7 @@ class Rating extends database_object
      */
     public function get_user_rating($user_id = null)
     {
-        if (is_null($user_id)) {
+        if ($user_id === null) {
             $user_id = $GLOBALS['user']->id;
         }
 
@@ -233,7 +233,7 @@ class Rating extends database_object
      */
     public function set_rating($rating, $user_id = null)
     {
-        if (is_null($user_id)) {
+        if ($user_id === null) {
             $user_id = $GLOBALS['user']->id;
         }
         $user_id = intval($user_id);

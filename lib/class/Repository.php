@@ -110,8 +110,8 @@ class Repository
         $nameParts = explode('\\', $className);
         $tableName = preg_replace_callback(
                 '/(?<=.)([A-Z])/',
-                function ($m) {
-                    return '_' . strtolower($m[0]);
+                function ($name) {
+                    return '_' . strtolower($name[0]);
                 }, end($nameParts));
 
         return lcfirst($tableName);
@@ -137,8 +137,8 @@ class Repository
 
     public function remove(DatabaseObject $object)
     {
-        $id = $object->getId();
-        $this->deleteRecord($id);
+        $objectid = $object->getId();
+        $this->deleteRecord($objectid);
     }
 
     protected function insertRecord($properties)

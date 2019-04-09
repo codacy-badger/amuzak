@@ -161,7 +161,7 @@ class Art extends database_object
      */
     public static function set_enabled($value = null)
     {
-        if (is_null($value)) {
+        if ($value === null) {
             self::$enabled = self::$enabled ? false : true;
         } else {
             self::$enabled = make_bool($value);

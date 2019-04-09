@@ -732,7 +732,7 @@ abstract class Catalog extends database_object
      */
     public static function get_uploads_sql($type, $user_id=null)
     {
-        if (is_null($user_id)) {
+        if ($user_id === null) {
             $user_id = $GLOBALS['user']->id;
         }
         $user_id = intval($user_id);

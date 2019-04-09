@@ -62,13 +62,13 @@ if (!check_can_zip($object_type)) {
 }
 
 if (Core::is_playable_item($_REQUEST['action'])) {
-    $id = $_REQUEST['id'];
+    $objectid = $_REQUEST['id'];
     if (!is_array($id)) {
-        $id = array($id);
+        $objectid = array($id);
     }
     $media_ids = array();
-    foreach ($id as $i) {
-        $libitem = new $object_type($i);
+    foreach ($objectid as $object) {
+        $libitem = new $object_type($object);
         if ($libitem->id) {
             $libitem->format();
             $name      = $libitem->get_fullname();
@@ -82,8 +82,8 @@ if (Core::is_playable_item($_REQUEST['action'])) {
             $name      = $GLOBALS['user']->username . ' - Playlist';
         break;
         case 'browse':
-            $id               = intval(scrub_in($_REQUEST['browse_id']));
-            $browse           = new Browse($id);
+            $objectid               = intval(scrub_in($_REQUEST['browse_id']));
+            $browse           = new Browse($objectid);
             $browse_media_ids = $browse->get_saved();
             foreach ($browse_media_ids as $media_id) {
                 switch ($object_type) {

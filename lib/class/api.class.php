@@ -59,7 +59,7 @@ class Api
      */
     public static function _auto_init()
     {
-        if (is_null(self::$browse)) {
+        if (self::$browse === null) {
             self::$browse = new Browse(null, false);
         }
     }
