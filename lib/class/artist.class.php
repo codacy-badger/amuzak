@@ -780,7 +780,7 @@ class Artist extends database_object implements library_item
 
         self::$_mapcache[$name][$mbid] = $artist_id;
 
-        return $artist_id;
+        return (int) $artist_id;
     }
 
     /**

@@ -1,4 +1,5 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
 /**
  *
@@ -39,11 +40,12 @@ class Rating extends database_object
      */
     public function __construct($id, $type)
     {
-        $this->id   = intval($id);
+        $this->id   = (int) $id;
         $this->type = $type;
 
         return true;
-    } // Constructor
+    }
+    // Constructor
 
     /**
      * gc
@@ -69,14 +71,14 @@ class Rating extends database_object
     }
 
     /**
-      * build_cache
+     * build_cache
      * This attempts to get everything we'll need for this page load in a
      * single query, saving on connection overhead
      * @param string $type
      */
     public static function build_cache($type, $ids)
     {
-        if (!is_array($ids) or !count($ids)) {
+        if (!is_array($ids) or ! count($ids)) {
             return false;
         }
 
@@ -85,8 +87,8 @@ class Rating extends database_object
 
         $idlist = '(' . implode(',', $ids) . ')';
         $sql    = "SELECT `rating`, `object_id` FROM `rating` " .
-            "WHERE `user` = ? AND `object_id` IN $idlist " .
-            "AND `object_type` = ?";
+                "WHERE `user` = ? AND `object_id` IN $idlist " .
+                "AND `object_type` = ?";
         $db_results = Dba::read($sql, array($GLOBALS['user']->id, $type));
 
         while ($row = Dba::fetch_assoc($db_results)) {
@@ -94,8 +96,8 @@ class Rating extends database_object
         }
 
         $sql = "SELECT AVG(`rating`) as `rating`, `object_id` FROM " .
-            "`rating` WHERE `object_id` IN $idlist AND " .
-            "`object_type` = ? GROUP BY `object_id`";
+                "`rating` WHERE `object_id` IN $idlist AND " .
+                "`object_type` = ? GROUP BY `object_id`";
         $db_results = Dba::read($sql, array($type));
 
         while ($row = Dba::fetch_assoc($db_results)) {
@@ -107,7 +109,7 @@ class Rating extends database_object
             if (!isset($user_ratings[$id])) {
                 $rating = 0;
             } else {
-                $rating = intval($user_ratings[$id]);
+                $rating = (int) $user_ratings[$id];
             }
             parent::add_to_cache('rating_' . $type . '_user' . $GLOBALS['user']->id, $id, $rating);
 
@@ -121,7 +123,8 @@ class Rating extends database_object
         }
 
         return true;
-    } // build_cache
+    }
+    // build_cache
 
     /**
      * get_user_rating
@@ -141,7 +144,7 @@ class Rating extends database_object
         }
 
         $sql = "SELECT `rating` FROM `rating` WHERE `user` = ? " .
-            "AND `object_id` = ? AND `object_type` = ?";
+                "AND `object_id` = ? AND `object_type` = ?";
         $db_results = Dba::read($sql, array($user_id, $this->id, $this->type));
 
         $rating = 0;
@@ -153,7 +156,8 @@ class Rating extends database_object
         parent::add_to_cache($key, $this->id, $rating);
 
         return $rating;
-    } // get_user_rating
+    }
+    // get_user_rating
 
     /**
      * get_average_rating
@@ -167,7 +171,7 @@ class Rating extends database_object
         }
 
         $sql = "SELECT AVG(`rating`) as `rating` FROM `rating` WHERE " .
-            "`object_id` = ? AND `object_type` = ?";
+                "`object_id` = ? AND `object_type` = ?";
         $db_results = Dba::read($sql, array($this->id, $this->type));
 
         $results = Dba::fetch_assoc($db_results);
@@ -175,7 +179,8 @@ class Rating extends database_object
         parent::add_to_cache('rating_' . $this->type . '_all', $this->id, $results['rating']);
 
         return $results['rating'];
-    } // get_average_rating
+    }
+    // get_average_rating
 
     /**
      * get_highest_sql
@@ -186,7 +191,7 @@ class Rating extends database_object
     {
         $type = Stats::validate_type($type);
         $sql  = "SELECT `object_id` as `id`, AVG(`rating`) AS `rating` FROM rating" .
-            " WHERE object_type = '" . $type . "'";
+                " WHERE object_type = '" . $type . "'";
         if (AmpConfig::get('catalog_disable')) {
             $sql .= " AND " . Catalog::get_enable_filter($type, '`object_id`');
         }
@@ -200,16 +205,16 @@ class Rating extends database_object
      * Get objects with the highest average rating.
      * @param string $type
      */
-    public static function get_highest($type, $count='', $offset='')
+    public static function get_highest($type, $count = '', $offset = '')
     {
         if (!$count) {
             $count = AmpConfig::get('popular_threshold');
         }
-        $count = intval($count);
+        $count = (int) $count;
         if (!$offset) {
             $limit = $count;
         } else {
-            $limit = intval($offset) . "," . $count;
+            $limit = (int) $offset . "," . $count;
         }
 
         /* Select Top objects counting by # of rows */
@@ -236,21 +241,21 @@ class Rating extends database_object
         if ($user_id === null) {
             $user_id = $GLOBALS['user']->id;
         }
-        $user_id = intval($user_id);
+        $user_id = (int) $user_id;
 
         debug_event('Rating', "Setting rating for $this->type $this->id to $rating", 5);
 
         // If score is -1, then remove rating
         if ($rating == '-1') {
             $sql = "DELETE FROM `rating` WHERE " .
-                "`object_id` = ? AND " .
-                "`object_type` = ? AND " .
-                "`user` = ?";
+                    "`object_id` = ? AND " .
+                    "`object_type` = ? AND " .
+                    "`user` = ?";
             $params = array($this->id, $this->type, $user_id);
         } else {
             $sql = "REPLACE INTO `rating` " .
-            "(`object_id`, `object_type`, `rating`, `user`) " .
-            "VALUES (?, ?, ?, ?)";
+                    "(`object_id`, `object_type`, `rating`, `user`) " .
+                    "VALUES (?, ?, ?, ?)";
             $params = array($this->id, $this->type, $rating, $user_id);
         }
         Dba::write($sql, $params);
@@ -265,14 +270,15 @@ class Rating extends database_object
         }
 
         return true;
-    } // set_rating
+    }
+    // set_rating
 
     /**
      * show
      * This takes an id and a type and displays the rating if ratings are
      * enabled.  If $static is true, the rating won't be editable.
      */
-    public static function show($object_id, $type, $static=false)
+    public static function show($object_id, $type, $static = false)
     {
         // If ratings aren't enabled don't do anything
         if (!AmpConfig::get('ratings')) {
@@ -286,5 +292,8 @@ class Rating extends database_object
         } else {
             require AmpConfig::get('prefix') . UI::find_template('show_object_rating.inc.php');
         }
-    } // show
-} //end rating class
+    }
+    // show
+}
+
+//end rating class

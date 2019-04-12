@@ -378,6 +378,7 @@ class Album extends database_object implements library_item
 
         return $results;
     }
+
     // _get_extra_info
 
     public function can_edit($user = null)
@@ -489,7 +490,7 @@ class Album extends database_object implements library_item
 
         self::$_mapcache[$name][$disk][$mbid][$album_artist] = $album_id;
 
-        return $album_id;
+        return (int) $album_id;
     }
 
     /**

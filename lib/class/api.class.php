@@ -986,7 +986,7 @@ class Api
      */
     public static function followers($input)
     {
-        debug_event('api', 'Sociable feature is not enabled. ' . $input, 3);
+        debug_event('api', 'Sociable feature is not enabled. ' . var_export($input), 3);
     }
     // followers
 
@@ -997,7 +997,7 @@ class Api
      */
     public static function following($input)
     {
-        debug_event('api', 'Sociable feature is not enabled. ' . $input, 3);
+        debug_event('api', 'Sociable feature is not enabled. ' . var_export($input), 3);
     }
     // following
 
@@ -1008,7 +1008,7 @@ class Api
      */
     public static function toggle_follow($input)
     {
-        debug_event('api', 'Sociable feature is not enabled. ' . $input, 3);
+        debug_event('api', 'Sociable feature is not enabled. ' . var_export($input), 3);
     }
     // toggle_follow
 
@@ -1019,7 +1019,7 @@ class Api
      */
     public static function last_shouts($input)
     {
-        debug_event('api', 'Sociable feature is not enabled. ' . $input, 3);
+        debug_event('api', 'Sociable feature is not enabled. ' . var_export($input), 3);
     }
     // last_shouts
 
@@ -1057,7 +1057,7 @@ class Api
      */
     public static function timeline($input)
     {
-        debug_event('api', 'Sociable feature is not enabled. ' . $input, 3);
+        debug_event('api', 'Sociable feature is not enabled. ' . var_export($input), 3);
     }
     // timeline
 
@@ -1068,7 +1068,7 @@ class Api
      */
     public static function friends_timeline($input)
     {
-        debug_event('api', 'Sociable feature is not enabled. ' . $input, 3);
+        debug_event('api', 'Sociable feature is not enabled. ' . var_export($input), 3);
     }
     // friends_timeline
 }

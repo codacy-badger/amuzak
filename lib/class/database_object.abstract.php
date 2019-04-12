@@ -1,4 +1,5 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
 /**
  *
@@ -31,7 +32,6 @@
 abstract class database_object
 {
     private static $object_cache = array();
-
     // Statistics for debugging
     public static $cache_hit = 0;
     private static $_enabled = false;
@@ -40,7 +40,7 @@ abstract class database_object
      * get_info
      * retrieves the info from the database and puts it in the cache
      */
-    public function get_info($id, $table_name='')
+    public function get_info($id, $table_name = '')
     {
         $table_name = $table_name ? Dba::escape($table_name) : Dba::escape(strtolower(get_class($this)));
 
@@ -65,7 +65,8 @@ abstract class database_object
         self::add_to_cache($table_name, $id, $row);
 
         return $row;
-    } // get_info
+    }
+    // get_info
 
     /**
      * clear_cache
@@ -87,7 +88,8 @@ abstract class database_object
         }
 
         return isset(self::$object_cache[$index][$id]);
-    } // is_cached
+    }
+    // is_cached
 
     /**
      * get_from_cache
@@ -102,8 +104,9 @@ abstract class database_object
             return self::$object_cache[$index][$id];
         }
 
-        return false;
-    } // get_from_cache
+        return array();
+    }
+    // get_from_cache
 
     /**
      * add_to_cache
@@ -121,7 +124,8 @@ abstract class database_object
         }
 
         self::$object_cache[$index][$id] = $value;
-    } // add_to_cache
+    }
+    // add_to_cache
 
     /**
      * remove_from_cache
@@ -133,7 +137,8 @@ abstract class database_object
         if (isset(self::$object_cache[$index]) && isset(self::$object_cache[$index][$id])) {
             unset(self::$object_cache[$index][$id]);
         }
-    } // remove_from_cache
+    }
+    // remove_from_cache
 
     /**
      * _auto_init
@@ -142,5 +147,8 @@ abstract class database_object
     public static function _auto_init()
     {
         self::$_enabled = AmpConfig::get('memory_cache');
-    } // _auto_init
-} // end database_object
+    }
+    // _auto_init
+}
+
+// end database_object

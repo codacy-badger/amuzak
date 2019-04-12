@@ -61,7 +61,7 @@ class Repository
 
     /**
      *
-     * @param type $object_id
+     * @param string $object_id
      * @return DatabaseObject
      */
     public function findById($object_id)
