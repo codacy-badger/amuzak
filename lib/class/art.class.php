@@ -228,8 +228,7 @@ class Art extends database_object
             if (!$image || imagesx($image) < 5 || imagesy($image) < 5) {
                 debug_event('Art', 'Image failed PHP-GD test', 1);
                 $test = false;
-            }
-            if (@imagedestroy($image) === false) {
+            } elseif (@imagedestroy($image) === false) {
                 throw new \RuntimeException('@imagedestroy failed');
             }
         }
@@ -544,9 +543,11 @@ class Art extends database_object
         if (Core::is_readable($path)) {
             unlink($path);
         }
-        $fp = fopen($path, "wb");
-        fwrite($fp, $source);
-        fclose($fp);
+        $filepath = fopen($path, "wb");
+        if ($filepath) {
+            fwrite($filepath, $source);
+            fclose($filepath);
+        }
 
         return true;
     }
@@ -568,12 +569,14 @@ class Art extends database_object
             return null;
         }
 
-        $image = '';
-        $fp    = fopen($path, "rb");
-        do {
-            $image .= fread($fp, 2048);
-        } while (!feof($fp));
-        fclose($fp);
+        $image    = '';
+        $filepath = fopen($path, "rb");
+        if ($filepath) {
+            do {
+                $image .= fread($filepath, 2048);
+            } while (!feof($filepath));
+            fclose($filepath);
+        }
 
         return $image;
     }
@@ -587,11 +590,11 @@ class Art extends database_object
     }
 
     /**
-     * @param false|string $path
+     * @param string $path
      */
     private static function delete_rec_dir($path)
     {
-        debug_event('Art', 'Deleting ' . $path . ' directory...', 5);
+        debug_event('Art', 'Deleting ' . (string) $path . ' directory...', 5);
 
         if (Core::is_readable($path)) {
             foreach (scandir($path) as $file) {
@@ -658,7 +661,7 @@ class Art extends database_object
      * Returns the specified resized image.  If the requested size doesn't
      * already exist, create and cache it.
      * @param array $size
-     * @return string
+     * @return array
      */
     public function get_thumb($size)
     {
@@ -851,11 +854,13 @@ class Art extends database_object
 
         // Check to see if it's a FILE
         if (isset($data['file'])) {
-            $handle     = fopen($data['file'], 'rb');
-            $image_data = fread($handle, Core::get_filesize($data['file']));
-            fclose($handle);
+            $handle = fopen($data['file'], 'rb');
+            if ($handle) {
+                $image_data = fread($handle, (int) Core::get_filesize($data['file']));
+                fclose($handle);
 
-            return $image_data;
+                return $image_data;
+            }
         }
 
         // Check to see if it is embedded in id3 of a song
@@ -935,14 +940,14 @@ class Art extends database_object
             if (empty($extension)) {
                 $extension = 'jpg';
             }
-            $url = AmpConfig::get('web_path') . '/play/art/' . $sid . '/' . scrub_out($type) . '/' . scrub_out($uid) . '/thumb';
-            if ($thumb) {
+            $url = AmpConfig::get('web_path') . '/play/art/' . (string) $sid . '/' . scrub_out($type) . '/' . scrub_out($uid) . '/thumb';
+            if ($thumb !== null) {
                 $url .= $thumb;
             }
             $url .= '.' . $extension;
         } else {
             $url = AmpConfig::get('web_path') . '/image.php?object_id=' . scrub_out($uid) . '&object_type=' . scrub_out($type) . '&auth=' . $sid;
-            if ($thumb) {
+            if ($thumb !== null) {
                 $url .= '&thumb=' . $thumb;
             }
             if (!empty($extension)) {
@@ -1025,7 +1030,7 @@ class Art extends database_object
             $db_results = Dba::read($sql, array($object_type, $old_object_id));
             while ($row = Dba::fetch_assoc($db_results)) {
                 $image = self::read_from_dir($row['size'], $object_type, $old_object_id, $row['kind']);
-                if ($image != null) {
+                if ($image !== null) {
                     self::write_to_dir($image, $row['size'], $object_type, $new_object_id, $row['kind']);
                 }
             }
@@ -1618,7 +1623,7 @@ class Art extends database_object
             }
 
             $coverart = (array) $xalbum->image;
-            if (!$coverart) {
+            if (empty($coverart)) {
                 return array();
             }
 
@@ -1783,7 +1788,7 @@ class Art extends database_object
             }
         }
         $size        = self::get_thumb_size($thumb);
-        $prettyPhoto = ($link == null);
+        $prettyPhoto = ($link === null);
         if ($link === null) {
             $link = AmpConfig::get('web_path') . "/image.php?object_id=" . $object_id . "&object_type=" . $object_type;
             if (AmpConfig::get('use_auth') && AmpConfig::get('require_session')) {
