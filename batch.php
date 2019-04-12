@@ -63,8 +63,8 @@ if (!check_can_zip($object_type)) {
 
 if (Core::is_playable_item($_REQUEST['action'])) {
     $objectid = $_REQUEST['id'];
-    if (!is_array($id)) {
-        $objectid = array($id);
+    if (!is_array($objectid)) {
+        $objectid = array($objectid);
     }
     $media_ids = array();
     foreach ($objectid as $object) {
@@ -120,6 +120,5 @@ $song_files = get_media_files($media_ids);
 if (is_array($song_files['0'])) {
     set_memory_limit($song_files['1'] + 32);
     send_zip($name, $song_files['0']);
+    debug_event('batch', 'Sending zip ' . $name, '3');
 }
-
-return false;

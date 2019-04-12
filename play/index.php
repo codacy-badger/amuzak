@@ -1,4 +1,5 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
 /**
  *
@@ -19,14 +20,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 /*
 
- This is the wrapper for opening music streams from this server.  This script
-   will play the local version or redirect to the remote server if that be
-   the case.  Also this will update local statistics for songs as well.
-   This is also where it decides if you need to be downsampled.
-*/
+  This is the wrapper for opening music streams from this server.  This script
+  will play the local version or redirect to the remote server if that be
+  the case.  Also this will update local statistics for songs as well.
+  This is also where it decides if you need to be downsampled.
+ */
 define('NO_SESSION', '1');
 require_once '../lib/init.php';
 ob_end_clean();
@@ -34,10 +34,10 @@ ob_end_clean();
 //debug_event('play', print_r(apache_request_headers(), true), 5);
 
 /* These parameters had better come in on the url. */
-$uid            = scrub_in($_REQUEST['uid']);
-$oid            = scrub_in($_REQUEST['oid']);
-$sid            = scrub_in($_REQUEST['ssid']);
-$type           = scrub_in($_REQUEST['type']);
+$uid  = scrub_in($_REQUEST['uid']);
+$oid  = scrub_in($_REQUEST['oid']);
+$sid  = scrub_in($_REQUEST['ssid']);
+$type = scrub_in($_REQUEST['type']);
 
 $transcode_to = null;
 $player       = null;
@@ -89,8 +89,8 @@ if ($type == 'playlist') {
 }
 
 /* This is specifically for tmp playlist requests */
-$demo_id    = Dba::escape($_REQUEST['demo_id']);
-$random     = Dba::escape($_REQUEST['random']);
+$demo_id = Dba::escape($_REQUEST['demo_id']);
+$random  = Dba::escape($_REQUEST['random']);
 
 /* First things first, if we don't have a uid/oid stop here */
 if (empty($oid) && empty($demo_id) && empty($random)) {
@@ -216,19 +216,17 @@ if (AmpConfig::get('demo_mode') || (!Access::check('interface', $prefs))) {
 }
 
 /*
-   If they are using access lists let's make sure
-   that they have enough access to play this mojo
-*/
+  If they are using access lists let's make sure
+  that they have enough access to play this mojo
+ */
 if (AmpConfig::get('access_control')) {
-    if (!Access::check_network('stream', $GLOBALS['user']->id, '25') and
-        !Access::check_network('network', $GLOBALS['user']->id, '25')) {
+    if (!Access::check_network('stream', $GLOBALS['user']->id, '25') and ! Access::check_network('network', $GLOBALS['user']->id, '25')) {
         debug_event('UI::access_denied', "Streaming Access Denied: " . $_SERVER['REMOTE_ADDR'] . " does not have stream level access", '3');
         UI::access_denied();
 
         return false;
     }
 } // access_control is enabled
-
 // Handle playlist downloads
 if ($type == 'playlist' && isset($playlist_type)) {
     $playlist = new Stream_Playlist($oid);
@@ -388,7 +386,7 @@ $browser = new Horde_Browser();
 /* If they are just trying to download make sure they have rights
  * and then present them with the download file
  */
-if ($_GET['action'] == 'download' and AmpConfig::get('download')) {
+if (filter_input(INPUT_GET, 'action') == 'download' and AmpConfig::get('download')) {
     debug_event('play', 'Downloading file...', 5);
     // STUPID IE
     $media_name = str_replace(array('?', '/', '\\'), "_", $media->f_file);
@@ -429,7 +427,6 @@ if ($_GET['action'] == 'download' and AmpConfig::get('download')) {
 
     return false;
 } // if they are trying to download and they can
-
 // Prevent the script from timing out
 set_time_limit(0);
 
