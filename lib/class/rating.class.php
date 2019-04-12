@@ -163,11 +163,12 @@ class Rating extends database_object
      * get_average_rating
      * Get the floored average rating of what everyone has rated this object
      * as. This is shown if there is no personal rating.
+     * @return double
      */
     public function get_average_rating()
     {
         if (parent::is_cached('rating_' . $this->type . '_all', $this->id)) {
-            return parent::get_from_cache('rating_' . $this->type . '_user', $this->id);
+            return (double) parent::get_from_cache('rating_' . $this->type . '_user', $this->id);
         }
 
         $sql = "SELECT AVG(`rating`) as `rating` FROM `rating` WHERE " .

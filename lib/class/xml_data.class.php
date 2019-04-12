@@ -551,7 +551,7 @@ class XML_Data
                     "\t<art><![CDATA[" . $art_url . "]]></art>\n" .
                     "\t<preciserating>" . ($rating->get_user_rating() ?: 0) . "</preciserating>\n" .
                     "\t<rating>" . ($rating->get_user_rating() ?: 0) . "</rating>\n" .
-                    "\t<averagerating>" . ($rating->get_average_rating() ?: 0) . "</averagerating>\n" .
+                    "\t<averagerating>" . (string) ($rating->get_average_rating() ?: 0) . "</averagerating>\n" .
                     "\t<composer><![CDATA[" . $song->composer . "]]></composer>\n" .
                     "\t<channels>" . $song->channels . "</channels>\n" .
                     "\t<comment><![CDATA[" . $song->comment . "]]></comment>\n";
@@ -639,7 +639,7 @@ class XML_Data
                     "\t<art><![CDATA[" . $art_url . "]]></art>\n" .
                     "\t<preciserating>" . $rating->get_user_rating() . "</preciserating>\n" .
                     "\t<rating>" . $rating->get_user_rating() . "</rating>\n" .
-                    "\t<averagerating>" . $rating->get_average_rating() . "</averagerating>\n" .
+                    "\t<averagerating>" . (string) $rating->get_average_rating() . "</averagerating>\n" .
                     "\t<vote>" . $democratic->get_vote($row_id) . "</vote>\n" .
                     "</song>\n";
         } // end foreach
@@ -724,6 +724,7 @@ class XML_Data
 
         return self::output_xml($string);
     }
+
     // shouts
 
     public static function output_xml($string, $full_xml = true)
@@ -880,6 +881,7 @@ class XML_Data
 
         return $footer;
     }
+
     // _footer
 
     public static function podcast(library_item $libitem)
