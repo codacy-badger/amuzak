@@ -1,4 +1,5 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
 /**
  *
@@ -30,6 +31,7 @@
  */
 class Subsonic_Api
 {
+
     /**
      * constructor
      * This really isn't anything to do here, so it's private
@@ -41,12 +43,12 @@ class Subsonic_Api
     public static function check_version($input, $version = "1.0.0", $addheader = false)
     {
         // We cannot check client version unfortunately. Most Subsonic client sent a dummy client version...
-        /*if (version_compare($input['v'], $version) < 0) {
-            ob_end_clean();
-            if ($addheader) self::setHeader($input['f']);
-            self::apiOutput($input, Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_APIVERSION_CLIENT));
-            return false;
-        }*/
+        /* if (version_compare($input['v'], $version) < 0) {
+          ob_end_clean();
+          if ($addheader) self::setHeader($input['f']);
+          self::apiOutput($input, Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_APIVERSION_CLIENT));
+          return false;
+          } */
     }
 
     /**
@@ -74,7 +76,7 @@ class Subsonic_Api
         if ($encpwd !== false) {
             $hex    = substr($password, 4);
             $decpwd = '';
-            for ($i=0; $i < strlen($hex); $i += 2) {
+            for ($i = 0; $i < strlen($hex); $i += 2) {
                 $decpwd .= chr(hexdec(substr($hex, $i, 2)));
             }
             $password = $decpwd;
@@ -154,7 +156,6 @@ class Subsonic_Api
             curl_close($ch);
         } else {
             // Stream media using http redirect if no curl support
-
             // Bug fix for android clients looking for /rest/ in destination url
             // Warning: external catalogs will not work!
             $url = str_replace('/play/', '/rest/fake/', $url);
@@ -179,10 +180,10 @@ class Subsonic_Api
     /**
      * @param SimpleXMLElement $xml
      */
-    public static function apiOutput($input, $xml, $alwaysArray=array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'))
+    public static function apiOutput($input, $xml, $alwaysArray = array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'))
     {
-        $type        = $input['f'];
-        $callback    = $input['callback'];
+        $type     = $input['f'];
+        $callback = $input['callback'];
         self::apiOutput2(strtolower($type), $xml, $callback, $alwaysArray);
     }
 
@@ -190,7 +191,7 @@ class Subsonic_Api
      * @param string $file
      * @param SimpleXMLElement $xml
      */
-    public static function apiOutput2($outputtype, $xml, $callback='', $alwaysArray=array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'))
+    public static function apiOutput2($outputtype, $xml, $callback = '', $alwaysArray = array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'))
     {
         $conf = array('alwaysArray' => $alwaysArray);
         if ($outputtype == "json") {
@@ -208,7 +209,7 @@ class Subsonic_Api
                 $output            = $dom->saveXML();
             }
         }
-        
+
         echo $output;
     }
 
@@ -220,28 +221,26 @@ class Subsonic_Api
     private static function xml2json($xml, $options = array())
     {
         $defaults = array(
-            'namespaceSeparator' => ' :',//you may want this to be something other than a colon
-            'attributePrefix' => '',   //to distinguish between attributes and nodes with the same name
-            'alwaysArray' => array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'),   //array of xml tag names which should always become arrays
-            'autoArray' => true,        //only create arrays for tags which appear more than once
-            'textContent' => 'value',       //key used for the text content of elements
-            'autoText' => true,         //skip textContent key if node has no attributes or child nodes
-            'keySearch' => false,       //optional search and replace on tag and attribute names
-            'keyReplace' => false,      //replace values for above search values (as passed to str_replace())
+            'namespaceSeparator' => ' :', //you may want this to be something other than a colon
+            'attributePrefix' => '', //to distinguish between attributes and nodes with the same name
+            'alwaysArray' => array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'), //array of xml tag names which should always become arrays
+            'autoArray' => true, //only create arrays for tags which appear more than once
+            'textContent' => 'value', //key used for the text content of elements
+            'autoText' => true, //skip textContent key if node has no attributes or child nodes
+            'keySearch' => false, //optional search and replace on tag and attribute names
+            'keyReplace' => false, //replace values for above search values (as passed to str_replace())
             'boolean' => true           //replace true and false string with boolean values
         );
         $options        = array_merge($defaults, $options);
         $namespaces     = $xml->getDocNamespaces();
         $namespaces[''] = null; //add base (empty) namespace
-
         //get attributes from all namespaces
         $attributesArray = array();
         foreach ($namespaces as $prefix => $namespace) {
             foreach ($xml->attributes($namespace) as $attributeName => $attribute) {
                 //replace characters in attribute name
                 if ($options['keySearch']) {
-                    $attributeName =
-                        str_replace($options['keySearch'], $options['keyReplace'], $attributeName);
+                    $attributeName = str_replace($options['keySearch'], $options['keyReplace'], $attributeName);
                 }
                 $attributeKey = $options['attributePrefix']
                         . ($prefix ? $prefix . $options['namespaceSeparator'] : '')
@@ -261,12 +260,11 @@ class Subsonic_Api
         foreach ($namespaces as $prefix => $namespace) {
             foreach ($xml->children($namespace) as $childXml) {
                 //recurse into child nodes
-                $childArray                           = self::xml2json($childXml, $options);
+                $childArray = self::xml2json($childXml, $options);
                 foreach ($childArray as $childTagName => $childProperties) {
                     //replace characters in tag name
                     if ($options['keySearch']) {
-                        $childTagName =
-                            str_replace($options['keySearch'], $options['keyReplace'], $childTagName);
+                        $childTagName = str_replace($options['keySearch'], $options['keyReplace'], $childTagName);
                     }
                     //add namespace prefix, if any
                     if ($prefix) {
@@ -282,14 +280,11 @@ class Subsonic_Api
                             $tagsArray[$childTagName] = (object) $childProperties;
                         } else {
 
-                        //test if tags of this type should always be arrays, no matter the element count
-                            $tagsArray[$childTagName] =
-                                in_array($childTagName, $options['alwaysArray']) || !$options['autoArray']
-                                ? array($childProperties) : $childProperties;
+                            //test if tags of this type should always be arrays, no matter the element count
+                            $tagsArray[$childTagName] = in_array($childTagName, $options['alwaysArray']) || !$options['autoArray'] ? array($childProperties) : $childProperties;
                         }
                     } elseif (
-                        is_array($tagsArray[$childTagName]) && array_keys($tagsArray[$childTagName])
-                        === range(0, count($tagsArray[$childTagName]) - 1)
+                            is_array($tagsArray[$childTagName]) && array_keys($tagsArray[$childTagName]) === range(0, count($tagsArray[$childTagName]) - 1)
                     ) {
                         //key already exists and is integer indexed array
                         $tagsArray[$childTagName][] = $childProperties;
@@ -309,13 +304,12 @@ class Subsonic_Api
         }
 
         //stick it all together
-        $propertiesArray = !$options['autoText'] || $attributesArray || $tagsArray || ($plainText === '')
-                ? array_merge($attributesArray, $tagsArray, $textContentArray) : $plainText;
+        $propertiesArray = !$options['autoText'] || $attributesArray || $tagsArray || ($plainText === '') ? array_merge($attributesArray, $tagsArray, $textContentArray) : $plainText;
 
         if (isset($propertiesArray['xmlns'])) {
             unset($propertiesArray['xmlns']);
         }
-        
+
         //return node as array
         return array(
             $xml->getName() => $propertiesArray
@@ -532,7 +526,7 @@ class Subsonic_Api
      * Get a list of random, newest, highest rated etc. albums.
      * Takes the list type with optional size and offset in parameters.
      */
-    public static function getalbumlist($input, $elementName="albumList")
+    public static function getalbumlist($input, $elementName = "albumList")
     {
         self::check_version($input, "1.2.0");
 
@@ -549,11 +543,11 @@ class Subsonic_Api
             $catalogs   = array();
             $catalogs[] = $musicFolderId;
         }
-        
+
         $r            = Subsonic_XML_Data::createSuccessResponse();
         $errorOccured = false;
         $albums       = array();
-        
+
         if ($type == "random") {
             $albums = Album::get_random($size);
         } else {
@@ -777,7 +771,7 @@ class Subsonic_Api
      * Get albums, artists and songs matching the given criteria.
      * Takes query with optional artist count, artist offset, album count, album offset, song count and song offset in parameters.
      */
-    public static function search2($input, $elementName="searchResult2")
+    public static function search2($input, $elementName = "searchResult2")
     {
         self::check_version($input, "1.2.0");
 
@@ -1199,7 +1193,7 @@ class Subsonic_Api
      * Takes no parameter.
      * Not supported.
      */
-    public static function getstarred($input, $elementName="starred")
+    public static function getstarred($input, $elementName = "starred")
     {
         self::check_version($input, "1.7.0");
 
@@ -1209,7 +1203,6 @@ class Subsonic_Api
         Subsonic_XML_Data::addStarred($response, Userflag::get_latest('artist', $user_id, 10000), Userflag::get_latest('album', $user_id, 10000), Userflag::get_latest('song', $user_id, 10000), $elementName);
         self::apiOutput($input, $response);
     }
-
 
     /**
      * getStarred2
@@ -1693,6 +1686,7 @@ class Subsonic_Api
                     break;
                 case 'set':
                     $localplay->delete_all();
+                // Intentional break fall-through
                 case 'add':
                     if ($id) {
                         if (!is_array($id)) {
@@ -1953,7 +1947,7 @@ class Subsonic_Api
         }
         self::apiOutput($input, $r);
     }
-    
+
     /**
      * getNewestPodcasts
      * Get the most recently published podcast episodes.
@@ -2004,7 +1998,7 @@ class Subsonic_Api
     {
         self::check_version($input, "1.9.0");
         $url = self::check_parameter($input, 'url');
-        
+
         if (AmpConfig::get('podcast') && Access::check('interface', 75)) {
             $catalogs = Catalog::get_catalogs('podcast');
             if (count($catalogs) > 0) {
@@ -2034,7 +2028,7 @@ class Subsonic_Api
     {
         self::check_version($input, "1.9.0");
         $id = self::check_parameter($input, 'id');
-        
+
         if (AmpConfig::get('podcast') && Access::check('interface', 75)) {
             $podcast = new Podcast(Subsonic_XML_Data::getAmpacheId($id));
             if ($podcast->id) {
@@ -2061,7 +2055,7 @@ class Subsonic_Api
     {
         self::check_version($input, "1.9.0");
         $id = self::check_parameter($input, 'id');
-        
+
         if (AmpConfig::get('podcast') && Access::check('interface', 75)) {
             $episode = new Podcast_Episode(Subsonic_XML_Data::getAmpacheId($id));
             if ($episode->id) {
@@ -2088,7 +2082,7 @@ class Subsonic_Api
     {
         self::check_version($input, "1.9.0");
         $id = self::check_parameter($input, 'id');
-        
+
         if (AmpConfig::get('podcast') && Access::check('interface', 75)) {
             $episode = new Podcast_Episode(Subsonic_XML_Data::getAmpacheId($id));
             if ($episode->id) {
@@ -2102,7 +2096,7 @@ class Subsonic_Api
         }
         self::apiOutput($input, $r);
     }
-    
+
     /**
      * getBookmarks
      * Get all user bookmarks.
@@ -2163,7 +2157,7 @@ class Subsonic_Api
         self::check_version($input, "1.9.0");
         $id   = self::check_parameter($input, 'id');
         $type = Subsonic_XML_Data::getAmpacheType($id);
-        
+
         $bookmark = new Bookmark(Subsonic_XML_Data::getAmpacheId($id), $type);
         if ($bookmark->id) {
             $bookmark->remove();
@@ -2173,8 +2167,7 @@ class Subsonic_Api
         }
         self::apiOutput($input, $r);
     }
-    
-    /****   CURRENT UNSUPPORTED FUNCTIONS   ****/
+    /*     * **   CURRENT UNSUPPORTED FUNCTIONS   *** */
 
     /**
      * getChatMessages
@@ -2203,7 +2196,7 @@ class Subsonic_Api
         $r = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_DATA_NOTFOUND);
         self::apiOutput($input, $r);
     }
-    
+
     /**
      * getPlayQueue
      * Geturns the state of the play queue for the authenticated user.
@@ -2217,7 +2210,7 @@ class Subsonic_Api
         $r = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_DATA_NOTFOUND);
         self::apiOutput($input, $r);
     }
-    
+
     /**
      * savePlayQueue
      * Save the state of the play queue for the authenticated user.

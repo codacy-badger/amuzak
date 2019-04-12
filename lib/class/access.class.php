@@ -350,6 +350,7 @@ class Access
                     $user = User::get_from_apikey($apikey);
                     $user = $user->id;
                 }
+            // Intentional break fall-through
             case 'api':
                 $type = 'rpc';
             case 'network':

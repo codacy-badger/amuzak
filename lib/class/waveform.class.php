@@ -1,4 +1,5 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
 /**
  *
@@ -20,37 +21,36 @@
  *
  */
 
- /**
-  * Waveform code generation license:
-  *
-  *
-  * Copyright (c) 2011, Andrew Freiday
-  * All rights reserved.
-  *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *
-  * - Redistributions of source code must retain the above copyright notice,
-  *     this list of conditions and the following disclaimer.
-  * - Redistributions in binary form must reproduce the above copyright notice,
-  *     this list of conditions and the following disclaimer in the documentation and/or
-  *     other materials provided with the distribution.
-  *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS
-  * OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
-  * THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-  * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
-  * GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-  * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
-  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-  * POSSIBILITY OF SUCH DAMAGE.
-  *
-  *
-  * https://github.com/afreiday/php-waveform-png
-  *
-  */
-
+/**
+ * Waveform code generation license:
+ *
+ *
+ * Copyright (c) 2011, Andrew Freiday
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice,
+ *     this list of conditions and the following disclaimer.
+ * - Redistributions in binary form must reproduce the above copyright notice,
+ *     this list of conditions and the following disclaimer in the documentation and/or
+ *     other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS
+ * OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+ * THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+ * GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+ * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ *
+ * https://github.com/afreiday/php-waveform-png
+ *
+ */
 class Waveform
 {
     public $id;
@@ -62,7 +62,8 @@ class Waveform
     {
         // Static
         return false;
-    } // Constructor
+    }
+    // Constructor
 
     /**
      * Get a song waveform.
@@ -118,7 +119,9 @@ class Waveform
                                 $waveform = self::create_waveform($tmpfile);
                                 //$waveform = self::create_waveform("C:\\tmp\\test.wav");
 
-                                @unlink($tmpfile);
+                                if (@unlink($tmpfile) === false) {
+                                    throw new \RuntimeException('Error, unable to unlink ' . $tmpfile);
+                                }
                             } else {
                                 debug_event('waveform', 'transcode setting to wav required for waveform.', '3');
                             }
@@ -157,7 +160,7 @@ class Waveform
      */
     protected static function html2rgb($input)
     {
-        $input=($input[0] == "#")?substr($input, 1, 6):substr($input, 0, 6);
+        $input = ($input[0] == "#") ? substr($input, 1, 6) : substr($input, 0, 6);
 
         return array(
             hexdec(substr($input, 0, 2)),
@@ -178,7 +181,7 @@ class Waveform
 
             return null;
         }
-        
+
         if (!check_php_gd()) {
             debug_event('waveform', 'GD extension must be loaded', 1);
 
@@ -256,24 +259,24 @@ class Waveform
                 }
 
                 switch ($byte) {
-                // get value for 8-bit wav
-                case 1:
-                  $data = self::findValues($bytes[0], $bytes[1]);
-                break;
-                // get value for 16-bit wav
-                case 2:
-                  if (ord($bytes[1]) & 128) {
-                      $temp = 0;
-                  } else {
-                      $temp = 128;
-                  }
-                  $temp = chr((ord($bytes[1]) & 127) + $temp);
-                  $data = floor(self::findValues($bytes[0], $temp) / 256);
-                break;
-                default:
-                    $data = 0;
-                break;
-              }
+                    // get value for 8-bit wav
+                    case 1:
+                        $data = self::findValues($bytes[0], $bytes[1]);
+                        break;
+                    // get value for 16-bit wav
+                    case 2:
+                        if (ord($bytes[1]) & 128) {
+                            $temp = 0;
+                        } else {
+                            $temp = 128;
+                        }
+                        $temp = chr((ord($bytes[1]) & 127) + $temp);
+                        $data = floor(self::findValues($bytes[0], $temp) / 256);
+                        break;
+                    default:
+                        $data = 0;
+                        break;
+                }
 
                 // skip bytes for memory optimization
                 fseek($handle, $ratio, SEEK_CUR);
@@ -287,17 +290,17 @@ class Waveform
                 if (!($v / $height == 0.5 && !$draw_flat)) {
                     // draw the line on the image using the $v value and centering it vertically on the canvas
                     imageline(
-                  $img,
-                  // x1
-                  (int) ($data_point / $detail),
-                  // y1: height of the image minus $v as a percentage of the height for the wave amplitude
-                  $height - $v,
-                  // x2
-                  (int) ($data_point / $detail),
-                  // y2: same as y1, but from the bottom of the image
-                  $height - ($height - $v),
-                  imagecolorallocate($img, $r, $g, $b)
-                );
+                            $img,
+                            // x1
+                            (int) ($data_point / $detail),
+                            // y1: height of the image minus $v as a percentage of the height for the wave amplitude
+                            $height - $v,
+                            // x2
+                            (int) ($data_point / $detail),
+                            // y2: same as y1, but from the bottom of the image
+                            $height - ($height - $v),
+                            imagecolorallocate($img, $r, $g, $b)
+                    );
                 }
             } else {
                 // skip this one due to lack of detail
@@ -343,4 +346,6 @@ class Waveform
 
         return Dba::write($sql, array($waveform, $song_id));
     }
-} // Waveform class
+}
+
+// Waveform class

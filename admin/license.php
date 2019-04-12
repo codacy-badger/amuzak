@@ -1,4 +1,5 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
 /**
  *
@@ -19,7 +20,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 require_once '../lib/init.php';
 
 if (!Access::check('interface', '100')) {
@@ -42,16 +42,17 @@ switch ($_REQUEST['action']) {
             $text = T_('License Created');
         }
         show_confirmation($text, '', AmpConfig::get('web_path') . '/admin/license.php');
-    break;
+        break;
     case 'show_edit':
         $license = new License($_REQUEST['license_id']);
+    // Intentional break fall-through
     case 'show_create':
         require_once AmpConfig::get('prefix') . UI::find_template('show_edit_license.inc.php');
         break;
     case 'delete':
         License::delete($_REQUEST['license_id']);
         show_confirmation(T_('License Deleted'), '', AmpConfig::get('web_path') . '/admin/license.php');
-    break;
+        break;
     default:
         $browse = new Browse();
         $browse->set_type('license');
@@ -59,7 +60,7 @@ switch ($_REQUEST['action']) {
         $license_ids = $browse->get_objects();
         $browse->show_objects($license_ids);
         $browse->store();
-    break;
+        break;
 }
 
 UI::show_footer();

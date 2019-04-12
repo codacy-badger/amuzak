@@ -1,4 +1,5 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
 /**
  *
@@ -19,7 +20,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 require_once 'lib/init.php';
 
 UI::show_header();
@@ -33,13 +33,13 @@ switch ($_REQUEST['action']) {
 
         $label_id = scrub_in($_REQUEST['label_id']);
         show_confirmation(
-            T_('Label Deletion'),
-            T_('Are you sure you want to permanently delete this label?'),
-            AmpConfig::get('web_path') . "/labels.php?action=confirm_delete&label_id=" . $label_id,
-            1,
-            'delete_label'
+                T_('Label Deletion'),
+                T_('Are you sure you want to permanently delete this label?'),
+                AmpConfig::get('web_path') . "/labels.php?action=confirm_delete&label_id=" . $label_id,
+                1,
+                'delete_label'
         );
-    break;
+        break;
     case 'confirm_delete':
         if (AmpConfig::get('demo_mode')) {
             break;
@@ -58,7 +58,7 @@ switch ($_REQUEST['action']) {
         } else {
             show_confirmation(T_('Label Deletion'), T_('Cannot delete this label.'), AmpConfig::get('web_path'));
         }
-    break;
+        break;
     case 'add_label':
         // Must be at least a content manager or edit upload enabled
         if (!Access::check('interface', '50') && !AmpConfig::get('upload_allow_edit')) {
@@ -89,7 +89,7 @@ switch ($_REQUEST['action']) {
             $title = '';
             show_confirmation($title, $body, AmpConfig::get('web_path') . '/browse.php?action=label');
         }
-    break;
+        break;
     case 'show':
         $label_id = intval($_REQUEST['label']);
         if (!$label_id) {
@@ -107,13 +107,14 @@ switch ($_REQUEST['action']) {
 
             return false;
         }
+    // Intentional break fall-through
     case 'show_add_label':
         if (Access::check('interface', '50') || AmpConfig::get('upload_allow_edit')) {
             require_once AmpConfig::get('prefix') . UI::find_template('show_add_label.inc.php');
         } else {
             echo T_('Label cannot be found.');
         }
-    break;
+        break;
 } // end switch
 
 UI::show_footer();

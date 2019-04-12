@@ -1,4 +1,5 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
 /**
  *
@@ -19,7 +20,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 /**
  * This class is a derived work from UMSP project (http://wiki.wdlxtv.com/UMSP).
  */
@@ -34,12 +34,12 @@
 class Upnp_Api
 {
     /**
-    * UPnP classes:
-    * object.item.audioItem
-    * object.item.imageItem
-    * object.item.playlistItem
-    * object.item.textItem
-    * object.container
+     * UPnP classes:
+     * object.item.audioItem
+     * object.item.imageItem
+     * object.item.playlistItem
+     * object.item.textItem
+     * object.container
      */
 
     /**
@@ -49,7 +49,7 @@ class Upnp_Api
     private function __construct()
     {
     }
-    
+
     public static function get_uuidStr()
     {
         // Create uuid based on host
@@ -63,7 +63,7 @@ class Upnp_Api
     /**
      * @param string $buf
      */
-    private static function udpSend($buf, $delay=15, $host="239.255.255.250", $port=1900)
+    private static function udpSend($buf, $delay = 15, $host = "239.255.255.250", $port = 1900)
     {
         $socket = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
         socket_set_option($socket, SOL_SOCKET, SO_BROADCAST, 1);
@@ -72,16 +72,16 @@ class Upnp_Api
         usleep($delay * 1000);
     }
 
-    public static function sddpSend($delay=15, $host="239.255.255.250", $port=1900, $prefix="NT")
+    public static function sddpSend($delay = 15, $host = "239.255.255.250", $port = 1900, $prefix = "NT")
     {
-        $strHeader  = 'NOTIFY * HTTP/1.1' . "\r\n";
+        $strHeader = 'NOTIFY * HTTP/1.1' . "\r\n";
         $strHeader .= 'HOST: ' . $host . ':' . $port . "\r\n";
         $strHeader .= 'LOCATION: http://' . AmpConfig::get('http_host') . ':' . AmpConfig::get('http_port') . AmpConfig::get('raw_web_path') . '/upnp/MediaServerServiceDesc.php' . "\r\n";
         $strHeader .= 'SERVER: DLNADOC/1.50 UPnP/1.0 Ampache/' . AmpConfig::get('version') . "\r\n";
         $strHeader .= 'CACHE-CONTROL: max-age=1800' . "\r\n";
         $strHeader .= 'NTS: ssdp:alive' . "\r\n";
         $uuidStr = self::get_uuidStr();
-        
+
         $rootDevice = $prefix . ': upnp:rootdevice' . "\r\n";
         $rootDevice .= 'USN: uuid:' . $uuidStr . '::upnp:rootdevice' . "\r\n" . "\r\n";
         $buf = $strHeader . $rootDevice;
@@ -166,10 +166,10 @@ class Upnp_Api
                         break;
                 } // end switch
             } // end if
-        } #end while
+        } // end while
         return $retArr;
-    } #end function
-
+    }
+    // end function
 
     public static function createDIDL($prmItems)
     {
@@ -264,7 +264,7 @@ class Upnp_Api
                         $ndTag = $xmlDoc->createElement($key);
                         $ndItem->appendChild($ndTag);
                         // check if string is already utf-8 encoded
-                        $ndTag_text = $xmlDoc->createTextNode((mb_detect_encoding($value, 'auto') == 'UTF-8')?$value:utf8_encode($value));
+                        $ndTag_text = $xmlDoc->createTextNode((mb_detect_encoding($value, 'auto') == 'UTF-8') ? $value : utf8_encode($value));
                         $ndTag->appendChild($ndTag_text);
                 }
                 if ($useRes) {
@@ -277,20 +277,20 @@ class Upnp_Api
         return $xmlDoc;
     }
 
-
     public static function createSOAPEnvelope($prmDIDL, $prmNumRet, $prmTotMatches, $prmResponseType = 'u:BrowseResponse', $prmUpdateID = '0')
     {
-        // $prmDIDL is DIDL XML string
-        // XML-Layout:
-        #
-        #		-s:Envelope
-        #				-s:Body
-        #						-u:BrowseResponse
-        #								Result (DIDL)
-        #								NumberReturned
-        #								TotalMatches
-        #								UpdateID
-        #
+        /*
+         * $prmDIDL is DIDL XML string
+         * XML-Layout:
+         *
+         * 		-s:Envelope
+         * 				-s:Body
+         * 						-u:BrowseResponse
+         * 								Result (DIDL)
+         * 								NumberReturned
+         * 								TotalMatches
+         * 								UpdateID
+         */
         $doc               = new DOMDocument('1.0', 'utf-8');
         $doc->formatOutput = true;
         $ndEnvelope        = $doc->createElementNS('http://schemas.xmlsoap.org/soap/envelope/', 's:Envelope');
@@ -338,7 +338,7 @@ class Upnp_Api
                             'dc:title' => T_('Artists'),
                             'upnp:class' => 'object.container',
                         );
-                    break;
+                        break;
 
                     case 2:
                         $artist = new Artist($pathreq[1]);
@@ -346,9 +346,9 @@ class Upnp_Api
                             $artist->format();
                             $meta = self::_itemArtist($artist, $root . '/artists');
                         }
-                    break;
+                        break;
                 }
-            break;
+                break;
 
             case 'albums':
                 switch (count($pathreq)) {
@@ -362,7 +362,7 @@ class Upnp_Api
                             'dc:title' => T_('Albums'),
                             'upnp:class' => 'object.container',
                         );
-                    break;
+                        break;
 
                     case 2:
                         $album = new Album($pathreq[1]);
@@ -370,9 +370,9 @@ class Upnp_Api
                             $album->format();
                             $meta = self::_itemAlbum($album, $root . '/albums');
                         }
-                    break;
+                        break;
                 }
-            break;
+                break;
 
             case 'songs':
                 switch (count($pathreq)) {
@@ -386,7 +386,7 @@ class Upnp_Api
                             'dc:title' => T_('Songs'),
                             'upnp:class' => 'object.container',
                         );
-                    break;
+                        break;
 
                     case 2:
                         $song = new Song($pathreq[1]);
@@ -394,9 +394,9 @@ class Upnp_Api
                             $song->format();
                             $meta = self::_itemSong($song, $root . '/songs');
                         }
-                    break;
+                        break;
                 }
-            break;
+                break;
 
             case 'playlists':
                 switch (count($pathreq)) {
@@ -410,7 +410,7 @@ class Upnp_Api
                             'dc:title' => T_('Playlists'),
                             'upnp:class' => 'object.container',
                         );
-                    break;
+                        break;
 
                     case 2:
                         $playlist = new Playlist($pathreq[1]);
@@ -418,9 +418,9 @@ class Upnp_Api
                             $playlist->format();
                             $meta = self::_itemPlaylist($playlist, $root . '/playlists');
                         }
-                    break;
+                        break;
                 }
-            break;
+                break;
 
             case 'smartplaylists':
                 switch (count($pathreq)) {
@@ -434,7 +434,7 @@ class Upnp_Api
                             'dc:title' => T_('Smart Playlists'),
                             'upnp:class' => 'object.container',
                         );
-                    break;
+                        break;
 
                     case 2:
                         $playlist = new Search($pathreq[1], 'song');
@@ -442,10 +442,10 @@ class Upnp_Api
                             $playlist->format();
                             $meta = self::_itemSmartPlaylist($playlist, $root . '/smartplaylists');
                         }
-                    break;
+                        break;
                 }
-            break;
-            
+                break;
+
             case 'live_streams':
                 switch (count($pathreq)) {
                     case 1:
@@ -458,7 +458,7 @@ class Upnp_Api
                             'dc:title' => T_('Radio Stations'),
                             'upnp:class' => 'object.container',
                         );
-                    break;
+                        break;
 
                     case 2:
                         $radio = new Live_Stream($pathreq[1]);
@@ -466,10 +466,10 @@ class Upnp_Api
                             $radio->format();
                             $meta = self::_itemLiveStream($radio, $root . '/live_streams');
                         }
-                    break;
+                        break;
                 }
-            break;
-            
+                break;
+
             case 'podcasts':
                 switch (count($pathreq)) {
                     case 1:
@@ -482,25 +482,25 @@ class Upnp_Api
                             'dc:title' => T_('Podcasts'),
                             'upnp:class' => 'object.container',
                         );
-                    break;
-                
+                        break;
+
                     case 2:
                         $podcast = new Podcast($pathreq[1]);
                         if ($podcast->id) {
                             $podcast->format();
                             $meta = self::_itemPodcast($podcast, $root . '/podcasts');
                         }
-                    break;
-                    
+                        break;
+
                     case 3:
                         $episode = new Podcast_Episode($pathreq[2]);
                         if ($episode->id) {
                             $episode->format();
                             $meta = self::_itemPodcastEpisode($episode, $root . '/podcasts/' . $pathreq[1]);
                         }
-                    break;
+                        break;
                 }
-            break;
+                break;
 
             default:
                 $meta = array(
@@ -511,7 +511,7 @@ class Upnp_Api
                     'dc:title' => T_('Music'),
                     'upnp:class' => 'object.container',
                 );
-            break;
+                break;
         }
 
         return $meta;
@@ -550,7 +550,7 @@ class Upnp_Api
                             $artist->format();
                             $mediaItems[] = self::_itemArtist($artist, $parent);
                         }
-                    break;
+                        break;
                     case 2: // Get artist's albums list
                         $artist = new Artist($pathreq[1]);
                         if ($artist->id) {
@@ -562,9 +562,9 @@ class Upnp_Api
                                 $mediaItems[] = self::_itemAlbum($album, $parent);
                             }
                         }
-                    break;
+                        break;
                 }
-            break;
+                break;
 
             case 'albums':
                 switch (count($pathreq)) {
@@ -578,7 +578,7 @@ class Upnp_Api
                             $album->format();
                             $mediaItems[] = self::_itemAlbum($album, $parent);
                         }
-                    break;
+                        break;
                     case 2: // Get album's songs list
                         $album = new Album($pathreq[1]);
                         if ($album->id) {
@@ -590,9 +590,9 @@ class Upnp_Api
                                 $mediaItems[] = self::_itemSong($song, $parent);
                             }
                         }
-                    break;
+                        break;
                 }
-            break;
+                break;
 
             case 'songs':
                 switch (count($pathreq)) {
@@ -607,9 +607,9 @@ class Upnp_Api
                                 $mediaItems[] = self::_itemSong($song, $parent);
                             }
                         }
-                    break;
+                        break;
                 }
-            break;
+                break;
 
             case 'playlists':
                 switch (count($pathreq)) {
@@ -621,7 +621,7 @@ class Upnp_Api
                             $playlist->format();
                             $mediaItems[] = self::_itemPlaylist($playlist, $parent);
                         }
-                    break;
+                        break;
                     case 2: // Get playlist's songs list
                         $playlist = new Playlist($pathreq[1]);
                         if ($playlist->id) {
@@ -635,9 +635,9 @@ class Upnp_Api
                                 }
                             }
                         }
-                    break;
+                        break;
                 }
-            break;
+                break;
 
             case 'smartplaylists':
                 switch (count($pathreq)) {
@@ -649,7 +649,7 @@ class Upnp_Api
                             $playlist->format();
                             $mediaItems[] = self::_itemPlaylist($playlist, $parent);
                         }
-                    break;
+                        break;
                     case 2: // Get playlist's songs list
                         $playlist = new Search($pathreq[1], 'song');
                         if ($playlist->id) {
@@ -663,10 +663,10 @@ class Upnp_Api
                                 }
                             }
                         }
-                    break;
+                        break;
                 }
-            break;
-            
+                break;
+
             case 'live_streams':
                 switch (count($pathreq)) {
                     case 1: // Get radios list
@@ -677,10 +677,10 @@ class Upnp_Api
                             $radio->format();
                             $mediaItems[] = self::_itemLiveStream($radio, $parent);
                         }
-                    break;
+                        break;
                 }
-            break;
-            
+                break;
+
             case 'podcasts':
                 switch (count($pathreq)) {
                     case 1: // Get podcasts list
@@ -690,7 +690,7 @@ class Upnp_Api
                             $podcast->format();
                             $mediaItems[] = self::_itemPodcast($podcast, $parent);
                         }
-                    break;
+                        break;
                     case 2: // Get podcast episodes list
                         $podcast = new Podcast($pathreq[1]);
                         if ($podcast->id) {
@@ -702,9 +702,9 @@ class Upnp_Api
                                 $mediaItems[] = self::_itemPodcastEpisode($episode, $parent);
                             }
                         }
-                    break;
+                        break;
                 }
-            break;
+                break;
 
             default:
                 $mediaItems[] = self::_musicMetadata('artists');
@@ -718,7 +718,7 @@ class Upnp_Api
                 if (AmpConfig::get('podcast')) {
                     $mediaItems[] = self::_musicMetadata('podcasts');
                 }
-            break;
+                break;
         }
 
         if ($maxCount == 0) {
@@ -760,7 +760,7 @@ class Upnp_Api
             'restricted' => '1',
             'childCount' => $artist->albums,
             'dc:title' => self::_replaceSpecialSymbols($artist->f_name),
-            'upnp:class' => 'object.container',   // object.container.person.musicArtist
+            'upnp:class' => 'object.container', // object.container.person.musicArtist
         );
     }
 
@@ -779,7 +779,7 @@ class Upnp_Api
             'restricted' => '1',
             'childCount' => $album->song_count,
             'dc:title' => self::_replaceSpecialSymbols($album->f_title),
-            'upnp:class' => 'object.container',  // object.container.album.musicAlbum
+            'upnp:class' => 'object.container', // object.container.album.musicAlbum
             'upnp:albumArtURI' => $art_url,
         );
     }
@@ -795,7 +795,7 @@ class Upnp_Api
             'restricted' => '1',
             'childCount' => count($playlist->get_items()),
             'dc:title' => self::_replaceSpecialSymbols($playlist->f_name),
-            'upnp:class' => 'object.container',  // object.container.playlistContainer
+            'upnp:class' => 'object.container', // object.container.playlistContainer
         );
     }
 
@@ -838,7 +838,6 @@ class Upnp_Api
             'upnp:genre' => Tag::get_display($song->tags, false, 'song'),
             //'dc:date'                   => date("c", $song->addition_time),
             'upnp:originalTrackNumber' => $song->track,
-
             'res' => Song::play_url($song->id, '', 'api'),
             'protocolInfo' => $arrFileType['mime'],
             'size' => $song->size,
@@ -849,7 +848,7 @@ class Upnp_Api
             'description' => self::_replaceSpecialSymbols($song->comment),
         );
     }
-    
+
     /**
      * @param Live_Stream $radio
      * @param string $parent
@@ -869,7 +868,6 @@ class Upnp_Api
             'dc:title' => self::_replaceSpecialSymbols($radio->name),
             'upnp:class' => (isset($arrFileType['class'])) ? $arrFileType['class'] : 'object.item.unknownItem',
             'upnp:albumArtURI' => $art_url,
-
             'res' => $radio->url,
             'protocolInfo' => $arrFileType['mime']
         );
@@ -889,7 +887,7 @@ class Upnp_Api
             'upnp:class' => 'object.container',
         );
     }
-    
+
     /**
      * @param Podcast_Episode $episode
      * @param string $parent

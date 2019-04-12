@@ -229,7 +229,9 @@ class Art extends database_object
                 debug_event('Art', 'Image failed PHP-GD test', 1);
                 $test = false;
             }
-            @imagedestroy($image);
+            if (@imagedestroy($image) === false) {
+                throw new \RuntimeException('@imagedestroy failed');
+            }
         }
 
         return $test;
@@ -435,6 +437,7 @@ class Art extends database_object
 
         return true;
     }
+
     // insert
 
     public static function check_dimensions($dimensions)
