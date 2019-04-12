@@ -1,5 +1,7 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
+
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
@@ -19,63 +21,74 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 class Artist extends database_object implements library_item
 {
     /* Variables from DB */
-
     /**
      *  @var int $id
      */
     public $id;
+
     /**
      *  @var string $name
      */
     public $name;
+
     /**
      *  @var string $summary
      */
     public $summary;
+
     /**
      *  @var string $placeformed
      */
     public $placeformed;
+
     /**
      *  @var int $yearformed
      */
     public $yearformed;
+
     /**
      *  @var int $last_update
      */
     public $last_update;
+
     /**
      *  @var int $songs
      */
     public $songs;
+
     /**
      *  @var int $albums
      */
     public $albums;
+
     /**
      *  @var string $prefix
      */
     public $prefix;
+
     /**
      *  @var string $mbid
      */
     public $mbid; // MusicBrainz ID
+
     /**
      *  @var int $catalog_id
      */
     public $catalog_id;
+
     /**
      *  @var int $time
      */
     public $time;
+
     /**
      *  @var int $user
      */
     public $user;
+
     /**
      * @var boolean $manual_update
      */
@@ -85,38 +98,47 @@ class Artist extends database_object implements library_item
      *  @var array $tags
      */
     public $tags;
+
     /**
      *  @var string $f_tags
      */
     public $f_tags;
+
     /**
      *  @var array $labels
      */
     public $labels;
+
     /**
      *  @var string $f_labels
      */
     public $f_labels;
+
     /**
      *  @var int $object_cnt
      */
     public $object_cnt;
+
     /**
      *  @var string $f_name
      */
     public $f_name;
+
     /**
      *  @var string $f_full_name
      */
     public $f_full_name;
+
     /**
      *  @var string $link
      */
     public $link;
+
     /**
      *  @var string $f_link
      */
     public $f_link;
+
     /**
      *  @var string $f_time
      */
@@ -124,10 +146,12 @@ class Artist extends database_object implements library_item
 
 
     // Constructed vars
+
     /**
      *  @var boolean $_fake
      */
     public $_fake = false; // Set if construct_from_array() used
+
     /**
      *  @var array $_mapcache
      */
@@ -135,28 +159,29 @@ class Artist extends database_object implements library_item
 
     /**
      * Artist
-     * Artist class, for modifing a artist
+     * Artist class, for modifying a artist
      * Takes the ID of the artist and pulls the info from the db
-     * @param int|null $id
+     * @param int|null $artist_id
      * @param int $catalog_init
      */
-    public function __construct($id=null, $catalog_init=0)
+    public function __construct($artist_id = null, $catalog_init = 0)
     {
         /* If they failed to pass in an id, just run for it */
-        if ($id === null) {
+        if ($artist_id === null) {
             return false;
         }
 
         $this->catalog_id = $catalog_init;
         /* Get the information from the db */
-        $info = $this->get_info($id);
+        $info = $this->get_info($artist_id);
 
         foreach ($info as $key => $value) {
             $this->$key = $value;
         } // foreach info
 
         return true;
-    } //constructor
+    }
+    //constructor
 
     /**
      * construct_from_array
@@ -176,7 +201,8 @@ class Artist extends database_object implements library_item
         $artist->_fake = true;
 
         return $artist;
-    } // construct_from_array
+    }
+    // construct_from_array
 
     /**
      * gc
@@ -186,8 +212,8 @@ class Artist extends database_object implements library_item
     public static function gc()
     {
         Dba::write('DELETE FROM `artist` USING `artist` LEFT JOIN `song` ON `song`.`artist` = `artist`.`id` ' .
-            'LEFT JOIN `album` ON `album`.`album_artist` = `artist`.`id` ' .
-            'WHERE `song`.`id` IS NULL AND `album`.`id` IS NULL');
+                'LEFT JOIN `album` ON `album`.`album_artist` = `artist`.`id` ' .
+                'WHERE `song`.`id` IS NULL AND `album`.`id` IS NULL');
     }
 
     /**
@@ -196,9 +222,9 @@ class Artist extends database_object implements library_item
      * @param boolean $extra
      * @return boolean
      */
-    public static function build_cache($ids, $extra=false, $limit_threshold = '')
+    public static function build_cache($ids, $extra = false, $limit_threshold = '')
     {
-        if (!is_array($ids) or !count($ids)) {
+        if (!is_array($ids) or ! count($ids)) {
             return false;
         }
 
@@ -227,7 +253,8 @@ class Artist extends database_object implements library_item
         } // end if extra
 
         return true;
-    } // build_cache
+    }
+    // build_cache
 
     /**
      * get_from_name
@@ -245,7 +272,8 @@ class Artist extends database_object implements library_item
         $object = new Artist($row['id']);
 
         return $object;
-    } // get_from_name
+    }
+    // get_from_name
 
     /**
      * get_albums
@@ -286,7 +314,7 @@ class Artist extends database_object implements library_item
         }
 
         $sql = "SELECT `album`.`id`, `album`.`release_type`,`album`.`mbid` FROM album LEFT JOIN `song` ON `song`.`album`=`album`.`id` $catalog_join " .
-            "WHERE (`song`.`artist`='$this->id' OR `album`.`album_artist`='$this->id') $catalog_where GROUP BY `album`.`id`, `album`.`release_type`,`album`.`mbid` ORDER BY $sql_sort";
+                "WHERE (`song`.`artist`='$this->id' OR `album`.`album_artist`='$this->id') $catalog_where GROUP BY `album`.`id`, `album`.`release_type`,`album`.`mbid` ORDER BY $sql_sort";
 
         $db_results = Dba::read($sql);
 
@@ -325,7 +353,8 @@ class Artist extends database_object implements library_item
         }
 
         return $results;
-    } // get_albums
+    }
+    // get_albums
 
     /**
      * get_songs
@@ -351,7 +380,8 @@ class Artist extends database_object implements library_item
         }
 
         return $results;
-    } // get_songs
+    }
+    // get_songs
 
     /**
      * get_random_songs
@@ -378,7 +408,8 @@ class Artist extends database_object implements library_item
         }
 
         return $results;
-    } // get_random_songs
+    }
+    // get_random_songs
 
     /**
      * _get_extra info
@@ -386,7 +417,7 @@ class Artist extends database_object implements library_item
      * @param int $catalog
      * @return array
      */
-    private function _get_extra_info($catalog=0, $limit_threshold ='')
+    private function _get_extra_info($catalog = 0, $limit_threshold = '')
     {
         // Try to find it in the cache and save ourselves the trouble
         if (parent::is_cached('artist_extra', $this->id)) {
@@ -407,15 +438,15 @@ class Artist extends database_object implements library_item
 
             $db_results = Dba::read($sql, $params);
             $row        = Dba::fetch_assoc($db_results);
-            
-            
+
+
             // Get associated information from first song only
             $sql = "SELECT `song`.`artist`, `song`.`catalog` as `catalog_id` FROM `song` LEFT JOIN `catalog` ON `catalog`.`id` = `song`.`catalog` ";
             $sql .= $sqlw . "LIMIT 1";
-            
+
             $db_results = Dba::read($sql, $params);
             $row        = array_merge($row, Dba::fetch_assoc($db_results));
-            
+
             if (AmpConfig::get('show_played_times')) {
                 $row['object_cnt'] = Stats::get_object_count('artist', $row['artist'], $limit_threshold);
             }
@@ -429,7 +460,8 @@ class Artist extends database_object implements library_item
         $this->catalog_id = $row['catalog_id'];
 
         return $row;
-    } // _get_extra_info
+    }
+    // _get_extra_info
 
     /**
      * format
@@ -438,7 +470,7 @@ class Artist extends database_object implements library_item
      * so they can be displayed in a table for example
      * it changes the title into a full link.
      * @return boolean
-      */
+     */
     public function format($details = true, $limit_threshold = '')
     {
         /* Combine prefix and name, trim then add ... if needed */
@@ -483,7 +515,8 @@ class Artist extends database_object implements library_item
         }
 
         return true;
-    } // format
+    }
+    // format
 
     /**
      * Get item keywords for metadata searches.
@@ -623,16 +656,16 @@ class Artist extends database_object implements library_item
 
     public function display_art($thumb = 2, $force = false)
     {
-        $id   = null;
-        $type = null;
+        $artist_id = null;
+        $type      = null;
 
         if (Art::has_db($this->id, 'artist') || $force) {
-            $id   = $this->id;
-            $type = 'artist';
+            $artist_id = $this->id;
+            $type      = 'artist';
         }
 
-        if ($id !== null && $type !== null) {
-            Art::display($type, $id, $this->get_fullname(), $thumb, $this->link);
+        if ($artist_id !== null && $type !== null) {
+            Art::display($type, $artist_id, $this->get_fullname(), $thumb, $this->link);
         }
     }
 
@@ -685,16 +718,16 @@ class Artist extends database_object implements library_item
             return self::$_mapcache[$name][$mbid];
         }
 
-        $id     = 0;
-        $exists = false;
+        $artist_id = 0;
+        $exists    = false;
 
         if ($mbid) {
             $sql        = 'SELECT `id` FROM `artist` WHERE `mbid` = ?';
             $db_results = Dba::read($sql, array($mbid));
 
             if ($row = Dba::fetch_assoc($db_results)) {
-                $id     = $row['id'];
-                $exists = true;
+                $artist_id = $row['id'];
+                $exists    = true;
             }
         }
 
@@ -715,21 +748,21 @@ class Artist extends database_object implements library_item
                         Dba::write($sql, array($mbid, $id_array['null']));
                     }
                     if (isset($id_array['null'])) {
-                        $id     = $id_array['null'];
-                        $exists = true;
+                        $artist_id = $id_array['null'];
+                        $exists    = true;
                     }
                 } else {
                     // Pick one at random
-                    $id     = array_shift($id_array);
-                    $exists = true;
+                    $artist_id = array_shift($id_array);
+                    $exists    = true;
                 }
             }
         }
 
         if ($exists) {
-            self::$_mapcache[$name][$mbid] = $id;
+            self::$_mapcache[$name][$mbid] = $artist_id;
 
-            return $id;
+            return $artist_id;
         }
 
         if ($readonly) {
@@ -737,17 +770,17 @@ class Artist extends database_object implements library_item
         }
 
         $sql = 'INSERT INTO `artist` (`name`, `prefix`, `mbid`) ' .
-            'VALUES(?, ?, ?)';
+                'VALUES(?, ?, ?)';
 
         $db_results = Dba::write($sql, array($name, $prefix, $mbid));
         if (!$db_results) {
             return null;
         }
-        $id = Dba::insert_id();
+        $artist_id = Dba::insert_id();
 
-        self::$_mapcache[$name][$mbid] = $id;
+        self::$_mapcache[$name][$mbid] = $artist_id;
 
-        return $id;
+        return $artist_id;
     }
 
     /**
@@ -835,7 +868,8 @@ class Artist extends database_object implements library_item
         }
 
         return $current_id;
-    } // update
+    }
+    // update
 
     /**
      * update_tags
@@ -898,11 +932,11 @@ class Artist extends database_object implements library_item
     {
         $deleted   = true;
         $album_ids = $this->get_albums();
-        foreach ($album_ids as $id) {
-            $album   = new Album($id);
+        foreach ($album_ids as $album_id) {
+            $album   = new Album($album_id);
             $deleted = $album->remove_from_disk();
             if (!$deleted) {
-                debug_event('artist', 'Error when deleting the album `' . $id . '`.', 1);
+                debug_event('artist', 'Error when deleting the album `' . $album_id . '`.', 1);
                 break;
             }
         }
@@ -921,4 +955,6 @@ class Artist extends database_object implements library_item
 
         return $deleted;
     }
-} // end of artist class
+}
+
+// end of artist class

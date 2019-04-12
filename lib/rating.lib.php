@@ -1,4 +1,5 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
 /**
  *
@@ -27,9 +28,11 @@
 function show_rating($object_id, $type)
 {
     $rating = new Rating($object_id, $type);
+    debug_event('rating', 'Get artist rating ' . $rating->id, 5);
 
     require AmpConfig::get('prefix') . UI::find_template('show_object_rating.inc.php');
-} // show_rating
+}
+// show_rating
 
 /**
  * get_rating_name
@@ -54,4 +57,5 @@ function get_rating_name($score)
         default:
             return T_("Off the Charts!");
     } // end switch
-} // get_rating_name
+}
+// get_rating_name

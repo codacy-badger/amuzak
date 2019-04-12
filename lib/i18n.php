@@ -1,5 +1,7 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
+
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
@@ -19,7 +21,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 use Gettext\Translator;
 
 /**
@@ -30,16 +31,17 @@ use Gettext\Translator;
  */
 function load_gettext()
 {
-    $lang    = AmpConfig::get('lang');
-    $popath  = AmpConfig::get('prefix') . '/locale/' . $lang . '/LC_MESSAGES/messages.po';
+    $lang   = AmpConfig::get('lang');
+    $popath = AmpConfig::get('prefix') . '/locale/' . $lang . '/LC_MESSAGES/messages.po';
 
-    $t = new Translator();
+    $text = new Translator();
     if (file_exists($popath)) {
         $translations = Gettext\Translations::fromPoFile($popath);
-        $t->loadTranslations($translations);
+        $text->loadTranslations($translations);
     }
-    $t->register();
-} // load_gettext
+    $text->register();
+}
+// load_gettext
 
 function T_($msgid)
 {

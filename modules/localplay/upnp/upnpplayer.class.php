@@ -1,4 +1,5 @@
 <?php
+
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
@@ -32,9 +33,7 @@ class UPnPPlayer
 
     /* @var UPnPDevice $object */
     private $_device;
-
     private $_description_url = null;
-
     // 0 - stopped, 1 - playing
     private $_intState = 0;
 
@@ -63,7 +62,6 @@ class UPnPPlayer
 
         return $this->_playlist;
     }
-
 
     /**
      * UPnPPlayer
@@ -112,10 +110,10 @@ class UPnPPlayer
     }
 
     /**
-    * GetPlayListItems
-    * This returns a delimited string of all of the filenames
-    * current in your playlist, only url's at the moment
-    */
+     * GetPlayListItems
+     * This returns a delimited string of all of the filenames
+     * current in your playlist, only url's at the moment
+     */
     public function GetPlaylistItems()
     {
         return $this->Playlist()->AllItems();
@@ -144,7 +142,7 @@ class UPnPPlayer
     public function Next($forcePlay = true)
     {
         // get current internal play state, for case if someone has changed it
-        if (! $forcePlay) {
+        if (!$forcePlay) {
             $this->ReadIndState();
         }
         if (($forcePlay || ($this->_intState == 1)) && ($this->Playlist()->Next())) {
@@ -210,12 +208,12 @@ class UPnPPlayer
 
     private function CallAsyncURL($url)
     {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_FRESH_CONNECT, true);
-        curl_setopt($ch, CURLOPT_HEADER, false);
-        curl_exec($ch);
-        curl_close($ch);
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_FRESH_CONNECT, true);
+        curl_setopt($curl, CURLOPT_HEADER, false);
+        curl_exec($curl);
+        curl_close($curl);
     }
 
     /**
@@ -232,7 +230,7 @@ class UPnPPlayer
         $currentResponse = $this->Device()->sendRequestToDevice('SetAVTransportURI', $currentSongArgs, 'AVTransport');
         debug_event('upnpPlayer', 'PlayResponse = ' . $currentResponse, 5);
 
-        $playArgs     = array( 'InstanceID' => 0, 'Speed' => 1);
+        $playArgs     = array('InstanceID' => 0, 'Speed' => 1);
         $playResponse = $this->Device()->sendRequestToDevice('Play', $playArgs, 'AVTransport');
         debug_event('upnpPlayer', 'PlayResponse = ' . $playResponse, 5);
 
@@ -241,7 +239,6 @@ class UPnPPlayer
         //!! so now is not used
         //$sid = $this->Device()->Subscribe();
         //$_SESSION['upnp_SID'] = $sid;
-
         // launch special page in background for periodically check play status
         $url = AmpConfig::get('local_web_path') . "/upnp/playstatus.php";
         $this->CallAsyncURL($url);
@@ -281,7 +278,7 @@ class UPnPPlayer
         if ($state == 'PLAYING') {
             $response = $this->Device()->instanceOnly('Pause');
         } else {
-            $args     = array( 'InstanceID' => 0, 'Speed' => 1);
+            $args     = array('InstanceID' => 0, 'Speed' => 1);
             $response = $this->Device()->sendRequestToDevice('Play', $args, 'AVTransport');
         }
 
@@ -321,7 +318,6 @@ class UPnPPlayer
         //!! TODO not implemented yet
         return "";
     }
-
 
     /**
      * VolumeUp
@@ -384,15 +380,14 @@ class UPnPPlayer
         return $volume;
     }
 
-
     private function SetIntState($state)
     {
         $this->_intState = $state;
 
         $sid  = 'upnp_ply_' . $this->_description_url;
         $data = json_encode($this->_intState);
-        if (! Session::exists('api', $sid)) {
-            Session::create(array('type' => 'api', 'sid' => $sid, 'value' => $data ));
+        if (!Session::exists('api', $sid)) {
+            Session::create(array('type' => 'api', 'sid' => $sid, 'value' => $data));
         } else {
             Session::write($sid, $data);
         }
@@ -407,4 +402,6 @@ class UPnPPlayer
         $this->_intState = json_decode($data, true);
         debug_event('upnpPlayer', 'ReadIndState:' . $this->_intState, 5);
     }
-} // End UPnPPlayer Class
+}
+
+// End UPnPPlayer Class

@@ -1,4 +1,5 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
 /**
  *
@@ -19,8 +20,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
- // jsTree file system browser
+// jsTree file system browser
 
 define('AJAX_INCLUDE', '1');
 
@@ -50,13 +50,14 @@ class fs
 
         return $temp;
     }
-    protected function path($id)
-    {
-        $id = str_replace('/', DIRECTORY_SEPARATOR, $id);
-        $id = trim($id, DIRECTORY_SEPARATOR);
-        $id = $this->real($this->base . DIRECTORY_SEPARATOR . $id);
 
-        return $id;
+    protected function path($path)
+    {
+        $path = str_replace('/', DIRECTORY_SEPARATOR, $path);
+        $path = trim($path, DIRECTORY_SEPARATOR);
+        $path = $this->real($this->base . DIRECTORY_SEPARATOR . $path);
+
+        return $path;
     }
 
     /**
@@ -80,9 +81,9 @@ class fs
         }
     }
 
-    public function lst($id, $with_root = false)
+    public function lst($path, $with_root = false)
     {
-        $dir = $this->path($id);
+        $dir = $this->path($path);
         $lst = @scandir($dir);
         if (!$lst) {
             throw new Exception('Could not list path: ' . $dir);
@@ -97,7 +98,7 @@ class fs
                 continue;
             }
             if (is_dir($dir . DIRECTORY_SEPARATOR . $item)) {
-                $res[] = array('text' => $item, 'children' => true,  'id' => $this->id($dir . DIRECTORY_SEPARATOR . $item), 'icon' => 'folder');
+                $res[] = array('text' => $item, 'children' => true, 'id' => $this->id($dir . DIRECTORY_SEPARATOR . $item), 'icon' => 'folder');
             } else {
                 //$res[] = array('text' => $item, 'children' => false, 'id' => $this->id($dir . DIRECTORY_SEPARATOR . $item), 'type' => 'file', 'icon' => 'file file-'.substr($item, strrpos($item,'.') + 1));
             }
@@ -109,48 +110,48 @@ class fs
         return $res;
     }
 
-    public function data($id)
+    public function data($source)
     {
-        if (strpos($id, ":")) {
-            $id = array_map(array($this, 'id'), explode(':', $id));
+        if (strpos($source, ":")) {
+            $source = array_map(array($this, 'id'), explode(':', $source));
 
-            return array('type' => 'multiple', 'content' => 'Multiple selected: ' . implode(' ', $id));
+            return array('type' => 'multiple', 'content' => 'Multiple selected: ' . implode(' ', $source));
         }
-        $dir = $this->path($id);
+        $dir = $this->path($source);
         if (is_dir($dir)) {
-            return array('type' => 'folder', 'content' => $id);
+            return array('type' => 'folder', 'content' => $source);
         }
         if (is_file($dir)) {
             $ext = strpos($dir, '.') !== false ? substr($dir, strrpos($dir, '.') + 1) : '';
             $dat = array('type' => $ext, 'content' => '');
             switch ($ext) {
-                /*case 'txt':
-                case 'text':
-                case 'md':
-                case 'js':
-                case 'json':
-                case 'css':
-                case 'html':
-                case 'htm':
-                case 'xml':
-                case 'c':
-                case 'cpp':
-                case 'h':
-                case 'sql':
-                case 'log':
-                case 'py':
-                case 'rb':
-                case 'htaccess':
-                case 'php':
-                    $dat['content'] = file_get_contents($dir);
-                    break;
-                case 'jpg':
-                case 'jpeg':
-                case 'gif':
-                case 'png':
-                case 'bmp':
-                    $dat['content'] = 'data:'.finfo_file(finfo_open(FILEINFO_MIME_TYPE), $dir).';base64,'.base64_encode(file_get_contents($dir));
-                    break;*/
+                /* case 'txt':
+                  case 'text':
+                  case 'md':
+                  case 'js':
+                  case 'json':
+                  case 'css':
+                  case 'html':
+                  case 'htm':
+                  case 'xml':
+                  case 'c':
+                  case 'cpp':
+                  case 'h':
+                  case 'sql':
+                  case 'log':
+                  case 'py':
+                  case 'rb':
+                  case 'htaccess':
+                  case 'php':
+                  $dat['content'] = file_get_contents($dir);
+                  break;
+                  case 'jpg':
+                  case 'jpeg':
+                  case 'gif':
+                  case 'png':
+                  case 'bmp':
+                  $dat['content'] = 'data:'.finfo_file(finfo_open(FILEINFO_MIME_TYPE), $dir).';base64,'.base64_encode(file_get_contents($dir));
+                  break; */
                 default:
                     $dat['content'] = 'File not recognized: ' . $this->id($dir);
                     break;
@@ -160,9 +161,10 @@ class fs
         }
         throw new Exception('Not a valid selection: ' . $dir);
     }
-    public function create($id, $name, $mkdir = false)
+
+    public function create($source, $name, $mkdir = false)
     {
-        $dir = $this->path($id);
+        $dir = $this->path($source);
         if (preg_match('([^ a-zа-я-_0-9.]+)ui', $name) || !strlen($name)) {
             throw new Exception('Invalid name: ' . $name);
         }
@@ -174,9 +176,10 @@ class fs
 
         return array('id' => $this->id($dir . DIRECTORY_SEPARATOR . $name));
     }
-    public function rename($id, $name)
+
+    public function rename($source, $name)
     {
-        $dir = $this->path($id);
+        $dir = $this->path($source);
         if ($dir === $this->base) {
             throw new Exception('Cannot rename root');
         }
@@ -194,9 +197,10 @@ class fs
 
         return array('id' => $this->id($new));
     }
-    public function remove($id)
+
+    public function remove($source)
     {
-        $dir = $this->path($id);
+        $dir = $this->path($source);
         if ($dir === $this->base) {
             throw new Exception('Cannot remove root');
         }
@@ -212,9 +216,10 @@ class fs
 
         return array('status' => 'OK');
     }
-    public function move($id, $par)
+
+    public function move($source, $par)
     {
-        $dir = $this->path($id);
+        $dir = $this->path($source);
         $par = $this->path($par);
         $new = explode(DIRECTORY_SEPARATOR, $dir);
         $new = array_pop($new);
@@ -223,9 +228,10 @@ class fs
 
         return array('id' => $this->id($new));
     }
-    public function copy($id, $par)
+
+    public function copy($source, $par)
     {
-        $dir = $this->path($id);
+        $dir = $this->path($source);
         $par = $this->path($par);
         $new = explode(DIRECTORY_SEPARATOR, $dir);
         $new = array_pop($new);
