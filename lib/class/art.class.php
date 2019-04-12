@@ -228,8 +228,11 @@ class Art extends database_object
             if (!$image || imagesx($image) < 5 || imagesy($image) < 5) {
                 debug_event('Art', 'Image failed PHP-GD test', 1);
                 $test = false;
-            } elseif (@imagedestroy($image) === false) {
-                throw new \RuntimeException('@imagedestroy failed');
+            }
+            if ($image) {
+                if (@imagedestroy($image) === false) {
+                    throw new \RuntimeException('@imagedestroy failed');
+                }
             }
         }
 
@@ -585,7 +588,9 @@ class Art extends database_object
     {
         if ($type && $uid) {
             $path = self::get_dir_on_disk($type, $uid, $kind);
-            self::delete_rec_dir($path);
+            if ($path) {
+                self::delete_rec_dir($path);
+            }
         }
     }
 
@@ -946,7 +951,7 @@ class Art extends database_object
             }
             $url .= '.' . $extension;
         } else {
-            $url = AmpConfig::get('web_path') . '/image.php?object_id=' . scrub_out($uid) . '&object_type=' . scrub_out($type) . '&auth=' . $sid;
+            $url = AmpConfig::get('web_path') . '/image.php?object_id=' . scrub_out($uid) . '&object_type=' . scrub_out($type) . '&auth=' . (string) $sid;
             if ($thumb !== null) {
                 $url .= '&thumb=' . $thumb;
             }

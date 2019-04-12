@@ -79,8 +79,9 @@ class AmpConfig
      */
     public static function get_rating_filter()
     {
+        $rating_filter = 0;
         if (self::get('rating_browse_filter')) {
-            $rating_filter = (int) AmpConfig::get('rating_browse_minimum_stars');
+            $rating_filter = (int) self::get('rating_browse_minimum_stars');
             debug_event('stats', 'Requested a ratings filter of: ' . $rating_filter . '.', 5);
         }
         if ($rating_filter > 0 && $rating_filter <= 5) {

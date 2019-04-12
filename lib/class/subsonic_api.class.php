@@ -1136,7 +1136,7 @@ class Subsonic_Api
                 $dim['width']  = $size;
                 $dim['height'] = $size;
                 $thumb         = $art->get_thumb($dim);
-                if ($thumb) {
+                if (!empty($thumb)) {
                     header('Content-type: ' . $thumb['thumb_mime']);
                     header('Content-Length: ' . strlen($thumb['thumb']));
                     echo $thumb['thumb'];

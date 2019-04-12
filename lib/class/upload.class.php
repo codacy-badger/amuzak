@@ -33,6 +33,7 @@ class Upload
     {
         return false;
     }
+
     // Constructor
 
     public static function process()
@@ -211,9 +212,7 @@ class Upload
                 throw new \RuntimeException('Error, unable to unlink ' . $file);
             }
         }
-        if (@header($_SERVER['SERVER_PROTOCOL'] . ' 500 File Upload Error', true, 500) === false) {
-            throw new \RuntimeException('Error setting @header');
-        }
+        @header($_SERVER['SERVER_PROTOCOL'] . ' 500 File Upload Error', true, 500);
         ob_get_contents();
         ob_end_clean();
         echo '{"status":"error"}';
