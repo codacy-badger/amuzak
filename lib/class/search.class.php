@@ -327,7 +327,7 @@ class Search extends playlist_object
 
             if (AmpConfig::get('ratings')) {
                 $this->types[] = array(
-                    'name' => 'myratings',
+                    'name' => 'myrating',
                     'label' => T_('Rating (Mine)'),
                     'type' => 'numeric',
                     'widget' => array(
@@ -387,6 +387,13 @@ class Search extends playlist_object
             $this->types[] = array(
                 'name' => 'played',
                 'label' => T_('Played'),
+                'type' => 'boolean',
+                'widget' => array('input', 'hidden')
+            );
+
+            $this->types[] = array(
+                'name' => 'myplayed',
+                'label' => T_('Played (Mine)'),
                 'type' => 'boolean',
                 'widget' => array('input', 'hidden')
             );
@@ -535,7 +542,7 @@ class Search extends playlist_object
 
             if (AmpConfig::get('ratings')) {
                 $this->types[] = array(
-                    'name' => 'myratings',
+                    'name' => 'myrating',
                     'label' => T_('Rating (Mine)'),
                     'type' => 'numeric',
                     'widget' => array(
@@ -631,7 +638,7 @@ class Search extends playlist_object
 
             if (AmpConfig::get('ratings')) {
                 $this->types[] = array(
-                    'name' => 'myratings',
+                    'name' => 'myrating',
                     'label' => T_('Rating (Mine)'),
                     'type' => 'numeric',
                     'widget' => array(
@@ -1109,10 +1116,10 @@ class Search extends playlist_object
                     }
                     $join['rating'] = true;
                 break;
-                case 'myratings':
+                case 'myrating':
                     $userid          = $GLOBALS['user']->id;
                     $where[]         = "COALESCE(`rating`.`rating`,0) $sql_match_operator '$input'";
-                    $join['ratings'] = true;
+                    $join['myrating'] = true;
                 break;
                 case 'last_play':
                     $userid               = $GLOBALS['user']->id;
@@ -1184,17 +1191,23 @@ class Search extends playlist_object
             }
             $table['rating'] .= "`rating`.`object_id`=`album`.`id`";
         }
-        if ($join['myratings']) {
+        if ($join['myrating']) {
             $userid          = intval($GLOBALS['user']->id);
-            $table['rating'] = "LEFT JOIN `rating` ON `rating`.`object_type`='album' AND ";
-            $table['rating'] .= "`rating`.`user`='$userid' AND ";
-            $table['rating'] .= "`rating`.`object_id`=`album`.`id`";
+            $table['myrating'] = "LEFT JOIN `rating` ON `rating`.`object_type`='album' AND ";
+            $table['myrating'] .= "`rating`.`user`='$userid' AND ";
+            $table['myrating'] .= "`rating`.`object_id`=`album`.`id`";
+        }
+        if ($join['myplayed']) {
+            $userid          = $GLOBALS['user']->id;
+            $table['myplayed'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='album' AND ";
+            $table['myplayed'] .= "`object_count`.`user`='$userid' AND ";
+            $table['myplayed'] .= "`object_count`.`object_id`=`album`.`id`";
         }
         if ($join['object_count']) {
             $userid          = intval($GLOBALS['user']->id);
-            $table['rating'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='album' AND ";
-            $table['rating'] .= "`object_count`.`user`='$userid' AND ";
-            $table['rating'] .= "`object_count`.`object_id`=`album`.`id`";
+            $table['object_count'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='album' AND ";
+            $table['object_count'] .= "`object_count`.`user`='$userid' AND ";
+            $table['object_count'] .= "`object_count`.`object_id`=`album`.`id`";
         }
         if ($join['image']) {
             $table['song'] = "LEFT JOIN `image` ON `image`.`object_id`=`album`.`id`";
@@ -1269,10 +1282,10 @@ class Search extends playlist_object
                     }
                     $join['rating'] = true;
                 break;
-                case 'myratings':
+                case 'myrating':
                     $userid            = $GLOBALS['user']->id;
                     $where[]           = "COALESCE(`rating`.`rating`,0) $sql_match_operator '$input'";
-                    $join['myratings'] = true;
+                    $join['myrating'] = true;
                 break;
                 case 'last_play':
                     $userid               = $GLOBALS['user']->id;
@@ -1318,11 +1331,17 @@ class Search extends playlist_object
             }
             $table['rating'] .= "`rating`.`object_id`=`artist`.`id`";
         }
-        if ($join['myratings']) {
+        if ($join['myrating']) {
             $userid          = $GLOBALS['user']->id;
             $table['rating'] = "LEFT JOIN `rating` ON `rating`.`object_type`='artist' AND ";
             $table['rating'] .= "`rating`.`user`='$userid' AND ";
             $table['rating'] .= "`rating`.`object_id`=`artist`.`id`";
+        }
+        if ($join['myplayed']) {
+            $userid          = $GLOBALS['user']->id;
+            $table['rating'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='artist' AND ";
+            $table['rating'] .= "`object_count`.`user`='$userid' AND ";
+            $table['rating'] .= "`object_count`.`object_id`=`artist`.`id`";
         }
         if ($join['object_count']) {
             $userid          = $GLOBALS['user']->id;
@@ -1426,6 +1445,11 @@ class Search extends playlist_object
                 case 'played':
                     $where[] = " `song`.`played` = '$sql_match_operator'";
                 break;
+                case 'myplayed':
+                    $userid            = $GLOBALS['user']->id;
+                    $where[] = " `song`.`played` = '$sql_match_operator'";
+                    $join['myplayed'] = true;
+                break;
                 case 'bitrate':
                     $input   = $input * 1000;
                     $where[] = "`song`.`bitrate` $sql_match_operator '$input'";
@@ -1445,10 +1469,10 @@ class Search extends playlist_object
                     $where[]            = "`song`.`title` $sql_match_operator '$input' AND `user_flag`.`user` = $userid";
                     $where[] .= "`user_flag`.`object_type` = 'song'";
                 break;
-                case 'myratings':
+                case 'myrating':
                     $userid            = $GLOBALS['user']->id;
                     $where[]           = "COALESCE(`rating`.`rating`,0) $sql_match_operator '$input'";
-                    $join['myratings'] = true;
+                    $join['myrating'] = true;
                 break;
                 case 'last_play':
                     $userid               = $GLOBALS['user']->id;
@@ -1562,7 +1586,7 @@ class Search extends playlist_object
             $table['user_flag']  = "LEFT JOIN `user_flag` ON `song`.`id`=`user_flag`.`object_id` ";
         }
 
-        if ($join['myratings']) {
+        if ($join['myrating']) {
             $userid          = $GLOBALS['user']->id;
             $table['rating'] = "LEFT JOIN `rating` ON `rating`.`object_type`='song' AND ";
             $table['rating'] .= "`rating`.`user`='$userid' AND ";
@@ -1570,9 +1594,15 @@ class Search extends playlist_object
         }
         if ($join['object_count']) {
             $userid          = $GLOBALS['user']->id;
-            $table['rating'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='song' AND ";
-            $table['rating'] .= "`object_count`.`user`='$userid' AND ";
-            $table['rating'] .= "`object_count`.`object_id`=`song`.`id`";
+            $table['object_count'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='song' AND ";
+            $table['object_count'] .= "`object_count`.`user`='$userid' AND ";
+            $table['object_count'] .= "`object_count`.`object_id`=`song`.`id`";
+        }
+        if ($join['myplayed']) {
+            $userid          = $GLOBALS['user']->id;
+            $table['object_count'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='song' AND ";
+            $table['object_count'] .= "`object_count`.`user`='$userid' AND ";
+            $table['object_count'] .= "`object_count`.`object_id`=`song`.`id`";
         }
         if ($join['playlist_data']) {
             $table['playlist_data'] = "LEFT JOIN `playlist_data` ON `song`.`id`=`playlist_data`.`object_id` AND `playlist_data`.`object_type`='song'";
