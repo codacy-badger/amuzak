@@ -495,8 +495,8 @@ class Catalog_local extends Catalog
         set_time_limit(0);
 
         $stats            = self::get_stats($this->id);
-        $total_updated = 0;
-        $this->count   = 0;
+        $total_updated    = 0;
+        $this->count      = 0;
 
         if (!defined('SSE_OUTPUT')) {
             require_once AmpConfig::get('prefix') . UI::find_template('show_verify_catalog.inc.php');
@@ -504,7 +504,7 @@ class Catalog_local extends Catalog
         }
 
         $media_type = 'song';
-        $total = $stats['songs'];
+        $total      = $stats['songs'];
         if ($total !== 0) {
             $chunks = floor($total / 10000);
             foreach (range(0, $chunks) as $chunk) {

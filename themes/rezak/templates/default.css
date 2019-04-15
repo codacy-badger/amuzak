@@ -667,6 +667,8 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 #rightbar #rb_action {
     list-style-type: none;
     padding: 2px;
+    text-align: end;
+    width: 100%;
 }
 
 #rightbar #rb_action li {
