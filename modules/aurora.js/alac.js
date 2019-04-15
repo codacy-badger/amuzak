@@ -378,7 +378,6 @@
           case ID_CCE:
           case ID_PCE:
             throw new Error("Unsupported element: " + tag);
-            break;
           case ID_DSE:
             elementInstanceTag = data.read(4);
             dataByteAlignFlag = data.read(1);

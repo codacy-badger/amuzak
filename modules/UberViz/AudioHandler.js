@@ -92,19 +92,19 @@ var AudioHandler = function() {
 
         //INIT DEBUG DRAW
         var canvas = document.getElementById("audioDebug");
-        debugCtx = canvas.getContext('2d');
+        debugCtx = canvas.getContext("2d");
         debugCtx.width = debugW;
         debugCtx.height = debugH;
         debugCtx.fillStyle = "rgb(40, 40, 40)";
         debugCtx.lineWidth=2;
         debugCtx.strokeStyle = "rgb(255, 255, 255)";
-        $('#audioDebugCtx').hide();
+        $("#audioDebugCtx").hide();
 
         gradient = debugCtx.createLinearGradient(0,0,0,256);
-        gradient.addColorStop(1,'#330000');
-        gradient.addColorStop(0.75,'#aa0000');
-        gradient.addColorStop(0.25,'#aaaa00');
-        gradient.addColorStop(0,'#aaaaaa');
+        gradient.addColorStop(1,"#330000");
+        gradient.addColorStop(0.75,"#aa0000");
+        gradient.addColorStop(0.25,"#aaaa00");
+        gradient.addColorStop(0,"#aaaaaa");
 
         //assume 120BPM
         msecsAvg = 640;
@@ -149,89 +149,89 @@ var AudioHandler = function() {
         filter5.frequency.value = 6000;  // Change frequency to test
         
         var sliderParams80Hz = {
-            'orientation': "vertical",
-            'range': "min",
-            'min': -30,
-            'max': 30,
-            'animate': true,
-            'step': 0.01,
-            'slide': function(event, ui) {  
+            "orientation": "vertical",
+            "range": "min",
+            "min": -30,
+            "max": 30,
+            "animate": true,
+            "step": 0.01,
+            "slide": function(event, ui) {  
                 filter1.gain.value = ui.value;
 
              },
-            'stop': function(event, ui) {
+            "stop": function(event, ui) {
                 console.log(filter1.gain.value);
             }
         };
-        $('#filter80Hz').slider(sliderParams80Hz);
+        $("#filter80Hz").slider(sliderParams80Hz);
 
         var sliderParams240Hz = {
-            'orientation': "vertical",
-            'range': "min",
-            'min': -30,
-            'max': 30,
-            'animate': true,
-            'step': 0.01,
-            'slide': function(event, ui) {  
+            "orientation": "vertical",
+            "range": "min",
+            "min": -30,
+            "max": 30,
+            "animate": true,
+            "step": 0.01,
+            "slide": function(event, ui) {  
                 filter2.gain.value = ui.value;
          
              },
-            'stop': function(event, ui) {
+            "stop": function(event, ui) {
                 console.log(filter2.gain.value);
             }
         };
-        $('#filter240Hz').slider(sliderParams240Hz);
+        $("#filter240Hz").slider(sliderParams240Hz);
 
         var sliderParams750Hz = {
-            'orientation': "vertical",
-            'range': "min",
-            'min': -30,
-            'max': 30,
-            'animate': true,
-            'step': 0.01,
-            'slide': function(event, ui) {  
+            "orientation": "vertical",
+            "range": "min",
+            "min": -30,
+            "max": 30,
+            "animate": true,
+            "step": 0.01,
+            "slide": function(event, ui) {  
                 filter3.gain.value = ui.value;
 
              },
-            'stop': function(event, ui) {
+            "stop": function(event, ui) {
                 console.log(filter3.gain.value);
             }
         };
-        $('#filter750Hz').slider(sliderParams750Hz);
+        $("#filter750Hz").slider(sliderParams750Hz);
 
         var sliderParams2200Hz = {
-            'orientation': "vertical",
-            'range': "min",
-            'min': -30,
-            'max': 30,
-            'animate': true,
-            'step': 0.01,
-            'slide': function(event, ui) {  
+            "orientation": "vertical",
+            "range": "min",
+            "min": -30,
+            "max": 30,
+            "animate": true,
+            "step": 0.01,
+            "slide": function(event, ui) {  
                 filter4.gain.value = ui.value;
 
              },
-            'stop': function(event, ui) {
+            "stop": function(event, ui) {
                 console.log(filter4.gain.value);
             }
         };
-        $('#filter2200Hz').slider(sliderParams2200Hz);
+        $("#filter2200Hz").slider(sliderParams2200Hz);
 
         var sliderParams6000Hz = {
-            'orientation': "vertical",
-            'range': "min",
-            'min': -30,
-            'max': 30,
-            'animate': true,
-            'step': 0.01,
-            'slide': function(event, ui) {  
+            "orientation": "vertical",
+            "range": "min",
+            "min": -30,
+            "max": 30,
+            "animate": true,
+            "step": 0.01,
+            "slide": function(event, ui) {  
                 filter5.gain.value = ui.value;
 
              },
-            'stop': function(event, ui) {
+            "stop": function(event, ui) {
                 console.log(filter5.gain.value);
             }
         };
-        $('#filter6000Hz').slider(sliderParams6000Hz);
+        $("#filter6000Hz").slider(sliderParams6000Hz);
     }
 
     function initSound(){
@@ -275,9 +275,9 @@ var AudioHandler = function() {
 
     function onShowDebug(){
         if (ControlsHandler.audioParams.showDebug){
-            $('#audioDebug').show();
+            $("#audioDebug").show();
         }else{
-            $('#audioDebug').hide();
+            $("#audioDebug").hide();
         }
 
     }
