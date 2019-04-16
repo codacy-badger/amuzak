@@ -434,6 +434,20 @@ class Search extends playlist_object
             );
 
             $this->types[] = array(
+                'name' => 'myplayedalbum',
+                'label' => T_('Played by Me (Album)'),
+                'type' => 'boolean',
+                'widget' => array('input', 'hidden')
+            );
+
+            $this->types[] = array(
+                'name' => 'myplayedartist',
+                'label' => T_('Played by Me (Artist)'),
+                'type' => 'boolean',
+                'widget' => array('input', 'hidden')
+            );
+
+            $this->types[] = array(
                 'name' => 'added',
                 'label' => T_('Added'),
                 'type' => 'date',
@@ -1173,7 +1187,7 @@ class Search extends playlist_object
                 case 'myplayed':
                     $userid               = $GLOBALS['user']->id;
                     $where[]              = "`object_count`.`date` IS NOT NULL";
-                    $join['object_count'] = true;
+                    $join['myplayed'] = true;
                     break;
                 case 'last_play':
                     $userid               = $GLOBALS['user']->id;
@@ -1509,6 +1523,16 @@ class Search extends playlist_object
                     $where[]           = " `song`.`played` = '$sql_match_operator'";
                     $join['myplayed']  = true;
                 break;
+                case 'myplayedalbum':
+                    $userid               = $GLOBALS['user']->id;
+                    $where[]              = "`object_count`.`date` IS NOT NULL";
+                    $join['myplayedalbum'] = true;
+                    break;
+                case 'myplayedartist':
+                    $userid               = $GLOBALS['user']->id;
+                    $where[]              = "`object_count`.`date` IS NOT NULL";
+                    $join['myplayedartist'] = true;
+                    break;
                 case 'bitrate':
                     $input   = $input * 1000;
                     $where[] = "`song`.`bitrate` $sql_match_operator '$input'";
@@ -1683,6 +1707,18 @@ class Search extends playlist_object
             $table['object_count'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='song' AND ";
             $table['object_count'] .= "`object_count`.`user`='$userid' AND ";
             $table['object_count'] .= "`object_count`.`object_id`=`song`.`id`";
+        }
+        if ($join['myplayedalbum']) {
+            $userid            = $GLOBALS['user']->id;
+            $table['myplayedalbum'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='album' AND ";
+            $table['myplayedalbum'] .= "`object_count`.`user`='$userid' AND ";
+            $table['myplayedalbum'] .= "`object_count`.`object_id`=`artist`.`album`";
+        }
+        if ($join['myplayedartist']) {
+            $userid            = $GLOBALS['user']->id;
+            $table['myplayedartist'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='album' AND ";
+            $table['myplayedartist'] .= "`object_count`.`user`='$userid' AND ";
+            $table['myplayedartist'] .= "`object_count`.`object_id`=`song`.`artist`";
         }
         if ($join['playlist_data']) {
             $table['playlist_data'] = "LEFT JOIN `playlist_data` ON `song`.`id`=`playlist_data`.`object_id` AND `playlist_data`.`object_type`='song'";
