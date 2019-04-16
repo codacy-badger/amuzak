@@ -576,6 +576,12 @@ class Update
         $update_string = "Remove reborn theme from  preferences.<br />";
         $version[]     = array('version' => '400005', 'description' => $update_string);
 
+        $update_string = "Insert some decent SmartLists for a better default experience.<br />";
+        $version[]     = array('version' => '400006', 'description' => $update_string);
+
+        $update_string = "Expand user_activity table with mbid details.<br />";
+        $version[]     = array('version' => '400007', 'description' => $update_string);
+
         return $version;
     }
 
@@ -4149,6 +4155,49 @@ class Update
         $retval &= Dba::write($sql);
 
         $sql = "UPDATE `user_preference` SET `value` = 'rezak' WHERE `user_preference`.`value` = 'reborn';";
+        $retval &= Dba::write($sql);
+
+        return $retval;
+    }
+
+    /**
+     * update_400006
+     *
+     * Insert some decent SmartLists for a better default experience
+     */
+    public static function update_400006()
+    {
+        $retval = true;
+
+        $sql = "INSERT IGNORE INTO `search` (`user`, `type`, `rules`, `name`, `logic_operator`, `random`, `limit`) VALUES " .
+                "(-1, 'public', '[[\"albumrating\",\"equal\",\"5\",null]]', '5* Albums', 'AND', 0, 0), " .
+                "(-1, 'public', '[[\"albumrating\",\"equal\",\"4\",null]]', '4* Albums', 'AND', 0, 0), " .
+                "(-1, 'public', '[[\"albumrating\",\"equal\",\"3\",null]]', '3* Albums', 'AND', 0, 0), " .
+                "(-1, 'public', '[[\"albumrating\",\"equal\",\"2\",null]]', '2* Albums', 'AND', 0, 0), " .
+                "(-1, 'public', '[[\"albumrating\",\"equal\",\"1\",null]]', '1* Albums', 'AND', 0, 0), " .
+                "(-1, 'public', '[[\"myrating\",\"equal\",\"5\",null]]', '5*', 'AND', 0, 0), " .
+                "(-1, 'public', '[[\"myrating\",\"equal\",\"4\",null]]', '4*', 'AND', 0, 0), " .
+                "(-1, 'public', '[[\"myrating\",\"equal\",\"3\",null]]', '3*', 'AND', 0, 0), " .
+                "(-1, 'public', '[[\"myrating\",\"equal\",\"2\",null]]', '2*', 'AND', 0, 0), " .
+                "(-1, 'public', '[[\"myrating\",\"equal\",\"1\",null]]', '1*', 'AND', 0, 0);";
+        $retval &= Dba::write($sql);
+
+        return $retval;
+    }
+
+    /**
+     * update_400007
+     *
+     * Add mbid_track, mbid_artist, mbid_album to user_activity
+     */
+    public static function update_400007()
+    {
+        $retval = true;
+
+        $sql = "ALTER TABLE `user_activity` " .
+                "ADD COLUMN `mbid_track` VARCHAR(255) NULL DEFAULT NULL," .
+                "ADD COLUMN `mbid_artist` VARCHAR(255) NULL DEFAULT NULL," .
+                "ADD COLUMN `mbid_album` VARCHAR(255) NULL DEFAULT NULL;";
         $retval &= Dba::write($sql);
 
         return $retval;
