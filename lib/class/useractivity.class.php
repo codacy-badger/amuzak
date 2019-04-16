@@ -157,9 +157,9 @@ class Useractivity extends database_object
                     " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $album = new Album($object_id);
             $album->format();
-            $name_artist = $album->f_album_artist_name;
-            $name_album  = $album->f_title;
-            $mbid_album  = $album->mbid;
+            $name_artist  = $album->f_album_artist_name;
+            $name_album   = $album->f_title;
+            $mbid_album   = $album->mbid;
             $mbid_artist  = $album->mbid_group;
             debug_event('post_activity', 'Inserting details for ' . $name_artist . ' - ' . $name_album . '.', 5);
 
