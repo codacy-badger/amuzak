@@ -1124,7 +1124,8 @@ class vainfo
         $delimiters = AmpConfig::get('additional_genre_delimiters');
         if (isset($data) && is_array($data) && count($data) === 1 && isset($delimiters)) {
             $pattern = '~[\s]?(' . $delimiters . ')[\s]?~';
-            $genres  = preg_split($pattern, reset($data));
+            $filter  = str_replace('Folk, World, & Country', 'Folk World & Country', reset($data));
+            $genres  = preg_split($pattern, $filter);
             if ($genres === false) {
                 throw new Exception('Pattern given in additional_genre_delimiters is not functional. Please ensure is it a valid regex (delimiter ~).');
             }

@@ -212,8 +212,9 @@ class Tag extends database_object implements library_item
         Dba::write($sql, array($data[name], $this->id));
 
         if ($data['edit_tags']) {
-            $filter = str_replace('Folk, World, & Country', 'Folk World & Country', $data['edit_tags']);
-            $tag_names = explode(',', $filter);
+            $filterfolk = str_replace('Folk, World, & Country', 'Folk World & Country', $data['edit_tags']);
+            $filter     = str_replace(';', ',', $filterfolk);
+            $tag_names  = explode(',', $filter);
             foreach ($tag_names as $tag) {
                 $merge_to = self::construct_from_name($tag);
                 if ($merge_to->id == 0) {
@@ -608,7 +609,8 @@ class Tag extends database_object implements library_item
         debug_event('tag.class', 'Updating tags for values {' . $tags_comma . '} type {' . $type . '} object_id {' . $object_id . '}', '5');
 
         $ctags      = self::get_top_tags($type, $object_id);
-        $filter = str_replace('Folk, World, & Country', 'Folk World & Country', $tags_comma);
+        $filterfolk = str_replace('Folk, World, & Country', 'Folk World & Country', $tags_comma);
+        $filter     = str_replace(';', ',', $filterfolk);
         $editedTags = explode(",", $filter);
 
         if (is_array($ctags)) {
@@ -658,8 +660,9 @@ class Tag extends database_object implements library_item
         if (is_array($tags)) {
             $ar = $tags;
         } else {
-            $filter = str_replace('Folk, World, & Country', 'Folk World & Country', $tags);
-            $ar = explode(",", $filter);
+            $filterfolk = str_replace('Folk, World, & Country', 'Folk World & Country', $tags);
+            $filter     = str_replace(';', ',', $filterfolk);
+            $ar         = explode(",", $filter);
         }
 
         $ret = array();
