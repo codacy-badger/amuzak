@@ -777,7 +777,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 .content-right-wild {
-    margin-right: 20px !important;
+    margin-right: 10px
 }
 
 .content-left-wild {
@@ -1435,6 +1435,7 @@ span.fatalerror {
 }
 
 .external_links {
+    padding-top: 10px;
     text-align: right;
 }
 

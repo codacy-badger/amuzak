@@ -115,6 +115,14 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     color: #555;
 }
 
+#header-link {
+    color: #ff9d00;
+}
+
+#header-link:hover {
+    color: #ffc466;
+}
+
 /***********************************************
            Login
 ***********************************************/
