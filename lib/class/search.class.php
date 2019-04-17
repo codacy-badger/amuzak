@@ -1045,7 +1045,7 @@ class Search extends playlist_object
         $sql = "INSERT INTO `search` (`name`, `type`, `user`, `rules`, `logic_operator`, `random`, `limit`) VALUES (?, ?, ?, ?, ?, ?, ?)";
         Dba::write($sql, array($this->name, $this->type, $GLOBALS['user']->id, json_encode($this->rules), $this->logic_operator, $this->random ? 1 : 0, $this->limit));
         $insert_id = Dba::insert_id();
-        $this->id  = $insert_id;
+        $this->id  = (int) $insert_id;
 
         return $insert_id;
     }
@@ -1250,7 +1250,6 @@ class Search extends playlist_object
             $table['user_flag']  = "LEFT JOIN `user_flag` ON `album`.`id`=`user_flag`.`object_id`";
         }
         if ($join['rating']) {
-            $userid          = intval($GLOBALS['user']->id);
             $table['rating'] = "LEFT JOIN `rating` ON `rating`.`object_type`='album' AND ";
             if ($this->type != "public") {
                 $table['rating'] .= "`rating`.`user`='" . $userid . "' AND ";
@@ -1258,7 +1257,6 @@ class Search extends playlist_object
             $table['rating'] .= "`rating`.`object_id`=`album`.`id`";
         }
         if ($join['myrating']) {
-            $userid            = intval($GLOBALS['user']->id);
             $table['myrating'] = "LEFT JOIN `rating` ON `rating`.`object_type`='album' AND ";
             $table['myrating'] .= "`rating`.`user`='" . $userid . "' AND ";
             $table['myrating'] .= "`rating`.`object_id`=`album`.`id`";
@@ -1808,6 +1806,7 @@ class Search extends playlist_object
         $sql_logic_operator = $this->logic_operator;
         $where              = array();
         $table              = array();
+        $join               = array();
 
         foreach ($this->rules as $rule) {
             $type     = $this->name_to_basetype($rule[0]);
@@ -1858,6 +1857,7 @@ class Search extends playlist_object
         $sql_logic_operator = $this->logic_operator;
         $where              = array();
         $table              = array();
+        $join               = array();
 
         foreach ($this->rules as $rule) {
             $type     = $this->name_to_basetype($rule[0]);

@@ -168,13 +168,13 @@ class vainfo
                     $tag = implode(" ", $tag);
                 }
                 $enc = mb_detect_encoding($tag, $mb_order, true);
-                if ($enc != false) {
+                if ($enc !== '') {
                     $encodings[$enc]++;
                 }
             }
         } else {
             $enc = mb_detect_encoding($tags, $mb_order, true);
-            if ($enc != false) {
+            if ($enc !== '') {
                 $encodings[$enc]++;
             }
         }
@@ -579,12 +579,9 @@ class vainfo
      */
     private function _get_plugin_tags()
     {
-        $tag_order = $this->get_metadata_order();
-        if (!is_array($tag_order)) {
-            $tag_order = array($tag_order);
-        }
-
+        $tag_order    = $this->get_metadata_order();
         $plugin_names = Plugin::get_plugins('get_metadata');
+
         foreach ($tag_order as $tag_source) {
             if (in_array($tag_source, $plugin_names)) {
                 $plugin            = new Plugin($tag_source);
@@ -1022,7 +1019,6 @@ class vainfo
     {
         $origin  = $filepath;
         $results = array();
-        $file    = pathinfo($filepath, PATHINFO_FILENAME);
    
         if (in_array('music', $this->gather_types) || in_array('clip', $this->gather_types)) {
             $patres  = self::parse_pattern($filepath, $this->_dir_pattern, $this->_file_pattern);
@@ -1044,7 +1040,7 @@ class vainfo
     {
         $results         = array();
         $slash_type_preg = DIRECTORY_SEPARATOR;
-        if ($slash_type_preg == '\\') {
+        if ($slash_type_preg === '\\') {
             $slash_type_preg .= DIRECTORY_SEPARATOR;
         }
         // Combine the patterns

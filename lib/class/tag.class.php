@@ -212,7 +212,8 @@ class Tag extends database_object implements library_item
         Dba::write($sql, array($data[name], $this->id));
 
         if ($data['edit_tags']) {
-            $tag_names = explode(',', $data['edit_tags']);
+            $filter = str_replace('Folk, World, & Country', 'Folk World & Country', $data['edit_tags']);
+            $tag_names = explode(',', $filter);
             foreach ($tag_names as $tag) {
                 $merge_to = self::construct_from_name($tag);
                 if ($merge_to->id == 0) {
@@ -607,7 +608,8 @@ class Tag extends database_object implements library_item
         debug_event('tag.class', 'Updating tags for values {' . $tags_comma . '} type {' . $type . '} object_id {' . $object_id . '}', '5');
 
         $ctags      = self::get_top_tags($type, $object_id);
-        $editedTags = explode(",", $tags_comma);
+        $filter = str_replace('Folk, World, & Country', 'Folk World & Country', $tags_comma);
+        $editedTags = explode(",", $filter);
 
         if (is_array($ctags)) {
             foreach ($ctags as $ctid => $ctv) {
@@ -656,7 +658,8 @@ class Tag extends database_object implements library_item
         if (is_array($tags)) {
             $ar = $tags;
         } else {
-            $ar = explode(",", $tags);
+            $filter = str_replace('Folk, World, & Country', 'Folk World & Country', $tags);
+            $ar = explode(",", $filter);
         }
 
         $ret = array();
