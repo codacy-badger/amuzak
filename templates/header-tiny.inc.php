@@ -363,8 +363,8 @@ $_SESSION['login'] = false;
                         if (User::is_registered()) {
                             ?>
                         <span id="loginInfo">
-                            <a href="<?php echo $web_path; ?>/stats.php?action=show_user&user_id=<?php echo $GLOBALS['user']->id; ?>"><?php echo $GLOBALS['user']->fullname; ?></a>
-                            <a rel="nohtml" href="<?php echo $web_path; ?>/logout.php">[<?php echo T_('Log out'); ?>]</a>
+                            <a id="header-link" href="<?php echo $web_path; ?>/stats.php?action=show_user&user_id=<?php echo $GLOBALS['user']->id; ?>"><?php echo $GLOBALS['user']->fullname; ?></a>
+                            <a id="header-link" rel="nohtml" href="<?php echo $web_path; ?>/logout.php">[<?php echo T_('Log out'); ?>]</a>
                         </span>
                     <?php
                         } else {
