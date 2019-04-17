@@ -50,6 +50,7 @@
             <li id="sb_home_browse_music_podcast"><a href="<?php echo $web_path ?>/browse.php?action=podcast"><?php echo T_('Podcasts') ?></a></li>
             <?php
         } ?>
+            <li id="sb_home_browse_music_jukebox"><a href="<?php echo $web_path ?>/jukebox.php" target="_blank"><?php echo T_('Jukebox') ?></a></li>
             <?php if (AmpConfig::get('allow_upload') && Access::check('interface', '25')) {
             ?>
             <li id="sb_home_browse_music_upload"><a href="<?php echo $web_path ?>/upload.php"><?php echo T_('Upload') ?></a></li>
