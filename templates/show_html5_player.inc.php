@@ -256,7 +256,9 @@ if (AmpConfig::get('song_page_title') && !$is_share) {
     replaygainNode = null;
     replaygainEnabled = false;
 <?php echo WebPlayer::add_media_js($playlist); ?>
-
+$("#webplayer").resizable({
+        handles: "n"
+    });
 });
 </script>
 <?php
