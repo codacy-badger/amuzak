@@ -4147,7 +4147,7 @@ class Update
         $retval &= Dba::write($sql);
 
         $sql = "DELETE FROM `preference` " .
-               "WHERE `preference.name` IN ('allow_video', 'show_donate');";
+               "WHERE `preference`.`name` IN ('allow_video', 'show_donate');";
         $retval &= Dba::write($sql);
         
         return $retval;
