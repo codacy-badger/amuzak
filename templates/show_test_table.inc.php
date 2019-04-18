@@ -26,7 +26,7 @@
     <?php echo debug_result(check_php_version()); ?>
     </td>
     <td>
-    <?php echo T_('This tests whether you are running at least the minimum version of PHP required by Ampache.'); ?>
+    <?php echo T_('This tests whether you are running at least the minimum version of PHP required by aMuzak.'); ?>
     </td>
 </tr>
 <tr>
@@ -35,7 +35,7 @@
     <?php echo debug_result(check_dependencies_folder()); ?>
     </td>
     <td>
-    <?php echo T_('This tests whether Ampache dependencies are installed.'); ?>
+    <?php echo T_('This tests whether aMuzak dependencies are installed.'); ?>
     <?php if (!check_dependencies_folder()) {
     ?>
         <br />
