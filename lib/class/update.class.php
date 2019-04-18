@@ -4137,13 +4137,15 @@ class Update
         $retval = true;
 
         $sql = "DELETE FROM `user_preference` " .
-               "LEFT JOIN `preference` on `preference`.`id` = `user_preference`.`preference` " .
-               "WHERE `preference`.`name` = 'allow_video';";
+               "WHERE `user_preference`.`preference` IN  " .
+               "(SELECT `preference`.`id` FROM `preference`  " .
+               "WHERE `preference`.`name` = 'allow_video');";
         $retval &= Dba::write($sql);
 
         $sql = "DELETE FROM `user_preference` " .
-               "LEFT JOIN `preference` on `preference`.`id` = `user_preference`.`preference` " .
-               "WHERE `preference`.`name` = 'show_donate';;";
+               "WHERE `user_preference`.`preference` IN  " .
+               "(SELECT `preference`.`id` FROM `preference`  " .
+               "WHERE `preference`.`name` = 'show_donate');";
         $retval &= Dba::write($sql);
 
         $sql = "DELETE FROM `preference` " .
