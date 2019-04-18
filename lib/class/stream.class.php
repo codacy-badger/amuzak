@@ -350,6 +350,7 @@ class Stream
             '(`id`,`object_id`,`object_type`, `user`, `expire`, `insertion`) ' .
             'VALUES (?, ?, ?, ?, ?, ?)';
         Dba::write($sql, array($sid, $oid, $type, $uid, $time, time()));
+        debug_event('stream', "Now Playing " . $type . " " . $oid . " added to database", 5);
     }
 
     /**
