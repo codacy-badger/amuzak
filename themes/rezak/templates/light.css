@@ -165,10 +165,6 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     color: #555;
 }
 
-#loginPage #footer #donate {
-    color: #1990db;
-}
-
 /***********************************************
            Sidebar
 ***********************************************/

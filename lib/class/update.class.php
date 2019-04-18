@@ -405,9 +405,6 @@ class Update
         $update_string = '- Add tag persistent merge reference.<br />';
         $version[]     = array('version' => '370002', 'description' => $update_string);
 
-        $update_string = '- Add show/hide donate button preference.<br />';
-        $version[]     = array('version' => '370003', 'description' => $update_string);
-
         $update_string = '- Add license information and user\'s artist association.<br />';
         $version[]     = array('version' => '370004', 'description' => $update_string);
 
@@ -423,7 +420,7 @@ class Update
         $update_string = '- Add UPnP backend preference.<br />';
         $version[]     = array('version' => '370008', 'description' => $update_string);
 
-        $update_string = '- Enhance video support with TVShows and Movies.<br />';
+        $update_string = '- Extend image table.<br />';
         $version[]     = array('version' => '370009', 'description' => $update_string);
 
         $update_string = '- Add MusicBrainz Album Release Group identifier.<br />';
@@ -582,6 +579,9 @@ class Update
         $update_string = "Expand user_activity table with mbid details.<br />";
         $version[]     = array('version' => '400007', 'description' => $update_string);
 
+        $update_string = "Delete donate and video preferences.<br />";
+        $version[]     = array('version' => '400008', 'description' => $update_string);
+        
         return $version;
     }
 
@@ -2752,25 +2752,6 @@ class Update
     }
 
     /**
-     * update_370003
-     *
-     * Add show/hide donate button preference
-     */
-    public static function update_370003()
-    {
-        $retval = true;
-
-        $sql = "INSERT INTO `preference` (`name`,`value`,`description`,`level`,`type`,`catagory`) " .
-                "VALUES ('show_donate','1','Show donate button in footer',25,'boolean','interface')";
-        $retval &= Dba::write($sql);
-        $row_id = Dba::insert_id();
-        $sql    = "INSERT INTO `user_preference` VALUES (-1,?,'1')";
-        $retval &= Dba::write($sql, array($row_id));
-
-        return $retval;
-    }
-
-    /**
      * update_370004
      *
      * Add license information and user's artist association
@@ -2948,69 +2929,12 @@ class Update
     /**
      * update_370009
      *
-     * Enhance video support with TVShows and Movies
+     * Extend image table.
      */
     public static function update_370009()
     {
         $retval = true;
-
-        $sql = "ALTER TABLE `video` ADD `release_date` date NULL AFTER `enabled`, " .
-                "ADD `played` tinyint(1) unsigned DEFAULT '0' NOT NULL AFTER `enabled`";
-        $retval &= Dba::write($sql);
-
-        $sql = "CREATE TABLE `tvshow` (" .
-                "`id` int(11) unsigned NOT NULL AUTO_INCREMENT," .
-                "`name` varchar(80) NOT NULL," .
-                "`summary` varchar(256) NULL," .
-                "`year` int(11) unsigned NULL," .
-                "PRIMARY KEY (`id`)) ENGINE = MYISAM";
-        $retval &= Dba::write($sql);
-
-        $sql = "CREATE TABLE `tvshow_season` (" .
-                "`id` int(11) unsigned NOT NULL AUTO_INCREMENT," .
-                "`season_number` int(11) unsigned NOT NULL," .
-                "`tvshow` int(11) unsigned NOT NULL," .
-                "PRIMARY KEY (`id`)) ENGINE = MYISAM";
-        $retval &= Dba::write($sql);
-
-        $sql = "CREATE TABLE `tvshow_episode` (" .
-                "`id` int(11) unsigned NOT NULL," .
-                "`original_name` varchar(80) NULL," .
-                "`season` int(11) unsigned NOT NULL," .
-                "`episode_number` int(11) unsigned NOT NULL," .
-                "`summary` varchar(256) NULL," .
-                "PRIMARY KEY (`id`)) ENGINE = MYISAM";
-        $retval &= Dba::write($sql);
-
-        $sql = "CREATE TABLE `movie` (" .
-                "`id` int(11) unsigned NOT NULL," .
-                "`original_name` varchar(80) NULL," .
-                "`summary` varchar(256) NULL," .
-                "`year` int(11) unsigned NULL," .
-                "PRIMARY KEY (`id`)) ENGINE = MYISAM";
-        $retval &= Dba::write($sql);
-
-        $sql = "CREATE TABLE `personal_video` (" .
-                "`id` int(11) unsigned NOT NULL," .
-                "`location` varchar(256) NULL," .
-                "`summary` varchar(256) NULL," .
-                "PRIMARY KEY (`id`)) ENGINE = MYISAM";
-        $retval &= Dba::write($sql);
-
-        $sql = "CREATE TABLE `clip` (" .
-                "`id` int(11) unsigned NOT NULL," .
-                "`artist` int(11) NULL," .
-                "`song` int(11) NULL," .
-                "PRIMARY KEY (`id`)) ENGINE = MYISAM";
-        $retval &= Dba::write($sql);
-
-        $sql = "INSERT INTO `preference` (`name`,`value`,`description`,`level`,`type`,`catagory`) " .
-                "VALUES ('allow_video','1','Allow video features',75,'integer','options')";
-        $retval &= Dba::write($sql);
-        $row_id = Dba::insert_id();
-        $sql    = "INSERT INTO `user_preference` VALUES (-1,?,'1')";
-        $retval &= Dba::write($sql, array($row_id));
-
+        // can't remove this leftover video column
         $sql = "ALTER TABLE `image` ADD `kind` VARCHAR( 32 ) NULL DEFAULT 'default' AFTER `object_id`";
         $retval &= Dba::write($sql);
 
@@ -4200,6 +4124,32 @@ class Update
                 "ADD COLUMN `mbid_album` VARCHAR(255) NULL DEFAULT NULL;";
         $retval &= Dba::write($sql);
 
+        return $retval;
+    }
+
+    /**
+     * update_400008
+     *
+     * Delete donate and video preferences
+     */
+    public static function update_400008()
+    {
+        $retval = true;
+
+        $sql = "DELETE FROM `user_preference` " .
+               "LEFT JOIN `preference` on `preference`.`id` = `user_preference`.`preference` " .
+               "WHERE `preference`.`name` = 'allow_video';";
+        $retval &= Dba::write($sql);
+
+        $sql = "DELETE FROM `user_preference` " .
+               "LEFT JOIN `preference` on `preference`.`id` = `user_preference`.`preference` " .
+               "WHERE `preference`.`name` = 'show_donate';;";
+        $retval &= Dba::write($sql);
+
+        $sql = "DELETE FROM `preference` " .
+               "WHERE `preference.name` IN ('allow_video', 'show_donate');";
+        $retval &= Dba::write($sql);
+        
         return $retval;
     }
 }
