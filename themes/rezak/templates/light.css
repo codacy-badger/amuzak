@@ -148,7 +148,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 .formValidation input {
-    color: #000;
+    color: #e3e3dd;
 }
 
 #loginPage span.error {
@@ -293,11 +293,11 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 .list-header, .list-header a {
-    color: #999;
+    color: #666;
 }
 
 .list-header a:hover, .list-header a:focus {
-    color: #fff;
+    color: #999;
 }
 
 span.page-nb {
@@ -466,7 +466,7 @@ span.fatalerror {
 }
 
 #information_actions ul li{
-    color: #999;
+    color: #666;
 }
 
 /************************************************/
@@ -576,7 +576,7 @@ div.jp-playlist li {
 }
 
 span.item-count {
-	color: #999;
+	color: #666;
 }
 
 a.option-list:hover {
