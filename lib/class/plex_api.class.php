@@ -416,8 +416,8 @@ class Plex_Api
             'X-Plex-Platform-Version' => Plex_XML_Data::getPlexPlatformVersion(),
             'X-Plex-Client-Platform' => Plex_XML_Data::getPlexPlatform(),
             'X-Plex-Protocol' => 1.0,
-            'X-Plex-Device' => 'Ampache',
-            'X-Plex-Device-Name' => 'Ampache',
+            'X-Plex-Device' => 'aMuzak',
+            'X-Plex-Device-Name' => 'aMuzak',
             'X-Plex-Provides' => 'server'
         );
 

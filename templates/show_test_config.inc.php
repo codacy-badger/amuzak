@@ -39,7 +39,7 @@ body {
 </head>
 <body bgcolor="#f0f0f0">
 <div id="header">
-<h1><?php echo T_('Ampache Debug'); ?></h1>
+<h1><?php echo T_('aMuzak Debug'); ?></h1>
 <p>Ampache.cfg.php error detected</p>
 </div>
 <div id="content">

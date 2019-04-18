@@ -29,12 +29,12 @@
         <tr>
             <td>Session</td>
             <td><?php echo AmpConfig::get('session_name'); ?></td>
-            <td><?php echo T_('Ampache session.'); ?></td>
+            <td><?php echo T_('aMuzak session.'); ?></td>
         </tr>
         <tr>
             <td>Session username</td>
             <td><?php echo AmpConfig::get('session_name'); ?>_user</td>
-            <td><?php echo T_('Ampache session username (if authenticated, information only).'); ?></td>
+            <td><?php echo T_('aMuzak session username (if authenticated, information only).'); ?></td>
         </tr>
         <tr>
             <td>Remember Me</td>

@@ -30,7 +30,11 @@ if (!defined('AJAX_INCLUDE')) {
 $results = array();
 switch ($_REQUEST['action']) {
     case 'random_albums':
-        $albums = Album::get_random(8);
+        $random_count = 5;
+        if (Preference::exists('catalogfav_max_items')) {
+            $random_count =  Preference::get_by_user($GLOBALS['user']->id, 'catalogfav_max_items');
+        }
+        $albums = Album::get_random($random_count);
         if (count($albums) and is_array($albums)) {
             ob_start();
             require_once AmpConfig::get('prefix') . UI::find_template('show_random_albums.inc.php');

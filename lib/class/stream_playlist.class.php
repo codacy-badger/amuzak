@@ -177,7 +177,7 @@ class Stream_Playlist
             $api_session = (AmpConfig::get('require_session')) ? Stream::get_session() : false;
 
             // Set a default which can be overridden
-            $url['author'] = 'Ampache';
+            $url['author'] = 'aMuzak';
             $url['time']   = $object->time;
             switch ($type) {
                 case 'song':
@@ -328,7 +328,7 @@ class Stream_Playlist
             $this->_add_url(new Stream_URL(array(
                 'url' => $url,
                 'title' => 'URL-Add',
-                'author' => 'Ampache',
+                'author' => 'aMuzak',
                 'time' => '-1'
             )));
         }
@@ -402,7 +402,7 @@ class Stream_Playlist
     public function get_asx_string()
     {
         $ret = '<ASX VERSION="3.0" BANNERBAR="auto">' . "\n";
-        $ret .= "<TITLE>" . ($this->title ?: "Ampache ASX Playlist") . "</TITLE>\n";
+        $ret .= "<TITLE>" . ($this->title ?: "aMuzak ASX Playlist") . "</TITLE>\n";
         $ret .= '<PARAM NAME="Encoding" VALUE="utf-8" />' . "\n";
 
         foreach ($this->urls as $url) {

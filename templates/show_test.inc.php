@@ -35,14 +35,14 @@
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img src="<?php echo UI::get_logo_url('dark'); ?>" title="Ampache" alt="Ampache">
+                    <img src="<?php echo UI::get_logo_url('dark'); ?>" title="aMuzak" alt="aMuzak">
                     <?php echo T_('aMuzak'); ?> - For the love of Music
                 </a>
             </div>
         </div>
         <div class="container" role="main">
         <div class="page-header requirements">
-            <h1><?php echo T_('Ampache Debug'); ?></h1>
+            <h1><?php echo T_('aMuzak Debug'); ?></h1>
         </div>
         <div class="well">
             <p>

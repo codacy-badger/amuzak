@@ -151,7 +151,7 @@ class Daap_Api
         debug_event('daap', 'Unused Paramater ' . $input, 5);
         $output = self::tlv('dmap.status', 200);
         $output .= self::tlv('dmap.protocolversion', '0.2.0.0');
-        $output .= self::tlv('dmap.itemname', 'Ampache');
+        $output .= self::tlv('dmap.itemname', 'aMuzak');
         $output .= self::tlv('daap.protocolversion', '0.3.0.0');
         $output .= self::tlv('daap.supportsextradata', 0);//daap.supportsextradata
         $output .= self::tlv('daap.supportsgroups', 0);
@@ -347,7 +347,7 @@ class Daap_Api
             
             $r = self::tlv('dmap.itemid', 1);
             $r .= self::tlv('dmap.persistentid', 1);
-            $r .= self::tlv('dmap.itemname', 'Ampache');
+            $r .= self::tlv('dmap.itemname', 'aMuzak');
             $counts = Catalog::count_medias();
             $r .= self::tlv('dmap.itemcount', $counts['songs']);
             $r .= self::tlv('dmap.containercount', count(Playlist::get_playlists()));

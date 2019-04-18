@@ -44,7 +44,7 @@
         </ul>
     </div>
 
-    <?php UI::show_box_top(T_('Ampache Update'), 'box'); ?>
+    <?php UI::show_box_top(T_('aMuzak Update'), 'box'); ?>
         <div><?php echo T_('Installed Ampache version'); ?>: <?php echo AutoUpdate::get_current_version(); ?>.</div>
         <div><?php echo T_('Latest Ampache version'); ?>: <?php echo AutoUpdate::get_latest_version(); ?>.</div>
         <div><a href="<?php echo AmpConfig::get('web_path'); ?>/admin/system.php?action=show_debug&autoupdate=force"><?php echo T_('Force check'); ?>...</a></div>

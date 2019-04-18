@@ -245,7 +245,7 @@ class Plex_XML_Data
 
     public static function getServerName()
     {
-        return AmpConfig::get('plex_servername') ?: 'Ampache';
+        return AmpConfig::get('plex_servername') ?: 'aMuzak';
     }
 
     public static function getMyPlexUsername()
@@ -560,20 +560,20 @@ class Plex_XML_Data
                         $stype = 'movie';
                         $dir->addAttribute('type', 'movie');
                         $dir->addAttribute('agent', 'com.plexapp.agents.imdb');
-                        $dir->addAttribute('scanner', 'Ampache Movie Scanner');
+                        $dir->addAttribute('scanner', 'aMuzak Movie Scanner');
                         break;
                     case 'tvshow':
                         $stype = 'show';
                         $dir->addAttribute('type', 'show');
                         $dir->addAttribute('agent', 'com.plexapp.agents.thetvdb');
-                        $dir->addAttribute('scanner', 'Ampache Series Scanner');
+                        $dir->addAttribute('scanner', 'aMuzak Series Scanner');
                         break;
                     case 'music':
                     default:
                         $stype = 'artist';
                         $dir->addAttribute('type', 'artist');
                         $dir->addAttribute('agent', 'com.plexapp.agents.none'); // com.plexapp.agents.lastfm
-                        $dir->addAttribute('scanner', 'Ampache Music Scanner');
+                        $dir->addAttribute('scanner', 'aMuzak Music Scanner');
                         break;
                 }
                 $dir->addAttribute('language', 'en');
@@ -1591,12 +1591,12 @@ class Plex_XML_Data
 
     public static function setSysMovieAgents(SimpleXMLElement $xml)
     {
-        self::addNoneAgent($xml, 'Ampache Media Movies');
+        self::addNoneAgent($xml, 'aMuzak Media Movies');
     }
 
     public static function setSysTVShowAgents(SimpleXMLElement $xml)
     {
-        self::addNoneAgent($xml, 'Ampache Media Series');
+        self::addNoneAgent($xml, 'aMuzak Media Series');
     }
 
     public static function setSysPhotoAgents(SimpleXMLElement $xml)
@@ -1609,7 +1609,7 @@ class Plex_XML_Data
      */
     public static function setSysMusicAgents($xml, $category = 'Artists')
     {
-        self::addNoneAgent($xml, 'Ampache Media ' . $category);
+        self::addNoneAgent($xml, 'aMuzak Media ' . $category);
         //self::addAgent($xml, 'Last.fm', '1', 'com.plexapp.agents.lastfm', 'true', 'en,sv,fr,es,de,pl,it,pt,ja,tr,ru,zh');
     }
 
@@ -1777,15 +1777,15 @@ class Plex_XML_Data
         switch ($type) {
             case self::PLEX_ALBUM:
             case self::PLEX_ARTIST:
-                $scanner->addAttribute('name', 'Ampache Music Scanner');
+                $scanner->addAttribute('name', 'aMuzak Music Scanner');
                 break;
             case self::PLEX_TVSHOW:
             case self::PLEX_SEASON:
             case self::PLEX_EPISODE:
-                $scanner->addAttribute('name', 'Ampache Series Scanner');
+                $scanner->addAttribute('name', 'aMuzak Series Scanner');
                 break;
             case self::PLEX_MOVIE:
-                $scanner->addAttribute('name', 'Ampache Movie Scanner');
+                $scanner->addAttribute('name', 'aMuzak Movie Scanner');
                 break;
         }
     }

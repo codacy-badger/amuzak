@@ -819,7 +819,7 @@ class XML_Data
             case 'xspf':
                 $header = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n" .
                         "<playlist version = \"1\" xmlns=\"http://xspf.org/ns/0/\">\n" .
-                        "<title>" . ($title ?: "Ampache XSPF Playlist") . "</title>\n" .
+                        "<title>" . ($title ?: "aMuzak XSPF Playlist") . "</title>\n" .
                         "<creator>" . scrub_out(AmpConfig::get('site_title')) . "</creator>\n" .
                         "<annotation>" . scrub_out(AmpConfig::get('site_title')) . "</annotation>\n" .
                         "<info>" . AmpConfig::get('web_path') . "</info>\n" .
@@ -903,7 +903,7 @@ class XML_Data
             $xchannel->addChild("description", $summary);
             $xchannel->addChild("xmlns:itunes:summary", $summary);
         }
-        $xchannel->addChild("generator", "Ampache");
+        $xchannel->addChild("generator", "aMuzak");
         $xchannel->addChild("xmlns:itunes:category", "Music");
         $owner = $libitem->get_user_owner();
         if ($owner) {

@@ -109,7 +109,7 @@ class Localplay
             return false;
         } // include
         else {
-            $class_name    = "Ampache" . $this->type;
+            $class_name    = "aMuzak" . $this->type;
             $this->_player = new $class_name();
             if (!($this->_player instanceof localplay_controller)) {
                 debug_event('Localplay', $this->type . ' not an instance of controller abstract, unable to load', '1');

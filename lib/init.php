@@ -177,7 +177,7 @@ if (!defined('NO_SESSION') && AmpConfig::get('use_auth')) {
 } elseif (!AmpConfig::get('use_auth')) {
     $auth['success']      = 1;
     $auth['username']     = '-1';
-    $auth['fullname']     = "Ampache User";
+    $auth['fullname']     = "aMuzak User";
     $auth['id']           = -1;
     $auth['offset_limit'] = 50;
     $auth['access']       = AmpConfig::get('default_auth_level') ? User::access_name_to_level(AmpConfig::get('default_auth_level')) : '100';

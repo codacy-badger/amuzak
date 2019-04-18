@@ -66,7 +66,7 @@ class Plugin
                 return false;
             }
 
-            $plugin_name   = "Ampache$cname";
+            $plugin_name   = "aMuzak$cname";
             $this->_plugin = new $plugin_name();
 
             if (!$this->is_valid()) {

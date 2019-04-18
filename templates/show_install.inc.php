@@ -115,13 +115,13 @@ require $prefix . '/templates/install_header.inc.php';
         </div>
     </div>
     <div class="form-group" style="display: none;" id="specificuser">
-        <label for="db_username" class="col-sm-4 control-label"><?php echo T_('Ampache Database Username'); ?></label>
+        <label for="db_username" class="col-sm-4 control-label"><?php echo T_('aMuzak Database Username'); ?></label>
         <div class="col-sm-8">
             <input type="text" class="form-control" id="db_username" name="db_username" value="ampache">
         </div>
     </div>
     <div class="form-group" style="display: none;" id="specificpass">
-        <label for="db_password" class="col-sm-4 control-label"><?php echo T_('Ampache Database User Password'); ?></label>
+        <label for="db_password" class="col-sm-4 control-label"><?php echo T_('aMuzak Database User Password'); ?></label>
         <div class="col-sm-8">
             <input type="password" class="form-control" id="db_password" name="db_password" placeholder="Password (Required)">
         </div>

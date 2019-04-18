@@ -33,7 +33,7 @@ header('Expires: ' . gmdate(DATE_RFC1123, time() - 1));
 <meta property="og:title" content="<?php echo AmpConfig::get('site_title'); ?>" />
 <meta property="og:image" content="<?php echo UI::get_logo_url(); ?>"/>
 <meta property="og:description" content="A web based audio streaming application and file manager allowing you to access your music from anywhere, using almost any internet enabled device." />
-<meta property="og:site_name" content="Ampache"/>
+<meta property="og:site_name" content="aMuzak"/>
 <?php
 if (!$is_share) {
     $playlist = new Stream_Playlist(scrub_in($_REQUEST['playlist_id']));

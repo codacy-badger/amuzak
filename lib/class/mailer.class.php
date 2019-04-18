@@ -76,7 +76,7 @@ class Mailer
 
         $fromname = AmpConfig::get('mail_name');
         if (!$fromname) {
-            $fromname = 'Ampache';
+            $fromname = 'aMuzak';
         }
 
         $this->sender      = $user . '@' . $domain;

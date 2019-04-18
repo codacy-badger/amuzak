@@ -112,7 +112,7 @@ require $prefix . '/templates/install_header.inc.php';
     <div class="radio">
       <label><input type="radio" name="usecase" value="default" <?php if (!isset($_REQUEST['usecase']) || $_REQUEST['usecase'] == 'default') {
     echo 'checked';
-} ?>><?php echo T_('Default'); ?> &mdash; <?php echo T_('Ampache is configured for personal use with most greatest features.'); ?></label>
+} ?>><?php echo T_('Default'); ?> &mdash; <?php echo T_('aMuzak is configured for personal use with most greatest features.'); ?></label>
     </div>
     <div class="radio">
       <label><input type="radio" name="usecase" value="minimalist" <?php if (isset($_REQUEST['usecase']) && $_REQUEST['usecase'] == 'minimalist') {
@@ -160,7 +160,7 @@ require $prefix . '/templates/install_header.inc.php';
 
 <p>&nbsp;</p>
 <h3><?php echo T_('Players'); ?></h3>
-<div><?php echo T_('Ampache is more than only a web interface. Several backends are implemented to ensure you can stream your media from anywhere.'); ?></div>
+<div><?php echo T_('aMuzak is more than only a web interface. Several backends are implemented to ensure you can stream your media from anywhere.'); ?></div>
 <div><?php echo T_('Select backends to enable. Depending the backend, you may need to perform additional configuration.'); ?> <a href="https://github.com/ampcore/amuzak/wiki/API" target="_blank"><?php echo T_('See wiki page'); ?>.</a></div>
 <br />
 <div class="form-group">

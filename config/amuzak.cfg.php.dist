@@ -302,7 +302,7 @@ catalog_prefix_pattern = "The|An|A|Die|Das|Ein|Eine|Les|Le|La"
 ; This is an optional configuration option that adds a comment
 ; to your zip files, this only applies if you've got allow_zip_downloads
 ; DEFAULT: Ampache - Zip Batch Download
-;file_zip_comment = "Ampache - Zip Batch Download"
+;file_zip_comment = "aMuzak - Zip Batch Download"
 
 ; Waveform
 ; This settings tells Ampache to attempt to generate a waveform
@@ -991,7 +991,7 @@ encode_ss_duration = "-t %DURATION%"
 
 ;A name to go with the email address.
 ;DEFAULT: Ampache
-;mail_name = "Ampache"
+;mail_name = "aMuzak"
 
 ;How strictly email addresses should be checked.
 ;easy does a regex match, strict actually performs some SMTP transactions

@@ -210,7 +210,7 @@ class User extends database_object
         // If the ID is -1 then
         if ($id == '-1') {
             $data['username'] = 'System';
-            $data['fullname'] = 'Ampache User';
+            $data['fullname'] = 'aMuzak User';
             $data['access']   = '25';
 
             return $data;

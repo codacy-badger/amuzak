@@ -42,7 +42,7 @@ foreach ($results as $item) {
             continue;
         }
         if (!$np_user->fullname) {
-            $np_user->fullname = "Ampache User";
+            $np_user->fullname = "aMuzak User";
         } ?>
 <div class="np_row">
 <?php
