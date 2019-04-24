@@ -40,7 +40,7 @@
             echo AmpConfig::get('custom_text_footer');
         } else {
             ?>
-            <a id="ampache_link" href="https://github.com/ampcore/amuzak#readme" target="_blank" title="Copyright © 2001 - 2017 Ampache.org">aMuzak <?php echo AmpConfig::get('version'); ?></a>
+            <a id="ampache_link" href="https://github.com/ampcore/amuzak#readme" target="_blank" title="Copyright © 2019 ampcore">aMuzak <?php echo AmpConfig::get('version'); ?></a>
         <?php
         } ?>
         <?php if (AmpConfig::get('show_footer_statistics')) {

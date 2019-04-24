@@ -26,7 +26,7 @@
     dir="<?php echo $dir;?>">
 
 <head>
-<!-- Propulsed by Ampache | ampache.org -->
+<!-- Propulsed by aMuzak | ampcore -->
 <meta http-equiv="refresh" content="10;URL=<?php echo($redirect_url);?>" />
 <?php UI::show_custom_style(); ?>
 <title><?php echo(T_("aMuzak error page"));?></title>

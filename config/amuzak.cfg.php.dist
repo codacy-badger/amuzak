@@ -66,7 +66,7 @@ database_password = password
 ;#########################################################
 
 ; Cryptographic secret
-; This MUST BE changed with your own secret key. Ampache-specific, just pick any random string you want.
+; This MUST BE changed with your own secret key. aMuzak-specific, just pick any random string you want.
 secret_key = "abcdefghijklmnoprqstuvwyz0123456"
 
 ; Length that a session will last expressed in seconds. Default is
@@ -175,11 +175,11 @@ getid3_tag_order = "id3v2,id3v1,vorbiscomment,quicktime,matroska,ape,asf,avi,mpe
 ; DEFAULT: false
 ;getid3_detect_id3v2_encoding = "false"
 
-; This determines if we write the changes to files (as id3 tags) when modifying metadata, or only keep them in Ampache (the default).
+; This determines if we write the changes to files (as id3 tags) when modifying metadata, or only keep them in aMuzak (the default).
 ; DEFAULT: false
 ;write_id3 = "false"
 
-; This determines if we write the changes to files (as id3 tags) when modifying album art, or only keep them in Ampache (the default)
+; This determines if we write the changes to files (as id3 tags) when modifying album art, or only keep them in aMuzak (the default)
 ; as id3 metadata when updated.
 ; DEFAULT: false
 ;write_id3_art = "false"
@@ -226,28 +226,28 @@ additional_genre_delimiters = "[/]{2}|[/|\\\\|\|,|;]"
 ;#########################################################
 
 ; File Pattern
-; This defines which file types Ampache will attempt to catalog
+; This defines which file types aMuzak will attempt to catalog
 ; You can specify any file extension you want in here separating them
 ; with a |
 ; DEFAULT: mp3|mpc|m4p|m4a|aac|ogg|oga|wav|aif|aiff|rm|wma|asf|flac|opus|spx|ra|ape|shn|wv
 catalog_file_pattern = "mp3|mpc|m4p|m4a|aac|ogg|oga|wav|aif|aiff|rm|wma|asf|flac|opus|spx|ra|ape|shn|wv"
 
 ; Playlist Pattern
-; This defines which playlist types Ampache will attempt to catalog
+; This defines which playlist types aMuzak will attempt to catalog
 ; You can specify any file extension you want in here separating them with
 ; a | but ampache may not be able to parse them
 ; DEFAULT: m3u|m3u8|pls|asx|xspf
 catalog_playlist_pattern = "m3u|m3u8|pls|asx|xspf"
 
 ; Prefix Pattern
-; This defines which prefix Ampache will ignore when importing tags from
+; This defines which prefix aMuzak will ignore when importing tags from
 ; your music. You may add any prefix you want separating them with a |
 ; DEFAULT: The|An|A|Die|Das|Ein|Eine|Les|Le|La
 catalog_prefix_pattern = "The|An|A|Die|Das|Ein|Eine|Les|Le|La"
 
 ; Catalog disable
 ; This defines if catalog can be disabled without removing database entries
-; WARNING: this increase sensibly sql requests and slow down Ampache a lot
+; WARNING: this increase sensibly sql requests and slow down aMuzak a lot
 ; DEFAULT: false
 ;catalog_disable = "false"
 
@@ -269,14 +269,14 @@ catalog_prefix_pattern = "The|An|A|Die|Das|Ein|Eine|Les|Le|La"
 ;downsample_remote = "false"
 
 ; Track User IPs
-; If this is enabled Ampache will log the IP of every completed login
+; If this is enabled aMuzak will log the IP of every completed login
 ; it will store user,ip,time at one row per login. The results are
 ; displayed in Admin --> Users
 ; DEFAULT: false
 ;track_user_ip = "false"
 
 ; User IP Cardinality
-; This defines how many days worth of IP history Ampache will track
+; This defines how many days worth of IP history aMuzak will track
 ; As it is one row per login on high volume sites you will want to
 ; clear it every now and then.
 ; DEFAULT: 42 days
@@ -301,11 +301,11 @@ catalog_prefix_pattern = "The|An|A|Die|Das|Ein|Eine|Les|Le|La"
 ; File Zip Comment
 ; This is an optional configuration option that adds a comment
 ; to your zip files, this only applies if you've got allow_zip_downloads
-; DEFAULT: Ampache - Zip Batch Download
+; DEFAULT: aMuzak - Zip Batch Download
 ;file_zip_comment = "aMuzak - Zip Batch Download"
 
 ; Waveform
-; This settings tells Ampache to attempt to generate a waveform
+; This settings tells aMuzak to attempt to generate a waveform
 ; for each song. It requires transcode and encode_args_wav settings.
 ; You must also set tmp_dir_path in order for this to work
 ; DEFAULT: false
@@ -318,7 +318,7 @@ catalog_prefix_pattern = "The|An|A|Die|Das|Ein|Eine|Les|Le|La"
 
 ; Temporary Directory Path
 ; If Waveform is enabled this must be set to tell
-; Ampache which directory to save the temporary file to. Do not put a
+; aMuzak which directory to save the temporary file to. Do not put a
 ; trailing slash or this will not work.
 ; DEFAULT: false
 ;tmp_dir_path = "false"
@@ -378,7 +378,7 @@ directplay = "true"
 sociable = "false"
 
 ; License
-; This turns on / off all licensing features on Ampache
+; This turns on / off all licensing features on aMuzak
 ; DEFAULT: false
 ;licensing = "false"
 
@@ -399,14 +399,14 @@ sociable = "false"
 
 ; Memory Limit
 ; This defines the "Min" memory limit for PHP if your php.ini
-; has a lower value set Ampache will set it up to this. If you
+; has a lower value set aMuzak will set it up to this. If you
 ; set it below 16MB getid3() will not work!
 ; DEFAULT: 32
 ;memory_limit = 32
 
 ; Album Art Preferred Filename
 ; Specify a filename to look for if you always give the same filename
-; i.e. "folder.jpg" Ampache currently only supports jpg/gif and png
+; i.e. "folder.jpg" aMuzak currently only supports jpg/gif and png
 ; Especially useful if you have a front and a back image in a folder
 ; comment out if ampache should search for any jpg,gif or png
 ; DEFAULT: folder.jpg
@@ -449,7 +449,7 @@ album_art_min_height = 200
 ;album_art_max_height = 1024
 
 ; Resize Images * Requires PHP-GD *
-; Set this to true if you want Ampache to resize the Album
+; Set this to true if you want aMuzak to resize the Album
 ; art on the fly, this increases load time and CPU usage
 ; and also requires the PHP-GD library. This is very useful
 ; If you have high-quality album art and a small upload cap
@@ -457,14 +457,14 @@ album_art_min_height = 200
 ;resize_images = "false"
 
 ; Playlist Cover Art
-; Set this to true if you want Ampache to generate
+; Set this to true if you want aMuzak to generate
 ; cover art for playlists automatically based on
 ; the content.
 ; DEFAULT: false
 ;playlist_art = "false"
 
 ; Statistical Graphs * Requires PHP-GD *
-; Set this to true if you want Ampache to generate statistical
+; Set this to true if you want aMuzak to generate statistical
 ; graphs on usages / users.
 ; DEFAULT: false
 ;statistical_graphs = "false"
@@ -584,7 +584,7 @@ use_rss = "true"
 ;#########################################################
 
 ; Debug
-; If this is enabled Ampache will write debugging information to the log file
+; If this is enabled aMuzak will write debugging information to the log file
 ; DEFAULT: false
 ;debug = "false"
 
@@ -957,7 +957,7 @@ encode_ss_duration = "-t %DURATION%"
 ; Proxy Settings (optional)                              #
 ;#########################################################
 
-; If Ampache is behind an http proxy, specifiy the hostname or IP address
+; If aMuzak is behind an http proxy, specifiy the hostname or IP address
 ; port, proxyusername, and proxypassword here.
 ;DEFAULT: not in use
 ;proxy_host = "192.168.0.1"
@@ -965,7 +965,7 @@ encode_ss_duration = "-t %DURATION%"
 ;proxy_user = ""
 ;proxy_pass = ""
 
-; If Ampache is behind an https reverse proxy, force use HTTPS protocol.
+; If aMuzak is behind an https reverse proxy, force use HTTPS protocol.
 ;Default: false
 ;force_ssl = "true"
 
@@ -984,13 +984,13 @@ encode_ss_duration = "-t %DURATION%"
 ;mail_domain = "example.com"
 
 ;This will be combined with mail_domain and used as the source address for
-;emails generated by Ampache.  For example, setting this to 'me' will set the
+;emails generated by aMuzak.  For example, setting this to 'me' will set the
 ;sender to 'me@example.com'.
 ;DEFAULT: info
 ;mail_user = "info"
 
 ;A name to go with the email address.
-;DEFAULT: Ampache
+;DEFAULT: aMuzak
 ;mail_name = "aMuzak"
 
 ;How strictly email addresses should be checked.

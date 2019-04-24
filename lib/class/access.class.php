@@ -24,7 +24,7 @@
 /**
  * Access Class
  *
- * This class handles the access list mojo for Ampache, it is meant to restrict
+ * This class handles the access list mojo for aMuzak, it is meant to restrict
  * access based on IP and maybe something else in the future.
  *
  */

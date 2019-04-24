@@ -16,14 +16,14 @@ if (($_GET['btnSend']) || ($_GET['btnSendAuto'])) {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<!-- Propulsed by Ampache | ampache.org -->
+<!-- Propulsed by aMuzak | ampcore -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
     if ($_GET['btnSendAuto']) {
         echo '<meta http-equiv="refresh" content="1">';
     }
 ?>
-<title>Ampache UPnP</title>
+<title>aMuzak UPnP</title>
 <style type="text/css" media="screen">
 body {
     color:black;
@@ -38,7 +38,7 @@ body {
 
 <body>
 <form method="get" action="">
-  <label>Ampache UPnP backend enabled.
+  <label>aMuzak UPnP backend enabled.
   </label>
   <br />
   <br />

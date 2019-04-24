@@ -118,7 +118,7 @@ switch ($_REQUEST['action']) {
             $new_pass = $_POST['db_password'];
 
             if (!strlen($new_user) || !strlen($new_pass)) {
-                AmpError::add('general', T_('Error: Ampache SQL Username or Password missing'));
+                AmpError::add('general', T_('Error: aMuzak SQL Username or Password missing'));
                 require_once 'templates/show_install.inc.php';
                 break;
             }

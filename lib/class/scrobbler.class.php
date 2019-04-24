@@ -78,7 +78,7 @@ class scrobbler
                         'method' => $method,
                         'header' => array(
                                 'Host: ' . $this->host,
-                                'User-Agent: Ampache/' . AmpConfig::get('version')
+                                'User-Agent: aMuzak/' . AmpConfig::get('version')
                         ),
                 )
         );
