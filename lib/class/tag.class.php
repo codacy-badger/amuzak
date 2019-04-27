@@ -660,16 +660,16 @@ class Tag extends database_object implements library_item
     public static function clean_to_existing($tags)
     {
         if (is_array($tags)) {
-            $ar = $tags;
+            $taglist = $tags;
         } else {
-            $filterfolk  = str_replace('Folk, World, & Country', 'Folk World & Country', $tags);
-            $filterunder = str_replace('_', ',', $filterfolk);
-            $filter      = str_replace(';', ',', $filterunder);
-            $ar          = explode(",", $filter);
+            $filterfolk       = str_replace('Folk, World, & Country', 'Folk World & Country', $tags);
+            $filterunder      = str_replace('_', ',', $filterfolk);
+            $filter           = str_replace(';', ',', $filterunder);
+            $taglist          = explode(",", $filter);
         }
 
         $ret = array();
-        foreach ($ar as $tag) {
+        foreach ($taglist as $tag) {
             $tag = trim($tag);
             if (!empty($tag)) {
                 if (self::tag_exists($tag)) {

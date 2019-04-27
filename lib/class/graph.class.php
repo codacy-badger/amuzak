@@ -39,21 +39,21 @@ class Graph
     {
         switch ($zoom) {
             case 'hour':
-                $df = "DATE_FORMAT(FROM_UNIXTIME(" . $field . "), '%Y-%m-%d %H:00:00')";
+                $date_fmt = "DATE_FORMAT(FROM_UNIXTIME(" . $field . "), '%Y-%m-%d %H:00:00')";
                 break;
             case 'year':
-                $df = "DATE_FORMAT(FROM_UNIXTIME(" . $field . "), '%Y-01-01')";
+                $date_fmt = "DATE_FORMAT(FROM_UNIXTIME(" . $field . "), '%Y-01-01')";
                 break;
             case 'month':
-                $df = "DATE_FORMAT(FROM_UNIXTIME(" . $field . "), '%Y-%m-01')";
+                $date_fmt = "DATE_FORMAT(FROM_UNIXTIME(" . $field . "), '%Y-%m-01')";
                 break;
             case 'day':
             default:
-                $df = "DATE_FORMAT(FROM_UNIXTIME(" . $field . "), '%Y-%m-%d')";
+                $date_fmt = "DATE_FORMAT(FROM_UNIXTIME(" . $field . "), '%Y-%m-%d')";
                 break;
         }
 
-        return "UNIX_TIMESTAMP(" . $df . ")";
+        return "UNIX_TIMESTAMP(" . $date_fmt . ")";
     }
 
     protected function get_user_sql_where($user = 0, $object_type = null, $object_id = 0, $start_date = null, $end_date = null)
@@ -201,10 +201,10 @@ class Graph
 
     protected function get_user_hits_pts($user = 0, $object_type = 'song', $object_id = 0, $start_date = null, $end_date = null, $zoom = 'day')
     {
-        $df    = $this->get_sql_date_format("`object_count`.`date`", $zoom);
-        $where = $this->get_user_sql_where($user, $object_type, $object_id, $start_date, $end_date);
-        $sql   = "SELECT " . $df . " AS `zoom_date`, COUNT(`object_count`.`id`) AS `hits` FROM `object_count` " . $where .
-                " GROUP BY " . $df;
+        $date_fmt = $this->get_sql_date_format("`object_count`.`date`", $zoom);
+        $where    = $this->get_user_sql_where($user, $object_type, $object_id, $start_date, $end_date);
+        $sql      = "SELECT " . $date_fmt . " AS `zoom_date`, COUNT(`object_count`.`id`) AS `hits` FROM `object_count` " . $where .
+                    " GROUP BY " . $date_fmt;
         $db_results = Dba::read($sql);
 
         $values = array();
@@ -217,11 +217,11 @@ class Graph
 
     protected function get_user_object_count_pts($user = 0, $object_type = 'song', $object_id = 0, $start_date = null, $end_date = null, $zoom = 'day', $column = 'size')
     {
-        $df    = $this->get_sql_date_format("`object_count`.`date`", $zoom);
-        $where = $this->get_user_sql_where($user, $object_type, $object_id, $start_date, $end_date);
-        $sql   = "SELECT " . $df . " AS `zoom_date`, SUM(`" . $object_type . "`.`" . $column . "`) AS `total` FROM `object_count` " .
-                " JOIN `" . $object_type . "` ON `" . $object_type . "`.`id` = `object_count`.`object_id` " . $where .
-                " GROUP BY " . $df;
+        $date_fmt = $this->get_sql_date_format("`object_count`.`date`", $zoom);
+        $where    = $this->get_user_sql_where($user, $object_type, $object_id, $start_date, $end_date);
+        $sql      = "SELECT " . $date_fmt . " AS `zoom_date`, SUM(`" . $object_type . "`.`" . $column . "`) AS `total` FROM `object_count` " .
+                    " JOIN `" . $object_type . "` ON `" . $object_type . "`.`id` = `object_count`.`object_id` " . $where .
+                    " GROUP BY " . $date_fmt;
         $db_results = Dba::read($sql);
 
         $values = array();
@@ -245,10 +245,10 @@ class Graph
     protected function get_catalog_files_pts($catalog = 0, $object_type = 'song', $object_id = 0, $start_date = null, $end_date = null, $zoom = 'day')
     {
         $start_date = $start_date ?: ($end_date ?: time()) - 864000;
-        $df         = $this->get_sql_date_format("`" . $object_type . "`.`addition_time`", $zoom);
+        $date_fmt   = $this->get_sql_date_format("`" . $object_type . "`.`addition_time`", $zoom);
         $where      = $this->get_catalog_sql_where($object_type, $object_id, $catalog, $start_date, $end_date);
-        $sql        = "SELECT " . $df . " AS `zoom_date`,  ((SELECT COUNT(`t2`.`id`) FROM `" . $object_type . "` `t2` WHERE `t2`.`addition_time` < `zoom_date`) + COUNT(`" . $object_type . "`.`id`)) AS `files` FROM `" . $object_type . "` " . $where .
-                " GROUP BY " . $df;
+        $sql        = "SELECT " . $date_fmt . " AS `zoom_date`,  ((SELECT COUNT(`t2`.`id`) FROM `" . $object_type . "` `t2` WHERE `t2`.`addition_time` < `zoom_date`) + COUNT(`" . $object_type . "`.`id`)) AS `files` FROM `" . $object_type . "` " . $where .
+                      " GROUP BY " . $date_fmt;
         $db_results = Dba::read($sql);
 
         $values = array();
@@ -262,10 +262,10 @@ class Graph
     protected function get_catalog_size_pts($catalog = 0, $object_type = 'song', $object_id = 0, $start_date = null, $end_date = null, $zoom = 'day')
     {
         $start_date = $start_date ?: ($end_date ?: time()) - 864000;
-        $df         = $this->get_sql_date_format("`" . $object_type . "`.`addition_time`", $zoom);
+        $date_fmt   = $this->get_sql_date_format("`" . $object_type . "`.`addition_time`", $zoom);
         $where      = $this->get_catalog_sql_where($object_type, $object_id, $catalog, $start_date, $end_date);
-        $sql        = "SELECT " . $df . " AS `zoom_date`,  ((SELECT SUM(`t2`.`size`) FROM `" . $object_type . "` `t2` WHERE `t2`.`addition_time` < `zoom_date`) + SUM(`" . $object_type . "`.`size`)) AS `storage` FROM `" . $object_type . "` " . $where .
-                " GROUP BY " . $df;
+        $sql        = "SELECT " . $date_fmt . " AS `zoom_date`,  ((SELECT SUM(`t2`.`size`) FROM `" . $object_type . "` `t2` WHERE `t2`.`addition_time` < `zoom_date`) + SUM(`" . $object_type . "`.`size`)) AS `storage` FROM `" . $object_type . "` " . $where .
+                " GROUP BY " . $date_fmt;
         $db_results = Dba::read($sql);
 
         $values = array();

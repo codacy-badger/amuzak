@@ -786,9 +786,9 @@ class Search extends playlist_object
      *
      * Returns the name of the saved search corresponding to the given ID
      */
-    public static function get_name_byid($id)
+    public static function get_name_byid($search_id)
     {
-        $sql        = "SELECT `name` FROM `search` WHERE `id` = '$id'";
+        $sql        = "SELECT `name` FROM `search` WHERE `id` = '$search_id'";
         $db_results = Dba::read($sql);
         $row        = Dba::fetch_assoc($db_results);
 
@@ -873,9 +873,9 @@ class Search extends playlist_object
      */
     public function delete()
     {
-        $id  = Dba::escape($this->id);
-        $sql = "DELETE FROM `search` WHERE `id` = ?";
-        Dba::write($sql, array($id));
+        $search_id  = Dba::escape($this->id);
+        $sql        = "DELETE FROM `search` WHERE `id` = ?";
+        Dba::write($sql, array($search_id));
 
         return true;
     }

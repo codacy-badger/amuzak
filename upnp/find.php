@@ -88,7 +88,7 @@ class UPnPFind
         $response = array();
         do {
             $buf = null;
-            if (@socket_recvfrom($socket, $buf, 1024, MSG_WAITALL, $from, $port) === false) {
+            if (@socket_recvfrom($socket, $buf, 1024, MSG_WAITALL, null, null) === false) {
                 throw new \RuntimeException('Error running @socket_recvfrom');
             }
 

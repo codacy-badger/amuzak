@@ -213,7 +213,7 @@ class Session
         if (isset($data['username'])) {
             $username = $data['username'];
         }
-        $ip    = $_SERVER['REMOTE_ADDR'] ? inet_pton($_SERVER['REMOTE_ADDR']) : '0';
+        $remip = $_SERVER['REMOTE_ADDR'] ? inet_pton($_SERVER['REMOTE_ADDR']) : '0';
         $type  = $data['type'];
         $value = '';
         if (isset($data['value'])) {
@@ -247,7 +247,7 @@ class Session
         /* Insert the row */
         $sql = 'INSERT INTO `session` (`id`,`username`,`ip`,`type`,`agent`,`value`,`expire`,`geo_latitude`,`geo_longitude`, `geo_name`) ' .
             'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
-        $db_results = Dba::write($sql, array($key, $username, $ip, $type, $agent, $value, $expire, $latitude, $longitude, $geoname));
+        $db_results = Dba::write($sql, array($key, $username, $remip, $type, $agent, $value, $expire, $latitude, $longitude, $geoname));
 
         if (!$db_results) {
             debug_event('session', 'Session creation failed', '1');

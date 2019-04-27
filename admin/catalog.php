@@ -117,14 +117,13 @@ switch ($_REQUEST['action']) {
         $catalog = Catalog::create_from_id($_REQUEST['catalog_id']);
         $nexturl = AmpConfig::get('web_path') . '/admin/catalog.php?action=delete_catalog&amp;catalog_id=' . scrub_out($_REQUEST['catalog_id']);
         show_confirmation(T_('Delete Catalog'), T_('Do you really want to delete this catalog?') . " -- $catalog->name ($catalog->path)", $nexturl, 1);
-        break;
     break;
     case 'enable_disabled':
         if (AmpConfig::get('demo_mode')) {
             break;
         }
 
-        $songs = scrub_in($_REQUEST['song']);
+        $songs = (int) scrub_in($_REQUEST['song']);
 
         if (count($songs)) {
             foreach ($songs as $song_id) {

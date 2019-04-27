@@ -255,32 +255,32 @@ class Stream_Playlist
             case 'localplay':
             case 'web_player':
                 // These are valid, but witchy
-                $ct       = "";
+                $content  = "";
                 $redirect = false;
                 unset($ext);
             break;
             case 'pls':
-                $ct = 'audio/x-scpls';
+                $content = 'audio/x-scpls';
             break;
             case 'ram':
-                $ct = 'audio/x-pn-realaudio ram';
+                $content = 'audio/x-pn-realaudio ram';
             break;
             case 'simple_m3u':
-                $ext = 'm3u';
-                $ct  = 'audio/x-mpegurl';
+                $ext      = 'm3u';
+                $content  = 'audio/x-mpegurl';
             break;
             case 'xspf':
-                $ct = 'application/xspf+xml';
+                $content = 'application/xspf+xml';
             break;
             case 'hls':
-                $ext = 'm3u8';
-                $ct  = 'application/vnd.apple.mpegurl';
+                $ext      = 'm3u8';
+                $content  = 'application/vnd.apple.mpegurl';
             break;
             case 'm3u':
             default:
                 // Assume M3U if the pooch is screwed
-                $ext = $type = 'm3u';
-                $ct  = 'audio/x-mpegurl';
+                $ext      = $type      = 'm3u';
+                $content  = 'audio/x-mpegurl';
             break;
         }
 
@@ -295,7 +295,7 @@ class Stream_Playlist
         if (isset($ext)) {
             header('Cache-control: public');
             header('Content-Disposition: filename=ampache_playlist.' . $ext);
-            header('Content-Type: ' . $ct . ';');
+            header('Content-Type: ' . $content . ';');
         }
 
         $this->{'create_' . $type}();

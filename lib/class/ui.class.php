@@ -432,10 +432,10 @@ class UI
 
     public static function is_grid_view($type)
     {
-        $isgv = true;
-        $cn   = 'browse_' . $type . '_grid_view';
-        if (isset($_COOKIE[$cn])) {
-            $isgv = ($_COOKIE[$cn] == 'true');
+        $isgv   = true;
+        $name   = 'browse_' . $type . '_grid_view';
+        if (isset($_COOKIE[$name])) {
+            $isgv = ($_COOKIE[$name] == 'true');
         }
 
         return $isgv;
