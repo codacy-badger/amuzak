@@ -403,7 +403,7 @@ class Query
             case 'user':
             case 'to_user':
             case 'enabled':
-                $this->_state['filter'][$key] = intval($value);
+                $this->_state['filter'][$key] = (int) ($value);
             break;
             case 'exact_match':
             case 'alpha_match':
@@ -751,7 +751,7 @@ class Query
      */
     public function set_start($start)
     {
-        $start                 = intval($start);
+        $start                 = (int) ($start);
         $this->_state['start'] = $start;
     } // set_start
 
@@ -1430,7 +1430,7 @@ class Query
                     $filter_sql = " `playlist`.`name` LIKE '" . Dba::escape($value) . "%' AND ";
                 break;
                 case 'playlist_type':
-                    $user_id    = intval($GLOBALS['user']->id);
+                    $user_id    = (int) ($GLOBALS['user']->id);
                     $filter_sql = " (`playlist`.`type` = 'public' OR `playlist`.`user`='$user_id') AND ";
                 break;
                 default:
@@ -1457,7 +1457,7 @@ class Query
                     $filter_sql = " `search`.`name` LIKE '" . Dba::escape($value) . "%' AND ";
                 break;
                 case 'playlist_type':
-                    $user_id    = intval($GLOBALS['user']->id);
+                    $user_id    = (int) ($GLOBALS['user']->id);
                     $filter_sql = " (`search`.`type` = 'public' OR `search`.`user`='$user_id') AND ";
                 break;
             } // end switch on $filter

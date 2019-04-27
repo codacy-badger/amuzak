@@ -394,7 +394,7 @@ class Daap_Api
             if ($input[1] == 'items') {
                 $finfo = explode('.', $input[2]);
                 if (count($finfo) == 2) {
-                    $id   = intval($finfo[0]);
+                    $id   = (int) ($finfo[0]);
                     $type = $finfo[1];
                     
                     $params  = '';
@@ -414,7 +414,7 @@ class Daap_Api
         } elseif (count($input) == 4) {
             // Playlist
             if ($input[1] == 'containers' && $input[3] == 'items') {
-                $id = intval($input[2]);
+                $id = (int) ($input[2]);
                 
                 self::check_session('daap.playlistsongs');
                 

@@ -61,13 +61,13 @@ if (AmpConfig::get('transcode_player_customize')) {
         for ($i = 0; $i < count($vparts); $i += 2) {
             switch ($vparts[$i]) {
                 case 'maxbitrate':
-                    $maxbitrate = intval($vparts[$i + 1]);
+                    $maxbitrate = (int) ($vparts[$i + 1]);
                     break;
                 case 'resolution':
                     $resolution = $vparts[$i + 1];
                     break;
                 case 'quality':
-                    $quality = intval($vparts[$i + 1]);
+                    $quality = (int) ($vparts[$i + 1]);
                     break;
             }
         }

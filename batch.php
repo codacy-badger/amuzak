@@ -82,7 +82,7 @@ if (Core::is_playable_item($_REQUEST['action'])) {
             $name      = $GLOBALS['user']->username . ' - Playlist';
         break;
         case 'browse':
-            $objectid               = intval(scrub_in($_REQUEST['browse_id']));
+            $objectid               = (int) scrub_in($_REQUEST['browse_id']);
             $browse                 = new Browse($objectid);
             $browse_media_ids       = $browse->get_saved();
             foreach ($browse_media_ids as $media_id) {

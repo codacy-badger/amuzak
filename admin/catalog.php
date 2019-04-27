@@ -30,9 +30,9 @@ if (!Access::check('interface', '100')) {
 
 UI::show_header();
 
-$catalogs = $_REQUEST['catalogs'];
+$catalogs = scrub_in($_REQUEST['catalogs']);
 // If only one catalog, check it is ready.
-if (is_array($catalogs) && count($catalogs) == 1 && $_REQUEST['action'] !== 'delete_catalog' && $_REQUEST['action'] !== 'show_delete_catalog') {
+if (is_array($catalogs) && count($catalogs) == 1 && scrub_in($_REQUEST['action']) !== 'delete_catalog' && scrub_in($_REQUEST['action']) !== 'show_delete_catalog') {
     // If not ready, display the data to make it ready / stop the action.
     $catalog = Catalog::create_from_id($catalogs[0]);
     if (!$catalog->isReady()) {
@@ -124,7 +124,7 @@ switch ($_REQUEST['action']) {
             break;
         }
 
-        $songs = $_REQUEST['song'];
+        $songs = scrub_in($_REQUEST['song']);
 
         if (count($songs)) {
             foreach ($songs as $song_id) {

@@ -823,8 +823,8 @@ class Search extends playlist_object
      */
     public static function run($data)
     {
-        $limit  = intval($data['limit']);
-        $offset = intval($data['offset']);
+        $limit  = (int) ($data['limit']);
+        $offset = (int) ($data['offset']);
         $data   = self::clean_request($data);
 
         $search = new Search(null, $data['type']);

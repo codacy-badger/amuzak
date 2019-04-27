@@ -690,7 +690,7 @@ class Subsonic_Api
                     $operator = 4;
                     $ftype    = "artist";
                 } else {
-                    $finput   = intval($musicFolderId);
+                    $finput   = (int) ($musicFolderId);
                     $operator = 0;
                     $ftype    = "catalog";
                 }
@@ -1432,7 +1432,7 @@ class Subsonic_Api
                 $expires = $input['expires'];
                 // Parse as a string to work on 32-bit computers
                 if (strlen($expires) > 3) {
-                    $expires = intval(substr($expires, 0, - 3));
+                    $expires = (int) (substr($expires, 0, - 3));
                 }
                 $expire_days = round(($expires - time()) / 86400, 0, PHP_ROUND_HALF_EVEN);
             } else {
@@ -1506,7 +1506,7 @@ class Subsonic_Api
                     // Parse as a string to work on 32-bit computers
                     $expires = $input['expires'];
                     if (strlen($expires) > 3) {
-                        $expires = intval(substr($expires, 0, - 3));
+                        $expires = (int) (substr($expires, 0, - 3));
                     }
                     if ($expires > 0) {
                         $expires = ($expires - $share->creation_date) / 86400;

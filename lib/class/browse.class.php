@@ -75,7 +75,7 @@ class Browse extends Query
      */
     public function add_supplemental_object($class, $uid)
     {
-        $_SESSION['browse']['supplemental'][$this->id][$class] = intval($uid);
+        $_SESSION['browse']['supplemental'][$this->id][$class] = (int) ($uid);
 
         return true;
     } // add_supplemental_object

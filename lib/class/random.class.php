@@ -233,7 +233,7 @@ class Random
     public static function advanced($type, $data)
     {
         /* Figure out our object limit */
-        $limit = intval($data['random']);
+        $limit = (int) ($data['random']);
 
         // Generate our matchlist
 

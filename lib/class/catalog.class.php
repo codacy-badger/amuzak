@@ -763,7 +763,7 @@ abstract class Catalog extends database_object
         if ($user_id === null) {
             $user_id = $GLOBALS['user']->id;
         }
-        $user_id = intval($user_id);
+        $user_id = (int) ($user_id);
 
         switch ($type) {
             case 'song':
@@ -1472,7 +1472,7 @@ abstract class Catalog extends database_object
         $new_song->size                  = $results['size'];
         $new_song->time                  = $results['time'];
         $new_song->mime                  = $results['mime'];
-        $new_song->track                 = intval($results['track']);
+        $new_song->track                 = (int) ($results['track']);
         $new_song->mbid                  = $results['mb_trackid'];
         $new_song->label                 = $results['publisher'];
         $new_song->composer              = $results['composer'];
@@ -1777,7 +1777,7 @@ abstract class Catalog extends database_object
             return 0;
         }
 
-        $year = intval($year);
+        $year = (int) ($year);
         if ($year < 0 || $year > 9999) {
             return 0;
         }
@@ -2119,17 +2119,17 @@ abstract class Catalog extends database_object
 
                     $xml                         = array();
                     $xml['key']                  = $results['id'];
-                    $xml['dict']['Track ID']     = intval($results['id']);
+                    $xml['dict']['Track ID']     = (int) ($results['id']);
                     $xml['dict']['Name']         = $song->title;
                     $xml['dict']['Artist']       = $song->f_artist_full;
                     $xml['dict']['Album']        = $song->f_album_full;
-                    $xml['dict']['Total Time']   = intval($song->time) * 1000; // iTunes uses milliseconds
-                    $xml['dict']['Track Number'] = intval($song->track);
-                    $xml['dict']['Year']         = intval($song->year);
+                    $xml['dict']['Total Time']   = (int) ($song->time) * 1000; // iTunes uses milliseconds
+                    $xml['dict']['Track Number'] = (int) ($song->track);
+                    $xml['dict']['Year']         = (int) ($song->year);
                     $xml['dict']['Date Added']   = date("Y-m-d\TH:i:s\Z", $song->addition_time);
-                    $xml['dict']['Bit Rate']     = intval($song->bitrate / 1000);
-                    $xml['dict']['Sample Rate']  = intval($song->rate);
-                    $xml['dict']['Play Count']   = intval($song->played);
+                    $xml['dict']['Bit Rate']     = (int) ($song->bitrate / 1000);
+                    $xml['dict']['Sample Rate']  = (int) ($song->rate);
+                    $xml['dict']['Play Count']   = (int) ($song->played);
                     $xml['dict']['Track Type']   = "URL";
                     $xml['dict']['Location']     = Song::play_url($song->id);
                     echo xoutput_from_array($xml, true, 'itunes');

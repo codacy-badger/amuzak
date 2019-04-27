@@ -159,7 +159,7 @@ function check_php_memory()
  */
 function check_php_timelimit()
 {
-    $current = intval(ini_get('max_execution_time'));
+    $current = (int) (ini_get('max_execution_time'));
 
     return ($current >= 60 || $current == 0);
 }

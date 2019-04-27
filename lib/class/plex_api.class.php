@@ -1482,7 +1482,7 @@ class Plex_Api
                             Plex_XML_Data::setPlaylistItems($r, $playlist);
                         }
                     } elseif ($n == 3) {
-                        $index = intval($params[2]);
+                        $index = (int) ($params[2]);
                         if ($delMode) {
                             $playlist->delete_track_number($index);
                             $playlist->regenerate_track_numbers();

@@ -152,11 +152,11 @@ class Tag extends database_object implements library_item
         }
 
         if ($user === true) {
-            $uid = intval($GLOBALS['user']->id);
+            $uid = (int) ($GLOBALS['user']->id);
         } elseif ($user === false) {
             $uid = 0;
         } else {
-            $uid = intval($user);
+            $uid = (int) ($user);
         }
 
         // Check and see if the tag exists, if not create it, we need the tag id from this
@@ -297,20 +297,20 @@ class Tag extends database_object implements library_item
     public static function add_tag_map($type, $object_id, $tag_id, $user=true)
     {
         if ($user === true) {
-            $uid = intval($GLOBALS['user']->id);
+            $uid = (int) ($GLOBALS['user']->id);
         } elseif ($user === false) {
             $uid = 0;
         } else {
-            $uid = intval($user);
+            $uid = (int) ($user);
         }
         
-        $tag_id = intval($tag_id);
+        $tag_id = (int) ($tag_id);
         if (!Core::is_library_item($type)) {
             debug_event('tag.class', $type . " is not a library item.", 3);
 
             return false;
         }
-        $id = intval($object_id);
+        $id = (int) ($object_id);
 
         if (!$tag_id || !$id) {
             return false;
@@ -439,9 +439,9 @@ class Tag extends database_object implements library_item
             return array();
         }
 
-        $object_id = intval($object_id);
+        $object_id = (int) ($object_id);
 
-        $limit = intval($limit);
+        $limit = (int) ($limit);
         $sql   = "SELECT `tag_map`.`id`, `tag_map`.`tag_id`, `tag`.`name`, `tag_map`.`user` FROM `tag` " .
             "LEFT JOIN `tag_map` ON `tag_map`.`tag_id`=`tag`.`id` " .
             "WHERE `tag_map`.`object_type`='$type' AND `tag_map`.`object_id`='$object_id' " .
@@ -498,9 +498,9 @@ class Tag extends database_object implements library_item
         if ($count) {
             $limit_sql = "LIMIT ";
             if ($offset) {
-                $limit_sql .= intval($offset) . ',';
+                $limit_sql .= (int) ($offset) . ',';
             }
-            $limit_sql .= intval($count);
+            $limit_sql .= (int) ($count);
         }
 
         $sql = "SELECT DISTINCT `tag_map`.`object_id` FROM `tag_map` " .
@@ -725,11 +725,11 @@ class Tag extends database_object implements library_item
         }
 
         if ($user === true) {
-            $uid = intval($GLOBALS['user']->id);
+            $uid = (int) ($GLOBALS['user']->id);
         } elseif ($user === false) {
             $uid = 0;
         } else {
-            $uid = intval($user);
+            $uid = (int) ($user);
         }
 
         $sql = "DELETE FROM `tag_map` WHERE `tag_id` = ? AND `object_type` = ? AND `object_id` = ? AND `user` = ?";
@@ -829,11 +829,11 @@ class Tag extends database_object implements library_item
     public static function can_edit_tag_map($object_type, $object_id, $user = true)
     {
         if ($user === true) {
-            $uid = intval($GLOBALS['user']->id);
+            $uid = (int) ($GLOBALS['user']->id);
         } elseif ($user === false) {
             $uid = 0;
         } else {
-            $uid = intval($user);
+            $uid = (int) ($user);
         }
         
         if ($uid > 0) {

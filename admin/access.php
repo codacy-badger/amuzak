@@ -95,7 +95,7 @@ switch ($_REQUEST['action']) {
     case 'show_add_rpc':
     case 'show_add_local':
     case 'show_add_advanced':
-        $action = $_REQUEST['action'];
+        $action = scrub_in($_REQUEST['action']);
         require_once AmpConfig::get('prefix') . UI::find_template('show_add_access.inc.php');
     break;
     case 'show_edit_record':

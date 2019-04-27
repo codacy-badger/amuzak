@@ -282,7 +282,7 @@ class Democratic extends Tmp_Playlist
     {
         // FIXME: Shouldn't this return object_type?
 
-        $offset = intval($offset);
+        $offset = (int) ($offset);
 
         $items = $this->get_items($offset + 1);
 

@@ -373,7 +373,7 @@ class Song extends database_object implements media, library_item
             return false;
         }
 
-        $this->id = intval($song_id);
+        $this->id = (int) ($song_id);
 
         if (self::isCustomMetadataEnabled()) {
             $this->initializeMetadata();
@@ -450,7 +450,7 @@ class Song extends database_object implements media, library_item
                 $albumartist_id   = Artist::check($albumartist, $albumartist_mbid);
             }
         } else {
-            $albumartist_id = intval($results['albumartist_id']);
+            $albumartist_id = (int) ($results['albumartist_id']);
         }
         $artist_id = null;
         if (!isset($results['artist_id'])) {
@@ -458,13 +458,13 @@ class Song extends database_object implements media, library_item
             $artist_mbid = Catalog::trim_slashed_list($artist_mbid);
             $artist_id   = Artist::check($artist, $artist_mbid);
         } else {
-            $artist_id = intval($results['artist_id']);
+            $artist_id = (int) ($results['artist_id']);
         }
         $album_id = null;
         if (!isset($results['album_id'])) {
             $album_id = Album::check($album, $year, $disk, $album_mbid, $album_mbid_group, $albumartist_id, $release_type);
         } else {
-            $album_id = intval($results['album_id']);
+            $album_id = (int) ($results['album_id']);
         }
 
         $sql = 'INSERT INTO `song` (`file`, `catalog`, `album`, `artist`, ' .
@@ -650,7 +650,7 @@ class Song extends database_object implements media, library_item
      */
     public function _get_ext_info()
     {
-        $song_id = intval($this->id);
+        $song_id = (int) ($this->id);
 
         if (parent::is_cached('song_data', $song_id)) {
             return parent::get_from_cache('song_data', $song_id);
@@ -1544,7 +1544,7 @@ class Song extends database_object implements media, library_item
         }
 
         // Format the Bitrate
-        $this->f_bitrate = intval($this->bitrate / 1000) . "-" . strtoupper($this->mode);
+        $this->f_bitrate = (int) ($this->bitrate / 1000) . "-" . strtoupper($this->mode);
 
         // Format the Time
         $min            = floor($this->time / 60);
@@ -1877,7 +1877,7 @@ class Song extends database_object implements media, library_item
      */
     public static function get_recently_played($user_id = 0)
     {
-        $user_id = intval($user_id);
+        $user_id = (int) ($user_id);
 
         $sql = "SELECT `object_id`, `user`, `object_type`, `date`, `agent`, `geo_latitude`, `geo_longitude`, `geo_name` " .
                 "FROM `object_count` WHERE `object_type` = 'song' AND `count_type` = 'stream' ";

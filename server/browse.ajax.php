@@ -180,13 +180,13 @@ switch ($_REQUEST['action']) {
                 $browse->set_grid_view($value);
             break;
             case 'limit':
-                $value = intval($value);
+                $value = (int) ($value);
                 if ($value > 0) {
                     $browse->set_offset($value);
                 }
             break;
             case 'custom':
-                $value = intval($value);
+                $value = (int) ($value);
                 $limit = $browse->get_offset();
                 if ($limit > 0 && $value > 0) {
                     $total = $browse->get_total();

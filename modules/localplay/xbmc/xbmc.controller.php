@@ -638,7 +638,7 @@ class AmpacheXbmc extends localplay_controller
             $appprop = $this->_xbmc->Application->GetProperties(array(
                 'properties' => array('volume')
             ));
-            $array['volume']    = intval($appprop['volume']);
+            $array['volume']    = (int) ($appprop['volume']);
 
             try {
                 $currentplay = $this->_xbmc->Player->GetItem(array(

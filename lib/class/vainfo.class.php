@@ -611,8 +611,8 @@ class vainfo
             $parsed['mode'] = 'cbr';
         }
         $parsed['bitrate']       = $tags['audio']['bitrate'];
-        $parsed['channels']      = intval($tags['audio']['channels']);
-        $parsed['rate']          = intval($tags['audio']['sample_rate']);
+        $parsed['channels']      = (int) ($tags['audio']['channels']);
+        $parsed['rate']          = (int) ($tags['audio']['sample_rate']);
         $parsed['size']          = $this->_forcedSize ?: $tags['filesize'];
         $parsed['encoding']      = $tags['encoding'];
         $parsed['mime']          = $tags['mime_type'];

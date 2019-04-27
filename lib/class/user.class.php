@@ -151,7 +151,7 @@ class User extends database_object
             return false;
         }
 
-        $this->id = intval($user_id);
+        $this->id = (int) ($user_id);
 
         $info = $this->_get_info();
 
@@ -200,7 +200,7 @@ class User extends database_object
      */
     private function _get_info()
     {
-        $id = intval($this->id);
+        $id = (int) ($this->id);
 
         if (parent::is_cached('user', $id)) {
             return parent::get_from_cache('user', $id);

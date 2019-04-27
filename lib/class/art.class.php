@@ -92,7 +92,7 @@ class Art extends database_object
             return false;
         }
         $this->type = $type;
-        $this->uid  = intval($uid);
+        $this->uid  = (int) ($uid);
         $this->kind = $kind;
     }
     // constructor
@@ -420,8 +420,8 @@ class Art extends database_object
         }
 
         $dimensions = Core::image_dimensions($source);
-        $width      = intval($dimensions['width']);
-        $height     = intval($dimensions['height']);
+        $width      = (int) ($dimensions['width']);
+        $height     = (int) ($dimensions['height']);
         $sizetext   = 'original';
 
         if (!self::check_dimensions($dimensions)) {
@@ -444,8 +444,8 @@ class Art extends database_object
 
     public static function check_dimensions($dimensions)
     {
-        $width  = intval($dimensions['width']);
-        $height = intval($dimensions['height']);
+        $width  = (int) ($dimensions['width']);
+        $height = (int) ($dimensions['height']);
 
         if ($width > 0 && $height > 0) {
             $minw = AmpConfig::get('album_art_min_width');
@@ -645,8 +645,8 @@ class Art extends database_object
             return false;
         }
 
-        $width    = intval($size['width']);
-        $height   = intval($size['height']);
+        $width    = (int) ($size['width']);
+        $height   = (int) ($size['height']);
         $sizetext = $width . 'x' . $height;
 
         $sql = "DELETE FROM `image` WHERE `object_id` = ? AND `object_type` = ? AND `size` = ? AND `kind` = ?";

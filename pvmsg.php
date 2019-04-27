@@ -112,7 +112,7 @@ switch ($action) {
 
         $msgs = explode(',', $_REQUEST['msgs']);
         foreach ($msgs as $msg_id) {
-            $msg_id = intval($msg_id);
+            $msg_id = (int) ($msg_id);
             $pvmsg  = new PrivateMsg($msg_id);
             if ($pvmsg->id && $pvmsg->to_user === $GLOBALS['user']->id) {
                 $pvmsg->delete();

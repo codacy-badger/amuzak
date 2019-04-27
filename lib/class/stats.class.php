@@ -323,11 +323,11 @@ class Stats
             $count = AmpConfig::get('popular_threshold');
         }
 
-        $count = intval($count);
+        $count = (int) ($count);
         if (!$offset) {
             $limit = $count;
         } else {
-            $limit = intval($offset) . "," . $count;
+            $limit = (int) ($offset) . "," . $count;
         }
 
         $sql = '';
@@ -393,12 +393,12 @@ class Stats
             $count = AmpConfig::get('popular_threshold');
         }
 
-        $count = intval($count);
+        $count = (int) ($count);
         $type  = self::validate_type($type);
         if (!$offset) {
             $limit = $count;
         } else {
-            $limit = intval($offset) . "," . $count;
+            $limit = (int) ($offset) . "," . $count;
         }
 
         $sql = self::get_recent_sql($type);
@@ -422,7 +422,7 @@ class Stats
      */
     public static function get_user($count, $type, $user, $full = '')
     {
-        $count = intval($count);
+        $count = (int) ($count);
         $type  = self::validate_type($type);
 
         /* If full then don't limit on date */

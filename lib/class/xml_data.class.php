@@ -56,7 +56,7 @@ class XML_Data
      */
     public static function set_offset($offset)
     {
-        $offset       = intval($offset);
+        $offset       = (int) ($offset);
         self::$offset = $offset;
     }
     // set_offset
@@ -78,7 +78,7 @@ class XML_Data
         if (strtolower($limit) == "none") {
             self::$limit = null;
         } else {
-            self::$limit = intval($limit);
+            self::$limit = (int) ($limit);
         }
     }
     // set_limit

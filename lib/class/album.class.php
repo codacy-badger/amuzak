@@ -431,7 +431,7 @@ class Album extends database_object implements library_item
         $trimmed      = Catalog::trim_prefix(trim($name));
         $name         = $trimmed['string'];
         $prefix       = $trimmed['prefix'];
-        $album_artist = intval($album_artist);
+        $album_artist = (int) ($album_artist);
         $album_artist = ($album_artist <= 0) ? null : $album_artist;
         $mbid         = empty($mbid) ? null : $mbid;
         $mbid_group   = empty($mbid_group) ? null : $mbid_group;
