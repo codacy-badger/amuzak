@@ -123,7 +123,7 @@ switch ($_REQUEST['action']) {
             break;
         }
 
-        $songs = (int) scrub_in($_REQUEST['song']);
+        $songs = $_REQUEST['song'];
 
         if (count($songs)) {
             foreach ($songs as $song_id) {

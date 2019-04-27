@@ -223,7 +223,7 @@ class Tmp_Playlist extends database_object
         /* Clean any other playlists associated with this session */
         self::session_clean($data['session_id'], $list_id);
 
-        return $id;
+        return $list_id;
     } // create
 
     /**

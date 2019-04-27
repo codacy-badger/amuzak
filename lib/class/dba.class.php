@@ -128,7 +128,7 @@ class Dba
     /**
      * escape
      *
-     * This runs a escape on a variable so that it can be safely inserted
+     * This runs an escape on a variable so that it can be safely inserted
      * into the sql
      */
     public static function escape($var)
@@ -137,7 +137,7 @@ class Dba
         if (!$dbh) {
             debug_event('Dba', 'Wrong dbh.', 1);
 
-            return false;
+            return '';
         }
         $var = $dbh->quote($var);
         // This is slightly less ugly than it was, but still ugly
