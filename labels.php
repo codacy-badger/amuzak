@@ -91,7 +91,7 @@ switch ($_REQUEST['action']) {
         }
         break;
     case 'show':
-        $label_id = intval($_REQUEST['label']);
+        $label_id = (int) scrub_in($_REQUEST['label']);
         if (!$label_id) {
             if (!empty($_REQUEST['name'])) {
                 $label_id = Label::lookup($_REQUEST);

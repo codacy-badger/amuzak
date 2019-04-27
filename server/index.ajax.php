@@ -207,7 +207,7 @@ switch ($_REQUEST['action']) {
         $results['fslider_script'] = ob_get_clean();
     break;
     case 'songs':
-        $label_id = intval($_REQUEST['label']);
+        $label_id = (int) scrub_in($_REQUEST['label']);
 
         ob_start();
         if ($label_id > 0) {

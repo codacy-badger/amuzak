@@ -64,7 +64,7 @@
 <tr id="search_length">
         <td><?php echo T_('Length'); ?></td>
         <td>
-                <?php $name = 'length_' . intval($_POST['length']); ${$name} = ' selected="selected"'; ?>
+                <?php $name = 'length_' . (int) scrub_in($_POST['length']); ${$name} = ' selected="selected"'; ?>
                 <select name="length">
 <?php
             echo "\t\t\t" . '<option value="0" ' .

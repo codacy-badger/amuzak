@@ -68,7 +68,7 @@ switch ($_REQUEST['action']) {
         }
 
         $type       = 'album';
-        $object_id  = intval($_REQUEST['album_id']);
+        $object_id  = (int) scrub_in($_REQUEST['album_id']);
         $target_url = AmpConfig::get('web_path') . '/albums.php?action=show&amp;album=' . $object_id;
         require_once AmpConfig::get('prefix') . UI::find_template('show_update_items.inc.php');
         break;

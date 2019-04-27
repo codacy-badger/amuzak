@@ -52,7 +52,7 @@ if (isset($_REQUEST['player'])) {
 
 if (AmpConfig::get('transcode_player_customize')) {
     $transcode_to = scrub_in($_REQUEST['transcode_to']);
-    $bitrate      = intval($_REQUEST['bitrate']);
+    $bitrate      = (int) scrub_in($_REQUEST['bitrate']);
 
     // Trick to avoid LimitInternalRecursion reconfiguration
     $vsettings = $_REQUEST['vsettings'];
@@ -73,7 +73,7 @@ if (AmpConfig::get('transcode_player_customize')) {
         }
     }
 }
-$share_id         = intval($_REQUEST['share_id']);
+$share_id         = (int) scrub_in($_REQUEST['share_id']);
 $subtitle         = '';
 $send_all_in_once = false;
 
@@ -531,7 +531,7 @@ if ($transcode) {
             $ssize            = 10;
             $send_all_in_once = true; // Should we use temporary folder instead?
             debug_event('play', 'Sending all data in once.', 5);
-            $troptions['frame']    = intval($_REQUEST['segment']) * $ssize;
+            $troptions['frame']    = (int) scrub_in($_REQUEST['segment']) * $ssize;
             $troptions['duration'] = ($troptions['frame'] + $ssize <= $media->time) ? $ssize : ($media->time - $troptions['frame']);
         }
     }

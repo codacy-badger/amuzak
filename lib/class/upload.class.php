@@ -100,8 +100,8 @@ class Upload
                         if (isset($_POST['license'])) {
                             $options['license'] = $_POST['license'];
                         }
-                        $artist_id = intval($_REQUEST['artist']);
-                        $album_id  = intval($_REQUEST['album']);
+                        $artist_id = (int) scrub_in($_REQUEST['artist']);
+                        $album_id  = (int) scrub_in($_REQUEST['album']);
 
                         // Override artist information with artist's user
                         if (AmpConfig::get('upload_user_artist')) {
