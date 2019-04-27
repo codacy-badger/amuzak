@@ -1,7 +1,7 @@
 //UberViz ControlsHandler
 //Handles side menu controls
 
-var ControlsHandler = function() {
+var ControlsHandler = (function() {
 
 	var audioParams = {
 		showDebug:true,
@@ -56,4 +56,4 @@ var ControlsHandler = function() {
 		fxParams: fxParams,
 		vizParams:vizParams
 	};
-}();
+}());

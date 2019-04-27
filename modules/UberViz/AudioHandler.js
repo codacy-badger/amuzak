@@ -290,7 +290,9 @@ var AudioHandler = function() {
         //experimental combined beat + bpm mode
         gotBeat = true;
 
-        if (ControlsHandler.audioParams.bpmMode) return;
+        if (ControlsHandler.audioParams.bpmMode) {
+            return;
+        }
 
         events.emit("onBeat");
     }
@@ -299,7 +301,9 @@ var AudioHandler = function() {
         //console.log("onBMPBeat");
         bpmStart = new Date().getTime();
 
-        if (!ControlsHandler.audioParams.bpmMode) return;
+        if (!ControlsHandler.audioParams.bpmMode) {
+            return;
+        }
 
         //only fire bpm beat if there was an on onBeat in last timeframe
         //experimental combined beat + bpm mode
@@ -319,7 +323,9 @@ var AudioHandler = function() {
 
         //console.log("audio.update");
 
-        if (!isPlayingAudio) return;
+        if (!isPlayingAudio) {
+            return;
+        }
 
         //GET DATA
         analyser.getByteFrequencyData(freqByteData); //<-- bar chart

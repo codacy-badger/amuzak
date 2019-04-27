@@ -42,7 +42,7 @@ http://www.consulenza-web.com/2012/01/mediatable-jquery-plugin/
  * Plugin Dimostrativo
  */
 
-;(function($){
+(function($){
 
 
   /**
@@ -55,7 +55,9 @@ http://www.consulenza-web.com/2012/01/mediatable-jquery-plugin/
       wdg   = $this.data( "MediaTable" );
 
     // Prevent re-initialization of the widget!
-    if ( !$.isEmptyObject(wdg) ) return;
+    if ( !$.isEmptyObject(wdg) ) {
+        return;
+    }
 
     // Build the widget context.
     wdg = {
@@ -184,8 +186,12 @@ http://www.consulenza-web.com/2012/01/mediatable-jquery-plugin/
 
       $cell.attr( "headers", id );
 
-      if ( classes ) $cell.addClass(classes);
-      if ( styles) $cell.attr("style", styles);
+      if ( classes ) {
+          $cell.addClass(classes);
+      }
+      if ( styles) {
+          $cell.attr("style", styles);
+      }
 
     }; // EndOf: "__trInit()" ###
 
@@ -228,7 +234,7 @@ http://www.consulenza-web.com/2012/01/mediatable-jquery-plugin/
         .bind("updateCheck", updateCheck )
         .trigger( "updateCheck" );
 
-    } // EndOf: "__liInitActions()" ###
+    }; // EndOf: "__liInitActions()" ###
 
 
 
@@ -240,7 +246,9 @@ http://www.consulenza-web.com/2012/01/mediatable-jquery-plugin/
     if ( !wdg ) return;
     
     // Menu initialization logic.
-    if ( wdg.cfg.menu ) __initMenu( wdg );
+    if ( wdg.cfg.menu ) {
+        __initMenu( wdg );
+    }
 
     // Columns Initialization Loop.
     wdg.$table.find("thead th").each(function(i){ __thInit.call( this, i, wdg );  });
@@ -254,7 +262,7 @@ http://www.consulenza-web.com/2012/01/mediatable-jquery-plugin/
           });
     }
 
-  }
+  };
   
   var __reset = function() {
     // Get the widget context.
@@ -272,7 +280,7 @@ http://www.consulenza-web.com/2012/01/mediatable-jquery-plugin/
             }
             else {
               $checkbox.prop("checked", false);
-            };
+            }
             
             var val = $checkbox.val();
             var cols = wdg.$table.find("#" + val + ", [headers="+ val +"]");
@@ -281,7 +289,7 @@ http://www.consulenza-web.com/2012/01/mediatable-jquery-plugin/
         }
         
     });
-  }
+  };
 
 
 
@@ -293,7 +301,9 @@ http://www.consulenza-web.com/2012/01/mediatable-jquery-plugin/
 
     // Get the widget context.
     var wdg = $(this).data( "MediaTable" );
-    if ( !wdg ) return;
+    if ( !wdg ) {
+        return;
+    }
 
 
     // Remove the wrapper from the MediaTable.
@@ -323,14 +333,16 @@ http://www.consulenza-web.com/2012/01/mediatable-jquery-plugin/
     var hasMenu = (!$(this).hasClass("disablegv") && (typeof $(this).attr("data-objecttype") !== "undefined"));
     
     // Default configuration block
-    if ( !arguments.length || $.isPlainObject(arguments[0]) ) cfg = $.extend({},{
+    if ( !arguments.length || $.isPlainObject(arguments[0]) ) {
+        cfg = $.extend({},{
 
-      // Teach the widget to create a toggle menu to declare column"s visibility
-      menu: hasMenu,
-      menuTitle:  "Columns",
-      menuReset:  "Reset",
+          // Teach the widget to create a toggle menu to declare column"s visibility
+          menu: hasMenu,
+          menuTitle:  "Columns",
+          menuReset:  "Reset",
 
-    t:"e"},arguments[0]);
+        t:"e"},arguments[0]);
+    }
     // -- default configuration block --
 
 
@@ -349,16 +361,18 @@ http://www.consulenza-web.com/2012/01/mediatable-jquery-plugin/
 
 
     // Item actions loop - switch throught actions
-    } else if ( arguments.length ) switch ( arguments[0] ) {
+    } else if ( arguments.length ) {
+        switch ( arguments[0] ) {
 
-      case "analyze":
-        $(this).each(function( i ){ __analyze.call( this, i ); });
-      break;
+          case "analyze":
+            $(this).each(function( i ){ __analyze.call( this, i ); });
+          break;
       
-      case "destroy":
-        $(this).each(function(){ __destroy.call( this ); });
-      break;
+          case "destroy":
+            $(this).each(function(){ __destroy.call( this ); });
+          break;
 
+        }
     }
 
 

@@ -640,7 +640,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     margin-left: 90%;
-    min-width: max-content;
+    min-width: 140px;
     max-height: 85%;
     max-width: 200px;
     overflow-y: auto;

@@ -8,7 +8,7 @@ var simplexNoise = new SimplexNoise();
 
 
 //MAIN RMP
-var UberVizMain = function() {
+var UberVizMain = (function() {
 
 	var stats;
 	var windowHalfX;
@@ -124,4 +124,4 @@ var UberVizMain = function() {
 		trace: trace
 	};
 
-}();
+}());
