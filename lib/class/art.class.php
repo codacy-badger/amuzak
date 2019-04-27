@@ -1172,12 +1172,12 @@ class Art extends database_object
             return $images;
         }
 
-        $mb       = new MusicBrainz(new RequestsHttpAdapter());
-        $includes = array(
+        $musicbrainz = new MusicBrainz(new RequestsHttpAdapter());
+        $includes    = array(
             'url-rels'
         );
         try {
-            $release = $mb->lookup('release', $data['mbid'], $includes);
+            $release = $musicbrainz->lookup('release', $data['mbid'], $includes);
         } catch (Exception $e) {
             return $images;
         }

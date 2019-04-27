@@ -319,15 +319,15 @@ class Artist extends database_object implements library_item
         $db_results = Dba::read($sql);
 
         $mbids = array();
-        while ($r = Dba::fetch_assoc($db_results)) {
-            if ($ignoreAlbumGroups || empty($r['mbid']) || !in_array($r['mbid'], $mbids)) {
+        while ($row = Dba::fetch_assoc($db_results)) {
+            if ($ignoreAlbumGroups || empty($row['mbid']) || !in_array($row['mbid'], $mbids)) {
                 if ($group_release_type) {
                     // We assume undefined release type is album
-                    $rtype = $r['release_type'] ?: 'album';
+                    $rtype = $row['release_type'] ?: 'album';
                     if (!isset($results[$rtype])) {
                         $results[$rtype] = array();
                     }
-                    $results[$rtype][] = $r['id'];
+                    $results[$rtype][] = $row['id'];
 
                     $sort = AmpConfig::get('album_release_type_sort');
                     if ($sort) {
@@ -344,10 +344,10 @@ class Artist extends database_object implements library_item
                         $results = array_merge($results_sort, $results);
                     }
                 } else {
-                    $results[] = $r['id'];
+                    $results[] = $row['id'];
                 }
-                if (!empty($r['mbid'])) {
-                    $mbids[] = $r['mbid'];
+                if (!empty($row['mbid'])) {
+                    $mbids[] = $row['mbid'];
                 }
             }
         }
@@ -375,8 +375,8 @@ class Artist extends database_object implements library_item
         $db_results = Dba::read($sql, array($this->id));
 
         $results = array();
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = $r['id'];
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $results[] = $row['id'];
         }
 
         return $results;
@@ -403,8 +403,8 @@ class Artist extends database_object implements library_item
         $sql .= "ORDER BY RAND()";
         $db_results = Dba::read($sql, array($this->id));
 
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = $r['id'];
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $results[] = $row['id'];
         }
 
         return $results;

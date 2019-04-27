@@ -94,8 +94,8 @@ class Daap_Api
                 $reqheaders[] = "Range: " . $headers['Range'];
             }
             // Curl support, we stream transparently to avoid redirect. Redirect can fail on few clients
-            $ch = curl_init($url);
-            curl_setopt_array($ch, array(
+            $curl = curl_init($url);
+            curl_setopt_array($curl, array(
                 CURLOPT_HTTPHEADER => $reqheaders,
                 CURLOPT_HEADER => false,
                 CURLOPT_RETURNTRANSFER => false,
@@ -114,15 +114,15 @@ class Daap_Api
                 CURLOPT_SSL_VERIFYHOST => false,
                 CURLOPT_TIMEOUT => 0
             ));
-            curl_exec($ch);
-            curl_close($ch);
+            curl_exec($curl);
+            curl_close($curl);
         } else {
             // Stream media using http redirect if no curl support
             header("Location: " . $url);
         }
     }
 
-    public static function output_body($ch, $data)
+    public static function output_body($curl, $data)
     {
         echo $data;
         ob_flush();
@@ -130,7 +130,7 @@ class Daap_Api
         return strlen($data);
     }
 
-    public static function output_header($ch, $header)
+    public static function output_header($curl, $header)
     {
         $rheader = trim($header);
         $rhpart  = explode(':', $rheader);

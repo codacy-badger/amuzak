@@ -128,7 +128,7 @@ function usage() {
     echo "\n\t-f, --force\t\t\t\t";
     echo 'Force installation', "\n";
 
-    exit(1);
+    return false;
 }
 
 ?>

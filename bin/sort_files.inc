@@ -260,7 +260,7 @@ function sort_move_file($song, $fullname)
         /* Check for file existance */
         if (file_exists($fullname)) {
             debug_event('file exists', 'Error: $fullname already exists', '1');
-            printf(T_('Error: %s already exists'), $filename);
+            printf(T_('Error: %s already exists'), $fullname);
             echo "\n";
             return false;
         }
@@ -307,7 +307,7 @@ function sort_move_file($song, $fullname)
 
         /* Update the catalog */
         $sql = "UPDATE song SET file='" . Dba::escape($fullname) . "' WHERE id='" . Dba::escape($song->id) . "'";
-        $db_results = Dba::write($sql);
+        Dba::write($sql);
     } // end else
 
     return true;

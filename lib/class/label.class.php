@@ -266,12 +266,12 @@ class Label extends database_object implements library_item
                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         Dba::write($sql, array($name, $category, $summary, $address, $email, $website, $user, $creation_date));
 
-        $id = Dba::insert_id();
+        $label_id = Dba::insert_id();
 
-        return $id;
+        return $label_id;
     }
 
-    public static function lookup(array $data, $id = 0)
+    public static function lookup(array $data, $label_id = 0)
     {
         $ret  = -1;
         $name = trim($data['name']);
@@ -279,9 +279,9 @@ class Label extends database_object implements library_item
             $ret    = 0;
             $sql    = "SELECT `id` FROM `label` WHERE `name` = ?";
             $params = array($name);
-            if ($id > 0) {
+            if ($label_id > 0) {
                 $sql .= " AND `id` != ?";
-                $params[] = $id;
+                $params[] = $label_id;
             }
             $db_results = Dba::read($sql, $params);
             if ($row = Dba::fetch_assoc($db_results)) {
@@ -497,13 +497,13 @@ class Label extends database_object implements library_item
     public static function clean_to_existing($labels)
     {
         if (is_array($labels)) {
-            $ar = $labels;
+            $existing = $labels;
         } else {
-            $ar = explode(",", $labels);
+            $existing = explode(",", $labels);
         }
 
         $ret = array();
-        foreach ($ar as $label) {
+        foreach ($existing as $label) {
             $label = trim($label);
             if (!empty($label)) {
                 if (self::lookup(array('name' => $label)) > 0) {

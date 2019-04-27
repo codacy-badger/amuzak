@@ -519,9 +519,9 @@ class Graph
                 }
             } else {
                 if ($user_id) {
-                    $u = new User($user_id);
-                    $u->format();
-                    $blink = $u->f_link;
+                    $user = new User($user_id);
+                    $user->format();
+                    $blink = $user->f_link;
                 }
             }
 

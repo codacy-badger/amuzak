@@ -234,15 +234,15 @@ abstract class Catalog extends database_object
 
     /**
      * Create a catalog from its id.
-     * @param int $id
+     * @param int $catalog_id
      * @return Catalog|null
      */
-    public static function create_from_id($id)
+    public static function create_from_id($catalog_id)
     {
         $sql        = 'SELECT `catalog_type` FROM `catalog` WHERE `id` = ?';
-        $db_results = Dba::read($sql, array($id));
+        $db_results = Dba::read($sql, array($catalog_id));
         if ($results = Dba::fetch_assoc($db_results)) {
-            return self::create_catalog_type($results['catalog_type'], $id);
+            return self::create_catalog_type($results['catalog_type'], $catalog_id);
         }
 
         return null;
@@ -253,10 +253,10 @@ abstract class Catalog extends database_object
      * This function attempts to create a catalog type
      * all Catalog modules should be located in /modules/catalog/<name>/<name>.class.php
      * @param string $type
-     * @param int $id
+     * @param int $catalog_id
      * @return Catalog|null
      */
-    public static function create_catalog_type($type, $id = 0)
+    public static function create_catalog_type($type, $catalog_id = 0)
     {
         if (!$type) {
             return false;
@@ -273,8 +273,8 @@ abstract class Catalog extends database_object
         } // include
         else {
             $class_name = "Catalog_" . $type;
-            if ($id > 0) {
-                $catalog = new $class_name($id);
+            if ($catalog_id > 0) {
+                $catalog = new $class_name($catalog_id);
             } else {
                 $catalog = new $class_name();
             }
@@ -404,17 +404,17 @@ abstract class Catalog extends database_object
 
     /**
      * Get catalog info from table.
-     * @param int $id
+     * @param int $catalog_id
      * @param string $table
      * @return array
      */
-    public function get_info($id, $table = 'catalog')
+    public function get_info($catalog_id, $table = 'catalog')
     {
-        $info = parent::get_info($id, $table);
+        $info = parent::get_info($catalog_id, $table);
 
         $table      = 'catalog_' . $this->get_type();
         $sql        = "SELECT `id` FROM $table WHERE `catalog_id` = ?";
-        $db_results = Dba::read($sql, array($id));
+        $db_results = Dba::read($sql, array($catalog_id));
 
         if ($results = Dba::fetch_assoc($db_results)) {
             $info_type = parent::get_info($results['id'], $table);
@@ -431,10 +431,10 @@ abstract class Catalog extends database_object
     /**
      * Get enable sql filter;
      * @param string $type
-     * @param int $id
+     * @param int $catalog_id
      * @return string
      */
-    public static function get_enable_filter($type, $id)
+    public static function get_enable_filter($type, $catalog_id)
     {
         $sql = "";
         if ($type == "song" || $type == "album" || $type == "artist") {
@@ -442,7 +442,7 @@ abstract class Catalog extends database_object
                 $type = "id";
             }
             $sql = "(SELECT COUNT(`song_dis`.`id`) FROM `song` AS `song_dis` LEFT JOIN `catalog` AS `catalog_dis` ON `catalog_dis`.`id` = `song_dis`.`catalog` " .
-                    "WHERE `song_dis`.`" . $type . "`=" . $id . " AND `catalog_dis`.`enabled` = '1' GROUP BY `song_dis`.`" . $type . "`) > 0";
+                    "WHERE `song_dis`.`" . $type . "`=" . $catalog_id . " AND `catalog_dis`.`enabled` = '1' GROUP BY `song_dis`.`" . $type . "`) > 0";
         }
 
         return $sql;
@@ -568,8 +568,8 @@ abstract class Catalog extends database_object
         if ($catalogs === null || !is_array($catalogs)) {
             $catalogs = self::get_catalogs();
         }
-        foreach ($catalogs as $id) {
-            $catalog = self::create_from_id($id);
+        foreach ($catalogs as $catalog_id) {
+            $catalog = self::create_from_id($catalog_id);
             if ($catalog->last_add > $last_update) {
                 $last_update = $catalog->last_add;
             }
