@@ -397,7 +397,7 @@ class Podcast_Episode extends database_object implements media, library_item
                 $file .= DIRECTORY_SEPARATOR . $this->pubdate . '-' . $this->title . '-' . strtok($pinfo['basename'], '?');
                 debug_event('podcast_episode', 'Downloading ' . $this->source . ' to ' . $file . ' ...', 5);
                 if (file_put_contents($file, fopen($this->source, 'r')) !== false) {
-                    debug_event('podcast_episode', 'Download completed.', 5);
+                    debug_event('podcast_episode', 'Download completed.', 4);
                     $this->file = $file;
                     
                     $vainfo = new vainfo($this->file);

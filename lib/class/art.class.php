@@ -1400,7 +1400,7 @@ class Art extends database_object
                     break;
                 }
 
-                debug_event('folder_art', "Found image file: $file", 5);
+                debug_event('folder_art', "Found image file: $file", 4);
                 $results[$index] = array(
                     'file' => $full_filename,
                     'mime' => 'image/' . $extension,

@@ -143,7 +143,7 @@ class Stream
      */
     public static function start_transcode($media, $type = null, $player = null, $options = array())
     {
-        debug_event('stream.class.php', 'Starting transcode for {' . $media->file . '}. Type {' . $type . '}. Options: ' . print_r($options, true) . '}...', 5);
+        debug_event('stream.class.php', 'Starting transcode for {' . $media->file . '}. Type {' . $type . '}. Options: ' . print_r($options, true) . '}...', 4);
 
         $transcode_settings = $media->get_transcode_settings($type, $player, $options);
         // Bail out early if we're unutterably broken
@@ -350,7 +350,7 @@ class Stream
             '(`id`,`object_id`,`object_type`, `user`, `expire`, `insertion`) ' .
             'VALUES (?, ?, ?, ?, ?, ?)';
         Dba::write($sql, array($sid, $oid, $type, $uid, $time, time()));
-        debug_event('stream', "Now Playing " . $type . " " . $oid . " added to database", 5);
+        debug_event('stream', "Now Playing " . $type . " " . $oid . " added to database", 4);
     }
 
     /**

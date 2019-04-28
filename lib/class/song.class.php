@@ -2019,7 +2019,7 @@ class Song extends database_object implements media, library_item
         }
         $args .= ' ' . $argst;
 
-        debug_event('media', 'Command: ' . $cmd . ' Arguments:' . $args, 5);
+        debug_event('media', 'Command: ' . $cmd . ' Arguments:' . $args, 4);
 
         return array('format' => $target, 'command' => $cmd . $args);
     }

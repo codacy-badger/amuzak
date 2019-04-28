@@ -804,7 +804,6 @@ class Search extends playlist_object
     {
         $sql = "SELECT `id` from `search` WHERE `type`='public' OR " .
             "`user`='" . $GLOBALS['user']->id . "' ORDER BY `name`";
-        debug_event('search', 'SQL get_searches: ' . $sql, 5);
         $db_results = Dba::read($sql);
 
         $results = array();
@@ -855,7 +854,6 @@ class Search extends playlist_object
         }
         $sql .= ' ' . $limit_sql;
         $sql = trim($sql);
-        debug_event('search', 'SQL run: ' . $sql, 5);
 
         $db_results = Dba::read($sql);
 
@@ -922,7 +920,7 @@ class Search extends playlist_object
         if ($this->limit > 0) {
             $sql .= " LIMIT " . intval($this->limit);
         }
-        debug_event('search', 'SQL get_items: ' . $sql, 5);
+        debug_event('search', 'SQL get_items: ' . $sql, 4);
 
         $db_results = Dba::read($sql);
         while ($row = Dba::fetch_assoc($db_results)) {
@@ -973,7 +971,7 @@ class Search extends playlist_object
 
         $sql .= ' ORDER BY RAND()';
         $sql .= $limit ? ' LIMIT ' . intval($limit) : '';
-        debug_event('search', 'SQL get_random_items: ' . $sql, 5);
+        debug_event('search', 'SQL get_random_items: ' . $sql, 4);
 
         $db_results = Dba::read($sql);
 
@@ -1551,20 +1549,35 @@ class Search extends playlist_object
                     $where[] .= "`user_flag`.`object_type` = 'song'";
                 break;
                 case 'myrating':
-                    #$where[]           = "COALESCE(`rating`.`rating`,0) $sql_match_operator '$input'";
                     $group[]           = "`song`.`id`";
                     $having[]          = "ROUND(AVG(IFNULL(`rating`.`rating`,0))) $sql_match_operator '$input'";
                     $join['myrating']  = true;
                 break;
                 case 'albumrating':
-                    $where[] = "`song`.`album` IN (SELECT `rating`.`object_id` FROM `rating` " .
-                               "WHERE COALESCE(`rating`.`rating`,0) $sql_match_operator '$input' AND " .
-                               "`rating`.`object_type` = 'album') ";
+                    if ($sql_match_operator === '<=' || $sql_match_operator === '<>' || $sql_match_operator === '<=') {
+                        $where[] = "(`song`.`album` IN (SELECT `rating`.`object_id` FROM `rating` " .
+                                   "WHERE COALESCE(`rating`.`rating`,0) $sql_match_operator '$input' AND " .
+                                   "`rating`.`user`='" . $userid . "' AND `rating`.`object_type` = 'album') OR " .
+                                   "`song`.`album` NOT IN (SELECT `rating`.`object_id` FROM `rating` " .
+                                   "WHERE `rating`.`object_type` = 'album'))";
+                    } else {
+                        $where[] = "`song`.`album` IN (SELECT `rating`.`object_id` FROM `rating` " .
+                                   "WHERE COALESCE(`rating`.`rating`,0) $sql_match_operator '$input' AND " .
+                                   "`rating`.`object_type` = 'album') ";
+                    }
                 break;
                 case 'artistrating':
-                    $where[] = "`song`.`artist` IN (SELECT `rating`.`object_id` FROM `rating` " .
-                               "WHERE COALESCE(`rating`.`rating`,0) $sql_match_operator '$input' AND " .
-                               "`rating`.`object_type` = 'artist') ";
+                    if ($sql_match_operator === '<=' || $sql_match_operator === '<>' || $sql_match_operator === '<=') {
+                        $where[] = "(`song`.`artist` IN (SELECT `rating`.`object_id` FROM `rating` " .
+                                   "WHERE COALESCE(`rating`.`rating`,0) $sql_match_operator '$input' AND " .
+                                   "`rating`.`user`='" . $userid . "' AND `rating`.`object_type` = 'artist') OR " .
+                                   "`song`.`artist` NOT IN (SELECT `rating`.`object_id` FROM `rating` " .
+                                   "WHERE `rating`.`object_type` = 'artist'))";
+                    } else {
+                        $where[] = "`song`.`artist` IN (SELECT `rating`.`object_id` FROM `rating` " .
+                                   "WHERE COALESCE(`rating`.`rating`,0) $sql_match_operator '$input' AND " .
+                                   "`rating`.`object_type` = 'artist') ";
+                    }
                 break;
                 case 'last_play':
                     $where[]              = "`object_count`.`date` IS NOT NULL AND `object_count`.`date` $sql_match_operator (UNIX_TIMESTAMP() - ($input * 86400))";
@@ -1705,15 +1718,6 @@ class Search extends playlist_object
         $table_sql  = implode(' ', $table);
         $group_sql  = implode(', ', $group);
         $having_sql = implode(" $sql_logic_operator ", $having);
-
-        debug_event('search', "SQL song_to_sql: SELECT DISTINCT(`song`.`id`) FROM `song` " .
-                    " join =>" . $join .
-                    " where =>" . $where .
-                    " where_sql =>" . $where_sql .
-                    " table =>" . $table .
-                    " table_sql =>" . $table_sql .
-                    " group_sql =>" . $group_sql .
-                    " having_sql =>" . $having_sql, 5);
 
         return array(
             'base' => 'SELECT DISTINCT(`song`.`id`) FROM `song`',

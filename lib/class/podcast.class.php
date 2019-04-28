@@ -392,7 +392,7 @@ class Podcast extends database_object implements library_item
     
     private function add_episode(SimpleXMLElement $episode, $afterdate=0)
     {
-        debug_event('podcast', 'Adding new episode to podcast ' . $this->id . '...', 5);
+        debug_event('podcast', 'Adding new episode to podcast ' . $this->id . '...', 4);
 
         $title       = html_entity_decode($episode->title);
         $website     = $episode->link;
@@ -427,7 +427,7 @@ class Podcast extends database_object implements library_item
 
             return Dba::write($sql, array($title, $guid, $this->id, $source, $website, $description, $author, $category, $time, $pubdate, time()));
         } else {
-            debug_event('podcast', 'Episode published before ' . $afterdate . ' (' . $pubdate . '), skipped', 5);
+            debug_event('podcast', 'Episode published before ' . $afterdate . ' (' . $pubdate . '), skipped', 4);
 
             return true;
         }
