@@ -804,6 +804,7 @@ class Search extends playlist_object
     {
         $sql = "SELECT `id` from `search` WHERE `type`='public' OR " .
             "`user`='" . $GLOBALS['user']->id . "' ORDER BY `name`";
+        debug_event('search', 'SQL get_searches: ' . $sql, 5);
         $db_results = Dba::read($sql);
 
         $results = array();
@@ -854,6 +855,7 @@ class Search extends playlist_object
         }
         $sql .= ' ' . $limit_sql;
         $sql = trim($sql);
+        debug_event('search', 'SQL run: ' . $sql, 5);
 
         $db_results = Dba::read($sql);
 
@@ -920,6 +922,7 @@ class Search extends playlist_object
         if ($this->limit > 0) {
             $sql .= " LIMIT " . intval($this->limit);
         }
+        debug_event('search', 'SQL get_items: ' . $sql, 5);
 
         $db_results = Dba::read($sql);
         while ($row = Dba::fetch_assoc($db_results)) {
@@ -970,6 +973,7 @@ class Search extends playlist_object
 
         $sql .= ' ORDER BY RAND()';
         $sql .= $limit ? ' LIMIT ' . intval($limit) : '';
+        debug_event('search', 'SQL get_random_items: ' . $sql, 5);
 
         $db_results = Dba::read($sql);
 
@@ -1513,12 +1517,20 @@ class Search extends playlist_object
                     $join['myplayed']  = true;
                 break;
                 case 'myplayedalbum':
-                    $where[]               = "`object_count`.`date` IS NOT NULL";
-                    $join['myplayedalbum'] = true;
+                    $match = 'NOT IN';
+                    if ($sql_match_operator === '1') {
+                        $match = 'IN';
+                    }
+                    $where[] = "`song`.`album` $match (SELECT `object_count`.`object_id` FROM `object_count` " .
+                               "WHERE `object_count`.`object_type` = 'album') ";
                     break;
                 case 'myplayedartist':
-                    $where[]                = "`object_count`.`date` IS NOT NULL";
-                    $join['myplayedartist'] = true;
+                    $match = 'NOT IN';
+                    if ($sql_match_operator === '1') {
+                        $match = 'IN';
+                    }
+                    $where[] = "`song`.`artist` $match (SELECT `object_count`.`object_id` FROM `object_count` " .
+                               "WHERE `object_count`.`object_type` = 'artist') ";
                     break;
                 case 'bitrate':
                     $input   = $input * 1000;
@@ -1539,16 +1551,20 @@ class Search extends playlist_object
                     $where[] .= "`user_flag`.`object_type` = 'song'";
                 break;
                 case 'myrating':
-                    $where[]           = "COALESCE(`rating`.`rating`,0) $sql_match_operator '$input'";
+                    #$where[]           = "COALESCE(`rating`.`rating`,0) $sql_match_operator '$input'";
+                    $group[]           = "`song`.`id`";
+                    $having[]          = "ROUND(AVG(IFNULL(`rating`.`rating`,0))) $sql_match_operator '$input'";
                     $join['myrating']  = true;
                 break;
                 case 'albumrating':
-                    $where[]              = "COALESCE(`rating`.`rating`,0) $sql_match_operator '$input'";
-                    $join['albumrating']  = true;
+                    $where[] = "`song`.`album` IN (SELECT `rating`.`object_id` FROM `rating` " .
+                               "WHERE COALESCE(`rating`.`rating`,0) $sql_match_operator '$input' AND " .
+                               "`rating`.`object_type` = 'album') ";
                 break;
                 case 'artistrating':
-                    $where[]               = "COALESCE(`rating`.`rating`,0) $sql_match_operator '$input'";
-                    $join['artistrating']  = true;
+                    $where[] = "`song`.`artist` IN (SELECT `rating`.`object_id` FROM `rating` " .
+                               "WHERE COALESCE(`rating`.`rating`,0) $sql_match_operator '$input' AND " .
+                               "`rating`.`object_type` = 'artist') ";
                 break;
                 case 'last_play':
                     $where[]              = "`object_count`.`date` IS NOT NULL AND `object_count`.`date` $sql_match_operator (UNIX_TIMESTAMP() - ($input * 86400))";
@@ -1664,16 +1680,6 @@ class Search extends playlist_object
             $table['rating'] .= "`rating`.`user`='" . $userid . "' AND ";
             $table['rating'] .= "`rating`.`object_id`=`song`.`id`";
         }
-        if ($join['albumrating']) {
-            $table['rating'] = "LEFT JOIN `rating` ON `rating`.`object_type`='album' AND ";
-            $table['rating'] .= "`rating`.`user`='" . $userid . "' AND ";
-            $table['rating'] .= "`rating`.`object_id`=`song`.`album`";
-        }
-        if ($join['artistrating']) {
-            $table['rating'] = "LEFT JOIN `rating` ON `rating`.`object_type`='artist' AND ";
-            $table['rating'] .= "`rating`.`user`='" . $userid . "' AND ";
-            $table['rating'] .= "`rating`.`object_id`=`song`.`artist`";
-        }
         if ($join['object_count']) {
             $table['object_count'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='song' AND ";
             $table['object_count'] .= "`object_count`.`user`='" . $userid . "' AND ";
@@ -1683,16 +1689,6 @@ class Search extends playlist_object
             $table['object_count'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='song' AND ";
             $table['object_count'] .= "`object_count`.`user`='" . $userid . "' AND ";
             $table['object_count'] .= "`object_count`.`object_id`=`song`.`id`";
-        }
-        if ($join['myplayedalbum']) {
-            $table['myplayedalbum'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='album' AND ";
-            $table['myplayedalbum'] .= "`object_count`.`user`='" . $userid . "' AND ";
-            $table['myplayedalbum'] .= "`object_count`.`object_id`=`song`.`album`";
-        }
-        if ($join['myplayedartist']) {
-            $table['myplayedartist'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='album' AND ";
-            $table['myplayedartist'] .= "`object_count`.`user`='" . $userid . "' AND ";
-            $table['myplayedartist'] .= "`object_count`.`object_id`=`song`.`artist`";
         }
         if ($join['playlist_data']) {
             $table['playlist_data'] = "LEFT JOIN `playlist_data` ON `song`.`id`=`playlist_data`.`object_id` AND `playlist_data`.`object_type`='song'";
@@ -1710,6 +1706,15 @@ class Search extends playlist_object
         $group_sql  = implode(', ', $group);
         $having_sql = implode(" $sql_logic_operator ", $having);
 
+        debug_event('search', "SQL song_to_sql: SELECT DISTINCT(`song`.`id`) FROM `song` " .
+                    " join =>" . $join .
+                    " where =>" . $where .
+                    " where_sql =>" . $where_sql .
+                    " table =>" . $table .
+                    " table_sql =>" . $table_sql .
+                    " group_sql =>" . $group_sql .
+                    " having_sql =>" . $having_sql, 5);
+
         return array(
             'base' => 'SELECT DISTINCT(`song`.`id`) FROM `song`',
             'join' => $join,
@@ -1720,6 +1725,7 @@ class Search extends playlist_object
             'group_sql' => $group_sql,
             'having_sql' => $having_sql
         );
+        ;
     }
 
     /**
