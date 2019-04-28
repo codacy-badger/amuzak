@@ -38,4 +38,4 @@ colors = "Dark,Light"
 author = "SUTJael"
 
 ; Theme Maintainer
-maintainer = "SUTJael - sutjael@ampache.org"
+maintainer = "lachlan-00 - lachlan-00@github"

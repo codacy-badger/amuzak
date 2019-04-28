@@ -146,7 +146,7 @@ class Recommendation
     public static function get_songs_like($song_id, $limit = 5, $local_only = true)
     {
         if (!AmpConfig::get('lastfm_api_key')) {
-            return false;
+            return array();
         }
 
         $song   = new Song($song_id);
@@ -189,7 +189,7 @@ class Recommendation
                         $local_id = $result['id'];
                     }
 
-                    if (is_null($local_id)) {
+                    if ($local_id === null) {
                         debug_event('Recommendation', "$name did not match any local song", 5);
                         $similars[] = array(
                             'id' => null,
@@ -217,7 +217,7 @@ class Recommendation
         if ($similars) {
             $results = array();
             foreach ($similars as $similar) {
-                if (!$local_only || !is_null($similar['id'])) {
+                if (!$local_only || $similar['id'] !== null) {
                     $results[] = $similar;
                 }
 
@@ -231,7 +231,7 @@ class Recommendation
             return $results;
         }
 
-        return false;
+        return array();
     }
 
     /**
@@ -242,7 +242,7 @@ class Recommendation
     public static function get_artists_like($artist_id, $limit = 10, $local_only = true)
     {
         if (!AmpConfig::get('lastfm_api_key')) {
-            return false;
+            return array();
         }
 
         $artist = new Artist($artist_id);
@@ -273,7 +273,7 @@ class Recommendation
 
                 // Then we fall back to the less likely to work exact
                 // name match
-                if (is_null($local_id)) {
+                if ($local_id === null) {
                     $searchname = Catalog::trim_prefix($name);
                     $searchname = Dba::escape($searchname['string']);
                     $sql        = "SELECT `artist`.`id` FROM `artist` WHERE `name` = ?";
@@ -287,7 +287,7 @@ class Recommendation
                 }
 
                 // Then we give up
-                if (is_null($local_id)) {
+                if ($local_id === null) {
                     debug_event('Recommendation', "$name did not match any local artist", 5);
                     $similars[] = array(
                         'id' => null,
@@ -314,7 +314,7 @@ class Recommendation
         if ($similars) {
             $results = array();
             foreach ($similars as $similar) {
-                if (!$local_only || !is_null($similar['id'])) {
+                if (!$local_only || $similar['id'] !== null) {
                     $results[] = $similar;
                 }
 
@@ -328,7 +328,7 @@ class Recommendation
             return $results;
         }
 
-        return false;
+        return array();
     } // get_artists_like
 
     /**

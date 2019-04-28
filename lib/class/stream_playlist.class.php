@@ -56,7 +56,7 @@ class Stream_Playlist
                 return false;
             }
 
-            $this->user = intval($GLOBALS['user']->id);
+            $this->user = (int) ($GLOBALS['user']->id);
 
             $sql        = 'SELECT * FROM `stream_playlist` WHERE `sid` = ? ORDER BY `id`';
             $db_results = Dba::read($sql, array($this->id));
@@ -177,7 +177,7 @@ class Stream_Playlist
             $api_session = (AmpConfig::get('require_session')) ? Stream::get_session() : false;
 
             // Set a default which can be overridden
-            $url['author'] = 'Ampache';
+            $url['author'] = 'aMuzak';
             $url['time']   = $object->time;
             switch ($type) {
                 case 'song':
@@ -255,32 +255,32 @@ class Stream_Playlist
             case 'localplay':
             case 'web_player':
                 // These are valid, but witchy
-                $ct       = "";
+                $content  = "";
                 $redirect = false;
                 unset($ext);
             break;
             case 'pls':
-                $ct = 'audio/x-scpls';
+                $content = 'audio/x-scpls';
             break;
             case 'ram':
-                $ct = 'audio/x-pn-realaudio ram';
+                $content = 'audio/x-pn-realaudio ram';
             break;
             case 'simple_m3u':
-                $ext = 'm3u';
-                $ct  = 'audio/x-mpegurl';
+                $ext      = 'm3u';
+                $content  = 'audio/x-mpegurl';
             break;
             case 'xspf':
-                $ct = 'application/xspf+xml';
+                $content = 'application/xspf+xml';
             break;
             case 'hls':
-                $ext = 'm3u8';
-                $ct  = 'application/vnd.apple.mpegurl';
+                $ext      = 'm3u8';
+                $content  = 'application/vnd.apple.mpegurl';
             break;
             case 'm3u':
             default:
                 // Assume M3U if the pooch is screwed
-                $ext = $type = 'm3u';
-                $ct  = 'audio/x-mpegurl';
+                $ext      = $type      = 'm3u';
+                $content  = 'audio/x-mpegurl';
             break;
         }
 
@@ -295,7 +295,7 @@ class Stream_Playlist
         if (isset($ext)) {
             header('Cache-control: public');
             header('Content-Disposition: filename=ampache_playlist.' . $ext);
-            header('Content-Type: ' . $ct . ';');
+            header('Content-Type: ' . $content . ';');
         }
 
         $this->{'create_' . $type}();
@@ -328,7 +328,7 @@ class Stream_Playlist
             $this->_add_url(new Stream_URL(array(
                 'url' => $url,
                 'title' => 'URL-Add',
-                'author' => 'Ampache',
+                'author' => 'aMuzak',
                 'time' => '-1'
             )));
         }
@@ -402,7 +402,7 @@ class Stream_Playlist
     public function get_asx_string()
     {
         $ret = '<ASX VERSION="3.0" BANNERBAR="auto">' . "\n";
-        $ret .= "<TITLE>" . ($this->title ?: "Ampache ASX Playlist") . "</TITLE>\n";
+        $ret .= "<TITLE>" . ($this->title ?: "aMuzak ASX Playlist") . "</TITLE>\n";
         $ret .= '<PARAM NAME="Encoding" VALUE="utf-8" />' . "\n";
 
         foreach ($this->urls as $url) {

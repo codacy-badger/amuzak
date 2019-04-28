@@ -28,7 +28,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $htmllang; ?>" lang="<?php echo $htmllang; ?>">
 <head>
-    <!-- Propulsed by Ampache | ampache.org -->
+    <!-- Propulsed by aMuzak | ampcore -->
     <meta http-equiv="Content-Type" content="text/html; Charset=<?php echo $charset; ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="cache-control" content="max-age=0" />
@@ -36,6 +36,7 @@
     <meta http-equiv="expires" content="0" />
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
+    <meta name="viewport" content="width=1024, initial-scale=1.0">
 
     <title>aMuzak :: For the love of Music - Install</title>
     <link href="lib/components/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -48,7 +49,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="<?php echo UI::get_logo_url('dark'); ?>" title="Ampache" alt="Ampache">
+                <img src="<?php echo UI::get_logo_url('dark'); ?>" title="aMuzak" alt="aMuzak">
                 <?php echo T_('aMuzak Installation'); ?> - For the love of Music
             </a>
         </div>

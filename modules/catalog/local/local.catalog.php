@@ -115,7 +115,7 @@ class Catalog_local extends Catalog
     public function __construct($catalog_id = null)
     {
         if ($catalog_id) {
-            $this->id = intval($catalog_id);
+            $this->id = (int) ($catalog_id);
             $info     = $this->get_info($catalog_id);
 
             foreach ($info as $key => $value) {
@@ -494,17 +494,17 @@ class Catalog_local extends Catalog
         debug_event('verify', 'Starting on ' . $this->name, 5);
         set_time_limit(0);
 
-        $stats         = self::get_stats($this->id);
-        $number        = $stats['songs'];
-        $total_updated = 0;
-        $this->count   = 0;
+        $stats            = self::get_stats($this->id);
+        $total_updated    = 0;
+        $this->count      = 0;
 
         if (!defined('SSE_OUTPUT')) {
             require_once AmpConfig::get('prefix') . UI::find_template('show_verify_catalog.inc.php');
             flush();
         }
 
-        $total = $stats[$media_type . 's']; // UGLY
+        $media_type = 'song';
+        $total      = $stats['songs'];
         if ($total !== 0) {
             $chunks = floor($total / 10000);
             foreach (range(0, $chunks) as $chunk) {
@@ -520,7 +520,7 @@ class Catalog_local extends Catalog
 
         $this->update_last_update();
 
-        return array('total' => $number, 'updated' => $total_updated);
+        return array('total' => $total, 'updated' => $total_updated);
     } // verify_catalog_proc
 
     /**

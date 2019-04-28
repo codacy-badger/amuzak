@@ -261,7 +261,7 @@ class AutoUpdate
         if (self::is_develop()) {
             $cmd = 'git pull https://github.com/ampcore/amuzak.git develop';
         }
-        echo T_('Updating Ampache sources with `' . $cmd . '` ...') . '<br />';
+        echo T_('Updating aMuzak sources with `' . $cmd . '` ...') . '<br />';
         ob_flush();
         chdir(AmpConfig::get('prefix'));
         exec($cmd);

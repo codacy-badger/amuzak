@@ -111,7 +111,7 @@ class Subsonic_XML_Data
         // Remove all al-, ar-, ... prefixs
         $tpos = strpos($objectid, "-");
         if ($tpos !== false) {
-            $objectid = intval(substr($objectid, $tpos + 1));
+            $objectid = (int) (substr($objectid, $tpos + 1));
         }
 
         return $objectid;

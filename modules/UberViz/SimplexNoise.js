@@ -12,7 +12,9 @@
  * It is assumed to have a random() method.
  */
 var SimplexNoise = function(r) {
-    if (r === undefined) r = Math;
+    if (r === undefined) {
+        r = Math;
+    }
   this.grad3 = [[1,1,0],[-1,1,0],[1,-1,0],[-1,-1,0], 
                                  [1,0,1],[-1,0,1],[1,0,-1],[-1,0,-1], 
                                  [0,1,1],[0,-1,1],[0,1,-1],[0,-1,-1]]; 
@@ -291,30 +293,40 @@ SimplexNoise.prototype.noise4d = function( x, y, z, w ) {
    var gi4 = perm[ii+1+perm[jj+1+perm[kk+1+perm[ll+1]]]] % 32;
    // Calculate the contribution from the five corners
    var t0 = 0.6 - x0*x0 - y0*y0 - z0*z0 - w0*w0;
-   if(t0<0) n0 = 0.0;
+   if (t0<0) {
+       n0 = 0.0;
+   }
    else {
      t0 *= t0;
      n0 = t0 * t0 * this.dot4(grad4[gi0], x0, y0, z0, w0);
    }
   var t1 = 0.6 - x1*x1 - y1*y1 - z1*z1 - w1*w1;
-   if(t1<0) n1 = 0.0;
+   if (t1<0) {
+       n1 = 0.0;
+   }
    else {
      t1 *= t1;
      n1 = t1 * t1 * this.dot4(grad4[gi1], x1, y1, z1, w1);
    }
   var t2 = 0.6 - x2*x2 - y2*y2 - z2*z2 - w2*w2;
-   if(t2<0) n2 = 0.0;
+   if (t2<0) {
+       n2 = 0.0;
+   }
    else {
      t2 *= t2;
      n2 = t2 * t2 * this.dot4(grad4[gi2], x2, y2, z2, w2);
    }   var t3 = 0.6 - x3*x3 - y3*y3 - z3*z3 - w3*w3;
-   if(t3<0) n3 = 0.0;
+   if (t3<0) {
+       n3 = 0.0;
+   }
    else {
      t3 *= t3;
      n3 = t3 * t3 * this.dot4(grad4[gi3], x3, y3, z3, w3);
    }
   var t4 = 0.6 - x4*x4 - y4*y4 - z4*z4 - w4*w4;
-   if(t4<0) n4 = 0.0;
+   if (t4<0) {
+       n4 = 0.0;
+   }
    else {
      t4 *= t4;
      n4 = t4 * t4 * this.dot4(grad4[gi4], x4, y4, z4, w4);

@@ -75,7 +75,7 @@ class Browse extends Query
      */
     public function add_supplemental_object($class, $uid)
     {
-        $_SESSION['browse']['supplemental'][$this->id][$class] = intval($uid);
+        $_SESSION['browse']['supplemental'][$this->id][$class] = (int) ($uid);
 
         return true;
     } // add_supplemental_object
@@ -239,6 +239,11 @@ class Browse extends Query
             case 'playlist_media':
                 $box_title = T_('Playlist Medias') . $match;
                 $box_req   = AmpConfig::get('prefix') . UI::find_template('show_playlist_medias.inc.php');
+            break;
+            case 'playlist_localplay':
+                $box_title = T_('Current Playlist');
+                $box_req   = AmpConfig::get('prefix') . UI::find_template('show_localplay_playlist.inc.php');
+                UI::show_box_bottom();
             break;
             case 'smartplaylist':
                 $box_title = T_('Smart Playlists') . $match;

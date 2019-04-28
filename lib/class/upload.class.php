@@ -1,5 +1,7 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
+
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
@@ -19,9 +21,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 class Upload
 {
+
     /**
      * Constructor
      * This pulls the license information from the database and returns
@@ -30,7 +32,9 @@ class Upload
     protected function __construct()
     {
         return false;
-    } // Constructor
+    }
+
+    // Constructor
 
     public static function process()
     {
@@ -96,8 +100,8 @@ class Upload
                         if (isset($_POST['license'])) {
                             $options['license'] = $_POST['license'];
                         }
-                        $artist_id = intval($_REQUEST['artist']);
-                        $album_id  = intval($_REQUEST['album']);
+                        $artist_id = (int) scrub_in($_REQUEST['artist']);
+                        $album_id  = (int) scrub_in($_REQUEST['album']);
 
                         // Override artist information with artist's user
                         if (AmpConfig::get('upload_user_artist')) {
@@ -204,7 +208,9 @@ class Upload
     public static function rerror($file = null)
     {
         if ($file) {
-            @unlink($file);
+            if (@unlink($file) === false) {
+                throw new \RuntimeException('Error, unable to unlink ' . $file);
+            }
         }
         @header($_SERVER['SERVER_PROTOCOL'] . ' 500 File Upload Error', true, 500);
         ob_get_contents();
@@ -223,7 +229,7 @@ class Upload
             }
         }
 
-        if (is_null($username)) {
+        if ($username === null) {
             $username = $GLOBALS['user']->username;
         }
 
@@ -243,4 +249,6 @@ class Upload
 
         return $rootdir;
     }
-} // Upload class
+}
+
+// Upload class

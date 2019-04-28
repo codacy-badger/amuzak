@@ -55,10 +55,9 @@ switch ($_REQUEST['action']) {
         }
 
         $shout_id = Shoutbox::create($_POST);
-        header("Location:" . AmpConfig::get('web_path') . '/shout.php?action=show_add_shout&type=' . $_POST['object_type'] . '&id=' . intval($_POST['object_id']));
+        header("Location:" . AmpConfig::get('web_path') . '/shout.php?action=show_add_shout&type=' . $_POST['object_type'] . '&id=' . (int) scrub_in($_POST['object_id']));
 
         return false;
-    break;
     case 'show_add_shout':
         // Get our object first
         $object = Shoutbox::get_object($_REQUEST['type'], $_REQUEST['id']);

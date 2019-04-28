@@ -168,13 +168,13 @@ class vainfo
                     $tag = implode(" ", $tag);
                 }
                 $enc = mb_detect_encoding($tag, $mb_order, true);
-                if ($enc != false) {
+                if ($enc !== '') {
                     $encodings[$enc]++;
                 }
             }
         } else {
             $enc = mb_detect_encoding($tags, $mb_order, true);
-            if ($enc != false) {
+            if ($enc !== '') {
                 $encodings[$enc]++;
             }
         }
@@ -579,12 +579,9 @@ class vainfo
      */
     private function _get_plugin_tags()
     {
-        $tag_order = $this->get_metadata_order();
-        if (!is_array($tag_order)) {
-            $tag_order = array($tag_order);
-        }
-
+        $tag_order    = $this->get_metadata_order();
         $plugin_names = Plugin::get_plugins('get_metadata');
+
         foreach ($tag_order as $tag_source) {
             if (in_array($tag_source, $plugin_names)) {
                 $plugin            = new Plugin($tag_source);
@@ -614,8 +611,8 @@ class vainfo
             $parsed['mode'] = 'cbr';
         }
         $parsed['bitrate']       = $tags['audio']['bitrate'];
-        $parsed['channels']      = intval($tags['audio']['channels']);
-        $parsed['rate']          = intval($tags['audio']['sample_rate']);
+        $parsed['channels']      = (int) ($tags['audio']['channels']);
+        $parsed['rate']          = (int) ($tags['audio']['sample_rate']);
         $parsed['size']          = $this->_forcedSize ?: $tags['filesize'];
         $parsed['encoding']      = $tags['encoding'];
         $parsed['mime']          = $tags['mime_type'];
@@ -1022,7 +1019,6 @@ class vainfo
     {
         $origin  = $filepath;
         $results = array();
-        $file    = pathinfo($filepath, PATHINFO_FILENAME);
    
         if (in_array('music', $this->gather_types) || in_array('clip', $this->gather_types)) {
             $patres  = self::parse_pattern($filepath, $this->_dir_pattern, $this->_file_pattern);
@@ -1044,7 +1040,7 @@ class vainfo
     {
         $results         = array();
         $slash_type_preg = DIRECTORY_SEPARATOR;
-        if ($slash_type_preg == '\\') {
+        if ($slash_type_preg === '\\') {
             $slash_type_preg .= DIRECTORY_SEPARATOR;
         }
         // Combine the patterns
@@ -1128,7 +1124,8 @@ class vainfo
         $delimiters = AmpConfig::get('additional_genre_delimiters');
         if (isset($data) && is_array($data) && count($data) === 1 && isset($delimiters)) {
             $pattern = '~[\s]?(' . $delimiters . ')[\s]?~';
-            $genres  = preg_split($pattern, reset($data));
+            $filter  = str_replace('Folk, World, & Country', 'Folk World & Country', reset($data));
+            $genres  = preg_split($pattern, $filter);
             if ($genres === false) {
                 throw new Exception('Pattern given in additional_genre_delimiters is not functional. Please ensure is it a valid regex (delimiter ~).');
             }

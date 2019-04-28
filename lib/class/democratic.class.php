@@ -282,7 +282,7 @@ class Democratic extends Tmp_Playlist
     {
         // FIXME: Shouldn't this return object_type?
 
-        $offset = intval($offset);
+        $offset = (int) ($offset);
 
         $items = $this->get_items($offset + 1);
 
@@ -517,10 +517,10 @@ class Democratic extends Tmp_Playlist
         $cool     = Dba::escape($data['cooldown']);
         $level    = Dba::escape($data['level']);
         $default  = Dba::escape($data['make_default']);
-        $id       = Dba::escape($this->id);
+        $list_id  = Dba::escape($this->id);
 
         $sql = "UPDATE `democratic` SET `name` = ?, `base_playlist` = ?,`cooldown` = ?, `primary` = ?, `level` = ? WHERE `id` = ?";
-        Dba::write($sql, array($name, $base, $cool, $default, $level, $id));
+        Dba::write($sql, array($name, $base, $cool, $default, $level, $list_id));
 
         return true;
     } // update
@@ -616,18 +616,18 @@ class Democratic extends Tmp_Playlist
      * get_vote
      * This returns the current count for a specific song
      */
-    public function get_vote($id)
+    public function get_vote($song_id)
     {
-        if (parent::is_cached('democratic_vote', $id)) {
-            return parent::get_from_cache('democratic_vote', $id);
+        if (parent::is_cached('democratic_vote', $song_id)) {
+            return parent::get_from_cache('democratic_vote', $song_id);
         }
 
         $sql = 'SELECT COUNT(`user`) AS `count` FROM `user_vote` ' .
             "WHERE `object_id` = ?";
-        $db_results = Dba::read($sql, array($id));
+        $db_results = Dba::read($sql, array($song_id));
 
         $results = Dba::fetch_assoc($db_results);
-        parent::add_to_cache('democratic_vote', $id, $results['count']);
+        parent::add_to_cache('democratic_vote', $song_id, $results['count']);
 
         return $results['count'];
     } // get_vote

@@ -1,5 +1,7 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
+
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
@@ -19,7 +21,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 // A collection of methods related to the user interface
 
 class UI
@@ -45,8 +46,7 @@ class UI
         $path      = AmpConfig::get('theme_path') . '/templates/' . $template;
         $realpath  = AmpConfig::get('prefix') . $path;
         $extension = strtolower(pathinfo($path, PATHINFO_EXTENSION));
-        if (($extension != 'php' || AmpConfig::get('allow_php_themes'))
-           && file_exists($realpath) && is_file($realpath)) {
+        if (($extension != 'php' || AmpConfig::get('allow_php_themes')) && file_exists($realpath) && is_file($realpath)) {
             return $path;
         } else {
             return '/templates/' . $template;
@@ -129,19 +129,19 @@ class UI
             $clean = preg_replace('/[^\x{9}\x{a}\x{d}\x{20}-\x{d7ff}\x{e000}-\x{fffd}\x{10000}-\x{10ffff}]|[\x{7f}-\x{84}\x{86}-\x{9f}\x{fdd0}-\x{fddf}\x{1fffe}-\x{1ffff}\x{2fffe}-\x{2ffff}\x{3fffe}-\x{3ffff}\x{4fffe}-\x{4ffff}\x{5fffe}-\x{5ffff}\x{6fffe}-\x{6ffff}\x{7fffe}-\x{7ffff}\x{8fffe}-\x{8ffff}\x{9fffe}-\x{9ffff}\x{afffe}-\x{affff}\x{bfffe}-\x{bffff}\x{cfffe}-\x{cffff}\x{dfffe}-\x{dffff}\x{efffe}-\x{effff}\x{ffffe}-\x{fffff}\x{10fffe}-\x{10ffff}]/u', '', $string);
 
             // Other cleanup regex. Takes too long to process.
-            /*$regex = <<<'END'
-/
-  (
-    (?: [\x00-\x7F]                 # single-byte sequences   0xxxxxxx
-    |   [\xC0-\xDF][\x80-\xBF]      # double-byte sequences   110xxxxx 10xxxxxx
-    |   [\xE0-\xEF][\x80-\xBF]{2}   # triple-byte sequences   1110xxxx 10xxxxxx * 2
-    |   [\xF0-\xF7][\x80-\xBF]{3}   # quadruple-byte sequence 11110xxx 10xxxxxx * 3
-    ){1,100}                        # ...one or more times
-  )
-| .                                 # anything else
-/x
-END;
-            $clean = preg_replace($regex, '$1', $string);*/
+            /* $regex = <<<'END'
+              /
+              (
+              (?: [\x00-\x7F]                 # single-byte sequences   0xxxxxxx
+              |   [\xC0-\xDF][\x80-\xBF]      # double-byte sequences   110xxxxx 10xxxxxx
+              |   [\xE0-\xEF][\x80-\xBF]{2}   # triple-byte sequences   1110xxxx 10xxxxxx * 2
+              |   [\xF0-\xF7][\x80-\xBF]{3}   # quadruple-byte sequence 11110xxx 10xxxxxx * 3
+              ){1,100}                        # ...one or more times
+              )
+              | .                                 # anything else
+              /x
+              END;
+              $clean = preg_replace($regex, '$1', $string); */
 
             if ($clean) {
                 return $clean;
@@ -182,12 +182,18 @@ END;
         }
 
         switch ($pass) {
-            case 1: $unit  = 'kB'; break;
-            case 2: $unit  = 'MB'; break;
-            case 3: $unit  = 'GB'; break;
-            case 4: $unit  = 'TB'; break;
-            case 5: $unit  = 'PB'; break;
-            default: $unit = 'B'; break;
+            case 1: $unit = 'kB';
+                break;
+            case 2: $unit = 'MB';
+                break;
+            case 3: $unit = 'GB';
+                break;
+            case 4: $unit = 'TB';
+                break;
+            case 5: $unit = 'PB';
+                break;
+            default: $unit = 'B';
+                break;
         }
 
         return round($value, $precision) . ' ' . $unit;
@@ -211,14 +217,19 @@ END;
         switch ($unit) {
             case 'p':
                 $value *= 1024;
+            // Intentional break fall-through
             case 't':
                 $value *= 1024;
+            // Intentional break fall-through
             case 'g':
                 $value *= 1024;
+            // Intentional break fall-through
             case 'm':
                 $value *= 1024;
+            // Intentional break fall-through
             case 'k':
                 $value *= 1024;
+            // Intentional break fall-through
         }
 
         return $value;
@@ -230,7 +241,7 @@ END;
      * Returns an <img> tag for the specified icon
      * @param string $name
      */
-    public static function get_icon($name, $title = null, $id = null)
+    public static function get_icon($name, $title = null, $object_id = null)
     {
         $bUseSprite = file_exists(AmpConfig::get('prefix') . AmpConfig::get('theme_path') . '/images/icons.sprite.png');
 
@@ -251,8 +262,8 @@ END;
             $tag = '<img src="' . $icon_url . '" ';
         }
 
-        if ($id) {
-            $tag .= 'id="' . $id . '" ';
+        if ($object_id) {
+            $tag .= 'id="' . $object_id . '" ';
         }
 
         $tag .= 'alt="' . $title . '" ';
@@ -384,10 +395,10 @@ END;
             return;
         }
 
-        static $id = 1;
+        static $update_id = 1;
 
         if (defined('SSE_OUTPUT')) {
-            echo "id: " . $id . "\n";
+            echo "id: " . $update_id . "\n";
             echo "data: displayNotification('" . json_encode($value) . "', 5000)\n\n";
         } else {
             if (!empty($field)) {
@@ -399,7 +410,7 @@ END;
 
         ob_flush();
         flush();
-        $id++;
+        $update_id++;
     }
 
     /**
@@ -419,13 +430,13 @@ END;
 
         return AmpConfig::get('web_path') . AmpConfig::get('theme_path') . '/images/amuzak-' . AmpConfig::get('theme_color') . '.png';
     }
-    
+
     public static function is_grid_view($type)
     {
-        $isgv = true;
-        $cn   = 'browse_' . $type . '_grid_view';
-        if (isset($_COOKIE[$cn])) {
-            $isgv = ($_COOKIE[$cn] == 'true');
+        $isgv   = true;
+        $name   = 'browse_' . $type . '_grid_view';
+        if (isset($_COOKIE[$name])) {
+            $isgv = ($_COOKIE[$name] == 'true');
         }
 
         return $isgv;

@@ -1,4 +1,5 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
 /**
  *
@@ -19,7 +20,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 require_once '../lib/init.php';
 
 if (!Access::check('interface', '100')) {
@@ -42,7 +42,7 @@ switch ($_REQUEST['action']) {
         // This will disable buffering so contents are sent immediately to browser.
         // This is very useful for large catalogs because it will immediately display the download dialog to user,
         // instead of waiting until contents are generated, which could take a long time.
-        ob_implicit_flush(true);
+        ob_implicit_flush(1);
 
         header("Content-Transfer-Encoding: binary");
         header("Cache-control: public");
@@ -54,19 +54,18 @@ switch ($_REQUEST['action']) {
                 header("Content-Type: application/itunes+xml; charset=utf-8");
                 header("Content-Disposition: attachment; filename=\"ampache-itunes-$date.xml\"");
                 Catalog::export('itunes', $_REQUEST['export_catalog']);
-            break;
+                break;
             case 'csv':
                 header("Content-Type: application/vnd.ms-excel");
                 header("Content-Disposition: filename=\"ampache-export-$date.csv\"");
                 Catalog::export('csv', $_REQUEST['export_catalog']);
-            break;
+                break;
         } // end switch on format
-
         // We don't want the footer so we're done here
         exit;
     default:
         require_once AmpConfig::get('prefix') . UI::find_template('show_export.inc.php');
-    break;
+        break;
 } // end switch on action
 
 UI::show_footer();

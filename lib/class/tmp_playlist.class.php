@@ -52,7 +52,7 @@ class Tmp_Playlist extends database_object
             return false;
         }
 
-        $this->id     = intval($playlist_id);
+        $this->id     = (int) ($playlist_id);
         $info         = $this->_get_info();
 
         foreach ($info as $key => $value) {
@@ -164,10 +164,10 @@ class Tmp_Playlist extends database_object
      */
     public function get_next_object()
     {
-        $id = Dba::escape($this->id);
+        $list_id = Dba::escape($this->id);
 
         $sql = "SELECT `object_id` FROM `tmp_playlist_data` " .
-            "WHERE `tmp_playlist`='$id' ORDER BY `id` LIMIT 1";
+            "WHERE `tmp_playlist`='$list_id' ORDER BY `id` LIMIT 1";
         $db_results = Dba::read($sql);
 
         $results = Dba::fetch_assoc($db_results);
@@ -182,10 +182,10 @@ class Tmp_Playlist extends database_object
      */
     public function count_items()
     {
-        $id = Dba::escape($this->id);
+        $list_id = Dba::escape($this->id);
 
         $sql = "SELECT COUNT(`id`) FROM `tmp_playlist_data` WHERE " .
-            "`tmp_playlist`='$id'";
+            "`tmp_playlist`='$list_id'";
         $db_results = Dba::read($sql);
 
         $results = Dba::fetch_row($db_results);
@@ -218,12 +218,12 @@ class Tmp_Playlist extends database_object
             " VALUES (?, ?, ?)";
         Dba::write($sql, array($data['session_id'], $data['type'], $data['object_type']));
 
-        $id = Dba::insert_id();
+        $list_id = Dba::insert_id();
 
         /* Clean any other playlists associated with this session */
-        self::session_clean($data['session_id'], $id);
+        self::session_clean($data['session_id'], $list_id);
 
-        return $id;
+        return $list_id;
     } // create
 
     /**
@@ -244,10 +244,10 @@ class Tmp_Playlist extends database_object
      * This deletes any other tmp_playlists associated with this
      * session
      */
-    public static function session_clean($sessid, $id)
+    public static function session_clean($sessid, $list_id)
     {
         $sql = "DELETE FROM `tmp_playlist` WHERE `session`= ? AND `id` != ?";
-        Dba::write($sql, array($sessid, $id));
+        Dba::write($sql, array($sessid, $list_id));
 
         /* Remove associated tracks */
         self::prune_tracks();
@@ -339,11 +339,11 @@ class Tmp_Playlist extends database_object
      * delete_track
      * This deletes a track from the tmpplaylist
      */
-    public function delete_track($id)
+    public function delete_track($song_id)
     {
         /* delete the track its self */
         $sql = "DELETE FROM `tmp_playlist_data` WHERE `id` = ?";
-        Dba::write($sql, array($id));
+        Dba::write($sql, array($song_id));
 
         return true;
     } // delete_track

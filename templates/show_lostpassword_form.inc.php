@@ -35,8 +35,9 @@ $web_path = AmpConfig::get('web_path');
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $htmllang; ?>" lang="<?php echo $htmllang; ?>" dir="<?php echo $dir; ?>">
     <head>
-        <!-- Propulsed by Ampache | ampache.org -->
+        <!-- Propulsed by aMuzak | ampcore -->
         <meta http-equiv="Content-Type" content="text/html; charset=<?php echo AmpConfig::get('site_charset'); ?>" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?php require_once AmpConfig::get('prefix') . UI::find_template('stylesheets.inc.php'); ?>
         <title><?php echo scrub_out(AmpConfig::get('site_title')); ?></title>
     </head>
@@ -63,7 +64,7 @@ $web_path = AmpConfig::get('web_path');
         </div>
         <div id="footer">
             <a href="http://www.ampache.org/index.php">Ampache v.<?php echo AmpConfig::get('version'); ?></a><br />
-            Copyright (c) 2001 - 2015 Ampache.org <?php echo T_('Queries:'); ?><?php echo Dba::$stats['query']; ?>
+            Copyright (c) 2019 ampcore <?php echo T_('Queries:'); ?><?php echo Dba::$stats['query']; ?>
             <?php echo T_('Cache Hits:'); ?><?php echo database_object::$cache_hit; ?>
         </div>
     </body>

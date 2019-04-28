@@ -1,5 +1,7 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
+
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
@@ -19,18 +21,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 function check_php()
 {
     if (
-        check_php_version() &&
-        check_php_hash() &&
-        check_php_hash_algo() &&
-        check_php_pdo() &&
-        check_php_pdo_mysql() &&
-        check_php_session() &&
-        check_php_json() &&
-        check_php_safemode()
+            check_php_version() &&
+            check_php_hash() &&
+            check_php_hash_algo() &&
+            check_php_pdo() &&
+            check_php_pdo_mysql() &&
+            check_php_session() &&
+            check_php_json() &&
+            check_php_safemode()
     ) {
         return true;
     }
@@ -108,8 +109,8 @@ function check_config_values($conf)
     }
     /* Don't check for password to support mysql socket auth
      * if (!$conf['database_password']) {
-        return false;
-    }*/
+      return false;
+      } */
     if (!$conf['session_length']) {
         return false;
     }
@@ -129,7 +130,8 @@ function check_config_values($conf)
     }
 
     return true;
-} // check_config_values
+}
+// check_config_values
 
 /**
  * check_php_memory
@@ -147,7 +149,8 @@ function check_php_memory()
     }
 
     return true;
-} // check_php_memory
+}
+// check_php_memory
 
 /**
  * check_php_timelimit
@@ -156,10 +159,11 @@ function check_php_memory()
  */
 function check_php_timelimit()
 {
-    $current = intval(ini_get('max_execution_time'));
+    $current = (int) (ini_get('max_execution_time'));
 
     return ($current >= 60 || $current == 0);
-} // check_php_timelimit
+}
+// check_php_timelimit
 
 /**
  * check_safe_mode
@@ -185,7 +189,7 @@ function check_override_memory()
     $current_memory = substr($current_memory, 0, strlen($current_memory) - 1);
     $new_limit      = ($current_memory + 16) . "M";
 
-    /* Bump it by 16 megs (for getid3)*/
+    /* Bump it by 16 megs (for getid3) */
     if (!ini_set('memory_limit', $new_limit)) {
         return false;
     }
@@ -260,8 +264,10 @@ function return_bytes($val)
         // The 'G' modifier is available since PHP 5.1.0
         case 'g':
             $val *= 1024;
+        // Intentional break fall-through
         case 'm':
             $val *= 1024;
+        // Intentional break fall-through
         case 'k':
             $val *= 1024;
             break;
@@ -282,26 +288,22 @@ function check_dependencies_folder()
 function check_config_writable()
 {
     // file eixsts && is writable, or dir is writable
-    return ((file_exists(AmpConfig::get('prefix') . '/config/amuzak.cfg.php') && is_writable(AmpConfig::get('prefix') . '/config/amuzak.cfg.php'))
-        || (!file_exists(AmpConfig::get('prefix') . '/config/amuzak.cfg.php') && is_writeable(AmpConfig::get('prefix') . '/config/')));
+    return ((file_exists(AmpConfig::get('prefix') . '/config/amuzak.cfg.php') && is_writable(AmpConfig::get('prefix') . '/config/amuzak.cfg.php')) || (!file_exists(AmpConfig::get('prefix') . '/config/amuzak.cfg.php') && is_writeable(AmpConfig::get('prefix') . '/config/')));
 }
 
 function check_htaccess_channel_writable()
 {
-    return ((file_exists(AmpConfig::get('prefix') . '/channel/.htaccess') && is_writable(AmpConfig::get('prefix') . '/channel/.htaccess'))
-        || (!file_exists(AmpConfig::get('prefix') . '/channel/.htaccess') && is_writeable(AmpConfig::get('prefix') . '/channel/')));
+    return ((file_exists(AmpConfig::get('prefix') . '/channel/.htaccess') && is_writable(AmpConfig::get('prefix') . '/channel/.htaccess')) || (!file_exists(AmpConfig::get('prefix') . '/channel/.htaccess') && is_writeable(AmpConfig::get('prefix') . '/channel/')));
 }
 
 function check_htaccess_rest_writable()
 {
-    return ((file_exists(AmpConfig::get('prefix') . '/rest/.htaccess') && is_writable(AmpConfig::get('prefix') . '/rest/.htaccess'))
-        || (!file_exists(AmpConfig::get('prefix') . '/rest/.htaccess') && is_writeable(AmpConfig::get('prefix') . '/rest/')));
+    return ((file_exists(AmpConfig::get('prefix') . '/rest/.htaccess') && is_writable(AmpConfig::get('prefix') . '/rest/.htaccess')) || (!file_exists(AmpConfig::get('prefix') . '/rest/.htaccess') && is_writeable(AmpConfig::get('prefix') . '/rest/')));
 }
 
 function check_htaccess_play_writable()
 {
-    return ((file_exists(AmpConfig::get('prefix') . '/play/.htaccess') && is_writable(AmpConfig::get('prefix') . '/play/.htaccess'))
-        || (!file_exists(AmpConfig::get('prefix') . '/play/.htaccess') && is_writeable(AmpConfig::get('prefix') . '/play/')));
+    return ((file_exists(AmpConfig::get('prefix') . '/play/.htaccess') && is_writable(AmpConfig::get('prefix') . '/play/.htaccess')) || (!file_exists(AmpConfig::get('prefix') . '/play/.htaccess') && is_writeable(AmpConfig::get('prefix') . '/play/')));
 }
 
 /**
@@ -318,7 +320,7 @@ function debug_result($status = false, $value = null, $comment = '')
     }
 
     return '<button type="button" class="btn btn-' . $class . '">' . scrub_out($value) .
-        '</span> <em>' . $comment . '</em></button>';
+            '</span> <em>' . $comment . '</em></button>';
 }
 
 /**
@@ -335,5 +337,5 @@ function debug_wresult($status = false, $value = null, $comment = '')
     }
 
     return '<button type="button" class="btn btn-' . $class . '">' . scrub_out($value) .
-        '</span> <em>' . $comment . '</em></button>';
+            '</span> <em>' . $comment . '</em></button>';
 }

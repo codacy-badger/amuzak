@@ -1,4 +1,5 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
 /**
  *
@@ -19,14 +20,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 /*
 
- This is the wrapper for opening music streams from this server.  This script
-   will play the local version or redirect to the remote server if that be
-   the case.  Also this will update local statistics for songs as well.
-   This is also where it decides if you need to be downsampled.
-*/
+  This is the wrapper for opening music streams from this server.  This script
+  will play the local version or redirect to the remote server if that be
+  the case.  Also this will update local statistics for songs as well.
+  This is also where it decides if you need to be downsampled.
+ */
 define('NO_SESSION', '1');
 require_once '../lib/init.php';
 ob_end_clean();
@@ -34,10 +34,10 @@ ob_end_clean();
 //debug_event('play', print_r(apache_request_headers(), true), 5);
 
 /* These parameters had better come in on the url. */
-$uid            = scrub_in($_REQUEST['uid']);
-$oid            = scrub_in($_REQUEST['oid']);
-$sid            = scrub_in($_REQUEST['ssid']);
-$type           = scrub_in($_REQUEST['type']);
+$uid  = scrub_in($_REQUEST['uid']);
+$oid  = scrub_in($_REQUEST['oid']);
+$sid  = scrub_in($_REQUEST['ssid']);
+$type = scrub_in($_REQUEST['type']);
 
 $transcode_to = null;
 $player       = null;
@@ -52,7 +52,7 @@ if (isset($_REQUEST['player'])) {
 
 if (AmpConfig::get('transcode_player_customize')) {
     $transcode_to = scrub_in($_REQUEST['transcode_to']);
-    $bitrate      = intval($_REQUEST['bitrate']);
+    $bitrate      = (int) scrub_in($_REQUEST['bitrate']);
 
     // Trick to avoid LimitInternalRecursion reconfiguration
     $vsettings = $_REQUEST['vsettings'];
@@ -61,19 +61,19 @@ if (AmpConfig::get('transcode_player_customize')) {
         for ($i = 0; $i < count($vparts); $i += 2) {
             switch ($vparts[$i]) {
                 case 'maxbitrate':
-                    $maxbitrate = intval($vparts[$i + 1]);
+                    $maxbitrate = (int) ($vparts[$i + 1]);
                     break;
                 case 'resolution':
                     $resolution = $vparts[$i + 1];
                     break;
                 case 'quality':
-                    $quality = intval($vparts[$i + 1]);
+                    $quality = (int) ($vparts[$i + 1]);
                     break;
             }
         }
     }
 }
-$share_id         = intval($_REQUEST['share_id']);
+$share_id         = (int) scrub_in($_REQUEST['share_id']);
 $subtitle         = '';
 $send_all_in_once = false;
 
@@ -89,8 +89,8 @@ if ($type == 'playlist') {
 }
 
 /* This is specifically for tmp playlist requests */
-$demo_id    = Dba::escape($_REQUEST['demo_id']);
-$random     = Dba::escape($_REQUEST['random']);
+$demo_id = Dba::escape($_REQUEST['demo_id']);
+$random  = Dba::escape($_REQUEST['random']);
 
 /* First things first, if we don't have a uid/oid stop here */
 if (empty($oid) && empty($demo_id) && empty($random)) {
@@ -138,7 +138,7 @@ if (empty($uid)) {
     return false;
 } elseif ($uid == '-1' && AmpConfig::get('use_auth')) {
     // Identify the user according to it's web session
-    // We try to avoid the generic 'Ampache User' as much as possible
+    // We try to avoid the generic 'aMuzak User' as much as possible
     if (Session::exists('interface', $_COOKIE[AmpConfig::get('session_name')])) {
         Session::check();
         $user = User::get_from_username($_SESSION['userdata']['username']);
@@ -216,19 +216,17 @@ if (AmpConfig::get('demo_mode') || (!Access::check('interface', $prefs))) {
 }
 
 /*
-   If they are using access lists let's make sure
-   that they have enough access to play this mojo
-*/
+  If they are using access lists let's make sure
+  that they have enough access to play this mojo
+ */
 if (AmpConfig::get('access_control')) {
-    if (!Access::check_network('stream', $GLOBALS['user']->id, '25') and
-        !Access::check_network('network', $GLOBALS['user']->id, '25')) {
+    if (!Access::check_network('stream', $GLOBALS['user']->id, '25') and ! Access::check_network('network', $GLOBALS['user']->id, '25')) {
         debug_event('UI::access_denied', "Streaming Access Denied: " . $_SERVER['REMOTE_ADDR'] . " does not have stream level access", '3');
         UI::access_denied();
 
         return false;
     }
 } // access_control is enabled
-
 // Handle playlist downloads
 if ($type == 'playlist' && isset($playlist_type)) {
     $playlist = new Stream_Playlist($oid);
@@ -388,7 +386,7 @@ $browser = new Horde_Browser();
 /* If they are just trying to download make sure they have rights
  * and then present them with the download file
  */
-if ($_GET['action'] == 'download' and AmpConfig::get('download')) {
+if (filter_input(INPUT_GET, 'action') == 'download' and AmpConfig::get('download')) {
     debug_event('play', 'Downloading file...', 5);
     // STUPID IE
     $media_name = str_replace(array('?', '/', '\\'), "_", $media->f_file);
@@ -429,7 +427,6 @@ if ($_GET['action'] == 'download' and AmpConfig::get('download')) {
 
     return false;
 } // if they are trying to download and they can
-
 // Prevent the script from timing out
 set_time_limit(0);
 
@@ -534,7 +531,7 @@ if ($transcode) {
             $ssize            = 10;
             $send_all_in_once = true; // Should we use temporary folder instead?
             debug_event('play', 'Sending all data in once.', 5);
-            $troptions['frame']    = intval($_REQUEST['segment']) * $ssize;
+            $troptions['frame']    = (int) scrub_in($_REQUEST['segment']) * $ssize;
             $troptions['duration'] = ($troptions['frame'] + $ssize <= $media->time) ? $ssize : ($media->time - $troptions['frame']);
         }
     }

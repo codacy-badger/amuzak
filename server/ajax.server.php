@@ -51,6 +51,9 @@ switch ($page) {
         require_once AmpConfig::get('prefix') . '/server/playlist.ajax.php';
 
         return false;
+    case 'localplay':
+        require_once AmpConfig::get('prefix') . '/server/localplay.ajax.php';
+        exit;
     case 'tag':
         require_once AmpConfig::get('prefix') . '/server/tag.ajax.php';
 

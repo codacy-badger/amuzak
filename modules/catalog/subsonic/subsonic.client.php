@@ -29,7 +29,7 @@ class SubsonicClient
     protected $_creds;
     protected $_commands;
 
-    public function __construct($username, $password, $serverUrl, $port="4040", $client="Ampache")
+    public function __construct($username, $password, $serverUrl, $port="4040", $client="aMuzak")
     {
         $this->setServer($serverUrl, $port);
 

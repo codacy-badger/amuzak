@@ -62,13 +62,13 @@ if (!check_can_zip($object_type)) {
 }
 
 if (Core::is_playable_item($_REQUEST['action'])) {
-    $id = $_REQUEST['id'];
-    if (!is_array($id)) {
-        $id = array($id);
+    $objectid = $_REQUEST['id'];
+    if (!is_array($objectid)) {
+        $objectid = array($objectid);
     }
     $media_ids = array();
-    foreach ($id as $i) {
-        $libitem = new $object_type($i);
+    foreach ($objectid as $object) {
+        $libitem = new $object_type($object);
         if ($libitem->id) {
             $libitem->format();
             $name      = $libitem->get_fullname();
@@ -82,9 +82,9 @@ if (Core::is_playable_item($_REQUEST['action'])) {
             $name      = $GLOBALS['user']->username . ' - Playlist';
         break;
         case 'browse':
-            $id               = intval(scrub_in($_REQUEST['browse_id']));
-            $browse           = new Browse($id);
-            $browse_media_ids = $browse->get_saved();
+            $objectid               = (int) scrub_in($_REQUEST['browse_id']);
+            $browse                 = new Browse($objectid);
+            $browse_media_ids       = $browse->get_saved();
             foreach ($browse_media_ids as $media_id) {
                 switch ($object_type) {
                     case 'album':
@@ -120,6 +120,5 @@ $song_files = get_media_files($media_ids);
 if (is_array($song_files['0'])) {
     set_memory_limit($song_files['1'] + 32);
     send_zip($name, $song_files['0']);
+    debug_event('batch', 'Sending zip ' . $name, '3');
 }
-
-return false;

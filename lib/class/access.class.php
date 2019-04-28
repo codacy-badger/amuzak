@@ -1,4 +1,5 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
 /**
  *
@@ -23,42 +24,48 @@
 /**
  * Access Class
  *
- * This class handles the access list mojo for Ampache, it is meant to restrict
+ * This class handles the access list mojo for aMuzak, it is meant to restrict
  * access based on IP and maybe something else in the future.
  *
  */
 class Access
 {
     // Variables from DB
-
     /**
      *  @var int $id
      */
     public $id;
+
     /**
      *  @var string $name
      */
     public $name;
+
     /**
      *  @var string $start
      */
     public $start;
+
     /**
      *  @var string $end
      */
     public $end;
+
     /**
      *  @var int $level
      */
     public $level;
+
     /**
      *  @var int $user
      */
     public $user;
+
     /**
      *  @var string $type
      */
     public $type;
+
     /**
      *  @var boolean $enabled
      */
@@ -68,18 +75,22 @@ class Access
      *  @var string $f_start
      */
     public $f_start;
+
     /**
      *  @var string $f_end
      */
     public $f_end;
+
     /**
      *  @var string $f_user
      */
     public $f_user;
+
     /**
      *  @var string $f_level
      */
     public $f_level;
+
     /**
      *  @var string $f_type
      */
@@ -98,7 +109,7 @@ class Access
         }
 
         /* Assign id for use in get_info() */
-        $this->id = intval($access_id);
+        $this->id = (int) $access_id;
 
         $info = $this->_get_info();
         foreach ($info as $key => $value) {
@@ -190,14 +201,14 @@ class Access
         $end     = @inet_pton($data['end']);
         $name    = $data['name'];
         $type    = self::validate_type($data['type']);
-        $level   = intval($data['level']);
+        $level   = (int) $data['level'];
         $user    = $data['user'] ?: '-1';
         $enabled = make_bool($data['enabled']) ? 1 : 0;
 
         $sql = 'UPDATE `access_list` SET `start` = ?, `end` = ?, `level` = ?, ' .
-            '`user` = ?, `name` = ?, `type` = ?, `enabled` = ? WHERE `id` = ?';
+                '`user` = ?, `name` = ?, `type` = ?, `enabled` = ? WHERE `id` = ?';
         Dba::write($sql,
-            array($start, $end, $level, $user, $name, $type, $enabled, $this->id));
+                array($start, $end, $level, $user, $name, $type, $enabled, $this->id));
 
         return true;
     }
@@ -228,12 +239,12 @@ class Access
         $end     = @inet_pton($data['end']);
         $name    = $data['name'];
         $user    = $data['user'] ?: '-1';
-        $level   = intval($data['level']);
+        $level   = (int) $data['level'];
         $type    = self::validate_type($data['type']);
         $enabled = make_bool($data['enabled']) ? 1 : 0;
 
         $sql = 'INSERT INTO `access_list` (`name`, `level`, `start`, `end`, ' .
-            '`user`,`type`,`enabled`) VALUES (?, ?, ?, ?, ?, ?, ?)';
+                '`user`,`type`,`enabled`) VALUES (?, ?, ?, ?, ?, ?, ?)';
         Dba::write($sql, array($name, $level, $start, $end, $user, $type, $enabled));
 
         return true;
@@ -255,7 +266,7 @@ class Access
         $user  = $data['user'] ?: '-1';
 
         $sql = 'SELECT * FROM `access_list` WHERE `start` = ? AND `end` = ? ' .
-            'AND `type` = ? AND `user` = ?';
+                'AND `type` = ? AND `user` = ?';
         $db_results = Dba::read($sql, array($start, $end, $type, $user));
 
         if (Dba::fetch_assoc($db_results)) {
@@ -269,11 +280,11 @@ class Access
      * delete
      *
      * deletes the specified access_list entry
-     * @param int $id
+     * @param int $user_id
      */
-    public static function delete($id)
+    public static function delete($user_id)
     {
-        Dba::write('DELETE FROM `access_list` WHERE `id` = ?', array($id));
+        Dba::write('DELETE FROM `access_list` WHERE `id` = ?', array($user_id));
     }
 
     /**
@@ -297,7 +308,7 @@ class Access
                 if (AmpConfig::get('allow_zip_download') and $GLOBALS['user']->has_access('5')) {
                     return make_bool(AmpConfig::get('download'));
                 }
-            break;
+                break;
         }
 
         return false;
@@ -311,10 +322,10 @@ class Access
      * @param string $type
      * @param int|string $user
      * @param int $level
-     * @param string $ip
+     * @param string $user_ip
      * @return boolean
      */
-    public static function check_network($type, $user=null, $level, $ip=null, $apikey = null)
+    public static function check_network($type, $user = null, $level, $user_ip = null, $apikey = null)
     {
         if (!AmpConfig::get('access_control')) {
             switch ($type) {
@@ -327,8 +338,8 @@ class Access
         }
 
         // Clean incoming variables
-        $ip = $ip ?: $_SERVER['REMOTE_ADDR'];
-        $ip = inet_pton($ip);
+        $user_ip = $user_ip ?: $_SERVER['REMOTE_ADDR'];
+        $user_ip = inet_pton($user_ip);
 
         switch ($type) {
             case 'init-api':
@@ -339,21 +350,22 @@ class Access
                     $user = User::get_from_apikey($apikey);
                     $user = $user->id;
                 }
+            // Intentional break fall-through
             case 'api':
                 $type = 'rpc';
             case 'network':
             case 'interface':
             case 'stream':
-            break;
+                break;
             default:
                 return false;
         } // end switch on type
 
         $sql = 'SELECT `id` FROM `access_list` ' .
-            'WHERE `start` <= ? AND `end` >= ? ' .
-            'AND `level` >= ? AND `type` = ?';
+                'WHERE `start` <= ? AND `end` >= ? ' .
+                'AND `level` >= ? AND `type` = ?';
 
-        $params = array($ip, $ip, $level, $type);
+        $params = array($user_ip, $user_ip, $level, $type);
 
         if (strlen($user) && $user != '-1') {
             $sql .= " AND `user` IN(?, '-1')";
@@ -385,7 +397,7 @@ class Access
      * @param int|null $user_id
      * @return boolean
      */
-    public static function check($type, $level, $user_id=null)
+    public static function check($type, $level, $user_id = null)
     {
         if (AmpConfig::get('demo_mode')) {
             return true;
@@ -398,10 +410,13 @@ class Access
         if ($user_id !== null) {
             $user = new User($user_id);
         }
-        $level = intval($level);
+        $level = (int) $level;
 
         // Switch on the type
         switch ($type) {
+            case 'localplay':
+                // Check their localplay_level
+                return (AmpConfig::get('localplay_level') >= $level || $user->access >= 100);
             case 'interface':
                 // Check their standard user level
                 return ($user->access >= $level);
@@ -448,7 +463,6 @@ class Access
 
         return $results;
     }
-
 
     /**
      * get_level_name

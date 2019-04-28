@@ -640,7 +640,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     margin-left: 90%;
-    min-width: max-content;
+    min-width: 140px;
     max-height: 85%;
     max-width: 200px;
     overflow-y: auto;
@@ -667,6 +667,8 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 #rightbar #rb_action {
     list-style-type: none;
     padding: 2px;
+    text-align: end;
+    width: 100%;
 }
 
 #rightbar #rb_action li {
@@ -775,7 +777,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 }
 
 .content-right-wild {
-    margin-right: 20px !important;
+    margin-right: 10px
 }
 
 .content-left-wild {
@@ -836,7 +838,7 @@ table.tabledata tfoot .th-bottom {
 
 table.tabledata td {
     vertical-align: middle;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
     overflow: hidden;
     text-overflow: ellipsis;
     padding: 3px 10px 3px 0;
@@ -1433,6 +1435,7 @@ span.fatalerror {
 }
 
 .external_links {
+    padding-top: 10px;
     text-align: right;
 }
 

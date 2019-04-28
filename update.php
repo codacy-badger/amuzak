@@ -58,9 +58,10 @@ $htmllang = str_replace("_", "-", AmpConfig::get('lang'));
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $htmllang; ?>" lang="<?php echo $htmllang; ?>">
 <head>
-    <!-- Propulsed by Ampache | ampache.org -->
+    <!-- Propulsed by aMuzak | ampcore -->
     <meta http-equiv="Content-Type" content="text/html; charset=<?php echo AmpConfig::get('site_charset'); ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo AmpConfig::get('site_title'); ?> - Update</title>
     <link href="lib/components/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="lib/components/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
@@ -70,14 +71,14 @@ $htmllang = str_replace("_", "-", AmpConfig::get('lang'));
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="<?php echo UI::get_logo_url('dark'); ?>" title="Ampache" alt="Ampache">
+                <img src="<?php echo UI::get_logo_url('dark'); ?>" title="aMuzak" alt="aMuzak">
                 <?php echo T_('aMuzak'); ?> - For the love of Music
             </a>
         </div>
     </div>
     <div class="container" role="main">
         <div class="page-header requirements">
-            <h1><?php echo T_('Ampache Update'); ?></h1>
+            <h1><?php echo T_('aMuzak Update'); ?></h1>
         </div>
         <div class="well">
              <p><?php printf(T_('This page handles all database updates to Ampache starting with <strong>3.3.3.5</strong>. Your current version is <strong>%s</strong> with database version <strong>%s</strong>.'), AmpConfig::get('version'), $version); ?></p>

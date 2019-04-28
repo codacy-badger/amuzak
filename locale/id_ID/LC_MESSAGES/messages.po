@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# lachlan 00 <lachlan.00@gmail.com>, 2019
+# lachlan <lachlan.00@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/projects/p/ampache/\n"
-"POT-Creation-Date: 2019-03-28 10:08+1000\n"
+"POT-Creation-Date: 2019-04-09 16:33+1000\n"
 "PO-Revision-Date: 2019-03-28 00:51+0000\n"
-"Last-Translator: lachlan 00 <lachlan.00@gmail.com>, 2019\n"
+"Last-Translator: lachlan <lachlan.00@gmail.com>, 2019\n"
 "Language-Team: Indonesian (Indonesia) (https://www.transifex.com/ampachecore/teams/97573/id_ID/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,9 +46,9 @@ msgstr "Ditambahkan"
 msgid "Your new Access Control List(s) have been created"
 msgstr "Daftar Kontrol Akses Anda yang baru telah dibuat"
 
-#: ../../admin/access.php:88 ../../lib/class/catalog.class.php:1400
-#: ../../lib/class/search.class.php:403 ../../preferences.php:144
-#: ../../preferences.php:162
+#: ../../admin/access.php:88 ../../lib/class/catalog.class.php:1369
+#: ../../lib/class/search.class.php:403 ../../preferences.php:152
+#: ../../preferences.php:171
 msgid "Updated"
 msgstr "Diperbarui"
 
@@ -71,7 +71,7 @@ msgid "The Catalog and all associated records have been deleted"
 msgstr "Katalog dan semua catatan terkait telah dihapus"
 
 #: ../../admin/catalog.php:107 ../../admin/users.php:192
-#: ../../preferences.php:166 ../../templates/error_page.inc.php:50
+#: ../../preferences.php:175 ../../templates/error_page.inc.php:50
 msgid "Error"
 msgstr "Kesalahan"
 
@@ -83,7 +83,7 @@ msgstr "Tidak dapat menghapus katalog"
 msgid "Catalog Delete"
 msgstr "Hapus Katalog"
 
-#: ../../admin/catalog.php:112 ../../admin/users.php:230 ../../share.php:94
+#: ../../admin/catalog.php:112 ../../admin/users.php:230 ../../share.php:99
 msgid "Confirm Deletion Request"
 msgstr "Konfirmasikan Permintaan Penghapusan"
 
@@ -181,51 +181,63 @@ msgstr "Email Tidak Terkirim"
 msgid "Your E-mail was not sent."
 msgstr "E-mail Anda tidak terkirim."
 
-#: ../../admin/modules.php:39
+#: ../../admin/modules.php:38
+msgid "Failed to enable the module, Controller Error"
+msgstr "Gagal mengaktifkan modul, Controller Error"
+
+#: ../../admin/modules.php:53
+msgid "localplay enabled"
+msgstr "permainan lokal diaktifkan"
+
+#: ../../admin/modules.php:61
 msgid "Failed to enable the module, Catalog Error"
 msgstr "Gagal mengaktifkan modul, Katalog Error"
 
-#: ../../admin/modules.php:48
+#: ../../admin/modules.php:70
 msgid "Module enabled"
 msgstr "Modul diaktifkan"
 
-#: ../../admin/modules.php:55
+#: ../../admin/modules.php:77 ../../admin/modules.php:84
 msgid "Are you sure you want to disable this module?"
 msgstr "Anda yakin ingin menonaktifkan modul ini?"
 
-#: ../../admin/modules.php:64
-msgid "Failed to disable module, Catalog Error"
-msgstr "Gagal menonaktifkan modul, Katalog Error"
-
-#: ../../admin/modules.php:72
+#: ../../admin/modules.php:96 ../../admin/modules.php:113
 msgid "Module disabled"
 msgstr "Modul dinonaktifkan"
 
-#: ../../admin/modules.php:87
+#: ../../admin/modules.php:105
+msgid "Failed to disable module, Catalog Error"
+msgstr "Gagal menonaktifkan modul, Katalog Error"
+
+#: ../../admin/modules.php:128
 msgid "Unable to Install Plugin"
 msgstr "Tidak Dapat Menginstal Plugin"
 
-#: ../../admin/modules.php:98
+#: ../../admin/modules.php:139
 msgid "Plugin enabled"
 msgstr "Plugin diaktifkan"
 
-#: ../../admin/modules.php:105
+#: ../../admin/modules.php:146
 msgid "Are you sure you want to disable this plugin?"
 msgstr "Anda yakin ingin menonaktifkan plugin ini?"
 
-#: ../../admin/modules.php:124
+#: ../../admin/modules.php:165
 msgid "Plugin disabled"
 msgstr "Plugin dinonaktifkan"
 
-#: ../../admin/modules.php:139
+#: ../../admin/modules.php:180
 msgid "Plugin Upgraded"
 msgstr "Plugin Di-upgrade"
 
-#: ../../admin/modules.php:145
+#: ../../admin/modules.php:186
 msgid "Plugins"
 msgstr "Plugin"
 
-#: ../../admin/modules.php:151
+#: ../../admin/modules.php:192
+msgid "Localplay Controllers"
+msgstr "Pengendali Permainan Lokal"
+
+#: ../../admin/modules.php:198
 msgid "Catalog Types"
 msgstr "Jenis Katalog"
 
@@ -297,6 +309,7 @@ msgid "Guest"
 msgstr "Tamu"
 
 #: ../../admin/users.php:171 ../../lib/class/democratic.class.php:161
+#: ../../lib/preferences.php:300
 #: ../../modules/plugins/Flattr/Flattr.plugin.php:91
 #: ../../modules/plugins/Paypal/Paypal.plugin.php:94
 #: ../../templates/show_access_list.inc.php:51
@@ -315,7 +328,7 @@ msgid "User"
 msgstr "Pengguna"
 
 #: ../../admin/users.php:173 ../../lib/class/democratic.class.php:170
-#: ../../templates/show_add_user.inc.php:89
+#: ../../lib/preferences.php:302 ../../templates/show_add_user.inc.php:89
 #: ../../templates/show_create_democratic.inc.php:53
 #: ../../templates/show_democratic_playlist.inc.php:66
 #: ../../templates/show_democratic_playlist.inc.php:119
@@ -323,7 +336,7 @@ msgstr "Pengguna"
 #: ../../templates/show_mail_users.inc.php:33
 #: ../../templates/show_preference_admin.inc.php:45
 #: ../../templates/show_preference_box.inc.php:83
-#: ../../templates/sidebar.inc.php:36
+#: ../../templates/sidebar.inc.php:39
 msgid "Admin"
 msgstr "Admin"
 
@@ -400,7 +413,7 @@ msgstr "Kunci API Dihasilkan"
 msgid "New user API Key has been generated."
 msgstr "Kunci API pengguna baru telah dibuat."
 
-#: ../../albums.php:36 ../../albums.php:56 ../../albums.php:58
+#: ../../albums.php:36 ../../albums.php:57 ../../albums.php:59
 msgid "Album Deletion"
 msgstr "Penghapusan Album"
 
@@ -408,15 +421,15 @@ msgstr "Penghapusan Album"
 msgid "Are you sure you want to permanently delete this album?"
 msgstr "Apakah Anda yakin ingin menghapus album ini secara permanen?"
 
-#: ../../albums.php:56
+#: ../../albums.php:57
 msgid "Album has been deleted."
 msgstr "Album telah dihapus."
 
-#: ../../albums.php:58
+#: ../../albums.php:59
 msgid "Cannot delete this album."
 msgstr "Tidak dapat menghapus album ini."
 
-#: ../../artists.php:38 ../../artists.php:58 ../../artists.php:60
+#: ../../artists.php:38 ../../artists.php:59 ../../artists.php:61
 msgid "Artist Deletion"
 msgstr "Penghapusan Artis"
 
@@ -424,31 +437,31 @@ msgstr "Penghapusan Artis"
 msgid "Are you sure you want to permanently delete this artist?"
 msgstr "Apakah Anda yakin ingin menghapus artis ini secara permanen?"
 
-#: ../../artists.php:58
+#: ../../artists.php:59
 msgid "Artist has been deleted."
 msgstr "Artis telah dihapus."
 
-#: ../../artists.php:60
+#: ../../artists.php:61
 msgid "Cannot delete this artist."
 msgstr "Tidak dapat menghapus artis ini."
 
-#: ../../artists.php:98
+#: ../../artists.php:99
 msgid "Show Artists starting with"
 msgstr "Tampilkan Artis yang dimulai dengan"
 
-#: ../../arts.php:50
+#: ../../arts.php:52
 msgid "Art Cleared"
 msgstr "Seni Dihapus"
 
-#: ../../arts.php:50
+#: ../../arts.php:52
 msgid "Art information has been removed from the database"
 msgstr "Informasi seni telah dihapus dari database"
 
-#: ../../arts.php:56 ../../arts.php:72 ../../arts.php:139
+#: ../../arts.php:58 ../../arts.php:74 ../../arts.php:141
 msgid "Art Not Located"
 msgstr "Seni Tidak Berlokasi"
 
-#: ../../arts.php:56 ../../arts.php:72 ../../arts.php:139
+#: ../../arts.php:58 ../../arts.php:74 ../../arts.php:141
 msgid ""
 "Art could not be located at this time. This may be due to write access "
 "error, or the file is not received correctly."
@@ -456,7 +469,7 @@ msgstr ""
 "Seni tidak dapat ditemukan saat ini. Ini mungkin karena kesalahan akses "
 "tulis, atau file tidak diterima dengan benar."
 
-#: ../../arts.php:68 ../../arts.php:94
+#: ../../arts.php:70 ../../arts.php:96
 msgid "Art Inserted"
 msgstr "Seni Dimasukkan"
 
@@ -775,7 +788,7 @@ msgstr "Pembuatan basis data gagal"
 msgid "Config file creation failed"
 msgstr "Pembuatan file konfigurasi gagal"
 
-#: ../../bin/install/update_db.inc:44 ../../update.php:82
+#: ../../bin/install/update_db.inc:44 ../../update.php:84
 msgid "The following updates need to be performed:"
 msgstr "Pembaruan berikut perlu dilakukan:"
 
@@ -905,13 +918,12 @@ msgstr "Tuang semua Artis sebagai daftar putar individual"
 msgid "Extensions: m3u (default), xspf, pls"
 msgstr "Ekstensi: m3u (default), xspf, pls"
 
-#: ../../browse.php:85 ../../lib/class/browse.class.php:257
-#: ../../templates/header.inc.php:415 ../../templates/sidebar_home.inc.php:40
-#: ../../templates/sidebar.light.inc.php:30
+#: ../../browse.php:85 ../../lib/class/browse.class.php:262
+#: ../../templates/header.inc.php:416 ../../templates/sidebar_home.inc.php:40
 msgid "Tag Cloud"
 msgstr "Tag Cloud"
 
-#: ../../democratic.php:57
+#: ../../democratic.php:58
 msgid "The Requested Playlist has been deleted."
 msgstr "Daftar Putar yang Diminta telah dihapus."
 
@@ -923,7 +935,23 @@ msgstr "Galat: Ampache SQL Username atau Kata sandi hilang"
 msgid "Error: Config files not found or unreadable"
 msgstr "Kesalahan: File konfigurasi tidak ditemukan atau tidak dapat dibaca"
 
-#: ../../labels.php:36 ../../labels.php:56 ../../labels.php:58
+#: ../../jukebox.php:51 ../../templates/show_index.inc.php:50
+#: ../../templates/show_random_albums.inc.php:26
+msgid "Albums of the Moment"
+msgstr "Album Momen"
+
+#: ../../jukebox.php:52 ../../templates/show_artist.inc.php:49
+#: ../../templates/show_artist.inc.php:243
+#: ../../templates/show_artist.inc.php:253
+#: ../../templates/show_artist.inc.php:263
+#: ../../templates/show_index.inc.php:51
+#: ../../templates/show_label.inc.php:107
+#: ../../templates/show_now_playing_row.inc.php:83
+#: ../../templates/show_now_playing_row.inc.php:89
+msgid "Loading..."
+msgstr "Pemuatan..."
+
+#: ../../labels.php:36 ../../labels.php:57 ../../labels.php:59
 msgid "Label Deletion"
 msgstr "Penghapusan Label"
 
@@ -931,19 +959,19 @@ msgstr "Penghapusan Label"
 msgid "Are you sure you want to permanently delete this label?"
 msgstr "Apakah Anda yakin ingin menghapus label ini secara permanen?"
 
-#: ../../labels.php:56
+#: ../../labels.php:57
 msgid "Label has been deleted."
 msgstr "Label telah dihapus."
 
-#: ../../labels.php:58
+#: ../../labels.php:59
 msgid "Cannot delete this label."
 msgstr "Tidak dapat menghapus label ini."
 
-#: ../../labels.php:85
+#: ../../labels.php:88
 msgid "Label Added"
 msgstr "Label ditambahkan"
 
-#: ../../labels.php:110
+#: ../../labels.php:114
 msgid "Label cannot be found."
 msgstr "Label tidak dapat ditemukan."
 
@@ -959,8 +987,8 @@ msgstr "Ketidakcocokan Versi Alamat IP"
 msgid "Duplicate ACL defined"
 msgstr "ACL duplikat ditentukan"
 
-#: ../../lib/class/access.class.php:462 ../../lib/class/access.class.php:484
-#: ../../lib/ui.lib.php:398 ../../templates/browse_filters.inc.php:89
+#: ../../lib/class/access.class.php:466 ../../lib/class/access.class.php:488
+#: ../../lib/ui.lib.php:401 ../../templates/browse_filters.inc.php:89
 #: ../../templates/list_header.inc.php:124
 #: ../../templates/show_add_access.inc.php:40
 #: ../../templates/show_add_access.inc.php:58
@@ -972,28 +1000,28 @@ msgstr "ACL duplikat ditentukan"
 msgid "All"
 msgstr "Semua"
 
-#: ../../lib/class/access.class.php:465
+#: ../../lib/class/access.class.php:469
 #: ../../templates/list_header.inc.php:131
 #: ../../templates/show_add_access.inc.php:37
 #: ../../templates/show_edit_access.inc.php:69
 #: ../../templates/show_graphs.inc.php:83
-#: ../../templates/show_tagcloud.inc.php:33
+#: ../../templates/show_tagcloud.inc.php:32
 msgid "View"
 msgstr "Melihat"
 
-#: ../../lib/class/access.class.php:468
+#: ../../lib/class/access.class.php:472
 #: ../../templates/show_add_access.inc.php:38
 #: ../../templates/show_edit_access.inc.php:70
 msgid "Read"
 msgstr "Baca baca"
 
-#: ../../lib/class/access.class.php:471
+#: ../../lib/class/access.class.php:475
 #: ../../templates/show_add_access.inc.php:39
 #: ../../templates/show_edit_access.inc.php:71
 msgid "Read/Write"
 msgstr "Baca tulis"
 
-#: ../../lib/class/access.class.php:502
+#: ../../lib/class/access.class.php:506
 #: ../../templates/show_add_access.inc.php:56
 #: ../../templates/show_add_access.inc.php:57
 #: ../../templates/show_add_access.inc.php:58
@@ -1002,7 +1030,7 @@ msgstr "Baca tulis"
 msgid "API/RPC"
 msgstr "API / RPC"
 
-#: ../../lib/class/access.class.php:504
+#: ../../lib/class/access.class.php:508
 #: ../../templates/show_add_access.inc.php:65
 #: ../../templates/show_add_access.inc.php:66
 #: ../../templates/show_add_access.inc.php:67
@@ -1011,13 +1039,13 @@ msgstr "API / RPC"
 msgid "Local Network Definition"
 msgstr "Definisi Jaringan Lokal"
 
-#: ../../lib/class/access.class.php:506
+#: ../../lib/class/access.class.php:510
 #: ../../templates/show_add_access.inc.php:73
 #: ../../templates/show_edit_access.inc.php:36
 msgid "Web Interface"
 msgstr "Antarmuka Web"
 
-#: ../../lib/class/access.class.php:509
+#: ../../lib/class/access.class.php:513
 #: ../../templates/show_add_access.inc.php:57
 #: ../../templates/show_add_access.inc.php:66
 #: ../../templates/show_add_access.inc.php:72
@@ -1032,7 +1060,7 @@ msgid "Unknown (Orphaned)"
 msgstr "Tidak Diketahui (Yatim Piatu)"
 
 #: ../../lib/class/album.class.php:632
-#: ../../lib/class/subsonic_xml_data.class.php:645
+#: ../../lib/class/subsonic_xml_data.class.php:623
 #: ../../server/search.ajax.php:87
 #: ../../templates/show_album_group_disks.inc.php:109
 #: ../../templates/show_album.inc.php:31
@@ -1042,8 +1070,8 @@ msgid "Disk"
 msgstr "Disk"
 
 #: ../../lib/class/album.class.php:644 ../../lib/class/browse.class.php:226
-#: ../../lib/class/upnp_api.class.php:337 ../../lib/ui.lib.php:180
-#: ../../server/search.ajax.php:57 ../../templates/header.inc.php:403
+#: ../../lib/class/upnp_api.class.php:338 ../../lib/ui.lib.php:183
+#: ../../server/search.ajax.php:57 ../../templates/header.inc.php:404
 #: ../../templates/show_label.inc.php:91
 #: ../../templates/show_labels.inc.php:47
 #: ../../templates/show_labels.inc.php:79
@@ -1053,7 +1081,7 @@ msgstr "Disk"
 #: ../../templates/show_search_form.inc.php:41
 #: ../../templates/show_stats.inc.php:34 ../../templates/show_user.inc.php:93
 #: ../../templates/sidebar_home.inc.php:34
-#: ../../templates/sidebar_home.inc.php:150
+#: ../../templates/sidebar_home.inc.php:160
 #: ../../templates/sidebar.light.inc.php:27
 msgid "Artists"
 msgstr "Artis"
@@ -1074,11 +1102,11 @@ msgstr "Rilis Grup MusicBrainzID"
 
 #: ../../lib/class/album.class.php:670 ../../lib/class/artist.class.php:499
 #: ../../lib/class/search.class.php:239 ../../lib/class/search.class.php:492
-#: ../../lib/class/song.class.php:1496
+#: ../../lib/class/song.class.php:1497
 #: ../../templates/browse_filters.inc.php:79
 #: ../../templates/show_add_upload.inc.php:177
-#: ../../templates/show_albums.inc.php:40
-#: ../../templates/show_albums.inc.php:114
+#: ../../templates/show_albums.inc.php:42
+#: ../../templates/show_albums.inc.php:116
 #: ../../templates/show_artists.inc.php:40
 #: ../../templates/show_artists.inc.php:114
 #: ../../templates/show_democratic_playlist.inc.php:62
@@ -1099,14 +1127,14 @@ msgstr "Rilis Grup MusicBrainzID"
 #: ../../templates/show_song_previews.inc.php:37
 #: ../../templates/show_songs.inc.php:35 ../../templates/show_songs.inc.php:98
 #: ../../templates/show_tagcloud.inc.php:24
-#: ../../templates/sidebar_home.inc.php:138
+#: ../../templates/sidebar_home.inc.php:148
 msgid "Artist"
 msgstr "Artis"
 
 #: ../../lib/class/album.class.php:673 ../../lib/class/search.class.php:232
 #: ../../templates/show_add_upload.inc.php:188
-#: ../../templates/show_albums.inc.php:38
-#: ../../templates/show_albums.inc.php:112
+#: ../../templates/show_albums.inc.php:40
+#: ../../templates/show_albums.inc.php:114
 #: ../../templates/show_democratic_playlist.inc.php:61
 #: ../../templates/show_democratic_playlist.inc.php:114
 #: ../../templates/show_disabled_songs.inc.php:30
@@ -1122,26 +1150,32 @@ msgstr "Artis"
 #: ../../templates/show_song_previews.inc.php:38
 #: ../../templates/show_songs.inc.php:36 ../../templates/show_songs.inc.php:99
 #: ../../templates/show_tagcloud.inc.php:25
-#: ../../templates/sidebar_home.inc.php:137
+#: ../../templates/sidebar_home.inc.php:147
 msgid "Album"
 msgstr "Album"
 
-#: ../../lib/class/ampache_rss.class.php:92 ../../templates/header.inc.php:41
+#: ../../lib/class/ampache_rss.class.php:92
+#: ../../lib/class/localplay.class.php:628 ../../templates/header.inc.php:41
+#: ../../templates/header-tiny.inc.php:41
+#: ../../templates/show_localplay_status.inc.php:31
 #: ../../templates/show_now_playing.inc.php:32
 msgid "Now Playing"
 msgstr "Sedang dimainkan"
 
 #: ../../lib/class/ampache_rss.class.php:93 ../../templates/header.inc.php:42
+#: ../../templates/header-tiny.inc.php:42
 #: ../../templates/show_recently_played.inc.php:24
 #: ../../templates/show_user.inc.php:90
 msgid "Recently Played"
 msgstr "Baru dimainkan"
 
 #: ../../lib/class/ampache_rss.class.php:94 ../../templates/header.inc.php:43
+#: ../../templates/header-tiny.inc.php:43
 msgid "Newest Albums"
 msgstr "Album Terbaru"
 
 #: ../../lib/class/ampache_rss.class.php:95 ../../templates/header.inc.php:44
+#: ../../templates/header-tiny.inc.php:44
 msgid "Newest Artists"
 msgstr "Artis Terbaru"
 
@@ -1201,43 +1235,45 @@ msgid "Login Failed: timestamp out of range"
 msgstr "Login Gagal: timestamp di luar jangkauan"
 
 #: ../../lib/class/api.class.php:182 ../../lib/class/api.class.php:195
-#: ../../lib/class/api.class.php:290
+#: ../../lib/class/api.class.php:288
 msgid "Error Invalid Handshake - "
 msgstr "Kesalahan Jabat Tangan Tidak Valid -"
 
 #: ../../lib/class/api.class.php:194 ../../lib/class/api.class.php:195
-#: ../../lib/class/api.class.php:290
+#: ../../lib/class/api.class.php:288
 msgid "Invalid Username/Password"
 msgstr "Nama pengguna / sandi tidak benar"
 
-#: ../../lib/class/api.class.php:669 ../../lib/class/api.class.php:687
-#: ../../lib/class/api.class.php:705
+#: ../../lib/class/api.class.php:670 ../../lib/class/api.class.php:691
+#: ../../lib/class/api.class.php:709 ../../lib/class/api.class.php:727
 msgid "Access denied to this playlist."
 msgstr "Akses ditolak ke daftar putar ini."
 
-#: ../../lib/class/api.class.php:817 ../../lib/class/api.class.php:835
-msgid "Media Object Invalid or Not Specified"
-msgstr "Objek Media Tidak Valid atau Tidak Ditentukan"
-
-#: ../../lib/class/api.class.php:857 ../../server/xml.server.php:109
+#: ../../lib/class/api.class.php:811 ../../lib/class/api.class.php:872
+#: ../../server/xml.server.php:112
 msgid "Invalid Request"
 msgstr "Permintaan Tidak Valid"
 
-#: ../../lib/class/api.class.php:988
+#: ../../lib/class/api.class.php:832 ../../lib/class/api.class.php:850
+msgid "Media Object Invalid or Not Specified"
+msgstr "Objek Media Tidak Valid atau Tidak Ditentukan"
+
+#: ../../lib/class/api.class.php:1003
 msgid "Wrong library item type."
 msgstr "Jenis item pustaka salah."
 
-#: ../../lib/class/api.class.php:992
+#: ../../lib/class/api.class.php:1007
 msgid "Library item not found."
 msgstr "Item perpustakaan tidak ditemukan."
 
-#: ../../lib/class/art.class.php:1330
+#: ../../lib/class/art.class.php:1325
 msgid "Error: Unable to open"
 msgstr "Kesalahan: Tidak dapat membuka"
 
-#: ../../lib/class/art.class.php:1831 ../../lib/class/shoutbox.class.php:314
+#: ../../lib/class/art.class.php:1792 ../../lib/class/shoutbox.class.php:314
 #: ../../modules/plugins/CatalogFavorites/CatalogFavorites.plugin.php:121
-#: ../../templates/header.inc.php:337 ../../templates/rightbar.inc.php:25
+#: ../../templates/header.inc.php:337 ../../templates/header-tiny.inc.php:337
+#: ../../templates/rightbar.inc.php:25
 #: ../../templates/show_album_group_disks.inc.php:64
 #: ../../templates/show_album_group_disks.inc.php:65
 #: ../../templates/show_album_group_disks.inc.php:122
@@ -1246,6 +1282,7 @@ msgstr "Kesalahan: Tidak dapat membuka"
 #: ../../templates/show_artist_row.inc.php:28
 #: ../../templates/show_democratic.inc.php:45
 #: ../../templates/show_live_stream.inc.php:38
+#: ../../templates/show_localplay_control.inc.php:27
 #: ../../templates/show_manage_democratic.inc.php:48
 #: ../../templates/show_playlist_media_row.inc.php:31
 #: ../../templates/show_playlist_medias.inc.php:78
@@ -1262,15 +1299,15 @@ msgstr "Kesalahan: Tidak dapat membuka"
 msgid "Play"
 msgstr "Bermain"
 
-#: ../../lib/class/art.class.php:1840
+#: ../../lib/class/art.class.php:1801
 msgid "Edit/Find Art"
 msgstr "Edit / Temukan Seni"
 
-#: ../../lib/class/art.class.php:1843
+#: ../../lib/class/art.class.php:1804
 msgid "Do you really want to reset art?"
 msgstr "Apakah Anda benar-benar ingin mengatur ulang seni?"
 
-#: ../../lib/class/art.class.php:1844
+#: ../../lib/class/art.class.php:1805
 msgid "Reset Art"
 msgstr "Setel Ulang Seni"
 
@@ -1278,45 +1315,45 @@ msgstr "Setel Ulang Seni"
 msgid "Artist MusicBrainzID"
 msgstr "Artis MusicBrainzID"
 
-#: ../../lib/class/autoupdate.class.php:234
+#: ../../lib/class/autoupdate.class.php:238
 msgid "Update available"
 msgstr "Pembaruan tersedia"
 
-#: ../../lib/class/autoupdate.class.php:237
+#: ../../lib/class/autoupdate.class.php:241
 msgid "See"
 msgstr "Lihat"
 
-#: ../../lib/class/autoupdate.class.php:237
+#: ../../lib/class/autoupdate.class.php:241
 msgid "changes"
 msgstr "perubahan"
 
-#: ../../lib/class/autoupdate.class.php:239
-#: ../../lib/class/autoupdate.class.php:242
+#: ../../lib/class/autoupdate.class.php:243
+#: ../../lib/class/autoupdate.class.php:246
 msgid "or"
 msgstr "atau"
 
-#: ../../lib/class/autoupdate.class.php:240
-#: ../../lib/class/autoupdate.class.php:243
+#: ../../lib/class/autoupdate.class.php:244
+#: ../../lib/class/autoupdate.class.php:247
 msgid "download"
 msgstr "unduh"
 
-#: ../../lib/class/autoupdate.class.php:257
+#: ../../lib/class/autoupdate.class.php:264
 msgid "Updating Ampache sources with `"
 msgstr "Memperbarui sumber Ampache dengan `"
 
-#: ../../lib/class/autoupdate.class.php:261
-#: ../../lib/class/autoupdate.class.php:276
+#: ../../lib/class/autoupdate.class.php:268
+#: ../../lib/class/autoupdate.class.php:283
 msgid "Done"
 msgstr "Selesai"
 
-#: ../../lib/class/autoupdate.class.php:272
+#: ../../lib/class/autoupdate.class.php:279
 msgid "Updating dependencies with `"
 msgstr "Memperbarui dependensi dengan `"
 
-#: ../../lib/class/browse.class.php:204 ../../lib/class/browse.class.php:269
-#: ../../lib/class/upnp_api.class.php:385 ../../server/index.ajax.php:218
-#: ../../server/search.ajax.php:119 ../../templates/show_albums.inc.php:41
-#: ../../templates/show_albums.inc.php:115
+#: ../../lib/class/browse.class.php:204 ../../lib/class/browse.class.php:274
+#: ../../lib/class/upnp_api.class.php:386 ../../server/index.ajax.php:219
+#: ../../server/search.ajax.php:119 ../../templates/show_albums.inc.php:43
+#: ../../templates/show_albums.inc.php:117
 #: ../../templates/show_artists.inc.php:42
 #: ../../templates/show_artists.inc.php:116
 #: ../../templates/show_label.inc.php:92
@@ -1328,13 +1365,13 @@ msgstr "Memperbarui dependensi dengan `"
 #: ../../templates/show_recommended_artists.inc.php:95
 #: ../../templates/show_search_form.inc.php:29
 #: ../../templates/show_search_form.inc.php:31
-#: ../../templates/show_stats.inc.php:35 ../../templates/show_stats.inc.php:73
-#: ../../templates/sidebar_home.inc.php:148
+#: ../../templates/show_stats.inc.php:35 ../../templates/show_stats.inc.php:72
+#: ../../templates/sidebar_home.inc.php:158
 msgid "Songs"
 msgstr "Lagu"
 
-#: ../../lib/class/browse.class.php:210 ../../lib/class/upnp_api.class.php:361
-#: ../../lib/ui.lib.php:176 ../../server/search.ajax.php:90
+#: ../../lib/class/browse.class.php:210 ../../lib/class/upnp_api.class.php:362
+#: ../../lib/ui.lib.php:179 ../../server/search.ajax.php:90
 #: ../../templates/browse_filters.inc.php:76
 #: ../../templates/show_artist.inc.php:198
 #: ../../templates/show_artists.inc.php:43
@@ -1347,7 +1384,7 @@ msgstr "Lagu"
 #: ../../templates/show_search_form.inc.php:36
 #: ../../templates/show_stats.inc.php:33
 #: ../../templates/sidebar_home.inc.php:33
-#: ../../templates/sidebar_home.inc.php:149
+#: ../../templates/sidebar_home.inc.php:159
 #: ../../templates/sidebar.light.inc.php:28
 msgid "Albums"
 msgstr "Album"
@@ -1356,17 +1393,16 @@ msgstr "Album"
 msgid "Users"
 msgstr "Pengguna"
 
-#: ../../lib/class/browse.class.php:231 ../../lib/class/upnp_api.class.php:457
+#: ../../lib/class/browse.class.php:231 ../../lib/class/upnp_api.class.php:458
 #: ../../templates/sidebar_home.inc.php:45
-#: ../../templates/sidebar.light.inc.php:33
 msgid "Radio Stations"
 msgstr "Stasiun Radio"
 
-#: ../../lib/class/browse.class.php:236 ../../lib/class/upnp_api.class.php:409
-#: ../../server/search.ajax.php:148 ../../templates/header.inc.php:409
+#: ../../lib/class/browse.class.php:236 ../../lib/class/upnp_api.class.php:410
+#: ../../server/search.ajax.php:148 ../../templates/header.inc.php:410
 #: ../../templates/show_user.inc.php:96
 #: ../../templates/sidebar_home.inc.php:41
-#: ../../templates/sidebar_home.inc.php:151
+#: ../../templates/sidebar_home.inc.php:161
 #: ../../templates/sidebar.light.inc.php:29
 msgid "Playlists"
 msgstr "Daftar putar"
@@ -1375,35 +1411,39 @@ msgstr "Daftar putar"
 msgid "Playlist Medias"
 msgstr "Media Daftar Putar"
 
-#: ../../lib/class/browse.class.php:244 ../../lib/class/upnp_api.class.php:433
+#: ../../lib/class/browse.class.php:244
+msgid "Current Playlist"
+msgstr "Daftar Putar Saat Ini"
+
+#: ../../lib/class/browse.class.php:249 ../../lib/class/upnp_api.class.php:434
 #: ../../templates/sidebar_home.inc.php:42
 msgid "Smart Playlists"
 msgstr "Daftar Putar Cerdas"
 
-#: ../../lib/class/browse.class.php:248 ../../templates/show_stats.inc.php:27
+#: ../../lib/class/browse.class.php:253 ../../templates/show_stats.inc.php:27
 #: ../../templates/sidebar_admin.inc.php:24
 msgid "Catalogs"
 msgstr "Katalog"
 
-#: ../../lib/class/browse.class.php:252
+#: ../../lib/class/browse.class.php:257
 msgid "Shoutbox Records"
 msgstr "Catatan Shoutbox"
 
-#: ../../lib/class/browse.class.php:261
+#: ../../lib/class/browse.class.php:266
 #: ../../templates/show_democratic.inc.php:23
 msgid "Democratic Playlist"
 msgstr "Daftar Putar Demokrat"
 
-#: ../../lib/class/browse.class.php:265
-#: ../../templates/sidebar_home.inc.php:114
+#: ../../lib/class/browse.class.php:270
+#: ../../templates/sidebar_home.inc.php:124
 msgid "Shared Objects"
 msgstr "Objek yang Dibagikan"
 
-#: ../../lib/class/browse.class.php:273
+#: ../../lib/class/browse.class.php:278
 msgid "Media Licenses"
 msgstr "Lisensi Media"
 
-#: ../../lib/class/browse.class.php:277 ../../server/search.ajax.php:178
+#: ../../lib/class/browse.class.php:282 ../../server/search.ajax.php:178
 #: ../../templates/show_artist.inc.php:211
 #: ../../templates/show_artist.inc.php:262
 #: ../../templates/show_edit_artist_row.inc.php:61
@@ -1411,69 +1451,69 @@ msgstr "Lisensi Media"
 msgid "Labels"
 msgstr "Label"
 
-#: ../../lib/class/browse.class.php:281
+#: ../../lib/class/browse.class.php:286
 msgid "Private Messages"
 msgstr "pesan pribadi"
 
-#: ../../lib/class/browse.class.php:285 ../../lib/class/upnp_api.class.php:481
+#: ../../lib/class/browse.class.php:290 ../../lib/class/upnp_api.class.php:482
 #: ../../templates/sidebar_home.inc.php:50
 msgid "Podcasts"
 msgstr "Podcast"
 
-#: ../../lib/class/browse.class.php:289
+#: ../../lib/class/browse.class.php:294
 msgid "Podcast Episodes"
 msgstr "Episode Podcast"
 
-#: ../../lib/class/browse.class.php:330 ../../templates/rightbar.inc.php:123
+#: ../../lib/class/browse.class.php:335 ../../templates/rightbar.inc.php:139
 #: ../../templates/show_recently_played.inc.php:156
 msgid "More"
 msgstr "Lebih"
 
-#: ../../lib/class/catalog.class.php:518 ../../lib/class/catalog.class.php:521
-#: ../../lib/class/catalog.class.php:524 ../../lib/class/user.class.php:1017
-#: ../../lib/preferences.php:303 ../../templates/show_user.inc.php:23
+#: ../../lib/class/catalog.class.php:496 ../../lib/class/catalog.class.php:499
+#: ../../lib/class/catalog.class.php:502 ../../lib/class/user.class.php:1017
+#: ../../lib/preferences.php:344 ../../templates/show_user.inc.php:23
 #: ../../templates/show_users.inc.php:71
 msgid "Never"
 msgstr "Tak pernah"
 
-#: ../../lib/class/catalog.class.php:604
+#: ../../lib/class/catalog.class.php:582
 msgid "day"
 msgid_plural "days"
 msgstr[0] ""
 
-#: ../../lib/class/catalog.class.php:606
+#: ../../lib/class/catalog.class.php:584
 msgid "hour"
 msgid_plural "hours"
 msgstr[0] ""
 
-#: ../../lib/class/catalog.class.php:651
+#: ../../lib/class/catalog.class.php:629
 msgid "Catalog Insert Failed check debug logs"
 msgstr "Sisipan Katalog Gagal memeriksa log debug"
 
-#: ../../lib/class/catalog.class.php:1407
+#: ../../lib/class/catalog.class.php:1376
 msgid "No Update Needed"
 msgstr "Tidak Perlu Pembaruan"
 
-#: ../../lib/class/catalog.class.php:1688
+#: ../../lib/class/catalog.class.php:1657
 #, php-format
 msgid "Catalog Clean Done. %d file removed."
 msgid_plural "Catalog Clean Done. %d files removed."
 msgstr[0] ""
 
-#: ../../lib/class/catalog.class.php:1713
+#: ../../lib/class/catalog.class.php:1682
 #, php-format
 msgid "Catalog Verify Done. %d of %d files updated."
 msgstr "Katalog Verifikasi Selesai. %d dari %d file diperbarui."
 
-#: ../../lib/class/catalog.class.php:1925
+#: ../../lib/class/catalog.class.php:1894
 msgid "Failed to create playlist."
 msgstr "Gagal membuat daftar putar."
 
-#: ../../lib/class/catalog.class.php:1942
+#: ../../lib/class/catalog.class.php:1911
 msgid "No valid songs found in playlist file."
 msgstr "Tidak ada lagu yang valid ditemukan di file daftar putar."
 
-#: ../../lib/class/catalog.class.php:2298
+#: ../../lib/class/catalog.class.php:2264
 msgid ""
 "This subdirectory is not part of an existing catalog. Update cannot be "
 "processed."
@@ -1537,9 +1577,19 @@ msgstr "Codec (mis. MP3, OGG ...) Diperlukan"
 msgid "Invalid Catalog"
 msgstr "Katalog Tidak Valid"
 
+#: ../../lib/class/localplay.class.php:630
+msgid "Stopped"
+msgstr "Berhenti"
+
+#: ../../lib/class/localplay.class.php:632
+msgid "Paused"
+msgstr "Dijeda"
+
+#: ../../lib/class/localplay.class.php:634
 #: ../../lib/class/playlist.class.php:138
 #: ../../lib/class/playlist.class.php:139
 #: ../../lib/class/podcast.class.php:291 ../../lib/class/user.class.php:1024
+#: ../../modules/localplay/mpd/mpd.controller.php:494
 #: ../../templates/show_user.inc.php:24 ../../templates/show_users.inc.php:72
 msgid "Unknown"
 msgstr "Tidak dikenal"
@@ -1583,7 +1633,7 @@ msgstr "Tidak dapat membaca umpan."
 
 #: ../../lib/class/podcast_episode.class.php:157
 #: ../../lib/class/search.class.php:225 ../../lib/class/search.class.php:485
-#: ../../lib/class/song.class.php:1499
+#: ../../lib/class/song.class.php:1500
 #: ../../templates/show_democratic_playlist.inc.php:60
 #: ../../templates/show_democratic_playlist.inc.php:113
 #: ../../templates/show_disabled_songs.inc.php:29
@@ -1810,7 +1860,7 @@ msgid "Comment"
 msgstr "Komentar"
 
 #: ../../lib/class/search.class.php:268 ../../lib/class/search.class.php:577
-#: ../../lib/class/search.class.php:611 ../../lib/class/tag.class.php:740
+#: ../../lib/class/search.class.php:603 ../../lib/class/tag.class.php:740
 msgid "Tag"
 msgstr "Menandai"
 
@@ -1818,7 +1868,7 @@ msgstr "Menandai"
 msgid "Album tag"
 msgstr "Tag album"
 
-#: ../../lib/class/search.class.php:282 ../../lib/class/search.class.php:585
+#: ../../lib/class/search.class.php:282
 #: ../../templates/show_disabled_songs.inc.php:32
 #: ../../templates/show_disabled_songs.inc.php:62
 #: ../../templates/show_duplicates.inc.php:34
@@ -1829,8 +1879,8 @@ msgid "Filename"
 msgstr "Nama file"
 
 #: ../../lib/class/search.class.php:289 ../../lib/class/search.class.php:499
-#: ../../lib/class/search.class.php:599 ../../templates/show_albums.inc.php:42
-#: ../../templates/show_albums.inc.php:116
+#: ../../lib/class/search.class.php:591 ../../templates/show_albums.inc.php:44
+#: ../../templates/show_albums.inc.php:118
 #: ../../templates/show_edit_album_row.inc.php:63
 #: ../../templates/show_edit_song_row.inc.php:85
 #: ../../templates/show_graphs.inc.php:65
@@ -1843,23 +1893,22 @@ msgid "Length (in minutes)"
 msgstr "Panjang (dalam menit)"
 
 #: ../../lib/class/search.class.php:304 ../../lib/class/search.class.php:521
-#: ../../lib/class/search.class.php:618
+#: ../../lib/class/search.class.php:610
 msgid "Rating (Average)"
 msgstr "Peringkat (Rata-rata)"
 
-#: ../../lib/class/search.class.php:322 ../../templates/header.inc.php:426
-#: ../../templates/sidebar_home.inc.php:109
-#: ../../templates/sidebar.light.inc.php:38
+#: ../../lib/class/search.class.php:322 ../../templates/header.inc.php:427
+#: ../../templates/sidebar_home.inc.php:119
 msgid "Favorites"
 msgstr "Favorit"
 
 #: ../../lib/class/search.class.php:331 ../../lib/class/search.class.php:539
-#: ../../lib/class/search.class.php:643
+#: ../../lib/class/search.class.php:635
 msgid "Rating (Mine)"
 msgstr "Peringkat (milikku)"
 
-#: ../../lib/class/search.class.php:349 ../../templates/show_albums.inc.php:45
-#: ../../templates/show_albums.inc.php:119
+#: ../../lib/class/search.class.php:349 ../../templates/show_albums.inc.php:47
+#: ../../templates/show_albums.inc.php:121
 #: ../../templates/show_artists.inc.php:47
 #: ../../templates/show_artists.inc.php:121
 #: ../../templates/show_song.inc.php:170 ../../templates/show_songs.inc.php:46
@@ -1875,7 +1924,7 @@ msgid "Bitrate"
 msgstr "Kecepatan bit"
 
 #: ../../lib/class/search.class.php:382 ../../lib/class/search.class.php:556
-#: ../../lib/class/search.class.php:635
+#: ../../lib/class/search.class.php:627
 msgid "My Last Play"
 msgstr "Main Terakhir Saya"
 
@@ -1892,10 +1941,10 @@ msgstr "Dimainkan"
 msgid "Catalog"
 msgstr "Katalog"
 
-#: ../../lib/class/search.class.php:429 ../../lib/ui.lib.php:135
+#: ../../lib/class/search.class.php:429 ../../lib/ui.lib.php:138
 #: ../../templates/show_manage_democratic.inc.php:26
 #: ../../templates/sidebar_home.inc.php:69
-#: ../../templates/sidebar_home.inc.php:139
+#: ../../templates/sidebar_home.inc.php:149
 msgid "Playlist"
 msgstr "Daftar putar"
 
@@ -1929,8 +1978,8 @@ msgstr "lebar gambar"
 msgid "Image Height"
 msgstr "tinggi gambar"
 
-#: ../../lib/class/search.class.php:593 ../../lib/class/search.class.php:661
-#: ../../lib/class/search.class.php:669
+#: ../../lib/class/search.class.php:585 ../../lib/class/search.class.php:653
+#: ../../lib/class/search.class.php:661
 #: ../../templates/cookie_disclaimer.inc.php:16
 #: ../../templates/show_access_list.inc.php:47
 #: ../../templates/show_add_access.inc.php:29
@@ -1953,21 +2002,25 @@ msgstr "tinggi gambar"
 #: ../../templates/show_live_stream.inc.php:49
 #: ../../templates/show_live_streams.inc.php:44
 #: ../../templates/show_live_streams.inc.php:72
+#: ../../templates/show_localplay_controllers.inc.php:29
+#: ../../templates/show_localplay_controllers.inc.php:67
+#: ../../templates/show_localplay_playlist.inc.php:34
+#: ../../templates/show_localplay_playlist.inc.php:68
 #: ../../templates/show_manage_license.inc.php:35
 #: ../../templates/show_manage_license.inc.php:58
 #: ../../templates/show_plugins.inc.php:29
 #: ../../templates/show_plugins.inc.php:71
-#: ../../templates/show_stats.inc.php:68
+#: ../../templates/show_stats.inc.php:67
 msgid "Name"
 msgstr "Nama"
 
-#: ../../lib/class/search.class.php:605
+#: ../../lib/class/search.class.php:597
 #: ../../templates/show_concerts.inc.php:28
 #: ../../templates/show_concerts.inc.php:56
 msgid "Place"
 msgstr "Tempat"
 
-#: ../../lib/class/search.class.php:675
+#: ../../lib/class/search.class.php:667
 #: ../../templates/show_add_label.inc.php:34
 #: ../../templates/show_edit_label_row.inc.php:31
 #: ../../templates/show_edit_podcast_episode_row.inc.php:43
@@ -1977,9 +2030,10 @@ msgstr "Tempat"
 msgid "Category"
 msgstr "Kategori"
 
-#: ../../lib/class/search.class.php:683
+#: ../../lib/class/search.class.php:675
 #: ../../modules/catalog/remote/remote.catalog.php:103
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:103
+#: ../../modules/localplay/xbmc/xbmc.controller.php:190
 #: ../../templates/show_add_user.inc.php:29
 #: ../../templates/show_edit_user.inc.php:32
 #: ../../templates/show_install_account.inc.php:51
@@ -1992,11 +2046,11 @@ msgstr "Kategori"
 msgid "Username"
 msgstr "Nama pengguna"
 
-#: ../../lib/class/share.class.php:216
+#: ../../lib/class/share.class.php:215
 msgid "Share edit"
 msgstr "Bagikan hasil edit"
 
-#: ../../lib/class/share.class.php:216
+#: ../../lib/class/share.class.php:215
 #: ../../templates/show_access_list.inc.php:70
 #: ../../templates/show_album_group_disks.inc.php:155
 #: ../../templates/show_album.inc.php:182
@@ -2006,7 +2060,7 @@ msgstr "Bagikan hasil edit"
 #: ../../templates/show_label.inc.php:68
 #: ../../templates/show_license_row.inc.php:28
 #: ../../templates/show_live_stream_row.inc.php:47
-#: ../../templates/show_playlist_row.inc.php:97
+#: ../../templates/show_playlist_row.inc.php:99
 #: ../../templates/show_podcast_episode.inc.php:96
 #: ../../templates/show_podcast_episode.inc.php:97
 #: ../../templates/show_podcast_episode_row.inc.php:89
@@ -2016,13 +2070,13 @@ msgstr "Bagikan hasil edit"
 #: ../../templates/show_shout_row.inc.php:31
 #: ../../templates/show_song.inc.php:116 ../../templates/show_song.inc.php:117
 #: ../../templates/show_song_row.inc.php:109
-#: ../../templates/show_tagcloud.inc.php:61
+#: ../../templates/show_tagcloud.inc.php:60
 #: ../../templates/show_user.inc.php:42 ../../templates/show_user.inc.php:47
 #: ../../templates/show_user_row.inc.php:58
 msgid "Edit"
 msgstr "Edit"
 
-#: ../../lib/class/share.class.php:217 ../../templates/rightbar.inc.php:112
+#: ../../lib/class/share.class.php:216 ../../templates/rightbar.inc.php:128
 #: ../../templates/show_access_list.inc.php:71
 #: ../../templates/show_account.inc.php:95
 #: ../../templates/show_album.inc.php:202
@@ -2036,10 +2090,12 @@ msgstr "Edit"
 #: ../../templates/show_label_row.inc.php:40
 #: ../../templates/show_license_row.inc.php:31
 #: ../../templates/show_live_stream_row.inc.php:52
+#: ../../templates/show_localplay_instances.inc.php:50
+#: ../../templates/show_localplay_playlist.inc.php:53
 #: ../../templates/show_manage_democratic.inc.php:49
 #: ../../templates/show_playlist.inc.php:114
-#: ../../templates/show_playlist_media_row.inc.php:87
-#: ../../templates/show_playlist_row.inc.php:99
+#: ../../templates/show_playlist_media_row.inc.php:89
+#: ../../templates/show_playlist_row.inc.php:101
 #: ../../templates/show_podcast_episode.inc.php:104
 #: ../../templates/show_podcast_episode_row.inc.php:96
 #: ../../templates/show_podcast.inc.php:114
@@ -2051,21 +2107,21 @@ msgstr "Edit"
 #: ../../templates/show_shout_row.inc.php:34
 #: ../../templates/show_song.inc.php:131
 #: ../../templates/show_song_row.inc.php:124
-#: ../../templates/show_tagcloud.inc.php:65
+#: ../../templates/show_tagcloud.inc.php:64
 #: ../../templates/show_user_row.inc.php:71
 msgid "Delete"
 msgstr "Menghapus"
 
-#: ../../lib/class/share.class.php:369 ../../lib/class/share.class.php:371
+#: ../../lib/class/share.class.php:368 ../../lib/class/share.class.php:370
 #: ../../templates/show_shares.inc.php:23
 msgid "Share"
 msgstr "Bagikan"
 
-#: ../../lib/class/share.class.php:379
+#: ../../lib/class/share.class.php:378
 msgid "Advanced Share"
 msgstr "Bagikan Lanjut"
 
-#: ../../lib/class/share.class.php:394
+#: ../../lib/class/share.class.php:393
 msgid "Temporary direct link"
 msgstr "Tautan langsung sementara"
 
@@ -2115,84 +2171,63 @@ msgstr "Kirim Teriakan"
 msgid "by"
 msgstr "oleh"
 
-#: ../../lib/class/song.class.php:1467
-#: ../../templates/show_html5_player.inc.php:151
+#: ../../lib/class/song.class.php:1468
+#: ../../templates/show_html5_player.inc.php:138
 msgid "Show Lyrics"
 msgstr "Tampilkan Lirik"
 
-#: ../../lib/class/song.class.php:1493
+#: ../../lib/class/song.class.php:1494
 msgid "Track MusicBrainzID"
 msgstr "Lacak MusicBrainzID"
 
-#: ../../lib/class/stream_playlist.class.php:614
+#: ../../lib/class/stream_playlist.class.php:600
 msgid "Vote added"
 msgstr "Vote ditambahkan"
 
-#: ../../lib/class/update.class.php:615
+#: ../../lib/class/update.class.php:624
 msgid "No updates needed."
 msgstr "Tidak diperlukan pembaruan."
 
-#: ../../lib/class/update.class.php:617
+#: ../../lib/class/update.class.php:626
 msgid "Return to main page"
 msgstr "kembali ke halaman utama"
 
-#: ../../lib/class/update.class.php:2665 ../../lib/class/update.class.php:2681
+#: ../../lib/class/update.class.php:2674 ../../lib/class/update.class.php:2690
 msgid "File copy error."
 msgstr "Kesalahan salin file."
 
-#: ../../lib/class/update.class.php:2672 ../../lib/class/update.class.php:2688
+#: ../../lib/class/update.class.php:2681 ../../lib/class/update.class.php:2697
 msgid "Cannot copy default .htaccess file."
 msgstr "Tidak dapat menyalin file .htaccess default."
 
-#: ../../lib/class/upnp_api.class.php:510
+#: ../../lib/class/upnp_api.class.php:511
 #: ../../templates/show_add_catalog.inc.php:72
 #: ../../templates/sidebar_home.inc.php:24
 msgid "Music"
 msgstr "Musik"
 
-#: ../../lib/class/upnp_api.class.php:752
-msgid "TV Shows"
-msgstr "Acara TV"
-
-#: ../../lib/class/upnp_api.class.php:792
-msgid "Clips"
-msgstr "Klip"
-
-#: ../../lib/class/upnp_api.class.php:816
-msgid "Movies"
-msgstr "Film"
-
-#: ../../lib/class/upnp_api.class.php:840
-msgid "Personal Videos"
-msgstr "Video Pribadi"
-
-#: ../../lib/class/upnp_api.class.php:861
-#: ../../templates/show_tagcloud.inc.php:27
-msgid "Video"
-msgstr "Video"
-
-#: ../../lib/class/useractivity.class.php:209
+#: ../../lib/class/useractivity.class.php:264
 msgid "uploaded"
 msgstr "diunggah"
 
-#: ../../lib/class/useractivity.class.php:212
+#: ../../lib/class/useractivity.class.php:267
 msgid "played"
 msgstr "dimainkan"
 
-#: ../../lib/class/useractivity.class.php:215
+#: ../../lib/class/useractivity.class.php:270
 msgid "favorited"
 msgstr "disukai"
 
-#: ../../lib/class/useractivity.class.php:218
+#: ../../lib/class/useractivity.class.php:273
 msgid "started to follow"
 msgstr "mulai mengikuti"
 
-#: ../../lib/class/useractivity.class.php:221
+#: ../../lib/class/useractivity.class.php:276
 msgid "did something on"
 msgstr "melakukan sesuatu"
 
 #: ../../lib/class/user.class.php:1053
-#: ../../templates/show_tagcloud.inc.php:88
+#: ../../templates/show_tagcloud.inc.php:87
 msgid "Not Enough Data"
 msgstr "Tidak Cukup Data"
 
@@ -2200,11 +2235,11 @@ msgstr "Tidak Cukup Data"
 msgid "User avatar"
 msgstr "Avatar pengguna"
 
-#: ../../lib/class/user.class.php:1544
+#: ../../lib/class/user.class.php:1550
 msgid "Unfollow"
 msgstr "Berhenti mengikuti"
 
-#: ../../lib/class/user.class.php:1544
+#: ../../lib/class/user.class.php:1550
 msgid "Follow"
 msgstr "Mengikuti"
 
@@ -2220,7 +2255,7 @@ msgstr "KESALAHAN"
 msgid "WARNING"
 msgstr "PERINGATAN"
 
-#: ../../lib/general.lib.php:214
+#: ../../lib/general.lib.php:215
 #, php-format
 msgid "Unknown %s"
 msgstr "%s tidak dikenal"
@@ -2238,29 +2273,29 @@ msgstr ""
 msgid "Existing Database detected, unable to continue installation"
 msgstr "Database yang ada terdeteksi, tidak dapat melanjutkan instalasi"
 
-#: ../../lib/install.lib.php:166 ../../lib/install.lib.php:311
+#: ../../lib/install.lib.php:166 ../../lib/install.lib.php:312
 msgid "Error writing config file"
 msgstr "Kesalahan saat menulis file konfigurasi"
 
-#: ../../lib/install.lib.php:192
+#: ../../lib/install.lib.php:193
 msgid "Error: Invalid database name."
 msgstr "Kesalahan: Nama basis data tidak valid."
 
-#: ../../lib/install.lib.php:198
+#: ../../lib/install.lib.php:199
 #, php-format
 msgid "Error: Unable to make database connection: %s"
 msgstr "Kesalahan: Tidak dapat membuat koneksi database: %s"
 
-#: ../../lib/install.lib.php:209
+#: ../../lib/install.lib.php:210
 msgid "Error: Database already exists and overwrite not checked"
 msgstr "Kesalahan: Database sudah ada dan menimpa tidak dicentang"
 
-#: ../../lib/install.lib.php:217
+#: ../../lib/install.lib.php:218
 #, php-format
 msgid "Error: Unable to create database: %s"
 msgstr "Kesalahan: Tidak dapat membuat database: %s"
 
-#: ../../lib/install.lib.php:235
+#: ../../lib/install.lib.php:236
 #, php-format
 msgid ""
 "Error: Unable to create user %1$s with permissions to %2$s on %3$s: %4$s"
@@ -2268,38 +2303,38 @@ msgstr ""
 "Kesalahan: Tidak dapat membuat pengguna %1$s dengan izin untuk %2$s pada "
 "%3$s: %4$s"
 
-#: ../../lib/install.lib.php:288
+#: ../../lib/install.lib.php:289
 msgid "Invalid configuration settings"
 msgstr "Pengaturan konfigurasi tidak valid"
 
-#: ../../lib/install.lib.php:295
+#: ../../lib/install.lib.php:296
 msgid "Database Connection Failed Check Hostname, Username and Password"
 msgstr ""
 "Koneksi Database Gagal Periksa Nama Host, Nama Pengguna, dan Kata Sandi"
 
-#: ../../lib/install.lib.php:305
+#: ../../lib/install.lib.php:306
 msgid "Config file is not writable"
 msgstr "File konfigurasi tidak dapat ditulisi"
 
-#: ../../lib/install.lib.php:333
+#: ../../lib/install.lib.php:335
 msgid "No Username/Password specified"
 msgstr "Tidak ada Nama Pengguna / Kata Sandi yang ditentukan"
 
-#: ../../lib/install.lib.php:339
+#: ../../lib/install.lib.php:341
 msgid "Passwords do not match"
 msgstr "Sandi tidak cocok"
 
-#: ../../lib/install.lib.php:345
+#: ../../lib/install.lib.php:347
 #, php-format
 msgid "Database connection failed: %s"
 msgstr "Koneksi basis data gagal: %s"
 
-#: ../../lib/install.lib.php:351
+#: ../../lib/install.lib.php:353
 #, php-format
 msgid "Database select failed: %s"
 msgstr "Pemilihan basis data gagal: %s"
 
-#: ../../lib/install.lib.php:362
+#: ../../lib/install.lib.php:364
 #, php-format
 msgid "Administrative user creation failed: %s"
 msgstr "Pembuatan pengguna administratif gagal: %s"
@@ -2324,110 +2359,133 @@ msgstr "Pengguna Sudah Masuk"
 msgid "Unable to create local account"
 msgstr "Tidak dapat membuat akun lokal"
 
-#: ../../lib/preferences.php:214 ../../lib/preferences.php:317
+#: ../../lib/preferences.php:215 ../../lib/preferences.php:358
 #: ../../templates/show_disabled_songs.inc.php:68
+#: ../../templates/show_localplay_controllers.inc.php:48
 #: ../../templates/show_user_row.inc.php:66
 msgid "Enable"
 msgstr "Memungkinkan"
 
-#: ../../lib/preferences.php:215 ../../lib/preferences.php:318
+#: ../../lib/preferences.php:216 ../../lib/preferences.php:359
 #: ../../templates/show_catalog_types.inc.php:45
 #: ../../templates/show_duplicates.inc.php:27
 #: ../../templates/show_duplicates.inc.php:65
+#: ../../templates/show_localplay_controllers.inc.php:45
 #: ../../templates/show_user_row.inc.php:68
 msgid "Disable"
 msgstr "Nonaktifkan"
 
-#: ../../lib/preferences.php:233 ../../lib/ui.lib.php:333
-#: ../../lib/ui.lib.php:424 ../../templates/show_adds_catalog.inc.php:27
+#: ../../lib/preferences.php:237 ../../lib/preferences.php:274
+#: ../../lib/ui.lib.php:336 ../../lib/ui.lib.php:427
+#: ../../templates/show_adds_catalog.inc.php:27
 #: ../../templates/show_gather_art.inc.php:25
 #: ../../templates/show_install_config.inc.php:141
 #: ../../templates/show_search_row.inc.php:47
+#: ../../templates/sidebar_localplay.inc.php:53
 msgid "None"
 msgstr "Tidak ada"
 
-#: ../../lib/preferences.php:235 ../../templates/show_edit_user.inc.php:146
+#: ../../lib/preferences.php:239 ../../templates/show_edit_user.inc.php:147
 #: ../../templates/show_live_stream.inc.php:51
 #: ../../templates/show_playtype_switch.inc.php:36
 msgid "Stream"
 msgstr "Aliran"
 
-#: ../../lib/preferences.php:238 ../../templates/show_edit_user.inc.php:144
-#: ../../templates/show_playtype_switch.inc.php:43
+#: ../../lib/preferences.php:242
+#: ../../modules/localplay/httpq/httpq.controller.php:482
+#: ../../modules/localplay/mpd/mpd.controller.php:460
+#: ../../modules/localplay/vlc/vlc.controller.php:491
+#: ../../templates/show_edit_user.inc.php:144
+#: ../../templates/show_playtype_switch.inc.php:50
 #: ../../templates/sidebar_home.inc.php:80
-#: ../../templates/sidebar_modules.inc.php:39
+#: ../../templates/sidebar_modules.inc.php:40
 msgid "Democratic"
 msgstr "Demokratis"
 
-#: ../../lib/preferences.php:240
-#: ../../templates/show_playtype_switch.inc.php:48
+#: ../../lib/preferences.php:245 ../../templates/show_edit_user.inc.php:145
+#: ../../templates/show_playtype_switch.inc.php:43
+#: ../../templates/sidebar_home.inc.php:90 ../../templates/sidebar.inc.php:35
+#: ../../templates/sidebar_localplay.inc.php:38
+msgid "Localplay"
+msgstr "Permainan lokal"
+
+#: ../../lib/preferences.php:247
+#: ../../templates/show_playtype_switch.inc.php:55
 msgid "Web Player"
 msgstr "Pemain Web"
 
-#: ../../lib/preferences.php:247
+#: ../../lib/preferences.php:254
 msgid "M3U"
 msgstr "M3U"
 
-#: ../../lib/preferences.php:248
+#: ../../lib/preferences.php:255
 msgid "Simple M3U"
 msgstr "M3U sederhana"
 
-#: ../../lib/preferences.php:249
+#: ../../lib/preferences.php:256
 msgid "PLS"
 msgstr "PLS"
 
-#: ../../lib/preferences.php:250
+#: ../../lib/preferences.php:257
 msgid "Asx"
 msgstr "ASX"
 
-#: ../../lib/preferences.php:251
+#: ../../lib/preferences.php:258
 msgid "RAM"
 msgstr "RAM"
 
-#: ../../lib/preferences.php:252
+#: ../../lib/preferences.php:259
 msgid "XSPF"
 msgstr "XSPF"
 
-#: ../../lib/preferences.php:294
+#: ../../lib/preferences.php:299
+msgid "Disabled"
+msgstr "Cacat"
+
+#: ../../lib/preferences.php:301
+msgid "Manager"
+msgstr "Manajer"
+
+#: ../../lib/preferences.php:335
 msgid "Send on Add"
 msgstr "Kirim di Add"
 
-#: ../../lib/preferences.php:295
+#: ../../lib/preferences.php:336
 msgid "Send and Clear on Add"
 msgstr "Kirim dan Hapus pada Tambah"
 
-#: ../../lib/preferences.php:296
+#: ../../lib/preferences.php:337
 msgid "Clear on Send"
 msgstr "Hapus Kirim"
 
-#: ../../lib/preferences.php:297 ../../lib/preferences.php:304
-#: ../../lib/preferences.php:340
+#: ../../lib/preferences.php:338 ../../lib/preferences.php:345
+#: ../../lib/preferences.php:381
 #: ../../templates/show_install_config.inc.php:115
 #: ../../templates/show_manage_democratic.inc.php:30
 msgid "Default"
 msgstr "Default"
 
-#: ../../lib/preferences.php:305
+#: ../../lib/preferences.php:346
 msgid "Always"
 msgstr "Selalu"
 
-#: ../../lib/preferences.php:341
+#: ../../lib/preferences.php:382
 msgid "Year ascending"
 msgstr "Tahun naik"
 
-#: ../../lib/preferences.php:342
+#: ../../lib/preferences.php:383
 msgid "Year descending"
 msgstr "Tahun turun"
 
-#: ../../lib/preferences.php:343
+#: ../../lib/preferences.php:384
 msgid "Name ascending"
 msgstr "Nama naik"
 
-#: ../../lib/preferences.php:344
+#: ../../lib/preferences.php:385
 msgid "Name descending"
 msgstr "Nama menurun"
 
-#: ../../lib/preferences.php:365
+#: ../../lib/preferences.php:406
 #, php-format
 msgid "Click to grant %s access to Ampache"
 msgstr "Klik untuk memberi %s akses ke Ampache"
@@ -2460,84 +2518,87 @@ msgstr "Ini Gila"
 msgid "Off the Charts!"
 msgstr "Dari Grafik!"
 
-#: ../../lib/ui.lib.php:126 ../../templates/header.inc.php:397
+#: ../../lib/ui.lib.php:126 ../../templates/header.inc.php:398
 #: ../../templates/sidebar.inc.php:33
 msgid "Home"
 msgstr "Rumah"
 
-#: ../../lib/ui.lib.php:129 ../../templates/header.inc.php:438
+#: ../../lib/ui.lib.php:129 ../../templates/header.inc.php:439
 #: ../../templates/show_add_upload.inc.php:26
 #: ../../templates/show_album.inc.php:174
 #: ../../templates/show_album.inc.php:175
 #: ../../templates/show_artist.inc.php:167
 #: ../../templates/show_artist.inc.php:168
 #: ../../templates/sidebar_home.inc.php:55
-#: ../../templates/sidebar.light.inc.php:43
 msgid "Upload"
 msgstr "Unggah"
 
 #: ../../lib/ui.lib.php:132
+msgid "Local Play"
+msgstr "Main Lokal"
+
+#: ../../lib/ui.lib.php:135
 msgid "Random Play"
 msgstr "Permainan acak"
 
-#: ../../lib/ui.lib.php:138 ../../templates/show_search_bar.inc.php:30
+#: ../../lib/ui.lib.php:141 ../../templates/show_search_bar.inc.php:30
 #: ../../templates/show_search_form.inc.php:71
-#: ../../templates/sidebar_home.inc.php:144
+#: ../../templates/sidebar_home.inc.php:154
 msgid "Search"
 msgstr "Pencarian"
 
-#: ../../lib/ui.lib.php:141 ../../templates/show_user.inc.php:43
-#: ../../templates/show_user_row.inc.php:61 ../../templates/sidebar.inc.php:34
+#: ../../lib/ui.lib.php:144 ../../templates/show_user.inc.php:43
+#: ../../templates/show_user_row.inc.php:61 ../../templates/sidebar.inc.php:37
 #: ../../templates/sidebar_preferences.inc.php:30
 msgid "Preferences"
 msgstr "Preferensi"
 
-#: ../../lib/ui.lib.php:144 ../../lib/ui.lib.php:148
+#: ../../lib/ui.lib.php:147 ../../lib/ui.lib.php:151
 msgid "Admin-Catalog"
 msgstr "Admin-Katalog"
 
-#: ../../lib/ui.lib.php:152
+#: ../../lib/ui.lib.php:155
 msgid "Admin-User Management"
 msgstr "Manajemen Admin-Pengguna"
 
-#: ../../lib/ui.lib.php:156
+#: ../../lib/ui.lib.php:159
 msgid "Admin-Mail Users"
 msgstr "Pengguna Admin-Mail"
 
-#: ../../lib/ui.lib.php:160
+#: ../../lib/ui.lib.php:163
 msgid "Admin-Manage Access Lists"
 msgstr "Admin-Kelola Daftar Akses"
 
-#: ../../lib/ui.lib.php:164
+#: ../../lib/ui.lib.php:167
 msgid "Admin-Site Preferences"
 msgstr "Preferensi Admin-Situs"
 
-#: ../../lib/ui.lib.php:168
+#: ../../lib/ui.lib.php:171
 msgid "Admin-Manage Modules"
 msgstr "Modul Admin-Manage"
 
-#: ../../lib/ui.lib.php:172 ../../templates/sidebar_home.inc.php:24
+#: ../../lib/ui.lib.php:175 ../../templates/sidebar_home.inc.php:24
 msgid "Browse Music"
 msgstr "Jelajahi Musik"
 
-#: ../../lib/ui.lib.php:184 ../../templates/show_stats.inc.php:26
-#: ../../templates/sidebar_home.inc.php:124
+#: ../../lib/ui.lib.php:187 ../../templates/show_stats.inc.php:26
+#: ../../templates/sidebar_home.inc.php:134
 msgid "Statistics"
 msgstr "Statistik"
 
-#: ../../lib/ui.lib.php:251 ../../lib/ui.lib.php:304
+#: ../../lib/ui.lib.php:254 ../../lib/ui.lib.php:307
 msgid "Add New"
 msgstr "Tambah baru"
 
-#: ../../lib/ui.lib.php:387
+#: ../../lib/ui.lib.php:390
 msgid "View License"
 msgstr "Lihat Lisensi"
 
-#: ../../lib/ui.lib.php:654
+#: ../../lib/ui.lib.php:657
 msgid "On"
 msgstr "Di"
 
-#: ../../lib/ui.lib.php:656
+#: ../../lib/ui.lib.php:659
 msgid "Off"
 msgstr "Mati"
 
@@ -2587,7 +2648,7 @@ msgstr "Kesalahan: Bit dipilih, tetapi tidak ada File DB Bit yang disediakan"
 
 #: ../../modules/catalog/beets/beets.catalog.php:114
 #: ../../modules/catalog/beetsremote/beetsremote.catalog.php:115
-#: ../../modules/catalog/local/local.catalog.php:201
+#: ../../modules/catalog/local/local.catalog.php:200
 #: ../../modules/catalog/remote/remote.catalog.php:162
 #: ../../modules/catalog/soundcloud/soundcloud.catalog.php:183
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:163
@@ -2603,58 +2664,58 @@ msgstr "Bit Server URI"
 msgid "Error: Beets selected, but path is not a URL"
 msgstr "Kesalahan: Bit dipilih, tetapi path bukan URL"
 
-#: ../../modules/catalog/local/local.catalog.php:104
-#: ../../templates/show_stats.inc.php:69
+#: ../../modules/catalog/local/local.catalog.php:103
+#: ../../templates/show_stats.inc.php:68
 msgid "Path"
 msgstr "Path"
 
-#: ../../modules/catalog/local/local.catalog.php:175
+#: ../../modules/catalog/local/local.catalog.php:174
 msgid "Error: Path not specified"
 msgstr "Kesalahan: Path tidak ditentukan"
 
-#: ../../modules/catalog/local/local.catalog.php:182
+#: ../../modules/catalog/local/local.catalog.php:181
 msgid "Error: Defined Path is inside an existing catalog"
 msgstr "Kesalahan: Jalur yang Ditentukan ada di dalam katalog yang ada"
 
-#: ../../modules/catalog/local/local.catalog.php:190
+#: ../../modules/catalog/local/local.catalog.php:189
 #, php-format
 msgid "Error: %s is not readable or does not exist"
 msgstr "Kesalahan: %s tidak dapat dibaca atau tidak ada"
 
-#: ../../modules/catalog/local/local.catalog.php:242
+#: ../../modules/catalog/local/local.catalog.php:241
 #, php-format
 msgid "Error: Unable to open %s"
 msgstr "Kesalahan: Tidak dapat membuka %s"
 
-#: ../../modules/catalog/local/local.catalog.php:250
-#: ../../modules/catalog/local/local.catalog.php:314
+#: ../../modules/catalog/local/local.catalog.php:249
+#: ../../modules/catalog/local/local.catalog.php:313
 #, php-format
 msgid "Error: Unable to change to directory %s"
 msgstr "Kesalahan: Tidak dapat mengubah ke direktori %s"
 
 #. HINT: FullFile
-#: ../../modules/catalog/local/local.catalog.php:338
+#: ../../modules/catalog/local/local.catalog.php:334
 #, php-format
 msgid "Error: Unable to get filesize for %s"
 msgstr "Kesalahan: Tidak dapat mendapatkan ukuran file untuk %s"
 
 #. HINT: FullFile
-#: ../../modules/catalog/local/local.catalog.php:345
+#: ../../modules/catalog/local/local.catalog.php:341
 #, php-format
 msgid "%s is not readable by ampache"
 msgstr "%s tidak dapat dibaca oleh ampache"
 
 #. HINT: FullFile
-#: ../../modules/catalog/local/local.catalog.php:368
+#: ../../modules/catalog/local/local.catalog.php:364
 #, php-format
 msgid "%s does not match site charset"
 msgstr "%s tidak cocok dengan charset situs"
 
-#: ../../modules/catalog/local/local.catalog.php:491
+#: ../../modules/catalog/local/local.catalog.php:476
 msgid "N/A"
 msgstr "T / A"
 
-#: ../../modules/catalog/local/local.catalog.php:497
+#: ../../modules/catalog/local/local.catalog.php:482
 #, php-format
 msgid ""
 "Catalog Update Finished.  Total Time: [%s] Total Media: [%s] Media Per "
@@ -2663,20 +2724,20 @@ msgstr ""
 "Pembaruan Katalog Selesai. Total Waktu: [%s] Total Media: [%s] Media Per "
 "Detik: [%s]"
 
-#: ../../modules/catalog/local/local.catalog.php:575
+#: ../../modules/catalog/local/local.catalog.php:557
 #, php-format
 msgid "%s does not exist or is not readable"
 msgstr "%s tidak ada atau tidak dapat dibaca"
 
-#: ../../modules/catalog/local/local.catalog.php:604
+#: ../../modules/catalog/local/local.catalog.php:586
 msgid "Catalog Root unreadable, stopping clean"
 msgstr "Root Katalog tidak dapat dibaca, berhenti bersih"
 
-#: ../../modules/catalog/local/local.catalog.php:630
+#: ../../modules/catalog/local/local.catalog.php:610
 msgid "All files would be removed. Doing nothing"
 msgstr "Semua file akan dihapus. Tidak melakukan apapun"
 
-#: ../../modules/catalog/local/local.catalog.php:674
+#: ../../modules/catalog/local/local.catalog.php:653
 #, php-format
 msgid "Error File Not Found or 0 Bytes: %s"
 msgstr "File Kesalahan Tidak Ditemukan atau 0 Bytes: %s"
@@ -2687,6 +2748,10 @@ msgstr "Uri"
 
 #: ../../modules/catalog/remote/remote.catalog.php:104
 #: ../../modules/catalog/subsonic/subsonic.catalog.php:104
+#: ../../modules/localplay/httpq/httpq.controller.php:199
+#: ../../modules/localplay/mpd/mpd.controller.php:228
+#: ../../modules/localplay/vlc/vlc.controller.php:183
+#: ../../modules/localplay/xbmc/xbmc.controller.php:191
 #: ../../templates/show_add_user.inc.php:63
 #: ../../templates/show_edit_user.inc.php:87
 #: ../../templates/show_install_account.inc.php:57
@@ -2784,12 +2849,49 @@ msgstr "Menjalankan Pembaruan Jarak Jauh Subsonik"
 msgid "Completed updating Subsonic catalog(s)."
 msgstr "Selesai memperbarui katalog Subsonik (s)."
 
+#: ../../modules/localplay/httpq/httpq.controller.php:196
+#: ../../modules/localplay/mpd/mpd.controller.php:225
+#: ../../modules/localplay/upnp/upnp.controller.php:179
+#: ../../modules/localplay/vlc/vlc.controller.php:180
+#: ../../modules/localplay/xbmc/xbmc.controller.php:187
+msgid "Instance Name"
+msgstr "Nama instansi"
+
+#: ../../modules/localplay/httpq/httpq.controller.php:197
+#: ../../modules/localplay/mpd/mpd.controller.php:226
+#: ../../modules/localplay/vlc/vlc.controller.php:181
+#: ../../modules/localplay/xbmc/xbmc.controller.php:188
+msgid "Hostname"
+msgstr "Nama host"
+
+#: ../../modules/localplay/httpq/httpq.controller.php:198
+#: ../../modules/localplay/mpd/mpd.controller.php:227
+#: ../../modules/localplay/vlc/vlc.controller.php:182
+#: ../../modules/localplay/xbmc/xbmc.controller.php:189
+msgid "Port"
+msgstr "Pelabuhan"
+
+#: ../../modules/localplay/httpq/httpq.controller.php:486
+#: ../../modules/localplay/mpd/mpd.controller.php:464
+#: ../../modules/localplay/vlc/vlc.controller.php:495
+#: ../../templates/show_edit_search_row.inc.php:42
+#: ../../templates/show_localplay_status.inc.php:48
+#: ../../templates/show_searches.inc.php:45
+#: ../../templates/show_searches.inc.php:75
+#: ../../templates/sidebar_home.inc.php:142
+msgid "Random"
+msgstr "Acak"
+
+#: ../../modules/localplay/upnp/upnp.controller.php:180
+msgid "URL"
+msgstr "URL"
+
 #: ../../modules/plugins/CatalogFavorites/CatalogFavorites.plugin.php:102
 msgid "Highlight"
 msgstr "Menyoroti"
 
 #: ../../modules/plugins/CatalogFavorites/CatalogFavorites.plugin.php:123
-#: ../../templates/header.inc.php:339
+#: ../../templates/header.inc.php:339 ../../templates/header-tiny.inc.php:339
 #: ../../templates/show_album_group_disks.inc.php:70
 #: ../../templates/show_album_group_disks.inc.php:71
 #: ../../templates/show_album_group_disks.inc.php:124
@@ -2813,7 +2915,7 @@ msgid "Play last"
 msgstr "Mainkan yang terakhir"
 
 #: ../../modules/plugins/CatalogFavorites/CatalogFavorites.plugin.php:126
-#: ../../templates/header.inc.php:340
+#: ../../templates/header.inc.php:340 ../../templates/header-tiny.inc.php:340
 #: ../../templates/show_album_group_disks.inc.php:80
 #: ../../templates/show_album_group_disks.inc.php:81
 #: ../../templates/show_album_group_disks.inc.php:128
@@ -2822,8 +2924,8 @@ msgstr "Mainkan yang terakhir"
 #: ../../templates/show_album_row.inc.php:54
 #: ../../templates/show_artist_row.inc.php:54
 #: ../../templates/show_live_stream.inc.php:46
-#: ../../templates/show_playlist_media_row.inc.php:50
-#: ../../templates/show_playlist_row.inc.php:51
+#: ../../templates/show_playlist_media_row.inc.php:52
+#: ../../templates/show_playlist_row.inc.php:53
 #: ../../templates/show_podcast_episode.inc.php:71
 #: ../../templates/show_podcast_episode_row.inc.php:43
 #: ../../templates/show_random_albums.inc.php:64
@@ -2847,30 +2949,30 @@ msgstr "Hits:"
 msgid "Last activity:"
 msgstr "Aktivitas terakhir:"
 
-#: ../../playlist.php:54
+#: ../../playlist.php:55
 msgid "Playlist Created"
 msgstr "Daftar Putar Dibuat"
 
-#: ../../playlist.php:54
+#: ../../playlist.php:55
 #, php-format
 msgid "%1$s (%2$s) has been created"
 msgstr "%1$s (%2$s) telah dibuat"
 
-#: ../../playlist.php:80
+#: ../../playlist.php:81
 msgid "Playlist Imported"
 msgstr "Daftar Putar Diimpor"
 
-#: ../../playlist.php:83
+#: ../../playlist.php:84
 #, php-format
 msgid "Successfully imported playlist with %d song."
 msgid_plural "Successfully imported playlist with %d songs."
 msgstr[0] ""
 
-#: ../../playlist.php:86
+#: ../../playlist.php:87
 msgid "Playlist Not Imported"
 msgstr "Daftar Putar Tidak Diimpor"
 
-#: ../../playlist.php:135
+#: ../../playlist.php:136
 msgid "Empty Playlists Deleted"
 msgstr "Daftar Putar Kosong Dihapus"
 
@@ -2901,12 +3003,12 @@ msgstr "Tidak dapat mengautentikasi pada myPlex."
 msgid "Server UUID changed."
 msgstr "UUID Server berubah."
 
-#: ../../plex/web/init.php:38
+#: ../../plex/web/init.php:39
 msgid "Unauthorized."
 msgstr "Tidak resmi"
 
-#: ../../podcast_episode.php:35 ../../podcast_episode.php:55
-#: ../../podcast_episode.php:57
+#: ../../podcast_episode.php:35 ../../podcast_episode.php:56
+#: ../../podcast_episode.php:58
 msgid "Podcast Episode Deletion"
 msgstr "Penghapusan Episode Podcast"
 
@@ -2914,107 +3016,107 @@ msgstr "Penghapusan Episode Podcast"
 msgid "Are you sure you want to permanently delete this episode?"
 msgstr "Apakah Anda yakin ingin menghapus episode ini secara permanen?"
 
-#: ../../podcast_episode.php:55
+#: ../../podcast_episode.php:56
 msgid "Episode has been deleted."
 msgstr "Episode telah dihapus."
 
-#: ../../podcast_episode.php:57
+#: ../../podcast_episode.php:58
 msgid "Cannot delete this episode."
 msgstr "Tidak dapat menghapus episode ini."
 
-#: ../../podcast.php:60
+#: ../../podcast.php:64
 msgid "Subscribed to Podcast"
 msgstr "Berlangganan Podcast"
 
-#: ../../podcast.php:73 ../../podcast.php:88 ../../podcast.php:90
+#: ../../podcast.php:78 ../../podcast.php:94 ../../podcast.php:96
 msgid "Podcast Deletion"
 msgstr "Penghapusan Podcast"
 
-#: ../../podcast.php:74
+#: ../../podcast.php:79
 msgid "Are you sure you want to delete this podcast?"
 msgstr "Apakah Anda yakin ingin menghapus podcast ini?"
 
-#: ../../podcast.php:88
+#: ../../podcast.php:94
 msgid "Podcast has been deleted."
 msgstr "Podcast telah dihapus."
 
-#: ../../podcast.php:90
+#: ../../podcast.php:96
 msgid "Cannot delete this podcast."
 msgstr "Tidak dapat menghapus podcast ini."
 
-#: ../../preferences.php:48 ../../preferences.php:93
+#: ../../preferences.php:50 ../../preferences.php:98
 msgid "Server"
 msgstr "Server"
 
-#: ../../preferences.php:66
+#: ../../preferences.php:68
 msgid "Server preferences updated successfully"
 msgstr "Preferensi server berhasil diperbarui"
 
-#: ../../preferences.php:68
+#: ../../preferences.php:70
 msgid "User preferences updated successfully"
 msgstr "Preferensi pengguna berhasil diperbarui"
 
-#: ../../preferences.php:126 ../../register.php:100
+#: ../../preferences.php:134 ../../register.php:100
 msgid "Please fill in your full name (Firstname Lastname)"
 msgstr "Silakan isi nama lengkap Anda (Firstname Lastname)"
 
-#: ../../preferences.php:129 ../../register.php:103
+#: ../../preferences.php:137 ../../register.php:103
 msgid "Please fill in your website"
 msgstr "Silakan isi situs web Anda"
 
-#: ../../preferences.php:132 ../../register.php:106
+#: ../../preferences.php:140 ../../register.php:106
 msgid "Please fill in your state"
 msgstr "Silakan isi status Anda"
 
-#: ../../preferences.php:135 ../../register.php:109
+#: ../../preferences.php:143 ../../register.php:109
 msgid "Please fill in your city"
 msgstr "Silakan isi kota Anda"
 
-#: ../../preferences.php:139
+#: ../../preferences.php:147
 msgid "Error Update Failed"
 msgstr "Pembaruan Kesalahan Gagal"
 
-#: ../../preferences.php:145 ../../preferences.php:163
+#: ../../preferences.php:153 ../../preferences.php:172
 msgid "Your Account has been updated"
 msgstr "Akun anda telah diperbaharui"
 
-#: ../../preferences.php:149
+#: ../../preferences.php:157
 msgid "User updated successfully"
 msgstr "Pengguna berhasil diperbarui"
 
-#: ../../preferences.php:167
+#: ../../preferences.php:176
 msgid "Your Account has not been updated"
 msgstr "Akun Anda belum diperbarui"
 
-#: ../../pvmsg.php:67
+#: ../../pvmsg.php:68
 msgid "Message Sent"
 msgstr "Pesan terkirim"
 
-#: ../../pvmsg.php:90
+#: ../../pvmsg.php:92
 msgid "Messages State Changed"
 msgstr "Status Pesan Berubah"
 
-#: ../../pvmsg.php:90
+#: ../../pvmsg.php:92
 msgid "Messages state have been changed."
 msgstr "Status pesan telah diubah."
 
-#: ../../pvmsg.php:99
+#: ../../pvmsg.php:101
 msgid "Message Deletion"
 msgstr "Penghapusan Pesan"
 
-#: ../../pvmsg.php:100
+#: ../../pvmsg.php:102
 msgid "Are you sure you want to permanently delete the selected messages?"
 msgstr "Anda yakin ingin menghapus pesan yang dipilih secara permanen?"
 
-#: ../../pvmsg.php:124
+#: ../../pvmsg.php:127
 msgid "Messages Deletion"
 msgstr "Penghapusan Pesan"
 
-#: ../../pvmsg.php:124
+#: ../../pvmsg.php:127
 msgid "Messages have been deleted."
 msgstr "Pesan telah dihapus."
 
-#: ../../radio.php:60
+#: ../../radio.php:64
 msgid "Radio Station Added"
 msgstr "Stasiun Radio Ditambahkan"
 
@@ -3042,15 +3144,15 @@ msgstr "Anda harus memasukkan kata sandi"
 msgid "Your passwords do not match"
 msgstr "Kata Sandi anda tidak sama"
 
-#: ../../rest/index.php:47 ../../server/xml.server.php:43
+#: ../../rest/index.php:48 ../../server/xml.server.php:43
 msgid "Access Control not Enabled"
 msgstr "Kontrol Akses tidak Diaktifkan"
 
-#: ../../search.php:50
+#: ../../search.php:51
 msgid "Search Saved"
 msgstr "Cari Tersimpan"
 
-#: ../../search.php:50
+#: ../../search.php:51
 #, php-format
 msgid "Your Search has been saved as a Smart Playlist with name %s"
 msgstr ""
@@ -3069,23 +3171,23 @@ msgstr ""
 msgid "Added to playlist"
 msgstr "Ditambahkan ke daftar putar"
 
-#: ../../server/xml.server.php:54
+#: ../../server/xml.server.php:55
 msgid "Session Expired"
 msgstr "Sesi berakhir"
 
-#: ../../server/xml.server.php:71
+#: ../../server/xml.server.php:73
 msgid "Unauthorized access attempt to API - ACL Error"
 msgstr "Upaya akses tidak sah ke API - ACL Error"
 
-#: ../../share.php:75
+#: ../../share.php:79
 msgid "Share created."
 msgstr "Bagikan dibuat."
 
-#: ../../share.php:76
+#: ../../share.php:80
 msgid "You can now start sharing the following url:"
 msgstr "Anda sekarang dapat mulai berbagi url berikut:"
 
-#: ../../share.php:81
+#: ../../share.php:85
 msgid ""
 "You can also embed this share as a web player into your website, with the "
 "following html code:"
@@ -3093,35 +3195,35 @@ msgstr ""
 "Anda juga dapat menyematkan berbagi ini sebagai pemain web ke situs web "
 "Anda, dengan kode html berikut:"
 
-#: ../../share.php:84
+#: ../../share.php:88
 msgid "Object Shared"
 msgstr "Obyek Dibagi"
 
-#: ../../share.php:94
+#: ../../share.php:99
 msgid "Share Delete"
 msgstr "Bagikan Hapus"
 
-#: ../../share.php:107
+#: ../../share.php:114
 msgid "Share Deleted"
 msgstr "Bagikan Dihapus"
 
-#: ../../share.php:107
+#: ../../share.php:114
 msgid "The Share has been deleted"
 msgstr "Share telah dihapus"
 
-#: ../../share.php:120
+#: ../../share.php:129
 msgid "Shared Objects cleaned"
 msgstr "Objek Bersama dibersihkan"
 
-#: ../../share.php:120
+#: ../../share.php:129
 msgid "Expired shared objects have been cleaned."
 msgstr "Objek bersama yang kedaluwarsa telah dibersihkan."
 
-#: ../../shout.php:63
+#: ../../shout.php:67
 msgid "Invalid Object Selected"
 msgstr "Objek Tidak Valid Dipilih"
 
-#: ../../song.php:36 ../../song.php:56 ../../song.php:58
+#: ../../song.php:36 ../../song.php:57 ../../song.php:59
 msgid "Song Deletion"
 msgstr "Penghapusan Lagu"
 
@@ -3129,11 +3231,11 @@ msgstr "Penghapusan Lagu"
 msgid "Are you sure you want to permanently delete this song?"
 msgstr "Yakin ingin menghapus lagu ini secara permanen?"
 
-#: ../../song.php:56
+#: ../../song.php:57
 msgid "Song has been deleted."
 msgstr "Lagu telah dihapus."
 
-#: ../../song.php:58
+#: ../../song.php:59
 msgid "Cannot delete this song."
 msgstr "Tidak dapat menghapus lagu ini."
 
@@ -3248,7 +3350,7 @@ msgstr "Halaman kesalahan ampache"
 
 #: ../../templates/error_page.inc.php:44
 #: ../../templates/show_mail_users.inc.php:43
-#: ../../templates/show_test.inc.php:38 ../../update.php:72
+#: ../../templates/show_test.inc.php:38 ../../update.php:74
 msgid "aMuzak"
 msgstr "aMuzak"
 
@@ -3264,32 +3366,36 @@ msgstr ""
 msgid "Error messages"
 msgstr "Pesan kesalahan"
 
-#: ../../templates/footer.inc.php:49
+#: ../../templates/footer.inc.php:40
+msgid "Donate"
+msgstr "Menyumbangkan"
+
+#: ../../templates/footer.inc.php:54
 #: ../../templates/show_lostpassword_form.inc.php:66
 msgid "Queries:"
 msgstr "Pertanyaan:"
 
-#: ../../templates/footer.inc.php:49
+#: ../../templates/footer.inc.php:54
 #: ../../templates/show_lostpassword_form.inc.php:67
 msgid "Cache Hits:"
 msgstr "Hit Tembolok:"
 
-#: ../../templates/footer.inc.php:53
+#: ../../templates/footer.inc.php:58
 msgid "Load time:"
 msgstr "Waktu buka:"
 
-#: ../../templates/header.inc.php:98
+#: ../../templates/header.inc.php:98 ../../templates/header-tiny.inc.php:98
 msgid "Save"
 msgstr "Menyimpan"
 
-#: ../../templates/header.inc.php:99
+#: ../../templates/header.inc.php:99 ../../templates/header-tiny.inc.php:99
 #: ../../templates/show_confirmation.inc.php:35
 #: ../../templates/show_get_art.inc.php:64
 msgid "Cancel"
 msgstr "Membatalkan"
 
 #. HINT: Translator, "%s" is replaced by "cookie settings"
-#: ../../templates/header.inc.php:301
+#: ../../templates/header.inc.php:301 ../../templates/header-tiny.inc.php:301
 #, php-format
 msgid ""
 "We have placed cookies on your computer to help make this website better. You can change your %s at any time.\n"
@@ -3302,11 +3408,11 @@ msgstr ""
 "\n"
 "Klik pesan ini untuk tidak menampilkannya lagi."
 
-#: ../../templates/header.inc.php:302
+#: ../../templates/header.inc.php:302 ../../templates/header-tiny.inc.php:302
 msgid "cookie settings"
 msgstr "pengaturan cookie"
 
-#: ../../templates/header.inc.php:338
+#: ../../templates/header.inc.php:338 ../../templates/header-tiny.inc.php:338
 #: ../../templates/show_album_row.inc.php:32
 #: ../../templates/show_artist_row.inc.php:32
 #: ../../templates/show_playlist_row.inc.php:30
@@ -3318,13 +3424,13 @@ msgstr "pengaturan cookie"
 msgid "Play next"
 msgstr "Mainkan selanjutnya"
 
-#: ../../templates/header.inc.php:341 ../../templates/show_album.inc.php:120
+#: ../../templates/header.inc.php:341 ../../templates/header-tiny.inc.php:341
+#: ../../templates/show_album.inc.php:120
 #: ../../templates/show_album.inc.php:123
 #: ../../templates/show_album_row.inc.php:61
 #: ../../templates/show_artist_row.inc.php:57
-#: ../../templates/show_html5_player.inc.php:486
-#: ../../templates/show_playlist_media_row.inc.php:54
-#: ../../templates/show_playlist_row.inc.php:55
+#: ../../templates/show_playlist_media_row.inc.php:56
+#: ../../templates/show_playlist_row.inc.php:57
 #: ../../templates/show_podcast_episode_row.inc.php:47
 #: ../../templates/show_recently_played.inc.php:111
 #: ../../templates/show_search_row.inc.php:41
@@ -3333,25 +3439,29 @@ msgstr "Mainkan selanjutnya"
 msgid "Add to existing playlist"
 msgstr "Tambahkan ke daftar putar yang ada"
 
-#: ../../templates/header.inc.php:373
+#: ../../templates/header.inc.php:368 ../../templates/header-tiny.inc.php:367
+msgid "Log out"
+msgstr "Keluar"
+
+#: ../../templates/header.inc.php:374 ../../templates/header-tiny.inc.php:373
 #: ../../templates/show_login_form.inc.php:73
 msgid "Login"
 msgstr "Masuk"
 
-#: ../../templates/header.inc.php:377
+#: ../../templates/header.inc.php:378 ../../templates/header-tiny.inc.php:377
 #: ../../templates/show_login_form.inc.php:79
 msgid "Register"
 msgstr "Daftar"
 
-#: ../../templates/header.inc.php:517
+#: ../../templates/header.inc.php:518 ../../templates/header-tiny.inc.php:416
 msgid "Error: Your config file is out of date!"
 msgstr "Kesalahan: File konfigurasi Anda kedaluwarsa!"
 
-#: ../../templates/header.inc.php:519
+#: ../../templates/header.inc.php:520 ../../templates/header-tiny.inc.php:418
 msgid "Generate and download new config file"
 msgstr "Buat dan unduh file konfigurasi baru"
 
-#: ../../templates/header.inc.php:520
+#: ../../templates/header.inc.php:521 ../../templates/header-tiny.inc.php:419
 msgid "Write new config file to disk"
 msgstr "Tulis file konfigurasi baru ke disk"
 
@@ -3372,6 +3482,7 @@ msgid "of"
 msgstr "dari"
 
 #: ../../templates/list_header.inc.php:122
+#: ../../templates/show_localplay_control.inc.php:28
 msgid "Next"
 msgstr "Berikutnya"
 
@@ -3412,7 +3523,7 @@ msgstr "Tambahkan ke Daftar Putar Baru"
 #: ../../templates/show_album_row.inc.php:104
 #: ../../templates/show_playlist.inc.php:79
 #: ../../templates/show_playlist.inc.php:80
-#: ../../templates/show_playlist_row.inc.php:85
+#: ../../templates/show_playlist_row.inc.php:87
 #: ../../templates/show_search.inc.php:35
 #: ../../templates/show_search.inc.php:36
 #: ../../templates/show_search_options.inc.php:33
@@ -3424,6 +3535,7 @@ msgstr "Unduh Batch"
 #: ../../templates/rightbar.inc.php:60
 #: ../../templates/show_democratic.inc.php:49
 #: ../../templates/show_democratic.inc.php:50
+#: ../../templates/show_localplay_status.inc.php:51
 msgid "Clear Playlist"
 msgstr "Bersihkan Daftar Putar"
 
@@ -3447,7 +3559,7 @@ msgstr "Album Acak"
 msgid "Random Playlist"
 msgstr "Daftar Putar Acak"
 
-#: ../../templates/rightbar.inc.php:117
+#: ../../templates/rightbar.inc.php:133
 msgid "No items"
 msgstr "Tidak ada barang"
 
@@ -3519,6 +3631,11 @@ msgstr "Mengetik"
 #: ../../templates/show_live_stream.inc.php:34
 #: ../../templates/show_live_streams.inc.php:47
 #: ../../templates/show_live_streams.inc.php:75
+#: ../../templates/show_localplay_controllers.inc.php:32
+#: ../../templates/show_localplay_controllers.inc.php:70
+#: ../../templates/show_localplay_instances.inc.php:31
+#: ../../templates/show_localplay_playlist.inc.php:35
+#: ../../templates/show_localplay_playlist.inc.php:69
 #: ../../templates/show_manage_democratic.inc.php:32
 #: ../../templates/show_manage_license.inc.php:37
 #: ../../templates/show_manage_license.inc.php:60
@@ -3604,7 +3721,7 @@ msgid "API Key"
 msgstr "kunci API"
 
 #: ../../templates/show_account.inc.php:129
-#: ../../templates/show_edit_user.inc.php:157
+#: ../../templates/show_edit_user.inc.php:158
 #: ../../templates/show_manage_catalogs.inc.php:45
 msgid "Clear Stats"
 msgstr "Bersihkan Stats"
@@ -3797,7 +3914,6 @@ msgstr "URL aliran"
 
 #: ../../templates/show_add_live_stream.inc.php:48
 #: ../../templates/show_edit_live_stream_row.inc.php:39
-#: ../../templates/show_live_stream.inc.php:52
 #: ../../templates/show_live_streams.inc.php:46
 #: ../../templates/show_live_streams.inc.php:74
 msgid "Codec"
@@ -3991,8 +4107,8 @@ msgstr "Cari di Last.fm ..."
 
 #: ../../templates/show_album_group_disks.inc.php:59
 #: ../../templates/show_album.inc.php:89
-#: ../../templates/show_albums.inc.php:63
-#: ../../templates/show_albums.inc.php:137
+#: ../../templates/show_albums.inc.php:65
+#: ../../templates/show_albums.inc.php:139
 #: ../../templates/show_artist.inc.php:84
 #: ../../templates/show_catalogs.inc.php:34
 #: ../../templates/show_catalogs.inc.php:64
@@ -4018,7 +4134,7 @@ msgstr "Tindakan"
 #: ../../templates/show_album.inc.php:116
 #: ../../templates/show_album_row.inc.php:55
 #: ../../templates/show_artist_row.inc.php:55
-#: ../../templates/show_playlist_row.inc.php:53
+#: ../../templates/show_playlist_row.inc.php:55
 msgid "Random to temporary playlist"
 msgstr "Acak ke daftar putar sementara"
 
@@ -4033,7 +4149,7 @@ msgstr "Acak ke daftar putar sementara"
 #: ../../templates/show_install_config.inc.php:234
 #: ../../templates/show_install_config.inc.php:251
 #: ../../templates/show_install_config.inc.php:270
-#: ../../templates/show_playlist_media_row.inc.php:77
+#: ../../templates/show_playlist_media_row.inc.php:79
 #: ../../templates/show_podcast_episode.inc.php:86
 #: ../../templates/show_podcast_episode_row.inc.php:79
 #: ../../templates/show_share.inc.php:33 ../../templates/show_share.inc.php:34
@@ -4087,8 +4203,8 @@ msgstr "Grafik"
 msgid "Edit Album"
 msgstr "Edit Album"
 
-#: ../../templates/show_albums.inc.php:35
-#: ../../templates/show_albums.inc.php:109
+#: ../../templates/show_albums.inc.php:36
+#: ../../templates/show_albums.inc.php:111
 #: ../../templates/show_artists.inc.php:37
 #: ../../templates/show_artists.inc.php:111
 #: ../../templates/show_arts.inc.php:43 ../../templates/show_labels.inc.php:42
@@ -4107,8 +4223,8 @@ msgstr "Edit Album"
 msgid "Art"
 msgstr "Seni"
 
-#: ../../templates/show_albums.inc.php:48
-#: ../../templates/show_albums.inc.php:122
+#: ../../templates/show_albums.inc.php:50
+#: ../../templates/show_albums.inc.php:124
 #: ../../templates/show_artists.inc.php:50
 #: ../../templates/show_artists.inc.php:124
 #: ../../templates/show_edit_album_row.inc.php:100
@@ -4123,8 +4239,8 @@ msgstr "Seni"
 msgid "Tags"
 msgstr "Tag"
 
-#: ../../templates/show_albums.inc.php:53
-#: ../../templates/show_albums.inc.php:127
+#: ../../templates/show_albums.inc.php:55
+#: ../../templates/show_albums.inc.php:129
 #: ../../templates/show_artists.inc.php:55
 #: ../../templates/show_artists.inc.php:129
 #: ../../templates/show_now_playing_row.inc.php:109
@@ -4144,8 +4260,8 @@ msgstr "Tag"
 msgid "Rating"
 msgstr "Peringkat"
 
-#: ../../templates/show_albums.inc.php:58
-#: ../../templates/show_albums.inc.php:132
+#: ../../templates/show_albums.inc.php:60
+#: ../../templates/show_albums.inc.php:134
 #: ../../templates/show_artists.inc.php:60
 #: ../../templates/show_artists.inc.php:134
 #: ../../templates/show_now_playing_row.inc.php:119
@@ -4164,20 +4280,9 @@ msgstr "Peringkat"
 msgid "Fav."
 msgstr "Fav."
 
-#: ../../templates/show_albums.inc.php:99
+#: ../../templates/show_albums.inc.php:101
 msgid "No album found"
 msgstr "Tidak ada album yang ditemukan"
-
-#: ../../templates/show_artist.inc.php:49
-#: ../../templates/show_artist.inc.php:243
-#: ../../templates/show_artist.inc.php:253
-#: ../../templates/show_artist.inc.php:263
-#: ../../templates/show_index.inc.php:51
-#: ../../templates/show_label.inc.php:107
-#: ../../templates/show_now_playing_row.inc.php:83
-#: ../../templates/show_now_playing_row.inc.php:89
-msgid "Loading..."
-msgstr "Pemuatan..."
 
 #: ../../templates/show_artist.inc.php:90
 #: ../../templates/show_artist.inc.php:92
@@ -4321,19 +4426,19 @@ msgstr "Info"
 
 #: ../../templates/show_catalogs.inc.php:31
 #: ../../templates/show_catalogs.inc.php:61
-#: ../../templates/show_stats.inc.php:70
+#: ../../templates/show_stats.inc.php:69
 msgid "Last Verify"
 msgstr "Verifikasi Terakhir"
 
 #: ../../templates/show_catalogs.inc.php:32
 #: ../../templates/show_catalogs.inc.php:62
-#: ../../templates/show_stats.inc.php:71
+#: ../../templates/show_stats.inc.php:70
 msgid "Last Add"
 msgstr "Tambah Terakhir"
 
 #: ../../templates/show_catalogs.inc.php:33
 #: ../../templates/show_catalogs.inc.php:63
-#: ../../templates/show_stats.inc.php:72
+#: ../../templates/show_stats.inc.php:71
 msgid "Last Clean"
 msgstr "Terakhir Bersih"
 
@@ -4345,6 +4450,8 @@ msgstr "Tidak ditemukan katalog"
 #: ../../templates/show_catalog_types.inc.php:68
 #: ../../templates/show_edit_podcast_episode_row.inc.php:31
 #: ../../templates/show_edit_podcast_row.inc.php:35
+#: ../../templates/show_localplay_controllers.inc.php:30
+#: ../../templates/show_localplay_controllers.inc.php:68
 #: ../../templates/show_manage_license.inc.php:36
 #: ../../templates/show_manage_license.inc.php:59
 #: ../../templates/show_plugins.inc.php:30
@@ -4355,6 +4462,8 @@ msgstr "Deskripsi"
 
 #: ../../templates/show_catalog_types.inc.php:31
 #: ../../templates/show_catalog_types.inc.php:69
+#: ../../templates/show_localplay_controllers.inc.php:31
+#: ../../templates/show_localplay_controllers.inc.php:69
 #: ../../templates/show_plugins.inc.php:31
 #: ../../templates/show_plugins.inc.php:73
 msgid "Version"
@@ -4367,6 +4476,8 @@ msgstr "Mengaktifkan"
 
 #: ../../templates/show_catalog_types.inc.php:60
 #: ../../templates/show_disabled_songs.inc.php:51
+#: ../../templates/show_localplay_controllers.inc.php:60
+#: ../../templates/show_localplay_playlist.inc.php:60
 #: ../../templates/show_manage_shoutbox.inc.php:52
 #: ../../templates/show_plugins.inc.php:64
 msgid "No Records Found"
@@ -4473,7 +4584,7 @@ msgstr "Bersihkan Tembolok Seniman"
 msgid "Clear Albums Cache"
 msgstr "Hapus Album Cache"
 
-#: ../../templates/show_debug.inc.php:47 ../../update.php:78
+#: ../../templates/show_debug.inc.php:47 ../../update.php:80
 msgid "Ampache Update"
 msgstr "Pembaruan ampache"
 
@@ -4595,6 +4706,7 @@ msgid "Add Vote"
 msgstr "Tambahkan Vote"
 
 #: ../../templates/show_denied.inc.php:52
+#: ../../templates/sidebar_localplay.inc.php:82
 msgid "Access Denied"
 msgstr "Akses ditolak"
 
@@ -4632,7 +4744,7 @@ msgstr "Waktu Penambahan"
 
 #: ../../templates/show_duplicate.inc.php:23
 #: ../../templates/show_duplicate.inc.php:36
-#: ../../templates/sidebar_modules.inc.php:32
+#: ../../templates/sidebar_modules.inc.php:33
 msgid "Find Duplicates"
 msgstr "Temukan Duplikat"
 
@@ -4659,7 +4771,7 @@ msgstr "Lagu Duplikat"
 #: ../../templates/show_recently_played.inc.php:30
 #: ../../templates/show_recently_played.inc.php:140
 #: ../../templates/show_tagcloud.inc.php:26
-#: ../../templates/sidebar_home.inc.php:136
+#: ../../templates/sidebar_home.inc.php:146
 msgid "Song"
 msgstr "Lagu"
 
@@ -4820,13 +4932,6 @@ msgstr "Bahasa"
 msgid "Copyright"
 msgstr "hak cipta"
 
-#: ../../templates/show_edit_search_row.inc.php:42
-#: ../../templates/show_searches.inc.php:45
-#: ../../templates/show_searches.inc.php:75
-#: ../../templates/sidebar_home.inc.php:132
-msgid "Random"
-msgstr "Acak"
-
 #: ../../templates/show_edit_search_row.inc.php:48
 msgid "Item Limit (0 = unlimited)"
 msgstr "Batas Barang (0 = tidak terbatas)"
@@ -4842,6 +4947,8 @@ msgid "Created by: %s for %s"
 msgstr "Dibuat oleh: %s untuk %s"
 
 #: ../../templates/show_edit_song_row.inc.php:55
+#: ../../templates/show_localplay_playlist.inc.php:33
+#: ../../templates/show_localplay_playlist.inc.php:67
 #: ../../templates/show_song_previews.inc.php:39
 msgid "Track"
 msgstr "Jalur"
@@ -4878,19 +4985,19 @@ msgstr "Pilihan lain"
 msgid "Config Preset"
 msgstr "Konfigurasi Preset"
 
-#: ../../templates/show_edit_user.inc.php:145
+#: ../../templates/show_edit_user.inc.php:146
 msgid "Flash"
 msgstr "Flash"
 
-#: ../../templates/show_edit_user.inc.php:151
+#: ../../templates/show_edit_user.inc.php:152
 msgid "Prevent Preset Override"
 msgstr "Cegah Override Preset"
 
-#: ../../templates/show_edit_user.inc.php:153
+#: ../../templates/show_edit_user.inc.php:154
 msgid "This Affects all non-Admin accounts"
 msgstr "Ini Mempengaruhi semua akun non-Admin"
 
-#: ../../templates/show_edit_user.inc.php:165
+#: ../../templates/show_edit_user.inc.php:166
 msgid "Update User"
 msgstr "Perbarui Pengguna"
 
@@ -4971,7 +5078,7 @@ msgstr "Jam"
 #: ../../templates/show_newest.inc.php:23
 #: ../../templates/show_popular.inc.php:23
 #: ../../templates/show_recent.inc.php:23
-#: ../../templates/sidebar_home.inc.php:95
+#: ../../templates/sidebar_home.inc.php:105
 msgid "Information"
 msgstr "Informasi"
 
@@ -4983,34 +5090,6 @@ msgstr "Browser Anda tidak mendukung fitur ini."
 msgid "Media is currently playing. Are you sure you want to close"
 msgstr "Media sedang diputar. Anda yakin ingin menutup"
 
-#: ../../templates/show_html5_player.inc.php:465
-msgid "My Broadcast"
-msgstr "Siaran saya"
-
-#: ../../templates/show_html5_player.inc.php:493
-msgid "Slideshow"
-msgstr "Rangkai salindia"
-
-#: ../../templates/show_html5_player.inc.php:496
-msgid "Expand/Collapse Playlist"
-msgstr "Rentangkan / Perkecil Daftar Putar"
-
-#: ../../templates/show_html5_player.inc.php:501
-msgid "Visualizer"
-msgstr "Visualizer"
-
-#: ../../templates/show_html5_player.inc.php:504
-msgid "Visualizer Full-Screen"
-msgstr "Visualizer Layar Penuh"
-
-#: ../../templates/show_html5_player.inc.php:507
-msgid "ReplayGain"
-msgstr "ReplayGain"
-
-#: ../../templates/show_html5_player.inc.php:510
-msgid "Equalizer"
-msgstr "Equalizer"
-
 #: ../../templates/show_import_playlist.inc.php:23
 msgid "Importing a Playlist from a File"
 msgstr "Mengimpor Daftar Putar dari File"
@@ -5018,11 +5097,6 @@ msgstr "Mengimpor Daftar Putar dari File"
 #: ../../templates/show_import_playlist.inc.php:35
 msgid "Import Playlist"
 msgstr "Impor Daftar Putar"
-
-#: ../../templates/show_index.inc.php:50
-#: ../../templates/show_random_albums.inc.php:26
-msgid "Albums of the Moment"
-msgstr "Album Momen"
 
 #: ../../templates/show_install_account.inc.php:26
 #: ../../templates/show_install_config.inc.php:41
@@ -5512,6 +5586,67 @@ msgstr "Kelola Stasiun Radio"
 msgid "No live stream found"
 msgstr "Tidak ditemukan streaming langsung"
 
+#: ../../templates/show_localplay_add_instance.inc.php:23
+msgid "Add Localplay Instance"
+msgstr "Tambahkan Mesin Virtual Localplay"
+
+#: ../../templates/show_localplay_add_instance.inc.php:36
+#: ../../templates/sidebar_localplay.inc.php:42
+msgid "Add Instance"
+msgstr "Tambahkan Mesin Virtual"
+
+#: ../../templates/show_localplay_control.inc.php:24
+msgid "Previous"
+msgstr "Sebelumnya"
+
+#: ../../templates/show_localplay_control.inc.php:25
+msgid "Stop"
+msgstr "Berhenti"
+
+#: ../../templates/show_localplay_control.inc.php:26
+msgid "Pause"
+msgstr "Jeda"
+
+#: ../../templates/show_localplay_edit_instance.inc.php:23
+msgid "Edit Localplay Instance"
+msgstr "Edit Instance Localplay"
+
+#: ../../templates/show_localplay_edit_instance.inc.php:36
+msgid "Update Instance"
+msgstr "Perbarui Instance"
+
+#: ../../templates/show_localplay_instances.inc.php:23
+msgid "Show Localplay Instances"
+msgstr "Tampilkan Instance Pemutaran Lokal"
+
+#: ../../templates/show_localplay_instances.inc.php:49
+msgid "Edit Instance"
+msgstr "Edit Instance"
+
+#: ../../templates/show_localplay_status.inc.php:30
+msgid "Localplay Control"
+msgstr "Kontrol pemutaran lokal"
+
+#: ../../templates/show_localplay_status.inc.php:35
+msgid "Mute"
+msgstr "Bisu"
+
+#: ../../templates/show_localplay_status.inc.php:36
+msgid "Decrease Volume"
+msgstr "Kurangi Volume"
+
+#: ../../templates/show_localplay_status.inc.php:37
+msgid "Increase Volume"
+msgstr "Tambah Volume"
+
+#: ../../templates/show_localplay_status.inc.php:38
+msgid "Volume"
+msgstr "Volume"
+
+#: ../../templates/show_localplay_status.inc.php:43
+msgid "Repeat"
+msgstr "Ulangi"
+
 #: ../../templates/show_login_form.inc.php:66
 msgid "Remember Me"
 msgstr "Ingat saya"
@@ -5637,21 +5772,21 @@ msgstr "Lengket"
 msgid "Date Added"
 msgstr "Tanggal Ditambahkan"
 
-#: ../../templates/show_mashup.inc.php:27
+#: ../../templates/show_mashup.inc.php:28
 msgid "Browse Library"
 msgstr "Jelajahi Perpustakaan"
 
-#: ../../templates/show_mashup.inc.php:31
+#: ../../templates/show_mashup.inc.php:32
 msgid "Trending"
 msgstr "Tren"
 
-#: ../../templates/show_mashup.inc.php:41
-#: ../../templates/sidebar_home.inc.php:98
+#: ../../templates/show_mashup.inc.php:42
+#: ../../templates/sidebar_home.inc.php:108
 msgid "Newest"
 msgstr "Terbaru"
 
-#: ../../templates/show_mashup.inc.php:51
-#: ../../templates/sidebar_home.inc.php:99
+#: ../../templates/show_mashup.inc.php:52
+#: ../../templates/sidebar_home.inc.php:109
 msgid "Popular"
 msgstr "Populer"
 
@@ -5684,16 +5819,16 @@ msgid "Remove duplicates"
 msgstr "Hapus duplikat"
 
 #: ../../templates/show_playlist.inc.php:112
-#: ../../templates/show_playlist_row.inc.php:99
+#: ../../templates/show_playlist_row.inc.php:101
 msgid "Do you really want to delete the playlist?"
 msgstr "Apakah Anda benar-benar ingin menghapus daftar putar?"
 
-#: ../../templates/show_playlist_media_row.inc.php:93
+#: ../../templates/show_playlist_media_row.inc.php:95
 #: ../../templates/show_song_row.inc.php:133
 msgid "Reorder"
 msgstr "Susun ulang"
 
-#: ../../templates/show_playlist_row.inc.php:96
+#: ../../templates/show_playlist_row.inc.php:98
 msgid "Playlist edit"
 msgstr "Sunting daftar putar"
 
@@ -6167,7 +6302,7 @@ msgstr "Pengguna yang Terhubung"
 msgid "Total Users"
 msgstr "Total Pengguna"
 
-#: ../../templates/show_stats.inc.php:37 ../../templates/show_stats.inc.php:74
+#: ../../templates/show_stats.inc.php:37 ../../templates/show_stats.inc.php:73
 msgid "Catalog Size"
 msgstr "Ukuran Katalog"
 
@@ -6175,11 +6310,11 @@ msgstr "Ukuran Katalog"
 msgid "Catalog Time"
 msgstr "Waktu Katalog"
 
-#: ../../templates/show_tagcloud.inc.php:60
+#: ../../templates/show_tagcloud.inc.php:59
 msgid "Tag edit"
 msgstr "Edit tag"
 
-#: ../../templates/show_tagcloud.inc.php:65
+#: ../../templates/show_tagcloud.inc.php:64
 msgid "Do you really want to delete the tag?"
 msgstr "Apakah Anda benar-benar ingin menghapus tag?"
 
@@ -6514,7 +6649,7 @@ msgid "Update from Tags Complete"
 msgstr "Pembaruan dari Tag Selesai"
 
 #: ../../templates/show_uploads.inc.php:23
-#: ../../templates/sidebar_home.inc.php:119
+#: ../../templates/sidebar_home.inc.php:129
 msgid "Uploads"
 msgstr "Unggah"
 
@@ -6635,11 +6770,14 @@ msgstr "Diverifikasi"
 #: ../../templates/sidebar_admin.inc.php:59
 #: ../../templates/sidebar_home.inc.php:24
 #: ../../templates/sidebar_home.inc.php:69
-#: ../../templates/sidebar_home.inc.php:95
-#: ../../templates/sidebar_home.inc.php:132
-#: ../../templates/sidebar_home.inc.php:144
+#: ../../templates/sidebar_home.inc.php:105
+#: ../../templates/sidebar_home.inc.php:142
+#: ../../templates/sidebar_home.inc.php:154
+#: ../../templates/sidebar_localplay.inc.php:38
+#: ../../templates/sidebar_localplay.inc.php:51
+#: ../../templates/sidebar_localplay.inc.php:71
 #: ../../templates/sidebar_modules.inc.php:24
-#: ../../templates/sidebar_modules.inc.php:30
+#: ../../templates/sidebar_modules.inc.php:31
 #: ../../templates/sidebar_preferences.inc.php:30
 msgid "Expand/Collapse"
 msgstr "Perluas / Perkecil"
@@ -6661,7 +6799,7 @@ msgid "Show ACL(s)"
 msgstr "Tampilkan ACL"
 
 #: ../../templates/sidebar_admin.inc.php:45
-#: ../../templates/sidebar_modules.inc.php:30
+#: ../../templates/sidebar_modules.inc.php:31
 msgid "Other Tools"
 msgstr "Alat Lainnya"
 
@@ -6685,48 +6823,68 @@ msgstr "Judul Lagu"
 msgid "Currently Playing"
 msgstr "Sedang diputar"
 
-#: ../../templates/sidebar_home.inc.php:85
+#: ../../templates/sidebar_home.inc.php:95
 msgid "Import"
 msgstr "Impor"
 
-#: ../../templates/sidebar_home.inc.php:97
+#: ../../templates/sidebar_home.inc.php:107
 msgid "Recent"
 msgstr "Baru"
 
-#: ../../templates/sidebar_home.inc.php:104
+#: ../../templates/sidebar_home.inc.php:114
 msgid "Top Rated"
 msgstr "Nilai Tertinggi"
 
-#: ../../templates/sidebar_home.inc.php:140
+#: ../../templates/sidebar_home.inc.php:150
 msgid "Advanced"
 msgstr "Maju"
 
-#: ../../templates/sidebar.inc.php:35
+#: ../../templates/sidebar.inc.php:38
 #: ../../templates/sidebar_modules.inc.php:24
 msgid "Modules"
 msgstr "Modul"
 
-#: ../../templates/sidebar.inc.php:60
-msgid "Logout"
-msgstr "Keluar"
+#: ../../templates/sidebar_localplay.inc.php:43
+msgid "Show instances"
+msgstr "Perlihatkan contoh"
 
-#: ../../templates/sidebar.light.inc.php:33
-msgid "Radio"
-msgstr "Radio"
+#: ../../templates/sidebar_localplay.inc.php:46
+msgid "Show Playlist"
+msgstr "Tampilkan Daftar Putar"
+
+#: ../../templates/sidebar_localplay.inc.php:51
+msgid "Active Instance"
+msgstr "Mesin Virtual aktif"
+
+#: ../../templates/sidebar_localplay.inc.php:71
+msgid "Localplay Disabled"
+msgstr "Localplay Dinonaktifkan"
+
+#: ../../templates/sidebar_localplay.inc.php:74
+msgid "Allow Localplay set to False"
+msgstr "Izinkan Localplay disetel ke False"
+
+#: ../../templates/sidebar_localplay.inc.php:78
+msgid "Localplay Controller Not Defined"
+msgstr "Pengendali Permainan Lokal Tidak Didefinisikan"
 
 #: ../../templates/sidebar_modules.inc.php:26
+msgid "Localplay Modules"
+msgstr "Modul Pemutaran Lokal"
+
+#: ../../templates/sidebar_modules.inc.php:27
 msgid "Catalog Modules"
 msgstr "Modul Katalog"
 
-#: ../../templates/sidebar_modules.inc.php:27
+#: ../../templates/sidebar_modules.inc.php:28
 msgid "Available Plugins"
 msgstr "Plugin yang tersedia"
 
-#: ../../templates/sidebar_modules.inc.php:33
+#: ../../templates/sidebar_modules.inc.php:34
 msgid "Mail Users"
 msgstr "Pengguna Surat"
 
-#: ../../templates/sidebar_modules.inc.php:41
+#: ../../templates/sidebar_modules.inc.php:42
 msgid "Manage Playlist"
 msgstr "Kelola Daftar Putar"
 
@@ -6734,7 +6892,7 @@ msgstr "Kelola Daftar Putar"
 msgid "Account"
 msgstr "Rekening"
 
-#: ../../update.php:81
+#: ../../update.php:83
 #, php-format
 msgid ""
 "This page handles all database updates to Ampache starting with "
@@ -6745,10 +6903,469 @@ msgstr ""
 "dengan <strong> 3.3.3.5 </strong>. Versi Anda saat ini adalah <strong> %s "
 "</strong> dengan versi database <strong> %s </strong>."
 
-#: ../../update.php:91
+#: ../../update.php:93
 msgid "Update Now!"
 msgstr "Memperbarui sekarang!"
 
-#: ../../upnp/control-reply.php:46
+#: ../../upnp/control-reply.php:47
 msgid "root"
 msgstr "akar"
+
+# This file lists all description strings from your Ampache-database ->
+# preference-table.
+# Please do not delete or modify the content by yourself. It will be
+# automatically (re)generated
+# if you run './gather-messages.sh [-gu|--getutds].
+# Last Update: 17.03.2019 12:16:09 CET
+# 
+#: Database preference table id 1
+msgid "Allow Downloads"
+msgstr "Izinkan Unduhan"
+
+#: Database preference table id 4
+msgid "Popular Threshold"
+msgstr "Ambang Batas Populer"
+
+#: Database preference table id 19
+msgid "Transcode Bitrate"
+msgstr "Bitrate Transcode"
+
+#: Database preference table id 22
+msgid "Website Title"
+msgstr "Judul Situs Web"
+
+#: Database preference table id 23
+msgid "Lock Songs"
+msgstr "Kunci Lagu"
+
+#: Database preference table id 24
+msgid "Forces Http play regardless of port"
+msgstr "Memaksa bermain Http terlepas dari port"
+
+#: Database preference table id 29
+msgid "Type of Playback"
+msgstr "Jenis Pemutaran"
+
+#: Database preference table id 32
+msgid "Playlist Type"
+msgstr "Jenis Daftar Putar"
+
+#: Database preference table id 33
+msgid "Theme"
+msgstr "Tema"
+
+#: Database preference table id 40
+msgid "Localplay Access"
+msgstr "Akses Permainan Lokal"
+
+#: Database preference table id 41
+msgid "Localplay Type"
+msgstr "Jenis Permainan Lokal"
+
+#: Database preference table id 44
+msgid "Allow Streaming"
+msgstr "Izinkan Streaming"
+
+#: Database preference table id 45
+msgid "Allow Democratic Play"
+msgstr "Izinkan Bermain Demokratis"
+
+#: Database preference table id 46
+msgid "Allow Localplay Play"
+msgstr "Izinkan Localplay Play"
+
+#: Database preference table id 47
+msgid "Statistics Day Threshold"
+msgstr "Ambang Hari Statistik"
+
+#: Database preference table id 51
+msgid "Offset Limit"
+msgstr "Batas Offset"
+
+#: Database preference table id 52
+msgid "Rate Limit"
+msgstr "Batas Tingkat"
+
+#: Database preference table id 53
+msgid "Playlist Method"
+msgstr "Metode Daftar Putar"
+
+#: Database preference table id 72
+msgid "Shoutcast Active Instance"
+msgstr "Mesin Virtual Shoutcast"
+
+#: Database preference table id 73
+msgid "Last.FM Username"
+msgstr "Last.FM Username"
+
+#: Database preference table id 74
+msgid "Last.FM Password"
+msgstr "Terakhir.FM Kata Sandi"
+
+#: Database preference table id 75
+msgid "Last.FM Submit Port"
+msgstr "Last.FM Kirim Port"
+
+#: Database preference table id 76
+msgid "Last.FM Submit Host"
+msgstr "Last.FM Kirim Host"
+
+#: Database preference table id 77
+msgid "Last.FM Submit URL"
+msgstr "Last.FM Kirim URL"
+
+#: Database preference table id 78
+msgid "Last.FM Submit Challenge"
+msgstr "Last.FM Kirim Tantangan"
+
+#: Database preference table id 82
+msgid "Now playing filtered per user"
+msgstr "Sekarang diputar difilter per pengguna"
+
+#: Database preference table id 83
+msgid "Album Default Sort"
+msgstr "Sortir Default Album"
+
+#: Database preference table id 84
+msgid "Show # played"
+msgstr "Tampilkan # dimainkan"
+
+#: Database preference table id 85
+msgid "Show current song in Web player page title"
+msgstr "Tampilkan lagu saat ini dalam judul halaman pemutar Web"
+
+#: Database preference table id 86
+msgid "Use SubSonic backend"
+msgstr "Gunakan backend SubSonic"
+
+#: Database preference table id 87
+msgid "Use Plex backend"
+msgstr "Gunakan Plex backend"
+
+#: Database preference table id 88
+msgid "Authorize Flash Web Player(s)"
+msgstr "Otorisasi Flash Web Player (s)"
+
+#: Database preference table id 89
+msgid "Authorize HTML5 Web Player(s)"
+msgstr "Otorisasi Pemutar Web HTML5"
+
+#: Database preference table id 90
+msgid "Personal information visibility - Now playing"
+msgstr "Visibilitas informasi pribadi - Sekarang diputar"
+
+#: Database preference table id 91
+msgid "Personal information visibility - Recently played"
+msgstr "Visibilitas informasi pribadi - Terakhir diputar"
+
+#: Database preference table id 92
+msgid ""
+"Personal information visibility - Recently played - Allow to show streaming "
+"date/time"
+msgstr ""
+"Visibilitas informasi pribadi - Terakhir diputar - Bolehkan untuk "
+"menampilkan tanggal / waktu streaming"
+
+#: Database preference table id 93
+msgid ""
+"Personal information visibility - Recently played - Allow to show streaming "
+"agent"
+msgstr ""
+"Visibilitas informasi pribadi - Terakhir diputar - Izinkan untuk menampilkan"
+" agen streaming"
+
+#: Database preference table id 94
+msgid "Fix header position on compatible themes"
+msgstr "Perbaiki posisi tajuk pada tema yang kompatibel"
+
+#: Database preference table id 95
+msgid "Check for Ampache updates automatically"
+msgstr "Periksa pembaruan Ampache secara otomatis"
+
+#: Database preference table id 96
+msgid "AutoUpdate last check time"
+msgstr "Perbarui waktu pemeriksaan terakhir"
+
+#: Database preference table id 97
+msgid "AutoUpdate last version from last check"
+msgstr "Perbarui versi terakhir dari cek terakhir"
+
+#: Database preference table id 98
+msgid "AutoUpdate last version from last check is newer"
+msgstr "Perbarui versi terakhir dari pemeriksaan terakhir lebih baru"
+
+#: Database preference table id 99
+msgid "Confirmation when closing current playing window"
+msgstr "Konfirmasi saat menutup jendela pemutaran saat ini"
+
+#: Database preference table id 100
+msgid "Auto-pause betweens tabs"
+msgstr "Jeda otomatis antara tab"
+
+#: Database preference table id 101
+msgid "Enable url rewriting"
+msgstr "Aktifkan penulisan ulang url"
+
+#: Database preference table id 102
+msgid "Allow Share"
+msgstr "Izinkan Bagikan"
+
+#: Database preference table id 103
+msgid "Share links default expiration days (0=never)"
+msgstr "Bagikan tautan hari kedaluwarsa bawaan (0 = tidak pernah)"
+
+#: Database preference table id 104
+msgid "Artist slideshow inactivity time"
+msgstr "Waktu tayangan slide artis"
+
+#: Database preference table id 105
+msgid "Broadcast web player by default"
+msgstr "Pemain web siaran secara default"
+
+#: Database preference table id 106
+msgid "Limit number of future events"
+msgstr "Batasi jumlah acara mendatang"
+
+#: Database preference table id 107
+msgid "Limit number of past events"
+msgstr "Batasi jumlah acara sebelumnya"
+
+#: Database preference table id 108
+msgid "Album - Group multiple disks"
+msgstr "Album - Grup beberapa disk"
+
+#: Database preference table id 109
+msgid "Top menu"
+msgstr "Menu atas"
+
+#: Database preference table id 110
+msgid "Clear democratic votes of expired user sessions"
+msgstr "Pilihan demokratis yang jelas dari sesi pengguna yang kedaluwarsa"
+
+#: Database preference table id 111
+msgid "Show donate button in footer"
+msgstr "Tampilkan tombol donasi di footer"
+
+#: Database preference table id 112
+msgid "Uploads catalog destination"
+msgstr "Unggah tujuan katalog"
+
+#: Database preference table id 113
+msgid "Allow users to upload media"
+msgstr "Izinkan pengguna mengunggah media"
+
+#: Database preference table id 114
+msgid "Upload: create a subdirectory per user (recommended)"
+msgstr "Unggah: buat subdirektori per pengguna (disarankan)"
+
+#: Database preference table id 115
+msgid "Upload: consider the user sender as the track's artist"
+msgstr "Unggah: anggap pengirim pengguna sebagai artis trek"
+
+#: Database preference table id 116
+msgid ""
+"Upload: run the following script after upload (current directory = upload "
+"target directory)"
+msgstr ""
+"Unggah: jalankan skrip berikut setelah unggahan (direktori saat ini = unggah"
+" direktori target)"
+
+#: Database preference table id 117
+msgid "Upload: allow users to edit uploaded songs"
+msgstr "Unggah: memungkinkan pengguna untuk mengedit lagu yang diunggah"
+
+#: Database preference table id 118
+msgid "Use DAAP backend"
+msgstr "Gunakan backend DAAP"
+
+#: Database preference table id 119
+msgid "DAAP backend password"
+msgstr "Kata sandi backend DAAP"
+
+#: Database preference table id 120
+msgid "Use UPnP backend"
+msgstr "Gunakan backend UPnP"
+
+#: Database preference table id 121
+msgid "Allow video features"
+msgstr "Izinkan fitur video"
+
+#: Database preference table id 122
+msgid "Album - Group per release type"
+msgstr "Album - Grup per jenis rilis"
+
+#: Database preference table id 123
+msgid "Ajax page load"
+msgstr "Memuat halaman Ajax"
+
+#: Database preference table id 124
+msgid "Limit direct play to maximum media count"
+msgstr "Batasi pemutaran langsung hingga jumlah media maksimum"
+
+#: Database preference table id 125
+msgid "Show Albums of the moment at home page"
+msgstr "Tampilkan Album saat itu di beranda"
+
+#: Database preference table id 126
+msgid "Show Videos of the moment at home page"
+msgstr "Tampilkan Video saat ini di beranda"
+
+#: Database preference table id 127
+msgid "Show Recently Played at home page"
+msgstr "Tampilkan Terakhir Diputar di beranda"
+
+#: Database preference table id 128
+msgid "Show Now Playing at home page"
+msgstr "Perlihatkan Sekarang Memutar di beranda"
+
+#: Database preference table id 129
+msgid "Custom logo url"
+msgstr "URL logo khusus"
+
+#: Database preference table id 130
+msgid "Album - Group per release type Sort"
+msgstr "Album - Grup per jenis rilis Sortir"
+
+#: Database preference table id 131
+msgid "WebPlayer browser notifications"
+msgstr "Notifikasi browser WebPlayer"
+
+#: Database preference table id 132
+msgid "WebPlayer browser notifications timeout (seconds)"
+msgstr "Batas waktu pemberitahuan browser WebPlayer (detik)"
+
+#: Database preference table id 133
+msgid "Allow geolocation"
+msgstr "Izinkan geolokasi"
+
+#: Database preference table id 134
+msgid "Authorize JavaScript decoder (Aurora.js) in Web Player(s)"
+msgstr "Otorisasi dekoder JavaScript (Aurora.js) di Web Player"
+
+#: Database preference table id 139
+msgid "Upload: allow users to remove uploaded songs"
+msgstr "Unggah: izinkan pengguna untuk menghapus lagu yang diunggah"
+
+#: Database preference table id 140
+msgid "Custom login page logo url"
+msgstr "Url logo halaman login khusus"
+
+#: Database preference table id 141
+msgid "Custom favicon url"
+msgstr "URL kustom favicon"
+
+#: Database preference table id 142
+msgid "Custom text footer"
+msgstr "Footer teks khusus"
+
+#: Database preference table id 143
+msgid "Use WebDAV backend"
+msgstr "Gunakan backend WebDAV"
+
+#: Database preference table id 144
+msgid "Receive notifications by email (shouts, private messages, ...)"
+msgstr "Terima pemberitahuan melalui email (teriakan, pesan pribadi, ...)"
+
+#: Database preference table id 145
+msgid "Theme color"
+msgstr "Warna tema"
+
+#: Database preference table id 146
+msgid "Disable custom metadata fields (ctrl / shift click to select multiple)"
+msgstr ""
+"Nonaktifkan kolom metadata khusus (ctrl / shift klik untuk memilih beberapa)"
+
+#: Database preference table id 147
+msgid ""
+"Disable custom metadata fields. Insert them in a comma separated list. They "
+"will add to the fields selected above."
+msgstr ""
+"Nonaktifkan bidang metadata khusus. Masukkan mereka dalam daftar yang "
+"dipisahkan koma. Mereka akan menambah bidang yang dipilih di atas."
+
+#: Database preference table id 148
+msgid "Podcast: # latest episodes to keep"
+msgstr "Podcast: # episode terbaru yang akan disimpan"
+
+#: Database preference table id 149
+msgid "Podcast: # episodes to download when new episodes are available"
+msgstr "Podcast: # episode untuk diunduh saat episode baru tersedia"
+
+#: Database preference table id 150
+msgid "Library item context menu"
+msgstr "Menu konteks item perpustakaan"
+
+#: Database preference table id 151
+msgid "Rename uploaded file according to catalog pattern"
+msgstr "Ganti nama file yang diunggah sesuai dengan pola katalog"
+
+#: Database preference table id 152
+msgid "Check library item at import time and don't import duplicates"
+msgstr "Periksa item perpustakaan pada waktu impor dan jangan impor duplikat"
+
+#: Database preference table id 153
+msgid "Show filter box on browse"
+msgstr "Tampilkan kotak filter saat menjelajah"
+
+#: Database preference table id 154
+msgid "Light sidebar by default"
+msgstr "Sidebar cahaya secara default"
+
+#: Database preference table id 155
+msgid "Custom blank album default image"
+msgstr "Gambar standar album kustom kosong"
+
+#: Database preference table id 156
+msgid "Custom blank video default image"
+msgstr "Gambar default video kosong khusus"
+
+#: Database preference table id 157
+msgid ""
+"Alphabet browsing by default for following library items (album,artist,...)"
+msgstr ""
+"Penjelajahan alfabet secara default untuk item pustaka berikut (album, "
+"artis, ...)"
+
+#: Database preference table id 164
+msgid "Amazon base url"
+msgstr "URL dasar Amazon"
+
+#: Database preference table id 165
+msgid "Amazon max results pages"
+msgstr "Halaman hasil Amazon max"
+
+#: Database preference table id 166
+msgid "Amazon Access Key ID"
+msgstr "ID Akses Kunci Amazon"
+
+#: Database preference table id 167
+msgid "Amazon Secret Access Key"
+msgstr "Kunci Akses Rahasia Amazon"
+
+#: Database preference table id 168
+msgid "Amazon associate tag"
+msgstr "Tag asosiasi Amazon"
+
+#: Database preference subcategory table id 150
+msgid "library"
+msgstr "Perpustakaan"
+
+#: Database preference subcategory table id 151
+msgid "upload"
+msgstr "unggah"
+
+#: Database preference subcategory table id 152
+msgid "catalog"
+msgstr "katalog"
+
+#: Database preference subcategory table id 154
+msgid "theme"
+msgstr "tema"
+
+#: Database preference subcategory table id 155
+msgid "custom"
+msgstr "adat"
+
+#: Database preference subcategory table id 164
+msgid "amazon"
+msgstr "amazon"

@@ -1,10 +1,10 @@
 <?php
-
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 class UPnPFind
 {
+
     /**
      * Find devices by UPnP multicast message and stores them to cache
      *
@@ -17,47 +17,47 @@ class UPnPFind
         return($discover); //!!
 
         /*
-        $devices = array();
-        flush();
-        foreach ($discover as $response) {
+          $devices = array();
+          flush();
+          foreach ($discover as $response) {
 
-            $device = new Device();
-            if ($device->initByDiscoveryReponse($response)) {
+          $device = new Device();
+          if ($device->initByDiscoveryReponse($response)) {
 
-                $device->saveToCache();
+          $device->saveToCache();
 
-                try {
-                    $client = $device->getClient('ConnectionManager');
-                    $protocolInfo = $client->call('GetProtocolInfo');
+          try {
+          $client = $device->getClient('ConnectionManager');
+          $protocolInfo = $client->call('GetProtocolInfo');
 
-                    $sink = $protocolInfo['Sink'];
-                    $tmp = explode(',', $sink);
+          $sink = $protocolInfo['Sink'];
+          $tmp = explode(',', $sink);
 
-                    $protocols = array();
+          $protocols = array();
 
-                    foreach ($tmp as $protocol) {
-                        $t = explode(':', $protocol);
-                        if ($t[0] == 'http-get') {
-                            $protocols[] = $t[2];
-                        }
-                    }
-                } catch (UPnPException $upnpe) {
-                    $protocols = array();
-                }
+          foreach ($tmp as $protocol) {
+          $t = explode(':', $protocol);
+          if ($t[0] == 'http-get') {
+          $protocols[] = $t[2];
+          }
+          }
+          } catch (UPnPException $upnpe) {
+          $protocols = array();
+          }
 
-                $device->protocolInfo = $protocols;
+          $device->protocolInfo = $protocols;
 
-                $cache[$device->getId()] = array(
-                    'name' => $device->getName(),
-                    'services' => $device->getServices(),
-                    'icons' => $device->getIcons(),
-                    'protocols' => $device->getProtocolInfo()
-                );
-            }
-        }
+          $cache[$device->getId()] = array(
+          'name' => $device->getName(),
+          'services' => $device->getServices(),
+          'icons' => $device->getIcons(),
+          'protocols' => $device->getProtocolInfo()
+          );
+          }
+          }
 
-        return $cache;
-        */
+          return $cache;
+         */
     }
 
     /**
@@ -72,7 +72,7 @@ class UPnPFind
      */
     private static function discover($timeout = 2)
     {
-        $msg  = 'M-SEARCH * HTTP/1.1' . "\r\n";
+        $msg = 'M-SEARCH * HTTP/1.1' . "\r\n";
         $msg .= 'HOST: 239.255.255.250:1900' . "\r\n";
         $msg .= 'MAN: "ssdp:discover"' . "\r\n";
         $msg .= "MX: 3\r\n";
@@ -87,13 +87,17 @@ class UPnPFind
 
         $response = array();
         do {
-            $buf = null;
-            @socket_recvfrom($socket, $buf, 1024, MSG_WAITALL, $from, $port);
+            $buf  = null;
+            $from = null;
+            $port = null;
+            if (@socket_recvfrom($socket, $buf, 1024, MSG_WAITALL, $from, $port) === false) {
+                throw new \RuntimeException('Error running @socket_recvfrom');
+            }
 
-            if (!is_null($buf)) {
+            if ($buf !== null) {
                 $response[] = self::discoveryReponse2Array($buf);
             }
-        } while (!is_null($buf));
+        } while ($buf !== null);
         //socket_close($socket);
 
         return $response;
@@ -124,13 +128,11 @@ class UPnPFind
             $result[$key] = $value;
         }
 
-        return (Object)$result;
+        return (Object) $result;
     }
 }
 
-
 $devices = UPnPFind::findDevices();
-
 ?>
 
 <pre>

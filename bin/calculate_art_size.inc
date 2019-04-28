@@ -40,12 +40,12 @@ while ($row = Dba::fetch_assoc($db_results)) {
     else
         $source = $row['image'];
 
-    $id = $row['id'];
+    $imageid = $row['id'];
         $dimensions = Core::image_dimensions($source);
         if ($dimensions) {
-        $width = intval($dimensions['width']);
-        $height = intval($dimensions['height']);
-        $sql = "Update `image` SET `width`=". $width . ",`height`=".$height." WHERE `id`='".$id."'";
+        $width = (int) $dimensions['width'];
+        $height = (int) $dimensions['height'];
+        $sql = "Update `image` SET `width`=". $width . ",`height`=".$height." WHERE `id`='".$imageid."'";
         Dba::write($sql);
     }
 }

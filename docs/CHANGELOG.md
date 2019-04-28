@@ -1,6 +1,18 @@
 CHANGELOG
 =========
 
+4.0.7
+----------
+- Restored localplay and modules
+- New search options and sped up the actual searching a bit.
+- Reduced the minimum size of tables for small devices so they don't disappear
+- Lots of bugfixes introduced by all the removals
+- More work on the light theme. (I like it now!)
+- Added the jukebox to the side menu
+- Removed Ampache strings from a pretty much all the code
+- Removed donation links and plugins
+- Hundreds of Codestyle/Codacy/Issues fixed
+
 4.0.6
 ----------
 - Remove reborn theme and point to reZak

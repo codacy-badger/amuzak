@@ -75,10 +75,10 @@ foreach ($items as $item) {
     $name = preg_replace('/[^a-zA-Z0-9. -]/', '', $name);
     $filename = $dirname . DIRECTORY_SEPARATOR . $item->id . '. ' . $name . '.' . $ext;
     $medias = $item->get_medias();
-    $pl = new Stream_Playlist(-1);
-    $pl->title = $item->get_fullname();
+    $plist = new Stream_Playlist(-1);
+    $plist->title = $item->get_fullname();
     foreach ($medias as $media) {
-        $pl->urls[] = Stream_Playlist::media_to_url($media, $dirname, 'file');
+        $plist->urls[] = Stream_Playlist::media_to_url($media, $dirname, 'file');
     }
     
     $plstr = $pl->{'get_' . $ext . '_string'}();

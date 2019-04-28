@@ -223,10 +223,6 @@ msgstr ""
 msgid "Clear democratic votes of expired user sessions"
 msgstr ""
 
-#: Database preference table id 111
-msgid "Show donate button in footer"
-msgstr ""
-
 #: Database preference table id 112
 msgid "Uploads catalog destination"
 msgstr ""

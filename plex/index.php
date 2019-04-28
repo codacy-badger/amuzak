@@ -1,4 +1,5 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
 /**
  *
@@ -19,7 +20,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 define('NO_SESSION', '1');
 require_once '../lib/init.php';
 
@@ -30,7 +30,10 @@ if (!AmpConfig::get('plex_backend')) {
 }
 
 if (function_exists('apache_setenv')) {
-    @apache_setenv('no-gzip', 1);
+    ;
+    if (@apache_setenv('no-gzip', 1) === false) {
+        throw new \RuntimeException('Unable to set apache env variable no-gzip');
+    }
 }
 @ini_set('zlib.output_compression', 0);
 
@@ -38,11 +41,11 @@ $action = $_GET['action'];
 
 $headers = apache_request_headers();
 $client  = $headers['User-Agent'];
-/*$deviceName = $headers['X-Plex-Device-Name'];
-$clientPlatform = $headers['X-Plex-Client-Platform'];
-$version = $headers['X-Plex-Version'];
-$language = $headers['X-Plex-Language'];
-$clientFeatures = $headers['X-Plex-Client-Capabilities'];*/
+/* $deviceName = $headers['X-Plex-Device-Name'];
+  $clientPlatform = $headers['X-Plex-Client-Platform'];
+  $version = $headers['X-Plex-Version'];
+  $language = $headers['X-Plex-Language'];
+  $clientFeatures = $headers['X-Plex-Client-Capabilities']; */
 debug_event('plex', 'Request headers: ' . print_r($headers, true), '5');
 
 // Get the list of possible methods for the Plex API

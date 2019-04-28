@@ -1,4 +1,5 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
 /**
  *
@@ -32,7 +33,7 @@ use Lib\Interfaces\Model;
 class Repository
 {
     protected $modelClassName;
-    
+
     /**
      *
      * @var array Stores relation between SQL field name and class name so we
@@ -60,12 +61,12 @@ class Repository
 
     /**
      *
-     * @param type $id
+     * @param string $object_id
      * @return DatabaseObject
      */
-    public function findById($id)
+    public function findById($object_id)
     {
-        $rows = $this->findBy(array('id'), array($id));
+        $rows = $this->findBy(array('id'), array($object_id));
 
         return count($rows) ? reset($rows) : null;
     }
@@ -98,8 +99,8 @@ class Repository
             $parts = explode('And', $matches[1]);
 
             return $this->findBy(
-                    $parts,
-                    $this->resolveObjects($arguments)
+                            $parts,
+                            $this->resolveObjects($arguments)
             );
         }
     }
@@ -110,8 +111,8 @@ class Repository
         $nameParts = explode('\\', $className);
         $tableName = preg_replace_callback(
                 '/(?<=.)([A-Z])/',
-                function ($m) {
-                    return '_' . strtolower($m[0]);
+                function ($name) {
+                    return '_' . strtolower($name[0]);
                 }, end($nameParts));
 
         return lcfirst($tableName);
@@ -137,8 +138,8 @@ class Repository
 
     public function remove(DatabaseObject $object)
     {
-        $id = $object->getId();
-        $this->deleteRecord($id);
+        $objectid = $object->getId();
+        $this->deleteRecord($objectid);
     }
 
     protected function insertRecord($properties)
@@ -154,23 +155,23 @@ class Repository
         return \Dba::insert_id();
     }
 
-    protected function updateRecord($id, $properties)
+    protected function updateRecord($object_id, $properties)
     {
         $sql = 'UPDATE ' . $this->getTableName()
                 . ' SET ' . implode(',', $this->getKeyValuePairs($properties))
                 . ' WHERE id = ?';
-        $properties[] = $id;
+        $properties[] = $object_id;
         \Dba::write(
                 $sql,
                 array_values($this->resolveObjects($properties))
         );
     }
 
-    protected function deleteRecord($id)
+    protected function deleteRecord($object_id)
     {
         $sql = 'DELETE FROM ' . $this->getTableName()
                 . ' WHERE id = ?';
-        \Dba::write($sql, array($id));
+        \Dba::write($sql, array($object_id));
     }
 
     protected function getKeyValuePairs($properties)
@@ -231,7 +232,7 @@ class Repository
             }
             $sql .= implode(' and ', $sqlParts);
         }
-        
+
         return $sql;
     }
 

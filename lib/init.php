@@ -67,7 +67,7 @@ if (!empty($link)) {
 
 $results['load_time_begin'] = $load_time_begin;
 /** This is the version.... fluff nothing more... **/
-$results['version']            = '4.0.6';
+$results['version']            = '4.0.7';
 $results['int_config_version'] = '42';
 
 if (!empty($results['force_ssl'])) {
@@ -177,7 +177,7 @@ if (!defined('NO_SESSION') && AmpConfig::get('use_auth')) {
 } elseif (!AmpConfig::get('use_auth')) {
     $auth['success']      = 1;
     $auth['username']     = '-1';
-    $auth['fullname']     = "Ampache User";
+    $auth['fullname']     = "aMuzak User";
     $auth['id']           = -1;
     $auth['offset_limit'] = 50;
     $auth['access']       = AmpConfig::get('default_auth_level') ? User::access_name_to_level(AmpConfig::get('default_auth_level')) : '100';
@@ -188,7 +188,7 @@ if (!defined('NO_SESSION') && AmpConfig::get('use_auth')) {
         $GLOBALS['user']           = new User($auth['username']);
         $GLOBALS['user']->username = $auth['username'];
         $GLOBALS['user']->fullname = $auth['fullname'];
-        $GLOBALS['user']->access   = intval($auth['access']);
+        $GLOBALS['user']->access   = (int) ($auth['access']);
     } else {
         Session::check();
         if ($_SESSION['userdata']['username']) {
@@ -198,7 +198,7 @@ if (!defined('NO_SESSION') && AmpConfig::get('use_auth')) {
             $GLOBALS['user']->id       = -1;
             $GLOBALS['user']->username = $auth['username'];
             $GLOBALS['user']->fullname = $auth['fullname'];
-            $GLOBALS['user']->access   = intval($auth['access']);
+            $GLOBALS['user']->access   = (int) ($auth['access']);
         }
         if (!$GLOBALS['user']->id and !AmpConfig::get('demo_mode')) {
             Auth::logout(session_id());

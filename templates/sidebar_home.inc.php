@@ -50,6 +50,7 @@
             <li id="sb_home_browse_music_podcast"><a href="<?php echo $web_path ?>/browse.php?action=podcast"><?php echo T_('Podcasts') ?></a></li>
             <?php
         } ?>
+            <li id="sb_home_browse_music_jukebox"><a href="<?php echo $web_path ?>/jukebox.php" target="_blank"><?php echo T_('Jukebox') ?></a></li>
             <?php if (AmpConfig::get('allow_upload') && Access::check('interface', '25')) {
             ?>
             <li id="sb_home_browse_music_upload"><a href="<?php echo $web_path ?>/upload.php"><?php echo T_('Upload') ?></a></li>
@@ -78,6 +79,16 @@
             <?php if (AmpConfig::get('allow_democratic_playback')) {
                 ?>
             <li id="sb_home_playlist_playlist"><a href="<?php echo $web_path ?>/democratic.php?action=show_playlist"><?php echo T_('Democratic') ?></a></li>
+            <?php
+            } ?>
+            <?php if ($server_allow = AmpConfig::get('allow_localplay_playback') and $controller = AmpConfig::get('localplay_controller') and $access_check = Access::check('localplay', '5')) {
+                ?>
+            <?php
+                // Little bit of work to be done here
+                $localplay             = new Localplay(AmpConfig::get('localplay_controller'));
+                $current_instance      = $localplay->current_instance();
+                $class                 = $current_instance ? '' : ' class="active_instance"'; ?>
+            <li id="sb_home_playlist_show"><a href="<?php echo $web_path ?>/localplay.php?action=show_playlist"><?php echo T_('Localplay') ?></a></li>
             <?php
             } ?>
             <?php if (Access::check('interface', '50')) {

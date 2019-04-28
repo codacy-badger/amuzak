@@ -1,5 +1,7 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
+
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
@@ -19,126 +21,152 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 class Song extends database_object implements media, library_item
 {
     use \Lib\Metadata\Metadata;
 
     /* Variables from DB */
-
     /**
      * @var int $id
      */
     public $id;
+
     /**
      * @var string $file
      */
     public $file;
+
     /**
      * @var int $album
      */
     public $album;
+
     /**
      * @var int $artist
      */
     public $artist;
+
     /**
      * @var string $title
      */
     public $title;
+
     /**
      * @var int $year
      */
     public $year;
+
     /**
      * @var int $bitrate
      */
     public $bitrate;
+
     /**
      * @var int $rate
      */
     public $rate;
+
     /**
      * @var string $mode
      */
     public $mode;
+
     /**
      * @var int $size
      */
     public $size;
+
     /**
      * @var int $time
      */
     public $time;
+
     /**
      * @var int $track
      */
     public $track;
+
     /**
      * @var string $album_mbid
      */
     public $album_mbid;
+
     /**
      * @var string $artist_mbid
      */
     public $artist_mbid;
+
     /**
      * @var string $albumartist_mbid
      */
     public $albumartist_mbid;
+
     /**
      * @var string $type
      */
     public $type;
+
     /**
      * @var string $mime
      */
     public $mime;
+
     /**
      * @var boolean $played
      */
     public $played;
+
     /**
      * @var boolean $enabled
      */
     public $enabled;
+
     /**
      * @var int $addition_time
      */
     public $addition_time;
+
     /**
      * @var int $update_time
      */
     public $update_time;
+
     /**
      * MusicBrainz ID
      * @var string $mbid
      */
     public $mbid;
+
     /**
      * @var int $catalog
      */
     public $catalog;
+
     /**
      * @var int|null $waveform
      */
     public $waveform;
+
     /**
      * @var int|null $user_upload
      */
     public $user_upload;
+
     /**
      * @var int|null $license
      */
     public $license;
+
     /**
      * @var string $composer
      */
     public $composer;
+
     /**
      * @var string $catalog_number
      */
     public $catalog_number;
+
     /**
      * @var int $channels
      */
@@ -148,144 +176,179 @@ class Song extends database_object implements media, library_item
      * @var array $tags
      */
     public $tags;
+
     /**
      * @var string $label
      */
     public $label;
+
     /**
      * @var string $language
      */
     public $language;
+
     /**
      * @var string $comment
      */
     public $comment;
+
     /**
      * @var string $lyrics
      */
     public $lyrics;
+
     /**
      * @var float $replaygain_track_gain
      */
     public $replaygain_track_gain;
+
     /**
      * @var float $replaygain_track_peak
      */
     public $replaygain_track_peak;
+
     /**
      * @var float $replaygain_album_gain
      */
     public $replaygain_album_gain;
+
     /**
      * @var float $replaygain_album_peak
      */
     public $replaygain_album_peak;
+
     /**
      * @var string $f_title
      */
     public $f_title;
+
     /**
      * @var string $f_artist
      */
     public $f_artist;
+
     /**
      * @var string $f_album
      */
     public $f_album;
+
     /**
      * @var string $f_artist_full
      */
     public $f_artist_full;
+
     /**
      * @var int $albumartist
      */
     public $albumartist;
+
     /**
      * @var string $f_albumartist_full
      */
     public $f_albumartist_full;
+
     /**
      * @var string $f_album_full
      */
     public $f_album_full;
+
     /**
      * @var string $f_time
      */
     public $f_time;
+
     /**
      * @var string $f_time_h
      */
     public $f_time_h;
+
     /**
      * @var string $f_track
      */
     public $f_track;
+
     /**
      * @var string $f_bitrate
      */
     public $f_bitrate;
+
     /**
      * @var string $link
      */
     public $link;
+
     /**
      * @var string $f_file
      */
     public $f_file;
+
     /**
      * @var string $f_title_full
      */
     public $f_title_full;
+
     /**
      * @var string $f_link
      */
     public $f_link;
+
     /**
      * @var string $f_album_link
      */
     public $f_album_link;
+
     /**
      * @var string $f_artist_link
      */
     public $f_artist_link;
+
     /**
      * @var string $f_albumartist_link
      */
     public $f_albumartist_link;
+
     /**
      * @var string $f_tags
      */
     public $f_tags;
+
     /**
      * @var string $f_size
      */
     public $f_size;
+
     /**
      * @var string $f_lyrics
      */
     public $f_lyrics;
+
     /**
      * @var string $f_pattern
      */
     public $f_pattern;
+
     /**
      * @var int $count
      */
     public $count;
+
     /**
      * @var string $f_publisher
      */
     public $f_publisher;
+
     /**
      * @var string $f_composer
      */
     public $f_composer;
+
     /**
      * @var string $f_license
      */
     public $f_license;
 
     /* Setting Variables */
+
     /**
      * @var boolean $_fake
      */
@@ -295,25 +358,22 @@ class Song extends database_object implements media, library_item
      * Aliases used in insert function
      */
     public static $aliases = array(
-        'mb_trackid','mbid','mb_albumid','mb_albumid_group','mb_artistid','mb_albumartistid','genre','publisher'
+        'mb_trackid', 'mbid', 'mb_albumid', 'mb_albumid_group', 'mb_artistid', 'mb_albumartistid', 'genre', 'publisher'
     );
-
-
-
 
     /**
      * Constructor
      *
-     * Song class, for modifing a song.
-     * @param int|null $id
+     * Song class, for modifying a song.
+     * @param int|null $song_id
      */
-    public function __construct($id = null, $limit_threshold = '')
+    public function __construct($song_id = null, $limit_threshold = '')
     {
-        if ($id === null) {
+        if ($song_id === null) {
             return false;
         }
 
-        $this->id = intval($id);
+        $this->id = (int) ($song_id);
 
         if (self::isCustomMetadataEnabled()) {
             $this->initializeMetadata();
@@ -333,7 +393,8 @@ class Song extends database_object implements media, library_item
         }
 
         return true;
-    } // constructor
+    }
+    // constructor
 
     /**
      * insert
@@ -389,7 +450,7 @@ class Song extends database_object implements media, library_item
                 $albumartist_id   = Artist::check($albumartist, $albumartist_mbid);
             }
         } else {
-            $albumartist_id = intval($results['albumartist_id']);
+            $albumartist_id = (int) ($results['albumartist_id']);
         }
         $artist_id = null;
         if (!isset($results['artist_id'])) {
@@ -397,26 +458,26 @@ class Song extends database_object implements media, library_item
             $artist_mbid = Catalog::trim_slashed_list($artist_mbid);
             $artist_id   = Artist::check($artist, $artist_mbid);
         } else {
-            $artist_id = intval($results['artist_id']);
+            $artist_id = (int) ($results['artist_id']);
         }
         $album_id = null;
         if (!isset($results['album_id'])) {
             $album_id = Album::check($album, $year, $disk, $album_mbid, $album_mbid_group, $albumartist_id, $release_type);
         } else {
-            $album_id = intval($results['album_id']);
+            $album_id = (int) ($results['album_id']);
         }
 
         $sql = 'INSERT INTO `song` (`file`, `catalog`, `album`, `artist`, ' .
-            '`title`, `bitrate`, `rate`, `mode`, `size`, `time`, `track`, ' .
-            '`addition_time`, `year`, `mbid`, `user_upload`, `license`, ' .
-            '`composer`, `channels`) ' .
-            'VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+                '`title`, `bitrate`, `rate`, `mode`, `size`, `time`, `track`, ' .
+                '`addition_time`, `year`, `mbid`, `user_upload`, `license`, ' .
+                '`composer`, `channels`) ' .
+                'VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
 
         $db_results = Dba::write($sql, array(
-            $file, $catalog, $album_id, $artist_id,
-            $title, $bitrate, $rate, $mode, $size, $time, $track,
-            time(), $year, $track_mbid, $user_upload, $license,
-            $composer, $channels));
+                    $file, $catalog, $album_id, $artist_id,
+                    $title, $bitrate, $rate, $mode, $size, $time, $track,
+                    time(), $year, $track_mbid, $user_upload, $license,
+                    $composer, $channels));
 
         if (!$db_results) {
             debug_event('song', 'Unable to insert ' . $file, 2);
@@ -425,7 +486,7 @@ class Song extends database_object implements media, library_item
         }
 
         $song_id = Dba::insert_id();
-        
+
         if ($user_upload) {
             Useractivity::post_activity(intval($user_upload), 'upload', 'song', $song_id);
         }
@@ -448,7 +509,7 @@ class Song extends database_object implements media, library_item
         }
 
         $sql = 'INSERT INTO `song_data` (`song_id`, `comment`, `lyrics`, `label`, `language`, `catalog_number`, `replaygain_track_gain`, `replaygain_track_peak`, `replaygain_album_gain`, `replaygain_album_peak`) ' .
-            'VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+                'VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
         Dba::write($sql, array($song_id, $comment, $lyrics, $label, $language, $catalog_number, $replaygain_track_gain, $replaygain_track_peak, $replaygain_album_gain, $replaygain_album_peak));
 
         return $song_id;
@@ -488,13 +549,13 @@ class Song extends database_object implements media, library_item
 
         // Song data cache
         $sql = 'SELECT `song`.`id`, `file`, `catalog`, `album`, ' .
-            '`year`, `artist`, `title`, `bitrate`, `rate`, ' .
-            '`mode`, `size`, `time`, `track`, `played`, ' .
-            '`song`.`enabled`, `update_time`, `tag_map`.`tag_id`, ' .
-            '`mbid`, `addition_time`, `license`, `composer`, `user_upload` ' .
-            'FROM `song` LEFT JOIN `tag_map` ' .
-            'ON `tag_map`.`object_id`=`song`.`id` ' .
-            "AND `tag_map`.`object_type`='song' ";
+                '`year`, `artist`, `title`, `bitrate`, `rate`, ' .
+                '`mode`, `size`, `time`, `track`, `played`, ' .
+                '`song`.`enabled`, `update_time`, `tag_map`.`tag_id`, ' .
+                '`mbid`, `addition_time`, `license`, `composer`, `user_upload` ' .
+                'FROM `song` LEFT JOIN `tag_map` ' .
+                'ON `tag_map`.`object_id`=`song`.`id` ' .
+                "AND `tag_map`.`object_type`='song' ";
         if (AmpConfig::get('catalog_disable')) {
             $sql .= "LEFT JOIN `catalog` ON `catalog`.`id` = `song`.`catalog` ";
         }
@@ -543,7 +604,8 @@ class Song extends database_object implements media, library_item
         }
 
         return true;
-    } // build_cache
+    }
+    // build_cache
 
     /**
      * _get_info
@@ -551,20 +613,20 @@ class Song extends database_object implements media, library_item
      */
     private function _get_info($limit_threshold = '')
     {
-        $id = $this->id;
+        $song_id = $this->id;
 
-        if (parent::is_cached('song', $id)) {
-            return parent::get_from_cache('song', $id);
+        if (parent::is_cached('song', $song_id)) {
+            return parent::get_from_cache('song', $song_id);
         }
 
         $sql = 'SELECT `song`.`id`, `song`.`file`, `song`.`catalog`, `song`.`album`, `album`.`album_artist` AS `albumartist`, `song`.`year`, `song`.`artist`,' .
-            '`song`.`title`, `song`.`bitrate`, `song`.`rate`, `song`.`mode`, `song`.`size`, `song`.`time`, `song`.`track`, ' .
-            '`song`.`played`, `song`.`enabled`, `song`.`update_time`, `song`.`mbid`, `song`.`addition_time`, `song`.`license`, ' .
-            '`song`.`composer`, `song`.`user_upload`, `album`.`mbid` AS `album_mbid`, `artist`.`mbid` AS `artist_mbid`, `album_artist`.`mbid` AS `albumartist_mbid` ' .
-            'FROM `song` LEFT JOIN `album` ON `album`.`id` = `song`.`album` LEFT JOIN `artist` ON `artist`.`id` = `song`.`artist` ' .
-            'LEFT JOIN `artist` AS `album_artist` ON `album_artist`.`id` = `album`.`album_artist` ' .
-            'WHERE `song`.`id` = ?';
-        $db_results = Dba::read($sql, array($id));
+                '`song`.`title`, `song`.`bitrate`, `song`.`rate`, `song`.`mode`, `song`.`size`, `song`.`time`, `song`.`track`, ' .
+                '`song`.`played`, `song`.`enabled`, `song`.`update_time`, `song`.`mbid`, `song`.`addition_time`, `song`.`license`, ' .
+                '`song`.`composer`, `song`.`user_upload`, `album`.`mbid` AS `album_mbid`, `artist`.`mbid` AS `artist_mbid`, `album_artist`.`mbid` AS `albumartist_mbid` ' .
+                'FROM `song` LEFT JOIN `album` ON `album`.`id` = `song`.`album` LEFT JOIN `artist` ON `artist`.`id` = `song`.`artist` ' .
+                'LEFT JOIN `artist` AS `album_artist` ON `album_artist`.`id` = `album`.`album_artist` ' .
+                'WHERE `song`.`id` = ?';
+        $db_results = Dba::read($sql, array($song_id));
 
         $results = Dba::fetch_assoc($db_results);
         if (isset($results['id'])) {
@@ -572,7 +634,7 @@ class Song extends database_object implements media, library_item
                 $results['object_cnt'] = Stats::get_object_count('song', $results['id'], $limit_threshold);
             }
 
-            parent::add_to_cache('song', $id, $results);
+            parent::add_to_cache('song', $song_id, $results);
 
             return $results;
         }
@@ -581,31 +643,32 @@ class Song extends database_object implements media, library_item
     }
 
     /**
-      * _get_ext_info
+     * _get_ext_info
      * This function gathers information from the song_ext_info table and adds it to the
      * current object
      * @return array
      */
     public function _get_ext_info()
     {
-        $id = intval($this->id);
+        $song_id = (int) ($this->id);
 
-        if (parent::is_cached('song_data', $id)) {
-            return parent::get_from_cache('song_data', $id);
+        if (parent::is_cached('song_data', $song_id)) {
+            return parent::get_from_cache('song_data', $song_id);
         }
 
         $sql        = "SELECT * FROM song_data WHERE `song_id` = ?";
-        $db_results = Dba::read($sql, array($id));
+        $db_results = Dba::read($sql, array($song_id));
 
         $results = Dba::fetch_assoc($db_results);
 
-        parent::add_to_cache('song_data', $id, $results);
+        parent::add_to_cache('song_data', $song_id, $results);
 
         return $results;
-    } // _get_ext_info
+    }
+    // _get_ext_info
 
     /**
-      * fill_ext_info
+     * fill_ext_info
      * This calls the _get_ext_info and then sets the correct vars
      */
     public function fill_ext_info()
@@ -617,7 +680,8 @@ class Song extends database_object implements media, library_item
                 $this->$key = $value;
             }
         } // end foreach
-    } // fill_ext_info
+    }
+    // fill_ext_info
 
     /**
      * type_to_mime
@@ -701,11 +765,11 @@ class Song extends database_object implements media, library_item
     {
         $where_sql = $_REQUEST['search_disabled'] ? '' : "WHERE `enabled` != '0'";
         $sql       = 'SELECT `artist`, `album`, `title`, ' .
-            'COUNT(`title`) FROM `song` ' . $where_sql .
-            ' GROUP BY `artist`, `album`, `title`';
+                'COUNT(`title`) FROM `song` ' . $where_sql .
+                ' GROUP BY `artist`, `album`, `title`';
 
         if ($search_type == 'artist_title' ||
-            $search_type == 'artist_album_title') {
+                $search_type == 'artist_album_title') {
             $sql .= ',`artist`';
         }
         if ($search_type == 'artist_album_title') {
@@ -724,7 +788,7 @@ class Song extends database_object implements media, library_item
 
         return $results;
     }
-    
+
     public static function find($data)
     {
         $sql_base = "SELECT `song`.`id` FROM `song`";
@@ -735,7 +799,7 @@ class Song extends database_object implements media, library_item
                 return $results['id'];
             }
         }
-        
+
         $where  = "WHERE `song`.`title` = ?";
         $sql    = $sql_base;
         $params = array($data['title']);
@@ -743,7 +807,7 @@ class Song extends database_object implements media, library_item
             $where .= " AND `song`.`track` = ?";
             $params[] = $data['track'];
         }
-        
+
         $sql .= " INNER JOIN `album` ON `album`.`id` = `song`.`album`";
         if ($data['mb_albumid']) {
             $where .= " AND `album`.`mbid` = ?";
@@ -752,13 +816,13 @@ class Song extends database_object implements media, library_item
             $where .= " AND `album`.`name` = ?";
             $params[] = $data['album'];
         }
-        
+
         $sql .= $where . " LIMIT 1";
         $db_results = Dba::read($sql, $params);
         if ($results = Dba::fetch_assoc($db_results)) {
             return $results['id'];
         }
-        
+
         return false;
     }
 
@@ -778,7 +842,7 @@ class Song extends database_object implements media, library_item
                     "`title`='" . Dba::escape($dupe['title']) . "' ";
 
             if ($search_type == 'artist_title' ||
-                $search_type == 'artist_album_title') {
+                    $search_type == 'artist_album_title') {
                 $sql .= "AND `artist`='" . Dba::escape($dupe['artist']) . "' ";
             }
             if ($search_type == 'artist_album_title') {
@@ -802,7 +866,7 @@ class Song extends database_object implements media, library_item
      * @param int $album_id
      * @return string
      */
-    public function get_album_name($album_id=0)
+    public function get_album_name($album_id = 0)
     {
         if (!$album_id) {
             $album_id = $this->album;
@@ -813,7 +877,8 @@ class Song extends database_object implements media, library_item
         } else {
             return $album->name;
         }
-    } // get_album_name
+    }
+    // get_album_name
 
     /**
      * get_artist_name
@@ -821,7 +886,7 @@ class Song extends database_object implements media, library_item
      * @param int $artist_id
      * @return string
      */
-    public function get_artist_name($artist_id=0)
+    public function get_artist_name($artist_id = 0)
     {
         if (!$artist_id) {
             $artist_id = $this->artist;
@@ -832,7 +897,8 @@ class Song extends database_object implements media, library_item
         } else {
             return $artist->name;
         }
-    } // get_artist_name
+    }
+    // get_artist_name
 
     /**
      * get_album_artist_name
@@ -840,7 +906,7 @@ class Song extends database_object implements media, library_item
      * @param int $album_artist_id
      * @return string
      */
-    public function get_album_artist_name($album_artist_id=0)
+    public function get_album_artist_name($album_artist_id = 0)
     {
         if (!$album_artist_id) {
             $album_artist_id = $this->albumartist;
@@ -851,7 +917,8 @@ class Song extends database_object implements media, library_item
         } else {
             return $album_artist->name;
         }
-    } // get_album_artist_name
+    }
+    // get_album_artist_name
 
     /**
      * set_played
@@ -876,7 +943,8 @@ class Song extends database_object implements media, library_item
         self::update_played(true, $this->id);
 
         return true;
-    } // set_played
+    }
+    // set_played
 
     /**
      * compare_song_information
@@ -892,11 +960,12 @@ class Song extends database_object implements media, library_item
     {
         // Remove some stuff we don't care about
         unset($song->catalog, $song->played, $song->enabled, $song->addition_time, $song->update_time, $song->type);
-        $string_array = array('title','comment','lyrics','composer','tags');
-        $skip_array   = array('id','tag_id','mime','artist_mbid','album_mbid','albumartist_mbid','albumartist','mbid','mb_albumid_group','waveform','object_cnt');
+        $string_array = array('title', 'comment', 'lyrics', 'composer', 'tags');
+        $skip_array   = array('id', 'tag_id', 'mime', 'artist_mbid', 'album_mbid', 'albumartist_mbid', 'albumartist', 'mbid', 'mb_albumid_group', 'waveform', 'object_cnt');
 
         return self::compare_media_information($song, $new_song, $string_array, $skip_array);
-    } // compare_song_information
+    }
+    // compare_song_information
 
     /**
      * @param Song $media
@@ -906,7 +975,7 @@ class Song extends database_object implements media, library_item
      */
     public static function compare_media_information($media, $new_media, $string_array, $skip_array)
     {
-        $array        = array();
+        $array = array();
 
         // Pull out all the currently set vars
         $fields = get_object_vars($media);
@@ -927,14 +996,14 @@ class Song extends database_object implements media, library_item
             } else {
                 $mediaData = $media->$key;
             }
-            
+
             // Skip the item if it is no string nor something we can turn into a string
             if (!is_string($mediaData) && !is_numeric($mediaData) && !is_bool($mediaData)) {
                 if (is_object($mediaData) && !method_exists($mediaData, '__toString')) {
                     continue;
                 }
             }
-            
+
             if (is_array($new_media->$key)) {
                 $arr = $new_media->$key;
                 sort($arr);
@@ -997,13 +1066,13 @@ class Song extends database_object implements media, library_item
                     $new_artist_id = Artist::check($value);
                     $this->artist  = $new_artist_id;
                     self::update_artist($new_artist_id, $this->id);
-                break;
+                    break;
                 case 'album_name':
                     // Need to create new album according the name
                     $new_album_id = Album::check($value);
                     $this->album  = $new_album_id;
                     self::update_album($new_album_id, $this->id);
-                break;
+                    break;
                 case 'year':
                 case 'title':
                 case 'track':
@@ -1021,17 +1090,18 @@ class Song extends database_object implements media, library_item
                         self::$function($value, $this->id);
                         $this->$key = $value;
                     }
-                break;
+                    break;
                 case 'edit_tags':
                     Tag::update_tag_list($value, 'song', $this->id, true);
                     $this->tags = Tag::get_top_tags('song', $this->id);
-                break;
+                    break;
                 case 'metadata':
                     if (self::isCustomMetadataEnabled()) {
                         $this->updateMetadata($value);
                     }
+                    break;
                 default:
-                break;
+                    break;
             } // end whitelist
         } // end foreach
 
@@ -1039,7 +1109,8 @@ class Song extends database_object implements media, library_item
         $this->write_id3();
 
         return $this->id;
-    } // update
+    }
+    // update
 
     /**
      * write_id3
@@ -1093,19 +1164,20 @@ class Song extends database_object implements media, library_item
         $update_time = time();
 
         $sql = "UPDATE `song` SET `album` = ?, `year` = ?, `artist` = ?, " .
-            "`title` = ?, `composer` = ?, `bitrate` = ?, `rate` = ?, `mode` = ?, " .
-            "`size` = ?, `time` = ?, `track` = ?, `mbid` = ?, " .
-            "`update_time` = ? WHERE `id` = ?";
+                "`title` = ?, `composer` = ?, `bitrate` = ?, `rate` = ?, `mode` = ?, " .
+                "`size` = ?, `time` = ?, `track` = ?, `mbid` = ?, " .
+                "`update_time` = ? WHERE `id` = ?";
 
         Dba::write($sql, array($new_song->album, $new_song->year, $new_song->artist, $new_song->title, $new_song->composer, $new_song->bitrate, $new_song->rate,
             $new_song->mode, $new_song->size, $new_song->time, $new_song->track, $new_song->mbid, $update_time, $song_id));
 
         $sql = "UPDATE `song_data` SET `lyrics` = ?, `language` = ?, `comment` = ?, `replaygain_track_gain` = ?, `replaygain_track_peak` = ?, " .
-            "`replaygain_album_gain` = ?, `replaygain_album_peak` = ? " .
-            "WHERE `song_id` = ?";
+                "`replaygain_album_gain` = ?, `replaygain_album_peak` = ? " .
+                "WHERE `song_id` = ?";
         Dba::write($sql, array($new_song->lyrics, $new_song->language, $new_song->comment, $new_song->replaygain_track_gain,
             $new_song->replaygain_track_peak, $new_song->replaygain_album_gain, $new_song->replaygain_album_peak, $song_id));
-    } // update_song
+    }
+    // update_song
 
     /**
      * update_year
@@ -1116,7 +1188,8 @@ class Song extends database_object implements media, library_item
     public static function update_year($new_year, $song_id)
     {
         self::_update_item('year', $new_year, $song_id, 50, true);
-    } // update_year
+    }
+    // update_year
 
     /**
      * update_label
@@ -1127,7 +1200,8 @@ class Song extends database_object implements media, library_item
     public static function update_label($new_value, $song_id)
     {
         self::_update_ext_item('label', $new_value, $song_id, 50, true);
-    } // update_label
+    }
+    // update_label
 
     /**
      * update_language
@@ -1138,7 +1212,8 @@ class Song extends database_object implements media, library_item
     public static function update_language($new_lang, $song_id)
     {
         self::_update_ext_item('language', $new_lang, $song_id, 50, true);
-    } // update_language
+    }
+    // update_language
 
     /**
      * update_comment
@@ -1149,7 +1224,8 @@ class Song extends database_object implements media, library_item
     public static function update_comment($new_comment, $song_id)
     {
         self::_update_ext_item('comment', $new_comment, $song_id, 50, true);
-    } // update_comment
+    }
+    // update_comment
 
     /**
      * update_lyrics
@@ -1160,7 +1236,8 @@ class Song extends database_object implements media, library_item
     public static function update_lyrics($new_lyrics, $song_id)
     {
         self::_update_ext_item('lyrics', $new_lyrics, $song_id, 50, true);
-    } // update_lyrics
+    }
+    // update_lyrics
 
     /**
      * update_title
@@ -1171,7 +1248,8 @@ class Song extends database_object implements media, library_item
     public static function update_title($new_title, $song_id)
     {
         self::_update_item('title', $new_title, $song_id, 50, true);
-    } // update_title
+    }
+    // update_title
 
     /**
      * update_composer
@@ -1182,7 +1260,8 @@ class Song extends database_object implements media, library_item
     public static function update_composer($new_value, $song_id)
     {
         self::_update_item('composer', $new_value, $song_id, 50, true);
-    } // update_composer
+    }
+    // update_composer
 
     /**
      * update_publisher
@@ -1193,7 +1272,8 @@ class Song extends database_object implements media, library_item
     public static function update_publisher($new_value, $song_id)
     {
         self::_update_item('publisher', $new_value, $song_id, 50, true);
-    } // update_publisher
+    }
+    // update_publisher
 
     /**
      * update_bitrate
@@ -1204,7 +1284,8 @@ class Song extends database_object implements media, library_item
     public static function update_bitrate($new_bitrate, $song_id)
     {
         self::_update_item('bitrate', $new_bitrate, $song_id, 50, true);
-    } // update_bitrate
+    }
+    // update_bitrate
 
     /**
      * update_rate
@@ -1215,7 +1296,8 @@ class Song extends database_object implements media, library_item
     public static function update_rate($new_rate, $song_id)
     {
         self::_update_item('rate', $new_rate, $song_id, 50, true);
-    } // update_rate
+    }
+    // update_rate
 
     /**
      * update_mode
@@ -1226,7 +1308,8 @@ class Song extends database_object implements media, library_item
     public static function update_mode($new_mode, $song_id)
     {
         self::_update_item('mode', $new_mode, $song_id, 50, true);
-    } // update_mode
+    }
+    // update_mode
 
     /**
      * update_size
@@ -1237,7 +1320,8 @@ class Song extends database_object implements media, library_item
     public static function update_size($new_size, $song_id)
     {
         self::_update_item('size', $new_size, $song_id, 50);
-    } // update_size
+    }
+    // update_size
 
     /**
      * update_time
@@ -1248,7 +1332,8 @@ class Song extends database_object implements media, library_item
     public static function update_time($new_time, $song_id)
     {
         self::_update_item('time', $new_time, $song_id, 50, true);
-    } // update_time
+    }
+    // update_time
 
     /**
      * update_track
@@ -1259,7 +1344,8 @@ class Song extends database_object implements media, library_item
     public static function update_track($new_track, $song_id)
     {
         self::_update_item('track', $new_track, $song_id, 50, true);
-    } // update_track
+    }
+    // update_track
 
     /**
      * update_mbid
@@ -1270,7 +1356,8 @@ class Song extends database_object implements media, library_item
     public static function update_mbid($new_mbid, $song_id)
     {
         self::_update_item('mbid', $new_mbid, $song_id, 50);
-    } // update_mbid
+    }
+    // update_mbid
 
     /**
      * update_license
@@ -1281,7 +1368,8 @@ class Song extends database_object implements media, library_item
     public static function update_license($new_license, $song_id)
     {
         self::_update_item('license', $new_license, $song_id, 50, true);
-    } // update_license
+    }
+    // update_license
 
     /**
      * update_artist
@@ -1292,7 +1380,8 @@ class Song extends database_object implements media, library_item
     public static function update_artist($new_artist, $song_id)
     {
         self::_update_item('artist', $new_artist, $song_id, 50);
-    } // update_artist
+    }
+    // update_artist
 
     /**
      * update_album
@@ -1303,7 +1392,8 @@ class Song extends database_object implements media, library_item
     public static function update_album($new_album, $song_id)
     {
         self::_update_item('album', $new_album, $song_id, 50, true);
-    } // update_album
+    }
+    // update_album
 
     /**
      * update_utime
@@ -1311,14 +1401,15 @@ class Song extends database_object implements media, library_item
      * @param int $song_id
      * @param int $time
      */
-    public static function update_utime($song_id, $time=0)
+    public static function update_utime($song_id, $time = 0)
     {
         if (!$time) {
             $time = time();
         }
 
         self::_update_item('update_time', $time, $song_id, 75, true);
-    } // update_utime
+    }
+    // update_utime
 
     /**
      * update_played
@@ -1329,7 +1420,8 @@ class Song extends database_object implements media, library_item
     public static function update_played($new_played, $song_id)
     {
         self::_update_item('played', ($new_played ? 1 : 0), $song_id, 25);
-    } // update_played
+    }
+    // update_played
 
     /**
      * update_enabled
@@ -1340,7 +1432,8 @@ class Song extends database_object implements media, library_item
     public static function update_enabled($new_enabled, $song_id)
     {
         self::_update_item('enabled', ($new_enabled ? 1 : 0), $song_id, 75, true);
-    } // update_enabled
+    }
+    // update_enabled
 
     /**
      * _update_item
@@ -1376,7 +1469,8 @@ class Song extends database_object implements media, library_item
         $sql = "UPDATE `song` SET `$field` = ? WHERE `id` = ?";
 
         return Dba::write($sql, array($value, $song_id));
-    } // _update_item
+    }
+    // _update_item
 
     /**
      * _update_ext_item
@@ -1406,7 +1500,8 @@ class Song extends database_object implements media, library_item
         $sql = "UPDATE `song_data` SET `$field` = ? WHERE `song_id` = ?";
 
         return Dba::write($sql, array($value, $song_id));
-    } // _update_ext_item
+    }
+    // _update_ext_item
 
     /**
      * format
@@ -1449,7 +1544,7 @@ class Song extends database_object implements media, library_item
         }
 
         // Format the Bitrate
-        $this->f_bitrate = intval($this->bitrate / 1000) . "-" . strtoupper($this->mode);
+        $this->f_bitrate = (int) ($this->bitrate / 1000) . "-" . strtoupper($this->mode);
 
         // Format the Time
         $min            = floor($this->time / 60);
@@ -1475,13 +1570,14 @@ class Song extends database_object implements media, library_item
 
         $this->f_publisher = $this->label;
         $this->f_composer  = $this->composer;
-        
+
         if (AmpConfig::get('licensing') && $this->license) {
             $license = new License($this->license);
             $license->format();
             $this->f_license = $license->f_link;
         }
-    } // format
+    }
+    // format
 
     /**
      * Get item keywords for metadata searches.
@@ -1605,26 +1701,26 @@ class Song extends database_object implements media, library_item
 
     public function display_art($thumb = 2, $force = false)
     {
-        $id   = null;
-        $type = null;
+        $object_id = null;
+        $type      = null;
 
         if (Art::has_db($this->id, 'song')) {
-            $id   = $this->id;
-            $type = 'song';
+            $object_id = $this->id;
+            $type      = 'song';
         } else {
             if (Art::has_db($this->album, 'album')) {
-                $id   = $this->album;
-                $type = 'album';
+                $object_id = $this->album;
+                $type      = 'album';
             } else {
                 if (Art::has_db($this->artist, 'artist') || $force) {
-                    $id   = $this->artist;
-                    $type = 'artist';
+                    $object_id = $this->artist;
+                    $type      = 'artist';
                 }
             }
         }
 
-        if ($id !== null && $type !== null) {
-            Art::display($type, $id, $this->get_fullname(), $thumb, $this->link);
+        if ($object_id !== null && $type !== null) {
+            Art::display($type, $object_id, $this->get_fullname(), $thumb, $this->link);
         }
     }
 
@@ -1648,7 +1744,8 @@ class Song extends database_object implements media, library_item
         //        $fields['recently Played'] = true;
 
         return $fields;
-    } // get_fields
+    }
+    // get_fields
 
     /**
      * get_from_path
@@ -1670,7 +1767,8 @@ class Song extends database_object implements media, library_item
         }
 
         return $songs;
-    } // get_from_path
+    }
+    // get_from_path
 
     /**
      * @function    get_rel_path
@@ -1680,7 +1778,7 @@ class Song extends database_object implements media, library_item
      * @param int $catalog_id
      * @return string
      */
-    public function get_rel_path($file_path=null, $catalog_id=0)
+    public function get_rel_path($file_path = null, $catalog_id = 0)
     {
         $info = null;
         if (!$file_path) {
@@ -1696,7 +1794,8 @@ class Song extends database_object implements media, library_item
         $catalog = Catalog::create_from_id($catalog_id);
 
         return $catalog->get_rel_path($file_path);
-    } // get_rel_path
+    }
+    // get_rel_path
 
     /**
      * Generate generic play url.
@@ -1707,7 +1806,7 @@ class Song extends database_object implements media, library_item
      * @param string $player
      * @return string
      */
-    public static function generic_play_url($object_type, $object_id, $additional_params, $player=null, $local=false)
+    public static function generic_play_url($object_type, $object_id, $additional_params, $player = null, $local = false)
     {
         $media = new $object_type($object_id);
         if (!$media->id) {
@@ -1754,7 +1853,7 @@ class Song extends database_object implements media, library_item
      * @param string $player
      * @return string
      */
-    public static function play_url($oid, $additional_params='', $player=null, $local=false)
+    public static function play_url($oid, $additional_params = '', $player = null, $local = false)
     {
         return self::generic_play_url('song', $oid, $additional_params, $player, $local);
     }
@@ -1776,12 +1875,12 @@ class Song extends database_object implements media, library_item
      * @param int $user_id
      * @return array
      */
-    public static function get_recently_played($user_id=0)
+    public static function get_recently_played($user_id = 0)
     {
-        $user_id = intval($user_id);
+        $user_id = (int) ($user_id);
 
         $sql = "SELECT `object_id`, `user`, `object_type`, `date`, `agent`, `geo_latitude`, `geo_longitude`, `geo_name` " .
-            "FROM `object_count` WHERE `object_type` = 'song' AND `count_type` = 'stream' ";
+                "FROM `object_count` WHERE `object_type` = 'song' AND `count_type` = 'stream' ";
         if (AmpConfig::get('catalog_disable')) {
             $sql .= "AND " . Catalog::get_enable_filter('song', '`object_id`') . " ";
         }
@@ -1812,7 +1911,8 @@ class Song extends database_object implements media, library_item
         }
 
         return $results;
-    } // get_recently_played
+    }
+    // get_recently_played
 
     /**
      * Get stream types.
@@ -1826,7 +1926,7 @@ class Song extends database_object implements media, library_item
     /**
      * Get stream types for media type.
      * @param string $type
-     * @return string
+     * @return array
      */
     public static function get_stream_types_for_type($type, $player = null)
     {
@@ -1857,7 +1957,7 @@ class Song extends database_object implements media, library_item
      * @param array $options
      * @return array|boolean
      */
-    public static function get_transcode_settings_for_media($source, $target = null, $player = null, $media_type = 'song', $options=array())
+    public static function get_transcode_settings_for_media($source, $target = null, $player = null, $media_type = 'song', $options = array())
     {
         $setting_target = 'encode_target';
         if ($media_type !== 'song') {
@@ -1928,9 +2028,9 @@ class Song extends database_object implements media, library_item
      * Get transcode settings.
      * @param string $target
      * @param array $options
-     * @return string
+     * @return array|boolean
      */
-    public function get_transcode_settings($target = null, $player = null, $options=array())
+    public function get_transcode_settings($target = null, $player = null, $options = array())
     {
         return self::get_transcode_settings_for_media($this->type, $target, $player, 'song', $options);
     }
@@ -1966,7 +2066,7 @@ class Song extends database_object implements media, library_item
      * @param string $codec
      * @return array
      */
-    public function run_custom_play_action($action_index, $codec='')
+    public function run_custom_play_action($action_index, $codec = '')
     {
         $transcoder = array();
         $actions    = self::get_custom_play_actions();
@@ -2031,12 +2131,12 @@ class Song extends database_object implements media, library_item
 
         return $actions;
     }
-
     /*
      * get_metadata
      * Get an array of song metadata
      * @return array
      */
+
     public function get_metadata()
     {
         $meta = array();
@@ -2122,4 +2222,6 @@ class Song extends database_object implements media, library_item
 
         return $deleted;
     }
-} // end of song class
+}
+
+// end of song class

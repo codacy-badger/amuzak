@@ -77,6 +77,11 @@
         </ul>
     </li>
 </ul>
+<?php
+    if (AmpConfig::get('play_type') == 'localplay') {
+        require_once AmpConfig::get('prefix') . UI::find_template('show_localplay_control.inc.php');
+    }
+?>
 <ul id="rb_current_playlist">
 
 <?php
@@ -88,8 +93,19 @@
     }
 ?>
     <script type="text/javascript">
+        <?php if (count($objects) || (AmpConfig::get('play_type') == 'localplay')) {
+    ?>
+            $("#content").removeClass("content-right-wild", 500);
+            $("#footer").removeClass("footer-wild", 500);
+            $("#rightbar").removeClass("hidden");
+            $("#rightbar").show("slow");
+        <?php
+} else {
+        ?>
             $("#content").addClass("content-right-wild", 500);
             $("#footer").addClass("footer-wild", 500);
+<?php
+    } ?>
     </script>
 <?php
     // Limit the number of objects we show here
@@ -132,4 +148,3 @@
 if (count($objects)) {
     Stream::run_playlist_method();
 }
-?>

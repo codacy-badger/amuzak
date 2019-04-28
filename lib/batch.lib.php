@@ -35,13 +35,13 @@ function get_media_files($media_ids)
     foreach ($media_ids as $element) {
         if (is_array($element)) {
             if (isset($element['object_type'])) {
-                $type = $element['object_type'];
-                $id   = $element['object_id'];
+                $type    = $element['object_type'];
+                $mediaid = $element['object_id'];
             } else {
-                $type = array_shift($element);
-                $id   = array_shift($element);
+                $type      = array_shift($element);
+                $mediaid   = array_shift($element);
             }
-            $media = new $type($id);
+            $media = new $type($mediaid);
         } else {
             $media = new Song($element);
         }

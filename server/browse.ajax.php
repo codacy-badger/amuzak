@@ -180,13 +180,13 @@ switch ($_REQUEST['action']) {
                 $browse->set_grid_view($value);
             break;
             case 'limit':
-                $value = intval($value);
+                $value = (int) ($value);
                 if ($value > 0) {
                     $browse->set_offset($value);
                 }
             break;
             case 'custom':
-                $value = intval($value);
+                $value = (int) ($value);
                 $limit = $browse->get_offset();
                 if ($limit > 0 && $value > 0) {
                     $total = $browse->get_total();
@@ -206,7 +206,7 @@ switch ($_REQUEST['action']) {
     break;
     case 'get_share_links':
         $object_type = $_REQUEST['object_type'];
-        $object_id   = intval($_REQUEST['object_id']);
+        $object_id   = (int) scrub_in($_REQUEST['object_id']);
 
         if (Core::is_library_item($object_type) && $object_id > 0) {
             Share::display_ui_links($object_type, $object_id);

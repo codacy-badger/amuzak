@@ -30,9 +30,9 @@ if (!Access::check('interface', '100')) {
 
 UI::show_header();
 
-$catalogs = $_REQUEST['catalogs'];
+$catalogs = scrub_in($_REQUEST['catalogs']);
 // If only one catalog, check it is ready.
-if (is_array($catalogs) && count($catalogs) == 1 && $_REQUEST['action'] !== 'delete_catalog' && $_REQUEST['action'] !== 'show_delete_catalog') {
+if (is_array($catalogs) && count($catalogs) == 1 && scrub_in($_REQUEST['action']) !== 'delete_catalog' && scrub_in($_REQUEST['action']) !== 'show_delete_catalog') {
     // If not ready, display the data to make it ready / stop the action.
     $catalog = Catalog::create_from_id($catalogs[0]);
     if (!$catalog->isReady()) {
@@ -108,8 +108,15 @@ switch ($_REQUEST['action']) {
         }
     break;
     case 'show_delete_catalog':
-        $next_url = AmpConfig::get('web_path') . '/admin/catalog.php?action=delete_catalog&catalogs[]=' . implode(',', $catalogs);
-        show_confirmation(T_('Catalog Delete'), T_('Confirm Deletion Request'), $next_url, 1, 'delete_catalog');
+        /* Stop the demo hippies */
+        if (AmpConfig::get('demo_mode')) {
+            UI::access_denied();
+            break;
+        }
+
+        $catalog = Catalog::create_from_id($_REQUEST['catalog_id']);
+        $nexturl = AmpConfig::get('web_path') . '/admin/catalog.php?action=delete_catalog&amp;catalog_id=' . scrub_out($_REQUEST['catalog_id']);
+        show_confirmation(T_('Delete Catalog'), T_('Do you really want to delete this catalog?') . " -- $catalog->name ($catalog->path)", $nexturl, 1);
     break;
     case 'enable_disabled':
         if (AmpConfig::get('demo_mode')) {
@@ -231,17 +238,6 @@ switch ($_REQUEST['action']) {
         } else {
             echo "<div class=\"error\" align=\"center\">" . T_('No Disabled songs found') . "</div>";
         }
-    break;
-    case 'show_delete_catalog':
-        /* Stop the demo hippies */
-        if (AmpConfig::get('demo_mode')) {
-            UI::access_denied();
-            break;
-        }
-
-        $catalog = Catalog::create_from_id($_REQUEST['catalog_id']);
-        $nexturl = AmpConfig::get('web_path') . '/admin/catalog.php?action=delete_catalog&amp;catalog_id=' . scrub_out($_REQUEST['catalog_id']);
-        show_confirmation(T_('Delete Catalog'), T_('Do you really want to delete this catalog?') . " -- $catalog->name ($catalog->path)", $nexturl, 1);
     break;
     case 'show_customize_catalog':
         $catalog = Catalog::create_from_id($_REQUEST['catalog_id']);

@@ -79,7 +79,7 @@ switch ($action) {
         foreach ($msgs as $msg_id) {
             $pvmsg = new PrivateMsg(intval($msg_id));
             if ($pvmsg->id && $pvmsg->to_user === $GLOBALS['user']->id) {
-                $read = intval($_REQUEST['read']) !== 0;
+                $read = (int) scrub_in($_REQUEST['read']) !== 0;
                 $pvmsg->set_is_read($read);
             } else {
                 debug_event('UI::access_denied', 'Unknown or unauthorized private message `' . $pvmsg->id . '`.', '3');
@@ -112,7 +112,7 @@ switch ($action) {
 
         $msgs = explode(',', $_REQUEST['msgs']);
         foreach ($msgs as $msg_id) {
-            $msg_id = intval($msg_id);
+            $msg_id = (int) ($msg_id);
             $pvmsg  = new PrivateMsg($msg_id);
             if ($pvmsg->id && $pvmsg->to_user === $GLOBALS['user']->id) {
                 $pvmsg->delete();
@@ -128,7 +128,7 @@ switch ($action) {
     break;
     case 'show':
     default:
-        $msg_id = intval($_REQUEST['pvmsg_id']);
+        $msg_id = (int) scrub_in($_REQUEST['pvmsg_id']);
         $pvmsg  = new PrivateMsg($msg_id);
         if ($pvmsg->id && $pvmsg->to_user === $GLOBALS['user']->id) {
             $pvmsg->format();

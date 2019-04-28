@@ -23,8 +23,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
 <html lang="en-US">
 <head>
-<!-- Propulsed by Ampache | ampache.org -->
+<!-- Propulsed by aMuzak | ampcore -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ampache -- Config Debug Page</title>
 <link rel="stylesheet" href="templates/install.css" type="text/css" media="screen" />
 <style type="text/css">
@@ -38,7 +39,7 @@ body {
 </head>
 <body bgcolor="#f0f0f0">
 <div id="header">
-<h1><?php echo T_('Ampache Debug'); ?></h1>
+<h1><?php echo T_('aMuzak Debug'); ?></h1>
 <p>Ampache.cfg.php error detected</p>
 </div>
 <div id="content">

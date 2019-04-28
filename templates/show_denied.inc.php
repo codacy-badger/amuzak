@@ -30,8 +30,9 @@ $web_path = AmpConfig::get('web_path');
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
 <html lang="en-US">
     <head>
-        <!-- Propulsed by Ampache | ampache.org -->
+        <!-- Propulsed by aMuzak | ampcore -->
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ampache -- Debug Page</title>
         <?php UI::show_custom_style(); ?>
         <link href="<?php echo $web_path; ?>/lib/components/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -42,7 +43,7 @@ $web_path = AmpConfig::get('web_path');
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img src="<?php echo $logo_url; ?>" title="Ampache" alt="Ampache">
+                    <img src="<?php echo $logo_url; ?>" title="aMuzak" alt="aMuzak">
                     <?php echo AmpConfig::get('site_title'); ?>
                 </a>
             </div>

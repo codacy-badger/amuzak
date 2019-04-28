@@ -47,16 +47,16 @@ class Preference extends database_object
         //debug_event('preference.class.php', 'Getting preference {'.$pref_name.'} for user identifier {'.$user_id.'}...', '5');
         $user_id   = Dba::escape($user_id);
         $pref_name = Dba::escape($pref_name);
-        $id        = self::id_from_name($pref_name);
+        $pref_id   = self::id_from_name($pref_name);
 
         if (parent::is_cached('get_by_user', $user_id)) {
             return parent::get_from_cache('get_by_user', $user_id);
         }
 
-        $sql        = "SELECT `value` FROM `user_preference` WHERE `preference`='$id' AND `user`='$user_id'";
+        $sql        = "SELECT `value` FROM `user_preference` WHERE `preference`='$pref_id' AND `user`='$user_id'";
         $db_results = Dba::read($sql);
         if (Dba::num_rows($db_results) < 1) {
-            $sql        = "SELECT `value` FROM `user_preference` WHERE `preference`='$id' AND `user`='-1'";
+            $sql        = "SELECT `value` FROM `user_preference` WHERE `preference`='$pref_id' AND `user`='-1'";
             $db_results = Dba::read($sql);
         }
         $data = Dba::fetch_assoc($db_results);
@@ -75,11 +75,11 @@ class Preference extends database_object
     {
         // First prepare
         if (!is_numeric($preference)) {
-            $id   = self::id_from_name($preference);
-            $name = $preference;
+            $pref_id = self::id_from_name($preference);
+            $name    = $preference;
         } else {
-            $name = self::name_from_id($preference);
-            $id   = $preference;
+            $pref_id = $preference;
+            $name    = self::name_from_id($preference);
         }
         if ($applytoall and Access::check('interface', '100')) {
             $user_check = "";
@@ -92,7 +92,7 @@ class Preference extends database_object
         }
 
         if ($applytodefault and Access::check('interface', '100')) {
-            $sql = "UPDATE `preference` SET `value`='$value' WHERE `id`='$id'";
+            $sql = "UPDATE `preference` SET `value`='$value' WHERE `id`='$pref_id'";
             Dba::write($sql);
         }
 
@@ -100,7 +100,7 @@ class Preference extends database_object
 
         if (self::has_access($name)) {
             $user_id = Dba::escape($user_id);
-            $sql     = "UPDATE `user_preference` SET `value`='$value' WHERE `preference`='$id'$user_check";
+            $sql     = "UPDATE `user_preference` SET `value`='$value' WHERE `preference`='$pref_id'$user_check";
             Dba::write($sql);
             self::clear_from_session();
 
@@ -436,7 +436,7 @@ class Preference extends database_object
                     'captcha_public_reg','admin_notify_reg',
                     'use_rss','download','force_http_play','cookie_secure',
                     'allow_stream_playback','allow_democratic_playback',
-                    'use_auth','debug','lock_songs',
+                    'use_auth','allow_localplay_playback','debug','lock_songs',
                     'transcode_m4a','transcode_mp3','transcode_ogg','transcode_flac',
                     'shoutcast_active','httpq_active','show_lyrics');
 

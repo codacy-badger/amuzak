@@ -34,13 +34,13 @@
                 }
             }
         ?>
-        <div id="footer" class="<?php echo(($count_temp_playlist) ? '' : 'footer-wild'); ?>">
+        <div id="footer" class="<?php echo(($count_temp_playlist || AmpConfig::get('play_type') == 'localplay') ? '' : 'footer-wild'); ?>">
         <?php
         if (AmpConfig::get('custom_text_footer')) {
             echo AmpConfig::get('custom_text_footer');
         } else {
             ?>
-            <a id="ampache_link" href="https://github.com/ampcore/amuzak#readme" target="_blank" title="Copyright © 2001 - 2017 Ampache.org">aMuzak <?php echo AmpConfig::get('version'); ?></a>
+            <a id="ampache_link" href="https://github.com/ampcore/amuzak#readme" target="_blank" title="Copyright © 2019 ampcore">aMuzak <?php echo AmpConfig::get('version'); ?></a>
         <?php
         } ?>
         <?php if (AmpConfig::get('show_footer_statistics')) {

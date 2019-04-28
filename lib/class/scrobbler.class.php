@@ -78,7 +78,7 @@ class scrobbler
                         'method' => $method,
                         'header' => array(
                                 'Host: ' . $this->host,
-                                'User-Agent: Ampache/' . AmpConfig::get('version')
+                                'User-Agent: aMuzak/' . AmpConfig::get('version')
                         ),
                 )
         );
@@ -95,17 +95,17 @@ class scrobbler
             $params='?' . $params;
         }
         $target = $this->scheme . '://' . $this->host . $url . $params;
-        $fp     = @fopen($target, 'r', false, $context);
-        if (!$fp) {
+        $file   = @fopen($target, 'r', false, $context);
+        if (!$file) {
             debug_event('Scrobbler', 'Cannot access ' . $target, 1);
 
             return false;
         }
         ob_start();
-        fpassthru($fp);
+        fpassthru($file);
         $buffer = ob_get_contents();
         ob_end_clean();
-        fclose($fp);
+        fclose($file);
 
         return $buffer;
     } // call_url
@@ -133,7 +133,7 @@ class scrobbler
      */
     public function get_session_key($token=null)
     {
-        if (!is_null($token)) {
+        if ($token !== null) {
             $vars = array(
             'method' => 'auth.getSession',
             'api_key' => $this->api_key,

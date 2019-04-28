@@ -21,10 +21,10 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
     <device>
         <deviceType>urn:schemas-upnp-org:device:MediaServer:1</deviceType>
         <friendlyName><?php echo AmpConfig::get('site_title'); ?></friendlyName>
-        <manufacturer>ampache.org</manufacturer>
+        <manufacturer>ampcore</manufacturer>
         <manufacturerURL>https://github.com/ampcore/amuzak</manufacturerURL>
         <modelDescription>A web based audio streaming application and file manager allowing you to access your music from anywhere, using almost any Internet enabled device.</modelDescription>
-        <modelName>Ampache</modelName>
+        <modelName>aMuzak</modelName>
         <modelNumber><?php echo AmpConfig::get('version'); ?></modelNumber>
         <modelURL>https://github.com/ampcore/amuzak</modelURL>
         <UDN>uuid:<?php echo Upnp_Api::get_uuidStr(); ?></UDN>

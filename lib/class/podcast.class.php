@@ -274,7 +274,7 @@ class Podcast extends database_object implements library_item
             AmpError::add('feed', T_('Wrong feed url'));
         }
         
-        $catalog_id = intval($data['catalog']);
+        $catalog_id = (int) ($data['catalog']);
         if ($catalog_id <= 0) {
             AmpError::add('catalog', T_('Target catalog required'));
         } else {
@@ -393,7 +393,7 @@ class Podcast extends database_object implements library_item
     private function add_episode(SimpleXMLElement $episode, $afterdate=0)
     {
         debug_event('podcast', 'Adding new episode to podcast ' . $this->id . '...', 5);
-        
+
         $title       = html_entity_decode($episode->title);
         $website     = $episode->link;
         $guid        = $episode->guid;
@@ -415,16 +415,15 @@ class Podcast extends database_object implements library_item
         if ($pubdatestr) {
             $pubdate = strtotime($pubdatestr);
         }
-        
         if ($pubdate <= 0) {
             debug_event('podcast', 'Invalid episode publication date, skipped', 3);
 
             return false;
         }
-        
+
         if ($pubdate > $afterdate) {
             $sql = "INSERT INTO `podcast_episode` (`title`, `guid`, `podcast`, `state`, `source`, `website`, `description`, `author`, `category`, `time`, `pubdate`, `addition_time`) " .
-                    "VALUES (?, ?, ?, 'skipped', ?, ?, ?, ?, ?, ?, ?, ?)";
+                    "VALUES (?, ?, ?, 'pending', ?, ?, ?, ?, ?, ?, ?, ?)";
 
             return Dba::write($sql, array($title, $guid, $this->id, $source, $website, $description, $author, $category, $time, $pubdate, time()));
         } else {

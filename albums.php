@@ -1,4 +1,5 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
 /**
  *
@@ -19,7 +20,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 require_once 'lib/init.php';
 
 require_once AmpConfig::get('prefix') . UI::find_template('header.inc.php');
@@ -30,16 +30,16 @@ switch ($_REQUEST['action']) {
         if (AmpConfig::get('demo_mode')) {
             break;
         }
-
-        $album_id = scrub_in($_REQUEST['album_id']);
+        $album    = new Album($_REQUEST['album_id']);
+        $album_id = scrub_in($album->id);
         show_confirmation(
-            T_('Album Deletion'),
-            T_('Are you sure you want to permanently delete this album?'),
-            AmpConfig::get('web_path') . "/albums.php?action=confirm_delete&album_id=" . $album_id,
-            1,
-            'delete_album'
+                T_('Album Deletion'),
+                T_('Are you sure you want to permanently delete this album?'),
+                AmpConfig::get('web_path') . "/albums.php?action=confirm_delete&album_id=" . $album_id,
+                1,
+                'delete_album'
         );
-    break;
+        break;
     case 'confirm_delete':
         if (AmpConfig::get('demo_mode')) {
             break;
@@ -58,7 +58,7 @@ switch ($_REQUEST['action']) {
         } else {
             show_confirmation(T_('Album Deletion'), T_('Cannot delete this album.'), AmpConfig::get('web_path'));
         }
-    break;
+        break;
     case 'update_from_tags':
         // Make sure they are a 'power' user at least
         if (!Access::check('interface', '75')) {
@@ -67,11 +67,11 @@ switch ($_REQUEST['action']) {
             return false;
         }
 
-        $type          = 'album';
-        $object_id     = intval($_REQUEST['album_id']);
-        $target_url    = AmpConfig::get('web_path') . '/albums.php?action=show&amp;album=' . $object_id;
+        $type       = 'album';
+        $object_id  = (int) scrub_in($_REQUEST['album_id']);
+        $target_url = AmpConfig::get('web_path') . '/albums.php?action=show&amp;album=' . $object_id;
         require_once AmpConfig::get('prefix') . UI::find_template('show_update_items.inc.php');
-    break;
+        break;
     case 'set_track_numbers':
         debug_event('albums', 'Set track numbers called.', '5');
 
@@ -92,12 +92,12 @@ switch ($_REQUEST['action']) {
             $track = $_GET['offset'] ? (intval($_GET['offset']) + 1) : 1;
             foreach ($songs as $song_id) {
                 if ($song_id != '') {
-                    Song::update_track($track, $song_id);
+                    Song::update_track($track, (int) $song_id);
                     ++$track;
                 }
             }
         }
-    break;
+        break;
     // Browse by Album
     case 'show':
     default:
@@ -110,7 +110,7 @@ switch ($_REQUEST['action']) {
             require AmpConfig::get('prefix') . UI::find_template('show_album_group_disks.inc.php');
         }
 
-    break;
+        break;
 } // switch on view
 
 UI::show_footer();

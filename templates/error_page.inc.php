@@ -26,10 +26,10 @@
     dir="<?php echo $dir;?>">
 
 <head>
-<!-- Propulsed by Ampache | ampache.org -->
+<!-- Propulsed by aMuzak | ampcore -->
 <meta http-equiv="refresh" content="10;URL=<?php echo($redirect_url);?>" />
 <?php UI::show_custom_style(); ?>
-<title><?php echo(T_("Ampache error page"));?></title>
+<title><?php echo(T_("aMuzak error page"));?></title>
 <link href="lib/components/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="lib/components/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 <link rel="stylesheet" href="templates/install-doped.css" type="text/css" media="screen" />
@@ -40,7 +40,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="<?php echo UI::get_logo_url('dark'); ?>" title="Ampache" alt="Ampache">
+                <img src="<?php echo UI::get_logo_url('dark'); ?>" title="aMuzak" alt="aMuzak">
                 <?php echo T_('aMuzak'); ?> - For the love of Music
             </a>
         </div>

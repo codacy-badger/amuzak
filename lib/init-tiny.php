@@ -24,7 +24,7 @@
 
 // Do a check for PHP5.4 because nothing will work without it
 if (version_compare(phpversion(), '5.4.0', '<')) {
-    echo "ERROR: Ampache requires PHP version >= 5.4";
+    echo "ERROR: aMuzak requires PHP version >= 5.4";
     exit;
 }
 
@@ -89,6 +89,7 @@ require_once $prefix . '/lib/ui.lib.php';
 require_once $prefix . '/lib/i18n.php';
 require_once $prefix . '/lib/batch.lib.php';
 require_once $prefix . '/lib/themes.php';
+require_once $prefix . '/lib/class/localplay_controller.abstract.php';
 require_once $prefix . '/lib/class/database_object.abstract.php';
 require_once $prefix . '/lib/class/media.interface.php';
 require_once $prefix . '/lib/class/playable_item.interface.php';

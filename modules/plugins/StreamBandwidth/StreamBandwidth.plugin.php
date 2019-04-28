@@ -124,12 +124,12 @@ class AmpacheStreamBandwidth
         
         $this->user_id = $user->id;
         if (intval($data['stream_control_bandwidth_max'])) {
-            $this->bandwidth_max = intval($data['stream_control_bandwidth_max']);
+            $this->bandwidth_max = (int) ($data['stream_control_bandwidth_max']);
         } else {
             $this->bandwidth_max = 1024;
         }
         if (intval($data['stream_control_bandwidth_days']) > 0) {
-            $this->bandwidth_days = intval($data['stream_control_bandwidth_days']);
+            $this->bandwidth_days = (int) ($data['stream_control_bandwidth_days']);
         } else {
             $this->bandwidth_days = 30;
         }

@@ -68,7 +68,7 @@ echo T_('Raw results:');
 echo "\n\n";
 print_r($info);
 echo "\n------------------------------------------------------------------\n";
-printf(T_('Final results seen by Ampache using %s:'), implode(' + ', $keys));
+printf(T_('Final results seen by aMuzak using %s:'), implode(' + ', $keys));
 echo "\n\n";
 print_r($ampache_results);
 

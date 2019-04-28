@@ -33,7 +33,7 @@ $_SESSION['login'] = false;
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $htmllang; ?>" lang="<?php echo $htmllang; ?>" dir="<?php echo is_rtl(AmpConfig::get('lang')) ? 'rtl' : 'ltr';?>">
     <head>
-        <!-- Propulsed by Ampache | ampache.org -->
+        <!-- Propulsed by aMuzak | ampcore -->
         <link rel="search" type="application/opensearchdescription+xml" title="<?php echo scrub_out(AmpConfig::get('site_title')); ?>" href="<?php echo $web_path; ?>/search.php?action=descriptor" />
         <?php
             if (AmpConfig::get('use_rss')) {
@@ -363,8 +363,8 @@ $_SESSION['login'] = false;
                         if (User::is_registered()) {
                             ?>
                         <span id="loginInfo">
-                            <a href="<?php echo $web_path; ?>/stats.php?action=show_user&user_id=<?php echo $GLOBALS['user']->id; ?>"><?php echo $GLOBALS['user']->fullname; ?></a>
-                            <a rel="nohtml" href="<?php echo $web_path; ?>/logout.php">[<?php echo T_('Log out'); ?>]</a>
+                            <a id="header-link" href="<?php echo $web_path; ?>/stats.php?action=show_user&user_id=<?php echo $GLOBALS['user']->id; ?>"><?php echo $GLOBALS['user']->fullname; ?></a>
+                            <a id="header-link" rel="nohtml" href="<?php echo $web_path; ?>/logout.php">[<?php echo T_('Log out'); ?>]</a>
                         </span>
                     <?php
                         } else {
@@ -403,24 +403,7 @@ $_SESSION['login'] = false;
 
                 <?php
                     if (Access::check('interface', '100')) {
-                        echo '<div id=update_notify>';
-                        if (AmpConfig::get('autoupdate') && AutoUpdate::is_update_available()) {
-                            AutoUpdate::show_new_version();
-                            echo '<br />';
-                        }
                         $count_temp_playlist = count($GLOBALS['user']->playlist->get_items());
-
-                        if (AmpConfig::get('int_config_version') != AmpConfig::get('config_version')) {
-                            ?>
-                            <div class="fatalerror">
-                                <?php echo T_('Error: Your config file is out of date!'); ?>
-                                <br />
-                                <a rel="nohtml" href="<?php echo $web_path; ?>/admin/system.php?action=generate_config"><?php echo T_('Generate and download new config file'); ?></a> |
-                                <a rel="nohtml" href="<?php echo $web_path; ?>/admin/system.php?action=write_config"><?php echo T_('Write new config file to disk'); ?></a>
-                            </div>
-                <?php
-                        }
-                        echo '</div>';
                     }
                 if (AmpConfig::get("ajax_load")) {
                     require AmpConfig::get('prefix') . UI::find_template('show_web_player_embedded.inc.php');

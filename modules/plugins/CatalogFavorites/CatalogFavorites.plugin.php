@@ -56,8 +56,8 @@ class AmpacheCatalogFavorites
             return false;
         }
 
-        Preference::insert('catalogfav_max_items', 'Catalog favorites max items', '5', '25', 'integer', 'plugins', $this->name);
-        Preference::insert('catalogfav_gridview', 'Catalog favorites grid view display', '1', '25', 'boolean', 'plugins', $this->name);
+        Preference::insert('catalogfav_max_items', 'Catalog favorites max items', '6', '25', 'integer', 'plugins', $this->name);
+        Preference::insert('catalogfav_gridview', 'Catalog favorites grid view display', '0', '25', 'boolean', 'plugins', $this->name);
 
         return true;
     }
@@ -83,7 +83,7 @@ class AmpacheCatalogFavorites
     {
         $from_version = Plugin::get_plugin_version($this->name);
         if ($from_version < 2) {
-            Preference::insert('catalogfav_gridview', 'Catalog favorites grid view display', '1', '25', 'boolean', 'plugins');
+            Preference::insert('catalogfav_gridview', 'Catalog favorites grid view display', '0', '25', 'boolean', 'plugins');
         }
 
         return true;
@@ -128,7 +128,7 @@ class AmpacheCatalogFavorites
                     }
 
                     echo '<div style="float: left; margin-right: 10px;">';
-                    $thumb = ($this->gridview && UI::is_grid_view('album')) ? 2 : 99; // default to 200x200
+                    $thumb = ($this->gridview && UI::is_grid_view('album')) ? 1 : 2; // default to 128x128
                     $item->display_art($thumb, true);
                     echo '</div>';
                     echo '</td>';
@@ -165,7 +165,7 @@ class AmpacheCatalogFavorites
         $user->set_preferences();
         $data = $user->prefs;
 
-        $this->maxitems = intval($data['catalogfav_max_items']);
+        $this->maxitems = (int) ($data['catalogfav_max_items']);
         if ($this->maxitems < 1) {
             $this->maxitems = 6;
         }

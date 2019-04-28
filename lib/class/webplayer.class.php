@@ -1,5 +1,7 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
+
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
@@ -19,9 +21,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 class WebPlayer
 {
+
     /**
      * Check if the playlist is a radio playlist.
      * @param \Stream_Playlist $playlist
@@ -46,7 +48,7 @@ class WebPlayer
      * @param string $force_type
      * @return array
      */
-    protected static function get_types($item, $force_type='')
+    protected static function get_types($item, $force_type = '')
     {
         $types = array('real' => 'mp3', 'player' => '');
 
@@ -164,7 +166,7 @@ class WebPlayer
      * @param string $callback_container
      * @return string
      */
-    public static function add_media_js($playlist, $callback_container='')
+    public static function add_media_js($playlist, $callback_container = '')
     {
         $addjs = "";
         foreach ($playlist->urls as $item) {
@@ -176,11 +178,11 @@ class WebPlayer
 
     /**
      * Get play_next javascript.
-     * @param \Strem_Playlist $playlist
+     * @param \Stream_Playlist $playlist
      * @param string $callback_container
      * @return string
      */
-    public static function play_next_js($playlist, $callback_container='')
+    public static function play_next_js($playlist, $callback_container = '')
     {
         $addjs = "";
         foreach ($playlist->urls as $item) {
@@ -196,9 +198,9 @@ class WebPlayer
      * @param string $force_type
      * @return string
      */
-    public static function get_media_js_param($item, $force_type='')
+    public static function get_media_js_param($item, $force_type = '')
     {
-        $js = array();
+        $json = array();
         foreach (array('title', 'author') as $member) {
             if ($member == "author") {
                 $kmember = "artist";
@@ -206,7 +208,7 @@ class WebPlayer
                 $kmember = $member;
             }
 
-            $js[$kmember] = $item->$member;
+            $json[$kmember] = $item->$member;
         }
         $url = $item->url;
 
@@ -237,15 +239,15 @@ class WebPlayer
         if ($media != null) {
             $media->format();
             if ($urlinfo['type'] == 'song') {
-                $js['artist_id']             = $media->artist;
-                $js['album_id']              = $media->album;
-                $js['replaygain_track_gain'] = $media->replaygain_track_gain;
-                $js['replaygain_track_peak'] = $media->replaygain_track_peak;
-                $js['replaygain_album_gain'] = $media->replaygain_album_gain;
-                $js['replaygain_album_peak'] = $media->replaygain_album_peak;
+                $json['artist_id']             = $media->artist;
+                $json['album_id']              = $media->album;
+                $json['replaygain_track_gain'] = $media->replaygain_track_gain;
+                $json['replaygain_track_peak'] = $media->replaygain_track_peak;
+                $json['replaygain_album_gain'] = $media->replaygain_album_gain;
+                $json['replaygain_album_peak'] = $media->replaygain_album_peak;
             }
-            $js['media_id']   = $media->id;
-            $js['media_type'] = $urlinfo['type'];
+            $json['media_id']   = $media->id;
+            $json['media_type'] = $urlinfo['type'];
 
             if ($media->type != $types['real']) {
                 $url .= '&transcode_to=' . $types['real'];
@@ -253,14 +255,14 @@ class WebPlayer
             //$url .= "&content_length=required";
         }
 
-        $js['filetype'] = $types['player'];
-        $js['url']      = $url;
+        $json['filetype'] = $types['player'];
+        $json['url']      = $url;
         if ($item->image_url) {
-            $js['poster'] = $item->image_url;
+            $json['poster'] = $item->image_url;
         }
 
-        debug_event("webplayer.class.php", "Return get_media_js_param {" . json_encode($js) . "}", 5);
+        debug_event("webplayer.class.php", "Return get_media_js_param {" . json_encode($json) . "}", 5);
 
-        return json_encode($js);
+        return json_encode($json);
     }
 }

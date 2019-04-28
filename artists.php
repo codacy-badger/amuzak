@@ -81,7 +81,7 @@ switch ($_REQUEST['action']) {
         break;
     case 'update_from_tags':
         $type       = 'artist';
-        $object_id  = intval($_REQUEST['artist']);
+        $object_id  = (int) scrub_in($_REQUEST['artist']);
         $target_url = AmpConfig::get('web_path') . "/artists.php?action=show&amp;artist=" . $object_id;
         require_once AmpConfig::get('prefix') . UI::find_template('show_update_items.inc.php');
     break;

@@ -65,7 +65,7 @@ if (!$db_user || !$db_pass || !$db_host || !$db_name) {
 
 // Now let's make sure it's not already installed
 if (!install_check_status($configfile)) { 
-    echo "\n", T_('Existing Ampache installation found.'), "\n";
+    echo "\n", T_('Existing aMuzak installation found.'), "\n";
     if ($force) {
         echo T_('Force specified, proceeding anyway.'), "\n";
     }
@@ -128,7 +128,7 @@ function usage() {
     echo "\n\t-f, --force\t\t\t\t";
     echo 'Force installation', "\n";
 
-    exit(1);
+    return false;
 }
 
 ?>

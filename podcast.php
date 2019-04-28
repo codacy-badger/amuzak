@@ -97,7 +97,7 @@ switch ($_REQUEST['action']) {
         }
     break;
     case 'show':
-        $podcast_id = intval($_REQUEST['podcast']);
+        $podcast_id = (int) scrub_in($_REQUEST['podcast']);
         if ($podcast_id > 0) {
             $podcast = new Podcast($podcast_id);
             $podcast->format();
