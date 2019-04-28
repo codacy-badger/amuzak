@@ -1686,9 +1686,6 @@ class Plex_XML_Data
                 case self::PLEX_TVSHOW:
                     $type = 'TV';
                 break;
-                case self::PLEX_PHOTO:
-                    $type = 'Photos';
-                break;
                 case self::PLEX_ARTIST:
                     $type = 'Artists';
                 break;

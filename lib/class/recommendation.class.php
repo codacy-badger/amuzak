@@ -242,7 +242,7 @@ class Recommendation
     public static function get_artists_like($artist_id, $limit = 10, $local_only = true)
     {
         if (!AmpConfig::get('lastfm_api_key')) {
-            return false;
+            return array();
         }
 
         $artist = new Artist($artist_id);
@@ -328,7 +328,7 @@ class Recommendation
             return $results;
         }
 
-        return false;
+        return array();
     } // get_artists_like
 
     /**

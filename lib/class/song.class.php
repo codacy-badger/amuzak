@@ -1926,7 +1926,7 @@ class Song extends database_object implements media, library_item
     /**
      * Get stream types for media type.
      * @param string $type
-     * @return string
+     * @return array
      */
     public static function get_stream_types_for_type($type, $player = null)
     {
@@ -2028,7 +2028,7 @@ class Song extends database_object implements media, library_item
      * Get transcode settings.
      * @param string $target
      * @param array $options
-     * @return string
+     * @return array|boolean
      */
     public function get_transcode_settings($target = null, $player = null, $options = array())
     {

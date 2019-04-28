@@ -48,7 +48,8 @@ switch ($_REQUEST['action']) {
         break;
     case 'delete':
         $shout = new Shoutbox($_REQUEST['shout_id']);
-        Shoutbox::delete($shout->object_id);
+        $object = Shoutbox::get_object($shout->object_type, $shout->object_id);
+        $object->delete($shout->object_id);
         show_confirmation(T_('Shoutbox Post Deleted'), '', AmpConfig::get('web_path') . '/admin/shout.php');
         break;
     default:

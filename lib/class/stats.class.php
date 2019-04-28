@@ -270,6 +270,7 @@ class Stats
     public static function get_top_sql($type, $threshold = '', $count_type = 'stream', $user_id = null)
     {
         $type = self::validate_type($type);
+        $sql  = "";
         /* If they don't pass one, then use the preference */
         if (!$threshold) {
             $threshold = AmpConfig::get('stats_threshold');
@@ -491,7 +492,7 @@ class Stats
                 $sql .= "WHERE `catalog`.`enabled` = '1' ";
             }
             if ($catalog > 0) {
-                $sql .= "AND `catalog` = '" . scrub_in($catalog) . "' ";
+                $sql .= "AND `catalog` = '" . (string) scrub_in($catalog) . "' ";
             }
             $rating_filter = AmpConfig::get_rating_filter();
             if ($rating_filter > 0 && $rating_filter <= 5) {

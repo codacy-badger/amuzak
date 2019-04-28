@@ -1877,15 +1877,17 @@ class Subsonic_Api
         $songs = array();
         if (Subsonic_XML_Data::isArtist($id)) {
             $similars = Recommendation::get_artists_like(Subsonic_XML_Data::getAmpacheId($id));
-            debug_event('similar_songs', 'Found: ' . count($similars) . ' similar artists', '5');
-            foreach ($similars as $similar) {
-                debug_event('similar_songs', $similar['name'] . ' (id=' . $similar['id'] . ')', '5');
-                if ($similar['id']) {
-                    $artist = new Artist($similar['id']);
-                    // get the songs in a random order for even more chaos
-                    $artist_songs = $artist->get_random_songs();
-                    foreach ($artist_songs as $song) {
-                        $songs[] = array('id' => $song);
+            if (!empty($similars)) {
+                debug_event('similar_songs', 'Found: ' . count($similars) . ' similar artists', '5');
+                foreach ($similars as $similar) {
+                    debug_event('similar_songs', $similar['name'] . ' (id=' . $similar['id'] . ')', '5');
+                    if ($similar['id']) {
+                        $artist = new Artist($similar['id']);
+                        // get the songs in a random order for even more chaos
+                        $artist_songs = $artist->get_random_songs();
+                        foreach ($artist_songs as $song) {
+                            $songs[] = array('id' => $song);
+                        }
                     }
                 }
             }
@@ -1956,16 +1958,16 @@ class Subsonic_Api
     public static function getnewestpodcasts($input)
     {
         self::check_version($input, "1.13.0");
-        $count = $input['count'] ?: 20;
+        //$count = $input['count'] ?: 20; // Seems to be useless code
 
         if (AmpConfig::get('podcast')) {
-            $r        = Subsonic_XML_Data::createSuccessResponse();
-            $episodes = Catalog::get_newest_podcasts($count);
-            Subsonic_XML_Data::addNewestPodcastEpisodes($r, $episodes);
+            $response = Subsonic_XML_Data::createSuccessResponse();
+            $episodes = Catalog::get_newest_podcasts(null);
+            Subsonic_XML_Data::addNewestPodcastEpisodes($response, $episodes);
         } else {
-            $r = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_UNAUTHORIZED);
+            $response = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_UNAUTHORIZED);
         }
-        self::apiOutput($input, $r);
+        self::apiOutput($input, $response);
     }
 
     /**

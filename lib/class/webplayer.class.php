@@ -178,7 +178,7 @@ class WebPlayer
 
     /**
      * Get play_next javascript.
-     * @param \Strem_Playlist $playlist
+     * @param \Stream_Playlist $playlist
      * @param string $callback_container
      * @return string
      */

@@ -247,7 +247,7 @@ class Waveform
             imagefill($img, 0, 0, $transparentColor);
         } else {
             list($bgred, $bggreen, $bgblue) = self::html2rgb($background);
-            imagefilledrectangle($img, 0, 0, (int) ($data_size / $detail), $height, imagecolorallocate($img, $bgred, $bggreen, $bgblue));
+            imagefilledrectangle($img, 0, 0, (int) ($data_size / $detail), $height, imagecolorallocate($img, (int) $bgred, (int) $bggreen, (int) $bgblue));
         }
         while (!feof($handle) && $data_point < $data_size) {
             if ($data_point++ % $detail == 0) {
@@ -299,7 +299,7 @@ class Waveform
                             (int) ($data_point / $detail),
                             // y2: same as y1, but from the bottom of the image
                             $height - ($height - $wave),
-                            imagecolorallocate($img, $red, $green, $blue)
+                            imagecolorallocate($img, (int) $red, (int) $green, (int) $blue)
                     );
                 }
             } else {

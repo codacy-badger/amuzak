@@ -1046,8 +1046,8 @@ abstract class Catalog extends database_object
                 'WHERE `podcast`.`catalog` = ? ' .
                 'ORDER BY `podcast_episode`.`pubdate` DESC';
         $db_results = Dba::read($sql, array($this->id));
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = $r['id'];
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $results[] = $row['id'];
         }
 
         return $results;

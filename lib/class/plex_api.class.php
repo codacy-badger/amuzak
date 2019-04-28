@@ -269,11 +269,13 @@ class Plex_Api
      */
     public static function apiOutputXml($xmlstr)
     {
-        // Format xml output
-        $dom = new DOMDocument();
-        $dom->loadXML($xmlstr, LIBXML_PARSEHUGE);
-        $dom->formatOutput = true;
-        self::apiOutput($dom->saveXML());
+        if ($xmlstr) {
+            // Format xml output
+            $dom = new DOMDocument();
+            $dom->loadXML($xmlstr, LIBXML_PARSEHUGE);
+            $dom->formatOutput = true;
+            self::apiOutput($dom->saveXML());
+        }
     }
 
     /**
