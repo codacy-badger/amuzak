@@ -1342,7 +1342,7 @@ class Subsonic_Api
 
         if ($GLOBALS['user']->access >= 100) {
             $response     = Subsonic_XML_Data::createSuccessResponse();
-            $users = User::get_valid_users();
+            $users        = User::get_valid_users();
             Subsonic_XML_Data::addUsers($response, $users);
         } else {
             $response = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_UNAUTHORIZED, $GLOBALS['user']->username . ' is not authorized to get details for other users.');
@@ -1395,7 +1395,7 @@ class Subsonic_Api
         self::check_version($input, "1.9.0");
 
         $response      = Subsonic_XML_Data::createSuccessResponse();
-        $radios = Live_Stream::get_all_radios();
+        $radios        = Live_Stream::get_all_radios();
         Subsonic_XML_Data::addRadios($response, $radios);
         self::apiOutput($input, $response);
     }
@@ -1410,7 +1410,7 @@ class Subsonic_Api
         self::check_version($input, "1.6.0");
 
         $response      = Subsonic_XML_Data::createSuccessResponse();
-        $shares = Share::get_share_list();
+        $shares        = Share::get_share_list();
         Subsonic_XML_Data::addShares($response, $shares);
         self::apiOutput($input, $response);
     }
@@ -1450,8 +1450,8 @@ class Subsonic_Api
 
             if (!empty($object_type)) {
                 $response        = Subsonic_XML_Data::createSuccessResponse();
-                $shares   = array();
-                $shares[] = Share::create_share($object_type, $object_id, true, Access::check_function('download'), $expire_days, Share::generate_secret(), 0, $description);
+                $shares          = array();
+                $shares[]        = Share::create_share($object_type, $object_id, true, Access::check_function('download'), $expire_days, Share::generate_secret(), 0, $description);
                 Subsonic_XML_Data::addShares($response, $shares);
             } else {
                 $response = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_DATA_NOTFOUND);
@@ -1836,9 +1836,9 @@ class Subsonic_Api
         $includeNotPresent = ($input['includeNotPresent'] === "true");
 
         if (Subsonic_XML_Data::isArtist($id)) {
-            $artist_id = Subsonic_XML_Data::getAmpacheId($id);
-            $info      = Recommendation::get_artist_info($artist_id);
-            $similars  = Recommendation::get_artists_like($artist_id, $count, !$includeNotPresent);
+            $artist_id        = Subsonic_XML_Data::getAmpacheId($id);
+            $info             = Recommendation::get_artist_info($artist_id);
+            $similars         = Recommendation::get_artists_like($artist_id, $count, !$includeNotPresent);
             $response         = Subsonic_XML_Data::createSuccessResponse();
             Subsonic_XML_Data::addArtistInfo($response, $info, $similars);
         } else {
@@ -1940,7 +1940,7 @@ class Subsonic_Api
                     $response = Subsonic_XML_Data::createError(Subsonic_XML_Data::SSERROR_DATA_NOTFOUND);
                 }
             } else {
-                $podcasts = Catalog::get_podcasts();
+                $podcasts        = Catalog::get_podcasts();
                 $response        = Subsonic_XML_Data::createSuccessResponse();
                 Subsonic_XML_Data::addPodcasts($response, $podcasts, $includeEpisodes);
             }
@@ -2110,7 +2110,7 @@ class Subsonic_Api
         self::check_version($input, "1.9.0");
 
         $response         = Subsonic_XML_Data::createSuccessResponse();
-        $bookmarks = Bookmark::get_bookmarks();
+        $bookmarks        = Bookmark::get_bookmarks();
         Subsonic_XML_Data::addBookmarks($response, $bookmarks);
         self::apiOutput($input, $response);
     }
