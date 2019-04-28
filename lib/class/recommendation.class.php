@@ -146,7 +146,7 @@ class Recommendation
     public static function get_songs_like($song_id, $limit = 5, $local_only = true)
     {
         if (!AmpConfig::get('lastfm_api_key')) {
-            return false;
+            return array();
         }
 
         $song   = new Song($song_id);
@@ -231,7 +231,7 @@ class Recommendation
             return $results;
         }
 
-        return false;
+        return array();
     }
 
     /**

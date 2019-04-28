@@ -797,8 +797,8 @@ abstract class Catalog extends database_object
         $sql        = 'SELECT DISTINCT(`song`.`album`) FROM `song` WHERE `song`.`catalog` = ?';
         $db_results = Dba::read($sql, array($this->id));
 
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = $r['album'];
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $results[] = $row['album'];
         }
 
         return array_reverse($results);
@@ -831,8 +831,8 @@ abstract class Catalog extends database_object
         $sql        = 'SELECT DISTINCT(`song`.`artist`) FROM `song` WHERE `song`.`catalog` = ?';
         $db_results = Dba::read($sql, array($this->id));
 
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = $r['artist'];
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $results[] = $row['artist'];
         }
 
         return array_reverse($results);
@@ -873,8 +873,8 @@ abstract class Catalog extends database_object
         $results    = array();
         $db_results = Dba::read($sql);
 
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = Artist::construct_from_array($r);
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $results[] = Artist::construct_from_array($row);
         }
 
         return $results;
@@ -940,8 +940,8 @@ abstract class Catalog extends database_object
 
         $db_results = Dba::read($sql);
         $results    = array();
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = $r['id'];
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $results[] = $row['id'];
         }
 
         return $results;
@@ -981,8 +981,8 @@ abstract class Catalog extends database_object
 
         $db_results = Dba::read($sql);
         $results    = array();
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = $r['id'];
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $results[] = $row['id'];
         }
 
         return $results;
@@ -1001,8 +1001,8 @@ abstract class Catalog extends database_object
         $sql = 'SELECT `podcast`.`id` FROM `podcast` ';
         $sql .= 'WHERE `podcast`.`catalog` = ?';
         $db_results = Dba::read($sql, array($this->id));
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $results[] = $r['id'];
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $results[] = $row['id'];
         }
 
         return $results;

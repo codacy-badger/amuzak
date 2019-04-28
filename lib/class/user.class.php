@@ -1103,13 +1103,13 @@ class User extends database_object
 
         $results = array();
 
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $pref_id = $r['preference'];
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $pref_id = $row['preference'];
             /* Check for duplicates */
             if (isset($results[$pref_id])) {
-                $r['value'] = Dba::escape($r['value']);
-                $sql        = "DELETE FROM `user_preference` WHERE `user`='$user_id' AND `preference`='" . $r['preference'] . "' AND" .
-                    " `value`='" . Dba::escape($r['value']) . "'";
+                $row['value'] = Dba::escape($row['value']);
+                $sql          = "DELETE FROM `user_preference` WHERE `user`='$user_id' AND `preference`='" . $row['preference'] . "' AND" .
+                    " `value`='" . Dba::escape($row['value']) . "'";
                 Dba::write($sql);
             } // if its set
             else {
@@ -1124,9 +1124,9 @@ class User extends database_object
             $db_results = Dba::read($sql);
             /* While through our base stuff */
             $zero_results = array();
-            while ($r = Dba::fetch_assoc($db_results)) {
-                $key                = $r['preference'];
-                $zero_results[$key] = $r['value'];
+            while ($row = Dba::fetch_assoc($db_results)) {
+                $key                = $row['preference'];
+                $zero_results[$key] = $row['value'];
             }
         } // if not user -1
 
@@ -1139,15 +1139,15 @@ class User extends database_object
         }
         $db_results = Dba::read($sql);
 
-        while ($r = Dba::fetch_assoc($db_results)) {
-            $key = $r['id'];
+        while ($row = Dba::fetch_assoc($db_results)) {
+            $key = $row['id'];
 
             /* Check if this preference is set */
             if (!isset($results[$key])) {
                 if (isset($zero_results[$key])) {
-                    $r['value'] = $zero_results[$key];
+                    $row['value'] = $zero_results[$key];
                 }
-                $value = Dba::escape($r['value']);
+                $value = Dba::escape($row['value']);
                 $sql   = "INSERT INTO user_preference (`user`,`preference`,`value`) VALUES ('$user_id','$key','$value')";
                 Dba::write($sql);
             }

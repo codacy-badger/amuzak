@@ -500,16 +500,16 @@ class easy_captcha_graphic extends easy_captcha_fuzzy
 
     public function random_color($a, $b)
     {
-        $R = $this->inverse ? 0xFF : 0x00;
+        $reverse = $this->inverse ? 0xFF : 0x00;
 
-        return imagecolorallocate($this->img, rand($a, $b) ^ $R, rand($a, $b) ^ $R, rand($a, $b) ^ $R);
+        return imagecolorallocate($this->img, rand($a, $b) ^ $reverse, rand($a, $b) ^ $reverse, rand($a, $b) ^ $reverse);
     }
 
     public function rgb($r, $g, $b)
     {
-        $R = $this->inverse ? 0xFF : 0x00;
+        $reverse = $this->inverse ? 0xFF : 0x00;
 
-        return imagecolorallocate($this->img, $r ^ $R, $g ^ $R, $b ^ $R);
+        return imagecolorallocate($this->img, $r ^ $reverse, $g ^ $reverse, $b ^ $reverse);
     }
     #-- generate JPEG output
 
@@ -745,9 +745,9 @@ class easy_captcha_dxy_wave
 
     public function real_rand($a, $b)
     {
-        $r = rand(0, 1 << 30);
+        $random = rand(0, 1 << 30);
 
-        return($r / (1 << 30) * ($b - $a) + $a);   // base + diff * (0..1)
+        return($random / (1 << 30) * ($b - $a) + $a);   // base + diff * (0..1)
     }
 }
 

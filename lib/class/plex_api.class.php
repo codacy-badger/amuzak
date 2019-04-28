@@ -354,13 +354,13 @@ class Plex_Api
         );
         $action = 'servers.xml?auth_token=' . $authtoken;
 
-        $r = Plex_XML_Data::createContainer();
-        Plex_XML_Data::setServerInfo($r, Catalog::get_catalogs());
-        Plex_XML_Data::setContainerSize($r);
+        $res = Plex_XML_Data::createContainer();
+        Plex_XML_Data::setServerInfo($res, Catalog::get_catalogs());
+        Plex_XML_Data::setContainerSize($res);
 
         $curlopts = array(
             CURLOPT_POST => true,
-            CURLOPT_POSTFIELDS => $r->asXML()
+            CURLOPT_POSTFIELDS => $res->asXML()
         );
 
         return self::myPlexRequest($action, $curlopts, $headers, true);
@@ -517,16 +517,16 @@ class Plex_Api
         );
         $options += $curlopts;
 
-        $ch = curl_init($url);
-        curl_setopt_array($ch, $options);
-        $r             = curl_exec($ch);
+        $curl = curl_init($url);
+        curl_setopt_array($curl, $options);
+        $curlres       = curl_exec($curl);
         $res           = array();
-        $res['status'] = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $res['status'] = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($ch);
         $res['headers'] = self::$request_headers;
-        $res['raw']     = $r;
+        $res['raw']     = $curlres;
         try {
-            $res['xml'] = simplexml_load_string($r);
+            $res['xml'] = simplexml_load_string($curlres);
         } catch (Exception $e) {
             // If exception, wrong data returned (Plex API changes?)
         }
@@ -536,47 +536,47 @@ class Plex_Api
 
     public static function root()
     {
-        $r = Plex_XML_Data::createContainer();
-        Plex_XML_Data::setRootContent($r, Catalog::get_catalogs());
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createContainer();
+        Plex_XML_Data::setRootContent($res, Catalog::get_catalogs());
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function library($params)
     {
-        $r = Plex_XML_Data::createLibContainer();
-        Plex_XML_Data::setLibraryContent($r);
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createLibContainer();
+        Plex_XML_Data::setLibraryContent($res);
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function system($params)
     {
-        $r = Plex_XML_Data::createSysContainer();
-        Plex_XML_Data::setSystemContent($r);
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createSysContainer();
+        Plex_XML_Data::setSystemContent($res);
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function clients($params)
     {
-        $r = Plex_XML_Data::createContainer();
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createContainer();
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function channels($params)
     {
-        $r = Plex_XML_Data::createPluginContainer();
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createPluginContainer();
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function photos($params)
     {
-        $r = Plex_XML_Data::createPluginContainer();
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createPluginContainer();
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function photo($params)
@@ -659,16 +659,16 @@ class Plex_Api
             array_shift($params);
             self::video_transcode($params);
         } else {
-            $r = Plex_XML_Data::createPluginContainer();
-            Plex_XML_Data::setContainerSize($r);
-            self::apiOutputXml($r->asXML());
+            $res = Plex_XML_Data::createPluginContainer();
+            Plex_XML_Data::setContainerSize($res);
+            self::apiOutputXml($res->asXML());
         }
     }
 
     private static function video_transcode($params)
     {
-        $n = count($params);
-        if ($n == 2) {
+        $number = count($params);
+        if ($number == 2) {
             $transcode_to = $params[0];
             $action       = $params[1];
             $id           = '';
@@ -785,26 +785,26 @@ class Plex_Api
 
     public static function applications($params)
     {
-        $r = Plex_XML_Data::createPluginContainer();
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createPluginContainer();
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function library_sections($params)
     {
-        $r = Plex_XML_Data::createLibContainer();
-        $n = count($params);
-        if ($n == 0) {
-            Plex_XML_Data::setSections($r, Catalog::get_catalogs());
+        $res    = Plex_XML_Data::createLibContainer();
+        $number = count($params);
+        if ($number == 0) {
+            Plex_XML_Data::setSections($res, Catalog::get_catalogs());
         } else {
             $key     = $params[0];
             $catalog = Catalog::create_from_id($key);
             if (!$catalog) {
                 self::createError(404);
             }
-            if ($n == 1) {
-                Plex_XML_Data::setSectionContent($r, $catalog);
-            } elseif ($n == 2) {
+            if ($number == 1) {
+                Plex_XML_Data::setSectionContent($res, $catalog);
+            } elseif ($number == 2) {
                 $view   = $params[1];
                 $gtypes = $catalog->get_gather_types();
                 if ($gtypes[0] == 'music') {
@@ -816,18 +816,18 @@ class Plex_Api
                     if ($view == "all") {
                         switch ($type) {
                             case 'artist':
-                                Plex_XML_Data::setSectionAll_Artists($r, $catalog);
+                                Plex_XML_Data::setSectionAll_Artists($res, $catalog);
                                 break;
                             case 'album':
-                                Plex_XML_Data::setSectionAll_Albums($r, $catalog);
+                                Plex_XML_Data::setSectionAll_Albums($res, $catalog);
                                 break;
                         }
                     } elseif ($view == "albums") {
-                        Plex_XML_Data::setSectionAlbums($r, $catalog);
+                        Plex_XML_Data::setSectionAlbums($res, $catalog);
                     } elseif ($view == "recentlyadded") {
-                        Plex_XML_Data::setCustomSectionView($r, $catalog, Stats::get_recent('album', 25, $key));
+                        Plex_XML_Data::setCustomSectionView($res, $catalog, Stats::get_recent('album', 25, $key));
                     } elseif ($view == "genre") {
-                        Plex_XML_Data::setSectionTags($r, $catalog, 'song');
+                        Plex_XML_Data::setSectionTags($res, $catalog, 'song');
                     }
                 } elseif ($gtypes[0] == "tvshow") {
                     $type = 'tvshow';
@@ -838,19 +838,19 @@ class Plex_Api
                     if ($view == "all") {
                         switch ($type) {
                             case 'tvshow':
-                                Plex_XML_Data::setSectionAll_TVShows($r, $catalog);
+                                Plex_XML_Data::setSectionAll_TVShows($res, $catalog);
                                 break;
                             case 'season':
-                                Plex_XML_Data::setSectionAll_Seasons($r, $catalog);
+                                Plex_XML_Data::setSectionAll_Seasons($res, $catalog);
                                 break;
                             case 'episode':
-                                Plex_XML_Data::setSectionAll_Episodes($r, $catalog);
+                                Plex_XML_Data::setSectionAll_Episodes($res, $catalog);
                                 break;
                         }
                     } elseif ($view == "recentlyadded") {
-                        Plex_XML_Data::setCustomSectionView($r, $catalog, Stats::get_recent('tvshow_episode', 25, $key));
+                        Plex_XML_Data::setCustomSectionView($res, $catalog, Stats::get_recent('tvshow_episode', 25, $key));
                     } elseif ($view == "genre") {
-                        Plex_XML_Data::setSectionTags($r, $catalog, 'video');
+                        Plex_XML_Data::setSectionTags($res, $catalog, 'video');
                     }
                 } elseif ($gtypes[0] == "movie") {
                     $type = 'tvshow';
@@ -859,30 +859,30 @@ class Plex_Api
                     }
 
                     if ($view == "all") {
-                        Plex_XML_Data::setSectionAll_Movies($r, $catalog);
+                        Plex_XML_Data::setSectionAll_Movies($res, $catalog);
                     } elseif ($view == "recentlyadded") {
-                        Plex_XML_Data::setCustomSectionView($r, $catalog, Stats::get_recent('movie', 25, $key));
+                        Plex_XML_Data::setCustomSectionView($res, $catalog, Stats::get_recent('movie', 25, $key));
                     } elseif ($view == "genre") {
-                        Plex_XML_Data::setSectionTags($r, $catalog, 'video');
+                        Plex_XML_Data::setSectionTags($res, $catalog, 'video');
                     }
                 }
             }
         }
 
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function library_metadata($params)
     {
-        $r     = Plex_XML_Data::createLibContainer();
-        $n     = count($params);
-        $litem = null;
+        $res        = Plex_XML_Data::createLibContainer();
+        $number     = count($params);
+        $litem      = null;
 
         $createMode = ($_SERVER['REQUEST_METHOD'] == 'POST');
         $editMode   = ($_SERVER['REQUEST_METHOD'] == 'PUT');
 
-        if ($n > 0) {
+        if ($number > 0) {
             $key = $params[0];
 
             $id = Plex_XML_Data::getAmpacheId($key);
@@ -890,7 +890,7 @@ class Plex_Api
                 self::check_access(50);
             }
 
-            if ($n == 1) {
+            if ($number == 1) {
                 // Should we check that files still exists here?
                 $checkFiles = $_REQUEST['checkFiles'];
                 $extra      = $_REQUEST['includeExtra'];
@@ -905,7 +905,7 @@ class Plex_Api
                         );
                         $litem->update(self::get_data_from_map($dmap));
                     }
-                    Plex_XML_Data::addArtist($r, $litem);
+                    Plex_XML_Data::addArtist($res, $litem);
                 } elseif (Plex_XML_Data::isAlbum($key)) {
                     $litem = new Album($id);
                     $litem->format();
@@ -916,7 +916,7 @@ class Plex_Api
                         );
                         $litem->update(self::get_data_from_map($dmap));
                     }
-                    Plex_XML_Data::addAlbum($r, $litem);
+                    Plex_XML_Data::addAlbum($res, $litem);
                 } elseif (Plex_XML_Data::isTrack($key)) {
                     $litem = new Song($id);
                     $litem->format();
@@ -926,7 +926,7 @@ class Plex_Api
                         );
                         $litem->update(self::get_data_from_map($dmap));
                     }
-                    Plex_XML_Data::addSong($r, $litem);
+                    Plex_XML_Data::addSong($res, $litem);
                 } elseif (Plex_XML_Data::isTVShow($key)) {
                     $litem = new TVShow($id);
                     $litem->format();
@@ -938,11 +938,11 @@ class Plex_Api
                         );
                         $litem->update(self::get_data_from_map($dmap));
                     }
-                    Plex_XML_Data::addTVShow($r, $litem);
+                    Plex_XML_Data::addTVShow($res, $litem);
                 } elseif (Plex_XML_Data::isTVShowSeason($key)) {
                     $litem = new TVShow_Season($id);
                     $litem->format();
-                    Plex_XML_Data::addTVShowSeason($r, $litem);
+                    Plex_XML_Data::addTVShowSeason($res, $litem);
                 } elseif (Plex_XML_Data::isPlaylist($key)) {
                     $litem = new Playlist($id);
                     $litem->format();
@@ -952,7 +952,7 @@ class Plex_Api
                         );
                         $litem->update(self::get_data_from_map($dmap));
                     }
-                    Plex_XML_Data::addPlaylist($r, $litem);
+                    Plex_XML_Data::addPlaylist($res, $litem);
                 }
             } else {
                 $subact = $params[1];
@@ -960,22 +960,22 @@ class Plex_Api
                     if (Plex_XML_Data::isArtist($key)) {
                         $litem = new Artist($id);
                         $litem->format();
-                        Plex_XML_Data::setArtistRoot($r, $litem);
+                        Plex_XML_Data::setArtistRoot($res, $litem);
                     } else {
                         if (Plex_XML_Data::isAlbum($key)) {
                             $litem = new Album($id);
                             $litem->format();
-                            Plex_XML_Data::setAlbumRoot($r, $litem);
+                            Plex_XML_Data::setAlbumRoot($res, $litem);
                         } else {
                             if (Plex_XML_Data::isTVShow($key)) {
                                 $litem = new TVShow($id);
                                 $litem->format();
-                                Plex_XML_Data::setTVShowRoot($r, $litem);
+                                Plex_XML_Data::setTVShowRoot($res, $litem);
                             } else {
                                 if (Plex_XML_Data::isTVShowSeason($key)) {
                                     $litem = new TVShow_Season($id);
                                     $litem->format();
-                                    Plex_XML_Data::setTVShowSeasonRoot($r, $litem);
+                                    Plex_XML_Data::setTVShowSeasonRoot($res, $litem);
                                 }
                             }
                         }
@@ -1003,9 +1003,9 @@ class Plex_Api
                             return false;
                         }
                     }
-                    Plex_XML_Data::addPhotos($r, $key, $kind);
+                    Plex_XML_Data::addPhotos($res, $key, $kind);
                 } elseif ($subact == "thumb" || $subact == "poster" || $subact == "art" || $subact == "background") {
-                    if ($n == 3) {
+                    if ($number == 3) {
                         $kind = Plex_XML_Data::getPhotoKind($subact);
                         // Ignore art id as we can only have 1 thumb
                         $art = null;
@@ -1060,12 +1060,12 @@ class Plex_Api
             $catalog_ids = $litem->get_catalogs();
             if (count($catalog_ids) > 0) {
                 $catalog = Catalog::create_from_id($catalog_ids[0]);
-                Plex_XML_Data::addCatalogIdentity($r, $catalog);
+                Plex_XML_Data::addCatalogIdentity($res, $catalog);
             }
         }
 
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     protected static function stream_url($url)
@@ -1104,11 +1104,11 @@ class Plex_Api
 
     public static function library_parts($params)
     {
-        $n = count($params);
+        $number = count($params);
 
-        if ($n > 0) {
+        if ($number > 0) {
             $key = $params[0];
-            if ($n == 2) {
+            if ($number == 2) {
                 $file = $params[1];
 
                 $id = Plex_XML_Data::getAmpacheId($key);
@@ -1121,7 +1121,7 @@ class Plex_Api
                         self::createError(404);
                     }
                 }
-            } elseif ($n == 1) {
+            } elseif ($number == 1) {
                 if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
                     if (isset($_GET['subtitleStreamID'])) {
                         $lang_code                      = dechex(hex2bin(substr($_GET['subtitleStreamID'], 0, 2)));
@@ -1136,28 +1136,28 @@ class Plex_Api
     {
         $data          = array();
         $data['album'] = Stats::get_newest('album', 25);
-        $r             = Plex_XML_Data::createLibContainer();
-        Plex_XML_Data::setCustomView($r, $data);
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res           = Plex_XML_Data::createLibContainer();
+        Plex_XML_Data::setCustomView($res, $data);
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function library_ondeck($params)
     {
         $data          = array();
         $data['album'] = Stats::get_recent('album', 25);
-        $r             = Plex_XML_Data::createLibContainer();
-        Plex_XML_Data::setCustomView($r, $data);
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res           = Plex_XML_Data::createLibContainer();
+        Plex_XML_Data::setCustomView($res, $data);
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function system_library_sections($params)
     {
-        $r = Plex_XML_Data::createSysContainer();
-        Plex_XML_Data::setSysSections($r, Catalog::get_catalogs());
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createSysContainer();
+        Plex_XML_Data::setSysSections($res, Catalog::get_catalogs());
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function manage_frameworks_ekspinner_resources($params)
@@ -1173,13 +1173,13 @@ class Plex_Api
 
     public static function myplex_account($params)
     {
-        $r = Plex_XML_Data::createMyPlexAccount();
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createMyPlexAccount();
+        self::apiOutputXml($res->asXML());
     }
 
     public static function system_agents($params)
     {
-        $r               = Plex_XML_Data::createSysContainer();
+        $res             = Plex_XML_Data::createSysContainer();
         $addcontributors = false;
         $mediaType       = $_REQUEST['mediaType'];
         if (count($params) >= 3 && $params[1] == 'config') {
@@ -1190,32 +1190,32 @@ class Plex_Api
         if ($mediaType) {
             switch ($mediaType) {
                 case '1':
-                    Plex_XML_Data::setSysMovieAgents($r);
+                    Plex_XML_Data::setSysMovieAgents($res);
                 break;
                 case '2':
-                    Plex_XML_Data::setSysTVShowAgents($r);
+                    Plex_XML_Data::setSysTVShowAgents($res);
                 break;
                 case '13':
-                    Plex_XML_Data::setSysPhotoAgents($r);
+                    Plex_XML_Data::setSysPhotoAgents($res);
                 break;
                 case '8':
-                    Plex_XML_Data::setSysMusicAgents($r);
+                    Plex_XML_Data::setSysMusicAgents($res);
                 break;
                 case '9':
-                    Plex_XML_Data::setSysMusicAgents($r, 'Albums');
+                    Plex_XML_Data::setSysMusicAgents($res, 'Albums');
                 break;
                 default:
                     self::createError(404);
                 break;
             }
         } else {
-            Plex_XML_Data::setSysAgents($r);
+            Plex_XML_Data::setSysAgents($res);
         }
         if ($addcontributors) {
-            Plex_XML_Data::setAgentsContributors($r, $mediaType, 'com.plexapp.agents.none');
+            Plex_XML_Data::setAgentsContributors($res, $mediaType, 'com.plexapp.agents.none');
         }
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function system_agents_contributors($params)
@@ -1223,10 +1223,10 @@ class Plex_Api
         $mediaType    = $_REQUEST['mediaType'];
         $primaryAgent = $_REQUEST['primaryAgent'];
 
-        $r = Plex_XML_Data::createSysContainer();
-        Plex_XML_Data::setAgentsContributors($r, $mediaType, $primaryAgent);
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createSysContainer();
+        Plex_XML_Data::setAgentsContributors($res, $mediaType, $primaryAgent);
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function system_agents_attribution($params)
@@ -1240,10 +1240,10 @@ class Plex_Api
     {
         if (count($params) > 0) {
             $type = $params[0];
-            $r    = Plex_XML_Data::createSysContainer();
-            Plex_XML_Data::setScanners($r, $type);
-            Plex_XML_Data::setContainerSize($r);
-            self::apiOutputXml($r->asXML());
+            $res  = Plex_XML_Data::createSysContainer();
+            Plex_XML_Data::setScanners($res, $type);
+            Plex_XML_Data::setContainerSize($res);
+            self::apiOutputXml($res->asXML());
         } else {
             self::createError(404);
         }
@@ -1251,9 +1251,9 @@ class Plex_Api
 
     public static function system_appstore($params)
     {
-        $r = Plex_XML_Data::createAppStore();
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createAppStore();
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function accounts($params)
@@ -1267,18 +1267,18 @@ class Plex_Api
             self::createError(404);
         }
 
-        $r = Plex_XML_Data::createAccountContainer();
-        Plex_XML_Data::setAccounts($r, $userid);
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createAccountContainer();
+        Plex_XML_Data::setAccounts($res, $userid);
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function status($params)
     {
-        $r = Plex_XML_Data::createPluginContainer();
-        Plex_XML_Data::setStatus($r);
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createPluginContainer();
+        Plex_XML_Data::setStatus($res);
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function status_sessions($params)
@@ -1288,49 +1288,49 @@ class Plex_Api
 
     public static function prefs($params)
     {
-        $r = Plex_XML_Data::createContainer();
-        Plex_XML_Data::setPrefs($r);
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createContainer();
+        Plex_XML_Data::setPrefs($res);
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function help($params)
     {
-        $r = Plex_XML_Data::createPluginContainer();
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createPluginContainer();
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function plexonline($params)
     {
-        $r = Plex_XML_Data::createPluginContainer();
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createPluginContainer();
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function plugins($params)
     {
-        $r = Plex_XML_Data::createPluginContainer();
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createPluginContainer();
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function services($params)
     {
-        $r = Plex_XML_Data::createPluginContainer();
-        Plex_XML_Data::setServices($r);
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createPluginContainer();
+        Plex_XML_Data::setServices($res);
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function services_browse($params)
     {
         self::check_access(75);
 
-        $r = Plex_XML_Data::createContainer();
-        Plex_XML_Data::setBrowseService($r, $params[0]);
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createContainer();
+        Plex_XML_Data::setBrowseService($res, $params[0]);
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function timeline($params)
@@ -1402,16 +1402,16 @@ class Plex_Api
 
     public static function servers($params)
     {
-        $r = Plex_XML_Data::createContainer();
-        Plex_XML_Data::setLocalServerInfo($r);
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        $res = Plex_XML_Data::createContainer();
+        Plex_XML_Data::setLocalServerInfo($res);
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function playlists($params)
     {
-        $r = Plex_XML_Data::createContainer();
-        $n = count($params);
+        $res    = Plex_XML_Data::createContainer();
+        $number = count($params);
 
         $createMode = ($_SERVER['REQUEST_METHOD'] == 'POST');
         $editMode   = ($_SERVER['REQUEST_METHOD'] == 'PUT');
@@ -1420,9 +1420,9 @@ class Plex_Api
             self::check_access(50);
         }
 
-        if ($n <= 1) {
+        if ($number <= 1) {
             $plid = 0;
-            if ($n == 0 && $createMode) {
+            if ($number == 0 && $createMode) {
                 // Create a new playlist
                 //$type = $_GET['type'];
                 $title = $_GET['title'];
@@ -1441,7 +1441,7 @@ class Plex_Api
                 }
                 $plid = Plex_XML_Data::getPlaylistId($plid);
             } else {
-                if ($n == 1 && $params[0] != "all") {
+                if ($number == 1 && $params[0] != "all") {
                     $plid = $params[0];
                 }
             }
@@ -1455,20 +1455,20 @@ class Plex_Api
                             $playlist->delete();
                         } else {
                             // Display playlist information
-                            Plex_XML_Data::addPlaylist($r, $playlist);
+                            Plex_XML_Data::addPlaylist($res, $playlist);
                         }
                     }
                 }
             } else {
                 // List all playlists
-                Plex_XML_Data::setPlaylists($r);
+                Plex_XML_Data::setPlaylists($res);
             }
-        } elseif ($n >= 2) {
+        } elseif ($number >= 2) {
             $plid = $params[0];
             if (Plex_XML_Data::isPlaylist($plid) && $params[1] == "items") {
                 $playlist = new Playlist(Plex_XML_Data::getAmpacheId($plid));
                 if ($playlist->id) {
-                    if ($n == 2) {
+                    if ($number == 2) {
                         if ($editMode) {
                             // Add a new item to playlist
                             $uri = $_GET['uri'];
@@ -1478,12 +1478,12 @@ class Plex_Api
                                 $item   = Plex_XML_Data::createLibraryItem($id);
                                 $medias = $item->get_medias();
                                 $playlist->add_medias($medias);
-                                Plex_XML_Data::addPlaylist($r, $playlist);
+                                Plex_XML_Data::addPlaylist($res, $playlist);
                             }
                         } else {
-                            Plex_XML_Data::setPlaylistItems($r, $playlist);
+                            Plex_XML_Data::setPlaylistItems($res, $playlist);
                         }
-                    } elseif ($n == 3) {
+                    } elseif ($number == 3) {
                         $index = (int) ($params[2]);
                         if ($delMode) {
                             $playlist->delete_track_number($index);
@@ -1496,18 +1496,18 @@ class Plex_Api
             }
         }
 
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     public static function playqueues($params)
     {
-        $n = count($params);
-        $r = Plex_XML_Data::createLibContainer();
+        $number = count($params);
+        $res    = Plex_XML_Data::createLibContainer();
 
-        if ($n == 1) {
+        if ($number == 1) {
             $playlistID = $params[0];
-            Plex_XML_Data::setTmpPlayQueue($r, $playlistID);
+            Plex_XML_Data::setTmpPlayQueue($res, $playlistID);
         } else {
             $type       = $_GET['type'];
             $playlistID = $_GET['playlistID'];
@@ -1515,11 +1515,11 @@ class Plex_Api
             $key        = $_GET['key'];
             $shuffle    = $_GET['shuffle'];
 
-            Plex_XML_Data::setPlayQueue($r, $type, $playlistID, $uri, $key, $shuffle);
+            Plex_XML_Data::setPlayQueue($res, $type, $playlistID, $uri, $key, $shuffle);
         }
 
-        Plex_XML_Data::setContainerSize($r);
-        self::apiOutputXml($r->asXML());
+        Plex_XML_Data::setContainerSize($res);
+        self::apiOutputXml($res->asXML());
     }
 
     private static function get_data_from_map($dmap)
