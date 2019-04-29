@@ -801,6 +801,7 @@ class Plex_Api
             $catalog = Catalog::create_from_id($key);
             if (!$catalog) {
                 self::createError(404);
+                return false;
             }
             if ($number == 1) {
                 Plex_XML_Data::setSectionContent($res, $catalog);
@@ -1060,6 +1061,10 @@ class Plex_Api
             $catalog_ids = $litem->get_catalogs();
             if (count($catalog_ids) > 0) {
                 $catalog = Catalog::create_from_id($catalog_ids[0]);
+                if (!$catalog) {
+                    self::createError(404);
+                    return false;
+                }
                 Plex_XML_Data::addCatalogIdentity($res, $catalog);
             }
         }
