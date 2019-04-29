@@ -232,23 +232,17 @@ class Waveform
         // create original image width based on amount of detail
         // each waveform to be processed with be $height high, but will be condensed
         // and resized later (if specified)
-        $img = imagecreatetruecolor($data_size / $detail, $height);
+        $img = imagecreatetruecolor((int) ($data_size / $detail), $height);
         if ($img === false) {
             debug_event('waveform', 'Cannot create image.', 1);
 
             return null;
         }
 
-        // fill background of image
-        if ($background == "") {
-            // transparent background specified
-            imagesavealpha($img, true);
-            $transparentColor = imagecolorallocatealpha($img, 0, 0, 0, 127);
-            imagefill($img, 0, 0, $transparentColor);
-        } else {
-            list($bgred, $bggreen, $bgblue) = self::html2rgb($background);
-            imagefilledrectangle($img, 0, 0, (int) ($data_size / $detail), $height, imagecolorallocate($img, (int) $bgred, (int) $bggreen, (int) $bgblue));
-        }
+        // transparent background specified
+        imagesavealpha($img, true);
+        $transparentColor = imagecolorallocatealpha($img, 0, 0, 0, 127);
+        imagefill($img, 0, 0, $transparentColor);
         while (!feof($handle) && $data_point < $data_size) {
             if ($data_point++ % $detail == 0) {
                 $bytes = array();
@@ -304,7 +298,7 @@ class Waveform
                 }
             } else {
                 // skip this one due to lack of detail
-                fseek($handle, $ratio + $byte, SEEK_CUR);
+                fseek($handle, (int) ($ratio + $byte), SEEK_CUR);
             }
         }
 

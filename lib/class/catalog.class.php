@@ -259,7 +259,7 @@ abstract class Catalog extends database_object
     public static function create_catalog_type($type, $catalog_id = 0)
     {
         if (!$type) {
-            return false;
+            return null;
         }
 
         $filename = AmpConfig::get('prefix') . '/modules/catalog/' . $type . '/' . $type . '.catalog.php';
@@ -269,7 +269,7 @@ abstract class Catalog extends database_object
             /* Throw Error Here */
             debug_event('catalog', 'Unable to load ' . $type . ' catalog type', '2');
 
-            return false;
+            return null;
         } // include
         else {
             $class_name = "Catalog_" . $type;
@@ -281,7 +281,7 @@ abstract class Catalog extends database_object
             if (!($catalog instanceof Catalog)) {
                 debug_event('catalog', $type . ' not an instance of Catalog abstract, unable to load', '1');
 
-                return false;
+                return null;
             }
 
             return $catalog;
@@ -492,7 +492,7 @@ abstract class Catalog extends database_object
      * @param boolean $value
      * @param int $catalog_id
      * @param int $level
-     * @return boolean
+     * @return boolean|PDOStatement
      */
     private static function _update_item($field, $value, $catalog_id, $level)
     {
@@ -668,7 +668,7 @@ abstract class Catalog extends database_object
             }
         }
 
-        return $insert_id;
+        return (int) $insert_id;
     }
 
     /**
@@ -745,6 +745,7 @@ abstract class Catalog extends database_object
         $results['artists']        = $artists;
         $results['playlists']      = $playlists;
         $results['smartplaylists'] = $smartplaylists;
+        $results['live_stream']    = $live_streams;
         $results['podcasts']       = $podcasts;
         $results['size']           = $size;
         $results['time']           = $time;
@@ -2100,7 +2101,7 @@ abstract class Catalog extends database_object
     {
         // Select all songs in catalog
         $params = array();
-        if ($catalog_id) {
+        if ($catalog_id !== null) {
             $sql = 'SELECT `id` FROM `song` ' .
                     "WHERE `catalog`= ? " .
                     'ORDER BY `album`, `track`';

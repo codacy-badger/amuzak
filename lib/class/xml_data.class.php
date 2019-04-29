@@ -208,7 +208,7 @@ class XML_Data
      * This returns the formatted 'playlistTrack' string for an xml document
      *
      * @param Song $song
-     * @param string $playlist_data
+     * @param int[] $playlist_data
      */
     private static function playlist_song_tracks_string($song, $playlist_data)
     {

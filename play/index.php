@@ -74,7 +74,6 @@ if (AmpConfig::get('transcode_player_customize')) {
     }
 }
 $share_id         = (int) scrub_in($_REQUEST['share_id']);
-$subtitle         = '';
 $send_all_in_once = false;
 
 if (!$type) {
@@ -208,7 +207,7 @@ if (!$share_id) {
 /* If we are in demo mode.. die here */
 
 $prefs = AmpConfig::get('allow_stream_playback') && $_SESSION['userdata']['preferences']['allow_stream_playback'];
-if (AmpConfig::get('demo_mode') || (!Access::check('interface', $prefs))) {
+if (AmpConfig::get('demo_mode') || (!Access::check('interface', (int) $prefs))) {
     debug_event('UI::access_denied', "Streaming Access Denied:" . AmpConfig::get('demo_mode') . "is the value of demo_mode. Current user level is " . $GLOBALS['user']->access, '3');
     UI::access_denied();
 
@@ -414,7 +413,7 @@ if (filter_input(INPUT_GET, 'action') == 'download' and AmpConfig::get('download
     // Check to see if we should be throttling because we can get away with it
     if (AmpConfig::get('rate_limit') > 0) {
         while (!feof($fp)) {
-            echo fread($fp, round(AmpConfig::get('rate_limit') * 1024));
+            echo fread($fp, (int) (round(AmpConfig::get('rate_limit') * 1024)));
             $bytesStreamed += round(AmpConfig::get('rate_limit') * 1024);
             flush();
             sleep(1);
@@ -481,13 +480,6 @@ if (!$cpaction) {
                         if (!in_array('native', $valid_types)) {
                             $transcode = true;
                             debug_event('play', 'Transcoding because native streaming is unavailable', 5);
-                        } else {
-                            if (!empty($subtitle)) {
-                                $transcode = true;
-                                debug_event('play', 'Transcoding because subtitle requested', 5);
-                            } else {
-                                debug_event('play', 'Decided not to transcode', 5);
-                            }
                         }
                     }
                 }
@@ -509,9 +501,6 @@ if ($transcode) {
     }
     if ($maxbitrate) {
         $troptions['maxbitrate'] = $maxbitrate;
-    }
-    if ($subtitle) {
-        $troptions['subtitle'] = $subtitle;
     }
     if ($resolution) {
         $troptions['resolution'] = $resolution;

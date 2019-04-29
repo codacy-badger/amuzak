@@ -775,9 +775,12 @@ class Subsonic_Api
     {
         self::check_version($input, "1.2.0");
 
-        $query = self::check_parameter($input, 'query');
-
+        $query    = self::check_parameter($input, 'query');
+        $artists  = array();
+        $albums   = array();
+        $songs    = array();
         $operator = 0;
+
         if (strlen($query) > 1) {
             if (substr($query, -1) == "*") {
                 $query    = substr($query, 0, -1);
@@ -831,9 +834,9 @@ class Subsonic_Api
             $songs = Search::run($ssong);
         }
 
-        $r = Subsonic_XML_Data::createSuccessResponse();
-        Subsonic_XML_Data::addSearchResult($r, $artists, $albums, $songs, $elementName);
-        self::apiOutput($input, $r);
+        $response = Subsonic_XML_Data::createSuccessResponse();
+        Subsonic_XML_Data::addSearchResult($response, $artists, $albums, $songs, $elementName);
+        self::apiOutput($input, $response);
     }
 
     /**
@@ -972,7 +975,7 @@ class Subsonic_Api
         $playlistId = self::check_parameter($input, 'playlistId');
 
         $name    = $input['name'];
-        $comment = $input['comment'];   // Not supported.
+        // Not supported. $comment = $input['comment'];   
         $public  = ($input['public'] === "true");
 
         if (!Subsonic_XML_Data::isSmartPlaylist($playlistId)) {

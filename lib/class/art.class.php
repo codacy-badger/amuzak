@@ -710,12 +710,13 @@ class Art extends database_object
      * @param string $image
      * @param array $size
      * @param string $mime
-     * @return string
+     * @return string|array
      */
     public function generate_thumb($image, $size, $mime)
     {
         $data = explode("/", $mime);
         $type = strtolower($data['1']);
+        $mime_type = '';
 
         if (!self::test_image($image)) {
             debug_event('Art', 'Not trying to generate thumbnail, invalid data passed', 1);
@@ -769,7 +770,7 @@ class Art extends database_object
             imagedestroy($source);
             imagedestroy($thumbnail);
 
-            return false;
+            return '';
         }
         imagedestroy($source);
 
@@ -798,7 +799,7 @@ class Art extends database_object
         if (!isset($mime_type)) {
             debug_event('Art', 'Error: No mime type found.', 1);
 
-            return false;
+            return '';
         }
 
         $data = ob_get_contents();
@@ -808,7 +809,7 @@ class Art extends database_object
         if (!strlen($data)) {
             debug_event('Art', 'Unknown Error resizing art', 1);
 
-            return false;
+            return '';
         }
 
         return array('thumb' => $data, 'thumb_mime' => $mime_type);

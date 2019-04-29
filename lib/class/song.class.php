@@ -488,7 +488,7 @@ class Song extends database_object implements media, library_item
         $song_id = Dba::insert_id();
 
         if ($user_upload) {
-            Useractivity::post_activity(intval($user_upload), 'upload', 'song', $song_id);
+            Useractivity::post_activity(intval($user_upload), 'upload', 'song', (int) $song_id);
         }
 
         if (is_array($tags)) {
@@ -512,7 +512,7 @@ class Song extends database_object implements media, library_item
                 'VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
         Dba::write($sql, array($song_id, $comment, $lyrics, $label, $language, $catalog_number, $replaygain_track_gain, $replaygain_track_peak, $replaygain_album_gain, $replaygain_album_peak));
 
-        return $song_id;
+        return (int) $song_id;
     }
 
     /**
@@ -1571,7 +1571,7 @@ class Song extends database_object implements media, library_item
         $this->f_publisher = $this->label;
         $this->f_composer  = $this->composer;
 
-        if (AmpConfig::get('licensing') && $this->license) {
+        if (AmpConfig::get('licensing') && $this->license !== null) {
             $license = new License($this->license);
             $license->format();
             $this->f_license = $license->f_link;
@@ -1671,7 +1671,7 @@ class Song extends database_object implements media, library_item
      */
     public function get_user_owner()
     {
-        if ($this->user_upload) {
+        if ($this->user_upload !== null) {
             return $this->user_upload;
         }
 
@@ -2164,7 +2164,7 @@ class Song extends database_object implements media, library_item
         $meta['replaygain_album_gain'] = $this->replaygain_album_gain;
         $meta['replaygain_album_peak'] = $this->replaygain_album_peak;
         $meta['genre']                 = array();
-        if ($this->tags) {
+        if (! empty($this->tags)) {
             foreach ($this->tags as $tag) {
                 if (!in_array($tag['name'], $meta['genre'])) {
                     $meta['genre'][] = $tag['name'];
