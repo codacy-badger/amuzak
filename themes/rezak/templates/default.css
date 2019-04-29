@@ -639,7 +639,6 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
-    margin-left: 90%;
     min-width: 160px;
     max-height: 85%;
     max-width: 240px;
