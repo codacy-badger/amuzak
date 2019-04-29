@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+4.0.8
+----------
+- Searching bugfixes, much faster smart lists for the larger search types.
+
 4.0.7
 ----------
 - Restored localplay and modules
