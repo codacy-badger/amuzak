@@ -975,7 +975,7 @@ class Subsonic_Api
         $playlistId = self::check_parameter($input, 'playlistId');
 
         $name    = $input['name'];
-        // Not supported. $comment = $input['comment'];   
+        // Not supported. $comment = $input['comment'];
         $public  = ($input['public'] === "true");
 
         if (!Subsonic_XML_Data::isSmartPlaylist($playlistId)) {
