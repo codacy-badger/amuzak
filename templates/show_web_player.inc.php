@@ -36,7 +36,7 @@ header('Expires: ' . gmdate(DATE_RFC1123, time() - 1));
 <meta property="og:site_name" content="aMuzak"/>
 <?php
 if (!$is_share) {
-    $playlist = new Stream_Playlist(scrub_in($_REQUEST['playlist_id']));
+    $playlist = new Stream_Playlist((int) scrub_in($_REQUEST['playlist_id']));
 }
 
 $isRadio = false;

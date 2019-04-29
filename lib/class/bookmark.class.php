@@ -37,7 +37,7 @@ class Bookmark extends database_object
     public $comment;
     public $creation_date;
     public $update_date;
-    
+
     public $f_user;
 
     /**

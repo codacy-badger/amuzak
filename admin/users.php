@@ -127,7 +127,7 @@ switch ($_REQUEST['action']) {
         $fullname       = (string) scrub_in($_POST['fullname']);
         $email          = (string) scrub_in($_POST['email']);
         $website        = (string) scrub_in($_POST['website']);
-        $access         = scrub_in($_POST['access']);
+        $access         = (int) scrub_in($_POST['access']);
         $pass1          = $_POST['password_1'];
         $pass2          = $_POST['password_2'];
         $state          = (string) scrub_in($_POST['state']);
@@ -162,19 +162,20 @@ switch ($_REQUEST['action']) {
         if (!$user_id) {
             AmpError::add('general', T_("Error: Insert Failed"));
         }
-        $user = new User($user_id);
+        $access_level = '';
+        $user         = new User($user_id);
         $user->upload_avatar();
 
         if ($access == 5) {
-            $access = T_('Guest');
+            $access_level = T_('Guest');
         } elseif ($access == 25) {
-            $access = T_('User');
+            $access_level = T_('User');
         } elseif ($access == 100) {
-            $access = T_('Admin');
+            $access_level = T_('Admin');
         }
 
         /* HINT: %1 Username, %2 Access num */
-        show_confirmation(T_('New User Added'), sprintf(T_('%1$s has been created with an access level of %2$s'), $username, $access), AmpConfig::get('web_path') . '/admin/users.php');
+        show_confirmation(T_('New User Added'), sprintf(T_('%1$s has been created with an access level of %2$s'), $username, $access_level), AmpConfig::get('web_path') . '/admin/users.php');
     break;
     case 'enable':
         $client = new User($_REQUEST['user_id']);

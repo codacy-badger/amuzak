@@ -181,6 +181,9 @@ switch ($_REQUEST['action']) {
     break;
     case 'create_account':
         $results = parse_ini_file($configfile);
+        if (!$results) {
+            break;
+        }
         AmpConfig::set_by_array($results, true);
 
         $password2 = $_REQUEST['local_pass2'];

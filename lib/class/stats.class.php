@@ -82,7 +82,7 @@ class Stats
      * @param string $object_type
      * @param int $old_object_id
      * @param int $new_object_id
-     * @return boolean
+     * @return boolean|PDOStatement
      */
     public static function migrate($object_type, $old_object_id, $new_object_id)
     {

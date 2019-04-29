@@ -26,6 +26,7 @@
  * Takes an array of media ids and returns an array of the actual filenames
  *
  * @param    array    $media_ids    Media IDs.
+ * @return array
  */
 function get_media_files($media_ids)
 {

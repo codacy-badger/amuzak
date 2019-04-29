@@ -38,6 +38,7 @@ class Song_Preview extends database_object implements media, playable_item
     public $f_file;
     public $f_artist;
     public $f_artist_full;
+    public $f_artist_link;
     public $f_title;
     public $f_title_full;
     public $link;

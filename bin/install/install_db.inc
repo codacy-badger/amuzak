@@ -130,5 +130,3 @@ function usage() {
 
     return false;
 }
-
-?>

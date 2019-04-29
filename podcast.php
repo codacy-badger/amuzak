@@ -73,7 +73,7 @@ switch ($_REQUEST['action']) {
             return false;
         }
 
-        $podcast_id = scrub_in($_REQUEST['podcast_id']);
+        $podcast_id = (string) scrub_in($_REQUEST['podcast_id']);
         show_confirmation(
             T_('Podcast Deletion'),
             T_('Are you sure you want to delete this podcast?'),

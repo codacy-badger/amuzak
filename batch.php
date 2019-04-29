@@ -117,8 +117,6 @@ session_write_close();
 
 // Take whatever we've got and send the zip
 $song_files = get_media_files($media_ids);
-if (is_array($song_files['0'])) {
-    set_memory_limit($song_files['1'] + 32);
-    send_zip($name, $song_files['0']);
-    debug_event('batch', 'Sending zip ' . $name, '3');
-}
+set_memory_limit($song_files['1'] + 32);
+send_zip($name, $song_files['0']);
+debug_event('batch', 'Sending zip ' . $name, '3');

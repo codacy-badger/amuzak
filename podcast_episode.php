@@ -30,7 +30,7 @@ switch ($_REQUEST['action']) {
             break;
         }
 
-        $episode_id = scrub_in($_REQUEST['podcast_episode_id']);
+        $episode_id = (string) scrub_in($_REQUEST['podcast_episode_id']);
         show_confirmation(
             T_('Podcast Episode Deletion'),
             T_('Are you sure you want to permanently delete this episode?'),
