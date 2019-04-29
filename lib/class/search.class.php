@@ -1,5 +1,7 @@
 <?php
+
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
+
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
@@ -19,1885 +21,1833 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+use MusicBrainz\MusicBrainz;
+use MusicBrainz\HttpAdapters\RequestsHttpAdapter;
 
 /**
- * Search Class
- * Search-related voodoo.  Beware tentacles.
+ * Art Class
+ *
+ * This class handles the images / artwork in ampache
+ * This was initially in the album class, but was pulled out
+ * to be more general and potentially apply to albums, artists, movies etc
  */
-
-class Search extends playlist_object
+class Art extends database_object
 {
-    public $searchtype;
-    public $rules;
-    public $logic_operator = 'AND';
-    public $type           = 'public';
-    public $random         = false;
-    public $limit          = 0;
-
-    public $basetypes;
-    public $types;
-
-    public $link;
-    public $f_link;
+    /**
+     *  @var int $id
+     */
+    public $id;
 
     /**
-     * constructor
+     *  @var string $type
      */
-    public function __construct($id = null, $searchtype = 'song')
-    {
-        $this->searchtype = $searchtype;
-        if ($id) {
-            $info = $this->get_info($id);
-            foreach ($info as $key => $value) {
-                $this->$key = $value;
-            }
-
-            $this->rules = json_decode($this->rules, true);
-        }
-
-        // Define our basetypes
-
-        $this->basetypes['numeric'][] = array(
-            'name' => 'gte',
-            'description' => T_('is greater than or equal to'),
-            'sql' => '>='
-        );
-
-        $this->basetypes['numeric'][] = array(
-            'name' => 'lte',
-            'description' => T_('is less than or equal to'),
-            'sql' => '<='
-        );
-
-        $this->basetypes['numeric'][] = array(
-            'name' => 'equal',
-            'description' => T_('is'),
-            'sql' => '<=>'
-        );
-
-        $this->basetypes['numeric'][] = array(
-            'name' => 'ne',
-            'description' => T_('is not'),
-            'sql' => '<>'
-        );
-
-        $this->basetypes['numeric'][] = array(
-            'name' => 'gt',
-            'description' => T_('is greater than'),
-            'sql' => '>'
-        );
-
-        $this->basetypes['numeric'][] = array(
-            'name' => 'lt',
-            'description' => T_('is less than'),
-            'sql' => '<'
-        );
-
-
-        $this->basetypes['boolean'][] = array(
-            'name' => 'true',
-            'description' => T_('is true'),
-            'sql' => '1'
-        );
-
-        $this->basetypes['boolean'][] = array(
-            'name' => 'false',
-            'description' => T_('is false'),
-            'sql' => '0'
-        );
-
-
-        $this->basetypes['text'][] = array(
-            'name' => 'contain',
-            'description' => T_('contains'),
-            'sql' => 'LIKE',
-            'preg_match' => array('/^/','/$/'),
-            'preg_replace' => array('%', '%')
-        );
-
-        $this->basetypes['text'][] = array(
-            'name' => 'notcontain',
-            'description' => T_('does not contain'),
-            'sql' => 'NOT LIKE',
-            'preg_match' => array('/^/','/$/'),
-            'preg_replace' => array('%', '%')
-        );
-
-        $this->basetypes['text'][] = array(
-            'name' => 'start',
-            'description' => T_('starts with'),
-            'sql' => 'LIKE',
-            'preg_match' => '/$/',
-            'preg_replace' => '%'
-        );
-
-        $this->basetypes['text'][] = array(
-            'name' => 'end',
-            'description' => T_('ends with'),
-            'sql' => 'LIKE',
-            'preg_match' => '/^/',
-            'preg_replace' => '%'
-        );
-
-        $this->basetypes['text'][] = array(
-            'name' => 'equal',
-            'description' => T_('is'),
-            'sql' => '='
-        );
-
-        $this->basetypes['text'][] = array(
-            'name' => 'sounds',
-            'description' => T_('sounds like'),
-            'sql' => 'SOUNDS LIKE'
-        );
-
-        $this->basetypes['text'][] = array(
-            'name' => 'notsounds',
-            'description' => T_('does not sound like'),
-            'sql' => 'NOT SOUNDS LIKE'
-        );
-
-
-        $this->basetypes['boolean_numeric'][] = array(
-            'name' => 'equal',
-            'description' => T_('is'),
-            'sql' => '<=>'
-        );
-
-        $this->basetypes['boolean_numeric'][] = array(
-            'name' => 'ne',
-            'description' => T_('is not'),
-            'sql' => '<>'
-        );
-
-
-        $this->basetypes['boolean_subsearch'][] = array(
-            'name' => 'equal',
-            'description' => T_('is'),
-            'sql' => ''
-        );
-
-        $this->basetypes['boolean_subsearch'][] = array(
-            'name' => 'ne',
-            'description' => T_('is not'),
-            'sql' => 'NOT'
-        );
-
-
-        $this->basetypes['date'][] = array(
-            'name' => 'lt',
-            'description' => T_('before'),
-            'sql' => '<'
-        );
-
-        $this->basetypes['date'][] = array(
-            'name' => 'gt',
-            'description' => T_('after'),
-            'sql' => '>'
-        );
-
-
-        $this->basetypes['days'][] = array(
-            'name' => 'lt',
-            'description' => T_('before (x) days ago'),
-            'sql' => '<'
-        );
-
-        $this->basetypes['days'][] = array(
-            'name' => 'gt',
-            'description' => T_('after (x) days ago'),
-            'sql' => '>'
-        );
-
-        $this->basetypes['multiple'] = array_merge($this->basetypes['text'], $this->basetypes['numeric']);
-
-        switch ($searchtype) {
-        case 'song':
-            $this->types[] = array(
-                'name' => 'anywhere',
-                'label' => T_('Any searchable text'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-
-            $this->types[] = array(
-                'name' => 'title',
-                'label' => T_('Title'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-
-            $this->types[] = array(
-                'name' => 'album',
-                'label' => T_('Album'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-
-            $this->types[] = array(
-                'name' => 'artist',
-                'label' => T_('Artist'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-
-            $this->types[] = array(
-                'name' => 'composer',
-                'label' => T_('Composer'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-
-            $this->types[] = array(
-                'name' => 'comment',
-                'label' => T_('Comment'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-
-            $this->types[] = array(
-                'name' => 'label',
-                'label' => T_('Label'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-
-
-            $this->types[] = array(
-                'name' => 'tag',
-                'label' => T_('Tag'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-
-            $this->types[] = array(
-                'name' => 'album_tag',
-                'label' => T_('Album tag'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-
-            $this->types[] = array(
-                'name' => 'file',
-                'label' => T_('Filename'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-
-            $this->types[] = array(
-                'name' => 'year',
-                'label' => T_('Year'),
-                'type' => 'numeric',
-                'widget' => array('input', 'text')
-            );
-
-            $this->types[] = array(
-                'name' => 'time',
-                'label' => T_('Length (in minutes)'),
-                'type' => 'numeric',
-                'widget' => array('input', 'text')
-            );
-
-            if (AmpConfig::get('ratings')) {
-                $this->types[] = array(
-                    'name' => 'rating',
-                    'label' => T_('Rating (Average)'),
-                    'type' => 'numeric',
-                    'widget' => array(
-                        'select',
-                        array(
-                            '1 Star',
-                            '2 Stars',
-                            '3 Stars',
-                            '4 Stars',
-                            '5 Stars'
-                        )
-                    )
-                );
-            }
-
-            if (AmpConfig::get('userflags')) {
-                $this->types[] = array(
-                    'name' => 'favorite',
-                    'label' => T_('Favorites'),
-                    'type' => 'text',
-                    'widget' => array('input', 'text')
-                );
-            }
-
-            if (AmpConfig::get('ratings')) {
-                $this->types[] = array(
-                    'name' => 'myrating',
-                    'label' => T_('My Rating'),
-                    'type' => 'numeric',
-                    'widget' => array(
-                        'select',
-                        array(
-                            '1 Star',
-                            '2 Stars',
-                            '3 Stars',
-                            '4 Stars',
-                            '5 Stars'
-                        )
-                    )
-                );
-            }
-
-            if (AmpConfig::get('ratings')) {
-                $this->types[] = array(
-                    'name' => 'artistrating',
-                    'label' => T_('My Rating (Artist)'),
-                    'type' => 'numeric',
-                    'widget' => array(
-                        'select',
-                        array(
-                            '1 Star',
-                            '2 Stars',
-                            '3 Stars',
-                            '4 Stars',
-                            '5 Stars'
-                        )
-                    )
-                );
-            }
-            if (AmpConfig::get('ratings')) {
-                $this->types[] = array(
-                    'name' => 'albumrating',
-                    'label' => T_('My Rating (Album)'),
-                    'type' => 'numeric',
-                    'widget' => array(
-                        'select',
-                        array(
-                            '1 Star',
-                            '2 Stars',
-                            '3 Stars',
-                            '4 Stars',
-                            '5 Stars'
-                        )
-                    )
-                );
-            }
-
-            if (AmpConfig::get('show_played_times')) {
-                $this->types[] = array(
-                    'name' => 'played_times',
-                    'label' => T_('# Played'),
-                    'type' => 'numeric',
-                    'widget' => array('input', 'text')
-                );
-            }
-
-            $this->types[] = array(
-                'name' => 'bitrate',
-                'label' => T_('Bitrate'),
-                'type' => 'numeric',
-                'widget' => array(
-                    'select',
-                    array(
-                        '32',
-                        '40',
-                        '48',
-                        '56',
-                        '64',
-                        '80',
-                        '96',
-                        '112',
-                        '128',
-                        '160',
-                        '192',
-                        '224',
-                        '256',
-                        '320'
-                    )
-                )
-            );
-
-            $this->types[] = array(
-                'name' => 'last_play',
-                'label' => T_('My Last Play'),
-                'type' => 'days',
-                'widget' => array('input', 'text')
-            );
-
-            $this->types[] = array(
-                'name' => 'played',
-                'label' => T_('Played'),
-                'type' => 'boolean',
-                'widget' => array('input', 'hidden')
-            );
-
-            $this->types[] = array(
-                'name' => 'myplayed',
-                'label' => T_('Played by Me'),
-                'type' => 'boolean',
-                'widget' => array('input', 'hidden')
-            );
-
-            $this->types[] = array(
-                'name' => 'myplayedalbum',
-                'label' => T_('Played by Me (Album)'),
-                'type' => 'boolean',
-                'widget' => array('input', 'hidden')
-            );
-
-            $this->types[] = array(
-                'name' => 'myplayedartist',
-                'label' => T_('Played by Me (Artist)'),
-                'type' => 'boolean',
-                'widget' => array('input', 'hidden')
-            );
-
-            $this->types[] = array(
-                'name' => 'added',
-                'label' => T_('Added'),
-                'type' => 'date',
-                'widget' => array('input', 'text')
-            );
-
-            $this->types[] = array(
-                'name' => 'updated',
-                'label' => T_('Updated'),
-                'type' => 'date',
-                'widget' => array('input', 'text')
-            );
-
-            $catalogs = array();
-            foreach (Catalog::get_catalogs() as $catid) {
-                $catalog = Catalog::create_from_id($catid);
-                $catalog->format();
-                $catalogs[$catid] = $catalog->f_name;
-            }
-            $this->types[] = array(
-                'name' => 'catalog',
-                'label' => T_('Catalog'),
-                'type' => 'boolean_numeric',
-                'widget' => array('select', $catalogs)
-            );
-
-            $playlists = array();
-            foreach (Playlist::get_playlists() as $playlistid) {
-                $playlist = new Playlist($playlistid);
-                $playlist->format(false);
-                $playlists[$playlistid] = $playlist->f_name;
-            }
-            $this->types[] = array(
-                'name' => 'playlist',
-                'label' => T_('Playlist'),
-                'type' => 'boolean_numeric',
-                'widget' => array('select', $playlists)
-            );
-
-            $this->types[] = array(
-                'name' => 'playlist_name',
-                'label' => T_('Playlist Name'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-
-            $playlists = array();
-            foreach (self::get_searches() as $playlistid) {
-                // Slightly different from the above so we don't instigate
-                // a vicious loop.
-                $playlists[$playlistid] = self::get_name_byid($playlistid);
-            }
-            $this->types[] = array(
-                'name' => 'smartplaylist',
-                'label' => T_('Smart Playlist'),
-                'type' => 'boolean_subsearch',
-                'widget' => array('select', $playlists)
-            );
-
-            $metadataFields          = array();
-            $metadataFieldRepository = new \Lib\Metadata\Repository\MetadataField();
-            foreach ($metadataFieldRepository->findAll() as $metadata) {
-                $metadataFields[$metadata->getId()] = $metadata->getName();
-            }
-            $this->types[] = array(
-                'name' => 'metadata',
-                'label' => T_('Metadata'),
-                'type' => 'multiple',
-                'subtypes' => $metadataFields,
-                'widget' => array('subtypes', array('input', 'text'))
-            );
-
-            $licenses = array();
-            foreach (License::get_licenses() as $license_id) {
-                $license               = new License($license_id);
-                $licenses[$license_id] = $license->name;
-            }
-            if (AmpConfig::get('licensing')) {
-                $this->types[] = array(
-                    'name' => 'license',
-                    'label' => T_('Music License'),
-                    'type' => 'boolean_numeric',
-                    'widget' => array('select', $licenses)
-                );
-            }
-
-        break;
-        case 'album':
-            $this->types[] = array(
-                'name' => 'title',
-                'label' => T_('Title'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-
-            $this->types[] = array(
-                'name' => 'artist',
-                'label' => T_('Artist'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-
-            $this->types[] = array(
-                'name' => 'year',
-                'label' => T_('Year'),
-                'type' => 'numeric',
-                'widget' => array('input', 'text')
-            );
-
-            $this->types[] = array(
-                'name' => 'image width',
-                'label' => T_('Image Width'),
-                'type' => 'numeric',
-                'widget' => array('input', 'text')
-            );
-
-            $this->types[] = array(
-                'name' => 'image height',
-                'label' => T_('Image Height'),
-                'type' => 'numeric',
-                'widget' => array('input', 'text')
-            );
-
-            if (AmpConfig::get('ratings')) {
-                $this->types[] = array(
-                    'name' => 'rating',
-                    'label' => T_('Rating (Average)'),
-                    'type' => 'numeric',
-                    'widget' => array(
-                        'select',
-                        array(
-                            '1 Star',
-                            '2 Stars',
-                            '3 Stars',
-                            '4 Stars',
-                            '5 Stars'
-                        )
-                    )
-                );
-            }
-
-            if (AmpConfig::get('ratings')) {
-                $this->types[] = array(
-                    'name' => 'myrating',
-                    'label' => T_('My Rating'),
-                    'type' => 'numeric',
-                    'widget' => array(
-                        'select',
-                        array(
-                            '1 Star',
-                            '2 Stars',
-                            '3 Stars',
-                            '4 Stars',
-                            '5 Stars'
-                        )
-                    )
-                );
-            }
-
-            $this->types[] = array(
-                'name' => 'last_play',
-                'label' => T_('My Last Play'),
-                'type' => 'days',
-                'widget' => array('input', 'text')
-            );
-
-            $catalogs = array();
-            foreach (Catalog::get_catalogs() as $catid) {
-                $catalog = Catalog::create_from_id($catid);
-                $catalog->format();
-                $catalogs[$catid] = $catalog->f_name;
-            }
-            $this->types[] = array(
-                'name' => 'catalog',
-                'label' => T_('Catalog'),
-                'type' => 'boolean_numeric',
-                'widget' => array('select', $catalogs)
-            );
-
-
-            $this->types[] = array(
-                'name' => 'tag',
-                'label' => T_('Tag'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-        break;
-        case 'artist':
-            $this->types[] = array(
-                'name' => 'name',
-                'label' => T_('Name'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-            $this->types[] = array(
-                'name' => 'yearformed',
-                'label' => T_('Year'),
-                'type' => 'numeric',
-                'widget' => array('input', 'text')
-            );
-            $this->types[] = array(
-                'name' => 'placeformed',
-                'label' => T_('Place'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-            $this->types[] = array(
-                'name' => 'tag',
-                'label' => T_('Tag'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-            if (AmpConfig::get('ratings')) {
-                $this->types[] = array(
-                    'name' => 'rating',
-                    'label' => T_('Rating (Average)'),
-                    'type' => 'numeric',
-                    'widget' => array(
-                        'select',
-                        array(
-                            '1 Star',
-                            '2 Stars',
-                            '3 Stars',
-                            '4 Stars',
-                            '5 Stars'
-                        )
-                    )
-                );
-            }
-
-            $this->types[] = array(
-                'name' => 'last_play',
-                'label' => T_('My Last Play'),
-                'type' => 'days',
-                'widget' => array('input', 'text')
-            );
-
-            if (AmpConfig::get('ratings')) {
-                $this->types[] = array(
-                    'name' => 'myrating',
-                    'label' => T_('My Rating'),
-                    'type' => 'numeric',
-                    'widget' => array(
-                        'select',
-                        array(
-                            '1 Star',
-                            '2 Stars',
-                            '3 Stars',
-                            '4 Stars',
-                            '5 Stars'
-                        )
-                    )
-                );
-            }
-        break;
-        case 'playlist':
-            $this->types[] = array(
-                'name' => 'name',
-                'label' => T_('Name'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-        break;
-        case 'label':
-            $this->types[] = array(
-                'name' => 'name',
-                'label' => T_('Name'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-            $this->types[] = array(
-                'name' => 'category',
-                'label' => T_('Category'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-        break;
-        case 'user':
-            $this->types[] = array(
-                'name' => 'username',
-                'label' => T_('Username'),
-                'type' => 'text',
-                'widget' => array('input', 'text')
-            );
-        break;
-        } // end switch on searchtype
-    } // end constructor
+    public $type;
 
     /**
-     * clean_request
-     *
-     * Sanitizes raw search data
+     *  @var int $uid
      */
-    public static function clean_request($data)
-    {
-        $request = array();
-        foreach ($data as $key => $value) {
-            $prefix = substr($key, 0, 4);
-            $value  = trim($value);
-
-            if ($prefix == 'rule' && strlen($value)) {
-                $request[$key] = Dba::escape($value);
-            }
-        }
-
-        // Figure out if they want an AND based search or an OR based search
-        switch ($data['operator']) {
-            case 'or':
-                $request['operator'] = 'OR';
-            break;
-            default:
-                $request['operator'] = 'AND';
-            break;
-        }
-
-        // Verify the type
-        switch ($data['type']) {
-            case 'album':
-            case 'artist':
-            case 'song':
-            case 'playlist':
-            case 'label':
-            case 'user':
-                $request['type'] = $data['type'];
-            break;
-            default:
-                $request['type'] = 'song';
-            break;
-        }
-
-        return $request;
-    } // end clean_request
+    public $uid; // UID of the object not ID because it's not the ART.ID
 
     /**
-     * get_name_byid
-     *
-     * Returns the name of the saved search corresponding to the given ID
+     *  @var string $raw
      */
-    public static function get_name_byid($search_id)
-    {
-        $sql        = "SELECT `name` FROM `search` WHERE `id` = '$search_id'";
-        $db_results = Dba::read($sql);
-        $row        = Dba::fetch_assoc($db_results);
+    public $raw; // Raw art data
 
-        return $row['name'];
+    /**
+     *  @var string $raw_mime
+     */
+    public $raw_mime;
+
+    /**
+     *  @var string $kind
+     */
+    public $kind;
+
+    /**
+     *  @var string $thumb
+     */
+    public $thumb;
+
+    /**
+     *  @var string $thumb_mime
+     */
+    public $thumb_mime;
+
+    /**
+     *  @var bool $enabled
+     */
+    private static $enabled;
+
+    /**
+     * Constructor
+     * Art constructor, takes the UID of the object and the
+     * object type.
+     * @param int $uid
+     * @param string $type
+     * @param string $kind
+     */
+    public function __construct($uid, $type = 'album', $kind = 'default')
+    {
+        if (!self::is_valid_type($type)) {
+            return false;
+        }
+        $this->type = $type;
+        $this->uid  = (int) ($uid);
+        $this->kind = $kind;
+    }
+    // constructor
+
+    /**
+     * @param string $type
+     */
+    public static function is_valid_type($type)
+    {
+        return (Core::is_library_item($type) || $type == 'user');
     }
 
     /**
-     * get_searches
-     *
-     * Return the IDs of all saved searches accessible by the current user.
+     * build_cache
+     * This attempts to reduce # of queries by asking for everything in the
+     * browse all at once and storing it in the cache, this can help if the
+     * db connection is the slow point
+     * @param int[] $object_ids
+     * @return bool
      */
-    public static function get_searches()
+    public static function build_cache($object_ids)
     {
-        $sql = "SELECT `id` from `search` WHERE `type`='public' OR " .
-            "`user`='" . $GLOBALS['user']->id . "' ORDER BY `name`";
-        debug_event('search', 'SQL get_searches: ' . $sql, 5);
+        if (!is_array($object_ids) || !count($object_ids)) {
+            return false;
+        }
+        $uidlist    = '(' . implode(',', $object_ids) . ')';
+        $sql        = "SELECT `object_type`, `object_id`, `mime`, `size` FROM `image` WHERE `object_id` IN $uidlist";
         $db_results = Dba::read($sql);
-
-        $results = array();
 
         while ($row = Dba::fetch_assoc($db_results)) {
-            $results[] = $row['id'];
+            parent::add_to_cache('art', $row['object_type'] .
+                    $row['object_id'] . $row['size'], $row);
         }
-
-        return $results;
-    }
-
-    /**
-     * run
-     *
-     * This function actually runs the search and returns an array of the
-     * results.
-     */
-    public static function run($data)
-    {
-        $limit  = (int) ($data['limit']);
-        $offset = (int) ($data['offset']);
-        $data   = self::clean_request($data);
-
-        $search = new Search(null, $data['type']);
-        $search->parse_rules($data);
-
-        // Generate BASE SQL
-
-        $limit_sql = "";
-        if ($limit > 0) {
-            $limit_sql = ' LIMIT ';
-            if ($offset) {
-                $limit_sql .= $offset . ",";
-            }
-            $limit_sql .= $limit;
-        }
-
-        $search_info = $search->to_sql();
-        $sql         = $search_info['base'] . ' ' . $search_info['table_sql'];
-        if (!empty($search_info['where_sql'])) {
-            $sql .= ' WHERE ' . $search_info['where_sql'];
-        }
-        if (!empty($search_info['group_sql'])) {
-            $sql .= ' GROUP BY ' . $search_info['group_sql'];
-            if (!empty($search_info['having_sql'])) {
-                $sql .= ' HAVING ' . $search_info['having_sql'];
-            }
-        }
-        $sql .= ' ' . $limit_sql;
-        $sql = trim($sql);
-        debug_event('search', 'SQL run: ' . $sql, 5);
-
-        $db_results = Dba::read($sql);
-
-        $results = array();
-
-        while ($row = Dba::fetch_assoc($db_results)) {
-            $results[] = $row['id'];
-        }
-
-        return $results;
-    }
-
-    /**
-     * delete
-     *
-     * Does what it says on the tin.
-     */
-    public function delete()
-    {
-        $search_id  = Dba::escape($this->id);
-        $sql        = "DELETE FROM `search` WHERE `id` = ?";
-        Dba::write($sql, array($search_id));
 
         return true;
     }
+    // build_cache
 
     /**
-     * format
-     * Gussy up the data
+     * _auto_init
+     * Called on creation of the class
      */
-    public function format($details = true)
+    public static function _auto_init()
     {
-        parent::format();
+        if (!isset($_SESSION['art_enabled'])) {
+            /* if (isset($_COOKIE['art_enabled'])) {
+              $_SESSION['art_enabled'] = $_COOKIE['art_enabled'];
+              } else { */
+            $_SESSION['art_enabled'] = true;
+            //}
+        }
 
-        $this->link   = AmpConfig::get('web_path') . '/smartplaylist.php?action=show_playlist&playlist_id=' . $this->id;
-        $this->f_link = '<a href="' . $this->link . '">' . $this->f_name . '</a>';
+        self::$enabled = make_bool($_SESSION['art_enabled']);
+        //setcookie('art_enabled', self::$enabled, time() + 31536000, "/");
     }
 
     /**
-     * get_items
-     *
-     * Return an array of the items output by our search (part of the
-     * playlist interface).
+     * is_enabled
+     * Checks whether the user currently wants art
+     * @return boolean
      */
-    public function get_items()
+    public static function is_enabled()
     {
-        $results = array();
-
-        $sqltbl = $this->to_sql();
-        $sql    = $sqltbl['base'] . ' ' . $sqltbl['table_sql'];
-        if (!empty($sqltbl['where_sql'])) {
-            $sql .= ' WHERE ' . $sqltbl['where_sql'];
-        }
-        if (!empty($sqltbl['group_sql'])) {
-            $sql .= ' GROUP BY ' . $sqltbl['group_sql'];
-        }
-        if (!empty($sqltbl['having_sql'])) {
-            $sql .= ' HAVING ' . $sqltbl['having_sql'];
-        }
-
-        if ($this->random) {
-            $sql .= " ORDER BY RAND()";
-        }
-        if ($this->limit > 0) {
-            $sql .= " LIMIT " . intval($this->limit);
-        }
-        debug_event('search', 'SQL get_items: ' . $sql, 5);
-
-        $db_results = Dba::read($sql);
-        while ($row = Dba::fetch_assoc($db_results)) {
-            $results[] = array(
-                'object_id' => $row['id'],
-                'object_type' => $this->searchtype
-            );
-        }
-
-        return $results;
-    }
-
-    /**
-     * get_random_items
-     *
-     * Returns a randomly sorted array (with an optional limit) of the items
-     * output by our search (part of the playlist interface)
-     */
-    public function get_random_items($limit = null)
-    {
-        $results = array();
-
-        $sqltbl = $this->to_sql();
-        $sql    = $sqltbl['base'] . ' ' . $sqltbl['table_sql'];
-        if (!empty($sqltbl['where_sql'])) {
-            $sql .= ' WHERE ' . $sqltbl['where_sql'];
-        }
-        $rating_filter = AmpConfig::get_rating_filter();
-        if ($rating_filter > 0 && $rating_filter <= 5) {
-            $user_id = $GLOBALS['user']->id;
-            if (empty($sqltbl['where_sql'])) {
-                $sql .= " WHERE ";
-            } else {
-                $sql .= " AND ";
-            }
-            $sql .= "`" . $this->searchtype . "`.`id` NOT IN" .
-                    " (SELECT `object_id` FROM `rating`" .
-                    " WHERE `rating`.`object_type` = '" . $this->searchtype . "'" .
-                    " AND `rating`.`rating` <=" . $rating_filter .
-                    " AND `rating`.`user` = " . $user_id . ")";
-        }
-        if (!empty($sqltbl['group_sql'])) {
-            $sql .= ' GROUP BY ' . $sqltbl['group_sql'];
-        }
-        if (!empty($sqltbl['having_sql'])) {
-            $sql .= ' HAVING ' . $sqltbl['having_sql'];
-        }
-
-        $sql .= ' ORDER BY RAND()';
-        $sql .= $limit ? ' LIMIT ' . intval($limit) : '';
-        debug_event('search', 'SQL get_random_items: ' . $sql, 5);
-
-        $db_results = Dba::read($sql);
-
-        while ($row = Dba::fetch_assoc($db_results)) {
-            $results[] = array(
-                'object_id' => $row['id'],
-                'object_type' => $this->searchtype
-            );
-        }
-
-        return $results;
-    }
-
-    /**
-     * name_to_basetype
-     *
-     * Iterates over our array of types to find out the basetype for
-     * the passed string.
-     */
-    public function name_to_basetype($name)
-    {
-        foreach ($this->types as $type) {
-            if ($type['name'] == $name) {
-                return $type['type'];
-            }
+        if (self::$enabled) {
+            return true;
         }
 
         return false;
     }
 
     /**
-     * parse_rules
-     *
-     * Takes an array of sanitized search data from the form and generates
-     * our real array from it.
+     * set_enabled
+     * Changes the value of enabled
+     * @param bool|null $value
      */
-    public function parse_rules($data)
+    public static function set_enabled($value = null)
     {
-        $this->rules = array();
-        foreach ($data as $rule => $value) {
-            if (preg_match('/^rule_(\d+)$/', $rule, $ruleID)) {
-                $ruleID = $ruleID[1];
-                foreach (explode('|', $data['rule_' . $ruleID . '_input']) as $input) {
-                    $this->rules[] = array(
-                        $value,
-                        $this->basetypes[$this->name_to_basetype($value)][$data['rule_' . $ruleID . '_operator']]['name'],
-                        $input,
-                        $data['rule_' . $ruleID . '_subtype']
-                    );
-                }
-            }
+        if ($value === null) {
+            self::$enabled = self::$enabled ? false : true;
+        } else {
+            self::$enabled = make_bool($value);
         }
-        $this->logic_operator = $data['operator'];
+
+        $_SESSION['art_enabled'] = self::$enabled;
+        //setcookie('art_enabled', self::$enabled, time() + 31536000, "/");
     }
 
     /**
-     * save
-     *
-     * Save this search to the database for use as a smart playlist
+     * extension
+     * This returns the file extension for the currently loaded art
+     * @param string $mime
+     * @return string
      */
-    public function save()
+    public static function extension($mime)
     {
-        // Make sure we have a unique name
-        if (! $this->name) {
-            $this->name = $GLOBALS['user']->username . ' - ' . date('Y-m-d H:i:s', time());
-        }
-        $sql        = "SELECT `id` FROM `search` WHERE `name` = ?";
-        $db_results = Dba::read($sql, array($this->name));
-        if (Dba::num_rows($db_results)) {
-            $this->name .= uniqid('', true);
+        $data      = explode("/", $mime);
+        $extension = $data['1'];
+
+        if ($extension == 'jpeg') {
+            $extension = 'jpg';
         }
 
-        $sql = "INSERT INTO `search` (`name`, `type`, `user`, `rules`, `logic_operator`, `random`, `limit`) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        Dba::write($sql, array($this->name, $this->type, $GLOBALS['user']->id, json_encode($this->rules), $this->logic_operator, $this->random ? 1 : 0, $this->limit));
-        $insert_id = Dba::insert_id();
-        $this->id  = (int) $insert_id;
-
-        return $insert_id;
+        return $extension;
     }
-
+    // extension
 
     /**
-     * to_js
-     *
-     * Outputs the javascript necessary to re-show the current set of rules.
+     * test_image
+     * Runs some sanity checks on the putative image
+     * @param string $source
+     * @return boolean
      */
-    public function to_js()
+    public static function test_image($source)
     {
-        $js = "";
-        foreach ($this->rules as $rule) {
-            $js .= '<script type="text/javascript">' .
-                'SearchRow.add("' . $rule[0] . '","' .
-                $rule[1] . '","' . $rule[2] . '", "' . $rule[3] . '"); </script>';
-        }
+        if (strlen($source) < 10) {
+            debug_event('Art', 'Invalid image passed', 1);
 
-        return $js;
-    }
-
-    /**
-     * to_sql
-     *
-     * Call the appropriate real function.
-     */
-    public function to_sql()
-    {
-        return call_user_func(array($this, $this->searchtype . "_to_sql"));
-    }
-
-    /**
-     * update
-     *
-     * This function updates the saved version with the current settings.
-     */
-    public function update(array $data = null)
-    {
-        if ($data && is_array($data)) {
-            $this->name   = $data['name'];
-            $this->type   = $data['pl_type'];
-            $this->random = is_null($data['random']) ? 0 : 1;
-            $this->limit  = $data['limit'];
-        }
-
-        if (!$this->id) {
             return false;
         }
 
-        $sql = "UPDATE `search` SET `name` = ?, `type` = ?, `rules` = ?, `logic_operator` = ?, `random` = ?, `limit` = ? WHERE `id` = ?";
-        Dba::write($sql, array($this->name, $this->type, json_encode($this->rules), $this->logic_operator, $this->random, $this->limit, $this->id));
+        // Check image size doesn't exceed the limit
+        if (strlen($source) > AmpConfig::get('max_upload_size')) {
+            debug_event('Art', 'Image size (' . strlen($source) . ') exceed the limit (' . AmpConfig::get('max_upload_size') . ').', 1);
 
-        return $this->id;
+            return false;
+        }
+
+        $test = true;
+        // Check to make sure PHP:GD exists.  If so, we can sanity check
+        // the image.
+        if (function_exists('ImageCreateFromString')) {
+            $image = @ImageCreateFromString($source);
+            if (!$image || imagesx($image) < 5 || imagesy($image) < 5) {
+                debug_event('Art', 'Image failed PHP-GD test', 1);
+                $test = false;
+            }
+            if ($image) {
+                if (@imagedestroy($image) === false) {
+                    throw new \RuntimeException('@imagedestroy failed');
+                }
+            }
+        }
+
+        return $test;
     }
+    //test_image
 
-    public static function gc()
+    /**
+     * get
+     * This returns the art for our current object, this can
+     * look in the database and will return the thumb if it
+     * exists, if it doesn't depending on settings it will try
+     * to create it.
+     * @param boolean $raw
+     * @return string
+     */
+    public function get($raw = false)
     {
+        // Get the data either way
+        if (!$this->get_db()) {
+            return '';
+        }
+
+        if ($raw || !$this->thumb) {
+            return $this->raw;
+        } else {
+            return $this->thumb;
+        }
+    }
+    // get
+
+    /**
+     * get_db
+     * This pulls the information out from the database, depending
+     * on if we want to resize and if there is not a thumbnail go
+     * ahead and try to resize
+     * @return boolean
+     */
+    public function get_db()
+    {
+        $sql        = "SELECT `id`, `image`, `mime`, `size` FROM `image` WHERE `object_type` = ? AND `object_id` = ? AND `kind` = ?";
+        $db_results = Dba::read($sql, array($this->type, $this->uid, $this->kind));
+
+        while ($results = Dba::fetch_assoc($db_results)) {
+            if ($results['size'] == 'original') {
+                if (AmpConfig::get('album_art_store_disk')) {
+                    $this->raw = self::read_from_dir($results['size'], $this->type, $this->uid, $this->kind);
+                } else {
+                    $this->raw = $results['image'];
+                }
+                $this->raw_mime = $results['mime'];
+            } else {
+                if (AmpConfig::get('resize_images') && $results['size'] == '275x275') {
+                    if (AmpConfig::get('album_art_store_disk')) {
+                        $this->thumb = self::read_from_dir($results['size'], $this->type, $this->uid, $this->kind);
+                    } else {
+                        $this->thumb = $results['image'];
+                    }
+                    $this->raw_mime = $results['mime'];
+                }
+            }
+            $this->id = $results['id'];
+        }
+        // If we get nothing return false
+        if (!$this->raw) {
+            return false;
+        }
+
+        // If there is no thumb and we want thumbs
+        if (!$this->thumb && AmpConfig::get('resize_images')) {
+            $size = array('width' => 275, 'height' => 275);
+            $data = $this->generate_thumb($this->raw, $size, $this->raw_mime);
+            // If it works save it!
+            if ($data) {
+                $this->save_thumb($data['thumb'], $data['thumb_mime'], $size);
+                $this->thumb      = $data['thumb'];
+                $this->thumb_mime = $data['thumb_mime'];
+            } else {
+                debug_event('Art', 'Unable to retrieve or generate thumbnail for ' . $this->type . '::' . $this->id, 1);
+            }
+        } // if no thumb, but art and we want to resize
+
+        return true;
+    }
+    // get_db
+
+    /**
+     * This check if an object has an associated image in db.
+     * @param int $object_id
+     * @param string $object_type
+     * @param string $kind
+     * @return boolean
+     */
+    public static function has_db($object_id, $object_type, $kind = 'default')
+    {
+        $sql        = "SELECT COUNT(`id`) AS `nb_img` FROM `image` WHERE `object_type` = ? AND `object_id` = ? AND `kind` = ?";
+        $db_results = Dba::read($sql, array($object_type, $object_id, $kind));
+        $nb_img     = 0;
+        if ($results = Dba::fetch_assoc($db_results)) {
+            $nb_img = $results['nb_img'];
+        }
+
+        return ($nb_img > 0);
     }
 
     /**
-     * _mangle_data
-     *
-     * Private convenience function.  Mangles the input according to a set
-     * of predefined rules so that we don't have to include this logic in
-     * foo_to_sql.
-     * @param string|false $type
+     * This insert art from url.
+     * @param string $url
      */
-    private function _mangle_data($data, $type, $operator)
+    public function insert_url($url)
     {
-        if ($operator['preg_match']) {
-            $data = preg_replace(
-                $operator['preg_match'],
-                $operator['preg_replace'],
-                $data
+        debug_event('art', 'Insert art from url ' . $url, '5');
+        $image = self::get_from_source(array('url' => $url), $this->type);
+        $rurl  = pathinfo($url);
+        $mime  = "image/" . $rurl['extension'];
+        $this->insert($image, $mime);
+    }
+
+    /**
+     * This insert art from file on disk.
+     * @param string $filepath
+     */
+    public function insert_from_file($filepath)
+    {
+        debug_event('art', 'Insert art from file on disk ' . $filepath, '5');
+        $image = self::get_from_source(array('file' => $filepath), $this->type);
+        $rfile = pathinfo($filepath);
+        $mime  = "image/" . $rfile['extension'];
+        $this->insert($image, $mime);
+    }
+
+    /**
+     * insert
+     * This takes the string representation of an image and inserts it into
+     * the database. You must also pass the mime type.
+     * @param string $source
+     * @param string $mime
+     * @return boolean
+     */
+    public function insert($source, $mime = '')
+    {
+        // Disabled in demo mode cause people suck and upload porn
+        if (AmpConfig::get('demo_mode')) {
+            return false;
+        }
+
+        // Check to make sure we like this image
+        if (!self::test_image($source)) {
+            debug_event('Art', 'Not inserting image for ' . $this->type . ' ' . $this->uid . ', invalid data passed', 1);
+
+            return false;
+        }
+
+        // Default to image/jpeg if they don't pass anything
+        $mime = $mime ? $mime : 'image/jpeg';
+        // Blow it away!
+        $this->reset();
+
+        if (AmpConfig::get('write_id3_art')) {
+            if ($this->type == 'album') {
+                $album = new Album($this->uid);
+                debug_event('Art', 'Inserting image Album ' . $album->name . ' on songs.', 5);
+                $songs = $album->get_songs();
+                foreach ($songs as $song_id) {
+                    $song = new Song($song_id);
+                    $song->format();
+                    $id3  = new vainfo($song->file);
+                    $data = $id3->read_id3();
+                    if (isset($data['tags']['id3v2'])) {
+                        $image_from_tag = '';
+                        if (isset($data['id3v2']['APIC'][0]['data'])) {
+                            $image_from_tag = $data['id3v2']['APIC'][0]['data'];
+                        }
+                        if ($image_from_tag != $source) {
+                            $ndata                 = array();
+                            $ndata['APIC']['data'] = $source;
+                            $ndata['APIC']['mime'] = $mime;
+                            $ndata                 = array_merge($ndata, $song->get_metadata());
+                            $id3->write_id3($ndata);
+                            Catalog::update_media_from_tags($song);
+                        }
+                    }
+                }
+            }
+        }
+
+        $dimensions = Core::image_dimensions($source);
+        $width      = (int) ($dimensions['width']);
+        $height     = (int) ($dimensions['height']);
+        $sizetext   = 'original';
+
+        if (!self::check_dimensions($dimensions)) {
+            return false;
+        }
+
+        if (AmpConfig::get('album_art_store_disk')) {
+            self::write_to_dir($source, $sizetext, $this->type, $this->uid, $this->kind);
+            $source = null;
+        }
+
+        // Insert it!
+        $sql = "INSERT INTO `image` (`image`, `mime`, `size`, `width`, `height`, `object_type`, `object_id`, `kind`) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+        Dba::write($sql, array($source, $mime, $sizetext, $width, $height, $this->type, $this->uid, $this->kind));
+
+        return true;
+    }
+
+    // insert
+
+    public static function check_dimensions($dimensions)
+    {
+        $width  = (int) ($dimensions['width']);
+        $height = (int) ($dimensions['height']);
+
+        if ($width > 0 && $height > 0) {
+            $minw = AmpConfig::get('album_art_min_width');
+            $maxw = AmpConfig::get('album_art_max_width');
+            $minh = AmpConfig::get('album_art_min_height');
+            $maxh = AmpConfig::get('album_art_max_height');
+
+            // setup 'defaults' if config was not set
+            if (empty($minw)) {
+                $minw = 0;
+            }
+            if (empty($maxw)) {
+                $maxw = 0;
+            }
+            if (empty($minh)) {
+                $minh = 0;
+            }
+            if (empty($maxh)) {
+                $maxh = 0;
+            }
+
+            // minimum width is set and current width is too low
+            if ($minw > 0 && $width < $minw) {
+                debug_event('Art', "Image width not in range (min=$minw, max=$maxw, current=$width).", 1);
+
+                return false;
+            }
+            // max width is set and current width is too high
+            if ($maxw > 0 && $width > $maxw) {
+                debug_event('Art', "Image width not in range (min=$minw, max=$maxw, current=$width).", 1);
+
+                return false;
+            }
+            if ($minh > 0 && $height < $minh) {
+                debug_event('Art', "Image height not in range (min=$minh, max=$maxh, current=$height).", 1);
+
+                return false;
+            }
+            if ($maxh > 0 && $height > $maxh) {
+                debug_event('Art', "Image height not in range (min=$minh, max=$maxh, current=$height).", 1);
+
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public static function get_dir_on_disk($type, $uid, $kind = '', $autocreate = false)
+    {
+        $path = AmpConfig::get('local_metadata_dir');
+        if (!$path) {
+            debug_event('Art', 'local_metadata_dir setting is required to store arts on disk.', 1);
+
+            return false;
+        }
+
+        // Correctly detect the slash we need to use here
+        if (strpos($path, '/') !== false) {
+            $slash_type = '/';
+        } else {
+            $slash_type = '\\';
+        }
+
+        $path .= $slash_type . $type;
+        if ($autocreate && !Core::is_readable($path)) {
+            mkdir($path);
+        }
+
+        $path .= $slash_type . $uid;
+        if ($autocreate && !Core::is_readable($path)) {
+            mkdir($path);
+        }
+
+        if (!empty($kind)) {
+            $path .= $slash_type . $kind;
+            if ($autocreate && !Core::is_readable($path)) {
+                mkdir($path);
+            }
+        }
+        $path .= $slash_type;
+
+        return $path;
+    }
+
+    /**
+     * @param string $source
+     * @param string $type
+     * @param integer $uid
+     */
+    private static function write_to_dir($source, $sizetext, $type, $uid, $kind)
+    {
+        $path = self::get_dir_on_disk($type, $uid, $kind, true);
+        if ($path === false) {
+            return false;
+        }
+        $path .= "art-" . $sizetext . ".jpg";
+        if (Core::is_readable($path)) {
+            unlink($path);
+        }
+        $filepath = fopen($path, "wb");
+        if ($filepath) {
+            fwrite($filepath, $source);
+            fclose($filepath);
+        }
+
+        return true;
+    }
+
+    /**
+     * @param string $type
+     * @param integer $uid
+     */
+    private static function read_from_dir($sizetext, $type, $uid, $kind)
+    {
+        $path = self::get_dir_on_disk($type, $uid, $kind);
+        if ($path === false) {
+            return null;
+        }
+        $path .= "art-" . $sizetext . ".jpg";
+        if (!Core::is_readable($path)) {
+            debug_event('Art', 'Local image art ' . $path . ' cannot be read.', 1);
+
+            return null;
+        }
+
+        $image    = '';
+        $filepath = fopen($path, "rb");
+        if ($filepath) {
+            do {
+                $image .= fread($filepath, 2048);
+            } while (!feof($filepath));
+            fclose($filepath);
+        }
+
+        return $image;
+    }
+
+    private static function delete_from_dir($type, $uid, $kind = '')
+    {
+        if ($type && $uid) {
+            $path = self::get_dir_on_disk($type, $uid, $kind);
+            if ($path) {
+                self::delete_rec_dir($path);
+            }
+        }
+    }
+
+    /**
+     * @param string $path
+     */
+    private static function delete_rec_dir($path)
+    {
+        debug_event('Art', 'Deleting ' . (string) $path . ' directory...', 5);
+
+        if (Core::is_readable($path)) {
+            foreach (scandir($path) as $file) {
+                if ('.' === $file || '..' === $file) {
+                    continue;
+                } elseif (is_dir($path . '/' . $file)) {
+                    self::delete_rec_dir($path . '/' . $file);
+                } else {
+                    unlink($path . '/' . $file);
+                }
+            }
+            rmdir($path);
+        }
+    }
+
+    /**
+     * reset
+     * This resets the art in the database
+     */
+    public function reset()
+    {
+        if (AmpConfig::get('album_art_store_disk')) {
+            self::delete_from_dir($this->type, $this->uid, $this->kind);
+        }
+        $sql = "DELETE FROM `image` WHERE `object_id` = ? AND `object_type` = ? AND `kind` = ?";
+        Dba::write($sql, array($this->uid, $this->type, $this->kind));
+    }
+    // reset
+
+    /**
+     * save_thumb
+     * This saves the thumbnail that we're passed
+     * @param string $source
+     * @param string $mime
+     * @param array $size
+     */
+    public function save_thumb($source, $mime, $size)
+    {
+        // Quick sanity check
+        if (!self::test_image($source)) {
+            debug_event('Art', 'Not inserting thumbnail, invalid data passed', 1);
+
+            return false;
+        }
+
+        $width    = (int) ($size['width']);
+        $height   = (int) ($size['height']);
+        $sizetext = $width . 'x' . $height;
+
+        $sql = "DELETE FROM `image` WHERE `object_id` = ? AND `object_type` = ? AND `size` = ? AND `kind` = ?";
+        Dba::write($sql, array($this->uid, $this->type, $sizetext, $this->kind));
+
+        if (AmpConfig::get('album_art_store_disk')) {
+            self::write_to_dir($source, $sizetext, $this->type, $this->uid, $this->kind);
+            $source = null;
+        }
+        $sql = "INSERT INTO `image` (`image`, `mime`, `size`, `width`, `height`, `object_type`, `object_id`, `kind`) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+        Dba::write($sql, array($source, $mime, $sizetext, $width, $height, $this->type, $this->uid, $this->kind));
+    }
+    // save_thumb
+
+    /**
+     * get_thumb
+     * Returns the specified resized image.  If the requested size doesn't
+     * already exist, create and cache it.
+     * @param array $size
+     * @return array
+     */
+    public function get_thumb($size)
+    {
+        $sizetext   = $size['width'] . 'x' . $size['height'];
+        $sql        = "SELECT `image`, `mime` FROM `image` WHERE `size` = ? AND `object_type` = ? AND `object_id` = ? AND `kind` = ?";
+        $db_results = Dba::read($sql, array($sizetext, $this->type, $this->uid, $this->kind));
+
+        $results = Dba::fetch_assoc($db_results);
+        if (count($results)) {
+            $image = null;
+            if (AmpConfig::get('album_art_store_disk')) {
+                $image = self::read_from_dir($sizetext, $this->type, $this->uid, $this->kind);
+            } else {
+                $image = $results['image'];
+            }
+
+            if ($image != null) {
+                return array(
+                    'thumb' => (AmpConfig::get('album_art_store_disk')) ? self::read_from_dir($sizetext, $this->type, $this->uid, $this->kind) : $results['image'],
+                    'thumb_mime' => $results['mime']);
+            } else {
+                debug_event('art', 'Thumb entry found in database but associated data cannot be found.', 3);
+            }
+        }
+
+        // If we didn't get a result
+        $results = $this->generate_thumb($this->raw, $size, $this->raw_mime);
+        if ($results) {
+            $this->save_thumb($results['thumb'], $results['thumb_mime'], $size);
+        }
+
+        return $results;
+    }
+    // get_thumb
+
+    /**
+     * generate_thumb
+     * Automatically resizes the image for thumbnail viewing.
+     * Only works on gif/jpg/png/bmp. Fails if PHP-GD isn't available
+     * or lacks support for the requested image type.
+     * @param string $image
+     * @param array $size
+     * @param string $mime
+     * @return string
+     */
+    public function generate_thumb($image, $size, $mime)
+    {
+        $data = explode("/", $mime);
+        $type = strtolower($data['1']);
+
+        if (!self::test_image($image)) {
+            debug_event('Art', 'Not trying to generate thumbnail, invalid data passed', 1);
+
+            return '';
+        }
+
+        if (!function_exists('gd_info')) {
+            debug_event('Art', 'PHP-GD Not found - unable to resize art', 1);
+
+            return '';
+        }
+
+        // Check and make sure we can resize what you've asked us to
+        if (($type == 'jpg' or $type == 'jpeg') and ! (imagetypes() & IMG_JPG)) {
+            debug_event('Art', 'PHP-GD Does not support JPGs - unable to resize', 1);
+
+            return '';
+        }
+        if ($type == 'png' and ! imagetypes() & IMG_PNG) {
+            debug_event('Art', 'PHP-GD Does not support PNGs - unable to resize', 1);
+
+            return '';
+        }
+        if ($type == 'gif' and ! imagetypes() & IMG_GIF) {
+            debug_event('Art', 'PHP-GD Does not support GIFs - unable to resize', 1);
+
+            return '';
+        }
+        if ($type == 'bmp' and ! imagetypes() & IMG_WBMP) {
+            debug_event('Art', 'PHP-GD Does not support BMPs - unable to resize', 1);
+
+            return '';
+        }
+
+        $source = imagecreatefromstring($image);
+
+        if (!$source) {
+            debug_event('Art', 'Failed to create Image from string - Source Image is damaged / malformed', 1);
+
+            return '';
+        }
+
+        $source_size = array('height' => imagesy($source), 'width' => imagesx($source));
+
+        // Create a new blank image of the correct size
+        $thumbnail = imagecreatetruecolor($size['width'], $size['height']);
+
+        if (!imagecopyresampled($thumbnail, $source, 0, 0, 0, 0, $size['width'], $size['height'], $source_size['width'], $source_size['height'])) {
+            debug_event('Art', 'Unable to create resized image', 1);
+            imagedestroy($source);
+            imagedestroy($thumbnail);
+
+            return false;
+        }
+        imagedestroy($source);
+
+        // Start output buffer
+        ob_start();
+
+        // Generate the image to our OB
+        switch ($type) {
+            case 'jpg':
+            case 'jpeg':
+                imagejpeg($thumbnail, null, 75);
+                $mime_type = image_type_to_mime_type(IMAGETYPE_JPEG);
+                break;
+            case 'gif':
+                imagegif($thumbnail);
+                $mime_type = image_type_to_mime_type(IMAGETYPE_GIF);
+                break;
+            // Turn bmps into pngs
+            case 'bmp':
+            case 'png':
+                imagepng($thumbnail);
+                $mime_type = image_type_to_mime_type(IMAGETYPE_PNG);
+                break;
+        } // resized
+
+        if (!isset($mime_type)) {
+            debug_event('Art', 'Error: No mime type found.', 1);
+
+            return false;
+        }
+
+        $data = ob_get_contents();
+        ob_end_clean();
+
+        imagedestroy($thumbnail);
+        if (!strlen($data)) {
+            debug_event('Art', 'Unknown Error resizing art', 1);
+
+            return false;
+        }
+
+        return array('thumb' => $data, 'thumb_mime' => $mime_type);
+    }
+    // generate_thumb
+
+    /**
+     * get_from_source
+     * This gets an image for the album art from a source as
+     * defined in the passed array. Because we don't know where
+     * it's coming from we are a passed an array that can look like
+     * ['url']      = URL *** OPTIONAL ***
+     * ['file']     = FILENAME *** OPTIONAL ***
+     * ['raw']      = Actual Image data, already captured
+     * @param array $data
+     * @param string $type
+     * @return string|null
+     */
+    public static function get_from_source($data, $type = 'album')
+    {
+        // Already have the data, this often comes from id3tags
+        if (isset($data['raw'])) {
+            return $data['raw'];
+        }
+
+        // If it came from the database
+        if (isset($data['db'])) {
+            $sql        = "SELECT * FROM `image` WHERE `object_type` = ? AND `object_id` =? AND `size`='original'";
+            $db_results = Dba::read($sql, array($type, $data['db']));
+            $row        = Dba::fetch_assoc($db_results);
+
+            return $row['art'];
+        } // came from the db
+        // Check to see if it's a URL
+        if (isset($data['url'])) {
+            $options = array();
+            try {
+                $options['timeout'] = 3;
+                $request            = Requests::get($data['url'], array(), Core::requests_options($options));
+                $raw                = $request->body;
+            } catch (Exception $e) {
+                debug_event('Art', 'Error getting art: ' . $e->getMessage(), '1');
+                $raw = null;
+            }
+
+            return $raw;
+        }
+
+        // Check to see if it's a FILE
+        if (isset($data['file'])) {
+            $handle = fopen($data['file'], 'rb');
+            if ($handle) {
+                $image_data = fread($handle, (int) Core::get_filesize($data['file']));
+                fclose($handle);
+
+                return $image_data;
+            }
+        }
+
+        // Check to see if it is embedded in id3 of a song
+        if (isset($data['song'])) {
+            // If we find a good one, stop looking
+            $getID3 = new getID3();
+            $id3    = $getID3->analyze($data['song']);
+
+            if ($id3['format_name'] == "WMA") {
+                return $id3['asf']['extended_content_description_object']['content_descriptors']['13']['data'];
+            } elseif (isset($id3['id3v2']['APIC'])) {
+                // Foreach in case they have more then one
+                foreach ($id3['id3v2']['APIC'] as $image) {
+                    return $image['data'];
+                }
+            }
+        } // if data song
+
+        return null;
+    }
+    // get_from_source
+
+    /**
+     * url
+     * This returns the constructed URL for the art in question
+     * @param int $uid
+     * @param string $type
+     * @param string $sid
+     * @param int|null $thumb
+     * @return string
+     */
+    public static function url($uid, $type, $sid = null, $thumb = null)
+    {
+        if (!self::is_valid_type($type)) {
+            return null;
+        }
+
+        if (AmpConfig::get('use_auth') && AmpConfig::get('require_session')) {
+            $sid = $sid ? scrub_out($sid) : scrub_out(session_id());
+            if ($sid == null) {
+                $sid = Session::create(array(
+                            'type' => 'api'
+                ));
+            }
+        }
+
+        $key = $type . $uid;
+
+        if (parent::is_cached('art', $key . '275x275') && AmpConfig::get('resize_images')) {
+            $row  = parent::get_from_cache('art', $key . '275x275');
+            $mime = $row['mime'];
+        }
+        if (parent::is_cached('art', $key . 'original')) {
+            $row        = parent::get_from_cache('art', $key . 'original');
+            $thumb_mime = $row['mime'];
+        }
+        if (!isset($mime) && !isset($thumb_mime)) {
+            $sql        = "SELECT `object_type`, `object_id`, `mime`, `size` FROM `image` WHERE `object_type` = ? AND `object_id` = ?";
+            $db_results = Dba::read($sql, array($type, $uid));
+
+            while ($row = Dba::fetch_assoc($db_results)) {
+                parent::add_to_cache('art', $key . $row['size'], $row);
+                if ($row['size'] == 'original') {
+                    $mime = $row['mime'];
+                } else {
+                    if ($row['size'] == '275x275' && AmpConfig::get('resize_images')) {
+                        $thumb_mime = $row['mime'];
+                    }
+                }
+            }
+        }
+
+        $mime      = isset($thumb_mime) ? $thumb_mime : (isset($mime) ? $mime : null);
+        $extension = self::extension($mime);
+
+        if (AmpConfig::get('stream_beautiful_url')) {
+            if (empty($extension)) {
+                $extension = 'jpg';
+            }
+            $url = AmpConfig::get('web_path') . '/play/art/' . (string) $sid . '/' . scrub_out($type) . '/' . scrub_out($uid) . '/thumb';
+            if ($thumb !== null) {
+                $url .= $thumb;
+            }
+            $url .= '.' . $extension;
+        } else {
+            $url = AmpConfig::get('web_path') . '/image.php?object_id=' . scrub_out($uid) . '&object_type=' . scrub_out($type) . '&auth=' . (string) $sid;
+            if ($thumb !== null) {
+                $url .= '&thumb=' . $thumb;
+            }
+            if (!empty($extension)) {
+                $name = 'art.' . $extension;
+                $url .= '&name=' . $name;
+            }
+        }
+
+        return $url;
+    }
+    // url
+
+    /**
+     * gc
+     * This cleans up art that no longer has a corresponding object
+     * @param string $object_type
+     * @param integer $object_id
+     */
+    public static function gc($object_type = null, $object_id = null)
+    {
+        $types = array('album', 'artist', 'user', 'live_stream');
+
+        if ($object_type !== null) {
+            if (in_array($object_type, $types)) {
+                if (AmpConfig::get('album_art_store_disk')) {
+                    self::delete_from_dir($object_type, $object_id);
+                }
+                $sql = "DELETE FROM `image` WHERE `object_type` = ? AND `object_id` = ?";
+                Dba::write($sql, array($object_type, $object_id));
+            } else {
+                debug_event('art', 'Garbage collect on type `' . $object_type . '` is not supported.', 1);
+            }
+        } else {
+            // iterate over our types and delete the images
+            foreach ($types as $type) {
+                if (AmpConfig::get('album_art_store_disk')) {
+                    $sql = "SELECT `image`.`object_id`, `image`.`object_type` FROM `image` LEFT JOIN `" .
+                            $type . "` ON `" . $type . "`.`id`=" .
+                            "`image`.`object_id` WHERE `object_type`='" .
+                            $type . "' AND `" . $type . "`.`id` IS NULL";
+                    $db_results = Dba::read($sql);
+                    while ($row = Dba::fetch_row($db_results)) {
+                        self::delete_from_dir($row[1], $row[0]);
+                    }
+                }
+                $sql = "DELETE FROM `image` USING `image` LEFT JOIN `" .
+                        $type . "` ON `" . $type . "`.`id`=" .
+                        "`image`.`object_id` WHERE `object_type`='" .
+                        $type . "' AND `" . $type . "`.`id` IS NULL";
+                Dba::write($sql);
+            } // foreach
+        }
+    }
+
+    /**
+     * Migrate an object associate images to a new object
+     * @param string $object_type
+     * @param int $old_object_id
+     * @param int $new_object_id
+     * @return boolean
+     */
+    public static function migrate($object_type, $old_object_id, $new_object_id)
+    {
+        $sql = "UPDATE `image` SET `object_id` = ? WHERE `object_type` = ? AND `object_id` = ?";
+
+        return Dba::write($sql, array($new_object_id, $object_type, $old_object_id));
+    }
+
+    /**
+     * Duplicate an object associate images to a new object
+     * @param string $object_type
+     * @param int $old_object_id
+     * @param int $new_object_id
+     * @return boolean
+     */
+    public static function duplicate($object_type, $old_object_id, $new_object_id)
+    {
+        if (AmpConfig::get('album_art_store_disk')) {
+            $sql        = "SELECT `size`, `kind` FROM `image` WHERE `object_type` = ? AND `object_id` = ?";
+            $db_results = Dba::read($sql, array($object_type, $old_object_id));
+            while ($row = Dba::fetch_assoc($db_results)) {
+                $image = self::read_from_dir($row['size'], $object_type, $old_object_id, $row['kind']);
+                if ($image !== null) {
+                    self::write_to_dir($image, $row['size'], $object_type, $new_object_id, $row['kind']);
+                }
+            }
+        }
+
+        $sql = "INSERT INTO `image` (`image`, `mime`, `size`, `object_type`, `object_id`, `kind`) SELECT `image`, `mime`, `size`, `object_type`, ? as `object_id`, `kind` FROM `image` WHERE `object_type` = ? AND `object_id` = ?";
+
+        return Dba::write($sql, array($new_object_id, $object_type, $old_object_id));
+    }
+
+    /**
+     * gather
+     * This tries to get the art in question
+     * @param array $options
+     * @param int $limit
+     * @return array
+     */
+    public function gather($options = array(), $limit = 0)
+    {
+        // Define vars
+        $results = array();
+        $type    = $this->type;
+        if (isset($options['type'])) {
+            $type = $options['type'];
+        }
+
+        if (count($options) == 0) {
+            debug_event('Art', 'No options for art search, skipped.', 3);
+
+            return array();
+        }
+        $config  = AmpConfig::get('art_order');
+        $methods = get_class_methods('Art');
+
+        /* If it's not set */
+        if (empty($config)) {
+            // They don't want art!
+            debug_event('Art', 'art_order is empty, skipping art gathering', 3);
+
+            return array();
+        } elseif (!is_array($config)) {
+            $config = array($config);
+        }
+
+        debug_event('Art', 'Searching using:' . json_encode($config), 3);
+
+        $plugin_names = Plugin::get_plugins('gather_arts');
+        foreach ($config as $method) {
+            $method_name = "gather_" . $method;
+
+            $data = array();
+            if (in_array($method, $plugin_names)) {
+                $plugin            = new Plugin($method);
+                $installed_version = Plugin::get_plugin_version($plugin->_plugin->name);
+                if ($installed_version) {
+                    if ($plugin->load($GLOBALS['user'])) {
+                        $data = $plugin->_plugin->gather_arts($type, $options, $limit);
+                    }
+                }
+            } else {
+                if (in_array($method_name, $methods)) {
+                    debug_event('Art', "Method used: $method_name", 3);
+                    // Some of these take options!
+                    switch ($method_name) {
+                        case 'gather_lastfm':
+                            $data = $this->{$method_name}($limit, $options);
+                            break;
+                        case 'gather_google':
+                            $data = $this->{$method_name}($limit, $options);
+                            break;
+                        default:
+                            $data = $this->{$method_name}($limit);
+                            break;
+                    }
+                } else {
+                    debug_event("Art", $method_name . " not defined", 1);
+                }
+            }
+
+            // Add the results we got to the current set
+            $results = array_merge($results, (array) $data);
+
+            debug_event('Art', 'results:' . json_encode($results), 3);
+
+            if ($limit && count($results) >= $limit) {
+                return array_slice($results, 0, $limit);
+            }
+        } // end foreach
+
+        return $results;
+    }
+    // gather
+    ///////////////////////////////////////////////////////////////////////
+    // Art Methods
+    ///////////////////////////////////////////////////////////////////////
+
+    /**
+     * gather_db
+     * This function retrieves art that's already in the database
+     *
+     * @param int|null $limit
+     * @return array
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
+    public function gather_db($limit = null)
+    {
+        if ($this->get_db()) {
+            return array('db' => true);
+        }
+
+        return array();
+    }
+
+    /**
+     * gather_musicbrainz
+     * This function retrieves art based on MusicBrainz' Advanced
+     * Relationships
+     * @param int $limit
+     * @param array $data
+     * @return array
+     */
+    public function gather_musicbrainz($limit = 5, $data = array())
+    {
+        $images    = array();
+        $num_found = 0;
+
+        if ($this->type != 'album') {
+            return $images;
+        }
+
+        if ($data['mbid']) {
+            debug_event('mbz-gatherart', "Album MBID: " . $data['mbid'], '5');
+        } else {
+            return $images;
+        }
+
+        $musicbrainz = new MusicBrainz(new RequestsHttpAdapter());
+        $includes    = array(
+            'url-rels'
+        );
+        try {
+            $release = $musicbrainz->lookup('release', $data['mbid'], $includes);
+        } catch (Exception $e) {
+            return $images;
+        }
+
+        $asin = $release->asin;
+
+        if ($asin) {
+            debug_event('mbz-gatherart', "Found ASIN: " . $asin, '5');
+            $base_urls = array(
+                "01" => "ec1.images-amazon.com",
+                "02" => "ec1.images-amazon.com",
+                "03" => "ec2.images-amazon.com",
+                "08" => "ec1.images-amazon.com",
+                "09" => "ec1.images-amazon.com",
             );
+            foreach ($base_urls as $server_num => $base_url) {
+                // to avoid complicating things even further, we only look for large cover art
+                $url = 'http://' . $base_url . '/images/P/' . $asin . '.' . $server_num . '.LZZZZZZZ.jpg';
+                debug_event('mbz-gatherart', "Evaluating Amazon URL: " . $url, '5');
+                $request = Requests::get($url, array(), Core::requests_options());
+                if ($request->status_code == 200) {
+                    $num_found++;
+                    debug_event('mbz-gatherart', "Amazon URL added: " . $url, '5');
+                    $images[] = array(
+                        'url' => $url,
+                        'mime' => 'image/jpeg',
+                        'title' => 'MusicBrainz'
+                    );
+                    if ($num_found >= $limit) {
+                        return $images;
+                    }
+                }
+            }
+        }
+        // The next bit is based directly on the MusicBrainz server code
+        // that displays cover art.
+        // I'm leaving in the releaseuri info for the moment, though
+        // it's not going to be used.
+        $coverartsites   = array();
+        $coverartsites[] = array(
+            'name' => "CD Baby",
+            'domain' => "cdbaby.com",
+            'regexp' => '@http://cdbaby\.com/cd/(\w)(\w)(\w*)@',
+            'imguri' => 'http://cdbaby.name/$matches[1]/$matches[2]/$matches[1]$matches[2]$matches[3].jpg',
+            'releaseuri' => 'http://cdbaby.com/cd/$matches[1]$matches[2]$matches[3]/from/musicbrainz',
+        );
+        $coverartsites[] = array(
+            'name' => "CD Baby",
+            'domain' => "cdbaby.name",
+            'regexp' => "@http://cdbaby\.name/([a-z0-9])/([a-z0-9])/([A-Za-z0-9]*).jpg@",
+            'imguri' => 'http://cdbaby.name/$matches[1]/$matches[2]/$matches[3].jpg',
+            'releaseuri' => 'http://cdbaby.com/cd/$matches[3]/from/musicbrainz',
+        );
+        $coverartsites[] = array(
+            'name' => 'archive.org',
+            'domain' => 'archive.org',
+            'regexp' => '/^(.*\.(jpg|jpeg|png|gif))$/',
+            'imguri' => '$matches[1]',
+            'releaseuri' => '',
+        );
+        $coverartsites[] = array(
+            'name' => "Jamendo",
+            'domain' => "www.jamendo.com",
+            'regexp' => '/http://www\.jamendo\.com/(\w\w/)?album/(\d+)/',
+            'imguri' => 'http://img.jamendo.com/albums/$matches[2]/covers/1.200.jpg',
+            'releaseuri' => 'http://www.jamendo.com/album/$matches[2]',
+        );
+        $coverartsites[] = array(
+            'name' => '8bitpeoples.com',
+            'domain' => '8bitpeoples.com',
+            'regexp' => '/^(.*)$/',
+            'imguri' => '$matches[1]',
+            'releaseuri' => '',
+        );
+        $coverartsites[] = array(
+            'name' => 'Encyclopédisque',
+            'domain' => 'encyclopedisque.fr',
+            'regexp' => '/http://www.encyclopedisque.fr/images/imgdb/(thumb250|main)/(\d+).jpg/',
+            'imguri' => 'http://www.encyclopedisque.fr/images/imgdb/thumb250/$matches[2].jpg',
+            'releaseuri' => 'http://www.encyclopedisque.fr/',
+        );
+        $coverartsites[] = array(
+            'name' => 'Thastrom',
+            'domain' => 'www.thastrom.se',
+            'regexp' => '/^(.*)$/',
+            'imguri' => '$matches[1]',
+            'releaseuri' => '',
+        );
+        $coverartsites[] = array(
+            'name' => 'Universal Poplab',
+            'domain' => 'www.universalpoplab.com',
+            'regexp' => '/^(.*)$/',
+            'imguri' => '$matches[1]',
+            'releaseuri' => '',
+        );
+        foreach ($release->relations as $ar) {
+            $arurl = $ar->url->resource;
+            debug_event('mbz-gatherart', "Found URL AR: " . $arurl, '5');
+            foreach ($coverartsites as $casite) {
+                if (strpos($arurl, $casite['domain']) !== false) {
+                    debug_event('mbz-gatherart', "Matched coverart site: " . $casite['name'], '5');
+                    if (preg_match($casite['regexp'], $arurl, $matches)) {
+                        $num_found++;
+                        $url = '';
+                        eval("\$url = \"$casite[imguri]\";");
+                        debug_event('mbz-gatherart', "Generated URL added: " . $url, '5');
+                        $images[] = array(
+                            'url' => $url,
+                            'mime' => 'image/jpeg',
+                            'title' => 'MusicBrainz'
+                        );
+                        if ($num_found >= $limit) {
+                            return $images;
+                        }
+                    }
+                }
+            } // end foreach coverart sites
+        } // end foreach
+
+        return $images;
+    }
+    // gather_musicbrainz
+
+    /**
+     * gather_folder
+     * This returns the art from the folder of the files
+     * If a limit is passed or the preferred filename is found the current
+     * results set is returned
+     * @param int $limit
+     * @return array
+     */
+    public function gather_folder($limit = 5)
+    {
+        if (!$limit) {
+            $limit = 5;
         }
 
-        if ($type == 'numeric') {
-            return intval($data);
+        $results   = array();
+        $preferred = false;
+        // For storing which directories we've already done
+        $processed = array();
+
+        /* See if we are looking for a specific filename */
+        $preferred_filename = AmpConfig::get('album_art_preferred_filename');
+
+        // Array of valid extensions
+        $image_extensions = array(
+            'bmp',
+            'gif',
+            'jp2',
+            'jpeg',
+            'jpg',
+            'png'
+        );
+
+        $dirs = array();
+        if ($this->type == 'album') {
+            $media = new Album($this->uid);
+            $songs = $media->get_songs();
+            foreach ($songs as $song_id) {
+                $song   = new Song($song_id);
+                $dirs[] = Core::conv_lc_file(dirname($song->file));
+            }
         }
 
-        if ($type == 'boolean') {
-            return make_bool($data);
+        foreach ($dirs as $dir) {
+            if (isset($processed[$dir])) {
+                continue;
+            }
+
+            debug_event('folder_art', "Opening $dir and checking for Album Art", 3);
+
+            /* Open up the directory */
+            $handle = opendir($dir);
+
+            if (!$handle) {
+                AmpError::add('general', T_('Error: Unable to open') . ' ' . $dir);
+                debug_event('folder_art', "Error: Unable to open $dir for album art read", 2);
+                continue;
+            }
+
+            $processed[$dir] = true;
+
+            // Recurse through this dir and create the files array
+            while (false !== ($file = readdir($handle))) {
+                $extension = pathinfo($file);
+                $extension = $extension['extension'];
+
+                // Make sure it looks like an image file
+                if (!in_array($extension, $image_extensions)) {
+                    continue;
+                }
+
+                $full_filename = $dir . '/' . $file;
+
+                // Make sure it's got something in it
+                if (!Core::get_filesize($full_filename)) {
+                    debug_event('folder_art', "Empty file, rejecting $file", 5);
+                    continue;
+                }
+
+                // Regularise for mime type
+                if ($extension == 'jpg') {
+                    $extension = 'jpeg';
+                }
+
+                // Take an md5sum so we don't show duplicate
+                // files.
+                $index = md5($full_filename);
+
+                if ($file == $preferred_filename) {
+                    // We found the preferred filename and
+                    // so we're done.
+                    debug_event('folder_art', "Found preferred image file: $file", 5);
+                    $preferred[$index] = array(
+                        'file' => $full_filename,
+                        'mime' => 'image/' . $extension,
+                        'title' => 'Folder'
+                    );
+                    break;
+                }
+
+                debug_event('folder_art', "Found image file: $file", 4);
+                $results[$index] = array(
+                    'file' => $full_filename,
+                    'mime' => 'image/' . $extension,
+                    'title' => 'Folder'
+                );
+            } // end while reading dir
+            closedir($handle);
+        } // end foreach dirs
+
+        if (is_array($preferred)) {
+            // We found our favourite filename somewhere, so we need
+            // to dump the other, less sexy ones.
+            $results = $preferred;
+        }
+
+        debug_event('folder_art', 'Results: ' . json_encode($results), 5);
+        if ($limit && count($results) > $limit) {
+            $results = array_slice($results, 0, $limit);
+        }
+
+        return array_values($results);
+    }
+    // gather_folder
+
+    /**
+     * gather_tags
+     * This looks for the art in the meta-tags of the file
+     * itself
+     * @param int $limit
+     * @return array
+     */
+    public function gather_tags($limit = 5)
+    {
+        if (!$limit) {
+            $limit = 5;
+        }
+
+        if ($this->type == 'album') {
+            $data = $this->gather_song_tags($limit);
+        } else {
+            $data = array();
         }
 
         return $data;
     }
 
     /**
-     * album_to_sql
-     *
-     * Handles the generation of the SQL for album searches.
+     * Gather tags from video files.
+     * @return array
      */
-    private function album_to_sql()
+    public function gather_video_tags()
     {
-        $sql_logic_operator = $this->logic_operator;
-        $userid             = $GLOBALS['user']->id;
-
-        $where       = array();
-        $table       = array();
-        $join        = array();
-        $group       = array();
-        $having      = array();
-        $join['tag'] = array();
-
-        foreach ($this->rules as $rule) {
-            $type     = $this->name_to_basetype($rule[0]);
-            $operator = array();
-            foreach ($this->basetypes[$type] as $op) {
-                if ($op['name'] == $rule[1]) {
-                    $operator = $op;
-                    break;
-                }
-            }
-            $input              = $this->_mangle_data($rule[2], $type, $operator);
-            $sql_match_operator = $operator['sql'];
-
-            switch ($rule[0]) {
-                case 'title':
-                    $where[] = "`album`.`name` $sql_match_operator '$input'";
-                break;
-                case 'year':
-                    $where[] = "`album`.`year` $sql_match_operator '$input'";
-                break;
-                case 'rating':
-                    if ($this->type != "public") {
-                        $where[] = "COALESCE(`rating`.`rating`,0) $sql_match_operator '$input'";
-                    } else {
-                        $group[]  = "`album`.`id`";
-                        $having[] = "ROUND(AVG(IFNULL(`rating`.`rating`,0))) $sql_match_operator '$input'";
-                    }
-                    $join['rating'] = true;
-                break;
-                case 'myrating':
-                    $where[]          = "COALESCE(`rating`.`rating`,0) $sql_match_operator '$input'";
-                    $join['myrating'] = true;
-                break;
-                case 'myplayed':
-                    $where[]              = "`object_count`.`date` IS NOT NULL";
-                    $join['myplayed']     = true;
-                    break;
-                case 'last_play':
-                    $where[]              = "`object_count`.`date` IS NOT NULL AND `object_count`.`date` $sql_match_operator (UNIX_TIMESTAMP() - ($input * 86400))";
-                    $join['object_count'] = true;
-                    break;
-                case 'catalog':
-                    $where[]      = "`song`.`catalog` $sql_match_operator '$input'";
-                    $join['song'] = true;
-                break;
-                case 'tag':
-                    $key               = md5($input . $sql_match_operator);
-                    $where[]           = "`realtag_$key`.`match` > 0";
-                    $join['tag'][$key] = "$sql_match_operator '$input'";
-                break;
-                case 'image height':
-                    $where[]       = "`image`.`height` $sql_match_operator '$input'";
-                    $join['image'] = true;
-                break;
-                case 'image width':
-                    $where[]       = "`image`.`width` $sql_match_operator '$input'";
-                    $join['image'] = true;
-                break;
-                case 'artist':
-                    $where[]        = "`artist`.`name` $sql_match_operator '$input'";
-                    $join['artist'] = true;
-                break;
-                default:
-                    // Nae laird!
-                break;
-            } // switch on ruletype
-        } // foreach rule
-
-        $join['song']    = $join['song'] || AmpConfig::get('catalog_disable');
-        $join['catalog'] = AmpConfig::get('catalog_disable');
-
-        $where_sql = implode(" $sql_logic_operator ", $where);
-
-        foreach ($join['tag'] as $key => $value) {
-            $table['tag_' . $key] =
-                "LEFT JOIN (" .
-                "SELECT `object_id`, COUNT(`name`) AS `match` " .
-                "FROM `tag` LEFT JOIN `tag_map` " .
-                "ON `tag`.`id`=`tag_map`.`tag_id` " .
-                "WHERE `tag_map`.`object_type`='album' " .
-                "AND `tag`.`name` $value GROUP BY `object_id`" .
-                ") AS realtag_$key " .
-                "ON `album`.`id`=`realtag_$key`.`object_id`";
-        }
-        if ($join['artist']) {
-            $table['artist'] = "LEFT JOIN `artist` ON `artist`.`id`=`album`.`album_artist`";
-        }
-        if ($join['song']) {
-            $table['song'] = "LEFT JOIN `song` ON `song`.`album`=`album`.`id`";
-
-            if ($join['catalog']) {
-                $table['catalog'] = "LEFT JOIN `catalog` AS `catalog_se` ON `catalog_se`.`id`=`song`.`catalog`";
-                $where_sql .= " AND `catalog_se`.`enabled` = '1'";
-            }
-        }
-        if ($join['user_flag']) {
-            $table['user_flag']  = "LEFT JOIN `user_flag` ON `album`.`id`=`user_flag`.`object_id`";
-        }
-        if ($join['rating']) {
-            $table['rating'] = "LEFT JOIN `rating` ON `rating`.`object_type`='album' AND ";
-            if ($this->type != "public") {
-                $table['rating'] .= "`rating`.`user`='" . $userid . "' AND ";
-            }
-            $table['rating'] .= "`rating`.`object_id`=`album`.`id`";
-        }
-        if ($join['myrating']) {
-            $table['myrating'] = "LEFT JOIN `rating` ON `rating`.`object_type`='album' AND ";
-            $table['myrating'] .= "`rating`.`user`='" . $userid . "' AND ";
-            $table['myrating'] .= "`rating`.`object_id`=`album`.`id`";
-        }
-        if ($join['myplayed']) {
-            $table['myplayed'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='album' AND ";
-            $table['myplayed'] .= "`object_count`.`user`='" . $userid . "' AND ";
-            $table['myplayed'] .= "`object_count`.`object_id`=`album`.`id`";
-        }
-        if ($join['object_count']) {
-            $table['object_count'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='album' AND ";
-            $table['object_count'] .= "`object_count`.`user`='" . $userid . "' AND ";
-            $table['object_count'] .= "`object_count`.`object_id`=`album`.`id`";
-        }
-        if ($join['image']) {
-            $table['song'] = "LEFT JOIN `image` ON `image`.`object_id`=`album`.`id`";
-            $where_sql .= " AND `image`.`object_type`='album'";
-            $where_sql .= " AND `image`.`size`='original'";
-        }
-
-        $table_sql  = implode(' ', $table);
-        $group_sql  = implode(', ', $group);
-        $having_sql = implode(" $sql_logic_operator ", $having);
-
-        return array(
-            'base' => 'SELECT DISTINCT(`album`.`id`) FROM `album`',
-            'join' => $join,
-            'where' => $where,
-            'where_sql' => $where_sql,
-            'table' => $table,
-            'table_sql' => $table_sql,
-            'group_sql' => $group_sql,
-            'having_sql' => $having_sql
-        );
+        return array(); // return empty array
     }
 
     /**
-     * artist_to_sql
-     *
-     * Handles the generation of the SQL for artist searches.
+     * Gather tags from audio files.
+     * @param int $limit
+     * @return array
      */
-    private function artist_to_sql()
+    public function gather_song_tags($limit = 5)
     {
-        $sql_logic_operator = $this->logic_operator;
-        $userid             = $GLOBALS['user']->id;
+        // We need the filenames
+        $album = new Album($this->uid);
 
-        $where              = array();
-        $table              = array();
-        $join               = array();
-        $group              = array();
-        $having             = array();
-        $join['tag']        = array();
+        // grab the songs and define our results
+        $songs = $album->get_songs();
+        $data  = array();
 
-        foreach ($this->rules as $rule) {
-            $type     = $this->name_to_basetype($rule[0]);
-            $operator = array();
-            foreach ($this->basetypes[$type] as $op) {
-                if ($op['name'] == $rule[1]) {
-                    $operator = $op;
-                    break;
-                }
-            }
-            $input              = $this->_mangle_data($rule[2], $type, $operator);
-            $sql_match_operator = $operator['sql'];
+        // Foreach songs in this album
+        foreach ($songs as $song_id) {
+            $song = new Song($song_id);
+            $data = array_merge($data, $this->gather_media_tags($song));
 
-            switch ($rule[0]) {
-                case 'name':
-                    $where[] = "`artist`.`name` $sql_match_operator '$input'";
-                break;
-                case 'yearformed':
-                    $where[] = "`artist`.`yearformed` $sql_match_operator '$input'";
-                break;
-                case 'placeformed':
-                    $where[] = "`artist`.`placeformed` $sql_match_operator '$input'";
-                break;
-                case 'tag':
-                    $key               = md5($input . $sql_match_operator);
-                    $where[]           = "`realtag_$key`.`match` > 0";
-                    $join['tag'][$key] = "$sql_match_operator '$input'";
-                break;
-                case 'rating':
-                    if ($this->type != "public") {
-                        $where[] = "COALESCE(`rating`.`rating`,0) $sql_match_operator '$input'";
-                    } else {
-                        $group[]  = "`artist`.`id`";
-                        $having[] = "ROUND(AVG(IFNULL(`rating`.`rating`,0))) $sql_match_operator '$input'";
-                    }
-                    $join['rating'] = true;
-                break;
-                case 'myrating':
-                    $where[]           = "COALESCE(`rating`.`rating`,0) $sql_match_operator '$input'";
-                    $join['myrating']  = true;
-                break;
-                case 'myplayed':
-                    $where[]              = "`object_count`.`date` IS NOT NULL";
-                    $join['object_count'] = true;
-                    break;
-                case 'last_play':
-                    $where[]              = "`object_count`.`date` IS NOT NULL AND `object_count`.`date` $sql_match_operator (UNIX_TIMESTAMP() - ($input * 86400))";
-                    $join['object_count'] = true;
-                    break;
-                default:
-                    // Nihil
-                break;
-            } // switch on ruletype
-        } // foreach rule
-
-        $join['song']    = $join['song'] || AmpConfig::get('catalog_disable');
-        $join['catalog'] = AmpConfig::get('catalog_disable');
-
-        $where_sql = implode(" $sql_logic_operator ", $where);
-
-        foreach ($join['tag'] as $key => $value) {
-            $table['tag_' . $key] =
-                "LEFT JOIN (" .
-                "SELECT `object_id`, COUNT(`name`) AS `match` " .
-                "FROM `tag` LEFT JOIN `tag_map` " .
-                "ON `tag`.`id`=`tag_map`.`tag_id` " .
-                "WHERE `tag_map`.`object_type`='artist' " .
-                "AND `tag`.`name` $value  GROUP BY `object_id`" .
-                ") AS realtag_$key " .
-                "ON `artist`.`id`=`realtag_$key`.`object_id`";
-        }
-
-        if ($join['song']) {
-            $table['song'] = "LEFT JOIN `song` ON `song`.`artist`=`artist`.`id`";
-
-            if ($join['catalog']) {
-                $table['catalog'] = "LEFT JOIN `catalog` AS `catalog_se` ON `catalog_se`.`id`=`song`.`catalog`";
-                $where_sql .= " AND `catalog_se`.`enabled` = '1'";
+            if ($limit && count($data) >= $limit) {
+                return array_slice($data, 0, $limit);
             }
         }
-        if ($join['rating']) {
-            $table['rating'] = "LEFT JOIN `rating` ON `rating`.`object_type`='artist' AND ";
-            if ($this->type != "public") {
-                $table['rating'] .= "`rating`.`user`='" . $userid . "' AND ";
-            }
-            $table['rating'] .= "`rating`.`object_id`=`artist`.`id`";
-        }
-        if ($join['myrating']) {
-            $table['rating'] = "LEFT JOIN `rating` ON `rating`.`object_type`='artist' AND ";
-            $table['rating'] .= "`rating`.`user`='" . $userid . "' AND ";
-            $table['rating'] .= "`rating`.`object_id`=`artist`.`id`";
-        }
-        if ($join['myplayed']) {
-            $table['object_count'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='artist' AND ";
-            $table['object_count'] .= "`object_count`.`user`='" . $userid . "' AND ";
-            $table['object_count'] .= "`object_count`.`object_id`=`artist`.`id`";
-        }
-        if ($join['object_count']) {
-            $table['object_count'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='artist' AND ";
-            $table['object_count'] .= "`object_count`.`user`='" . $userid . "' AND ";
-            $table['object_count'] .= "`object_count`.`object_id`=`artist`.`id`";
-        }
-        $table_sql  = implode(' ', $table);
-        $group_sql  = implode(', ', $group);
-        $having_sql = implode(" $sql_logic_operator ", $having);
 
-        return array(
-            'base' => 'SELECT DISTINCT(`artist`.`id`) FROM `artist`',
-            'join' => $join,
-            'where' => $where,
-            'where_sql' => $where_sql,
-            'table' => $table,
-            'table_sql' => $table_sql,
-            'group_sql' => $group_sql,
-            'having_sql' => $having_sql
-        );
+        return $data;
     }
 
     /**
-     * song_to_sql
-     * Handles the generation of the SQL for song searches.
+     * Gather tags from files.
+     * @param media $media
+     * @return array
      */
-    private function song_to_sql()
+    protected function gather_media_tags($media)
     {
-        $sql_logic_operator = $this->logic_operator;
-        $userid             = $GLOBALS['user']->id;
-
-        $where       = array();
-        $table       = array();
-        $join        = array();
-        $group       = array();
-        $having      = array();
-        $join['tag'] = array();
-
-        foreach ($this->rules as $rule) {
-            $type     = $this->name_to_basetype($rule[0]);
-            $operator = array();
-            foreach ($this->basetypes[$type] as $op) {
-                if ($op['name'] == $rule[1]) {
-                    $operator = $op;
-                    break;
-                }
-            }
-            $input              = $this->_mangle_data($rule[2], $type, $operator);
-            $sql_match_operator = $operator['sql'];
-
-            switch ($rule[0]) {
-                case 'anywhere':
-                    $where[]           = "(`artist`.`name` $sql_match_operator '$input' OR `album`.`name` $sql_match_operator '$input' OR `song_data`.`comment` $sql_match_operator '$input' OR `song_data`.`label` $sql_match_operator '$input' OR `song`.`file` $sql_match_operator '$input' OR `song`.`title` $sql_match_operator '$input')";
-                    $join['album']     = true;
-                    $join['artist']    = true;
-                    $join['song_data'] = true;
-                break;
-                case 'tag':
-                    $key               = md5($input . $sql_match_operator);
-                    $where[]           = "`realtag_$key`.`match` > 0";
-                    $join['tag'][$key] = "$sql_match_operator '$input'";
-                break;
-                case 'album_tag':
-                    $key                     = md5($input . $sql_match_operator);
-                    $where[]                 = "`realtag_$key`.`match` > 0";
-                    $join['album_tag'][$key] = "$sql_match_operator '$input'";
-                    $join['album']           = true;
-                break;
-                case 'title':
-                    $where[] = "`song`.`title` $sql_match_operator '$input'";
-                break;
-                case 'album':
-                    $where[]       = "`album`.`name` $sql_match_operator '$input'";
-                    $join['album'] = true;
-                break;
-                case 'artist':
-                    $where[]        = "`artist`.`name` $sql_match_operator '$input'";
-                    $join['artist'] = true;
-                break;
-                case 'composer':
-                    $where[] = "`song`.`composer` $sql_match_operator '$input'";
-                break;
-                case 'time':
-                    $input   = $input * 60;
-                    $where[] = "`song`.`time` $sql_match_operator '$input'";
-                break;
-                case 'file':
-                    $where[] = "`song`.`file` $sql_match_operator '$input'";
-                break;
-                case 'year':
-                    $where[] = "`song`.`year` $sql_match_operator '$input'";
-                break;
-                case 'comment':
-                    $where[]           = "`song_data`.`comment` $sql_match_operator '$input'";
-                    $join['song_data'] = true;
-                break;
-                case 'label':
-                    $where[]           = "`song_data`.`label` $sql_match_operator '$input'";
-                    $join['song_data'] = true;
-                break;
-                case 'played':
-                    $where[] = " `song`.`played` = '$sql_match_operator'";
-                break;
-                case 'myplayed':
-                    $where[]           = " `song`.`played` = '$sql_match_operator'";
-                    $join['myplayed']  = true;
-                break;
-                case 'myplayedalbum':
-                    $match = 'NOT IN';
-                    if ($sql_match_operator === '1') {
-                        $match = 'IN';
-                    }
-                    $where[] = "`song`.`album` $match (SELECT `object_count`.`object_id` FROM `object_count` " .
-                               "WHERE `object_count`.`object_type` = 'album') ";
-                    break;
-                case 'myplayedartist':
-                    $match = 'NOT IN';
-                    if ($sql_match_operator === '1') {
-                        $match = 'IN';
-                    }
-                    $where[] = "`song`.`artist` $match (SELECT `object_count`.`object_id` FROM `object_count` " .
-                               "WHERE `object_count`.`object_type` = 'artist') ";
-                    break;
-                case 'bitrate':
-                    $input   = $input * 1000;
-                    $where[] = "`song`.`bitrate` $sql_match_operator '$input'";
-                break;
-                case 'rating':
-                    if ($this->type != "public") {
-                        $where[] = "COALESCE(`rating`.`rating`,0) $sql_match_operator '$input'";
-                    } else {
-                        $group[]  = "`song`.`id`";
-                        $having[] = "ROUND(AVG(IFNULL(`rating`.`rating`,0))) $sql_match_operator '$input'";
-                    }
-                    $join['rating'] = true;
-                break;
-                case 'favorite':
-                    $join['user_flag']  = true;
-                    $where[]            = "`song`.`title` $sql_match_operator '$input' AND `user_flag`.`user` = $userid";
-                    $where[] .= "`user_flag`.`object_type` = 'song'";
-                break;
-                case 'myrating':
-                    #$where[]           = "COALESCE(`rating`.`rating`,0) $sql_match_operator '$input'";
-                    $group[]           = "`song`.`id`";
-                    $having[]          = "ROUND(AVG(IFNULL(`rating`.`rating`,0))) $sql_match_operator '$input'";
-                    $join['myrating']  = true;
-                break;
-                case 'albumrating':
-                    $where[] = "`song`.`album` IN (SELECT `rating`.`object_id` FROM `rating` " .
-                               "WHERE COALESCE(`rating`.`rating`,0) $sql_match_operator '$input' AND " .
-                               "`rating`.`object_type` = 'album') ";
-                break;
-                case 'artistrating':
-                    $where[] = "`song`.`artist` IN (SELECT `rating`.`object_id` FROM `rating` " .
-                               "WHERE COALESCE(`rating`.`rating`,0) $sql_match_operator '$input' AND " .
-                               "`rating`.`object_type` = 'artist') ";
-                break;
-                case 'last_play':
-                    $where[]              = "`object_count`.`date` IS NOT NULL AND `object_count`.`date` $sql_match_operator (UNIX_TIMESTAMP() - ($input * 86400))";
-                    $join['object_count'] = true;
-                    break;
-                case 'played_times':
-                    $where[] = "`song`.`id` IN (SELECT `object_count`.`object_id` FROM `object_count` " .
-                        "WHERE `object_count`.`object_type` = 'song' AND `object_count`.`count_type` = 'stream' " .
-                        "GROUP BY `object_count`.`object_id` HAVING COUNT(*) $sql_match_operator '$input')";
-                break;
-                case 'catalog':
-                    $where[] = "`song`.`catalog` $sql_match_operator '$input'";
-                break;
-                case 'playlist_name':
-                    $join['playlist']      = true;
-                    $join['playlist_data'] = true;
-                    $where[]               = "`playlist`.`name` $sql_match_operator '$input'";
-                break;
-                case 'playlist':
-                    $join['playlist_data'] = true;
-                    $where[]               = "`playlist_data`.`playlist` $sql_match_operator '$input'";
-                break;
-                case 'smartplaylist':
-                    $subsearch = new Search($input, 'song');
-                    $subsql    = $subsearch->to_sql();
-                    $where[]   = "$sql_match_operator (" . $subsql['where_sql'] . ")";
-                    // HACK: array_merge would potentially lose tags, since it
-                    // overwrites. Save our merged tag joins in a temp variable,
-                    // even though that's ugly.
-                    $tagjoin     = array_merge($subsql['join']['tag'], $join['tag']);
-                    $join        = array_merge($subsql['join'], $join);
-                    $join['tag'] = $tagjoin;
-                break;
-                case 'license':
-                    $where[] = "`song`.`license` $sql_match_operator '$input'";
-                break;
-                case 'added':
-                    $input   = strtotime($input);
-                    $where[] = "`song`.`addition_time` $sql_match_operator $input";
-                break;
-                case 'updated':
-                    $input   = strtotime($input);
-                    $where[] = "`song`.`update_time` $sql_match_operator $input";
-                    break;
-                case 'metadata':
-                    // Need to create a join for every field so we can create and / or queries with only one table
-                    $tableAlias         = 'metadata' . uniqid();
-                    $field              = (int) $rule[3];
-                    $join[$tableAlias]  = true;
-                    $parsedInput        = is_numeric($input) ? $input : '"' . $input . '"';
-                    $where[]            = "(`$tableAlias`.`field` = {$field} AND `$tableAlias`.`data` $sql_match_operator $parsedInput)";
-                    $table[$tableAlias] = 'LEFT JOIN `metadata` AS ' . $tableAlias . ' ON `song`.`id` = `' . $tableAlias . '`.`object_id`';
-                    break;
-                default:
-                    // NOSSINK!
-                break;
-            } // switch on type
-        } // foreach over rules
-
-        $join['catalog'] = AmpConfig::get('catalog_disable');
-
-        $where_sql = implode(" $sql_logic_operator ", $where);
-
-        // now that we know which things we want to JOIN...
-        if ($join['artist']) {
-            $table['artist'] = "LEFT JOIN `artist` ON `song`.`artist`=`artist`.`id`";
-        }
-        if ($join['album']) {
-            $table['album'] = "LEFT JOIN `album` ON `song`.`album`=`album`.`id`";
-        }
-        if ($join['song_data']) {
-            $table['song_data'] = "LEFT JOIN `song_data` ON `song`.`id`=`song_data`.`song_id`";
-        }
-        if ($join['tag']) {
-            foreach ($join['tag'] as $key => $value) {
-                $table['tag_' . $key] =
-                    "LEFT JOIN (" .
-                    "SELECT `object_id`, COUNT(`name`) AS `match` " .
-                    "FROM `tag` LEFT JOIN `tag_map` " .
-                    "ON `tag`.`id`=`tag_map`.`tag_id` " .
-                    "WHERE `tag_map`.`object_type`='song' " .
-                    "AND `tag`.`name` $value GROUP BY `object_id`" .
-                    ") AS realtag_$key " .
-                    "ON `song`.`id`=`realtag_$key`.`object_id`";
-            }
-        }
-        if ($join['album_tag']) {
-            foreach ($join['album_tag'] as $key => $value) {
-                $table['tag_' . $key] =
-                    "LEFT JOIN (" .
-                    "SELECT `object_id`, COUNT(`name`) AS `match` " .
-                    "FROM `tag` LEFT JOIN `tag_map` " .
-                    "ON `tag`.`id`=`tag_map`.`tag_id` " .
-                    "WHERE `tag_map`.`object_type`='album' " .
-                    "AND `tag`.`name` $value  GROUP BY `object_id`" .
-                    ") AS realtag_$key " .
-                    "ON `album`.`id`=`realtag_$key`.`object_id`";
-            }
-        }
-        if ($join['rating']) {
-            $table['rating'] = "LEFT JOIN `rating` ON `rating`.`object_type`='song' AND ";
-            if ($this->type != "public") {
-                $table['rating'] .= "`rating`.`user`='" . $userid . "' AND ";
-            }
-            $table['rating'] .= "`rating`.`object_id`=`song`.`id`";
+        $mtype  = strtolower(get_class($media));
+        $data   = array();
+        $getID3 = new getID3();
+        try {
+            $id3 = $getID3->analyze($media->file);
+        } catch (Exception $error) {
+            debug_event('getid3', $error->getMessage(), 1);
         }
 
-        if ($join['user_flag']) {
-            $table['user_flag']  = "LEFT JOIN `user_flag` ON `song`.`id`=`user_flag`.`object_id` ";
+        if (isset($id3['asf']['extended_content_description_object']['content_descriptors']['13'])) {
+            $image  = $id3['asf']['extended_content_description_object']['content_descriptors']['13'];
+            $data[] = array(
+                $mtype => $media->file,
+                'raw' => $image['data'],
+                'mime' => $image['mime'],
+                'title' => 'ID3');
         }
-        if ($join['myrating']) {
-            $table['rating'] = "LEFT JOIN `rating` ON `rating`.`object_type`='song' AND ";
-            $table['rating'] .= "`rating`.`user`='" . $userid . "' AND ";
-            $table['rating'] .= "`rating`.`object_id`=`song`.`id`";
-        }
-        if ($join['object_count']) {
-            $table['object_count'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='song' AND ";
-            $table['object_count'] .= "`object_count`.`user`='" . $userid . "' AND ";
-            $table['object_count'] .= "`object_count`.`object_id`=`song`.`id`";
-        }
-        if ($join['myplayed']) {
-            $table['object_count'] = "LEFT JOIN `object_count` ON `object_count`.`object_type`='song' AND ";
-            $table['object_count'] .= "`object_count`.`user`='" . $userid . "' AND ";
-            $table['object_count'] .= "`object_count`.`object_id`=`song`.`id`";
-        }
-        if ($join['playlist_data']) {
-            $table['playlist_data'] = "LEFT JOIN `playlist_data` ON `song`.`id`=`playlist_data`.`object_id` AND `playlist_data`.`object_type`='song'";
-            if ($join['playlist']) {
-                $table['playlist'] = "LEFT JOIN `playlist` ON `playlist_data`.`playlist`=`playlist`.`id`";
+
+        if (isset($id3['id3v2']['APIC'])) {
+            // Foreach in case they have more then one
+            foreach ($id3['id3v2']['APIC'] as $image) {
+                $data[] = array(
+                    $mtype => $media->file,
+                    'raw' => $image['data'],
+                    'mime' => $image['mime'],
+                    'title' => 'ID3');
             }
         }
 
-        if ($join['catalog']) {
-            $table['catalog'] = "LEFT JOIN `catalog` AS `catalog_se` ON `catalog_se`.`id`=`song`.`catalog`";
-            $where_sql .= " AND `catalog_se`.`enabled` = '1'";
+        if (isset($id3['comments']['picture']['0'])) {
+            $image  = $id3['comments']['picture']['0'];
+            $data[] = array(
+                $mtype => $media->file,
+                'raw' => $image['data'],
+                'mime' => $image['image_mime'],
+                'title' => 'ID3');
+
+            return $data;
         }
 
-        $table_sql  = implode(' ', $table);
-        $group_sql  = implode(', ', $group);
-        $having_sql = implode(" $sql_logic_operator ", $having);
-
-        debug_event('search', "SQL song_to_sql: SELECT DISTINCT(`song`.`id`) FROM `song` " .
-                    " join =>" . $join .
-                    " where =>" . $where .
-                    " where_sql =>" . $where_sql .
-                    " table =>" . $table .
-                    " table_sql =>" . $table_sql .
-                    " group_sql =>" . $group_sql .
-                    " having_sql =>" . $having_sql, 5);
-
-        return array(
-            'base' => 'SELECT DISTINCT(`song`.`id`) FROM `song`',
-            'join' => $join,
-            'where' => $where,
-            'where_sql' => $where_sql,
-            'table' => $table,
-            'table_sql' => $table_sql,
-            'group_sql' => $group_sql,
-            'having_sql' => $having_sql
-        );
-        ;
+        return $data;
     }
 
     /**
-     * playlist_to_sql
+     * gather_google
+     * Raw google search to retrieve the art, not very reliable
      *
-     * Handles the generation of the SQL for playlist searches.
+     * @param int $limit
+     * @param array $data
+     * @return array
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    private function playlist_to_sql()
+    public function gather_google($limit = 5, $data = array())
     {
-        $sql_logic_operator = $this->logic_operator;
-        $where              = array();
-        $table              = array();
-        $join               = array();
-        $group              = array();
-        $having             = array();
+        if (!$limit) {
+            $limit = 5;
+        }
 
-        foreach ($this->rules as $rule) {
-            $type     = $this->name_to_basetype($rule[0]);
-            $operator = array();
-            foreach ($this->basetypes[$type] as $op) {
-                if ($op['name'] == $rule[1]) {
-                    $operator = $op;
-                    break;
+        $images = array();
+        $search = rawurlencode($data['keyword']);
+        $size   = '&imgsz=m'; // Medium
+
+        $url = "http://www.google.com/search?source=hp&tbm=isch&q=" . $search . "&oq=&um=1&ie=UTF-8&sa=N&tab=wi&start=0&tbo=1" . $size;
+        debug_event('Art', 'Search url: ' . $url, '5');
+
+        try {
+            // Need this to not be considered as a bot (are we? ^^)
+            $headers = array(
+                'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0',
+            );
+
+            $query = Requests::get($url, $headers, Core::requests_options());
+            $html  = $query->body;
+
+            if (preg_match_all('/"ou":"(http.+?)"/', $html, $matches, PREG_PATTERN_ORDER)) {
+                foreach ($matches[1] as $match) {
+                    $match = rawurldecode($match);
+                    debug_event('Art', 'Found image at: ' . $match, '5');
+                    $results = pathinfo($match);
+                    $test    = $results['extension'];
+                    $pos     = strpos($test, '?');
+                    if ($pos > 0) {
+                        $results['extension'] = substr($test, 0, $pos);
+                    }
+                    if (preg_match('~[^png|^jpg|^jpeg|^jif|^bmp]~', $test)) {
+                        $results['extension'] = 'jpg';
+                    }
+
+                    $mime = 'image/';
+                    $mime .= isset($results['extension']) ? $results['extension'] : 'jpeg';
+
+                    $images[] = array('url' => $match, 'mime' => $mime, 'title' => 'Google');
+                    if ($limit > 0 && count($images) >= $limit) {
+                        break;
+                    }
                 }
             }
-            $input              = $this->_mangle_data($rule[2], $type, $operator);
-            $sql_match_operator = $operator['sql'];
-
-            $where[] = "`playlist`.`type` = 'public'";
-
-            switch ($rule[0]) {
-                case 'name':
-                    $where[] = "`playlist`.`name` $sql_match_operator '$input'";
-                break;
-                default:
-                    // Nihil
-                break;
-            } // switch on ruletype
-        } // foreach rule
-
-        $join['playlist_data'] = true;
-        $join['song']          = $join['song'] || AmpConfig::get('catalog_disable');
-        $join['catalog']       = AmpConfig::get('catalog_disable');
-
-        $where_sql = implode(" $sql_logic_operator ", $where);
-
-        if ($join['playlist_data']) {
-            $table['playlist_data'] = "LEFT JOIN `playlist_data` ON `playlist_data`.`playlist` = `playlist`.`id`";
+        } catch (Exception $e) {
+            debug_event('Art', 'Error getting google images: ' . $e->getMessage(), '1');
         }
 
-        if ($join['song']) {
-            $table['song'] = "LEFT JOIN `song` ON `song`.`id`=`playlist_data`.`object_id`";
-            $where_sql .= " AND `playlist_data`.`object_type` = 'song'";
+        return $images;
+    }
+    // gather_google
 
-            if ($join['catalog']) {
-                $table['catalog'] = "LEFT JOIN `catalog` AS `catalog_se` ON `catalog_se`.`id`=`song`.`catalog`";
-                $where_sql .= " AND `catalog_se`.`enabled` = '1'";
+    /**
+     * gather_lastfm
+     * This returns the art from lastfm. It doesn't currently require an
+     * account but may in the future.
+     * @param int $limit
+     * @param array $data
+     * @return array
+     */
+    public function gather_lastfm($limit = 5, $data = array())
+    {
+        if (!$limit) {
+            $limit = 5;
+        }
+
+        $images = array();
+
+        if ($this->type != 'album' || empty($data['artist']) || empty($data['album'])) {
+            return $images;
+        }
+
+        try {
+            $xmldata = Recommendation::album_search($data['artist'], $data['album']);
+
+            if (!count($xmldata)) {
+                return array();
             }
+
+            $xalbum = $xmldata->album;
+            if (!$xalbum) {
+                return array();
+            }
+
+            $coverart = (array) $xalbum->image;
+            if (empty($coverart)) {
+                return array();
+            }
+
+            ksort($coverart);
+            foreach ($coverart as $url) {
+                // We need to check the URL for the /noimage/ stuff
+                if (is_array($url) || strpos($url, '/noimage/') !== false) {
+                    debug_event('LastFM', 'Detected as noimage, skipped ' . $url, 3);
+                    continue;
+                }
+
+                // HACK: we shouldn't rely on the extension to determine file type
+                $results  = pathinfo($url);
+                $mime     = 'image/' . $results['extension'];
+                $images[] = array('url' => $url, 'mime' => $mime, 'title' => 'LastFM');
+                if ($limit && count($images) >= $limit) {
+                    return $images;
+                }
+            } // end foreach
+        } catch (Exception $e) {
+            debug_event('art', 'LastFM error: ' . $e->getMessage(), 5);
         }
 
-        $table_sql  = implode(' ', $table);
-        $group_sql  = implode(', ', $group);
-        $having_sql = implode(" $sql_logic_operator ", $having);
+        return $images;
+    }
+    // gather_lastfm
 
-        return array(
-            'base' => 'SELECT DISTINCT(`playlist`.`id`) FROM `playlist`',
-            'join' => $join,
-            'where' => $where,
-            'where_sql' => $where_sql,
-            'table' => $table,
-            'table_sql' => $table_sql,
-            'group_sql' => $group_sql,
-            'having_sql' => $having_sql
-        );
+    /**
+     * Gather metadata from plugin.
+     * @param string $type
+     * @param array $options
+     * @return array
+     */
+    public static function gather_metadata_plugin($plugin, $type, $options)
+    {
+        $gtypes     = array();
+        $media_info = array();
+        switch ($type) {
+            case 'song':
+                $media_info['mb_trackid'] = $options['mb_trackid'];
+                $media_info['title']      = $options['title'];
+                $media_info['artist']     = $options['artist'];
+                $media_info['album']      = $options['album'];
+                $gtypes[]                 = 'song';
+                break;
+            case 'album':
+                $media_info['mb_albumid']       = $options['mb_albumid'];
+                $media_info['mb_albumid_group'] = $options['mb_albumid_group'];
+                $media_info['artist']           = $options['artist'];
+                $media_info['title']            = $options['album'];
+                $gtypes[]                       = 'music';
+                $gtypes[]                       = 'album';
+                break;
+            case 'artist':
+                $media_info['mb_artistid'] = $options['mb_artistid'];
+                $media_info['title']       = $options['artist'];
+                $gtypes[]                  = 'music';
+                $gtypes[]                  = 'artist';
+                break;
+        }
+
+        $meta   = $plugin->get_metadata($gtypes, $media_info);
+        $images = array();
+
+        if ($meta['art']) {
+            $url      = $meta['art'];
+            $ures     = pathinfo($url);
+            $images[] = array('url' => $url, 'mime' => 'image/' . $ures['extension'], 'title' => $plugin->name);
+        }
+
+        return $images;
     }
 
     /**
-     * label_to_sql
-     *
-     * Handles the generation of the SQL for label searches.
+     * Get thumb size from thumb type.
+     * @param int $thumb
+     * @return array
      */
-    private function label_to_sql()
+    public static function get_thumb_size($thumb)
     {
-        $sql_logic_operator = $this->logic_operator;
-        $where              = array();
-        $table              = array();
-        $join               = array();
+        $size = array();
 
-        foreach ($this->rules as $rule) {
-            $type     = $this->name_to_basetype($rule[0]);
-            $operator = array();
-            foreach ($this->basetypes[$type] as $op) {
-                if ($op['name'] == $rule[1]) {
-                    $operator = $op;
-                    break;
-                }
-            }
-            $input              = $this->_mangle_data($rule[2], $type, $operator);
-            $sql_match_operator = $operator['sql'];
-
-            switch ($rule[0]) {
-                case 'name':
-                    $where[] = "`label`.`name` $sql_match_operator '$input'";
+        switch ($thumb) {
+            case 1:
+                /* This is used by the now_playing / browse stuff */
+                $size['height'] = 100;
+                $size['width']  = 100;
                 break;
-                case 'category':
-                    $where[] = "`label`.`category` $sql_match_operator '$input'";
+            case 2:
+                $size['height'] = 128;
+                $size['width']  = 128;
                 break;
-                default:
-                    // Nihil
+            case 3:
+                /* This is used by the embedded web player */
+                $size['height'] = 80;
+                $size['width']  = 80;
                 break;
-            } // switch on ruletype
-        } // foreach rule
+            case 5:
+                /* Web Player size */
+                $size['height'] = 32;
+                $size['width']  = 32;
+                break;
+            case 10:
+                /* Search preview size */
+                $size['height'] = 24;
+                $size['width']  = 24;
+                break;
+            case 4:
+            /* Popup Web Player size */
+            case 11:
+            /* Large view browse size */
+            case 12:
+                $size['height'] = 256;
+                $size['width']  = 256;
+                break;
+            case 13:
+                $size['height'] = 300;
+                $size['width']  = 300;
+                break;
+            default:
+                $size['height'] = 200;
+                $size['width']  = 200;
+                break;
+        }
 
-        $where_sql = implode(" $sql_logic_operator ", $where);
-
-        return array(
-            'base' => 'SELECT DISTINCT(`label`.`id`) FROM `label`',
-            'join' => $join,
-            'where' => $where,
-            'where_sql' => $where_sql,
-            'table' => $table,
-            'table_sql' => '',
-            'group_sql' => '',
-            'having_sql' => ''
-        );
+        return $size;
     }
 
     /**
-     * user_to_sql
-     *
-     * Handles the generation of the SQL for user searches.
+     * Display an item art.
+     * @param library_item $item
+     * @param int $thumb
+     * @param string $link
+     * @return boolean
      */
-    private function user_to_sql()
+    public static function display_item($item, $thumb, $link = null)
     {
-        $sql_logic_operator = $this->logic_operator;
-        $where              = array();
-        $table              = array();
-        $join               = array();
+        return self::display($item->type ?: strtolower(get_class($item)), $item->id, $item->get_fullname(), $thumb, $link);
+    }
 
-        foreach ($this->rules as $rule) {
-            $type     = $this->name_to_basetype($rule[0]);
-            $operator = array();
-            foreach ($this->basetypes[$type] as $op) {
-                if ($op['name'] == $rule[1]) {
-                    $operator = $op;
-                    break;
-                }
+    /**
+     * Display an item art.
+     * @param string $object_type
+     * @param int $object_id
+     * @param string $name
+     * @param int $thumb
+     * @param string $link
+     * @param boolean $show_default
+     * @param string $kind
+     * @return boolean
+     */
+    public static function display($object_type, $object_id, $name, $thumb, $link = null, $show_default = true, $kind = 'default')
+    {
+        if (!self::is_valid_type($object_type)) {
+            return false;
+        }
+
+        if (!$show_default) {
+            // Don't show any image if not available
+            if (!self::has_db($object_id, $object_type, $kind)) {
+                return false;
             }
-            $input              = $this->_mangle_data($rule[2], $type, $operator);
-            $sql_match_operator = $operator['sql'];
+        }
+        $size        = self::get_thumb_size($thumb);
+        $prettyPhoto = ($link === null);
+        if ($link === null) {
+            $link = AmpConfig::get('web_path') . "/image.php?object_id=" . $object_id . "&object_type=" . $object_type;
+            if (AmpConfig::get('use_auth') && AmpConfig::get('require_session')) {
+                $link .= "&auth=" . session_id();
+            }
+            if ($kind != 'default') {
+                $link .= '&kind=' . $kind;
+            }
+        }
+        echo "<div class=\"item_art\">";
+        echo "<a href=\"" . $link . "\" title=\"" . $name . "\"";
+        if ($prettyPhoto) {
+            echo " rel=\"prettyPhoto\"";
+        }
+        echo ">";
+        $imgurl = AmpConfig::get('web_path') . "/image.php?object_id=" . $object_id . "&object_type=" . $object_type . "&thumb=" . $thumb;
+        if ($kind != 'default') {
+            $imgurl .= '&kind=' . $kind;
+        }
+        // This to keep browser cache feature but force a refresh in case image just changed
+        if (self::has_db($object_id, $object_type)) {
+            $art = new Art($object_id, $object_type);
+            if ($art->get_db()) {
+                $imgurl .= '&fooid=' . $art->id;
+            }
+        }
+        echo "<img src=\"" . $imgurl . "\" alt=\"" . $name . "\" height=\"" . $size['height'] . "\" width=\"" . $size['width'] . "\" />";
 
-            switch ($rule[0]) {
-                case 'username':
-                    $where[] = "`user`.`username` $sql_match_operator '$input'";
-                break;
-                default:
-                    // Nihil
-                break;
-            } // switch on ruletype
-        } // foreach rule
+        if ($size['height'] > 150) {
+            echo "<div class=\"item_art_play\">";
+            echo Ajax::text('?page=stream&action=directplay&object_type=' . $object_type . '&object_id=' . $object_id . '\' + getPagePlaySettings() + \'', '<span class="item_art_play_icon" title="' . T_('Play') . '" />', 'directplay_art_' . $object_type . '_' . $object_id);
+            echo "</div>";
+        }
 
-        $where_sql = implode(" $sql_logic_operator ", $where);
+        if ($prettyPhoto) {
+            $libitem = new $object_type($object_id);
+            echo "<div class=\"item_art_actions\">";
+            if ($GLOBALS['user']->has_access(50) || ($GLOBALS['user']->has_access(25) && $GLOBALS['user']->id == $libitem->get_user_owner())) {
+                echo "<a href=\"javascript:NavigateTo('" . AmpConfig::get('web_path') . "/arts.php?action=find_art&object_type=" . $object_type . "&object_id=" . $object_id . "&burl=' + getCurrentPage());\">";
+                echo UI::get_icon('edit', T_('Edit/Find Art'));
+                echo "</a>";
 
-        return array(
-            'base' => 'SELECT DISTINCT(`user`.`id`) FROM `user`',
-            'join' => $join,
-            'where' => $where,
-            'where_sql' => $where_sql,
-            'table' => $table,
-            'table_sql' => '',
-            'group_sql' => '',
-            'having_sql' => ''
-        );
+                echo "<a href=\"javascript:NavigateTo('" . AmpConfig::get('web_path') . "/arts.php?action=clear_art&object_type=" . $object_type . "&object_id=" . $object_id . "&burl=' + getCurrentPage());\" onclick=\"return confirm('" . T_('Do you really want to reset art?') . "');\">";
+                echo UI::get_icon('delete', T_('Reset Art'));
+                echo "</a>";
+            }
+            echo"</div>";
+        }
+
+        echo "</a>\n";
+        echo "</div>";
+
+        return true;
     }
 }
+
+// Art
