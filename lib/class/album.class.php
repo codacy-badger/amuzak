@@ -1111,8 +1111,18 @@ class Album extends database_object implements library_item
             $sql .= "LEFT JOIN `image` ON (`image`.`object_type` = 'album' AND `image`.`object_id` = `album`.`id`) ";
             $where .= "AND `image`.`id` IS NOT NULL ";
         }
-
         $sql .= $where;
+
+        $rating_filter = AmpConfig::get_rating_filter();
+        if ($rating_filter > 0 && $rating_filter <= 5) {
+            $user_id = $GLOBALS['user']->id;
+            $sql .= " AND `album`.`id` NOT IN" .
+                    " (SELECT `object_id` FROM `rating`" .
+                    " WHERE `rating`.`object_type` = 'album'" .
+                    " AND `rating`.`rating` <=" . $rating_filter .
+                    " AND `rating`.`user` = " . $user_id . ")";
+        }
+
         $sql .= "ORDER BY RAND() LIMIT " . intval($count);
         $db_results = Dba::read($sql);
 
