@@ -446,14 +446,14 @@ class Plex_Api
     }
 
     public static $request_headers = array();
-    public static function request_output_header($ch, $header)
+    public static function request_output_header($curl, $header)
     {
         self::$request_headers[] = $header;
 
         return strlen($header);
     }
 
-    public static function replay_header($ch, $header)
+    public static function replay_header($curl, $header)
     {
         $rheader = trim($header);
         $rhpart  = explode(':', $rheader);
@@ -466,10 +466,10 @@ class Plex_Api
         return strlen($header);
     }
 
-    public static function replay_body($ch, $data)
+    public static function replay_body($curl, $data)
     {
         if (connection_status() != 0) {
-            curl_close($ch);
+            curl_close($curl);
             debug_event('plex', 'Stream cancelled.', 5);
 
             return false;
@@ -522,7 +522,7 @@ class Plex_Api
         $curlres       = curl_exec($curl);
         $res           = array();
         $res['status'] = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        curl_close($ch);
+        curl_close($curl);
         $res['headers'] = self::$request_headers;
         $res['raw']     = $curlres;
         try {
@@ -1083,8 +1083,8 @@ class Plex_Api
         debug_event('plex-api', 'Stream proxy: ' . $url, 5);
         // header("Location: " . $url);
 
-        $ch = curl_init($url);
-        curl_setopt_array($ch, array(
+        $curl = curl_init($url);
+        curl_setopt_array($curl, array(
             CURLOPT_HTTPHEADER => $reqheaders,
             CURLOPT_HEADER => false,
             CURLOPT_CONNECTTIMEOUT => 2,
@@ -1096,10 +1096,10 @@ class Plex_Api
             CURLOPT_SSL_VERIFYHOST => false,
             CURLOPT_TIMEOUT => 0
         ));
-        if (curl_exec($ch) === false) {
-            debug_event('plex-api', 'Curl error: ' . curl_error($ch), 1);
+        if (curl_exec($curl) === false) {
+            debug_event('plex-api', 'Curl error: ' . curl_error($curl), 1);
         }
-        curl_close($ch);
+        curl_close($curl);
     }
 
     public static function library_parts($params)
