@@ -3,10 +3,12 @@ CHANGELOG
 
 4.0.8
 ----------
+
 - Searching bugfixes, much faster smart lists for the larger search types.
 
 4.0.7
 ----------
+
 - Restored localplay and modules
 - New search options and sped up the actual searching a bit.
 - Reduced the minimum size of tables for small devices so they don't disappear
@@ -19,6 +21,7 @@ CHANGELOG
 
 4.0.6
 ----------
+
 - Remove reborn theme and point to reZak
 - Make the light theme usable
 - Add light loader images to light theme
@@ -31,9 +34,9 @@ CHANGELOG
 - Removed as much video code as possible
 - Bugfix parse large XML files
 
-=======
 4.0.5
 ----------
+
 - Add a system option 'autoupdate_develop' to allow you to stay on develop branch.
 - Make popular check your user, trending is everyone.
 - Scrutinizer patches and fix warnings
@@ -42,6 +45,7 @@ CHANGELOG
 
 4.0.4
 ----------
+
 - Add a default user picture for users with no avatar
 - Point auto update URL to aMuzak repo
 - Delete plugins for google+ and friends timeline
@@ -51,6 +55,7 @@ CHANGELOG
 
 4.0.3
 ----------
+
 - Moved translations and CI integrations.
 - Used Google Translate Cloud API to translate files (PLEASE HELP VERIFY!)
 - Added en_AU (Yes, it's different to en_GB)
@@ -63,6 +68,7 @@ CHANGELOG
 
 4.0.2
 ----------
+
 - Update header and theme slightly
 - Added CI tools from ampache into amuzak
 - Merge ampache/pull/1498
@@ -70,6 +76,7 @@ CHANGELOG
 
 4.0.1
 ----------
+
 - Rename ampache.cfg.php.dist to amuzak.cfg.php.dist
 - Fix always show temp playlist (rightbar)
 - Fix stop browsers blocking audio playback without user interaction.
@@ -77,6 +84,7 @@ CHANGELOG
 
 4.0.0
 ----------
+
 - Fork Ampache to aMuzak
 - Merge multiple open pull requests from Ampache
 - Remove allow_video
@@ -97,6 +105,7 @@ CHANGELOG
 
 3.9.1
 ----------
+
 - Fixed Beets catalog creation and updating.
 - Autoupdate now ignores pre-release (preview) versions.
 - Fixed various command ine utilities in bin folder.
@@ -105,6 +114,7 @@ CHANGELOG
 
 3.9.0
 ----------
+
 - Video details now correctly displayed for personal video.
 - XML API now fully accepts user's API key. Session will be extended if it exists; Otherwise it's replaced.
 - Artist name added to Lastfm track.getsimilar query.
@@ -116,6 +126,7 @@ CHANGELOG
 
 3.8.9
 ----------
+
 - Improved display of artist summary on web page.
 - Fixed uploading of avatar.
 - DSub now writes the correct extension when the ampache config switch `encode_player_api_target` is enabled.
@@ -124,6 +135,7 @@ CHANGELOG
 
 3.8.8
 ----------
+
 - Subsonic API now removes illegal characters before returning text.
 - Removed hardcoded access level to allow guests to stream audio.
 - Guest accounts can now access songs and public playlists.
@@ -132,6 +144,7 @@ CHANGELOG
 
 3.8.7
 ----------
+
 - Better able to clean up image extentions when gathering art from remote sites.
 - Check for B.O.M. (\xff\xfe) only in mp3 composer tag and remove.
 - Added .ogv encoding target for more efficient streaming of mkv files.
@@ -147,6 +160,7 @@ CHANGELOG
 
 3.8.6
 ----------
+
 - Updated Subsonic Remote Catalog Module to version 2.
 - Subsonic Catalog now grabs artwork directly from the subsonic server.
 - Various fixes to Subsonic Catalog and Subsonic API.
@@ -157,6 +171,7 @@ CHANGELOG
 
 3.8.5
 ----------
+
 - Added search capability for user's own ratings option for Song, Artist, Album search.
 - Clean process now removes empty albums.
 - Further translation updates and fixes.
@@ -171,6 +186,7 @@ CHANGELOG
 
 3.8.4
 ----------
+
 - Subsonic catalog now displays album art and artist bio.
 - Artist info now displays in Ampache's installed language.
 - Updated translations.
@@ -188,6 +204,7 @@ CHANGELOG
 
 3.8.3
 ----------
+
 - Fixed upload problem
 - Fixed charting problem
 - Updated composer dependencies
@@ -224,6 +241,7 @@ CHANGELOG
 
 3.8.2
 ----------
+
 - Fixed potential security vulnerability on smartplaylist search rule and catalog management actions (thanks Roman Ammann)
 - Fixed song comparison issue on arrays (genre ...) when updating from tag
 - Fixed song insertion issue if track year is out of range
@@ -258,6 +276,7 @@ CHANGELOG
 
 3.8.1
 ----------
+
 - Fixed PHP7 Error class conflict (thanks trampi)
 - Fixed user password with special characters at install time (thanks jagerman)
 - Moved Ampache project license from GPLv2 to AGPLv3
@@ -316,6 +335,7 @@ CHANGELOG
 
 3.8.0
 ----------
+
 - Added Portuguese (Brasil) language (thanks Ione Souza Junior)
 - Updated PHPMailer version to 5.2.10
 - Fixed user stats clear
@@ -516,6 +536,7 @@ CHANGELOG
 
 3.7.0
 ----------
+
 - Added Scrutinizer analyze
 - Fixed playlist play with disabled songs (reported by stebe)
 - Improved user auto-registration to optionally avoid email validation
@@ -638,6 +659,7 @@ CHANGELOG
 
 3.6-FUTURE
 ----------
+
 - Fixed issue with long session IDs that affected OS X Mavericks and possibly
   other newer PHP installations (reported by yebo29)
 - Fixed some sort issues (patch by Afterster)
@@ -652,6 +674,7 @@ CHANGELOG
 
 3.6-alpha6 *2013-05-30*
 -----------------------
+
 - Fixed date searches using 'before' to use the correct comparison
   (patch by thinca)
 - Fixed long-standing issue affecting Synology users (patch by NigridsVa)
@@ -673,6 +696,7 @@ CHANGELOG
 
 3.6-alpha5 *2013-04-15*
 ----------------------
+
 - Fixed persistent XSS vulnerability in user self-editing (reported by
   Jean-Lou Hau)
 - Fixed persistent XSS vulnerabilities in AJAX object editing (reported by
@@ -709,6 +733,7 @@ CHANGELOG
 
 3.6-Alpha4 *2012-11-27*
 -----------------------
+
 - Removed lyric support, which was broken and ugly
 - Removed tight coupling to the PHP mysql extension
 - Fixed an issue with adding catalogs on Windows caused by inconsistent
@@ -716,6 +741,7 @@ CHANGELOG
 
 3.6-Alpha3 *2012-10-15*
 -----------------------
+
 - Updated getID3 to 1.9.4b1
 - Removed support for extremely old passwords
 - Playlists imported from M3U now retain their ordering
@@ -727,6 +753,7 @@ CHANGELOG
 
 3.6-Alpha2 *2012-08-15*
 -----------------------
+
 - Fixed CLI database load to work regardless of whether it's run from
   the top-level directory (reported by porthose)
 - Fixed XML cleanup to work with newer versions of libpcre
@@ -791,6 +818,7 @@ CHANGELOG
 
 3.6-Alpha1 *2011-04-27*
 -----------------------
+
 - Fixed forced transcoding
 - Fixed display during catalog updates (reported by Demonic)
 - Fixed duplicate searching (patch from Demonic)
@@ -895,6 +923,7 @@ CHANGELOG
 
 3.5 *2009-05-05*
 ----------------
+
 - Added complete Czech translation (Thx martin hason)
 - Add the AlmightyOatmeal-Sanity check to prevent a clean from
   removing all songs if your mount failed, but is still
@@ -940,6 +969,7 @@ CHANGELOG
 
 3.5-Beta1 *2009-03-15*
 ----------------------
+
 - Add democratic methods to api, can now vote, devote, get url
   and the current democratic playlist through the api
 - Revert to old Random Play method
@@ -974,6 +1004,7 @@ CHANGELOG
 
 3.5-Alpha2 *2009-03-08*
 -----------------------
+
 - Fixed caching of objects with no return value
 - Fixed updating of songs that should not be updated during catalog
   verify
@@ -1012,6 +1043,7 @@ CHANGELOG
 
 3.5-Alpha1 *2008-12-31*
 -----------------------
+
 - Fixed sort_files script so that it properly handles variable
   album art file names in the directories
 - Fixed issue where small thumbnails were used for larger images

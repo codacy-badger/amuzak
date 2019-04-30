@@ -1287,8 +1287,7 @@ class Art extends database_object
                     debug_event('mbz-gatherart', "Matched coverart site: " . $casite['name'], '5');
                     if (preg_match($casite['regexp'], $arurl, $matches)) {
                         $num_found++;
-                        $url = '';
-                        eval("\$url = \"$casite[imguri]\";");
+                        $url = $casite[imguri];
                         debug_event('mbz-gatherart', "Generated URL added: " . $url, '5');
                         $images[] = array(
                             'url' => $url,

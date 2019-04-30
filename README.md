@@ -1,15 +1,15 @@
  ![Logo](https://github.com/ampcore/amuzak/raw/master/themes/rezak/images/amuzak-light.png)
 
-
 aMuzak
 =======
+
 [amuzak@github.com](https://github.com/ampcore/amuzak/)
 
 **Notice:**  THIS IS A FORK OF AMPACHE THAT WILL FOCUS ON THE MUSIC
 
 - Video features will not be used in aMuzak.
-- You can upgrade from Ampache to aMuzak but will not be able to go 
-back. I recommend copying your database to allow you to keep your 
+- You can upgrade from Ampache to aMuzak but will not be able to go
+back. I recommend copying your database to allow you to keep your
 Ampache server running.
 - Things are really stable now. Really happy with the progress made so far.
 
@@ -47,29 +47,29 @@ Please see [the wiki](https://github.com/ampcore/amuzak/wiki/Installation)
 Requirements
 ------------
 
-* A web server. All of the following have been used, though Apache
+- A web server. All of the following have been used, though Apache
 receives the most testing:
-    * Apache
-    * lighttpd
-    * nginx
-    * IIS
+  - Apache
+  - lighttpd
+  - nginx
+  - IIS
 
-* PHP 5.6 or greater.
+- PHP 5.6 or greater.
 
-* PHP modules:
-    * PDO
-    * PDO_MYSQL
-    * hash
-    * session
-    * json
-    * simplexml (optional)
-    * curl (optional)
+- PHP modules:
+  - PDO
+  - PDO_MYSQL
+  - hash
+  - session
+  - json
+  - simplexml (optional)
+  - curl (optional)
 
-  * For FreeBSD The following modules must be loaded:
-    * php-xml
-    * php-dom
+  - For FreeBSD The following modules must be loaded:
+    - php-xml
+    - php-dom
 
-* MySQL 5.x
+- MySQL 5.x
 
 Upgrading
 ---------
@@ -113,16 +113,16 @@ Contact Us
 
 Hate it? Love it? Let us know! Dozens of people send ideas for amazing new features, report bugs and further develop aMuzak actively. Be a part of aMuzak with it's more than 10 years long history and get in touch with an awesome and friendly community!
 
-* For Live discussions, visit us on our IRC Channel at chat.freenode.net #ampache or alternative via a [web based chat client](https://webchat.freenode.net)
+- For Live discussions, visit us on our IRC Channel at chat.freenode.net #ampache or alternative via a [web based chat client](https://webchat.freenode.net)
 
-* For harder cases or general discussion about aMuzak take a look at our [Google Groups Forum](https://groups.google.com/forum/#!forum/ampache)
-* Found a bug or aMuzak isn't working as expected? Please refer to the [Issues Template](https://github.com/ampcore/amuzak/wiki/Issues) and head over to our [Issue Tracker](https://github.com/ampcore/amuzak/issues)
+- For harder cases or general discussion about aMuzak take a look at our [Google Groups Forum](https://groups.google.com/forum/#!forum/ampache)
+- Found a bug or aMuzak isn't working as expected? Please refer to the [Issues Template](https://github.com/ampcore/amuzak/wiki/Issues) and head over to our [Issue Tracker](https://github.com/ampcore/amuzak/issues)
 
 Further Information and basic Help
 ----------------------------------
 
-* Everything related to the aMuzak Project can be found on our [Public Repository](https://github.com/ampcore)
-* Want to know, how to get Apache to work or learn more about the functions? See our [Documentation](https://github.com/ampcore/amuzak/wiki)
+- Everything related to the aMuzak Project can be found on our [Public Repository](https://github.com/ampcore)
+- Want to know, how to get Apache to work or learn more about the functions? See our [Documentation](https://github.com/ampcore/amuzak/wiki)
 
 We hope to see you soon and that you have fun with this Project!
 

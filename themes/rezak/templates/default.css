@@ -541,12 +541,6 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     height: 25px;
 }
 
-#sidebar-tabs li.active {
-}
-
-#sidebar-tabs li.active img{
-}
-
 /* Tabs content */
 #sidebar-page {
     border: 2px solid;
@@ -609,6 +603,8 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 
 #sidebar-tabs .sb2 #browse_filters #multi_alpha_filter {
     border: 1px solid;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
     border-radius: 2px;
     padding: 4px;
     width: 130px;
@@ -1630,6 +1626,8 @@ ol, ul, #rightbar ul {
 
 .list-header-navmenu-border {
 	border: 1px solid;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
 	border-radius: 2px;
 }
 
@@ -1668,6 +1666,8 @@ a.option-list:hover {
 	line-height: normal;
 	border: 0 none;
 	cursor: pointer;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
 	border-radius: 2px;
 	background-position: 0 -10px;
 	transition: background-position 0.1s linear 0s;
