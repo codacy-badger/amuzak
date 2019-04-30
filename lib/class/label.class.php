@@ -83,13 +83,13 @@ class Label extends database_object implements library_item
     /**
      * __construct
      */
-    public function __construct($id=null)
+    public function __construct($label_id=null)
     {
-        if ($id === null) {
+        if ($label_id === null) {
             return false;
         }
 
-        $info = $this->get_info($id);
+        $info = $this->get_info($label_id);
         foreach ($info as $key => $value) {
             $this->$key = $value;
         }

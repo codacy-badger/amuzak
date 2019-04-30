@@ -40,16 +40,16 @@ class Useractivity extends database_object
      * Constructor
      * This is run every time a new object is created, and requires
      * the id and type of object that we need to pull the flag for
-     * @param integer $id
+     * @param integer $useract_id
      */
-    public function __construct($id)
+    public function __construct($useract_id)
     {
-        if (!$id) {
+        if (!$useract_id) {
             return false;
         }
         
         /* Get the information from the db */
-        $info = $this->get_info($id, 'user_activity');
+        $info = $this->get_info($useract_id, 'user_activity');
 
         foreach ($info as $key => $value) {
             $this->$key = $value;

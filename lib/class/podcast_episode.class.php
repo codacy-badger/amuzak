@@ -58,15 +58,15 @@ class Podcast_Episode extends database_object implements media, library_item
      * Constructor
      *
      * Podcast Episode class
-     * @param int|null $id
+     * @param int|null $podcastep_id
      */
-    public function __construct($id = null)
+    public function __construct($podcastep_id = null)
     {
-        if ($id === null) {
+        if ($podcastep_id === null) {
             return false;
         }
 
-        $this->id = (int) ($id);
+        $this->id = (int) ($podcastep_id);
 
         if ($info = $this->get_info($this->id)) {
             foreach ($info as $key => $value) {

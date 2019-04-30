@@ -34,15 +34,15 @@ class Tag extends database_object implements library_item
 
     /**
      * constructor
-     * This takes a tag id and returns all of the relevent information
+     * This takes a tag id and returns all of the relevant information
      */
-    public function __construct($id)
+    public function __construct($tag_id)
     {
-        if (!$id) {
+        if (!$tag_id) {
             return false;
         }
 
-        $info = $this->get_info($id);
+        $info = $this->get_info($tag_id);
 
         foreach ($info as $key => $value) {
             $this->$key = $value;

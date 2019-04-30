@@ -83,13 +83,13 @@ class Live_Stream extends database_object implements media, library_item
      * Constructor
      * This takes a flagged.id and then pulls in the information for said flag entry
      */
-    public function __construct($id = null)
+    public function __construct($lives_id = null)
     {
-        if ($id === null) {
+        if ($lives_id === null) {
             return false;
         }
 
-        $info = $this->get_info($id, 'live_stream');
+        $info = $this->get_info($lives_id, 'live_stream');
 
         // Set the vars
         foreach ($info as $key => $value) {

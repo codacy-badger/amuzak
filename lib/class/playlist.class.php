@@ -46,9 +46,9 @@ class Playlist extends playlist_object
      * This takes a playlist_id as an optional argument and gathers the information
      * if not playlist_id is passed returns false (or if it isn't found
      */
-    public function __construct($id)
+    public function __construct($plist_id)
     {
-        $info = $this->get_info($id);
+        $info = $this->get_info($plist_id);
 
         foreach ($info as $key => $value) {
             $this->$key = $value;

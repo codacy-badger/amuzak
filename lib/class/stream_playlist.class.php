@@ -39,13 +39,13 @@ class Stream_Playlist
     /**
      * Stream_Playlist constructor
      * If an ID is passed, it should be a stream session ID.
-     * @param integer $id
+     * @param integer|string $sp_id
      */
-    public function __construct($id = null)
+    public function __construct($sp_id = null)
     {
-        if ($id != -1) {
-            if ($id) {
-                Stream::set_session($id);
+        if ($sp_id != -1) {
+            if ($spid) {
+                Stream::set_session($sp_id);
             }
 
             $this->id = Stream::get_session();

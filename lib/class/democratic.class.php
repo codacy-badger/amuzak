@@ -50,13 +50,13 @@ class Democratic extends Tmp_Playlist
      * constructor
      * We need a constructor for this class. It does it's own thing now
      */
-    public function __construct($id='')
+    public function __construct($d_id='')
     {
-        if (!$id) {
+        if (!$d_id) {
             return false;
         }
 
-        $info = $this->get_info($id);
+        $info = $this->get_info($d_id);
 
         foreach ($info as $key => $value) {
             $this->$key = $value;

@@ -161,11 +161,11 @@ class easy_captcha
 {
     #-- init data
 
-    public function __construct($id = null, $ignore_expiration = 0)
+    public function __construct($cap_id = null, $ignore_expiration = 0)
     {
 
         #-- load
-        if (($this->id = $id) or ( $this->id = preg_replace("/[^-,.\w]+/", "", @$_REQUEST[CAPTCHA_PARAM_ID]))) {
+        if (($this->id = $cap_id) or ( $this->id = preg_replace("/[^-,.\w]+/", "", @$_REQUEST[CAPTCHA_PARAM_ID]))) {
             $this->load();
         }
 

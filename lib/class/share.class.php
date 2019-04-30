@@ -48,14 +48,14 @@ class Share extends database_object
     /**
      * Constructor
      */
-    public function __construct($id=0)
+    public function __construct($share_id=0)
     {
-        if (!$id) {
+        if (!$share_id) {
             return true;
         }
 
         /* Get the information from the db */
-        $info = $this->get_info($id);
+        $info = $this->get_info($share_id);
 
         // Foreach what we've got
         foreach ($info as $key => $value) {
@@ -65,10 +65,10 @@ class Share extends database_object
         return true;
     } //constructor
 
-    public static function delete_share($id)
+    public static function delete_share($share_id)
     {
         $sql    = "DELETE FROM `share` WHERE `id` = ?";
-        $params = array( $id );
+        $params = array( $share_id );
         if (!$GLOBALS['user']->has_access('75')) {
             $sql .= " AND `user` = ?";
             $params[] = $GLOBALS['user']->id;
@@ -135,9 +135,9 @@ class Share extends database_object
         $params = array($GLOBALS['user']->id, $object_type, $object_id, time(), $allow_stream ?: 0, $allow_download ?: 0, $expire, $secret, 0, $max_counter, $description);
         Dba::write($sql, $params);
 
-        $id = Dba::insert_id();
+        $share_id = Dba::insert_id();
 
-        $url = self::get_url($id, $secret);
+        $url = self::get_url($share_id, $secret);
         // Get a shortener url if any available
         foreach (Plugin::get_plugins('shortener') as $plugin_name) {
             try {
@@ -154,17 +154,17 @@ class Share extends database_object
             }
         }
         $sql = "UPDATE `share` SET `public_url` = ? WHERE `id` = ?";
-        Dba::write($sql, array($url, $id));
+        Dba::write($sql, array($url, $share_id));
 
-        return $id;
+        return $share_id;
     }
 
     /**
      * @param string $secret
      */
-    public static function get_url($id, $secret)
+    public static function get_url($share_id, $secret)
     {
-        $url = AmpConfig::get('web_path') . '/share.php?id=' . $id;
+        $url = AmpConfig::get('web_path') . '/share.php?id=' . $share_id;
         if (!empty($secret)) {
             $url .= '&secret=' . $secret;
         }
@@ -343,8 +343,8 @@ class Share extends database_object
             case 'playlist':
                 $object = new $this->object_type($this->object_id);
                 $songs  = $object->get_songs();
-                foreach ($songs as $id) {
-                    $is_shared = ($media_id == $id);
+                foreach ($songs as $song_id) {
+                    $is_shared = ($media_id == $song_id);
                     if ($is_shared) {
                         break;
                     }

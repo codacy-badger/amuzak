@@ -43,11 +43,11 @@ class Search extends playlist_object
     /**
      * constructor
      */
-    public function __construct($id = null, $searchtype = 'song')
+    public function __construct($search_id = null, $searchtype = 'song')
     {
         $this->searchtype = $searchtype;
-        if ($id) {
-            $info = $this->get_info($id);
+        if ($search_id) {
+            $info = $this->get_info($search_id);
             foreach ($info as $key => $value) {
                 $this->$key = $value;
             }
