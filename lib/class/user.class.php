@@ -1215,10 +1215,6 @@ class User extends database_object
         $sql = "DELETE FROM `user_vote` WHERE `user` = ?";
         Dba::write($sql, array($this->id));
 
-        // Delete their private messages posts
-        $sql = "DELETE FROM `user_pvmsg` WHERE `from_user` = ? OR `to_user` = ?";
-        Dba::write($sql, array($this->id, $this->id));
-
         // Delete their following/followers
         $sql = "DELETE FROM `user_follow` WHERE `user` = ? OR `follow_user` = ?";
         Dba::write($sql, array($this->id, $this->id));

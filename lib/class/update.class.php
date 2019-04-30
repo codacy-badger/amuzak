@@ -581,6 +581,9 @@ class Update
 
         $update_string = "Delete donate and video preferences.<br />";
         $version[]     = array('version' => '400008', 'description' => $update_string);
+
+        $update_string = "Remove Shouts and PM's (Drop user_shout and user_pm)<br />";
+        $version[]     = array('version' => '400009', 'description' => $update_string);
         
         return $version;
     }
@@ -4152,6 +4155,26 @@ class Update
                "WHERE `preference`.`name` IN ('allow_video', 'show_donate');";
         $retval &= Dba::write($sql);
         
+        return $retval;
+    }
+        /**
+     * update_400009
+     *
+     * Drop user_pvmsg
+     * Drop user_shout
+     */
+    public static function update_400009()
+    {
+        $retval = true;
+
+        // drop tvshow_episode table
+        $sql = "DROP TABLE IF EXISTS `user_pvmsg`";
+        $retval &= Dba::write($sql);
+
+        // drop tvshow_season table
+        $sql = "DROP TABLE IF EXISTS `user_shout`";
+        $retval &= Dba::write($sql);
+
         return $retval;
     }
 }

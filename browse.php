@@ -47,7 +47,6 @@ switch ($_REQUEST['action']) {
     case 'live_stream':
     case 'song':
     case 'label':
-    case 'pvmsg':
     case 'podcast':
     case 'podcast_episode':
         $browse->set_type($_REQUEST['action']);
@@ -144,17 +143,6 @@ switch ($_REQUEST['action']) {
             $browse->set_filter('catalog_enabled', '1');
         }
         $browse->set_sort('name', 'ASC');
-        $browse->update_browse_from_session();
-        $browse->show_objects();
-        break;
-    case 'pvmsg':
-        $browse->set_sort('creation_date', 'DESC');
-        $folder = $_REQUEST['folder'];
-        if ($folder === "sent") {
-            $browse->set_filter('user', User::get_user_id());
-        } else {
-            $browse->set_filter('to_user', User::get_user_id());
-        }
         $browse->update_browse_from_session();
         $browse->show_objects();
         break;

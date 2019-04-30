@@ -201,14 +201,6 @@ class Query
                 'regex_not_match',
                 'starts_with'
             ),
-            'pvmsg' => array(
-                'alpha_match',
-                'regex_match',
-                'regex_not_match',
-                'starts_with',
-                'user',
-                'to_user'
-            ),
             'follower' => array(
                 'user',
                 'to_user',
@@ -296,12 +288,6 @@ class Query
                 'name',
                 'category',
                 'user'
-            ),
-            'pvmsg' => array(
-                'subject',
-                'to_user',
-                'creation_date',
-                'is_read'
             ),
             'follower' => array(
                 'user',
@@ -629,7 +615,6 @@ class Query
             case 'song_preview':
             case 'license':
             case 'label':
-            case 'pvmsg':
             case 'follower':
             case 'podcast':
             case 'podcast_episode':
@@ -927,10 +912,6 @@ class Query
                 case 'label':
                     $this->set_select("`label`.`id`");
                     $sql = "SELECT %%SELECT%% FROM `label` ";
-                break;
-                case 'pvmsg':
-                    $this->set_select("`user_pvmsg`.`id`");
-                    $sql = "SELECT %%SELECT%% FROM `user_pvmsg` ";
                 break;
                 case 'follower':
                     $this->set_select("`user_follower`.`id`");
@@ -1541,35 +1522,6 @@ class Query
                 break;
             } // end filter
         break;
-        case 'pvmsg':
-            switch ($filter) {
-                case 'alpha_match':
-                    $filter_sql = " `user_pvmsg`.`subject` LIKE '%" . Dba::escape($value) . "%' AND ";
-                break;
-                case 'regex_match':
-                    if (!empty($value)) {
-                        $filter_sql = " `user_pvmsg`.`subject` REGEXP '" . Dba::escape($value) . "' AND ";
-                    }
-                break;
-                case 'regex_not_match':
-                    if (!empty($value)) {
-                        $filter_sql = " `user_pvmsg`.`subject` NOT REGEXP '" . Dba::escape($value) . "' AND ";
-                    }
-                break;
-                case 'starts_with':
-                    $filter_sql = " `user_pvmsg`.`subject` LIKE '" . Dba::escape($value) . "%' AND ";
-                break;
-                case 'user':
-                    $filter_sql = " `user_pvmsg`.`from_user` = '" . Dba::escape($value) . "' AND ";
-                break;
-                case 'to_user':
-                    $filter_sql = " `user_pvmsg`.`to_user` = '" . Dba::escape($value) . "' AND ";
-                break;
-                default:
-                    // Rien a faire
-                break;
-            } // end filter
-        break;
         case 'follower':
             switch ($filter) {
                 case 'user':
@@ -1852,22 +1804,6 @@ class Query
                     break;
                     case 'user':
                         $sql = "`label`.`user`";
-                    break;
-                }
-            break;
-            case 'pvmsg':
-                switch ($field) {
-                    case 'subject':
-                        $sql = "`user_pvmsg`.`subject`";
-                    break;
-                    case 'to_user':
-                        $sql = "`user_pvmsg`.`to_user`";
-                    break;
-                    case 'creation_date':
-                        $sql = "`user_pvmsg`.`creation_date`";
-                    break;
-                    case 'is_read':
-                        $sql = "`user_pvmsg`.`is_read`";
                     break;
                 }
             break;

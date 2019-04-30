@@ -274,10 +274,6 @@ class Browse extends Query
                 $box_title = T_('Labels');
                 $box_req   = AmpConfig::get('prefix') . UI::find_template('show_labels.inc.php');
             break;
-            case 'pvmsg':
-                $box_title = T_('Private Messages');
-                $box_req   = AmpConfig::get('prefix') . UI::find_template('show_pvmsgs.inc.php');
-            break;
             case 'podcast':
                 $box_title = T_('Podcasts');
                 $box_req   = AmpConfig::get('prefix') . UI::find_template('show_podcasts.inc.php');
