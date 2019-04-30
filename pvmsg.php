@@ -22,7 +22,7 @@
 
 require_once 'lib/init.php';
 
-if (!Access::check('interface', '25') || !AmpConfig::get('sociable')) {
+if (!Access::check('interface', '25')) {
     debug_event('UI::access_denied', 'Access Denied: sociable features are not enabled.', '3');
     UI::access_denied();
 
@@ -130,7 +130,7 @@ switch ($action) {
     default:
         $msg_id = (int) scrub_in($_REQUEST['pvmsg_id']);
         $pvmsg  = new PrivateMsg($msg_id);
-        if ($pvmsg->id && $pvmsg->to_user === User::get_user_id()) {
+        if ($pvmsg->id && $pvmsg->to_user === (int) User::get_user_id()) {
             $pvmsg->format();
             if (!$pvmsg->is_read) {
                 $pvmsg->set_is_read(true);

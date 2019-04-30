@@ -128,7 +128,7 @@ class Upload
                                     $artist_id = Artist::check($_REQUEST['artist_name']);
                                     $artist    = new Artist($artist_id);
                                     if (!$artist->get_user_owner()) {
-                                        $artist->update_artist_user(User::get_user_id());
+                                        $artist->update_artist_user((int) User::get_user_id());
                                     }
                                 }
                             }
