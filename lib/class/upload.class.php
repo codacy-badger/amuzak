@@ -111,7 +111,7 @@ class Upload
                             if (count($artists) == 0) {
                                 $artists[] = Artist::check($GLOBALS['user']->f_name);
                                 $artist    = new Artist($artists[0]);
-                                $artist->update_artist_user(User::get_user_id());
+                                $artist->update_artist_user((int) User::get_user_id());
                             } else {
                                 $artist = new Artist($artists[0]);
                             }

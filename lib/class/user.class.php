@@ -575,7 +575,7 @@ class User extends database_object
      */
     public static function is_registered()
     {
-        if (!User::get_user_id()) {
+        if (!self::get_user_id()) {
             return false;
         }
 

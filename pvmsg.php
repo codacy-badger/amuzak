@@ -36,7 +36,7 @@ switch ($action) {
     case 'show_add_message':
         if (isset($_REQUEST['reply_to'])) {
             $pvmsg = new PrivateMsg($_REQUEST['reply_to']);
-            if ($pvmsg->id && ($pvmsg->from_user === User::get_user_id() || $pvmsg->to_user === User::get_user_id())) {
+            if ($pvmsg->id && ($pvmsg->from_user === (int) User::get_user_id() || $pvmsg->to_user === (int) User::get_user_id())) {
                 $to_user             = new User($pvmsg->from_user);
                 $_REQUEST['to_user'] = $to_user->username;
                 $_REQUEST['subject'] = "RE: " . $pvmsg->subject;
