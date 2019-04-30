@@ -179,17 +179,15 @@ class Userflag extends database_object
         if ($this->type == 'song') {
             $user = new User($user_id);
             $song = new Song($this->id);
-            if ($song) {
-                $song->format();
-                foreach (Plugin::get_plugins('save_mediaplay') as $plugin_name) {
-                    try {
-                        $plugin = new Plugin($plugin_name);
-                        if ($plugin->load($user)) {
-                            $plugin->_plugin->set_flag($song, $flagged);
-                        }
-                    } catch (Exception $e) {
-                        debug_event('user.class.php', 'Stats plugin error: ' . $e->getMessage(), '1');
+            $song->format();
+            foreach (Plugin::get_plugins('save_mediaplay') as $plugin_name) {
+                try {
+                    $plugin = new Plugin($plugin_name);
+                    if ($plugin->load($user)) {
+                        $plugin->_plugin->set_flag($song, $flagged);
                     }
+                } catch (Exception $e) {
+                    debug_event('user.class.php', 'Stats plugin error: ' . $e->getMessage(), '1');
                 }
             }
         }

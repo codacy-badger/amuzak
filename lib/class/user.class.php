@@ -903,7 +903,7 @@ class User extends database_object
         // Remove port information if any
         if (!empty($sip)) {
             // Use parse_url to support easily ipv6
-            if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) === true) {
+            if (filter_var($sip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) === true) {
                 $sipar = parse_url("http://" . $sip);
             } else {
                 $sipar = parse_url("http://[" . $sip . "]");
@@ -911,12 +911,12 @@ class User extends database_object
             $sip   = $sipar['host'];
         }
 
-        $ip    = (!empty($sip)) ? Dba::escape(inet_pton(trim($sip, "[]"))) : '';
+        $uip    = (!empty($sip)) ? Dba::escape(inet_pton(trim($sip, "[]"))) : '';
         $date  = time();
         $user  = $this->id;
         $agent = Dba::escape($_SERVER['HTTP_USER_AGENT']);
 
-        $sql = "INSERT INTO `ip_history` (`ip`,`user`,`date`,`agent`) VALUES ('$ip','$user','$date','$agent')";
+        $sql = "INSERT INTO `ip_history` (`ip`,`user`,`date`,`agent`) VALUES ('$uip','$user','$date','$agent')";
         Dba::write($sql);
 
         /* Clean up old records... sometimes  */

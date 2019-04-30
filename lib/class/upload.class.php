@@ -120,7 +120,7 @@ class Upload
                             // Try to create a new artist
                             if (isset($_REQUEST['artist_name'])) {
                                 $artist_id = Artist::check($_REQUEST['artist_name'], null, true);
-                                if ($artist_id && !Access::check('interface', 50)) {
+                                if ($artist_id !== null && !Access::check('interface', 50)) {
                                     debug_event('upload', 'An artist with the same name already exists, uploaded song skipped.', 3);
 
                                     return self::rerror($targetfile);
@@ -134,7 +134,7 @@ class Upload
                             }
                             if (!Access::check('interface', 50)) {
                                 // If the user doesn't have privileges, check it is assigned to an artist he owns
-                                if (!$artist_id) {
+                                if ($artist_id === null) {
                                     debug_event('upload', 'Artist information required, uploaded song skipped.', 3);
 
                                     return self::rerror($targetfile);
@@ -167,10 +167,10 @@ class Upload
                             }
                         }
 
-                        if ($artist_id) {
+                        if ($artist_id !== null) {
                             $options['artist_id'] = $artist_id;
                         }
-                        if ($album_id) {
+                        if ($album_id !== null) {
                             $options['album_id'] = $album_id;
                         }
                         if (AmpConfig::get('upload_catalog_pattern')) {

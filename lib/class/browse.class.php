@@ -168,17 +168,13 @@ class Browse extends Query
 
         $match = '';
         // Format any matches we have so we can show them to the masses
-        if ($filter_value = $this->get_filter('alpha_match')) {
-            $match = ' (' . $filter_value . ')';
-        } elseif ($filter_value = $this->get_filter('starts_with')) {
-            $match = ' (' . $filter_value . ')';
-        /*} elseif ($filter_value = $this->get_filter('regex_match')) {
-            $match = ' (' . $filter_value . ')';
-        } elseif ($filter_value = $this->get_filter('regex_not_match')) {
-            $match = ' (' . $filter_value . ')';*/
-        } elseif ($filter_value = $this->get_filter('catalog')) {
+        if ($this->get_filter('alpha_match')) {
+            $match = ' (' . (string) $this->get_filter('alpha_match') . ')';
+        } elseif ($this->get_filter('starts_with')) {
+            $match = ' (' . (string) $this->get_filter('starts_with') . ')';
+        } elseif ($this->get_filter('catalog')) {
             // Get the catalog title
-            $catalog = Catalog::create_from_id(intval($filter_value));
+            $catalog = Catalog::create_from_id((int) $this->get_filter('catalog'));
             $match   = ' (' . $catalog->name . ')';
         }
 

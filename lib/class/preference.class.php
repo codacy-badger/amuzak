@@ -364,7 +364,8 @@ class Preference extends database_object
     /**
      * fix_preferences
      * This takes the preferences, explodes what needs to
-     * become an array and boolean everythings
+     * become an array and boolean everything
+     * @return array
      */
     public static function fix_preferences($results)
     {

@@ -55,6 +55,7 @@ $catalogs = array();
 while ($row = Dba::fetch_row($db_results)) {
 
     $catalog = Catalog::create_from_id($row['id']);
+    $catalog->format();
     $songs = $catalog->get_songs();
 
     printf(T_('Starting Catalog: %s'), stripslashes($catalog->name));
@@ -64,7 +65,7 @@ while ($row = Dba::fetch_row($db_results)) {
     foreach ($songs as $song) {
         /* Find this poor song a home */
         $song->format();
-        $directory = sort_find_home($song, $catalog->sort_pattern, $catalog->path);
+        $directory = sort_find_home($song, $catalog->sort_pattern, $catalog->f_full_info);
         $filename = $song->f_file;
         $fullpath = $directory . "/" . $filename;
 

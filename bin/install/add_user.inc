@@ -56,5 +56,3 @@ else {
 }
 
 User::fix_preferences('-1');
-
-?>

@@ -671,7 +671,7 @@ class Art extends database_object
      * Returns the specified resized image.  If the requested size doesn't
      * already exist, create and cache it.
      * @param array $size
-     * @return array
+     * @return array|string
      */
     public function get_thumb($size)
     {
@@ -1287,7 +1287,7 @@ class Art extends database_object
                     debug_event('mbz-gatherart', "Matched coverart site: " . $casite['name'], '5');
                     if (preg_match($casite['regexp'], $arurl, $matches)) {
                         $num_found++;
-                        $url = $casite[imguri];
+                        $url = $casite['imguri'];
                         debug_event('mbz-gatherart', "Generated URL added: " . $url, '5');
                         $images[] = array(
                             'url' => $url,
