@@ -43,8 +43,8 @@ class Stream_Playlist
      */
     public function __construct($sp_id = null)
     {
-        if ($sp_id != -1) {
-            if ($spid) {
+        if ($sp_id !== -1) {
+            if ($sp_id) {
                 Stream::set_session($sp_id);
             }
 
