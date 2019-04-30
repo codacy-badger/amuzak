@@ -500,7 +500,7 @@ class Art extends database_object
         if (!$path) {
             debug_event('Art', 'local_metadata_dir setting is required to store arts on disk.', 1);
 
-            return false;
+            return '';
         }
 
         // Correctly detect the slash we need to use here

@@ -600,13 +600,8 @@ class XML_Data
      */
     public static function democratic($object_ids = array())
     {
-        if (!is_array($object_ids)) {
-            $object_ids = array();
-        }
-
         $democratic = Democratic::get_current_playlist();
-
-        $string = '';
+        $string     = '';
 
         foreach ($object_ids as $row_id => $data) {
             $song = new $data['object_type']($data['object_id']);

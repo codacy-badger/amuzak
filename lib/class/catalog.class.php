@@ -1790,10 +1790,11 @@ abstract class Catalog extends database_object
      * trim_slashed_list
      * Return only the first item from / separated list
      * @param string $string
-     * @return string
+     * @return string|null
      */
     public static function trim_slashed_list($string)
     {
+        $first = null;
         if ($string) {
             $items = explode("\x00", $string);
             $first = trim($items[0]);
