@@ -50,7 +50,7 @@ switch ($_REQUEST['action']) {
             $fullname           = T_('Server');
             $_REQUEST['action'] = 'admin';
         } else {
-            $user_id  = $GLOBALS['user']->id;
+            $user_id  = User::get_user_id();
             $fullname = $GLOBALS['user']->fullname;
         }
 

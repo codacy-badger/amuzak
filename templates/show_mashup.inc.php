@@ -21,7 +21,7 @@
  */
 
 $threshold = AmpConfig::get('stats_threshold');
-$user_id   = $GLOBALS['user']->id;
+$user_id   = User::get_user_id();
 $count     = 18;
 ?>
 <p>

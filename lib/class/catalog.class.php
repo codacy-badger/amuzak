@@ -762,7 +762,7 @@ abstract class Catalog extends database_object
     public static function get_uploads_sql($type, $user_id = null)
     {
         if ($user_id === null) {
-            $user_id = $GLOBALS['user']->id;
+            $user_id = User::get_user_id();
         }
         $user_id = (int) ($user_id);
 
@@ -2205,7 +2205,7 @@ abstract class Catalog extends database_object
     public static function can_remove($libitem, $user = null)
     {
         if (!$user) {
-            $user = $GLOBALS['user']->id;
+            $user = User::get_user_id();
         }
 
         if (!$user) {

@@ -23,8 +23,8 @@
 /**
  * User Class
  *
- * This class handles all of the user related functions includingn the creationg
- * and deletion of the user objects from the database by defualt you constrcut it
+ * This class handles all of the user related functions including the creation
+ * and deletion of the user objects from the database by default you construct it
  * with a user_id from user.id
  *
  */
@@ -1530,6 +1530,16 @@ class User extends database_object
     }
 
     /**
+     * get_user_id
+     * Get the user id to stop using globals everywhere
+     * @return string
+     */
+    public static function get_user_id()
+    {
+        return $GLOBALS['user']->id;
+    }
+    
+    /**
      * get_display_follow
      * Get html code to display the follow/unfollow link
      * @return string
@@ -1537,7 +1547,7 @@ class User extends database_object
     public function get_display_follow($user_id = null)
     {
         if (!$user_id) {
-            $user_id = $GLOBALS['user']->id;
+            $user_id = self::get_user_id();
         }
 
         if ($user_id === $this->id) {

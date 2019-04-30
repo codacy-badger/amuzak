@@ -207,7 +207,7 @@ class Stats
     public static function get_last_song($user_id = '')
     {
         if ($user_id === '') {
-            $user_id = $GLOBALS['user']->id;
+            $user_id = User::get_user_id();
         }
 
         $sql = "SELECT * FROM `object_count` " .
@@ -236,7 +236,7 @@ class Stats
     public static function get_object_history($user_id = '', $time)
     {
         if ($user_id === '') {
-            $user_id = $GLOBALS['user']->id;
+            $user_id = User::get_user_id();
         }
 
         $sql = "SELECT * FROM `object_count` " .
@@ -299,7 +299,7 @@ class Stats
         }
         $rating_filter = AmpConfig::get_rating_filter();
         if ($rating_filter > 0 && $rating_filter <= 5) {
-            $user_id = $GLOBALS['user']->id;
+            $user_id = User::get_user_id();
             $sql .= " AND `object_id` NOT IN" .
                     " (SELECT `object_id` FROM `rating`" .
                     " WHERE `rating`.`object_type` = '" . $type . "'" .
@@ -371,7 +371,7 @@ class Stats
         }
         $rating_filter = AmpConfig::get_rating_filter();
         if ($rating_filter > 0 && $rating_filter <= 5) {
-            $user_id = $GLOBALS['user']->id;
+            $user_id = User::get_user_id();
             $sql .= " AND `object_id` NOT IN" .
                     " (SELECT `object_id` FROM `rating`" .
                     " WHERE `rating`.`object_type` = '" . $type . "'" .
@@ -496,7 +496,7 @@ class Stats
             }
             $rating_filter = AmpConfig::get_rating_filter();
             if ($rating_filter > 0 && $rating_filter <= 5) {
-                $user_id = $GLOBALS['user']->id;
+                $user_id = User::get_user_id();
                 $sql .= "WHERE `" . $base_type . "`.`" . $type . "` NOT IN" .
                         " (SELECT `object_id` FROM `rating`" .
                         " WHERE `rating`.`object_type` = '" . $type . "'" .

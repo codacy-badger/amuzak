@@ -71,7 +71,7 @@ class Share extends database_object
         $params = array( $share_id );
         if (!$GLOBALS['user']->has_access('75')) {
             $sql .= " AND `user` = ?";
-            $params[] = $GLOBALS['user']->id;
+            $params[] = User::get_user_id();
         }
 
         return Dba::write($sql, $params);
@@ -248,7 +248,7 @@ class Share extends database_object
         $params = array($this->max_counter, $this->expire_days, $this->allow_stream ? 1 : 0, $this->allow_download ? 1 : 0, $this->description, $this->id);
         if (!$GLOBALS['user']->has_access('75')) {
             $sql .= " AND `user` = ?";
-            $params[] = $GLOBALS['user']->id;
+            $params[] = User::get_user_id();
         }
 
         return Dba::write($sql, $params);

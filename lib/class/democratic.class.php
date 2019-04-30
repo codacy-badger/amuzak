@@ -378,7 +378,7 @@ class Democratic extends Tmp_Playlist
             "AND `tmp_playlist_data`.`tmp_playlist` = ? ";
         if ($GLOBALS['user']->id > 0) {
             $sql .= "AND `user_vote`.`user` = ? ";
-            $params[] = $GLOBALS['user']->id;
+            $params[] = User::get_user_id();
         } else {
             $sql .= "AND `user_vote`.`sid` = ? ";
             $params[] = session_id();
@@ -440,7 +440,7 @@ class Democratic extends Tmp_Playlist
         $params = array($row_id);
         if ($GLOBALS['user']->id > 0) {
             $sql .= "AND `user` = ?";
-            $params[] = $GLOBALS['user']->id;
+            $params[] = User::get_user_id();
         } else {
             $sql .= "AND `user_vote`.`sid` = ? ";
             $params[] = session_id();

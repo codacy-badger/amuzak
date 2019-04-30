@@ -950,7 +950,7 @@ class Search extends playlist_object
         }
         $rating_filter = AmpConfig::get_rating_filter();
         if ($rating_filter > 0 && $rating_filter <= 5) {
-            $user_id = $GLOBALS['user']->id;
+            $user_id = User::get_user_id();
             if (empty($sqltbl['where_sql'])) {
                 $sql .= " WHERE ";
             } else {
@@ -1145,7 +1145,7 @@ class Search extends playlist_object
     private function album_to_sql()
     {
         $sql_logic_operator = $this->logic_operator;
-        $userid             = $GLOBALS['user']->id;
+        $userid             = User::get_user_id();
 
         $where       = array();
         $table       = array();
@@ -1303,7 +1303,7 @@ class Search extends playlist_object
     private function artist_to_sql()
     {
         $sql_logic_operator = $this->logic_operator;
-        $userid             = $GLOBALS['user']->id;
+        $userid             = User::get_user_id();
 
         $where              = array();
         $table              = array();
@@ -1436,7 +1436,7 @@ class Search extends playlist_object
     private function song_to_sql()
     {
         $sql_logic_operator = $this->logic_operator;
-        $userid             = $GLOBALS['user']->id;
+        $userid             = User::get_user_id();
 
         $where       = array();
         $table       = array();

@@ -43,7 +43,7 @@ class Random
         }
         $rating_filter = AmpConfig::get_rating_filter();
         if ($rating_filter > 0 && $rating_filter <= 5) {
-            $user_id = $GLOBALS['user']->id;
+            $user_id = User::get_user_id();
             $sql .= " AND `artist`.`id` NOT IN" .
                     " (SELECT `object_id` FROM `rating`" .
                     " WHERE `rating`.`object_type` = 'artist'" .
@@ -116,7 +116,7 @@ class Random
         }
         $rating_filter = AmpConfig::get_rating_filter();
         if ($rating_filter > 0 && $rating_filter <= 5) {
-            $user_id = $GLOBALS['user']->id;
+            $user_id = User::get_user_id();
             $sql .= " WHERE `song`.`artist` NOT IN" .
                     " (SELECT `object_id` FROM `rating`" .
                     " WHERE `rating`.`object_type` = 'artist'" .
@@ -162,7 +162,7 @@ class Random
         }
         $rating_filter = AmpConfig::get_rating_filter();
         if ($rating_filter > 0 && $rating_filter <= 5) {
-            $user_id = $GLOBALS['user']->id;
+            $user_id = User::get_user_id();
             $sql .= " WHERE `song`.`artist` NOT IN" .
                     " (SELECT `object_id` FROM `rating`" .
                     " WHERE `rating`.`object_type` = 'artist'" .
@@ -207,7 +207,7 @@ class Random
         }
         $rating_filter = AmpConfig::get_rating_filter();
         if ($rating_filter > 0 && $rating_filter <= 5) {
-            $user_id = $GLOBALS['user']->id;
+            $user_id = User::get_user_id();
             $sql .= " WHERE `song`.`artist` NOT IN" .
                     " (SELECT `object_id` FROM `rating`" .
                     " WHERE `rating`.`object_type` = 'artist'" .

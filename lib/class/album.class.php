@@ -384,7 +384,7 @@ class Album extends database_object implements library_item
     public function can_edit($user = null)
     {
         if (!$user) {
-            $user = $GLOBALS['user']->id;
+            $user = User::get_user_id();
         }
 
         if (!$user) {
@@ -1115,7 +1115,7 @@ class Album extends database_object implements library_item
 
         $rating_filter = AmpConfig::get_rating_filter();
         if ($rating_filter > 0 && $rating_filter <= 5) {
-            $user_id = $GLOBALS['user']->id;
+            $user_id = User::get_user_id();
             $sql .= " AND `album`.`id` NOT IN" .
                     " (SELECT `object_id` FROM `rating`" .
                     " WHERE `rating`.`object_type` = 'album'" .

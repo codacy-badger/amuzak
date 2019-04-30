@@ -96,7 +96,7 @@ class Upload
                         }
 
                         $options                = array();
-                        $options['user_upload'] = $GLOBALS['user']->id;
+                        $options['user_upload'] = User::get_user_id();
                         if (isset($_POST['license'])) {
                             $options['license'] = $_POST['license'];
                         }

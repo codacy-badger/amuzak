@@ -116,7 +116,7 @@ if (!empty($apikey)) {
     $user = User::get_from_apikey($apikey);
     if ($user != null) {
         $GLOBALS['user'] = $user;
-        $uid             = $GLOBALS['user']->id;
+        $uid             = User::get_user_id();
         Preference::init();
         $user_authenticated = true;
     }
@@ -124,7 +124,7 @@ if (!empty($apikey)) {
     $auth = Auth::login($u, $p);
     if ($auth['success']) {
         $GLOBALS['user'] = User::get_from_username($auth['username']);
-        $uid             = $GLOBALS['user']->id;
+        $uid             = User::get_user_id();
         Preference::init();
         $user_authenticated = true;
     }
