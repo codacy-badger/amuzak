@@ -124,7 +124,7 @@ switch ($action) {
         }
 
         UI::show_header();
-        Share::gc();
+        Share::garbage_collection();
         $next_url = AmpConfig::get('web_path') . '/stats.php?action=share';
         show_confirmation(T_('Shared Objects cleaned'), T_('Expired shared objects have been cleaned.'), $next_url);
         UI::show_footer();

@@ -94,7 +94,7 @@ class Plex_Api
             }
 
             $createSession = false;
-            Session::gc();
+            Session::garbage_collection();
             $username = "";
             $email    = trim(Session::read((string) $myplex_token));
 

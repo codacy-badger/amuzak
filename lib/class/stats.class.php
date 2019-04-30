@@ -66,11 +66,11 @@ class Stats
     }
 
     /**
-     * gc
+     * garbage_collection
      *
      * This removes stats for things that no longer exist.
      */
-    public static function gc()
+    public static function garbage_collection()
     {
         foreach (array('song', 'album', 'artist', 'live_stream') as $object_type) {
             Dba::write("DELETE FROM `object_count` USING `object_count` LEFT JOIN `$object_type` ON `$object_type`.`id` = `object_count`.`object_id` WHERE `object_type` = '$object_type' AND `$object_type`.`id` IS NULL");

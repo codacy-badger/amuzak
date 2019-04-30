@@ -107,11 +107,11 @@ class Session
     }
 
     /**
-     * gc
+     * garbage_collection
      *
      * This function is randomly called and it cleans up the spoo
      */
-    public static function gc()
+    public static function garbage_collection()
     {
         $sql = 'DELETE FROM `session` WHERE `expire` < ?';
         Dba::write($sql, array(time()));
@@ -120,10 +120,10 @@ class Session
         Dba::write($sql, array(time()));
 
         // Also clean up things that use sessions as keys
-        Query::gc();
-        Tmp_Playlist::gc();
-        Stream_Playlist::gc();
-        Song_Preview::gc();
+        Query::garbage_collection();
+        Tmp_Playlist::garbage_collection();
+        Stream_Playlist::garbage_collection();
+        Song_Preview::garbage_collection();
 
         return true;
     }

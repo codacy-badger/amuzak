@@ -292,7 +292,7 @@ class Label extends database_object implements library_item
         return $ret;
     }
 
-    public static function gc()
+    public static function garbage_collection()
     {
         // Don't remove labels, it could still be used as description in a search
     }
@@ -361,11 +361,11 @@ class Label extends database_object implements library_item
         $sql     = "DELETE FROM `label` WHERE `id` = ?";
         $deleted = Dba::write($sql, array($this->id));
         if ($deleted) {
-            Art::gc('label', $this->id);
-            Userflag::gc('label', $this->id);
-            Rating::gc('label', $this->id);
-            Shoutbox::gc('label', $this->id);
-            Useractivity::gc('label', $this->id);
+            Art::garbage_collection('label', $this->id);
+            Userflag::garbage_collection('label', $this->id);
+            Rating::garbage_collection('label', $this->id);
+            Shoutbox::garbage_collection('label', $this->id);
+            Useractivity::garbage_collection('label', $this->id);
         }
 
         return $deleted;

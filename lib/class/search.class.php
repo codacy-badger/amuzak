@@ -1104,7 +1104,7 @@ class Search extends playlist_object
         return $this->id;
     }
 
-    public static function gc()
+    public static function garbage_collection()
     {
     }
 

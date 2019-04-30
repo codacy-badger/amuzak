@@ -70,11 +70,11 @@ class Recommendation
     }
 
     /**
-     * gc
+     * garbage_collection
      *
      * This cleans out old recommendations cache
      */
-    public static function gc()
+    public static function garbage_collection()
     {
         Dba::write('DELETE FROM `recommendation` WHERE `last_update` < ?', array((time() - 604800)));
     }
@@ -85,7 +85,7 @@ class Recommendation
      */
     protected static function get_recommendation_cache($type, $id, $get_items = false)
     {
-        self::gc();
+        self::garbage_collection();
 
         $sql        = "SELECT `id`, `last_update` FROM `recommendation` WHERE `object_type` = ? AND `object_id` = ?";
         $db_results = Dba::read($sql, array($type, $id));

@@ -67,13 +67,13 @@ class Shoutbox
     } // _get_info
 
     /**
-     * gc
+     * garbage_collection
      *
      * Cleans out orphaned shoutbox items
      * @param string $object_type
      * @param integer $object_id
      */
-    public static function gc($object_type = null, $object_id = null)
+    public static function garbage_collection($object_type = null, $object_id = null)
     {
         $types = array('song', 'album', 'artist', 'label');
 

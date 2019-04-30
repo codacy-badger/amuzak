@@ -324,10 +324,10 @@ class Query
     }
 
     /**
-     * gc
+     * garbage_collection
      * This cleans old data out of the table
      */
-    public static function gc()
+    public static function garbage_collection()
     {
         $sql = 'DELETE FROM `tmp_browse` USING `tmp_browse` LEFT JOIN ' .
             '`session` ON `session`.`id` = `tmp_browse`.`sid` ' .

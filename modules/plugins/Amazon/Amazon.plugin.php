@@ -30,11 +30,11 @@ class AmpacheAmazon
     public $min_ampache    = '370009';
     public $max_ampache    = '999999';
     
-    public $amazon_base_url;
-    public $amazon_max_results_pages;
-    public $amazon_developer_public_key;
-    public $amazon_developer_private_api_key;
-    public $amazon_developer_associate_tag;
+    public $base_url;
+    public $max_results_pages;
+    public $dev_public_key;
+    public $dev_private_api_key;
+    public $dev_associate_tag;
     
     /**
      * Constructor
@@ -51,15 +51,15 @@ class AmpacheAmazon
      */
     public function install()
     {
-        if (Preference::exists('amazon_base_url')) {
+        if (Preference::exists('base_url')) {
             return false;
         }
 
-        Preference::insert('amazon_base_url', 'Amazon base url', 'http://webservices.amazon.com', '75', 'string', 'plugins', $this->name);
-        Preference::insert('amazon_max_results_pages', 'Amazon max results pages', '1', '75', 'integer', 'plugins', $this->name);
-        Preference::insert('amazon_developer_public_key', 'Amazon Access Key ID', '', '75', 'string', 'plugins', $this->name);
-        Preference::insert('amazon_developer_private_api_key', 'Amazon Secret Access Key', '', '75', 'string', 'plugins', $this->name);
-        Preference::insert('amazon_developer_associate_tag', 'Amazon associate tag', '', '75', 'string', 'plugins', $this->name);
+        Preference::insert('base_url', 'Amazon base url', 'http://webservices.amazon.com', '75', 'string', 'plugins', $this->name);
+        Preference::insert('max_results_pages', 'Amazon max results pages', '1', '75', 'integer', 'plugins', $this->name);
+        Preference::insert('developer_public_key', 'Amazon Access Key ID', '', '75', 'string', 'plugins', $this->name);
+        Preference::insert('developer_private_api_key', 'Amazon Secret Access Key', '', '75', 'string', 'plugins', $this->name);
+        Preference::insert('developer_associate_tag', 'Amazon associate tag', '', '75', 'string', 'plugins', $this->name);
         
         return true;
     } // install
@@ -70,11 +70,11 @@ class AmpacheAmazon
      */
     public function uninstall()
     {
-        Preference::delete('amazon_base_url');
-        Preference::delete('amazon_max_results_pages');
-        Preference::delete('amazon_developer_public_key');
-        Preference::delete('amazon_developer_private_api_key');
-        Preference::delete('amazon_developer_associate_tag');
+        Preference::delete('base_url');
+        Preference::delete('max_results_pages');
+        Preference::delete('developer_public_key');
+        Preference::delete('developer_private_api_key');
+        Preference::delete('developer_associate_tag');
     
         return true;
     } // uninstall
@@ -89,40 +89,40 @@ class AmpacheAmazon
         $user->set_preferences();
         $data = $user->prefs;
 
-        if (strlen(trim($data['amazon_base_url']))) {
-            $this->amazon_base_url = trim($data['amazon_base_url']);
+        if (strlen(trim($data['base_url']))) {
+            $this->base_url = trim($data['base_url']);
         } else {
             debug_event($this->name, 'No amazon base url, plugin skipped', '3');
 
             return false;
         }
         
-        if (strlen(trim($data['amazon_developer_public_key']))) {
-            $this->amazon_developer_public_key = trim($data['amazon_developer_public_key']);
+        if (strlen(trim($data['developer_public_key']))) {
+            $this->developer_public_key = trim($data['developer_public_key']);
         } else {
             debug_event($this->name, 'No amazon developer public key, plugin skipped', '3');
 
             return false;
         }
         
-        if (strlen(trim($data['amazon_developer_private_api_key']))) {
-            $this->amazon_developer_private_api_key = trim($data['amazon_developer_private_api_key']);
+        if (strlen(trim($data['developer_private_api_key']))) {
+            $this->developer_private_api_key = trim($data['developer_private_api_key']);
         } else {
             debug_event($this->name, 'No amazon developer private key, plugin skipped', '3');
 
             return false;
         }
         
-        if (strlen(trim($data['amazon_max_results_pages']))) {
-            $this->amazon_max_results_pages = trim($data['amazon_max_results_pages']);
+        if (strlen(trim($data['max_results_pages']))) {
+            $this->max_results_pages = trim($data['max_results_pages']);
         } else {
-            $this->amazon_max_results_pages = 1;
+            $this->max_results_pages = 1;
         }
         
-        if (strlen(trim($data['amazon_developer_associate_tag']))) {
-            $this->amazon_developer_associate_tag = trim($data['amazon_developer_associate_tag']);
+        if (strlen(trim($data['developer_associate_tag']))) {
+            $this->developer_associate_tag = trim($data['developer_associate_tag']);
         } else {
-            $this->amazon_developer_associate_tag = '';
+            $this->developer_associate_tag = '';
         }
         
         return true;
@@ -148,7 +148,7 @@ class AmpacheAmazon
         set_time_limit(0);
 
         // Create the Search Object
-        $amazon = new AmazonSearch($this->amazon_developer_public_key, $this->amazon_developer_private_api_key, $this->amazon_developer_associate_tag, $this->amazon_base_url);
+        $amazon = new AmazonSearch($this->developer_public_key, $this->developer_private_api_key, $this->developer_associate_tag, $this->base_url);
         if (AmpConfig::get('proxy_host') && AmpConfig::get('proxy_port')) {
             $proxyhost = AmpConfig::get('proxy_host');
             $proxyport = AmpConfig::get('proxy_port');
@@ -161,7 +161,7 @@ class AmpacheAmazon
         $search_results = array();
 
         /* Set up the needed variables */
-        $max_pages_to_search = max($this->amazon_max_results_pages, $amazon->_default_results_pages);
+        $max_pages_to_search = max($this->max_results_pages, $amazon->_default_results_pages);
         // while we have pages to search
         do {
             $raw_results = $amazon->search(array('artist' => '', 'album' => '', 'keywords' => $options['keyword']), $mediaType);

@@ -87,11 +87,11 @@ class Podcast_Episode extends database_object implements media, library_item
     } // constructor
 
     /**
-     * gc
+     * garbage_collection
      *
      * Cleans up the podcast_episode table
      */
-    public static function gc()
+    public static function garbage_collection()
     {
         Dba::write('DELETE FROM `podcast_episode` USING `podcast_episode` LEFT JOIN `podcast` ON `podcast`.`id` = `podcast_episode`.`podcast` WHERE `podcast`.`id` IS NULL');
     }

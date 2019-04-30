@@ -1724,29 +1724,29 @@ abstract class Catalog extends database_object
     // verify_catalog
 
     /**
-     * gc
+     * garbage_collection
      *
      * This is a wrapper function for all of the different cleaning
      * functions, it runs them in an order that resembles correctness.
      */
-    public static function gc()
+    public static function garbage_collection()
     {
         debug_event('catalog', 'Database cleanup started', 5);
-        Song::gc();
-        Album::gc();
-        Artist::gc();
-        Art::gc();
-        Stats::gc();
-        Rating::gc();
-        Userflag::gc();
-        Useractivity::gc();
-        Playlist::gc();
-        Tmp_Playlist::gc();
-        Tag::gc();
+        Song::garbage_collection();
+        Album::garbage_collection();
+        Artist::garbage_collection();
+        Art::garbage_collection();
+        Stats::garbage_collection();
+        Rating::garbage_collection();
+        Userflag::garbage_collection();
+        Useractivity::garbage_collection();
+        Playlist::garbage_collection();
+        Tmp_Playlist::garbage_collection();
+        Tag::garbage_collection();
 
         // TODO: use InnoDB with foreign keys and on delete cascade to get rid of garbage collection
-        \Lib\Metadata\Repository\Metadata::gc();
-        \Lib\Metadata\Repository\MetadataField::gc();
+        \Lib\Metadata\Repository\Metadata::garbage_collection();
+        \Lib\Metadata\Repository\MetadataField::garbage_collection();
         debug_event('catalog', 'Database cleanup ended', 5);
     }
 
@@ -2330,7 +2330,7 @@ abstract class Catalog extends database_object
         }
 
         // Remove any orphaned artists/albums/etc.
-        self::gc();
+        self::garbage_collection();
     }
 }
 

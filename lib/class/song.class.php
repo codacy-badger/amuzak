@@ -516,11 +516,11 @@ class Song extends database_object implements media, library_item
     }
 
     /**
-     * gc
+     * garbage_collection
      *
      * Cleans up the song_data table
      */
-    public static function gc()
+    public static function garbage_collection()
     {
         Dba::write('DELETE FROM `song_data` USING `song_data` LEFT JOIN `song` ON `song`.`id` = `song_data`.`song_id` WHERE `song`.`id` IS NULL');
     }
@@ -2210,11 +2210,11 @@ class Song extends database_object implements media, library_item
             $sql     = "DELETE FROM `song` WHERE `id` = ?";
             $deleted = Dba::write($sql, array($this->id));
             if ($deleted) {
-                Art::gc('song', $this->id);
-                Userflag::gc('song', $this->id);
-                Rating::gc('song', $this->id);
-                Shoutbox::gc('song', $this->id);
-                Useractivity::gc('song', $this->id);
+                Art::garbage_collection('song', $this->id);
+                Userflag::garbage_collection('song', $this->id);
+                Rating::garbage_collection('song', $this->id);
+                Shoutbox::garbage_collection('song', $this->id);
+                Useractivity::garbage_collection('song', $this->id);
             }
         } else {
             debug_event('song', 'Cannot delete ' . $this->file . 'file. Please check permissions.', 1);

@@ -79,13 +79,13 @@ class Useractivity extends database_object
         }
     }
     /**
-     * gc
+     * garbage_collection
      *
      * Remove activities for items that no longer exist.
      * @param string $object_type
      * @param integer $object_id
      */
-    public static function gc($object_type = null, $object_id = null)
+    public static function garbage_collection($object_type = null, $object_id = null)
     {
         $types = array('song', 'album', 'artist');
 

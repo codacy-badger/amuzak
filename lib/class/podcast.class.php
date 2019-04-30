@@ -68,11 +68,11 @@ class Podcast extends database_object implements library_item
     } //constructor
 
     /**
-     * gc
+     * garbage_collection
      *
      * This cleans out unused podcasts
      */
-    public static function gc()
+    public static function garbage_collection()
     {
     }
     

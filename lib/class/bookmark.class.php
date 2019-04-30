@@ -78,11 +78,11 @@ class Bookmark extends database_object
     }
 
     /**
-     * gc
+     * garbage_collection
      *
      * Remove bookmark for items that no longer exist.
      */
-    public static function gc($object_type = null, $object_id = null)
+    public static function garbage_collection($object_type = null, $object_id = null)
     {
         $types = array('song', 'podcast_episode');
 

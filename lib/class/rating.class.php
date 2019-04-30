@@ -48,11 +48,11 @@ class Rating extends database_object
     // Constructor
 
     /**
-     * gc
+     * garbage_collection
      *
      * Remove ratings for items that no longer exist.
      */
-    public static function gc()
+    public static function garbage_collection()
     {
         $types = array('song', 'album', 'artist', 'playlist', 'label', 'podcast', 'podcast_episode');
 

@@ -96,7 +96,7 @@ class Stream_Playlist
         return Dba::write($sql, $values);
     }
 
-    public static function gc()
+    public static function garbage_collection()
     {
         $sql = 'DELETE FROM `stream_playlist` USING `stream_playlist` ' .
             'LEFT JOIN `session` ON `session`.`id`=`stream_playlist`.`sid` ' .

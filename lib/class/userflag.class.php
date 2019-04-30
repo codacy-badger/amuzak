@@ -86,13 +86,13 @@ class Userflag extends database_object
     } // build_cache
 
     /**
-     * gc
+     * garbage_collection
      *
      * Remove userflag for items that no longer exist.
      * @param string $object_type
      * @param integer $object_id
      */
-    public static function gc($object_type = null, $object_id = null)
+    public static function garbage_collection($object_type = null, $object_id = null)
     {
         $types = array('song', 'album', 'artist', 'podcast', 'podcast_episode');
 
