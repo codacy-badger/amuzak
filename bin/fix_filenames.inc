@@ -237,5 +237,3 @@ function charset_clean_name($string) {
         return $string;
 
 } // charset_clean_name
-
-?>

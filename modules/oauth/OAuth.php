@@ -105,7 +105,7 @@ abstract class OAuthSignatureMethod
      * @param OAuthConsumer $consumer
      * @param OAuthToken $token
      * @param string $signature
-     * @return bool
+     * @return boolean
      */
     public function check_signature($request, $consumer, $token, $signature)
     {

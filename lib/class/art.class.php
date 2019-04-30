@@ -111,7 +111,7 @@ class Art extends database_object
      * browse all at once and storing it in the cache, this can help if the
      * db connection is the slow point
      * @param int[] $object_ids
-     * @return bool
+     * @return boolean
      */
     public static function build_cache($object_ids)
     {
@@ -493,7 +493,11 @@ class Art extends database_object
 
         return true;
     }
-
+    
+    /**
+     * get_dir_on_disk
+     * @return string
+     */
     public static function get_dir_on_disk($type, $uid, $kind = '', $autocreate = false)
     {
         $path = AmpConfig::get('local_metadata_dir');
@@ -535,11 +539,12 @@ class Art extends database_object
      * @param string $source
      * @param string $type
      * @param integer $uid
+     * @return boolean
      */
     private static function write_to_dir($source, $sizetext, $type, $uid, $kind)
     {
         $path = self::get_dir_on_disk($type, $uid, $kind, true);
-        if ($path === false) {
+        if ($path !== '') {
             return false;
         }
         $path .= "art-" . $sizetext . ".jpg";
@@ -562,7 +567,7 @@ class Art extends database_object
     private static function read_from_dir($sizetext, $type, $uid, $kind)
     {
         $path = self::get_dir_on_disk($type, $uid, $kind);
-        if ($path === false) {
+        if ($path !== '') {
             return null;
         }
         $path .= "art-" . $sizetext . ".jpg";

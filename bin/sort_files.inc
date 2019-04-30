@@ -313,4 +313,3 @@ function sort_move_file($song, $fullname)
     return true;
 }
 // sort_move_file
-?>

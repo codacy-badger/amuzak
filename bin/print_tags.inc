@@ -85,5 +85,3 @@ function usage() {
     return print $text;
 
 }// usage()
-
-?>

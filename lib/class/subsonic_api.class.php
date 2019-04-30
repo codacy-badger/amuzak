@@ -274,7 +274,7 @@ class Subsonic_Api
                     if (!isset($tagsArray[$childTagName])) {
                         //only entry with this key
 
-                        if (count($childProperties) == 0) {
+                        if (count((int) $childProperties) === 0) {
                             $tagsArray[$childTagName] = (object) $childProperties;
                         } elseif (self::has_Nested_Array($childProperties)) {
                             $tagsArray[$childTagName] = (object) $childProperties;
