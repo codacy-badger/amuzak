@@ -122,7 +122,7 @@ class AmpacheVlc extends localplay_controller
     public function add_instance($data)
     {
         $sql        = "INSERT INTO `localplay_vlc` (`name`,`host`,`port`,`password`,`owner`) VALUES (?, ?, ?, ?, ?)";
-        $db_results = Dba::query($sql, array($data['name'], $data['host'], $data['port'], $data['password'], $GLOBALS['user']->id));
+        $db_results = Dba::query($sql, array($data['name'], $data['host'], $data['port'], $data['password'], User::get_user_id()));
 
         return $db_results;
     } // add_instance

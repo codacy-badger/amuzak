@@ -803,7 +803,7 @@ class Search extends playlist_object
     public static function get_searches()
     {
         $sql = "SELECT `id` from `search` WHERE `type`='public' OR " .
-            "`user`='" . $GLOBALS['user']->id . "' ORDER BY `name`";
+            "`user`='" . User::get_user_id() . "' ORDER BY `name`";
         $db_results = Dba::read($sql);
 
         $results = array();
@@ -1045,7 +1045,7 @@ class Search extends playlist_object
         }
 
         $sql = "INSERT INTO `search` (`name`, `type`, `user`, `rules`, `logic_operator`, `random`, `limit`) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        Dba::write($sql, array($this->name, $this->type, $GLOBALS['user']->id, json_encode($this->rules), $this->logic_operator, $this->random ? 1 : 0, $this->limit));
+        Dba::write($sql, array($this->name, $this->type, User::get_user_id(), json_encode($this->rules), $this->logic_operator, $this->random ? 1 : 0, $this->limit));
         $insert_id = Dba::insert_id();
         $this->id  = (int) $insert_id;
 

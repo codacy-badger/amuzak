@@ -89,7 +89,7 @@ class Rating extends database_object
         $sql    = "SELECT `rating`, `object_id` FROM `rating` " .
                 "WHERE `user` = ? AND `object_id` IN $idlist " .
                 "AND `object_type` = ?";
-        $db_results = Dba::read($sql, array($GLOBALS['user']->id, $type));
+        $db_results = Dba::read($sql, array(User::get_user_id(), $type));
 
         while ($row = Dba::fetch_assoc($db_results)) {
             $user_ratings[$row['object_id']] = $row['rating'];
@@ -111,7 +111,7 @@ class Rating extends database_object
             } else {
                 $rating = (int) $user_ratings[$id];
             }
-            parent::add_to_cache('rating_' . $type . '_user' . $GLOBALS['user']->id, $id, $rating);
+            parent::add_to_cache('rating_' . $type . '_user' . User::get_user_id(), $id, $rating);
 
             // Then store the average
             if (!isset($ratings[$id])) {

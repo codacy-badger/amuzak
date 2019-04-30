@@ -174,7 +174,7 @@ if (count($media_ids) || isset($urls)) {
         }
     }
 
-    if ($GLOBALS['user']->id > -1) {
+    if (User::get_user_id() > -1) {
         Session::update_username(Stream::get_session(), $GLOBALS['user']->username);
     }
 

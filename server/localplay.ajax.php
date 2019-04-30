@@ -40,7 +40,7 @@ switch ($_REQUEST['action']) {
 
         $localplay = new Localplay(AmpConfig::get('localplay_controller'));
         $localplay->set_active_instance($_REQUEST['instance']);
-        Preference::update('play_type', $GLOBALS['user']->id, $type);
+        Preference::update('play_type', User::get_user_id(), $type);
 
         // We should also refesh the sidebar
         ob_start();

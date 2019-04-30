@@ -151,9 +151,9 @@ switch ($_REQUEST['action']) {
         $browse->set_sort('creation_date', 'DESC');
         $folder = $_REQUEST['folder'];
         if ($folder === "sent") {
-            $browse->set_filter('user', $GLOBALS['user']->id);
+            $browse->set_filter('user', User::get_user_id());
         } else {
-            $browse->set_filter('to_user', $GLOBALS['user']->id);
+            $browse->set_filter('to_user', User::get_user_id());
         }
         $browse->update_browse_from_session();
         $browse->show_objects();

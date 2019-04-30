@@ -136,7 +136,7 @@ class AmpacheMpd extends localplay_controller
             } // end switch
         } // end foreach
 
-        $user_id = Dba::escape($GLOBALS['user']->id);
+        $user_id = Dba::escape(User::get_user_id());
 
         $sql = "INSERT INTO `localplay_mpd` (`name`,`host`,`port`,`password`,`owner`) " .
             "VALUES ('$name','$host','$port','$password','$user_id')";

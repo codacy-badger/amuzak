@@ -208,7 +208,7 @@ class Shoutbox
         }
 
         $sticky     = isset($data['sticky']) ? 1 : 0;
-        $user       = (int) ($data['user'] ?: $GLOBALS['user']->id);
+        $user       = (int) ($data['user'] ?: User::get_user_id());
         $date       = (int) ($data['date'] ?: time());
         $comment    = strip_tags($data['comment']);
 

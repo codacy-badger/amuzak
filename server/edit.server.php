@@ -56,7 +56,7 @@ $libitem = new $object_type($object_id);
 $libitem->format();
 
 $level = '50';
-if ($libitem->get_user_owner() == $GLOBALS['user']->id) {
+if ($libitem->get_user_owner() == User::get_user_id()) {
     $level = '25';
 }
 if ($_REQUEST['action'] == 'show_edit_playlist') {
@@ -98,7 +98,7 @@ switch ($_REQUEST['action']) {
         $entities($_POST);
 
         $libitem = new $object_type($_POST['id']);
-        if ($libitem->get_user_owner() == $GLOBALS['user']->id && AmpConfig::get('upload_allow_edit') && !Access::check('interface', 50)) {
+        if ($libitem->get_user_owner() == User::get_user_id() && AmpConfig::get('upload_allow_edit') && !Access::check('interface', 50)) {
             // TODO: improve this uniqueless check
             if (isset($_POST['user'])) {
                 unset($_POST['user']);

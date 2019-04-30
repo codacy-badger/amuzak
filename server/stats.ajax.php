@@ -31,7 +31,7 @@ $results = array();
 switch ($_REQUEST['action']) {
     case 'geolocation':
         if (AmpConfig::get('geolocation')) {
-            if ($GLOBALS['user']->id) {
+            if (User::get_user_id()) {
                 $latitude  = floatval($_REQUEST['latitude']);
                 $longitude = floatval($_REQUEST['longitude']);
                 $name      = $_REQUEST['name'];

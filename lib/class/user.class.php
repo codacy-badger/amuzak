@@ -575,7 +575,7 @@ class User extends database_object
      */
     public static function is_registered()
     {
-        if (!$GLOBALS['user']->id) {
+        if (!User::get_user_id()) {
             return false;
         }
 

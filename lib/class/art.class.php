@@ -1836,7 +1836,7 @@ class Art extends database_object
         if ($prettyPhoto) {
             $libitem = new $object_type($object_id);
             echo "<div class=\"item_art_actions\">";
-            if ($GLOBALS['user']->has_access(50) || ($GLOBALS['user']->has_access(25) && $GLOBALS['user']->id == $libitem->get_user_owner())) {
+            if ($GLOBALS['user']->has_access(50) || ($GLOBALS['user']->has_access(25) && User::get_user_id() == $libitem->get_user_owner())) {
                 echo "<a href=\"javascript:NavigateTo('" . AmpConfig::get('web_path') . "/arts.php?action=find_art&object_type=" . $object_type . "&object_id=" . $object_id . "&burl=' + getCurrentPage());\">";
                 echo UI::get_icon('edit', T_('Edit/Find Art'));
                 echo "</a>";
