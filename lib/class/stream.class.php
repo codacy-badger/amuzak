@@ -78,6 +78,7 @@ class Stream
      *
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      * @param Song $song
+     * @return integer
      */
     public static function get_allowed_bitrate($song)
     {
@@ -118,7 +119,7 @@ class Stream
                 debug_event('stream', 'Max transcode bandwidth already allocated. Active streams: ' . $active_streams, 2);
                 header('HTTP/1.1 503 Service Temporarily Unavailable');
 
-                return false;
+                return 0;
             }
 
             // Never go over the user's sample rate
@@ -130,7 +131,7 @@ class Stream
             $bit_rate = $user_bit_rate;
         }
 
-        return $bit_rate;
+        return (int) $bit_rate;
     }
 
     /**
@@ -155,7 +156,7 @@ class Stream
 
         if (!$options['bitrate']) {
             $bit_rate = self::get_allowed_bitrate($media);
-            debug_event('stream', 'Configured bitrate is ' . $bit_rate, 5);
+            debug_event('stream', 'Configured bitrate is ' . (string) $bit_rate, 5);
             // Validate the bitrate
             $bit_rate = self::validate_bitrate($bit_rate);
         } else {
