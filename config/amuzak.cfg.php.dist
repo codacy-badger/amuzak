@@ -568,7 +568,7 @@ show_footer_statistics = "true"
 
 ; RSS Feeds
 ; Set this to true to enable rss feeds.
-; (latest albums, shouts, albums of artist, ...)
+; (latest albums, albums of artist, ...)
 ; use_rss = false (values true | false)
 ;DEFAULT: use_rss = true
 use_rss = "true"

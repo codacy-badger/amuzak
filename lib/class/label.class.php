@@ -364,7 +364,6 @@ class Label extends database_object implements library_item
             Art::garbage_collection('label', $this->id);
             Userflag::garbage_collection('label', $this->id);
             Rating::garbage_collection('label', $this->id);
-            Shoutbox::garbage_collection('label', $this->id);
             Useractivity::garbage_collection('label', $this->id);
         }
 

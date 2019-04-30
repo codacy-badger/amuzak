@@ -1030,7 +1030,6 @@ class Album extends database_object implements library_item
                 Art::garbage_collection('album', $this->id);
                 Userflag::garbage_collection('album', $this->id);
                 Rating::garbage_collection('album', $this->id);
-                Shoutbox::garbage_collection('album', $this->id);
                 Useractivity::garbage_collection('album', $this->id);
             }
         }

@@ -346,7 +346,6 @@ function WaveformClick(songid, time)
     if (wavclicktimer != null) {
         clearTimeout(wavclicktimer);
         wavclicktimer = null;
-        NavigateTo('<?php echo AmpConfig::get('web_path') ?>/shout.php?action=show_add_shout&type=song&id=' + songid + '&offset=' + time);
     } else {
         // Single click
         if (brconn == null) {

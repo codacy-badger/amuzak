@@ -2213,7 +2213,6 @@ class Song extends database_object implements media, library_item
                 Art::garbage_collection('song', $this->id);
                 Userflag::garbage_collection('song', $this->id);
                 Rating::garbage_collection('song', $this->id);
-                Shoutbox::garbage_collection('song', $this->id);
                 Useractivity::garbage_collection('song', $this->id);
             }
         } else {

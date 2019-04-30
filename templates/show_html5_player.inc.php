@@ -153,7 +153,6 @@ if (!$isVideo && !$isRadio && !$is_share) {
             echo "actionsobj += '<div id=\'action_buttons\'></div>';";
             if (AmpConfig::get('waveform') && !$is_share) {
                 echo "var waveformobj = '';";
-                echo "waveformobj += '<div class=\"waveform-shouts\"></div>';";
                 echo "waveformobj += '<div class=\"waveform-time\"></div><img src=\"" . AmpConfig::get('web_path') . "/waveform.php?song_id=' + currenti.attr('data-media_id') + '\" onLoad=\"ShowWaveform();\">';";
                 if (AmpConfig::get('waveform')) {
                     echo "waveformobj += '</a>';";
@@ -209,15 +208,6 @@ if (AmpConfig::get('song_page_title') && !$is_share) {
         var int_position = Math.floor(event.jPlayer.status.currentTime);
         if (int_position != last_int_position && event.jPlayer.status.currentTime > 0) {
             last_int_position = int_position;
-            if (shouts[int_position] != undefined) {
-                shouts[int_position].forEach(function(e) {
-                    noty({text: e,
-                            type: 'alert', layout: 'topRight',
-                            template: '<div class="noty_message noty_ampache"><span class="noty_text noty_ampache"></span><div class="noty_close noty_ampache"></div></div>',
-                            timeout: 2500,
-                        });
-                });
-            }
         }
         if (event.jPlayer.status.duration > 0) {
             var leftpos = 400 * (event.jPlayer.status.currentTime / event.jPlayer.status.duration);

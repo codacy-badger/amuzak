@@ -365,6 +365,7 @@ $_SESSION['login'] = false;
                             require_once AmpConfig::get('prefix') . UI::find_template('show_playtype_switch.inc.php'); ?>
                         <span id="loginInfo">
                             <a id="header-link" href="<?php echo $web_path; ?>/stats.php?action=show_user&user_id=<?php echo User::get_user_id(); ?>"><?php echo $GLOBALS['user']->fullname; ?></a>
+                            <a href="<?php echo $web_path; ?>/browse.php?action=pvmsg" title="<?php echo T_('New messages'); ?>">(<?php echo count(PrivateMsg::get_private_msgs($GLOBALS['user']->id, true)); ?>)</a>
                             <a id="header-link" rel="nohtml" href="<?php echo $web_path; ?>/logout.php">[<?php echo T_('Log out'); ?>]</a>
                         </span>
                     <?php

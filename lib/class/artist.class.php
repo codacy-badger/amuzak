@@ -948,7 +948,6 @@ class Artist extends database_object implements library_item
                 Art::garbage_collection('artist', $this->id);
                 Userflag::garbage_collection('artist', $this->id);
                 Rating::garbage_collection('artist', $this->id);
-                Shoutbox::garbage_collection('artist', $this->id);
                 Useractivity::garbage_collection('artist', $this->id);
             }
         }
