@@ -52,7 +52,7 @@ class Rating extends database_object
      *
      * Remove ratings for items that no longer exist.
      */
-    public static function garbage_collection()
+    public static function garbage_collection($object_type = null, $object_id = null)
     {
         $types = array('song', 'album', 'artist', 'playlist', 'label', 'podcast', 'podcast_episode');
 
