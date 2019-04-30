@@ -912,9 +912,9 @@ class User extends database_object
         }
 
         $uip    = (!empty($sip)) ? Dba::escape(inet_pton(trim($sip, "[]"))) : '';
-        $date  = time();
-        $user  = $this->id;
-        $agent = Dba::escape($_SERVER['HTTP_USER_AGENT']);
+        $date   = time();
+        $user   = $this->id;
+        $agent  = Dba::escape($_SERVER['HTTP_USER_AGENT']);
 
         $sql = "INSERT INTO `ip_history` (`ip`,`user`,`date`,`agent`) VALUES ('$uip','$user','$date','$agent')";
         Dba::write($sql);
