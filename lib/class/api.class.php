@@ -816,7 +816,7 @@ class Api
 
     /**
      * localplay
-     * This is for controling localplay
+     * This is for controlling localplay
      * @param array $input
      */
     public static function localplay($input)
@@ -1049,6 +1049,62 @@ class Api
         }
     }
     // rate
+
+    /**
+     * flag
+     * This flags a library item as a favorite
+     * @param array $input
+     */
+    public static function flag($input)
+    {
+        ob_end_clean();
+        $type      = $input['type'];
+        $object_id = $input['id'];
+        $flag      = $input['flag'];
+
+        if (!Core::is_library_item($type) || !$object_id) {
+            echo XML_Data::error('401', T_('Wrong library item type.'));
+        } else {
+            $item = new $type($object_id);
+            if (!$item->id) {
+                echo XML_Data::error('404', T_('Library item not found.'));
+            } else {
+                $userflag = new Userflag($object_id, $type);
+                $userflag->set_flag($flag);
+                echo XML_Data::single_string('success');
+            }
+        }
+    }
+    // flag
+
+    /**
+     * record_play
+     * This updates the object_count and user_activity table with a play
+     * @param array $input
+     */
+    public static function record_play($input)
+    {
+        ob_end_clean();
+        $type      = $input['type'];
+        $object_id = $input['id'];
+        $user_id   = (int) $input['username'];
+        $agent     = 'api';
+
+
+        if (!Core::is_library_item($type) || !$object_id) {
+            echo XML_Data::error('401', T_('Wrong library item type.'));
+        } else {
+            $item = new $type($object_id);
+            if (!$item->id) {
+                echo XML_Data::error('404', T_('Library item not found.'));
+            } else {
+                $user = new User($user_id);
+                $user->update_stats($type, $object_id, $agent);
+                echo XML_Data::single_string('success');
+            }
+        }
+    }
+    // record_play
 
     /**
      * timeline
