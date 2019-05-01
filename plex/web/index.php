@@ -38,7 +38,7 @@ function changeUniqid()
 <body>
 <div id="main">
 <div id="maincontainer">
-    <img src="/images/plex-icon-256.png" /><br />
+    <img src="/plex/images/plex-icon-256.png" /><br />
 <?php
 
 function init_db()
