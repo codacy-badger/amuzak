@@ -31,9 +31,9 @@ if (!$GLOBALS['user']->has_access(100)) {
 /* Always show the header */
 UI::show_header();
 
-switch ($_REQUEST['action']) {
+switch ((string) scrub_in($_REQUEST['action'])) {
     case 'install_localplay':
-        $localplay = new Localplay($_REQUEST['type']);
+        $localplay = new Localplay((string) scrub_in($_REQUEST['type']));
         if (!$localplay->player_loaded()) {
             AmpError::add('general', T_('Failed to enable the module, Controller Error'));
             AmpError::display('general');
@@ -117,13 +117,13 @@ switch ($_REQUEST['action']) {
     case 'install_plugin':
         /* Verify that this plugin exists */
         $plugins = Plugin::get_plugins();
-        if (!array_key_exists($_REQUEST['plugin'], $plugins)) {
-            debug_event('plugins', 'Error: Invalid Plugin: ' . $_REQUEST['plugin'] . ' selected', '1');
+        if (!array_key_exists((string) scrub_in($_REQUEST['plugin']), $plugins)) {
+            debug_event('plugins', 'Error: Invalid Plugin: ' . (string) scrub_in($_REQUEST['plugin']) . ' selected', '1');
             break;
         }
-        $plugin = new Plugin($_REQUEST['plugin']);
+        $plugin = new Plugin((string) scrub_in($_REQUEST['plugin']));
         if (!$plugin->install()) {
-            debug_event('plugins', 'Error: Plugin Install Failed, ' . $_REQUEST['plugin'], '1');
+            debug_event('plugins', 'Error: Plugin Install Failed, ' . (string) scrub_in($_REQUEST['plugin']), '1');
             $url    = AmpConfig::get('web_path') . '/admin/modules.php?action=show_plugins';
             $title  = T_('Unable to Install Plugin');
             $body   = '';
@@ -150,11 +150,11 @@ switch ($_REQUEST['action']) {
     case 'uninstall_plugin':
         /* Verify that this plugin exists */
         $plugins = Plugin::get_plugins();
-        if (!array_key_exists($_REQUEST['plugin'], $plugins)) {
-            debug_event('plugins', 'Error: Invalid Plugin: ' . $_REQUEST['plugin'] . ' selected', '1');
+        if (!array_key_exists((string) scrub_in($_REQUEST['plugin']), $plugins)) {
+            debug_event('plugins', 'Error: Invalid Plugin: ' . (string) scrub_in($_REQUEST['plugin']) . ' selected', '1');
             break;
         }
-        $plugin = new Plugin($_REQUEST['plugin']);
+        $plugin = new Plugin((string) scrub_in($_REQUEST['plugin']));
         $plugin->uninstall();
 
         // Don't trust the plugin to do it
@@ -169,11 +169,11 @@ switch ($_REQUEST['action']) {
     case 'upgrade_plugin':
         /* Verify that this plugin exists */
         $plugins = Plugin::get_plugins();
-        if (!array_key_exists($_REQUEST['plugin'], $plugins)) {
-            debug_event('plugins', 'Error: Invalid Plugin: ' . $_REQUEST['plugin'] . ' selected', '1');
+        if (!array_key_exists((string) scrub_in($_REQUEST['plugin']), $plugins)) {
+            debug_event('plugins', 'Error: Invalid Plugin: ' . (string) scrub_in($_REQUEST['plugin']) . ' selected', '1');
             break;
         }
-        $plugin = new Plugin($_REQUEST['plugin']);
+        $plugin = new Plugin((string) scrub_in($_REQUEST['plugin']));
         $plugin->upgrade();
         User::rebuild_all_preferences();
         $url    = AmpConfig::get('web_path') . '/admin/modules.php?action=show_plugins';
