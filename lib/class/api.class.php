@@ -1100,7 +1100,7 @@ class Api
             $item = new $type($object_id);
             if (!$item->id) {
                 echo XML_Data::error('404', T_('Library item not found.'));
-            } else if ($user->id) {
+            } elseif ($user->id) {
                 $user->update_stats($type, $object_id, $agent);
                 echo XML_Data::single_string('success');
             }
