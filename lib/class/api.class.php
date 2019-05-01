@@ -1087,9 +1087,12 @@ class Api
         ob_end_clean();
         $type      = $input['type'];
         $object_id = $input['id'];
-        $user_id   = (int) $input['username'];
         $agent     = 'api';
-
+        $user_id   = (int) $input['user'];
+        $user      = new User($user_id);
+        if (!$user->id) {
+            echo XML_Data::error('404', T_('User_id not found.'));
+        }
 
         if (!Core::is_library_item($type) || !$object_id) {
             echo XML_Data::error('401', T_('Wrong library item type.'));
@@ -1097,8 +1100,7 @@ class Api
             $item = new $type($object_id);
             if (!$item->id) {
                 echo XML_Data::error('404', T_('Library item not found.'));
-            } else {
-                $user = new User($user_id);
+            } else if ($user->id) {
                 $user->update_stats($type, $object_id, $agent);
                 echo XML_Data::single_string('success');
             }
