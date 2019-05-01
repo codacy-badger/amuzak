@@ -167,7 +167,6 @@ function create_preference_input($name, $value)
         case 'show_played_times':
         case 'song_page_title':
         case 'subsonic_backend':
-        case 'plex_backend':
         case 'webplayer_flash':
         case 'webplayer_html5':
         case 'allow_personal_info_now':

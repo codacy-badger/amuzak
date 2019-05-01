@@ -815,7 +815,7 @@ abstract class Catalog extends database_object
     {
         $results = array();
 
-        return $results; //return an empty array of videos to plex/upnp
+        return $results; //return an empty array of videos to upnp
     }
 
     /**

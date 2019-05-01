@@ -507,7 +507,6 @@ function install_config_backends(array $backends)
 {
     $dbconfig = array(
         'subsonic_backend' => '0',
-        'plex_backend' => '0',
         'daap_backend' => '0',
         'upnp_backend' => '0',
         'webdav_backend' => '0',
@@ -518,9 +517,6 @@ function install_config_backends(array $backends)
         switch ($backend) {
             case 'subsonic':
                 $dbconfig['subsonic_backend'] = '1';
-                break;
-            case 'plex':
-                $dbconfig['plex_backend'] = '1';
                 break;
             case 'upnp':
                 $dbconfig['upnp_backend']         = '1';

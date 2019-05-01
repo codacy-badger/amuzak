@@ -17,7 +17,6 @@
    - Web
    - aMuzak
    - SubSonic
-   - Plex
    - DAAP
    - UPnP
    - WebDAV
