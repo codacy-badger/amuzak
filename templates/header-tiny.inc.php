@@ -399,7 +399,7 @@ $_SESSION['login'] = false;
             <div id="util_div" style="display:none;"></div>
             <iframe name="util_iframe" id="util_iframe" style="display:none;" src="<?php echo $web_path; ?>/util.php"></iframe>
             
-            <div id="content" class="content-<?php echo AmpConfig::get('ui_fixed') ? (AmpConfig::get('topmenu') ? 'fixed-topmenu' : 'fixed') : 'float'; ?> <?php echo(($count_temp_playlist) ? '' : 'content-right-wild'); echo $isCollapsed ? ' content-left-wild' : ''; ?>" style="margin-left: 80px">
+            <div id="content" class="content-<?php echo AmpConfig::get('ui_fixed') ? (AmpConfig::get('topmenu') ? 'fixed-topmenu' : 'fixed') : 'float'; ?> <?php echo(($count_temp_playlist) ? '' : 'content-right-wild'); echo $isCollapsed ? ' content-left-wild' : ''; ?>" style="margin-left: 95px">
 
                 <?php
                     if (Access::check('interface', '100')) {

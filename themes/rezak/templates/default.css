@@ -491,7 +491,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
 #sidebar-content-light {
     padding: 0;
     display: none;
-    width: 70px;
+    width: 85px;
 }
 
 #sidebar-light {
