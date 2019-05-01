@@ -31,9 +31,14 @@ if (!$GLOBALS['user']->has_access(100)) {
 /* Always show the header */
 UI::show_header();
 
-switch ((string) scrub_in($_REQUEST['action'])) {
+/* organize the requests once instead of 12 times */
+$action      = (string) stripslashes(htmlspecialchars(strip_tags($_REQUEST['action']), ENT_QUOTES, AmpConfig::get('site_charset')));
+$type        = (string) stripslashes(htmlspecialchars(strip_tags($_REQUEST['type']), ENT_QUOTES, AmpConfig::get('site_charset')));
+$plugin_name = (string) stripslashes(htmlspecialchars(strip_tags($_REQUEST['plugin']), ENT_QUOTES, AmpConfig::get('site_charset')));
+
+switch ($action) {
     case 'install_localplay':
-        $localplay = new Localplay((string) scrub_in($_REQUEST['type']));
+        $localplay = new Localplay($type);
         if (!$localplay->player_loaded()) {
             AmpError::add('general', T_('Failed to enable the module, Controller Error'));
             AmpError::display('general');
@@ -55,7 +60,7 @@ switch ((string) scrub_in($_REQUEST['action'])) {
         show_confirmation($title, $body, $url);
     break;
     case 'install_catalog_type':
-        $type    = (string) scrub_in($_REQUEST['type']);
+        $type    = $type;
         $catalog = Catalog::create_catalog_type($type);
         if ($catalog === null) {
             AmpError::add('general', T_('Failed to enable the module, Catalog Error'));
@@ -72,21 +77,21 @@ switch ((string) scrub_in($_REQUEST['action'])) {
         show_confirmation($title, $body, $url);
     break;
     case 'confirm_uninstall_localplay':
-        $type  = (string) scrub_in($_REQUEST['type']);
+        $type  = $type;
         $url   = AmpConfig::get('web_path') . '/admin/modules.php?action=uninstall_localplay&amp;type=' . $type;
         $title = T_('Are you sure you want to disable this module?');
         $body  = '';
         show_confirmation($title, $body, $url, 1);
     break;
     case 'confirm_uninstall_catalog_type':
-        $type  = (string) scrub_in($_REQUEST['type']);
+        $type  = $type;
         $url   = AmpConfig::get('web_path') . '/admin/modules.php?action=uninstall_catalog_type&amp;type=' . $type;
         $title = T_('Are you sure you want to disable this module?');
         $body  = '';
         show_confirmation($title, $body, $url, 1);
     break;
     case 'uninstall_localplay':
-        $type = (string) scrub_in($_REQUEST['type']);
+        $type = $type;
 
         $localplay = new Localplay($type);
         $localplay->uninstall();
@@ -98,7 +103,7 @@ switch ((string) scrub_in($_REQUEST['action'])) {
         show_confirmation($title, $body, $url);
     break;
     case 'uninstall_catalog_type':
-        $type = (string) scrub_in($_REQUEST['type']);
+        $type = $type;
 
         $catalog = Catalog::create_catalog_type($type);
         if ($catalog === null) {
@@ -117,13 +122,13 @@ switch ((string) scrub_in($_REQUEST['action'])) {
     case 'install_plugin':
         /* Verify that this plugin exists */
         $plugins = Plugin::get_plugins();
-        if (!array_key_exists((string) scrub_in($_REQUEST['plugin']), $plugins)) {
-            debug_event('plugins', 'Error: Invalid Plugin: ' . (string) scrub_in($_REQUEST['plugin']) . ' selected', '1');
+        if (!array_key_exists($plugin_name, $plugins)) {
+            debug_event('plugins', 'Error: Invalid Plugin: ' . $plugin_name . ' selected', '1');
             break;
         }
-        $plugin = new Plugin((string) scrub_in($_REQUEST['plugin']));
+        $plugin = new Plugin($plugin_name);
         if (!$plugin->install()) {
-            debug_event('plugins', 'Error: Plugin Install Failed, ' . (string) scrub_in($_REQUEST['plugin']), '1');
+            debug_event('plugins', 'Error: Plugin Install Failed, ' . $plugin_name, '1');
             $url    = AmpConfig::get('web_path') . '/admin/modules.php?action=show_plugins';
             $title  = T_('Unable to Install Plugin');
             $body   = '';
@@ -141,7 +146,7 @@ switch ((string) scrub_in($_REQUEST['action'])) {
         show_confirmation($title, $body, $url);
     break;
     case 'confirm_uninstall_plugin':
-        $plugin   = (string) scrub_in($_REQUEST['plugin']);
+        $plugin   = $plugin_name;
         $url      = AmpConfig::get('web_path') . '/admin/modules.php?action=uninstall_plugin&amp;plugin=' . $plugin;
         $title    = T_('Are you sure you want to disable this plugin?');
         $body     = '';
@@ -150,11 +155,11 @@ switch ((string) scrub_in($_REQUEST['action'])) {
     case 'uninstall_plugin':
         /* Verify that this plugin exists */
         $plugins = Plugin::get_plugins();
-        if (!array_key_exists((string) scrub_in($_REQUEST['plugin']), $plugins)) {
-            debug_event('plugins', 'Error: Invalid Plugin: ' . (string) scrub_in($_REQUEST['plugin']) . ' selected', '1');
+        if (!array_key_exists($plugin_name, $plugins)) {
+            debug_event('plugins', 'Error: Invalid Plugin: ' . $plugin_name . ' selected', '1');
             break;
         }
-        $plugin = new Plugin((string) scrub_in($_REQUEST['plugin']));
+        $plugin = new Plugin($plugin_name);
         $plugin->uninstall();
 
         // Don't trust the plugin to do it
@@ -169,11 +174,11 @@ switch ((string) scrub_in($_REQUEST['action'])) {
     case 'upgrade_plugin':
         /* Verify that this plugin exists */
         $plugins = Plugin::get_plugins();
-        if (!array_key_exists((string) scrub_in($_REQUEST['plugin']), $plugins)) {
-            debug_event('plugins', 'Error: Invalid Plugin: ' . (string) scrub_in($_REQUEST['plugin']) . ' selected', '1');
+        if (!array_key_exists($plugin_name, $plugins)) {
+            debug_event('plugins', 'Error: Invalid Plugin: ' . $plugin_name . ' selected', '1');
             break;
         }
-        $plugin = new Plugin((string) scrub_in($_REQUEST['plugin']));
+        $plugin = new Plugin($plugin_name);
         $plugin->upgrade();
         User::rebuild_all_preferences();
         $url    = AmpConfig::get('web_path') . '/admin/modules.php?action=show_plugins';
