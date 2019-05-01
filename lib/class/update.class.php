@@ -584,7 +584,10 @@ class Update
 
         $update_string = "Remove Shouts and PM's (Drop user_shout and user_pm)<br />";
         $version[]     = array('version' => '400009', 'description' => $update_string);
-        
+
+        $update_string = "Remove all plex preferences from the database.<br />";
+        $version[]     = array('version' => '400010', 'description' => $update_string);
+
         return $version;
     }
 
@@ -4102,11 +4105,11 @@ class Update
                 "(-1, 'public', '[[\"albumrating\",\"equal\",\"3\",null]]', '3* Albums', 'AND', 0, 0), " .
                 "(-1, 'public', '[[\"albumrating\",\"equal\",\"2\",null]]', '2* Albums', 'AND', 0, 0), " .
                 "(-1, 'public', '[[\"albumrating\",\"equal\",\"1\",null]]', '1* Albums', 'AND', 0, 0), " .
-                "(-1, 'public', '[[\"myrating\",\"equal\",\"5\",null]]', '5*', 'AND', 0, 0), " .
-                "(-1, 'public', '[[\"myrating\",\"equal\",\"4\",null]]', '4*', 'AND', 0, 0), " .
-                "(-1, 'public', '[[\"myrating\",\"equal\",\"3\",null]]', '3*', 'AND', 0, 0), " .
-                "(-1, 'public', '[[\"myrating\",\"equal\",\"2\",null]]', '2*', 'AND', 0, 0), " .
-                "(-1, 'public', '[[\"myrating\",\"equal\",\"1\",null]]', '1*', 'AND', 0, 0);";
+                "(-1, 'public', '[[\"myrating\",\"equal\",\"5\",null]]', '5* Songs', 'AND', 0, 0), " .
+                "(-1, 'public', '[[\"myrating\",\"equal\",\"4\",null]]', '4* Songs', 'AND', 0, 0), " .
+                "(-1, 'public', '[[\"myrating\",\"equal\",\"3\",null]]', '3* Songs', 'AND', 0, 0), " .
+                "(-1, 'public', '[[\"myrating\",\"equal\",\"2\",null]]', '2* Songs', 'AND', 0, 0), " .
+                "(-1, 'public', '[[\"myrating\",\"equal\",\"1\",null]]', '1* Songs', 'AND', 0, 0);";
         $retval &= Dba::write($sql);
 
         return $retval;
@@ -4157,6 +4160,7 @@ class Update
         
         return $retval;
     }
+
     /**
      * update_400009
      *
@@ -4175,6 +4179,96 @@ class Update
         $sql = "DROP TABLE IF EXISTS `user_shout`";
         $retval &= Dba::write($sql);
 
+        return $retval;
+    }
+
+    /**
+     * update_400010
+     *
+     * Delete the following plex preferences from the server
+     * plex_backend
+     * myplex_username
+     * myplex_authtoken
+     * myplex_published
+     * plex_uniqid
+     * plex_servername
+     * plex_public_address
+     * plex_public_port 
+     * plex_local_auth
+     * plex_match_email
+     */
+    public static function update_400010()
+    {
+        $retval = true;
+
+        $sql = "DELETE FROM `user_preference` " .
+               "WHERE `user_preference`.`preference` IN  " .
+               "(SELECT `preference`.`id` FROM `preference`  " .
+               "WHERE `preference`.`name` = 'plex_backend');";
+        $retval &= Dba::write($sql);
+
+        $sql = "DELETE FROM `user_preference` " .
+               "WHERE `user_preference`.`preference` IN  " .
+               "(SELECT `preference`.`id` FROM `preference`  " .
+               "WHERE `preference`.`name` = 'myplex_username');";
+        $retval &= Dba::write($sql);
+
+        $sql = "DELETE FROM `user_preference` " .
+               "WHERE `user_preference`.`preference` IN  " .
+               "(SELECT `preference`.`id` FROM `preference`  " .
+               "WHERE `preference`.`name` = 'myplex_authtoken');";
+        $retval &= Dba::write($sql);
+
+        $sql = "DELETE FROM `user_preference` " .
+               "WHERE `user_preference`.`preference` IN  " .
+               "(SELECT `preference`.`id` FROM `preference`  " .
+               "WHERE `preference`.`name` = 'myplex_published');";
+        $retval &= Dba::write($sql);
+
+        $sql = "DELETE FROM `user_preference` " .
+               "WHERE `user_preference`.`preference` IN  " .
+               "(SELECT `preference`.`id` FROM `preference`  " .
+               "WHERE `preference`.`name` = 'plex_uniqid');";
+        $retval &= Dba::write($sql);
+
+        $sql = "DELETE FROM `user_preference` " .
+               "WHERE `user_preference`.`preference` IN  " .
+               "(SELECT `preference`.`id` FROM `preference`  " .
+               "WHERE `preference`.`name` = 'plex_servername');";
+        $retval &= Dba::write($sql);
+
+        $sql = "DELETE FROM `user_preference` " .
+               "WHERE `user_preference`.`preference` IN  " .
+               "(SELECT `preference`.`id` FROM `preference`  " .
+               "WHERE `preference`.`name` = 'plex_public_address');";
+        $retval &= Dba::write($sql);
+
+        $sql = "DELETE FROM `user_preference` " .
+               "WHERE `user_preference`.`preference` IN  " .
+               "(SELECT `preference`.`id` FROM `preference`  " .
+               "WHERE `preference`.`name` = 'plex_public_port');";
+        $retval &= Dba::write($sql);
+
+        $sql = "DELETE FROM `user_preference` " .
+               "WHERE `user_preference`.`preference` IN  " .
+               "(SELECT `preference`.`id` FROM `preference`  " .
+               "WHERE `preference`.`name` = 'plex_local_auth');";
+        $retval &= Dba::write($sql);
+
+        $sql = "DELETE FROM `user_preference` " .
+               "WHERE `user_preference`.`preference` IN  " .
+               "(SELECT `preference`.`id` FROM `preference`  " .
+               "WHERE `preference`.`name` = 'plex_match_email');";
+        $retval &= Dba::write($sql);
+
+        $sql = "DELETE FROM `preference` " .
+               "WHERE `preference`.`name` IN " .
+               "('plex_backend', 'myplex_username', " .
+               "'myplex_authtoken', 'myplex_published', 'plex_uniqid', " .
+               "'plex_servername', 'plex_public_address', " .
+               "'plex_public_port ', 'plex_local_auth', 'plex_match_email');";
+        $retval &= Dba::write($sql);
+        
         return $retval;
     }
 }
