@@ -1090,7 +1090,8 @@ class Api
         $agent     = 'api';
         $user_id   = (int) $input['user'];
         $user      = new User($user_id);
-        if (!$user->id && !$user->is_registered) {
+        $valid     = in_array($user->id, User::get_valid_users());
+        if (!$valid) {
             echo XML_Data::error('404', T_('User_id not found.'));
         }
 
@@ -1100,7 +1101,7 @@ class Api
             $item = new $type($object_id);
             if (!$item->id) {
                 echo XML_Data::error('404', T_('Library item not found.'));
-            } elseif ($user->id && $user->is_registered) {
+            } elseif ($valid) {
                 $user->update_stats($type, $object_id, $agent);
                 echo XML_Data::single_string('success');
             }
