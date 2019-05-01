@@ -32,9 +32,9 @@ if (!$GLOBALS['user']->has_access(100)) {
 UI::show_header();
 
 /* organize the requests once instead of 12 times */
-$action      = (string) stripslashes(htmlspecialchars(strip_tags($_REQUEST['action']), ENT_QUOTES, AmpConfig::get('site_charset')));
-$type        = (string) stripslashes(htmlspecialchars(strip_tags($_REQUEST['type']), ENT_QUOTES, AmpConfig::get('site_charset')));
-$plugin_name = (string) stripslashes(htmlspecialchars(strip_tags($_REQUEST['plugin']), ENT_QUOTES, AmpConfig::get('site_charset')));
+$action      = (string) scrub_in(filter_input(INPUT_GET, 'action', FILTER_SANITIZE_SPECIAL_CHARS));
+$type        = (string) scrub_in(filter_input(INPUT_GET, 'type', FILTER_SANITIZE_SPECIAL_CHARS));
+$plugin_name = (string) scrub_in(filter_input(INPUT_GET, 'plugin', FILTER_SANITIZE_SPECIAL_CHARS));
 
 switch ($action) {
     case 'install_localplay':
