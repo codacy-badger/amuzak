@@ -4193,7 +4193,7 @@ class Update
      * plex_uniqid
      * plex_servername
      * plex_public_address
-     * plex_public_port 
+     * plex_public_port
      * plex_local_auth
      * plex_match_email
      */
