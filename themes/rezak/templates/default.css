@@ -702,6 +702,7 @@ input[type=button]:focus:active, input[type=submit]:focus:active {
     border: 2px solid;
     display: none;
     font-size: 12px;
+    float: right;
     max-height: 350px;
     min-width: 210px;
     overflow: hidden;
