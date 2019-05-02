@@ -70,7 +70,7 @@ class Api
     /**
      * set_filter
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This is a play on the browse function, it's different as we expose
      * the filters in a slightly different and vastly simpler way to the
      * end users--so we have to do a little extra work to make them work
@@ -127,7 +127,7 @@ class Api
     /**
      * handshake
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This is the function that handles verifying a new handshake
      * Takes a timestamp, auth key, and username.
      * @param array
@@ -301,7 +301,7 @@ class Api
     /**
      * ping
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This can be called without being authenticated, it is useful for determining if what the status
      * of the server is, and what version it is running/compatible with
      * @param array $input
@@ -326,7 +326,7 @@ class Api
     /**
      * artists
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This takes a collection of inputs and returns
      * artist objects. This function is deprecated!
      * @param array $input
@@ -356,7 +356,7 @@ class Api
     /**
      * artist
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This returns a single artist based on the UID of said artist
      * @param array $input
      */
@@ -370,7 +370,7 @@ class Api
     /**
      * artist_albums
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This returns the albums of an artist
      * @param array $input
      */
@@ -391,7 +391,7 @@ class Api
     /**
      * artist_songs
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This returns the songs of the specified artist
      * @param array $input
      */
@@ -411,7 +411,7 @@ class Api
     /**
      * albums
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This returns albums based on the provided search filters
      * @param array $input
      */
@@ -438,7 +438,7 @@ class Api
     /**
      * album
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This returns a single album based on the UID provided
      * @param array $input
      */
@@ -452,7 +452,7 @@ class Api
     /**
      * album_songs
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This returns the songs of a specified album
      * @param array $input
      */
@@ -473,7 +473,7 @@ class Api
     /**
      * tags
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This returns the tags (Genres) based on the specified filter
      * @param array $input
      */
@@ -499,7 +499,7 @@ class Api
     /**
      * tag
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This returns a single tag based on UID
      * @param array $input
      */
@@ -514,7 +514,7 @@ class Api
     /**
      * tag_artists
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This returns the artists associated with the tag in question as defined by the UID
      * @param array $input
      */
@@ -534,7 +534,7 @@ class Api
     /**
      * tag_albums
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This returns the albums associated with the tag in question
      * @param array $input
      */
@@ -554,7 +554,7 @@ class Api
     /**
      * tag_songs
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * returns the songs for this tag
      * @param array $input
      */
@@ -573,7 +573,7 @@ class Api
     /**
      * songs
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * Returns songs based on the specified filter
      * @param array $input
      */
@@ -604,7 +604,7 @@ class Api
     /**
      * song
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * returns a single song
      * @param array $input
      */
@@ -620,7 +620,7 @@ class Api
     /**
      * url_to_song
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This takes a url and returns the song object in question
      * @param array $input
      */
@@ -635,7 +635,7 @@ class Api
     /**
      * playlists
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This returns playlists based on the specified filter
      * @param array $input
      */
@@ -661,7 +661,7 @@ class Api
     /**
      * playlist
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This returns a single playlist
      * @param array $input
      */
@@ -677,7 +677,7 @@ class Api
     /**
      * playlist_songs
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This returns the songs for a playlist
      * @param array $input
      */
@@ -703,7 +703,7 @@ class Api
     /**
      * playlist_create
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This create a new playlist and return it
      * @param array $input
      */
@@ -722,7 +722,7 @@ class Api
     /**
      * playlist_edit
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This modifies name and type of playlist
      * @param array $input
      */
@@ -748,7 +748,7 @@ class Api
     /**
      * playlist_delete
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This delete a playlist
      * @param array $input
      */
@@ -768,7 +768,7 @@ class Api
     /**
      * playlist_add_song
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This add a song to a playlist
      * @param array $input
      */
@@ -789,7 +789,7 @@ class Api
     /**
      * playlist_remove_song
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This remove a song from a playlist
      * @param array $input
      */
@@ -810,7 +810,7 @@ class Api
     /**
      * search_songs
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This searches the songs and returns... songs
      * @param array $input
      */
@@ -836,7 +836,7 @@ class Api
     /**
      * advanced_search
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * Perform an advanced search given passed rules
      * @param array $input
      */
@@ -871,7 +871,7 @@ class Api
     /**
      * localplay
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This is for controlling localplay
      * @param array $input
      */
@@ -901,7 +901,7 @@ class Api
     /**
      * democratic
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This is for controlling democratic play
      * @param array $input
      */
@@ -965,7 +965,7 @@ class Api
     /**
      * stats
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This get library stats.
      * @param array $input
      */
@@ -1021,7 +1021,7 @@ class Api
     /**
      * user
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This get an user public information
      * @param array $input
      */
@@ -1046,13 +1046,12 @@ class Api
      * followers
      * MINIMUM_API_VERSION=380001
      * REMOVED_API_VERSION=400001
-     * 
+     *
      * This get an user followers
      * @param array $input
      */
     public static function followers($input)
     {
-        
         debug_event('api', 'Sociable feature has been removed. ' . var_export($input, true), 3);
         echo XML_Data::error('401', T_('Sociable feature has been removed in API=400001'));
     }
@@ -1062,7 +1061,7 @@ class Api
      * following
      * MINIMUM_API_VERSION=380001
      * REMOVED_API_VERSION=400001
-     * 
+     *
      * This get the user list followed by an user
      * @param array $input
      */
@@ -1077,7 +1076,7 @@ class Api
      * toggle_follow
      * MINIMUM_API_VERSION=380001
      * REMOVED_API_VERSION=400001
-     * 
+     *
      * This follow/unfollow an user
      * @param array $input
      */
@@ -1092,7 +1091,7 @@ class Api
      * last_shouts
      * MINIMUM_API_VERSION=380001
      * REMOVED_API_VERSION=400001
-     * 
+     *
      * This get the latest posted shouts
      * @param array $input
      */
@@ -1106,7 +1105,7 @@ class Api
     /**
      * rate
      * MINIMUM_API_VERSION=380001
-     * 
+     *
      * This rates a library item
      * @param array $input
      */
@@ -1135,7 +1134,7 @@ class Api
     /**
      * flag
      * MINIMUM_API_VERSION=400001
-     * 
+     *
      * This flags a library item as a favorite
      * @param array $input
      */
@@ -1198,7 +1197,7 @@ class Api
      * timeline
      * MINIMUM_API_VERSION=380001
      * REMOVED_API_VERSION=400001
-     * 
+     *
      * This get an user timeline
      * @param array $input
      */
@@ -1213,7 +1212,7 @@ class Api
      * timeline
      * MINIMUM_API_VERSION=380001
      * REMOVED_API_VERSION=400001
-     * 
+     *
      * This get current user friends timeline
      * @param array $input
      */
